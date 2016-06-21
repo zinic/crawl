@@ -1,0 +1,16 @@
+@toc
+@date
+
+@section
+    @title Combat @end
+    
+    Combat follows initiative order.
+    
+    Player characters and non-player characters are called actors in combat. When combat begins, actors are required to roll for their initiative. All actors are required to have the initiative aspect.
+    
+    Combat starts with the actor that has the highest roll. Once that actor has had their turn, 
+@end
+
+@section
+    @title Aspects @end
+@end
