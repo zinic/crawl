@@ -80,6 +80,7 @@ N_SECTION = 'section'
 
 C_CONTENTS = '@toc'
 C_DATE = '@date'
+C_DICE = '@dice'
 C_SECTION = '@section'
 C_TITLE = '@title'
 C_END = '@end'
@@ -185,7 +186,6 @@ class Parser(object):
 
     def next(self, token):
         print('{}: {}'.format(self._state, token))
-
         return getattr(self, self._state)(token)
 
     def start(self, token):
@@ -202,6 +202,12 @@ class Parser(object):
 
         elif token == C_CONTENTS:
             pass
+
+        elif token == C_END:
+            self._ascend()
+
+            if isinstance(self._current, Section):
+                self._state = SECTION_CONTENT
 
         else:
             raise Exception('Unknown directive: {}'.format(token))
@@ -226,20 +232,17 @@ class Parser(object):
             self._hold(token)
 
     def section_content(self, token):
-        if is_directive(token) and self._holding():
-            text = Text(self._release())
-            self._current.add(text)
+        if is_directive(token):
+            if self._holding():
+                text = Text(self._release())
+                self._current.add(text)
 
-        if token == C_SECTION:
-            self._state = SECTION_START
-
-        elif token == C_END:
-            self._ascend()
-            if not isinstance(self._current, Section):
-                self._state = NEXT_DIRECTIVE
+            self._state = NEXT_DIRECTIVE
+            return REPLAY
 
         else:
             self._hold(token)
+            return CONSUME
 
 
 class Component(object):
