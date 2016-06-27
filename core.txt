@@ -1,20 +1,123 @@
-<document>
-    <toc />
-    <date />
+## Characters
+
+Characters, duh.
+
+Characters are made up of (x) things:
+
+* Age
+* Species
+* Aspects
+
+
+### Aspects
+
+Aspects describe parts of a character. They may include rules and modifiers that apply to the character.
+
+
+#### Health
+#### Endurance
+
+
+
+
+## Combat
+
+All characters are required to roll for initiative when combat begins. Initative controls which characters go when and in what order. All initiative rolls are a d20. Additional modifiers specific to the character may apply after the roll.
+
+Combat follows initiative order. The character with the highest value for initiative receives their turn next. Once the character completes their turn, the next turn is granted to the character with the next highest value for initiative.
+
+    For example: characters A, B, and C roll for initiative.
     
-    <section>
-        <title>Combat</title>
-        
-        Combat follows initiative order.
-        
-        Player characters and non-player characters are called actors in combat. When combat begins, actors are required to roll for their initiative. All actors are required to have the initiative aspect.
-        
-        Combat starts with the actor that has the highest roll. Once that actor has had their turn, initiative is granted to the actor with the next highest roll.
+    * Character A rolls a 2.
+    * Character B rolls a 5.
+    * Character C rolls a 2.
     
-        <section>
-            <title>Attacking</title>
-            
-            An actor may attack another actor during combat. This is done with an opposed roll using a @dice d20 @end.
-        </section>
-    </section>
-</document>
+    Character C has a +1 modifier which, when applied, puts their initiative total at a 3.
+    
+    The initiative is then ordered with character B going first, character C going second and character A going last.
+    
+    B recieves their turn.
+    C recieves their turn after B.
+    A recieves their turn after A.
+    
+    B recieves their next turn.
+    C recieves their turn after B.
+    A recieves their turn after A.
+    
+    ...
+
+
+### Turn Economy
+
+Turns in the crawl last for only a moment. There is no exact interval given here to avoid players attempting to rationalize for or against an action that may not fit. General rules for what fits in a moment follow:
+
+**A moment is long enough to...**
+
+* Execute an attack.
+* Open a door.
+* Pull out something from your traveler's pack.
+* Speak a short sentence to another character and recieve an equally short reply.
+
+
+### Effort
+
+Certain character actions cost effort in the form of action points. During the beginning of a character's turn, the character recieves 1 action point. Action points may be saved for future turns to pay for more powerful or complex actions.
+
+Characters may save action points according to their own aspects.
+
+Characters may have aspects that grant additional action points under certain circumstances. Certain equipment and magic may also grant use of additional action points.
+
+
+### Effects
+
+Throughout the game a character may be subject to a number of effects. The most common are listed below.
+
+#### Prone
+
+The character is laying on the ground. While in this position, the following effects apply to the character:
+
+* Movement is limited to one hex per turn.
+* Ranged attacks receive a +1 modifier.
+* Melee attacks receive a -1 modifier.
+* Defense rolls receive a -1 modifier.
+
+
+#### Stunned
+
+The character is incapacitated to a certain degree. While stunned, the following effects apply to the character:
+
+* While stunned, the character is unable to save action points.
+* Defense rolls are capped at a maximum of 10.
+* Speaking requires an action point.
+
+
+### Combat Actions
+
+#### Maximum Effort
+
+A character may choose to spend health points and convert them into an action points. This loss of health points counts as damage to the character and is treated the same.
+
+The number of health points a character can convert into action points is limited by the character's endurance aspect.
+
+
+#### Casting Magic
+
+Magic may be cast at the cost of 1 action point. Certain spells may require more action points to complete.
+
+
+#### Attacking
+
+All attacks begin with a d20 roll from the attacker. This represents their attempt to hit a target. A character's attack roll may be modified from several sources including: magic, equipment and aspects.
+
+An attack is considered successful if the target's defense is less than or equal to the attacker's roll. This means that if both attacker and defender roll a total of 15, the attack is successful. If successful, the attack lands and its associated effects (including damage) then apply.
+
+Successful or not, all attacks require 1 action point to initiate.
+
+
+#### Active Defense
+
+Characters, unless otherwise affected, may perform an active defense when being attacked. This represents the character attempting to dodge, parry, block, or otherwise interrupt the incoming attack. A character may choose to to defend against an attack, in which case the attack is considered to be successful.
+
+A defense is considered successful only if the defender's defense roll is greater than the attacker's attack roll. 
+
+Successful or not, all defenses require 1 action point to activate.

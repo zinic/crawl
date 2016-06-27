@@ -1,0 +1,32 @@
+<document>
+    <title>The Crawl - Core Rules</title>
+    <date />
+    
+    <section>
+        <title>Combat</title>
+        
+        <content>
+            Combat follows initiative order.
+            
+            Player characters and non-player characters are called actors in combat. When combat begins, actors are required to roll for their initiative. Initiative is always a d20 roll with any additional modifiers that might apply to the actor.
+            
+            Once a initiative begins, each actor is 
+            
+            Combat starts with the actor that has the highest roll. The actor is given their Once that actor has had their turn, initiative is granted to the actor with the next highest roll.
+        </content>
+        
+        <section>
+            <title>Attacking</title>
+            
+            <content>
+                An actor may attack another actor during combat. This is done with an opposed roll using a d20.
+            </content>
+        </section>
+    </section>
+    
+    <rules>
+        <ability>
+            <content></content>
+        </ability>
+    </rules>
+</document>
