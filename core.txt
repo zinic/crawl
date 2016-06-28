@@ -100,9 +100,13 @@ A character may choose to spend health points and convert them into an action po
 The number of health points a character can convert into action points is limited by the character's endurance aspect.
 
 
-#### Casting Magic
+#### Using Aspects
 
-Magic may be cast at the cost of 1 action point. Certain spells may require more action points to complete.
+Using an aspect requires a roll to determine the character's skill in execution. Any aspect that requires a roll will also present a difficulty scale. The difficulty of an aspect is represented as a number that must be overcome by the character's roll for the character to be considered successful.
+
+This roll may be modified from several sources including: magic, equipment and other aspects.
+
+Character aspects may be used at the cost of 1 action point unless otherwise stated by the aspect. Certain aspects may have waive the cost or require far more than 1 action point to utilize.
 
 
 #### Attacking
