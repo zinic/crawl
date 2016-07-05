@@ -1,26 +1,18 @@
 ## Characters
 
-### Core Aspects
-
-Characters start with three aspects by default. These are called the core aspects.
-
-* Strength
-* 
-* 
-
-
 Characters, duh.
 
 Characters are made up of (x) things:
 
 * Name
 * Age
+* Gender
 * Aspects
 
 
 ### Aspects
 
-Aspects describe parts of a character. They may include rules and modifiers that apply to the character. All aspects have an aspect point cost that must be paid when acquired.
+Aspects describe parts of a character. They may include rules and modifiers that apply to the character. All aspects have an aspect point cost that must be paid when acquired. Once acquired, may aspects impart an ability that the character can utilize or an effect that triggers...
 
 
 #### Aspect Points
@@ -37,21 +29,102 @@ Throughout a campaign, players will acrew aspect points as part of the party's p
 During downtime, characters may reflect on what they have experienced and learned recently. Any successfully attempted aspects may be paid for and acquired so long as the player has enough aspect points in their pool.
 
 
-#### Resting
+### Core Aspects
+
+Core aspects are character aspects that come with every character created. These are the basis for the primary ability checks a character can make and also represent the three primary physical features of the character.
 
 
+#### Strength
+
+Strength determines a character's physical presence. A character with a strong strength aspect will be able to last longer and carry more. They may also take less damage when thrown around or when overpowered. Strength is also a primary factor in determining a character's physical endurance and constitution.
+
+Strength is important for characters that will have physically demanding professions or strength oriented ability focuses (melee combat for example).
 
 
-#### Downtime
+##### Strength Damage
+
+While a character is subject to a negative strength modifier they must make a strength check against a difficulty of 10 plus the value of the negative modifier. This check must be made every turn unless the character is incapacitated.
+
+Failing this check grants the character the stunned condition until their next turn and renders the character prone if they are not already prone.
 
 
-#### Health
-#### Endurance
+#### Intelligence
+
+Intelligence determines a character's ability to both retain information and process complex problems. A character's intelligence also plays a factor in the character's outward ability to communicate. A character with a low intelligence aspect may find it difficult to interact with certain non-player characters and or other characters.
+
+Intelligence also serves as a character's internal voice. Characters with higher intelligence will often have a more rational approach to mind affecting effects. However, the opposite is true for lower intelligence characters in that they can simply chose to ignore the effect.
 
 
+##### Intelligence Damage
+
+While a character is subject to a negative intelligence modifier they must make an intelligence check against a difficulty of 10 plus the value of the negative modifier. This check must be made every turn unless the character is incapacitated.
+
+Failing this check immediately grants the unconscious condition until their next turn and renders the character prone if they are not already prone.
 
 
-## Combat
+#### Mobility
+
+Mobility is a core aspect that determines a character's ability to move quickly. Mobility also represents a character’s inherent balance and muscle control – making it important for dodging attacks and environment hazards. A character’s reflexes are dependent on the character’s mobility.
+
+Mobility also plays a direct roll in jumping and scaling obstacles as well as performing maneuvers during movement.
+
+
+##### Mobility Damage
+
+While a character is subject to a negative mobility modifier they must make a mobility check against a difficulty of 10 plus the value of the negative modifier. This check must be made every turn unless the character is incapacitated.
+
+Failing this check removes the character’s ability to attempt any dodge until their next turn and renders the character prone if they are not already prone.
+
+
+## Game Mechanics
+
+This section is dedicated to explaining many of the mechanics that make combat work in The Crawl.
+
+
+### Map Details
+
+The game recommends utilizing a hexagon grid map. When a hexagon grid is not available, a square grid may be used in substitution. When using a square grid, each square may be treated as a position with eight possible directions instead of four by using both the edges and corners of the squares. 
+
+Each cell on a map represents **2 meters**.
+
+
+#### Range Definitions
+
+There are a number of range definitions to help easily determine distance ranges on a map. All ranges assume that the starting cell is the point of origin, not the cell’s edge. This means that the cell your character is standing in is equivalent to a range of one.
+
+
+##### Personal
+Personal range applies only to the character in question.
+
+##### Melee
+Melee range is equal to a radius of two cells. Melee range is also dependent on character abilities and may vary from character to character.
+
+##### Short
+Short range is equal to a radius of seven cells or a total of 14 meters.
+
+##### Medium
+Medium range is equal to a radius of fifteen cells or a total of 30 meters.
+
+##### Long
+Long range is equal to a radius of thirty cells or a total of 60 meters.
+
+##### Extreme
+Extreme range is equal to a radius of sixty cells or a total of 120 meters.
+
+
+#### Area Effects
+
+Because area effects fill entire map cells, targeted characters may not make dodge attempts to avoid the area effect. Because of this, many area attacks will include a check that characters may make to potentially mitigate some or all of the effects.
+
+
+#### Rough Terrain
+
+Character movement speed is halved when the character steps into any significantly damaged or disturbed terrain. Rough terrain may also prevent certain combat maneuvers and also grants a -2 modifier to any mobility check of any character standing on it.
+
+Stepping in or out of rough terrain immedieately incurs this penalty.
+
+
+### Initiative
 
 All characters are required to roll for initiative when combat begins. Initative controls which characters go when and in what order. All initiative rolls are a d20. Additional modifiers specific to the character may apply after the roll.
 
@@ -78,7 +151,7 @@ Combat follows initiative order. The character with the highest value for initia
     ...
 
 
-### Turn Economy
+### Turn Duration
 
 Turns in the crawl last for only a moment. There is no exact interval given here to avoid players attempting to rationalize for or against an action that may not fit. General rules for what fits in a moment follow:
 
@@ -99,39 +172,90 @@ Characters may save action points according to their own aspects.
 Characters may have aspects that grant additional action points under certain circumstances. Certain equipment and magic may also grant use of additional action points.
 
 
-### Effects
+#### Maximum Effort
 
-Throughout the game a character may be subject to a number of effects. The most common are listed below.
+A character may choose to spend health points and convert them into an action points. This loss of health points counts as damage to the character and is treated the same.
 
-#### Prone
-
-The character is laying on the ground. While in this position, the following effects apply to the character:
-
-* Movement is limited to one hex per turn.
-* Ranged attacks receive a +1 modifier.
-* Melee attacks receive a -1 modifier.
-* Defense rolls receive a -1 modifier.
+The number of health points a character can convert into action points is limited by the character's endurance aspect.
 
 
-#### Stunned
+#### Using Aspects
 
-The character is incapacitated to a certain degree. While stunned, the following effects apply to the character:
+Using an aspect requires a roll to determine the character's skill in execution. Any aspect that requires a roll will also present a difficulty scale. The difficulty of an aspect is represented as a number that must be overcome by the character's roll for the character to be considered successful.
 
-* While stunned, the character is unable to save action points.
-* Defense rolls are capped at a maximum of 10.
-* Speaking requires an action point.
+This roll may be modified from several sources including: magic, equipment and other aspects.
+
+Character aspects may be used at the cost of 1 action point unless otherwise stated by the aspect. Certain aspects may have waive the cost or require far more than 1 action point to utilize.
 
 
-### Combat in The Crawl
+### Check Difficulty
+
+Certain game actions are represented as a check: a challenge that a character must attempt to defeat with a roll. Each check must either be related to an acquired aspect or to one of the three core character aspects.
+
+The difficulty of a check is the number that the player must roll at or above to have been considered successful.
+
+For example: a character is attempting to unlock a door with a lock pick. The character makes a lockpicking check against the difficulty of the lock using all of the character’s relevant modifiers.
+
+In this case, the game master has decided that the lock is moderately strong and therefore chooses a difficulty of 16. If the player’s check is equal to or higher than 16, then the lock clicks free and the door opens.
+
+
+#### Opposed Checks
+
+Many aspects that affect a target may offer the target an opposing check. For example: attacking a character allows the character the ability to make an opposed check - a defense role, to mitigate the attack.
+
+
+#### Attacking
+
+Many aspects grant attacks. Despite having different damages, effects and or other modifiers; all attacks follow the rules below.
+
+All attacks begin with a d20 roll from the attacker. This represents their attempt to hit a target. A character's attack roll may be modified from several sources including: magic, equipment and aspects.
+
+An attack is considered successful if the target's defense is less than or equal to the attacker's roll. This means that if both attacker and defender roll a total of 15, the attack is successful. If successful, the attack lands and its associated effects (including damage) then apply.
+
+Successful or not, all attacks require a action point cost of at least 1 to initiate.
+
+
+#### Defending
+
+Manay aspects grant denfenses. Despite having different effects and or other modifiers; all defenses follow the rules below.
+
+Characters, unless otherwise affected, may defend themselves when being attacked.
+
+All defenses begin with a d20 roll from the defender. This action represents the character attempting to dodge, parry, block, or otherwise interrupt the incoming attack. A character may choose not to defend against an attack, in which case the attack is considered to be successful.
+
+An attack is considered defeated only if the defender's defense roll is greater than the attacker's attack roll. 
+
+Successful or not, all defenses require a action point cost of at least 1 to initiate.
+
+
+#### Damage
+
+Characters may take damage over time during the game. Damage types are listed below.
+
+* Heat
+* Cryo
+* Kinetic
+
+
+#### Armor
+
+Characters may defend themselves not just with actions but with equipment. Armor imparts a function called **damage resistance**. The damage resistance of an armor is given as a number to reduce damage taken by. For example, an Iron Chestplate imparts **6 DR**. This value means that the armor will reduce any incoming damage to the character by 6.
+
+Some armors may restrict movement and therefore come with a negative mobility check modifier. Some heavier armors may also require a certain strength check modifier from the character.
+
+Lastly, some armors may include an action point cost representing the amount of effort required to equip or unequip it.
+
 
 #### Surprise Attack
+
+Characters unaware of the presence of an enemy force may be subject to a surprise attack. In a surprise attack, the attacking force has the advantage. Initiative is rolled for combat as normal. However, during the first turn, only the attackers may act.
 
 
 #### Ready Actions
 
 A character may choose to ready an action of any type. The action will execute when a specific set of conditions are met. If the conditions are not met by the character's next turn, the action is not executed but the action points are still spent.
 
-In order to ready an action, the character must first be able to satisfy the action’s point cost. The character then specifies the conditions necessary for the action to execute. The complexity of the conditions is subject to the discretion of the GM.
+In order to ready an action, the character must first be able to satisfy the action’s point cost. The character then specifies the conditions necessary for the action to execute. The complexity of the conditions is subject to the discretion of the game master.
 
 
 #### Turn Holding
@@ -231,6 +355,7 @@ Characters pinned underneath extremely heavy objects or weights may be subject t
 All characters start with a base ‘fit’ movement speed of 5 map cells or 10 meters. This speed represents the amount of distance the character can move utilizing one movement action.
 
 A character may move through map cells occupied by a friendly character or entity with no penalty.
+
 
 #### Full Run
 
@@ -346,41 +471,178 @@ Shared character vision may qualify as line of sight.
 
 A character with the stealth aspect may utilize it when no known enemies have line of sight on the character. The value of this stealth check represents the difficulty of the perception check required to identify the character.
 
-A character in stealth may ignore enemy attacks of opportunity in the case where the enemy is unable to detect them. In addition, any enemy targeted from stealth may be treated as flat-footed.
+A character in stealth may ignore enemy opportunistic actions in the case where the enemy is unable to detect them. In addition, any enemy targeted from stealth is subject to a -10 modifier for any attempted defense roll.
 
 Once in stealth, a character may maintain their stealth if they make no action that reveals them. Maintaining stealth costs a character no action but requires the character to re-roll their stealth check.
 
-Unless otherwise stated by an aspect, if a character in stealth performs a normal, standard or movement action they must leave stealth and reveal themselves after the action is complete.
-
-#### Maximum Effort
-
-A character may choose to spend health points and convert them into an action points. This loss of health points counts as damage to the character and is treated the same.
-
-The number of health points a character can convert into action points is limited by the character's endurance aspect.
+Unless otherwise stated by the aspect, only attacks and defenses will reveal a character in stealth.
 
 
-#### Using Aspects
 
-Using an aspect requires a roll to determine the character's skill in execution. Any aspect that requires a roll will also present a difficulty scale. The difficulty of an aspect is represented as a number that must be overcome by the character's roll for the character to be considered successful.
+### Character Health and Status
 
-This roll may be modified from several sources including: magic, equipment and other aspects.
+#### Health Points
 
-Character aspects may be used at the cost of 1 action point unless otherwise stated by the aspect. Certain aspects may have waive the cost or require far more than 1 action point to utilize.
+All characters have a health point value that represents the amount of damage they may sustain before dying. A character’s body may receive damage equal to the character’s total health point value before being considered destroyed.
 
-
-#### Attacking
-
-All attacks begin with a d20 roll from the attacker. This represents their attempt to hit a target. A character's attack roll may be modified from several sources including: magic, equipment and aspects.
-
-An attack is considered successful if the target's defense is less than or equal to the attacker's roll. This means that if both attacker and defender roll a total of 15, the attack is successful. If successful, the attack lands and its associated effects (including damage) then apply.
-
-Successful or not, all attacks require 1 action point to initiate.
+A character’s body that has been destroyed may not be revived.
 
 
-#### Defending
+#### Healing
 
-Characters, unless otherwise affected, may defend themselves when being attacked. This action represents the character attempting to dodge, parry, block, or otherwise interrupt the incoming attack. A character may choose not to defend against an attack, in which case the attack is considered to be successful.
+Healing happens over time in most circumstances. Certain medical supplies may contain agents and compounds that impart an immediate health boost as well as repair damage over time. Magic also may make healing far faster than nature can muster.
 
-An attack is considered defeated only if the defender's defense roll is greater than the attacker's attack roll. 
 
-Successful or not, all defenses require 1 action point to activate.
+#### Demeanor
+
+Demeanor is a very rough representation of a character’s disposition towards another. Disposition is represented on a scale of 0 to 50.
+
+A character with zero disposition towards another character is considered hostile. Conversely, a character with a disposition of 40 towards another character is considers friendly.
+
+Demeanor is effective in determining how one character views another and how swayed they maybe. The effectiveness of persuasion relies on a targets demeanor towards the character attempting the persuasion.
+
+
+#### Persuasion
+
+Persuasion of characters may be attempted by performing a persuasion skill check. Persuasion is modified by a character’s presence – a feature that embodies the attention and perhaps command the character carries over others through their charismatic features. These features may include physical beauty, a silk tongue as well as many others.
+
+When persuading a target, whether it be for diplomacy or to haggle, the character makes a presence check to represent their overall position and impact to the targets demeanor. The target makes an opposed intuition check.
+
+The amount that the character’s persuade check beats the target’s intuition check is then added to the target’s current disposition towards the character.
+
+Depending on how much disposition the target already has, this may make the target more friendly or indeed convince them to see it your way.
+
+
+#### Physical Strength
+
+A character’s physical strength represents how much force they can impart with only their body. A physical strength check for a character is determined by rolling a d20 and then adding both the character’s strength modifier plus any additional modifiers they may have that target physical strength specifically.
+
+A character’s physical strength is easily enhanced and affects many character attributes and abilities.
+
+
+#### Endurance
+
+A character’s endurance represents how much internal fortitude their body has. This check is essential for resisting many effects, abilities and poisons. An endurance check for a character is determined by rolling a d20 and then adding the character’s strength modifier.
+
+A character’s endurance may only be enhanced by increasing the character’s strength aspect.
+
+
+#### Poison
+
+A character may be poisoned only if the poison has a vector for entering the target’s body. In combat, this requires that the character take health point damage. If an attack causes no health point damage, then it is considered stopped by the target’s defenses.
+
+Poisons may cause ability damage but must target one or more of the core character aspects. A poison may attack multiple character aspects with varying difficulties. Poisons may also impart negative attributes for the duration of the poison.
+
+All poisons must contain a medical check difficulty for removal. Poisons may also require a specific compound in addition to the medical check.
+
+
+#### Disease
+
+A disease may impart a single negative character attribute for as long as the character carries the disease. Diseases must include a difficulty for removal equal to 5 plus a modifier that represents the strength of the disease. Removal requires the healing of all health point damage first. Once fully-healed, only then may the difficulty of the disease be challenged.
+
+Disease counter-agents may be created by performing a successful medical check greater than the removal difficulty of the disease. Certain material components may be required when creating counter-agents.
+
+
+#### Addiction
+
+Certain consumable items and poisons may impart an addiction to a character. An addictive substance must have an addictiveness modifier and a craving interval specified. Craving intervals are measured in hours and must be longer one hour.
+
+When subject to an addictive substance, the character must make an intelligence check with a difficulty equal to 5 plus the addictiveness modifier of the substance.
+
+A substance addiction may be removed by a medical check with a difficulty equal to 10 plus the addictiveness modifier.
+
+While addicted to a substance, the character must consume it at a rate defined by the substance’s craving interval. If a character misses consuming the substance before their next craving, they become subject to a negative modifier that affects **all rolls**. For every interval missed, this negative modifier stacks by 1 to a maximum of -5.
+
+Consuming the substance resets all negative morale modifiers from the associated addiction back to 0.
+
+
+#### Consuming Food
+
+Consuming food may restore up to 12 points over a time period of 8 hours. This may be done out of combat to bring character health back up gradually. Certain types of food may restore more or less of a character’s health but may not restore more than 12 per hour.
+
+
+#### Hunger and Thirst
+
+A character that has gone without food, fuel or water for a significant period of time may acquire the malnourished condition. While malnourished, the character receives a negative modifier to **all rolls** equal to the number of days affected.
+
+For example, a character that has gone malnourished for two days is subject to a -2 modifier to **all rolls** they make.
+
+The malnourished condition may be removed by consuming food, fuel or drink.
+
+
+#### Ability Damage
+
+The most common forms of ability damage target the three core character aspects: strength, intelligence and mobility. These character aspects have unique consequences when reduced to negative values.
+
+Other ability checks may receive damage but their effect when disabled is left to GM discretion.
+
+Ability damage may be mitigated by healing only while the modifier is greater than or equal to 0. Healing removes one point of ability damage per 10 points of health points healed. If the character’s health points have been refilled but they still suffer ability damage, they may still be healed for ability damage at double the rate, or 2 points of ability damage healed per 10 health points healed.
+
+If the character has sustained ability damage to the extent that they’re now subject to a negative modifier, a medical check is required. The medical check has a difficulty of 5 multiplied by the value of the negative modifier the character is currently subject to; 4 points of ability damage that takes the check modifier to a -4 has a difficulty of 20 to remove.
+
+If the medical check is passed, the character may heal their ability damage normally. If the check fails then the character will be unable to heal their ability damage until the check can be attempted again.
+
+For example, a character sustains ability damage that gives then a strength modifier of -4. A party member makes a medical check of 24 which is greater than the 20 required to begin healing the ability damage. They then heal the character for 20 health points, giving them 2 positive points to their negative strength modifier while refilling all of their hit points.
+
+The next round of healing deals 23 points of health to the character, healing an additional 4 points of strength now that they are fully healed.
+
+This brings the character back to a positive strength modifier of 2 and has removed the remainder of the ability damage the character suffered.
+
+
+### Effects
+
+Throughout the game a character may be subject to a number of effects. The most common are listed below.
+
+#### Prone
+
+The character is laying on the ground. While in this position, the following effects apply to the character:
+
+* Movement is limited to one hex per turn.
+* Ranged attacks receive a +1 modifier.
+* Melee attacks receive a -1 modifier.
+* Defense rolls receive a -1 modifier.
+
+
+#### Stunned
+
+The character is incapacitated to a certain degree. While stunned, the following effects apply to the character:
+
+* While stunned, the character is unable to save action points.
+* Defense rolls are capped at a maximum of 10.
+* Speaking requires an action point.
+
+
+#### Slowed
+
+A character that has the slowed status must pay 1 action point or forfeit their turn. In addition, the slowed character incurs -2 modifier for every dodge attempt made until the condition is removed.
+
+
+#### Blindness
+
+A character that has lost more than eighty percent of their vision is rendered blind. A character that is blind loses their ability to see in any meaningful capacity. While blind, the character is at a -10 against all attacks made against them. Removing blindness requires a medical item, aspect or magic.
+
+
+#### Grappled
+
+A character that is grappled is unable to make any movement action during their turn.
+
+The grappled character may spend their standard duration action only to attempt escape. Upon escape, the character’s ability to perform movement actions is restored. The character is released in the same map cell as their attacker and is considered squeezing with them.
+
+
+#### Sickened
+
+The sickened condition grants a character a negative modifier of two for every d20 roll the character makes. Sickened conditions may stack. Removing this condition requires the character to heal at least 1 health point of damage.
+
+All stacked negative modifiers for this condition are removed immediately when the character is healed.
+
+
+#### Squeezing
+
+When a character is forced to occupy fifty percent or less of a map cell, they are considered squeezed. A character, while squeezed, is subject to a -2 modifier to all checks made. If there are more than two characters squeezed in the same map cell, this modifier stacks to a negative -4 and will continue to stack for a total squeezing modifier of -6.
+
+
+#### Staggered
+
+A character that has a health point value of less than one fourth their health point total is considered staggered. A staggered character that receives further damage is subject to a percent check (2d10 or d100).
+
+If the target character rolls less than 50, they must lose an action point or forfeit their turn. This condition’s may be mitigated by equipment, items and abilities.
