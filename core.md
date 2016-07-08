@@ -185,7 +185,7 @@ Using an aspect requires a roll to determine the character's skill in execution.
 
 This roll may be modified from several sources including: magic, equipment and other aspects.
 
-Character aspects may be used at the cost of 1 action point unless otherwise stated by the aspect. Certain aspects may have waive the cost or require far more than 1 action point to utilize.
+Character aspects may be used at the cost of 1 action point. Certain aspects may require more than 1 action point to invoke but this depends on the aspect.
 
 
 ### Check Difficulty
@@ -210,9 +210,9 @@ Many aspects grant attacks. Despite having different damages, effects and or oth
 
 All attacks begin with a d20 roll from the attacker. This represents their attempt to hit a target. A character's attack roll may be modified from several sources including: magic, equipment and aspects.
 
-An attack is considered successful if the target's defense is less than or equal to the attacker's roll. This means that if both attacker and defender roll a total of 15, the attack is successful. If successful, the attack lands and its associated effects (including damage) then apply.
+An attack is considered successful if the target's defense is less than or equal to the attacker's roll. This means that if both attacker and defender roll a total of 15, the attack is successful. If successful, the attack lands and its associated effects (including damage) then apply. If the defender can not defend themselves either by their will or by some other mechanic such as a desire to conserve action points, then the attack is considered successful automatically.
 
-Successful or not, all attacks require a action point cost of at least 1 to initiate.
+Many attack aspects will require a roll despite the defender's lack of defense. Aspects such as these might include magic where the caster's success is determined by their attack roll. For example, a fire spell aspect may have a difficulty of 10. If the defender is unable to defend but the caster rolls a 9, then the spell fails and the defender is unaffected.
 
 
 #### Defending
@@ -224,8 +224,6 @@ Characters, unless otherwise affected, may defend themselves when being attacked
 All defenses begin with a d20 roll from the defender. This action represents the character attempting to dodge, parry, block, or otherwise interrupt the incoming attack. A character may choose not to defend against an attack, in which case the attack is considered to be successful.
 
 An attack is considered defeated only if the defender's defense roll is greater than the attacker's attack roll. 
-
-Successful or not, all defenses require a action point cost of at least 1 to initiate.
 
 
 #### Damage
@@ -384,7 +382,7 @@ A grab is a standard attack that costs 1 action point.
 
 Any character that has been grabbed may be grappled. Grappling a target character requires an opposed strength check between the attacker and the target. If the attacker wins this check, the target is considered grappled.
 
-To escape a grapple a target must make an opposed strength check against the character they are grappled by. If successful, the target regains their move action and is considered free. The target is released in the same map cell and is considered squeezing with the character that was grappling them.
+To escape a grapple a target must make an opposed strength check against the character they are grappled by. If successful, the target regains their turn and is considered free. The target is released in the same map cell and is considered squeezing with the character that was grappling them.
 
 A grapple is a standard attack that costs 1 action point.
 
@@ -422,35 +420,35 @@ A character may make a special movement action that costs 1 action point called 
 
 #### Standing Vertical Jump
 
-A character may make a standing jump vertically in meters equal to their strength modifier.
+A character may make a standing jump vertically in meters equal to half their strength modifier.
 
-A standing jump requires 1 action point and may be preformed as part of an ongoing movement action. For example, a character may move their entire movement to reach an obstacle. They may then choose to attempt jump up onto the obstacle at the cost of 1 action point.
+A standing jump requires 1 action point and may be preformed as part of an ongoing movement action. For example, a character may move their entire movement to reach an obstacle. They may then choose to attempt to jump up onto the obstacle at the cost of 1 action point.
 
 The character may attempt a higher jump by performing a strength check. The strength check has a difficulty equal to the number of meters the character is attempting to jump over their standing vertical jump maximum multiplied by 10.
 
-For example, a character with a strength modifier of +2 can safely jump vertically 2 meters without making a check. If the character needs to make a standing vertical jump of 4 meters, they must successfully roll a strength check higher than 10 – 2 meters over the character’s maximum of 2 times 10.
+For example, a character with a strength modifier of +2 can safely jump vertically 1 meter without making a check. If the character needs to make a standing vertical jump of 3 meters, they must successfully roll a strength check higher than 20 – 2 meters over the character’s maximum of 1 meter times 10.
 
 
 #### Standing Forward Jump
 
-A character may make a standing jump forward in meters equal to their strength modifier.
+A character may make a standing jump forward in meters equal to half their strength modifier.
 
-A standing jump requires 1 action point and may not be performed as part of an ongoing movement action. For example, a character may move their entire movement to reach an obstacle. They may then choose to attempt to jump over the obstacle at the cost of 1 action point.
+A standing jump requires 1 action point and may be performed as part of an ongoing movement action. For example, a character may move their entire movement to reach an obstacle. They may then choose to attempt to jump over the obstacle at the cost of 1 action point.
 
 The character may attempt a longer jump by performing a strength check. The strength check has a difficulty equal to the number of meters the character is attempting to jump over their standing forward jump maximum multiplied by 5.
 
-For example, a character with a strength modifier of +2 can safely jump 2 meters without making a check. If the character needs to make a standing forward jump of 4 meters, they must successfully roll a strength check higher than 10 – 2 meters over the character’s maximum of 2 times 5.
+For example, a character with a strength modifier of +2 can safely jump 1 meters without making a check. If the character needs to make a standing forward jump of 3 meters, they must successfully roll a strength check higher than 10 – 2 meters over the character’s maximum of 1 times 5.
 
 
 #### Running Jump
 
-A character may make a running jump in meters equal to their strength modifier combined with their mobility modifier. A running jump costs 1 action point. In addition, a running jump requires 4 meters running start or 2 map cells and may be performed as part of an ongoing movement action.
+A character may make a running jump in meters equal to their strength modifier combined with their mobility modifier. A running jump costs 1 action point. In addition, a running jump requires 2 map cells of movement and may be performed as part of an ongoing movement action.
 
-For example, a character may perform a full run to reach an obstacle. They may then choose to attempt to jump over the obstacle at the cost of 1 aciton point.
+For example, a character may move to reach an obstacle. They may then choose to attempt to perform a running jump over the obstacle at the cost of 1 aciton point.
 
 The character may attempt a longer running jump by performing a mobility check. The mobility check has a difficulty equal to the number of meters they are attempting to jump over their running jump maximum multiplied by 5.
 
-For example, a character with a strength modifier of positive +2 and a mobility modifier of +2 can safely make a running jump of 4 meters without making a check. If the character needs to make a running jump of 6 meters, they must successfully roll a mobility check higher than 20 – 2 meters over the character’s maximum of 4 times 5.
+For example, a character with a strength modifier of +2 and a mobility modifier of +2 can safely make a running jump of 4 meters without making a check. If the character needs to make a running jump of 6 meters, they must successfully roll a mobility check higher than 20 – 2 meters over the character’s maximum of 4 times 5.
 
 
 #### Perception
@@ -624,9 +622,9 @@ A character that has lost more than eighty percent of their vision is rendered b
 
 #### Grappled
 
-A character that is grappled is unable to make any movement action during their turn.
+A character that is grappled is unable to take any action or aspect that requires willful control of the character's body.
 
-The grappled character may spend their standard duration action only to attempt escape. Upon escape, the character’s ability to perform movement actions is restored. The character is released in the same map cell as their attacker and is considered squeezing with them.
+The grappled character may spend an action point to attempt escape. Escape is an opposed strength check between the character and their attacker. Upon escape, the character’s ability to move freely is regained. The character is released in the same map cell as their attacker and is considered squeezing with them.
 
 
 #### Sickened
