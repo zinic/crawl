@@ -1,18 +1,37 @@
 ## Characters
 
-Characters, duh.
+Characters are made up of several features. These features are described below.
 
-Characters are made up of (x) things:
 
-* Name
-* Age
-* Gender
-* Aspects
+### Character Features
+
+#### Core Aspects
+
+All characters come with three aspects by default. These are: strength, mobility and intelligence.
+
+
+#### Basic Move
+
+All characters come with a basic move of 4 map cells. This can be modified by aspects.
+
+
+#### Health Point Pool
+
+Character damage is represented by health points. A character has a certain pool of health poitns representing just how much damage they can take.
+
+Health point pools, unmodified, start with a maximum of 6 for all characters. This is due to how the damage scales with aspect points as defined in the aspects document.
+
+
+#### Action Point Pool
+
+Character endurance and execution of combat actions are represented as action points. A character has a certain pool of action points representing just how much endurance they can expend in a short period of time (the time of one turn).
+
+Action point pools, unmodified, start with a maximum of 1 for all characters.
 
 
 ### Aspects
 
-Aspects describe parts of a character. They may include rules and modifiers that apply to the character. All aspects have an aspect point cost that must be paid when acquired. Once acquired, may aspects impart an ability that the character can utilize or an effect that triggers...
+Aspects describe parts of a character. They may include rules and modifiers that apply to the character. All aspects have an aspect point cost that must be paid when acquired. Once acquired, many aspects impart an ability that the character can utilize or an effect that triggers. These effects are all outlined in the rules of the aspect.
 
 
 #### Aspect Points
@@ -179,7 +198,7 @@ Characters may have aspects that grant additional action points under certain ci
 
 A character may choose to spend health points and convert them into an action points. This loss of health points counts as damage to the character and is treated the same.
 
-The number of health points a character can convert into action points is limited by the character's endurance aspect.
+The number of health points a character can convert into action points is limited by the character's action point pool size. You may not convert health points into more action points than a character has room in their action point pool.
 
 
 #### Using Aspects

@@ -8,12 +8,54 @@ This document contains both general guidelines for aspect point costs based on c
 Below are a list of rules to help you design aspects.
 
 
+### Granting a Check
+
+An aspect that may be used by the character often comes with a check roll to assess the character's quality of execution. Granting a check costs 3 aspect points.
+
+
+### Damage-Range Values
+
+**Format: (Damage Value) (Aspect Point Cost)**
+
+* 4 0
+* 6 1
+* 8 2
+* 10 3
+* 12 4
+* 14 5
+* 16 6
+* 18 7
+* 20 8
+* 22 9
+* 24 10
+* 26 11
+* 28 12
+* 30 13
+* 32 14
+* 34 15
+* 36 16
+* 38 17
+* 40 18
+* 42 19
+* 44 20
+* 46 21
+* 48 22
+* 50 23
+
+
+### Health Point Pool Modifiers
+
+* +2
+    * Aspect Point Cost: 2
+
+
 ### Attack Modifiers
 
 * **Extra Attack**
 
-    Allows a character to make another attack during their turn. This aspect may only be taken once.
-    * Aspect Point Cost: 5
+    Allows a character to make another attack during their turn. This should be tied either to a weapon-type or an attack aspect.
+    * Weapon-Type Aspect Point Cost: 10
+    * Specific Attack Aspect Point Cost: 5
 
 * **Opportunistic Action**
 
@@ -21,20 +63,34 @@ Below are a list of rules to help you design aspects.
     * Aspect Point Cost: 5
 
 
-### Additional DR
+### Damage Resistance Modifier
 
 **Note:** The DR may be sub-typed for free but has no effect on the aspect point cost.
 
-* **2 DR**
+* **+2 DR**
     * Aspect Point Cost: 1
-* **4 DR**
+* **+4 DR**
     * Aspect Point Cost: 2
-* **6 DR**
+* **+6 DR**
     * Aspect Point Cost: 3
-* **8 DR**
+* **+8 DR**
     * Aspect Point Cost: 4
-* **10 DR**
+* **+10 DR**
     * Aspect Point Cost: 5
+
+---
+
+* **-2 DR**
+    * Aspect Point Cost: 1
+* **-4 DR**
+    * Aspect Point Cost: 2
+* **-6 DR**
+    * Aspect Point Cost: 3
+* **-8 DR**
+    * Aspect Point Cost: 4
+* **-10 DR**
+    * Aspect Point Cost: 5
+
 
 
 ### Area Attack Types
@@ -93,7 +149,6 @@ The higher the action point cost of using an aspect, the more the feature return
 
 ---
 
-
 * **-1**
     * Aspect Point Cost: 3
 * **-2**
@@ -133,6 +188,34 @@ The higher the action point cost of using an aspect, the more the feature return
     * Aspect Point Cost: -13
 * **-5**
     * Aspect Point Cost: -21
+
+
+### Handedness
+
+Some aspects may require the use of neither, one or both hands. Currently only two situations are covered. Others may be added later.
+
+* **One-Handed**
+    * Aspect Point Cost: 0
+    
+* **Two-Handed**
+    * Aspect Point Cost: -1
+
+
+### Core Aspect Modifier Costs
+
+**Note:** This modifier must be bound to one of the three core aspects: strength, mobility or intelligence.
+
+* **+1**
+    * Aspect Point Cost: 8
+* **+2**
+    * Aspect Point Cost: 13
+
+---
+
+* **-1**
+    * Aspect Point Cost: -8
+* **-2**
+    * Aspect Point Cost: -13
     
 
 ### Damage by Aspect Point Cost
@@ -144,6 +227,7 @@ The higher the action point cost of using an aspect, the more the feature return
     * **2d4** **(8)** Aspect Point Cost: 4
     * **3d4** **(12)** Aspect Point Cost: 7
     * **4d4** **(16)** Aspect Point Cost: 10
+    * **5d4** **(20)** Aspect Point Cost: 13
     
 * **d6**
     * **1d6** **(6)** Aspect Point Cost: 2
@@ -153,9 +237,9 @@ The higher the action point cost of using an aspect, the more the feature return
 
 * **d8**
     * **1d8** **(8)** Aspect Point Cost: 3
-    * **2d8** **(16)** Aspect Point Cost: 4
-    * **3d8** **(24)** Aspect Point Cost: 6
-    * **4d8** **(32)** Aspect Point Cost: 8
+    * **2d8** **(16)** Aspect Point Cost: 8
+    * **3d8** **(24)** Aspect Point Cost: 13
+    * **4d8** **(32)** Aspect Point Cost: 18
 
 * **d12**
     * **1d12** **(12)** Aspect Point Cost: 5
@@ -164,29 +248,132 @@ The higher the action point cost of using an aspect, the more the feature return
     * **4d12** **(48)** Aspect Point Cost: 26
 
 
-### Dexterity
+### Action Pool Size Modifiers
 
-#### Filch
+* **+1** Action Point
+    * Aspect Point Cost: 8
+    
+---
 
-Grants a careful character the ability to secretly pilfer small objects from their surroundings and other characters. The object must fit in their hand easily. The character must make a filch check greater than the difficulty of the task set by the game master. If the character is being watched, all other characters with the **Keen Senses** aspect are granted a perception check. This perception check is opposed against the character's filch check.
+* **-1** Action Point
+    * Aspect Point Cost: -8
 
-This aspect **may not** be used in combat.
+
+### Strength
+
+#### Fit
+
+This aspect applies to any physically fit character.
 
 * Aspect Point Cost: 1
 * Action Point Cost: -
+
+
+#### Healthy
+
+
+#### Intense Training: Endurance
+
+This character has gone through regimented exercises to increase their overall endurance. This aspect increases the character's action point pool by 1 action point.
+
+* Aspect Point Cost: 8
+* Action Point Cost: -
+* **Requires Fit**
+
+
+#### Intense Training: Acrobatic
+
+This character has gone through regimented exercises to increase their overall mobility and fitness. This aspect grants the character a +1 modifier on all **mobility checks**. This modifer is also inherited by any aspects that inherit a character's mobility check modifier as a bonus.
+
+* Aspect Point Cost: 8
+* Action Point Cost: -
+* **Requires Fit**
+
+
+#### Intense Training: Resistance
+
+This character has gone through regimented exercises to increase their overall strength and fitness. This aspect grants the character a +1 modifier on all **strength checks**. This modifer is also inherited by any aspects that inherit a character's strength check modifier as a bonus.
+
+* Aspect Point Cost: 8
+* Action Point Cost: -
+* **Requires Fit**
+
+
+#### Adonic
+
+This character's body is a pinicale of fitness and health. This character gains a +1 modifier on all **strength checks** and **mobility checks**. This modifer is also inherited by any aspects that inherit a character's strength or mobility check modifier as a bonus.
+
+* Aspect Point Cost: 16
+* Action Point Cost: -
+* **Requires Intense Training: Acrobatic**
+* **Requires Intense Training: Resistance**
+
+
+### Dexterity
+
+#### High Manual Dexterity
+
+This aspect is often taken by characters that are considered good with their hands. This aspect alone grants no additional checks or modifiers.
+
+* Aspect Point Cost: 1
+* Action Point Cost: -
+
+
+#### Gesture
+
+Grants a dextrous character the ability to attempt to communicate with another character via gesturing. This action is not limited to just the character's hands. The action has a difficulty set by the game master based on the complexity of the ideas being communicated. Both characters are required to make gesture checks - the target does not need to have this aspect in order to make the check. This check recieves the character's **intelligence modifier** as a bonus.
+
+* Aspect Point Cost: 3
+* Action Point Cost: 1
+
+
+#### Filch
+
+Grants a careful character the ability to secretly pilfer small objects from their surroundings. The object must fit in their hand easily. The character must make a filch check greater than the difficulty of the task set by the game master. If the character is being watched, all other characters with the **Keen Senses** aspect are granted a perception check. This perception check is opposed against the character's filch check.
+
+This aspect **may not** be used in combat.
+This aspect **may not** target other characters.
+
+* Aspect Point Cost: 3
+* Action Point Cost: -
+* **Requires High Manual Dexterity**
+
+
+#### Pickpocket
+
+Grants a careful character the ability to pilfer objects from a target. The character must first make a pickpocket check. If the target is unaware of the attempt then the game master is required to select an appropriate difficulty. Upon failure, the target character becomes aware of the actions taken against them. Upon success, the target object is lifted from the target character.
+
+If the target character is already aware of the attempt then this character is granted a **mobility check** that opposes the character's pickpocket check. Note that this does not remove the check's difficulty - the character must still beat the difficulty of the filch check in addition to defeating the target character's mobility check.
+
+* Aspect Point Cost: 3
+* Action Point Cost: 1
+* **Requires Filch**
 
 
 #### Lockpicking
 
 Grants a character the knowledge necessary to disable simple lock devices. Lock devices are granted a difficulty by the game master depending on their complexity and make. The character must make a lockpicking check against this difficulty to successfully disable the lock. This check recieves the character's **mobility modifier** as a bonus.
 
-* Aspect Point Cost: 1
+This aspect **may not** be used during combat.
+
+* Aspect Point Cost: 3
+* Action Point Cost: -
+* **Requires High Manual Dexterity**
+
+
+#### Disable Device
+
+Grants a character with an understanding of small mechanical devices the ability to attempt to disable them. This covers any manner of device designed as a trap or a lock. All devices are granted a difficulty by the game master depending on their complexity and make. The character must make a disable device check against this difficulty to successfully disable the device. This check recieves the character's **lockpicking modifier** as a bonus.
+
+* Aspect Point Cost: 3
 * Action Point Cost: -
 
 
 #### Blend into Crowds
 
-Allows a street-wise character to blend into a crowd and use this action as a sealth check. The crowd must be sufficiently thick such that the game master considers blending in acceptable for stealth. This check recieves the characters **mobility modifier** as a bonus. This aspect **may not** be used during combat.
+Allows a street-wise character to blend into a crowd and use this action as a sealth attempt. The crowd must be sufficiently thick such that the game master considers blending in acceptable for stealth. The blend into crows check recieves the characters **mobility modifier** as a bonus.
+
+This aspect **may not** be used during combat.
 
 * Aspect Point Cost: 1
 * Action Point Cost: -
@@ -204,9 +391,9 @@ Allows a character to make a stealth check by walking carefully. In order to ent
 
 #### Duck and Dodge
 
-Allows a character to make a simple defense against an attack. The defense roll recieves the character's mobility modifier as a defense bonus.
+Allows a character to make a simple dodge-based defense against an incoming attack. The defense roll recieves the character's **mobility modifier** as a defense bonus.
 
-* Aspect Point Cost: 1
+* Aspect Point Cost: 3
 * Action Point Cost: 1
 
 
@@ -223,23 +410,35 @@ Allows a character to make a dive for nearby cover - once behind cover, all rule
 
 Allows a character to make a more acrobatic dodge. This defense roll is only useful for melee attacks and requires the character to not be slowed. The defense roll receives the character's mobility modifier as a defense bonus in addition to a +2 modifier from the aspect itself.
 
-* Aspect Point Cost: 2
+* Aspect Point Cost: 5
 * Action Point Cost: 2
 * **Requires Duck and Dodge**
 
 
 ### Combat
 
-#### Counter Attack <>
 
-Allows a character to make a 1 attack as an opportunistic action. This aspect may be taken multiple times up to a total of 3.
+#### Stab
+
+
+#### Slash
+
+Grants a character a melee slashing attack. This attack may be used with any slashing melee weapon and recieves the character's **mobility modifier** as a bonus.
+
+* Aspect Point Cost: 3
+* Action Point Cost: 1
+
+
+#### Counter Attack
+
+Allows a character to treat attack aspects as opportunistic actions. The attack chosen must not have an action point cost of greater than 2. The opportunistic action, once used, may not be used again until the character's next turn. This aspect may be taken multiple times, up to a maximum of 3. This allows more opportunistic actions to occur during the character's off-turn time.
 
 * Aspect Point Cost: 5
 * Action Point Cost: -
 * **Opportunistic Action**
 
 
-#### Leap Attack <>
+#### Leap Strike <>
 
 Allows a character to perform a jump action and an attack in one turn with a specified melee weapon type. This aspect must be taken multiple times for different melee weapon types. This attack grants the character a +1 modifier on attack.
 
@@ -291,14 +490,14 @@ Weapon Proficiency <One-Handed Sword>
 
 Allows a character to attack twice in one turn. This aspect must be taken for every weapon type the character wishes to use it for.
 
-* Aspect Point Cost: 2
+* Aspect Point Cost: 7
 * Action Point Cost: 2
 
 **Example**
 ```text
 Quick Attack <One-Handed Sword>
 
-* Aspect Point Cost: 2
+* Aspect Point Cost: 7
 * Action Point Cost: 2
 ```
 
@@ -343,6 +542,7 @@ When a stealthed character passes within 1 map cell of the character, as an oppo
 * Aspect Point Cost: 1
 * Action Point Cost: -
 * **Opportunistic Action**
+* **Requires Perception**
 
 
 ## Magic
