@@ -94,22 +94,25 @@ There are a number of range definitions to help easily determine distance ranges
 
 
 ##### Personal
-Personal range applies only to the character in question.
+Personal range applies only to a target or character. This means that effects targeting personal range do not affect targets considered squeezing in the same map cell.
+
+##### Close
+Close range is equal to a radius of 1 cell. This covers 1 map cell in total. This range affects the target cell only.
 
 ##### Melee
-Melee range is equal to a radius of two cells. Melee range is also dependent on character abilities and may vary from character to character.
+Melee range is equal to a radius of 2 cells. This covers 7 map cells total. Melee range is also dependent on character abilities and may vary from character to character.
 
 ##### Short
-Short range is equal to a radius of seven cells or a total of 14 meters.
+Short range is equal to a radius of 7 cells or a total of 14 meters.
 
 ##### Medium
-Medium range is equal to a radius of fifteen cells or a total of 30 meters.
+Medium range is equal to a radius of 15 cells or a total of 30 meters.
 
 ##### Long
-Long range is equal to a radius of thirty cells or a total of 60 meters.
+Long range is equal to a radius of 30 cells or a total of 60 meters.
 
 ##### Extreme
-Extreme range is equal to a radius of sixty cells or a total of 120 meters.
+Extreme range is equal to a radius of 60 cells or a total of 120 meters.
 
 
 #### Area Effects
@@ -230,9 +233,10 @@ An attack is considered defeated only if the defender's defense roll is greater 
 
 Characters may take damage over time during the game. Damage types are listed below.
 
-* Heat
-* Cryo
-* Kinetic
+* Fire
+* Force
+* Electric
+* Cold
 
 
 #### Armor
