@@ -504,9 +504,12 @@ Unless otherwise stated by the aspect, only attacks and defenses will reveal a c
 
 #### Health Points
 
-All characters have a health point value that represents the amount of damage they may sustain before dying. A character’s body may receive damage equal to the character’s total health point value before being considered destroyed.
+All characters have a health point value that represents the amount of damage they may sustain before dying. A character is considered unconscious at 0 health points. A  character is considered dead when they recieve damage equal to twice their health point pool.
 
-A character’s body that has been destroyed may not be revived.
+For example:
+    A character with 50 HP is unconscious at 0 HP and dead at -50 HP.
+
+A character’s body may be destroyed once the character is dead as a matter of action - there is no fruther damage needed. Once a character's body has been destroyed, they may not be revived.
 
 
 #### Healing
