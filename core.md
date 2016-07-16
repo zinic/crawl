@@ -471,7 +471,7 @@ For example, a character may move to reach an obstacle. They may then choose to 
 
 The character may attempt a longer running jump by performing a mobility check. The mobility check has a difficulty equal to the number of meters they are attempting to jump over their running jump maximum multiplied by 5.
 
-For example, a character with a strength modifier of +2 and a mobility modifier of +2 can safely make a running jump of 4 meters without making a check. If the character needs to make a running jump of 6 meters, they must successfully roll a mobility check higher than 20 – 2 meters over the character’s maximum of 4 times 5.
+For example, a character with a strength modifier of +2 and a mobility modifier of +2 can safely make a running jump of 4 meters without making a check. If the character needs to make a running jump of 6 meters, they must successfully roll a mobility check higher than 10 – 2 meters over the character’s maximum of 4 times 5.
 
 
 #### Perception
