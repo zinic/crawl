@@ -528,7 +528,7 @@ Demeanor is effective in determining how one character views another and how swa
 
 #### Persuasion
 
-Persuasion of characters may be attempted by performing a persuasion skill check. Persuasion is modified by a character’s presence – a feature that embodies the attention and perhaps command the character carries over others through their charismatic features. These features may include physical beauty, a silk tongue as well as many others.
+Persuasion of characters may be attempted by performing a persuasion skill check. Persuasion is modified by a character’s demeanor – a feature that embodies the attention and perhaps command the character carries over others through their charismatic features. These features may include physical beauty, a silk tongue as well as many others.
 
 When persuading a target, whether it be for diplomacy or to haggle, the character makes a presence check to represent their overall position and impact to the targets demeanor. The target makes an opposed intuition check.
 
