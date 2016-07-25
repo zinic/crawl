@@ -248,14 +248,42 @@ All defenses begin with a d20 roll from the defender. This action represents the
 An attack is considered defeated only if the defender's defense roll is greater than the attacker's attack roll. 
 
 
+#### Critical Hits
+
+Rolling a 20 on a d20 attack roll is considered a **critical hit**. If the defender has a defense they can utilize, they may attempt to defend against the critical hit but at a **-10** modifier to their roll. Upon successful hit, the attacker must roll a d20 against the table below to determine the result.
+
+
+| Roll Range | Result |
+| ---------- | ------ |
+| 1 | Wound to Vital Organs - x2 Damage |
+| 2 - 4 | Left Leg Incapacitated |
+| 5 - 7 | Right Leg Incapacitated |
+| 8 - 10 | Right Arm Incapacitated |
+| 11 - 13 | Left Arm Incapacitated |
+| 14 - 16 | Bleeding Torso Wound |
+| 17 - 19 | Face Strike - Damaged Senses for 1d6 Turns |
+| 20 | Bleeding Neck Wound - x2 Damage |
+
+
+#### Critical Skill Success
+
+Rolling a 20 on a d20 skill check is considered a **critical success**. The results of a critical success on a skill check is determined by the game master.
+
+
+#### Critical Success Range Modifiers
+
+The range for critical success on any check including attack rolls, may be modified by aspects. However, no one check may have a critical range modifier of greater than **+5**.
+
+
 #### Damage
 
 Characters may take damage over time during the game. Damage types are listed below.
 
 * Fire
-* Force
+* Kinetic
 * Electric
 * Cold
+* Meta
 
 
 #### Armor

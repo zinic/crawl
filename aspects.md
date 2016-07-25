@@ -8,9 +8,9 @@ This document contains both general guidelines for aspect point costs based on c
 Below are a list of rules to help you design aspects.
 
 
-### Granting a Check
+### Granting a Skill Check
 
-An aspect that may be used by the character often comes with a check roll to assess the character's quality of execution. Granting a check costs 3 aspect points.
+An aspect that may be used by the character often comes with a skill check roll to assess the character's quality of execution. Granting a skill check costs 3 aspect points.
 
 
 ### Damage-Range Values
@@ -49,6 +49,39 @@ An aspect that may be used by the character often comes with a check roll to ass
     * Aspect Point Cost: 2
 
 
+### Character Size Modifier
+
+By default all characters are treated as a 1.7 meter (~5 1/2 feet) tall humanoid. Deviations from this may be added to an aspect to modify a character's overall size. Object sizes must source their relative costs from this modifier.
+
+* Size -4
+    * Macroscopic or Insect
+    * Aspect Point Cost: 25
+* Size -3
+    * 0.0 meters - 0.3 meters
+    * Aspect Point Cost: 15
+* Size -2
+    * 0.3 meters - 1.0 meters
+    * Aspect Point Cost: 10
+* Size -1
+    * 1.0 meters - 1.5 meters
+    * Aspect Point Cost: 5
+* Size 0
+    * 1.5 meters - 2.0 meters
+    * Aspect Point Cost: 0
+* Size 1
+    * 2.0 - 2.5 meters
+    * Aspect Point Cost: 5
+* Size 2
+    * 2.5 meters - 3.5 meters
+    * Aspect Point Cost: 10    
+* Size 3
+    * 3.5 meters - 5.0 meters
+    * Aspect Point Cost: 15
+* Size 4
+    * Gargantuan or Dinosaur
+    * Aspect Point Cost: 25
+
+
 ### Attack Modifiers
 
 * **Extra Attack**
@@ -65,7 +98,7 @@ An aspect that may be used by the character often comes with a check roll to ass
 
 ### Damage Resistance Modifier
 
-**Note:** The DR may be sub-typed for free but has no effect on the aspect point cost.
+**Note:** The DR must be for a specific damage type. For example, an item may grant +10 DR for kinetic damage and +4 DR for fire damage.
 
 * **+2 DR**
     * Aspect Point Cost: 1
@@ -92,6 +125,19 @@ An aspect that may be used by the character often comes with a check roll to ass
     * Aspect Point Cost: 5
 
 
+### Critical Success Modifier
+
+* **+1 Crit Range**
+    * Aspect Point Cost: 5
+* **+2 Crit Range**
+    * Aspect Point Cost: 10
+* **+3 Crit Range**
+    * Aspect Point Cost: 15
+* **+4 Crit Range**
+    * Aspect Point Cost: 20
+* **+5 Crit Range**
+    * Aspect Point Cost: 25
+    
 
 ### Area Attack Types
 
@@ -310,6 +356,14 @@ This character's body is a pinicale of fitness and health. This character gains 
 
 
 ### Dexterity
+
+#### Martial Artist
+
+This aspect grants a character expert martial arts knowledge. Because of this intense training, the character has acquired a unique understanding of how to strike at an opponent's weak points. This translates to a +1 modifier for the character's critical range but **only for melee attacks**.
+
+* Aspect Point Cost: 5
+* Action Point Cost: -
+
 
 #### High Manual Dexterity
 
@@ -557,7 +611,7 @@ Magic effects can be nullified by certain spells and aspects. Any spell targeted
 Magical energy can be tuned to different types. These can be utilized to overcome resistances or exploit magical weakness.
 
 * Fire
-* Force
+* Kinetic
 * Electric
 * Cold
 * Meta

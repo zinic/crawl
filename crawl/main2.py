@@ -4,127 +4,138 @@ import xml.etree.ElementTree as etree
 import crawl.html as html
 
 
-S_START = 'start'
-S_DOCUMENT = 'document'
-S_SECTION = 'section'
+# Costs start at 4 and go up from there by 2
+def damage_value_cost(dmg):
+    return (dmg - 4) / 2
 
 
-class Handler(object):
+# cost = number of dice + damage value cost
+def damage_cost(value):
+    num_st, die_st = value.split('d')
+
+    num = int(num_st)
+    die = int(die_st)
+
+    damage_value = num * die
+    return num + damage_value_cost(damage_value)
+
+
+def damage_resistance_cost(value):
+    return 100
+
+
+class DescriptorManager(object):
 
     def __init__(self):
-        self._doc = Document()
-        self._work_stack = list()
+        self.definitions = dict()
 
-    def handle(self, tree):
-        element = tree.getroot()
+    def add_descdef(self, descdef_xml):
+        moddef_name = descdef_xml.attrib['name']
+        moddef = ModifierDefinition(moddef_name)
 
-        if element.tag == 'document':
-            self.in_document(element)
+        if 'formula' in descdef_xml.attrib:
+            moddef.formula = descdef_xml.attrib['formula']
+
+        elif 'cost' in descdef_xml.attrib:
+            moddef.cost = int(descdef_xml.attrib['cost'])
 
         else:
-            raise Exception('Expected document tag at top-level.')
+            for entry_xml in descdef_xml:
+                if entry_xml.tag != 'feature':
+                    raise Exception('Unexpected element {}'.format(entry_xml.tag))
 
-    def in_document(self, element):
-        for c in element:
-            if c.tag == 'title':
-                self._doc.title = Text(c)
+                moddef.add_entry(entry_xml)
 
-            elif c.tag == 'date':
-                self._doc.date = datetime.datetime.now()
+        self.definitions[moddef_name] = moddef
 
-            elif c.tag == 'section':
-                self._doc.add_section(self.in_section(c))
+    def get_feature(self, mod_name, feature_name):
+        moddef = self.definitions[mod_name]
 
-    def in_section(self, element):
-        section = Section()
+        if len(moddef.entries) > 0:
+            return int(moddef.entries[feature_name])
 
-        for c in element:
-            if c.tag == 'title':
-                section.title = Text(c)
+        if moddef.formula != None:
+            return globals()[moddef.formula](feature_name)
 
-            elif c.tag == 'content':
-                section.content = Content(c)
-
-            elif c.tag == 'section':
-                section.add_section(self.in_section(c))
-
-        return section
+        else:
+            return moddef.cost
 
 
-class Document(object):
+class ModifierDefinition(object):
 
-    def __init__(self):
-        self.title = None
-        self.date = None
-        self.sections = list()
+    def __init__(self, name):
+        self.name = name
+        self.entries = dict()
 
-    def add_section(self, section):
-        self.sections.append(section)
+        self.formula = None
+        self.cost = 0
 
-    def to_html(self):
-        doc = html.html(
-            html.head(
-                html.title(self.title)))
-
-        body = doc.add(html.body(
-            html.div(
-                html.span(self.date))))
-
-        work_stack = [s for s in self.sections]
-        while len(work_stack) > 0:
-            section = work_stack.pop()
-            section_div = body.add(html.div())
-
-            section_div.add(html.span(
-                section.title))
-
-            section_div.add(html.p(
-                section.content))
-
-            for c in reversed(section.sections):
-                work_stack.insert(0, c)
-
-        return doc
+    def add_entry(self, entry_xml):
+        feature_name = entry_xml.attrib['name']
+        self.entries[feature_name] = entry_xml.attrib['cost']
 
 
-class Section(object):
+class ItemDescriptor(object):
 
-    def __init__(self):
-        self.title = None
-        self.content = None
-        self.sections = list()
-
-    def add_section(self, section):
-        self.sections.append(section)
+    def __init__(self, name, feature, feature_type):
+        self.name = name
+        self.feature = feature
+        self.feature_type = feature_type
 
 
-class TextObject(object):
+class Item(object):
 
-    def __init__(self, text=''):
-        self.text = text
+    def __init__(self, name, item_type):
+        self.name = name
+        self.type = item_type
+        self.descriptors = list()
 
-    def __repr__(self):
-        return str(self)
+    def add_feature(self, feature_xml):
+        self.descriptors.append(ItemDescriptor(
+            feature_xml.attrib['descriptor'],
+            feature_xml.attrib['value'],
+            feature_xml.attrib.get('type')))
 
-    def __str__(self):
-        return self.text
+    def cost(self, descriptor_manager):
+        cost = 0
+        for descriptor in self.descriptors:
+            cost += descriptor_manager.get_feature(
+                descriptor.name, descriptor.feature)
 
-
-class Text(TextObject):
-
-    def __init__(self, element):
-        super(Text, self).__init__(' '.join(element.itertext()))
-
-
-class Content(TextObject):
-
-    def __init__(self, element):
-        super(Content, self).__init__(' '.join(element.itertext()))
+        return cost
 
 
-tree = etree.parse('core.xml')
-handler = Handler()
-handler.handle(tree)
+#
+eq_tree = etree.parse('equipment.xml')
+root = eq_tree.getroot()
 
-print(handler._doc.to_html())
-#print(ht)
+if root.tag != 'document':
+    raise Exception('Expected document tag at top-level.')
+
+
+descriptors = DescriptorManager()
+
+for element in root:
+    if element.tag == 'descriptors':
+        for descdef_xml in element:
+            descriptors.add_descdef(descdef_xml)
+
+        break
+
+for element in root:
+    if element.tag == 'descriptors':
+        continue
+
+    elif element.tag == 'items':
+        for item_xml in element:
+            item = Item(
+                item_xml.attrib['name'],
+                item_xml.attrib['type'])
+
+            for feature_xml in item_xml:
+                item.add_feature(feature_xml)
+
+            print('Item {} costs {} AP.'.format(item.name, item.cost(descriptors)))
+        
+    else:
+        raise Exception('Unexpected element: {}'.format(element.tag))
