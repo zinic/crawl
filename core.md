@@ -112,6 +112,8 @@ Each cell on a map represents **2 meters**.
 There are a number of range definitions to help easily determine distance ranges on a map. All ranges assume that the starting cell is the point of origin, not the cell’s edge. This means that the cell your character is standing in is equivalent to a range of one.
 
 
+#### Range Classes
+
 ##### Personal
 Personal range applies only to a target or character. This means that effects targeting personal range do not affect targets considered squeezing in the same map cell.
 
@@ -132,6 +134,21 @@ Long range is equal to a radius of 30 cells or a total of 60 meters.
 
 ##### Extreme
 Extreme range is equal to a radius of 60 cells or a total of 120 meters.
+
+
+#### Range Penalty
+
+Using an aspect on a target outside of it's range incurs a negative to the skill check associated with the aspect - attack or otherwise. This negative is equal to the number of range classes the target is beyond the aspect's range.
+
+Any target beyond extreme range may have a negative modifier assigned to it at the game master's discretion.
+
+##### Examples
+
+A character targeting an enemy at medium range with an attack that's only effective at short range gives the character a -1 modifier to their attack.
+
+A character targeting an enemy at extreme range with an attack that's only effective at short range gives the character a -3 modifier to their attack.
+
+A character targeting an enemy far beyond extreme range with an attack that's only effective at short range may be given a -5 modifier by the game master.
 
 
 #### Area Effects

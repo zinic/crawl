@@ -1,0 +1,655 @@
+<document>
+    <descriptors>
+        <descriptor name="Attack Method">
+            <feature name="Slashing" cost="0" />
+            <feature name="Thrusting" cost="0" />
+        </descriptor>
+        
+        <descriptor name="Handedness">
+            <feature name="One-Handed" cost="0" />
+            <feature name="Two-Handed" cost="1" />
+        </descriptor>
+        
+        <descriptor name="Area Effect">
+            <feature name="Line" cost="3" />
+            <feature name="Cone" cost="5" />
+            <feature name="Dome" cost="7" />
+        </descriptor>
+        
+        <descriptor name="Size">
+            <feature name="-4" cost="25"/>
+            <feature name="-3" cost="15" />
+            <feature name="-2" cost="10" />
+            <feature name="-1" cost="5" />
+            <feature name="0" cost="0" />
+            <feature name="1" cost="5" />
+            <feature name="2" cost="10" />
+            <feature name="3" cost="15" />
+            <feature name="4" cost="25" />
+        </descriptor>
+        
+        <descriptor name="Magic" cost="0" />
+        
+        <descriptor name="Opportunistic Action" cost="5" />
+        
+        <descriptor name="Skill Check" cost="3" />
+        
+        <descriptor name="Range">
+            <feature name="Personal" cost="0" />
+            <feature name="Melee" cost="1" />
+            <feature name="Short" cost="2" />
+            <feature name="Medium" cost="3" />
+            <feature name="Long" cost="4" />
+            <feature name="Extreme" cost="5" />
+        </descriptor>
+        
+        <descriptor name="Damage Type">
+            <feature name="Kinetic" cost="1" />
+            <feature name="Cold" cost="1" />
+            <feature name="Fire" cost="1" />
+            <feature name="Electric" cost="1" />
+            <feature name="Meta" cost="1" />
+        </descriptor>
+        
+        <descriptor name="Skill Check Modifier">
+            <feature name="+1" cost="3" />
+            <feature name="+2" cost="5" />
+            <feature name="+3" cost="8" />
+            <feature name="+4" cost="13" />
+            <feature name="+5" cost="21" />
+            <feature name="-1" cost="-2" />
+            <feature name="-2" cost="-3" />
+            <feature name="-3" cost="-5" />
+            <feature name="-4" cost="-8" />
+            <feature name="-5" cost="-13" />
+        </descriptor>
+        
+        <descriptor name="Core Aspect Modifier">
+            <feature name="+1" cost="8" />
+            <feature name="+2" cost="13" />
+            <feature name="-1" cost="-8" />
+            <feature name="-2" cost="-13" />
+        </descriptor>
+        
+        <descriptor name="Crit Success Modifier">
+            <feature name="+1" cost="5" />
+            <feature name="+2" cost="10" />
+            <feature name="+3" cost="15" />
+            <feature name="+4" cost="20" />
+            <feature name="+5" cost="25" />
+        </descriptor>
+        
+        <descriptor name="Action Point Cost">
+            <feature name="1" cost="-1" />
+            <feature name="2" cost="-2" />
+            <feature name="3" cost="-3" />
+            <feature name="4" cost="-5" />
+            <feature name="5" cost="-8" />
+            
+            <feature name="-1" cost="3" />
+            <feature name="-2" cost="5" />
+            <feature name="-3" cost="8" />
+            <feature name="-4" cost="13" />
+            <feature name="-5" cost="21" />
+        </descriptor>
+        
+        <descriptor name="Action Pool Modifier">
+            <feature name="+1" cost="8" />
+            <feature name="-1" cost="-8" />
+        </descriptor>
+        
+        <descriptor name="Damage Resistance">
+            <feature name="+2 DR" cost="1" />
+            <feature name="+4 DR" cost="2" />
+            <feature name="+6 DR" cost="3" />
+            <feature name="+8 DR" cost="4" />
+            <feature name="+10 DR" cost="5" />
+            
+            <feature name="-2 DR" cost="-1" />
+            <feature name="-4 DR" cost="-2" />
+            <feature name="-6 DR" cost="-3" />
+            <feature name="-8 DR" cost="-4" />
+            <feature name="-10 DR" cost="-5" />
+        </descriptor>
+        
+        <descriptor name="Extra Target">
+            <feature name="+1" cost="5" />
+            <feature name="+2" cost="8" />
+            <feature name="+3" cost="13" />
+            <feature name="+4" cost="21" />
+        </descriptor>
+        
+        <descriptor name="Damage" formula="damage_cost" />
+        
+        <descriptor name="Damage Healed" formula="damage_cost" />
+    </descriptors>
+    
+    <items>
+        <item name="Chestplate" type="armor">
+            <feature descriptor="Damage Resistance" value="+6 DR" type="kinetic" />
+        </item>
+        
+        <item name="Knife" type="weapon">
+            <feature descriptor="Attack Method" value="Slashing" />
+            <feature descriptor="Handedness" value="One-Handed" />
+            <feature descriptor="Range" value="Melee" />
+            <feature descriptor="Damage" value="1d4" />
+            <feature descriptor="Damage Type" value="Kinetic" />
+        </item>
+
+        <item name="Dagger" type="weapon">
+            <feature descriptor="Attack Method" value="Thrusting" />
+            <feature descriptor="Handedness" value="One-Handed" />
+            <feature descriptor="Range" value="Melee" />
+            <feature descriptor="Damage" value="1d4" />
+            <feature descriptor="Damage Type" value="Kinetic" />
+        </item>
+    </items>
+    
+    <aspects>
+        <aspect name="Frantic Defense">
+             <feature descriptor="Skill Check">
+                <detail type="base_difficulty" value="10" />
+                <detail type="inherits_from" value="Mobility" />
+            </feature>
+            
+            <requires name="Fit" />
+            
+            <text>
+                Allows a character to make a simple dodge-based defense against an incoming attack. The defense roll recieves the character's **mobility modifier** as a defense bonus.
+            </text>           
+        </aspect>
+        
+        <aspect name="Duck and Dodge">
+            <feature descriptor="Skill Check">
+                <detail type="inherits_from" value="Mobility" />
+            </feature>
+            
+            <feature descriptor="Action Point Cost" value="1" />
+            
+            <text>
+                Allows a character to make a simple dodge-based defense against an incoming attack. The defense roll recieves the character's **mobility modifier** as a defense bonus.
+            </text>
+        </aspect>
+        
+        <aspect name="Dive for Cover">
+            <feature descriptor="Skill Check">
+                <detail type="inherits_from" value="Standing Forward Jump" />
+            </feature>
+            
+            <feature descriptor="Action Point Cost" value="2" />
+            <requires name="Duck and Dodge" />
+            
+            <text>
+                Allows a character to make a dive for nearby cover - once behind cover, all rules for cover now apply. The cover must be within the character's **Standing Forward Jump** range. All normal rules for making a standing forward jump apply to this check. Failing this check renders the character **prone**.
+            </text>
+        </aspect>
+        
+        <aspect name="Pivot and Roll">
+            <feature descriptor="Skill Check">
+                <detail type="limit" value="Unusuable when Slowed" />
+                <detail type="inherits_from" value="Mobility" />
+            </feature>
+            
+            <feature descriptor="Skill Check Modifier" value="+2">
+                <detail type="targets" value="Pivot and Roll" />
+            </feature>
+            
+            <feature descriptor="Action Point Cost" value="2" />
+            <requires name="Duck and Dodge" />
+            <requires name="Fit" />
+            
+            <text>
+                Allows a character to make a more acrobatic dodge. This defense roll requires the character to not be slowed. The defense roll receives the character's mobility modifier as a defense bonus in addition to a +2 modifier from the aspect itself.
+            </text>
+        </aspect>
+        
+        <aspect name="Fit">
+            <text>
+                This aspect applies to any physically fit character.
+            </text>
+        </aspect>
+
+        <aspect name="Intense Training: Endurance">
+            <feature descriptor="Action Pool Modifier" value="+1" />
+            
+            <requires name="Fit" />
+            
+            <text>
+                This character has gone through regimented exercises to increase their overall endurance.
+            </text>
+        </aspect>
+        
+        <aspect name="Intense Training: Acrobatic">
+            <feature descriptor="Core Aspect Modifier" value="+1">
+                <detail type="targets" value="Mobility" />
+            </feature>
+            
+            <requires name="Fit" />
+            
+            <text>
+                This character has gone through regimented exercises to increase their overall mobility and fitness.
+            </text>
+        </aspect>
+        
+        <aspect name="Intense Training: Resistance">
+            <feature descriptor="Core Aspect Modifier" value="+1">
+                <detail type="targets" value="Mobility" />
+            </feature>
+            
+            <requires name="Fit" />
+            
+            <text>
+                This character has gone through regimented exercises to increase their overall strength and fitness.
+            </text>
+        </aspect>
+        
+        <aspect name="Martial Artist">
+            <feature descriptor="Crit Success Modifier" value="+1">
+                <detail type="limit" value="Melee" />
+            </feature>
+            
+            <text>
+                This aspect grants a character expert martial arts knowledge. Because of this intense training, the character has acquired a unique understanding of how to strike at an opponent's weak points.
+            </text>
+        </aspect>
+        
+        <aspect name="High Manual Dexterity">
+            <text>
+                This aspect is often taken by characters that are considered good with their hands. This aspect alone grants no additional checks or modifiers.
+            </text>
+        </aspect>
+
+        <aspect name="Gesture">
+            <feature descriptor="Skill Check">
+                <detail type="inherits_from" value="Intelligence" />
+            </feature>
+            
+            <feature descriptor="Action Point Cost" value="1" />
+            
+            <text>
+                Grants a dextrous character the ability to attempt to communicate with another character via gesturing. This action is not limited to just the character's hands. The action has a difficulty set by the game master based on the complexity of the ideas being communicated. Both characters are required to make gesture checks - the target does not need to have this aspect in order to make the check.
+            </text>
+        </aspect>
+        
+        <aspect name="Filch">
+            <feature descriptor="Skill Check">
+                <detail type="limit" value="Non-Combat Only" />
+                <detail type="limit" value="No Character Targets" />
+                
+                <detail type="inherits_from" value="Mobility" />
+            </feature>
+            
+            <requires name="High Manual Dexterity" />
+            
+            <text>
+                Grants a careful character the ability to secretly pilfer small objects from their surroundings. The object must fit in their hand easily. The character must make a filch check greater than the difficulty of the task set by the game master. If the character is being watched, all other characters with the **Keen Senses** aspect are granted a perception check. This perception check is opposed against the character's filch check.
+            </text>
+        </aspect>
+        
+        <aspect name="Pickpocket">
+            <feature descriptor="Skill Check">
+                <detail type="inherits_from" value="Mobility" />
+            </feature>
+            
+            <feature descriptor="Action Point Cost" value="1" />
+            
+            <requires name="Filch" />
+            
+            <text>
+                Grants a careful character the ability to pilfer objects from a target. The character must first make a pickpocket check. If the target is unaware of the attempt then the game master is required to select an appropriate difficulty. Upon failure, the target character becomes aware of the actions taken against them. Upon success, the target object is lifted from the target character.
+
+                If the target character is already aware of the attempt then this character is granted a **mobility check** that opposes the character's pickpocket check. Note that this does not remove the check's difficulty - the character must still beat the difficulty of the filch check in addition to defeating the target character's mobility check.
+            </text>
+        </aspect>
+        
+        <aspect name="Lockpicking">
+            <feature descriptor="Skill Check">
+                <detail type="limit" value="Non-Combat Only" />
+                
+                <detail type="inherits_from" value="Mobility" />
+            </feature>
+            
+            <requires name="High Manual Dexterity" />
+            
+            <text>
+                Grants a character the knowledge necessary to disable simple lock devices. Lock devices are granted a difficulty by the game master depending on their complexity and make. The character must make a lockpicking check against this difficulty to successfully disable the lock. This check recieves the character's **mobility modifier** as a bonus.
+            </text>
+        </aspect>
+               
+        <aspect name="Field Aid">
+            <feature descriptor="Skill Check" />
+            <feature descriptor="Damage Healed" value="1d6" />
+            <feature descriptor="Action Point Cost" value="2" />
+            
+            <requires name="Medicine" />
+            
+            <text>
+                Allows a character to perform healing on the battlefield via simple medical procedures. Any visible damage to the target may be healed by this check. Internal damage requires a different check. Any character healed by this aspect may not be healed by it again for 12 hours.
+
+                A successful Field Aid staunches bleeding and may heal 1d6 health points of damage.
+            </text>
+        </aspect>
+        
+        <aspect name="Medicine">
+            <feature descriptor="Skill Check">
+                <detail type="limit" value="Non-Combat Only" />
+            </feature>
+            <feature descriptor="Damage Healed" value="1d6" />
+            
+            <text>
+                Allows a character to make a medicine check. This check has use in diagnosing and healing others. A successful medicine check may heal 1d6 health points. This takes the character 10 minutes. Any character healed by this aspect may not be healed by it again for 12 hours.
+
+                When diagnosing, the game master chooses a suitable difficulty for the complications the target is suffering. If the medicine check passes, the character is enlightened as to the cause of the complications.
+            </text>
+        </aspect>
+        
+        <aspect name="Perception">
+            <feature descriptor="Skill Check" />
+            <feature descriptor="Action Point Cost" value="1" />
+            
+            <text>
+                Allows a character to make a perception check.
+
+                Take a look at your surroundings to attempt to find out interesting information. There is no base difficulty listed here - the game master is responsible for providing resonable difficulties based on the surroundings in the setting and the target of observation.
+            </text>
+        </aspect>
+        
+        <aspect name="Keen Senses">
+            <feature descriptor="Opportunistic Action" />
+            <requires name="Perception" />
+            
+            <text>
+                When a stealthed target character passes within 1 map cell of the character, as an opportunistic action, the character may make a perception check to oppose the target's stealth.
+            </text>
+        </aspect>
+        
+        <aspect name="Disable Device">
+            <feature descriptor="Skill Check">
+                <detail type="limit" value="Non-Combat Only" />
+                <detail type="inherits_from" value="Lockpicking" />
+            </feature>
+            
+            <requires name="Lockpicking" />
+
+            <text>
+                Grants a character with an understanding of small mechanical devices the ability to attempt to disable them. This covers any manner of device designed as a trap or a lock. All devices are granted a difficulty by the game master depending on their complexity and make. The character must make a disable device check against this difficulty to successfully disable the device.
+            </text>
+        </aspect>
+        
+        <aspect name="Blend into Crowds">
+            <feature descriptor="Skill Check">
+                <detail type="limit" value="Non-Combat Only" />
+                <detail type="inherits_from" value="Mobility" />
+            </feature>
+            
+            <text>
+                Allows a street-wise character to blend into a crowd and use this action as a sealth attempt. The crowd must be sufficiently thick such that the game master considers blending in acceptable for stealth.
+            </text>
+        </aspect>
+        
+        <aspect name="Quiet Steps">
+            <feature descriptor="Skill Check">
+                <detail type="inherits_from" value="Mobility" />
+            </feature>
+            <feature descriptor="Action Point Cost" value="1" />
+            
+            <text>
+                Allows a character to make a stealth check by walking carefully. In order to enter stealth, the character must not be visible by any enemies. While using this aspect, a character must move at **half their move speed**.
+            </text>
+        </aspect>
+        
+        <aspect name="Weapon Proficiency">
+            <feature descriptor="Skill Check Modifier" value="+1">
+                <detail type="targets" value="Bound Weapon Type" />
+            </feature>
+            
+            <text>
+                Allows a character to attack more effectively with their weapon of choice. This aspect grants the character a +1 modifier on all attack rolls made with their weapon of choice. This aspect must be taken for every weapon type the character wishes to use.
+            </text>
+        </aspect>
+
+        <aspect name="Stab">
+            <feature descriptor="Skill Check">
+                <detail type="base_difficulty" value="5" />
+                <detail type="limit" value="Thrusting Weapons" />
+            </feature>
+            
+            <feature descriptor="Action Point Cost" value="1" />
+
+            <requires name="Fit" />
+            
+            <text>
+                Grants a character a melee stabbing attack. This attack may be used with any thrusting melee weapon.
+            </text>
+        </aspect>
+
+        <aspect name="Slash">
+            <feature descriptor="Skill Check">
+                <detail type="base_difficulty" value="5" />
+                <detail type="limit" value="Slashing Weapons" />
+            </feature>
+            
+            <feature descriptor="Action Point Cost" value="1" />
+
+            <requires name="Fit" />
+            
+            <text>
+                Grants a character a melee slashing attack. This attack may be used with any slashing melee weapon.
+            </text>
+        </aspect>
+        
+        <aspect name="Counter Slash">
+            <feature descriptor="Action Point Cost" value="1" />
+            <feature descriptor="Opportunistic Action" />
+            
+            <requires name="Slash" />
+            
+            <text>
+                Allows a to make a slashing attack as an opportunistic action.
+            </text>
+        </aspect>
+        
+        <aspect name="Counter Stab">
+            <feature descriptor="Action Point Cost" value="1" />
+            <feature descriptor="Opportunistic Action" />
+            
+            <requires name="Stab" />
+            
+            <text>
+                Allows a to make a stabbing attack as an opportunistic action.
+            </text>
+        </aspect>
+        
+        <aspect name="Leaping Strike">
+            <feature descriptor="Skill Check">
+                <detail type="base_difficulty" value="5" />
+            </feature>
+            
+            <feature descriptor="Skill Check Modifier" value="+1">
+                <detail type="targets" value="Leaping Strike" />
+            </feature>
+            
+            <feature descriptor="Action Point Cost" value="1" />
+
+            <requires name="Fit" />
+
+            <text>
+                Allows a character to perform a jump action and an attack in one turn with a specified melee weapon type. The roll for this attack is treated as the character's Jump check as well. This attack grants a **+1 modifier** to the attack roll.
+            </text>
+        </aspect>
+        
+        <aspect name="Great Slash">
+            <feature descriptor="Skill Check">
+                <detail type="base_difficulty" value="5" />
+            </feature>
+            
+            <feature descriptor="Skill Check Modifier" value="-2">
+                <detail type="targets" value="Great Slash" />
+            </feature>
+            
+            <feature descriptor="Extra Target" value="+1" />
+            <feature descriptor="Action Point Cost" value="2" />
+
+            <requires name="Fit" />
+            
+            <text>
+                Allows a character to attack 2 enemies standing side-by-side. The enemies must be in adjacent map cells. The attacker makes a single attack roll that both targets may then roll against. This attack incurs a **-2 modifier** to the attack roll.
+            </text>
+        </aspect>
+        
+        <aspect name="Magical Energy Affinity">
+            <feature descriptor="Skill Check Modifier" value="+1">
+                <detail type="targets" value="All Magic of Chosen Energy Type" />
+            </feature>
+            
+            <text>
+                Increases a character's natural talent in magic for a given energy type. This aspect must be taken multiple times for multiple energy types.
+            </text>
+        </aspect>
+        
+        <aspect name="Quell">
+            <feature descriptor="Skill Check">
+                <detail type="base_difficulty" value="5" />
+                <detail type="inherits_from" value="Intelligence" />
+                <detail type="limit" value="Caster Only" />
+            </feature>
+            
+            <feature descriptor="Damage Resistance" value="+2 DR">
+                <detail type="targets" value="Kinetic" />
+            </feature>
+            
+            <feature descriptor="Magic">
+                <detail type="energy_type" value="Force" />
+            </feature>
+            
+            <feature descriptor="Range" value="Personal" />
+            
+            <text>
+                The character conjures a simple kinetic shield that covers their entire body. This shield has a **DR of 2**. The shield lasts for 10 minutes or until an attack lands and the shield absorbs damage.
+                
+                This spell may target *only the caster* and no one else.
+            </text>
+        </aspect>
+        
+        <aspect name="Foil">
+            <feature descriptor="Skill Check">
+                <detail type="base_difficulty" value="5" />
+                <detail type="inherits_from" value="Intelligence" />
+            </feature>
+            
+            <feature descriptor="Damage Resistance" value="+4 DR">
+                <detail type="targets" value="Kinetic" />
+            </feature>
+            
+            <feature descriptor="Magic">
+                <detail type="energy_type" value="Force" />
+            </feature>
+            
+            <feature descriptor="Range" value="Melee" />
+            
+            <text>
+                The character conjures a kinetic shield that covers a target's body. This shield has a **DR of 4**. The shield lasts for 10 minutes or until an attack lands and the shield absorbs damage.
+            </text>
+        </aspect>
+        
+        <aspect name="Dissev">
+            <feature descriptor="Skill Check">
+                <detail type="base_difficulty" value="5" />
+                <detail type="inherits_from" value="Intelligence" />
+            </feature>
+            
+            <feature descriptor="Damage Resistance" value="+2 DR">
+                <detail type="targets" value="Chosen upon Casting" />
+            </feature>
+            
+            <feature descriptor="Skill Check Modifier" value="+2">
+                <detail type="targets" value="Chosen upon Casting" />
+            </feature>
+            
+            <feature descriptor="Magic">
+                <detail type="energy_type" value="Meta" />
+            </feature>
+            
+            <feature descriptor="Range" value="Medium" />
+            
+            <text>
+                Projects a thin, barely-visible green field around the target. This field moves with the target and has range personal. The field, at time of cast, may be tuned to a single energy type. For any damage inflicted of this type, this field provides **2 DR**. In addition, any effect with this energy type with a check that the target must make is subject to a **+2 modifier**.
+            </text>
+        </aspect>
+        
+        <aspect name="Volta">
+            <feature descriptor="Skill Check">
+                <detail type="base_difficulty" value="5" />
+                <detail type="inherits_from" value="Intelligence" />
+            </feature>
+            
+            <feature descriptor="Magic">
+                <detail type="energy_type" value="Electric" />
+            </feature>
+            
+            <feature descriptor="Range" value="Medium" />
+            <feature descriptor="Damage" value="1d4" />
+            
+            <text>
+                Upon casting, a bolt of lightning arcs from either of the character's hands toward the target enemy with a thundering crack. The attack roll recieves the character's intelligence modifier as an attack bonus.
+            </text>
+        </aspect>
+        
+        <aspect name="Firebolt">
+            <feature descriptor="Skill Check">
+                <detail type="base_difficulty" value="5" />
+                <detail type="inherits_from" value="Intelligence" />
+            </feature>
+            
+            <feature descriptor="Magic">
+                <detail type="energy_type" value="Fire" />
+            </feature>
+            
+            <feature descriptor="Range" value="Medium" />
+            <feature descriptor="Damage" value="1d4" />
+            
+            <text>
+                The character conjures a ball of fire in either hand which may then be thrown. The attack roll recieves the character's intelligence modifier as an attack bonus.
+            </text>
+        </aspect>
+        
+        <aspect name="Frigid Cone">
+            <feature descriptor="Skill Check">
+                <detail type="base_difficulty" value="5" />
+                <detail type="inherits_from" value="Intelligence" />
+            </feature>
+            
+            <feature descriptor="Magic">
+                <detail type="energy_type" value="Cold" />
+            </feature>
+            
+            <feature descriptor="Area Effect" value="Cone" />
+            <feature descriptor="Range" value="Short" />
+            <feature descriptor="Damage" value="1d4" />
+            
+            <text>
+                The character summons a cold blast directed in a cone shaped area in-front of them. This is considered an area attack for all affected map cells.
+            </text>
+        </aspect>
+        
+        <aspect name="Dismiss">
+            <feature descriptor="Skill Check">
+                <detail type="base_difficulty" value="5" />
+                <detail type="inherits_from" value="Intelligence" />
+            </feature>
+            
+            <feature descriptor="Magic">
+                <detail type="energy_type" value="Meta" />
+            </feature>
+            
+            <feature descriptor="Range" value="Medium" />
+            
+            <text>
+                Target a magical effect with an invisible beam directed by the caster. The target must be within **medium range** and the magical effect must be understood by the caster. The caster may be required by the game master to make an appropriate check for identifying the target spell's effects. Attacking a spell without understanding its effects incurs a **-4 modifier** to the dismiss check.
+
+                The spell requires the caster of the target spell to make an intelligence check vs. the dismiss caster's check roll. If the spell is not known, additional negatives apply to this check. Upon winning this opposed check, the target spell is dismissed and all of its effects immedieatly stop.
+            </text>
+        </aspect>
+    </aspects>
+</document>
