@@ -1,5 +1,7 @@
 # Equipment Manual
 
+## Test
+
 ## Crafting Equipment
 
 Many pieces of equipment have features that would normally cost a character aspect points to acquire. The monetary cost of these items therefore are driven by the aspect point cost of their features.
