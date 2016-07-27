@@ -1,298 +1,256 @@
-#!/usr/bin/env python
-
 import sys
-import argparse
 import datetime
+import xml.etree.ElementTree as etree
 
-import crawl.html as html
-
-
-def new_argparser():
-    argparser = argparse.ArgumentParser(
-        prog='crawl',
-        description='Doc Manager for The Crawl')
-
-    argparser.add_argument(
-        '-v', '--version',
-        action='version',
-        version='0.1')
-
-    subparsers = argparser.add_subparsers(
-        dest='command',
-        title='Commands',
-        help='Commands')
-
-    format_parser = subparsers.add_parser(
-        'format',
-        help='Initializes a restore of a backup')
-
-    format_parser.add_argument(
-        'target',
-        nargs=1,
-        help='Target path to restore to')
-
-    return argparser
+from crawl.model import *
 
 
-def parse_args():
-    argparser = new_argparser()
+SKILL_CHECK_DESC = 'Skill Check'
+BASE_DIFFICULTY_DESC = 'Base Difficulty'
+ACTION_POINT_COST_DESC = 'Action Point Cost'
 
-    if len(sys.argv) <= 1:
-        argparser.print_help()
-        sys.exit(1)
+def check_aspect(aspect):
+    is_skill = False
+    has_action_cost = False
+    has_difficulty = False
 
-    return argparser.parse_args()
+    for descriptor in aspect.descriptors:
+        if descriptor.name == SKILL_CHECK_DESC:
+            is_skill = True
+        elif descriptor.name == BASE_DIFFICULTY_DESC:
+            has_difficulty = True
+        elif descriptor.name == ACTION_POINT_COST_DESC:
+            has_action_cost = True
+
+    if is_skill:
+        if not has_action_cost:
+            print('Aspect {} has a skill check but no associated action point cost.'.format(aspect.name))
+
+        if not has_difficulty:
+            print('Aspect {} has a skill check but no associated base difficulty.'.format(aspect.name))
 
 
-def read_file(path):
-    with open(path, 'r') as fin:
-        for line in fin.readlines():
-            for part in line.split():
-                yield part
-            yield '\n'
+def format_item(item, model):
+    cost = model.item_cost(item.name)
+    
+    for grant in item.grants:
+        base_cost, full_cost = model.aspect_cost(grant)
+        cost += full_cost
+    
+    output = '#### {}\n'.format(item.name)
+    output += '{}'.format(item.text)
+    output += 'Monetary Cost: **{} $$**\n<br />'.format(cost * 120)
+    output += '\n'
+    
+    for grant in item.grants:
+        output += 'Grants Aspect: **[{}](#{})**<br />'.format(
+            grant,
+            grant.lower().replace(' ', '-'))
+    
+    output += '\n'
+    
+    if len(item.descriptors) > 0:
+        output += '#### Details\n'
+
+        for descriptor in item.descriptors:
+            details = ''
+
+            for detail in descriptor.details:
+                if detail.type == 'targets':
+                    details += '\t* Applies to: **{}**\n'.format(detail.value)
+
+                elif detail.type == 'energy_type':
+                    details += '\t* Magic Energy Type: **{}**\n'.format(detail.value)
+
+                elif detail.type == 'base_difficulty':
+                    details += '\t* Base Difficulty: **{}**\n'.format(detail.value)
+
+                elif detail.type == 'inherits_from':
+                    details += '\t* Inherits Modifiers from: **{}**\n'.format(detail.value)
+
+                elif detail.type == 'limit':
+                    details += '\t* Limited: **{}**\n'.format(detail.value)
+
+                else:
+                    details += '\t* {}: {}\n'.format(detail.type, detail.value)
+
+            output += '* {}'.format(descriptor.name)
+
+            if descriptor.feature is not None:
+                output += ': {}'.format(descriptor.feature)
+
+            elif descriptor.name == 'Skill Check':
+                output += ': {}'.format(item.name)
+
+            output += '\n'
+
+            if len(details) > 0:
+                output += details
+    
+    return output
+
+
+def format_aspect(aspect, model):
+    base_cost, full_cost = model.aspect_cost(aspect.name)
+
+    output = '### {}\n'.format(aspect.name)
+    output += '{}'.format(aspect.text)
+    output += 'Aspect Point Cost: **{} AP**\n<br />'.format(base_cost)
+    output += 'Capstone Cost: **{} AP**\n'.format(full_cost)
+    output += '\n'
+
+    for req in aspect.requirements:
+        output += 'Requires: **[{}](#{})**<br />'.format(
+            req.name,
+            req.name.lower().replace(' ', '-'))
+
+    output += '\n'
+
+    if len(aspect.descriptors) > 0:
+        output += '#### Details\n'
+
+        for descriptor in aspect.descriptors:
+            details = ''
+
+            for detail in descriptor.details:
+                if detail.type == 'targets':
+                    details += '\t* Applies to: **{}**\n'.format(detail.value)
+
+                elif detail.type == 'energy_type':
+                    details += '\t* Magic Energy Type: **{}**\n'.format(detail.value)
+
+                elif detail.type == 'base_difficulty':
+                    details += '\t* Base Difficulty: **{}**\n'.format(detail.value)
+
+                elif detail.type == 'inherits_from':
+                    details += '\t* Inherits Modifiers from: **{}**\n'.format(detail.value)
+
+                elif detail.type == 'limit':
+                    details += '\t* Limited: **{}**\n'.format(detail.value)
+
+                else:
+                    details += '\t* {}: {}\n'.format(detail.type, detail.value)
+
+            output += '* {}'.format(descriptor.name)
+
+            if descriptor.feature is not None:
+                output += ': {}'.format(descriptor.feature)
+
+            elif descriptor.name == 'Skill Check':
+                output += ': {}'.format(aspect.name)
+
+            output += '\n'
+
+            if len(details) > 0:
+                output += details
+
+    return output
+
+
+def sanitize_text(text):
+    output = ''
+    for line in text.split('\n'):
+        output += '{}\n'.format(line.strip())
+    return output
+
+
+def process_document(root):
+    model = DocumentManager()
+
+    if root.tag != 'document':
+        raise Exception('Expected document tag at top-level.')
+
+    # Sort out the elements in the document
+    descriptors_xml = None
+    items_xml = None
+    aspects_xml = None
+    
+    for element in root:
+        if element.tag == 'descriptors':
+            descriptors_xml = element
+        elif element.tag == 'items':
+            items_xml = element
+        elif element.tag == 'aspects':
+            aspects_xml = element
+        else:
+            raise Exception('Unexpected element: {}'.format(element.tag))
+
+    # Process definitions first
+    for descdef_xml in descriptors_xml:
+        model.descriptors.add_descdef(descdef_xml)
+
+    # Next process items
+    for item_xml in items_xml:
+        item = Item(
+            item_xml.attrib['name'],
+            item_xml.attrib['type'])
+
+        for part_xml in item_xml:
+            if part_xml.tag == 'feature':
+                item.add_feature(part_xml)
+                
+            elif part_xml.tag == 'text':
+                item.text = sanitize_text(part_xml.text)
+                
+            elif part_xml.tag == 'grants':
+                item.add_grant(part_xml)
+                
+            else:
+                raise Exception('Unexpected element: {}'.format(part_xml.tag))
+
+        model.items.add(item)
+
+    # Lastly process aspects
+    for aspect_xml in aspects_xml:
+        aspect = Aspect(
+            aspect_xml.attrib['name'])
+
+        for part_xml in aspect_xml:
+            if part_xml.tag == 'feature':
+                aspect.add_feature(part_xml)
+
+            elif part_xml.tag == 'requires':
+                aspect.add_requirement(part_xml)
+
+            elif part_xml.tag == 'text':
+                aspect.text = sanitize_text(part_xml.text)
+
+            else:
+                raise Exception('Unexpected element: {}'.format(part_xml.tag))
+
+        model.aspects.add_aspect(aspect)
+
+    return model
 
 
 def main():
-    args = parse_args()
+    do_check = False
 
-    target_path = args.target[0]
-    doc = parse(read_file(target_path))
+    if len(sys.argv) > 1:
+        for arg in sys.argv[1:]:
+            if arg == '--check':
+                do_check = True
 
-    with open('output.html', 'w') as fout:
-        fout.write(str(
-            html.html(
-                html.head(
-                    html.title('TODO')),
+    # Process the doc
+    core_tree = etree.parse('core.xml')
+    root = core_tree.getroot()
 
-                html.body(
-                    doc_to_html(doc)))))
+    model = process_document(root)
 
+    with open('out.md', 'w') as fout:
+        fout.write('# The Crawl Aspect Document\n\n')
+        fout.write('## Items\n')
 
-def is_directive(token):
-    return token.startswith('@')
+        for _, item in sorted(model.items.items.items()):
+            fout.write('{}\n\n'.format(format_item(item, model)))
 
+        fout.write('## Aspects\n')
 
-N_ROOT = 'root'
-N_CONTENTS = 'root'
-N_TEXT = 'text'
-N_DATE = 'date'
-N_SECTION = 'section'
+        for _, aspect in sorted(model.aspects.aspects.items()):
+            if do_check:
+                check_aspect(aspect)
 
-C_CONTENTS = '@toc'
-C_DATE = '@date'
-C_DICE = '@dice'
-C_SECTION = '@section'
-C_TITLE = '@title'
-C_END = '@end'
-
-
-def read_directive(root, tokens, directive):
-    if directive == C_SECTION:
-        read_section(root, tokens)
-
-    elif directive == C_DATE:
-        root.date()
-
-    elif directive == C_CONTENTS:
-        root.contents()
-
-    else:
-        raise Exception('Unknown directive: {}'.format(directive))
-
-
-def read_section(root, tokens):
-    title = tokens.next()
-    section_node = root.section(title)
-
-    text = ''
-    token = tokens.next()
-    while token != C_END:
-        # Check if this is an additiona directive
-        if is_directive(token):
-            # Dump accumulated text
-            if len(text) > 0:
-                section_node.text(text)
-                text = ''
-
-            read_directive(section_node, tokens, token)
-
-        else:
-            text += ' {}'.format(token)
-
-        token = tokens.next()
-
-
-def parse(tokens):
-    parser = Parser()
-
-    for token in tokens:
-        while parser.next(token) == REPLAY:
-            pass
-
-    return parser._doc
-
-
-REPLAY = True
-CONSUME = None
-
-START = 'start'
-NEXT_DIRECTIVE = 'next_directive'
-SECTION_START = 'section_start'
-SECTION_TITLE = 'section_title'
-SECTION_CONTENT = 'section_content'
-
-
-def ignore_newline(delegate):
-    def _before(self, token):
-        if token == '\n':
-            return CONSUME
-        else:
-            return delegate(self, token)
-
-    return _before
-
-
-class Parser(object):
-
-    def __init__(self):
-        self._doc = Root()
-        self._doc_stack = [self._doc]
-
-        self._state = START
-        self._buffer = list()
-
-    @property
-    def _current(self):
-        return self._doc_stack[len(self._doc_stack) - 1]
-
-    def _hold(self, token):
-        self._buffer.append(token)
-
-    def _holding(self):
-        return len(self._buffer) > 0
-
-    def _release(self):
-        content = ' '.join(self._buffer).strip()
-        self._buffer = list()
-
-        return content
-
-    def _ascend(self):
-        self._doc_stack.pop()
-
-    def _descend(self, node):
-        self._current.add(node)
-        self._doc_stack.append(node)
-
-    def next(self, token):
-        print('{}: {}'.format(self._state, token))
-        return getattr(self, self._state)(token)
-
-    def start(self, token):
-        self._state = NEXT_DIRECTIVE
-        return REPLAY
-
-    @ignore_newline
-    def next_directive(self, token):
-        if token == C_SECTION:
-            self._state = SECTION_START
-
-        elif token == C_DATE:
-            pass
-
-        elif token == C_CONTENTS:
-            pass
-
-        elif token == C_END:
-            self._ascend()
-
-            if isinstance(self._current, Section):
-                self._state = SECTION_CONTENT
-
-        else:
-            raise Exception('Unknown directive: {}'.format(token))
-
-    @ignore_newline
-    def section_start(self, token):
-        # Current node is now the section
-        self._descend(Section())
-
-        if token == C_TITLE:
-            self._state = SECTION_TITLE
-
-        else:
-            self._state = SECTION_CONTENT
-
-    def section_title(self, token):
-        if token == C_END:
-            self._state = SECTION_CONTENT
-            self._current.title = self._release()
-
-        else:
-            self._hold(token)
-
-    def section_content(self, token):
-        if is_directive(token):
-            if self._holding():
-                text = Text(self._release())
-                self._current.add(text)
-
-            self._state = NEXT_DIRECTIVE
-            return REPLAY
-
-        else:
-            self._hold(token)
-            return CONSUME
-
-
-class Component(object):
-
-    def __init__(self):
-        self.components = list()
-
-    def add(self, component):
-        self.components.append(component)
-
-
-class Root(Component):
-
-    def __init__(self):
-        super(Root, self).__init__()
-
-
-class Section(Component):
-
-    def __init__(self, title=''):
-        super(Section, self).__init__()
-        self.title = title
-
-
-class Text(Component):
-
-    def __init__(self, content=''):
-        super(Text, self).__init__()
-        self.content = content
-
-
-def doc_to_html(root):
-    html_div = html.div()
-
-    for c in root.components:
-        if isinstance(c, Section):
-            element = html_div.add(
-                html.div(
-                    html.span(c.title)
-                ))
-
-            element.add(doc_to_html(c))
-
-        elif isinstance(c, Text):
-            text = html_div.add(html.p())
-            for line in c.content.split('\n'):
-                text.add(line)
-                text.add(html.br())
-
-    return html_div
+            fout.write('{}\n\n'.format(format_aspect(aspect, model)))
 
 
 if __name__ == '__main__':

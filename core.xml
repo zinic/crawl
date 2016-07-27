@@ -3,6 +3,7 @@
         <descriptor name="Attack Method">
             <feature name="Slashing" cost="0" />
             <feature name="Thrusting" cost="0" />
+            <feature name="Magic" cost="0" />
         </descriptor>
         
         <descriptor name="Handedness">
@@ -50,6 +51,8 @@
             <feature name="Electric" cost="1" />
             <feature name="Meta" cost="1" />
         </descriptor>
+        
+        <descriptor name="Base Difficulty" formula="base_difficulty_cost" />
         
         <descriptor name="Skill Check Modifier">
             <feature name="+1" cost="3" />
@@ -105,11 +108,11 @@
             <feature name="+8 DR" cost="4" />
             <feature name="+10 DR" cost="5" />
             
-            <feature name="-2 DR" cost="-1" />
-            <feature name="-4 DR" cost="-2" />
-            <feature name="-6 DR" cost="-3" />
-            <feature name="-8 DR" cost="-4" />
-            <feature name="-10 DR" cost="-5" />
+            <feature name="-2 DR" cost="1" />
+            <feature name="-4 DR" cost="2" />
+            <feature name="-6 DR" cost="3" />
+            <feature name="-8 DR" cost="4" />
+            <feature name="-10 DR" cost="5" />
         </descriptor>
         
         <descriptor name="Extra Target">
@@ -126,7 +129,13 @@
     
     <items>
         <item name="Chestplate" type="armor">
-            <feature descriptor="Damage Resistance" value="+6 DR" type="kinetic" />
+            <feature descriptor="Damage Resistance" value="+6 DR">
+                <detail type="targets" value="Kinetic" />
+            </feature>
+            
+            <text>
+                A basic chestplate for defense.
+            </text>
         </item>
         
         <item name="Knife" type="weapon">
@@ -143,15 +152,25 @@
             <feature descriptor="Range" value="Melee" />
             <feature descriptor="Damage" value="1d4" />
             <feature descriptor="Damage Type" value="Kinetic" />
+            <feature descriptor="Damage Resistance" value="-2 DR">
+                <detail type="targets" value="Kinetic" />
+            </feature>
+        </item>
+
+        <item name="Wand of Firebolt" type="weapon">
+            <feature descriptor="Attack Method" value="Magic" />
+            <feature descriptor="Handedness" value="One-Handed" />
+            
+            <grants aspect="Firebolt" />
         </item>
     </items>
     
     <aspects>
         <aspect name="Frantic Defense">
              <feature descriptor="Skill Check">
-                <detail type="base_difficulty" value="10" />
                 <detail type="inherits_from" value="Mobility" />
             </feature>
+            <feature descriptor="Base Difficulty" value="15" />
             
             <requires name="Fit" />
             
@@ -164,7 +183,7 @@
             <feature descriptor="Skill Check">
                 <detail type="inherits_from" value="Mobility" />
             </feature>
-            
+            <feature descriptor="Base Difficulty" value="10" />
             <feature descriptor="Action Point Cost" value="1" />
             
             <text>
@@ -176,8 +195,9 @@
             <feature descriptor="Skill Check">
                 <detail type="inherits_from" value="Standing Forward Jump" />
             </feature>
-            
+            <feature descriptor="Base Difficulty" value="10" />
             <feature descriptor="Action Point Cost" value="2" />
+            
             <requires name="Duck and Dodge" />
             
             <text>
@@ -190,7 +210,7 @@
                 <detail type="limit" value="Unusuable when Slowed" />
                 <detail type="inherits_from" value="Mobility" />
             </feature>
-            
+            <feature descriptor="Base Difficulty" value="10" />
             <feature descriptor="Skill Check Modifier" value="+2">
                 <detail type="targets" value="Pivot and Roll" />
             </feature>
@@ -264,7 +284,7 @@
             <feature descriptor="Skill Check">
                 <detail type="inherits_from" value="Intelligence" />
             </feature>
-            
+            <feature descriptor="Base Difficulty" value="10" />
             <feature descriptor="Action Point Cost" value="1" />
             
             <text>
@@ -276,9 +296,9 @@
             <feature descriptor="Skill Check">
                 <detail type="limit" value="Non-Combat Only" />
                 <detail type="limit" value="No Character Targets" />
-                
                 <detail type="inherits_from" value="Mobility" />
             </feature>
+            <feature descriptor="Base Difficulty" value="10" />
             
             <requires name="High Manual Dexterity" />
             
@@ -291,7 +311,7 @@
             <feature descriptor="Skill Check">
                 <detail type="inherits_from" value="Mobility" />
             </feature>
-            
+            <feature descriptor="Base Difficulty" value="10" />
             <feature descriptor="Action Point Cost" value="1" />
             
             <requires name="Filch" />
@@ -306,9 +326,9 @@
         <aspect name="Lockpicking">
             <feature descriptor="Skill Check">
                 <detail type="limit" value="Non-Combat Only" />
-                
                 <detail type="inherits_from" value="Mobility" />
             </feature>
+            <feature descriptor="Base Difficulty" value="10" />
             
             <requires name="High Manual Dexterity" />
             
@@ -321,6 +341,7 @@
             <feature descriptor="Skill Check" />
             <feature descriptor="Damage Healed" value="1d6" />
             <feature descriptor="Action Point Cost" value="2" />
+            <feature descriptor="Base Difficulty" value="10" />
             
             <requires name="Medicine" />
             
@@ -335,6 +356,7 @@
             <feature descriptor="Skill Check">
                 <detail type="limit" value="Non-Combat Only" />
             </feature>
+            <feature descriptor="Base Difficulty" value="10" />
             <feature descriptor="Damage Healed" value="1d6" />
             
             <text>
@@ -347,6 +369,7 @@
         <aspect name="Perception">
             <feature descriptor="Skill Check" />
             <feature descriptor="Action Point Cost" value="1" />
+            <feature descriptor="Base Difficulty" value="gm_only" />
             
             <text>
                 Allows a character to make a perception check.
@@ -369,6 +392,7 @@
                 <detail type="limit" value="Non-Combat Only" />
                 <detail type="inherits_from" value="Lockpicking" />
             </feature>
+            <feature descriptor="Base Difficulty" value="10" />
             
             <requires name="Lockpicking" />
 
@@ -382,6 +406,7 @@
                 <detail type="limit" value="Non-Combat Only" />
                 <detail type="inherits_from" value="Mobility" />
             </feature>
+            <feature descriptor="Base Difficulty" value="10" />
             
             <text>
                 Allows a street-wise character to blend into a crowd and use this action as a sealth attempt. The crowd must be sufficiently thick such that the game master considers blending in acceptable for stealth.
@@ -392,6 +417,7 @@
             <feature descriptor="Skill Check">
                 <detail type="inherits_from" value="Mobility" />
             </feature>
+            <feature descriptor="Base Difficulty" value="10" />
             <feature descriptor="Action Point Cost" value="1" />
             
             <text>
@@ -411,10 +437,9 @@
 
         <aspect name="Stab">
             <feature descriptor="Skill Check">
-                <detail type="base_difficulty" value="5" />
                 <detail type="limit" value="Thrusting Weapons" />
             </feature>
-            
+            <feature descriptor="Base Difficulty" value="10" />
             <feature descriptor="Action Point Cost" value="1" />
 
             <requires name="Fit" />
@@ -426,10 +451,9 @@
 
         <aspect name="Slash">
             <feature descriptor="Skill Check">
-                <detail type="base_difficulty" value="5" />
                 <detail type="limit" value="Slashing Weapons" />
             </feature>
-            
+            <feature descriptor="Base Difficulty" value="10" />
             <feature descriptor="Action Point Cost" value="1" />
 
             <requires name="Fit" />
@@ -462,9 +486,8 @@
         </aspect>
         
         <aspect name="Leaping Strike">
-            <feature descriptor="Skill Check">
-                <detail type="base_difficulty" value="5" />
-            </feature>
+            <feature descriptor="Skill Check" />
+            <feature descriptor="Base Difficulty" value="10" />
             
             <feature descriptor="Skill Check Modifier" value="+1">
                 <detail type="targets" value="Leaping Strike" />
@@ -480,9 +503,8 @@
         </aspect>
         
         <aspect name="Great Slash">
-            <feature descriptor="Skill Check">
-                <detail type="base_difficulty" value="5" />
-            </feature>
+            <feature descriptor="Skill Check" />
+            <feature descriptor="Base Difficulty" value="10" />
             
             <feature descriptor="Skill Check Modifier" value="-2">
                 <detail type="targets" value="Great Slash" />
@@ -510,11 +532,11 @@
         
         <aspect name="Quell">
             <feature descriptor="Skill Check">
-                <detail type="base_difficulty" value="5" />
                 <detail type="inherits_from" value="Intelligence" />
                 <detail type="limit" value="Caster Only" />
             </feature>
-            
+            <feature descriptor="Action Point Cost" value="1" />
+            <feature descriptor="Base Difficulty" value="10" />            
             <feature descriptor="Damage Resistance" value="+2 DR">
                 <detail type="targets" value="Kinetic" />
             </feature>
@@ -534,10 +556,10 @@
         
         <aspect name="Foil">
             <feature descriptor="Skill Check">
-                <detail type="base_difficulty" value="5" />
                 <detail type="inherits_from" value="Intelligence" />
             </feature>
-            
+            <feature descriptor="Action Point Cost" value="1" />
+            <feature descriptor="Base Difficulty" value="10" />            
             <feature descriptor="Damage Resistance" value="+4 DR">
                 <detail type="targets" value="Kinetic" />
             </feature>
@@ -555,9 +577,10 @@
         
         <aspect name="Dissev">
             <feature descriptor="Skill Check">
-                <detail type="base_difficulty" value="5" />
                 <detail type="inherits_from" value="Intelligence" />
             </feature>
+            <feature descriptor="Action Point Cost" value="1" />
+            <feature descriptor="Base Difficulty" value="10" />
             
             <feature descriptor="Damage Resistance" value="+2 DR">
                 <detail type="targets" value="Chosen upon Casting" />
@@ -580,9 +603,10 @@
         
         <aspect name="Volta">
             <feature descriptor="Skill Check">
-                <detail type="base_difficulty" value="5" />
                 <detail type="inherits_from" value="Intelligence" />
             </feature>
+            <feature descriptor="Action Point Cost" value="1" />
+            <feature descriptor="Base Difficulty" value="10" />
             
             <feature descriptor="Magic">
                 <detail type="energy_type" value="Electric" />
@@ -598,9 +622,10 @@
         
         <aspect name="Firebolt">
             <feature descriptor="Skill Check">
-                <detail type="base_difficulty" value="5" />
                 <detail type="inherits_from" value="Intelligence" />
             </feature>
+            <feature descriptor="Action Point Cost" value="1" />
+            <feature descriptor="Base Difficulty" value="10" />
             
             <feature descriptor="Magic">
                 <detail type="energy_type" value="Fire" />
@@ -616,9 +641,10 @@
         
         <aspect name="Frigid Cone">
             <feature descriptor="Skill Check">
-                <detail type="base_difficulty" value="5" />
                 <detail type="inherits_from" value="Intelligence" />
             </feature>
+            <feature descriptor="Action Point Cost" value="1" />
+            <feature descriptor="Base Difficulty" value="10" />
             
             <feature descriptor="Magic">
                 <detail type="energy_type" value="Cold" />
@@ -635,9 +661,10 @@
         
         <aspect name="Dismiss">
             <feature descriptor="Skill Check">
-                <detail type="base_difficulty" value="5" />
                 <detail type="inherits_from" value="Intelligence" />
             </feature>
+            <feature descriptor="Action Point Cost" value="1" />
+            <feature descriptor="Base Difficulty" value="10" />
             
             <feature descriptor="Magic">
                 <detail type="energy_type" value="Meta" />
