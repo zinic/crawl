@@ -1,19 +1,67 @@
+# The Crawl Aspect Document
+
+## Items
+#### Chestplate
+
+A basic chestplate for defense.
+
+Monetary Cost: **360 $$**
+<br />
+
+#### Details
+* Damage Resistance: +6 DR
+	* Applies to: **Kinetic**
+
+
+#### Dagger
+Monetary Cost: **480 $$**
+<br />
+
+#### Details
+* Attack Method: Thrusting
+* Handedness: One-Handed
+* Range: Melee
+* Damage: 1d4
+* Damage Type: Kinetic
+* Damage Resistance: -2 DR
+	* Applies to: **Kinetic**
+
+
+#### Knife
+Monetary Cost: **360 $$**
+<br />
+
+#### Details
+* Attack Method: Slashing
+* Handedness: One-Handed
+* Range: Melee
+* Damage: 1d4
+* Damage Type: Kinetic
+
+
+#### Wand of Firebolt
+Monetary Cost: **960 $$**
+<br />
+Grants Aspect: **[Firebolt](#firebolt)**<br />
+#### Details
+* Attack Method: Magic
+* Handedness: One-Handed
+
 
 ## Aspects
-
 ### Blend into Crowds
 
 Allows a street-wise character to blend into a crowd and use this action as a sealth attempt. The crowd must be sufficiently thick such that the game master considers blending in acceptable for stealth.
 
-Aspect Point Cost: **3 AP**
-<br />Capstone Cost: **3 AP**
+Aspect Point Cost: **5 AP**
+<br />Capstone Cost: **5 AP**
 
 
 #### Details
 * Skill Check: Blend into Crowds
 	* Limited: **Non-Combat Only**
 	* Inherits Modifiers from: **Mobility**
-
+* Base Difficulty: 10
 
 
 ### Counter Slash
@@ -21,7 +69,7 @@ Aspect Point Cost: **3 AP**
 Allows a to make a slashing attack as an opportunistic action.
 
 Aspect Point Cost: **4 AP**
-<br />Capstone Cost: **7 AP**
+<br />Capstone Cost: **9 AP**
 
 Requires: **[Slash](#slash)**<br />
 #### Details
@@ -29,13 +77,12 @@ Requires: **[Slash](#slash)**<br />
 * Opportunistic Action
 
 
-
 ### Counter Stab
 
 Allows a to make a stabbing attack as an opportunistic action.
 
 Aspect Point Cost: **4 AP**
-<br />Capstone Cost: **7 AP**
+<br />Capstone Cost: **9 AP**
 
 Requires: **[Stab](#stab)**<br />
 #### Details
@@ -43,20 +90,19 @@ Requires: **[Stab](#stab)**<br />
 * Opportunistic Action
 
 
-
 ### Disable Device
 
 Grants a character with an understanding of small mechanical devices the ability to attempt to disable them. This covers any manner of device designed as a trap or a lock. All devices are granted a difficulty by the game master depending on their complexity and make. The character must make a disable device check against this difficulty to successfully disable the device.
 
-Aspect Point Cost: **3 AP**
-<br />Capstone Cost: **7 AP**
+Aspect Point Cost: **5 AP**
+<br />Capstone Cost: **11 AP**
 
 Requires: **[Lockpicking](#lockpicking)**<br />
 #### Details
 * Skill Check: Disable Device
 	* Limited: **Non-Combat Only**
 	* Inherits Modifiers from: **Lockpicking**
-
+* Base Difficulty: 10
 
 
 ### Dismiss
@@ -65,32 +111,33 @@ Target a magical effect with an invisible beam directed by the caster. The targe
 
 The spell requires the caster of the target spell to make an intelligence check vs. the dismiss caster's check roll. If the spell is not known, additional negatives apply to this check. Upon winning this opposed check, the target spell is dismissed and all of its effects immedieatly stop.
 
-Aspect Point Cost: **6 AP**
-<br />Capstone Cost: **6 AP**
+Aspect Point Cost: **7 AP**
+<br />Capstone Cost: **7 AP**
 
 
 #### Details
 * Skill Check: Dismiss
-	* Base Difficulty: **5**
 	* Inherits Modifiers from: **Intelligence**
+* Action Point Cost: 1
+* Base Difficulty: 10
 * Magic
 	* Magic Energy Type: **Meta**
 * Range: Medium
-
 
 
 ### Dissev
 
 Projects a thin, barely-visible green field around the target. This field moves with the target and has range personal. The field, at time of cast, may be tuned to a single energy type. For any damage inflicted of this type, this field provides **2 DR**. In addition, any effect with this energy type with a check that the target must make is subject to a **+2 modifier**.
 
-Aspect Point Cost: **12 AP**
-<br />Capstone Cost: **12 AP**
+Aspect Point Cost: **13 AP**
+<br />Capstone Cost: **13 AP**
 
 
 #### Details
 * Skill Check: Dissev
-	* Base Difficulty: **5**
 	* Inherits Modifiers from: **Intelligence**
+* Action Point Cost: 1
+* Base Difficulty: 10
 * Damage Resistance: +2 DR
 	* Applies to: **Chosen upon Casting**
 * Skill Check Modifier: +2
@@ -100,35 +147,34 @@ Aspect Point Cost: **12 AP**
 * Range: Medium
 
 
-
 ### Dive for Cover
 
 Allows a character to make a dive for nearby cover - once behind cover, all rules for cover now apply. The cover must be within the character's **Standing Forward Jump** range. All normal rules for making a standing forward jump apply to this check. Failing this check renders the character **prone**.
 
-Aspect Point Cost: **1 AP**
-<br />Capstone Cost: **3 AP**
+Aspect Point Cost: **3 AP**
+<br />Capstone Cost: **7 AP**
 
 Requires: **[Duck and Dodge](#duck-and-dodge)**<br />
 #### Details
 * Skill Check: Dive for Cover
 	* Inherits Modifiers from: **Standing Forward Jump**
+* Base Difficulty: 10
 * Action Point Cost: 2
-
 
 
 ### Duck and Dodge
 
 Allows a character to make a simple dodge-based defense against an incoming attack. The defense roll recieves the character's **mobility modifier** as a defense bonus.
 
-Aspect Point Cost: **2 AP**
-<br />Capstone Cost: **2 AP**
+Aspect Point Cost: **4 AP**
+<br />Capstone Cost: **4 AP**
 
 
 #### Details
 * Skill Check: Duck and Dodge
 	* Inherits Modifiers from: **Mobility**
+* Base Difficulty: 10
 * Action Point Cost: 1
-
 
 
 ### Field Aid
@@ -137,23 +183,23 @@ Allows a character to perform healing on the battlefield via simple medical proc
 
 A successful Field Aid staunches bleeding and may heal 1d6 health points of damage.
 
-Aspect Point Cost: **3 AP**
-<br />Capstone Cost: **8 AP**
+Aspect Point Cost: **5 AP**
+<br />Capstone Cost: **12 AP**
 
 Requires: **[Medicine](#medicine)**<br />
 #### Details
 * Skill Check: Field Aid
 * Damage Healed: 1d6
 * Action Point Cost: 2
-
+* Base Difficulty: 10
 
 
 ### Filch
 
 Grants a careful character the ability to secretly pilfer small objects from their surroundings. The object must fit in their hand easily. The character must make a filch check greater than the difficulty of the task set by the game master. If the character is being watched, all other characters with the **Keen Senses** aspect are granted a perception check. This perception check is opposed against the character's filch check.
 
-Aspect Point Cost: **3 AP**
-<br />Capstone Cost: **4 AP**
+Aspect Point Cost: **5 AP**
+<br />Capstone Cost: **6 AP**
 
 Requires: **[High Manual Dexterity](#high-manual-dexterity)**<br />
 #### Details
@@ -161,26 +207,26 @@ Requires: **[High Manual Dexterity](#high-manual-dexterity)**<br />
 	* Limited: **Non-Combat Only**
 	* Limited: **No Character Targets**
 	* Inherits Modifiers from: **Mobility**
-
+* Base Difficulty: 10
 
 
 ### Firebolt
 
 The character conjures a ball of fire in either hand which may then be thrown. The attack roll recieves the character's intelligence modifier as an attack bonus.
 
-Aspect Point Cost: **7 AP**
-<br />Capstone Cost: **7 AP**
+Aspect Point Cost: **8 AP**
+<br />Capstone Cost: **8 AP**
 
 
 #### Details
 * Skill Check: Firebolt
-	* Base Difficulty: **5**
 	* Inherits Modifiers from: **Intelligence**
+* Action Point Cost: 1
+* Base Difficulty: 10
 * Magic
 	* Magic Energy Type: **Fire**
 * Range: Medium
 * Damage: 1d4
-
 
 
 ### Fit
@@ -193,25 +239,24 @@ Aspect Point Cost: **1 AP**
 
 
 
-
 ### Foil
 
 The character conjures a kinetic shield that covers a target's body. This shield has a **DR of 4**. The shield lasts for 10 minutes or until an attack lands and the shield absorbs damage.
 
-Aspect Point Cost: **6 AP**
-<br />Capstone Cost: **6 AP**
+Aspect Point Cost: **7 AP**
+<br />Capstone Cost: **7 AP**
 
 
 #### Details
 * Skill Check: Foil
-	* Base Difficulty: **5**
 	* Inherits Modifiers from: **Intelligence**
+* Action Point Cost: 1
+* Base Difficulty: 10
 * Damage Resistance: +4 DR
 	* Applies to: **Kinetic**
 * Magic
 	* Magic Energy Type: **Force**
 * Range: Melee
-
 
 
 ### Frantic Defense
@@ -224,23 +269,23 @@ Aspect Point Cost: **3 AP**
 Requires: **[Fit](#fit)**<br />
 #### Details
 * Skill Check: Frantic Defense
-	* Base Difficulty: **10**
 	* Inherits Modifiers from: **Mobility**
-
+* Base Difficulty: 15
 
 
 ### Frigid Cone
 
 The character summons a cold blast directed in a cone shaped area in-front of them. This is considered an area attack for all affected map cells.
 
-Aspect Point Cost: **11 AP**
-<br />Capstone Cost: **11 AP**
+Aspect Point Cost: **12 AP**
+<br />Capstone Cost: **12 AP**
 
 
 #### Details
 * Skill Check: Frigid Cone
-	* Base Difficulty: **5**
 	* Inherits Modifiers from: **Intelligence**
+* Action Point Cost: 1
+* Base Difficulty: 10
 * Magic
 	* Magic Energy Type: **Cold**
 * Area Effect: Cone
@@ -248,38 +293,36 @@ Aspect Point Cost: **11 AP**
 * Damage: 1d4
 
 
-
 ### Gesture
 
 Grants a dextrous character the ability to attempt to communicate with another character via gesturing. This action is not limited to just the character's hands. The action has a difficulty set by the game master based on the complexity of the ideas being communicated. Both characters are required to make gesture checks - the target does not need to have this aspect in order to make the check.
 
-Aspect Point Cost: **2 AP**
-<br />Capstone Cost: **2 AP**
+Aspect Point Cost: **4 AP**
+<br />Capstone Cost: **4 AP**
 
 
 #### Details
 * Skill Check: Gesture
 	* Inherits Modifiers from: **Intelligence**
+* Base Difficulty: 10
 * Action Point Cost: 1
-
 
 
 ### Great Slash
 
 Allows a character to attack 2 enemies standing side-by-side. The enemies must be in adjacent map cells. The attacker makes a single attack roll that both targets may then roll against. This attack incurs a **-2 modifier** to the attack roll.
 
-Aspect Point Cost: **3 AP**
-<br />Capstone Cost: **4 AP**
+Aspect Point Cost: **5 AP**
+<br />Capstone Cost: **6 AP**
 
 Requires: **[Fit](#fit)**<br />
 #### Details
 * Skill Check: Great Slash
-	* Base Difficulty: **5**
+* Base Difficulty: 10
 * Skill Check Modifier: -2
 	* Applies to: **Great Slash**
 * Extra Target: +1
 * Action Point Cost: 2
-
 
 
 ### High Manual Dexterity
@@ -288,7 +331,6 @@ This aspect is often taken by characters that are considered good with their han
 
 Aspect Point Cost: **1 AP**
 <br />Capstone Cost: **1 AP**
-
 
 
 
@@ -306,7 +348,6 @@ Requires: **[Fit](#fit)**<br />
 	* Applies to: **Mobility**
 
 
-
 ### Intense Training: Endurance
 
 This character has gone through regimented exercises to increase their overall endurance.
@@ -317,7 +358,6 @@ Aspect Point Cost: **8 AP**
 Requires: **[Fit](#fit)**<br />
 #### Details
 * Action Pool Modifier: +1
-
 
 
 ### Intense Training: Resistance
@@ -333,50 +373,47 @@ Requires: **[Fit](#fit)**<br />
 	* Applies to: **Mobility**
 
 
-
 ### Keen Senses
 
 When a stealthed target character passes within 1 map cell of the character, as an opportunistic action, the character may make a perception check to oppose the target's stealth.
 
 Aspect Point Cost: **5 AP**
-<br />Capstone Cost: **7 AP**
+<br />Capstone Cost: **13 AP**
 
 Requires: **[Perception](#perception)**<br />
 #### Details
 * Opportunistic Action
 
 
-
 ### Leaping Strike
 
 Allows a character to perform a jump action and an attack in one turn with a specified melee weapon type. The roll for this attack is treated as the character's Jump check as well. This attack grants a **+1 modifier** to the attack roll.
 
-Aspect Point Cost: **5 AP**
-<br />Capstone Cost: **6 AP**
+Aspect Point Cost: **7 AP**
+<br />Capstone Cost: **8 AP**
 
 Requires: **[Fit](#fit)**<br />
 #### Details
 * Skill Check: Leaping Strike
-	* Base Difficulty: **5**
+* Base Difficulty: 10
 * Skill Check Modifier: +1
 	* Applies to: **Leaping Strike**
 * Action Point Cost: 1
-
 
 
 ### Lockpicking
 
 Grants a character the knowledge necessary to disable simple lock devices. Lock devices are granted a difficulty by the game master depending on their complexity and make. The character must make a lockpicking check against this difficulty to successfully disable the lock. This check recieves the character's **mobility modifier** as a bonus.
 
-Aspect Point Cost: **3 AP**
-<br />Capstone Cost: **4 AP**
+Aspect Point Cost: **5 AP**
+<br />Capstone Cost: **6 AP**
 
 Requires: **[High Manual Dexterity](#high-manual-dexterity)**<br />
 #### Details
 * Skill Check: Lockpicking
 	* Limited: **Non-Combat Only**
 	* Inherits Modifiers from: **Mobility**
-
+* Base Difficulty: 10
 
 
 ### Magical Energy Affinity
@@ -392,7 +429,6 @@ Aspect Point Cost: **3 AP**
 	* Applies to: **All Magic of Chosen Energy Type**
 
 
-
 ### Martial Artist
 
 This aspect grants a character expert martial arts knowledge. Because of this intense training, the character has acquired a unique understanding of how to strike at an opponent's weak points.
@@ -406,22 +442,21 @@ Aspect Point Cost: **5 AP**
 	* Limited: **Melee**
 
 
-
 ### Medicine
 
 Allows a character to make a medicine check. This check has use in diagnosing and healing others. A successful medicine check may heal 1d6 health points. This takes the character 10 minutes. Any character healed by this aspect may not be healed by it again for 12 hours.
 
 When diagnosing, the game master chooses a suitable difficulty for the complications the target is suffering. If the medicine check passes, the character is enlightened as to the cause of the complications.
 
-Aspect Point Cost: **5 AP**
-<br />Capstone Cost: **5 AP**
+Aspect Point Cost: **7 AP**
+<br />Capstone Cost: **7 AP**
 
 
 #### Details
 * Skill Check: Medicine
 	* Limited: **Non-Combat Only**
+* Base Difficulty: 10
 * Damage Healed: 1d6
-
 
 
 ### Perception
@@ -430,14 +465,14 @@ Allows a character to make a perception check.
 
 Take a look at your surroundings to attempt to find out interesting information. There is no base difficulty listed here - the game master is responsible for providing resonable difficulties based on the surroundings in the setting and the target of observation.
 
-Aspect Point Cost: **2 AP**
-<br />Capstone Cost: **2 AP**
+Aspect Point Cost: **8 AP**
+<br />Capstone Cost: **8 AP**
 
 
 #### Details
 * Skill Check: Perception
 * Action Point Cost: 1
-
+* Base Difficulty: gm_only
 
 
 ### Pickpocket
@@ -446,33 +481,33 @@ Grants a careful character the ability to pilfer objects from a target. The char
 
 If the target character is already aware of the attempt then this character is granted a **mobility check** that opposes the character's pickpocket check. Note that this does not remove the check's difficulty - the character must still beat the difficulty of the filch check in addition to defeating the target character's mobility check.
 
-Aspect Point Cost: **2 AP**
-<br />Capstone Cost: **6 AP**
+Aspect Point Cost: **4 AP**
+<br />Capstone Cost: **10 AP**
 
 Requires: **[Filch](#filch)**<br />
 #### Details
 * Skill Check: Pickpocket
 	* Inherits Modifiers from: **Mobility**
+* Base Difficulty: 10
 * Action Point Cost: 1
-
 
 
 ### Pivot and Roll
 
 Allows a character to make a more acrobatic dodge. This defense roll requires the character to not be slowed. The defense roll receives the character's mobility modifier as a defense bonus in addition to a +2 modifier from the aspect itself.
 
-Aspect Point Cost: **6 AP**
-<br />Capstone Cost: **9 AP**
+Aspect Point Cost: **8 AP**
+<br />Capstone Cost: **13 AP**
 
 Requires: **[Duck and Dodge](#duck-and-dodge)**<br />Requires: **[Fit](#fit)**<br />
 #### Details
 * Skill Check: Pivot and Roll
 	* Limited: **Unusuable when Slowed**
 	* Inherits Modifiers from: **Mobility**
+* Base Difficulty: 10
 * Skill Check Modifier: +2
 	* Applies to: **Pivot and Roll**
 * Action Point Cost: 2
-
 
 
 ### Quell
@@ -481,15 +516,16 @@ The character conjures a simple kinetic shield that covers their entire body. Th
 
 This spell may target *only the caster* and no one else.
 
-Aspect Point Cost: **4 AP**
-<br />Capstone Cost: **4 AP**
+Aspect Point Cost: **5 AP**
+<br />Capstone Cost: **5 AP**
 
 
 #### Details
 * Skill Check: Quell
-	* Base Difficulty: **5**
 	* Inherits Modifiers from: **Intelligence**
 	* Limited: **Caster Only**
+* Action Point Cost: 1
+* Base Difficulty: 10
 * Damage Resistance: +2 DR
 	* Applies to: **Kinetic**
 * Magic
@@ -497,71 +533,68 @@ Aspect Point Cost: **4 AP**
 * Range: Personal
 
 
-
 ### Quiet Steps
 
 Allows a character to make a stealth check by walking carefully. In order to enter stealth, the character must not be visible by any enemies. While using this aspect, a character must move at **half their move speed**.
 
-Aspect Point Cost: **2 AP**
-<br />Capstone Cost: **2 AP**
+Aspect Point Cost: **4 AP**
+<br />Capstone Cost: **4 AP**
 
 
 #### Details
 * Skill Check: Quiet Steps
 	* Inherits Modifiers from: **Mobility**
+* Base Difficulty: 10
 * Action Point Cost: 1
-
 
 
 ### Slash
 
 Grants a character a melee slashing attack. This attack may be used with any slashing melee weapon.
 
-Aspect Point Cost: **2 AP**
-<br />Capstone Cost: **3 AP**
+Aspect Point Cost: **4 AP**
+<br />Capstone Cost: **5 AP**
 
 Requires: **[Fit](#fit)**<br />
 #### Details
 * Skill Check: Slash
-	* Base Difficulty: **5**
 	* Limited: **Slashing Weapons**
+* Base Difficulty: 10
 * Action Point Cost: 1
-
 
 
 ### Stab
 
 Grants a character a melee stabbing attack. This attack may be used with any thrusting melee weapon.
 
-Aspect Point Cost: **2 AP**
-<br />Capstone Cost: **3 AP**
+Aspect Point Cost: **4 AP**
+<br />Capstone Cost: **5 AP**
 
 Requires: **[Fit](#fit)**<br />
 #### Details
 * Skill Check: Stab
-	* Base Difficulty: **5**
 	* Limited: **Thrusting Weapons**
+* Base Difficulty: 10
 * Action Point Cost: 1
-
 
 
 ### Volta
 
 Upon casting, a bolt of lightning arcs from either of the character's hands toward the target enemy with a thundering crack. The attack roll recieves the character's intelligence modifier as an attack bonus.
 
-Aspect Point Cost: **7 AP**
-<br />Capstone Cost: **7 AP**
+Aspect Point Cost: **8 AP**
+<br />Capstone Cost: **8 AP**
 
 
 #### Details
 * Skill Check: Volta
-	* Base Difficulty: **5**
 	* Inherits Modifiers from: **Intelligence**
+* Action Point Cost: 1
+* Base Difficulty: 10
 * Magic
 	* Magic Energy Type: **Electric**
 * Range: Medium
 * Damage: 1d4
-
 
 
 ### Weapon Proficiency
@@ -575,6 +608,5 @@ Aspect Point Cost: **3 AP**
 #### Details
 * Skill Check Modifier: +1
 	* Applies to: **Bound Weapon Type**
-
 
 
