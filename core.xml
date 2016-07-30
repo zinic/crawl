@@ -335,7 +335,7 @@
             </text>
         </aspect>
 
-        <aspect name="Affluent Knowledge">
+        <aspect name="Knowledge - Affluence">
             <feature descriptor="Skill Check">
                 <detail type="inherits_from" value="Intelligence" />
             </feature>
@@ -347,7 +347,7 @@
             </text>
         </aspect>
 
-        <aspect name="Mechanical Knowledge">
+        <aspect name="Knowledge - Mechanical">
             <feature descriptor="Skill Check">
                 <detail type="inherits_from" value="Intelligence" />
             </feature>
@@ -359,7 +359,7 @@
             </text>
         </aspect>
 
-        <aspect name="Arcane Knowledge">
+        <aspect name="Knowledge - Arcane">
             <feature descriptor="Skill Check">
                 <detail type="inherits_from" value="Intelligence" />
             </feature>
@@ -371,7 +371,7 @@
             </text>
         </aspect>
         
-        <aspect name="Martial Knowledge">
+        <aspect name="Knowledge - Martial">
             <feature descriptor="Skill Check">
                 <detail type="inherits_from" value="Intelligence" />
             </feature>
@@ -383,7 +383,7 @@
             </text>
         </aspect>
         
-        <aspect name="Historical Knowledge">
+        <aspect name="Knowledge - Historical">
             <feature descriptor="Skill Check">
                 <detail type="inherits_from" value="Intelligence" />
             </feature>
@@ -395,7 +395,7 @@
             </text>
         </aspect>
         
-        <aspect name="Natural Sciences Knowledge">
+        <aspect name="Knowledge - Natural Sciences">
             <feature descriptor="Skill Check">
                 <detail type="inherits_from" value="Intelligence" />
             </feature>
@@ -407,7 +407,7 @@
             </text>
         </aspect>
         
-        <aspect name="Survival Knowledge">
+        <aspect name="Knowledge - Survival">
             <feature descriptor="Skill Check">
                 <detail type="inherits_from" value="Intelligence" />
             </feature>

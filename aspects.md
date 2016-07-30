@@ -77,36 +77,6 @@ Requires: **[Intense Acrobatic Training](#intense-acrobatic-training)**<br />Req
 * Action Pool Refresh Modifier: +1
 
 
-### Affluent Knowledge
-
-Knowledge and understanding of the related domain.
-
-Aspect Point Cost: **4 AP**
-<br />Capstone Cost: **4 AP**
-
-
-#### Details
-* Skill Check: Affluent Knowledge
-	* Inherits Modifiers from: **Intelligence**
-* Action Point Cost: 1
-* Base Difficulty: 10
-
-
-### Arcane Knowledge
-
-Knowledge and understanding of the related domain.
-
-Aspect Point Cost: **4 AP**
-<br />Capstone Cost: **4 AP**
-
-
-#### Details
-* Skill Check: Arcane Knowledge
-	* Inherits Modifiers from: **Intelligence**
-* Action Point Cost: 1
-* Base Difficulty: 10
-
-
 ### Blend into Crowds
 
 Allows a street-wise character to blend into a crowd and use this action as a sealth attempt. The crowd must be sufficiently thick such that the game master considers blending in acceptable for stealth.
@@ -414,21 +384,6 @@ Aspect Point Cost: **1 AP**
 
 
 
-### Historical Knowledge
-
-Knowledge and understanding of the related domain.
-
-Aspect Point Cost: **4 AP**
-<br />Capstone Cost: **4 AP**
-
-
-#### Details
-* Skill Check: Historical Knowledge
-	* Inherits Modifiers from: **Intelligence**
-* Action Point Cost: 1
-* Base Difficulty: 10
-
-
 ### Indomitable
 
 You're big. You're hard to get around and there's no way an enemy gets the slip on you. This character can not be flanked.
@@ -493,6 +448,111 @@ Aspect Point Cost: **5 AP**
 Requires: **[Perception](#perception)**<br />
 #### Details
 * Opportunistic Action
+
+
+### Knowledge - Affluence
+
+Knowledge and understanding of the related domain.
+
+Aspect Point Cost: **4 AP**
+<br />Capstone Cost: **4 AP**
+
+
+#### Details
+* Skill Check: Knowledge - Affluence
+	* Inherits Modifiers from: **Intelligence**
+* Action Point Cost: 1
+* Base Difficulty: 10
+
+
+### Knowledge - Arcane
+
+Knowledge and understanding of the related domain.
+
+Aspect Point Cost: **4 AP**
+<br />Capstone Cost: **4 AP**
+
+
+#### Details
+* Skill Check: Knowledge - Arcane
+	* Inherits Modifiers from: **Intelligence**
+* Action Point Cost: 1
+* Base Difficulty: 10
+
+
+### Knowledge - Historical
+
+Knowledge and understanding of the related domain.
+
+Aspect Point Cost: **4 AP**
+<br />Capstone Cost: **4 AP**
+
+
+#### Details
+* Skill Check: Knowledge - Historical
+	* Inherits Modifiers from: **Intelligence**
+* Action Point Cost: 1
+* Base Difficulty: 10
+
+
+### Knowledge - Martial
+
+Knowledge and understanding of the related domain.
+
+Aspect Point Cost: **4 AP**
+<br />Capstone Cost: **4 AP**
+
+
+#### Details
+* Skill Check: Knowledge - Martial
+	* Inherits Modifiers from: **Intelligence**
+* Action Point Cost: 1
+* Base Difficulty: 10
+
+
+### Knowledge - Mechanical
+
+Knowledge and understanding of the related domain.
+
+Aspect Point Cost: **4 AP**
+<br />Capstone Cost: **4 AP**
+
+
+#### Details
+* Skill Check: Knowledge - Mechanical
+	* Inherits Modifiers from: **Intelligence**
+* Action Point Cost: 1
+* Base Difficulty: 10
+
+
+### Knowledge - Natural Sciences
+
+Knowledge and understanding of the related domain.
+
+Aspect Point Cost: **4 AP**
+<br />Capstone Cost: **4 AP**
+
+
+#### Details
+* Skill Check: Knowledge - Natural Sciences
+	* Inherits Modifiers from: **Intelligence**
+* Action Point Cost: 1
+* Base Difficulty: 10
+
+
+### Knowledge - Survival
+
+Knowledge and understanding of the related domain.
+
+Aspect Point Cost: **4 AP**
+<br />Capstone Cost: **4 AP**
+
+
+#### Details
+* Skill Check: Knowledge - Survival
+	* Inherits Modifiers from: **Intelligence**
+* Action Point Cost: 1
+* Base Difficulty: 10
 
 
 ### Leadership
@@ -564,36 +624,6 @@ Requires: **[Fit](#fit)**<br />
 	* Limited: **Melee**
 
 
-### Martial Knowledge
-
-Knowledge and understanding of the related domain.
-
-Aspect Point Cost: **4 AP**
-<br />Capstone Cost: **4 AP**
-
-
-#### Details
-* Skill Check: Martial Knowledge
-	* Inherits Modifiers from: **Intelligence**
-* Action Point Cost: 1
-* Base Difficulty: 10
-
-
-### Mechanical Knowledge
-
-Knowledge and understanding of the related domain.
-
-Aspect Point Cost: **4 AP**
-<br />Capstone Cost: **4 AP**
-
-
-#### Details
-* Skill Check: Mechanical Knowledge
-	* Inherits Modifiers from: **Intelligence**
-* Action Point Cost: 1
-* Base Difficulty: 10
-
-
 ### Medicine
 
 Allows a character to make a medicine check. This check has use in diagnosing and healing others. A successful medicine check may heal 1d6 health points. This takes the character 10 minutes. Any character healed by this aspect may not be healed by it again for 12 hours.
@@ -635,21 +665,6 @@ Requires: **[Mental Endurance](#mental-endurance)**<br />
 #### Details
 * Core Aspect Modifier: +1
 	* Applies to: **Intelligence**
-
-
-### Natural Sciences Knowledge
-
-Knowledge and understanding of the related domain.
-
-Aspect Point Cost: **4 AP**
-<br />Capstone Cost: **4 AP**
-
-
-#### Details
-* Skill Check: Natural Sciences Knowledge
-	* Inherits Modifiers from: **Intelligence**
-* Action Point Cost: 1
-* Base Difficulty: 10
 
 
 ### Perception
@@ -801,21 +816,6 @@ Requires: **[Fit](#fit)**<br />
 	* Inherits Modifiers from: **Strength**
 * Base Difficulty: 10
 * Action Point Cost: 1
-
-
-### Survival Knowledge
-
-Knowledge and understanding of the related domain.
-
-Aspect Point Cost: **4 AP**
-<br />Capstone Cost: **4 AP**
-
-
-#### Details
-* Skill Check: Survival Knowledge
-	* Inherits Modifiers from: **Intelligence**
-* Action Point Cost: 1
-* Base Difficulty: 10
 
 
 ### Swing
