@@ -172,6 +172,8 @@ def process_document(root):
             items_xml = element
         elif element.tag == 'aspects':
             aspects_xml = element
+        elif element.tag == 'templates':
+            pass
         else:
             raise Exception('Unexpected element: {}'.format(element.tag))
 

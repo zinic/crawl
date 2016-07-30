@@ -96,6 +96,17 @@
             <feature name="-5" cost="21" />
         </descriptor>
         
+        <descriptor name="Environment Mitigation">
+            <feature name="Low Light Vision" cost="5" />
+            <feature name="Infrared Sight" cost="10" />
+            <feature name="Echo Sight" cost="15" />
+        </descriptor>
+        
+        <descriptor name="Action Pool Refresh Modifier">
+            <feature name="+1" cost="8" />
+            <feature name="-1" cost="-8" />
+        </descriptor>
+        
         <descriptor name="Action Pool Modifier">
             <feature name="+1" cost="8" />
             <feature name="-1" cost="-8" />
@@ -122,10 +133,38 @@
             <feature name="+4" cost="21" />
         </descriptor>
         
+        <descriptor name="Aspect Point Grant" />
+        
         <descriptor name="Damage" formula="damage_cost" />
         
         <descriptor name="Damage Healed" formula="damage_cost" />
     </descriptors>
+    
+    <templates>
+        <template name="Human">
+            <feature descriptor="Size" value="0" />
+            <feature descriptor="Aspect Point Grant" value="10" />
+            
+            <text>
+            </text>
+        </template>
+
+        <template name="Dwarf">
+            <feature descriptor="Size" value="-1" />
+            <feature name="Environment Mitigation" value="Infrared Sight" />
+
+            <text>
+            </text>
+        </template>
+
+        <template name="Tola">
+            <feature descriptor="Size" value="0" />
+            
+            <text>
+                Tola are slender individuals, humanoid but with pale skin. Born in darkness they have a the natural ability to see in it.
+            </text>
+        </template>
+    </templates>
     
     <items>
         <item name="Chestplate" type="armor">
@@ -162,6 +201,17 @@
             <feature descriptor="Handedness" value="One-Handed" />
             
             <grants aspect="Firebolt" />
+        </item>
+
+        <item name="Wand of Frigid Cone" type="weapon">
+            <feature descriptor="Attack Method" value="Magic" />
+            <feature descriptor="Handedness" value="One-Handed" />
+            
+            <grants aspect="Frigid Cone" />
+        </item>
+
+        <item name="Bracers of Slap Fight" type="armor">
+            <grants aspect="Frantic Defense" />
         </item>
     </items>
     
