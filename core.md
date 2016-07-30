@@ -349,6 +349,11 @@ Two or more characters may who threaten the same enemy may attempt to flank this
 To be considered flanking, the two attackers must be able to draw a line between the map cells they occupy that intersects a map cell that the enemy occupies. This line must be drawn from the center of the map cells that the attackers occupy.
 
 
+#### Reactionary Actions
+
+Some aspects may grant actions which can happen at any point during a turn. These are called reactionary actions and may only be used if their critera for use are met. For example, a counter spell aspect is a reactionary action that may be used any time magic is used within medium range of the character.
+
+
 #### Opportunistic Actions
 
 Many aspects grant actions that have the opportunistic modifier. These actions may be executed when an enemy attempts to leave one of the character’s threatened map cells or executes an action that triggers opportunistic actions.

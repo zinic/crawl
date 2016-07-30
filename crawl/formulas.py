@@ -22,13 +22,10 @@ def damage_resistance_cost(value):
 
 
 def base_difficulty_cost(value):
-    valint = 0
-    
     if value == GM_ONLY:
         # The default base difficulty is currently 10, so
         # returning 2 for the cost is the same cost as 10
-        valint = 2
-    else:
-        valint = int(value)
-    
+        return 2
+
+    valint = int(value)    
     return -1 * (valint - 15) / 2

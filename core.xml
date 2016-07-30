@@ -96,6 +96,10 @@
             <feature name="-5" cost="21" />
         </descriptor>
         
+        <descriptor name="Reactionary" cost="10" />
+        
+        <descriptor name="NPC Cohort" cost="10" />
+        
         <descriptor name="Environment Mitigation">
             <feature name="Low Light Vision" cost="5" />
             <feature name="Infrared Sight" cost="10" />
@@ -138,6 +142,17 @@
         <descriptor name="Damage" formula="damage_cost" />
         
         <descriptor name="Damage Healed" formula="damage_cost" />
+        
+        <descriptor name="HP Pool Modifier">
+            <feature name="+1" cost="2" />
+            <feature name="+2" cost="4" />
+            <feature name="+3" cost="6" />
+            <feature name="+4" cost="8" />
+            <feature name="-1" cost="2" />
+            <feature name="-2" cost="4" />
+            <feature name="-3" cost="6" />
+            <feature name="-4" cost="8" />
+        </descriptor>
     </descriptors>
     
     <templates>
@@ -275,13 +290,43 @@
         </aspect>
         
         <aspect name="Fit">
+            <feature descriptor="HP Pool Modifier" value="+1" />
+            
             <text>
-                This aspect applies to any physically fit character.
+                This aspect applies to any physically fit character. All fit characters also receive +1 HP to their HP Pool.
+            </text>
+        </aspect>
+        
+        <aspect name="Intense Vigor">
+            <feature descriptor="Action Pool Refresh Modifier" value="+1" />
+            
+            <text>
+                This aspect applies to any physically fit character. All fit characters also receive +1 HP to their HP Pool.
+            </text>
+        </aspect>
+        
+        <aspect name="Quiescence">
+            <feature descriptor="Action Pool Refresh Modifier" value="+1" />
+            <feature descriptor="Core Aspect Modifier" value="-1">
+                <detail type="targets" value="Strength" />
+            </feature>
+            
+            <text>
+                Intense mental training has awarded you an additional action point. However, this focus leads one to neglect the body, giving the character a -1 Strength modifier.
+            </text>
+        </aspect>
+
+        <aspect name="Leadership">
+            <feature descriptor="NPC Cohort" />
+            
+            <text>
+                Leadership allows a character to begin splitting aspect points between their self and another character. The player may split apsect points between the two characters as they see fit with the exception that the cohort may not have more than half of the available aspect points.
             </text>
         </aspect>
 
         <aspect name="Intense Training: Endurance">
             <feature descriptor="Action Pool Modifier" value="+1" />
+            <feature descriptor="HP Pool Modifier" value="+1" />
             
             <requires name="Fit" />
             
@@ -294,6 +339,7 @@
             <feature descriptor="Core Aspect Modifier" value="+1">
                 <detail type="targets" value="Mobility" />
             </feature>
+            <feature descriptor="HP Pool Modifier" value="+1" />
             
             <requires name="Fit" />
             
@@ -306,6 +352,7 @@
             <feature descriptor="Core Aspect Modifier" value="+1">
                 <detail type="targets" value="Mobility" />
             </feature>
+            <feature descriptor="HP Pool Modifier" value="+1" />
             
             <requires name="Fit" />
             
@@ -472,6 +519,21 @@
             
             <text>
                 Allows a character to make a stealth check by walking carefully. In order to enter stealth, the character must not be visible by any enemies. While using this aspect, a character must move at **half their move speed**.
+            </text>
+        </aspect>
+        
+        <aspect name="Shot Call">
+            <feature descriptor="Skill Check Modifier" value="+1">
+                <detail type="targets" value="Ally's Attack" />
+                <detail type="limit" value="Ranged Attacks Only" />
+            </feature>
+            <feature descriptor="Base Difficulty" value="12" />
+            <feature descriptor="Action Point Cost" value="1" />
+            
+            <requires name="Perception" />
+            
+            <text>
+                Allows a character to make a perception check. This check, if successful, grants a target ally a +1 modifier to their next ranged attack. The target ally must be within the character's line of sight as must be the target enemy however for the target ally to recieve the +1 modifier the target ally does not need to have line of sight on the target enemy.
             </text>
         </aspect>
         
@@ -726,6 +788,27 @@
                 Target a magical effect with an invisible beam directed by the caster. The target must be within **medium range** and the magical effect must be understood by the caster. The caster may be required by the game master to make an appropriate check for identifying the target spell's effects. Attacking a spell without understanding its effects incurs a **-4 modifier** to the dismiss check.
 
                 The spell requires the caster of the target spell to make an intelligence check vs. the dismiss caster's check roll. If the spell is not known, additional negatives apply to this check. Upon winning this opposed check, the target spell is dismissed and all of its effects immedieatly stop.
+            </text>
+        </aspect>
+        
+        <aspect name="Countercast">
+            <feature descriptor="Skill Check">
+                <detail type="inherits_from" value="Intelligence" />
+            </feature>
+            <feature descriptor="Action Point Cost" value="2" />
+            <feature descriptor="Base Difficulty" value="10" />
+            
+            <feature descriptor="Magic">
+                <detail type="energy_type" value="Meta" />
+            </feature>
+            
+            <feature descriptor="Reactionary" />
+            <feature descriptor="Range" value="Medium" />
+            
+            <requires name="Dismiss" />
+            
+            <text>
+                This enhanced ersion of Dismiss has all of the same rules as Dimiss but with the added feature of being able to target magical effects as a reaction.
             </text>
         </aspect>
     </aspects>
