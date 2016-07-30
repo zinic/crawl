@@ -365,7 +365,7 @@ Characters may take damage over time during the game. Damage types are listed be
 
 #### Armor
 
-Characters may defend themselves not just with actions but with equipment. Armor imparts a function called **damage resistance**. The damage resistance of an armor is given as a number to reduce damage taken by. For example, an Iron Chestplate imparts **6 DR**. This value means that the armor will reduce any incoming damage to the character by 6.
+Characters may defend themselves not just with actions but with equipment. Armor imparts a function called **damage resistance**. The damage resistance of an armor is given as a number to reduce damage taken by - this damage must apply to an energy type. For example, an Iron Chestplate imparts **6 DR Kinetic**. This value means that the armor will reduce any incoming kinetic damage to the character by 6.
 
 Some armors may restrict movement and therefore come with a negative mobility check modifier. Some heavier armors may also require a certain strength check modifier from the character.
 

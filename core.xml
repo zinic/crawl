@@ -328,6 +328,8 @@
                 <detail type="targets" value="Strength" />
             </feature>
             
+            <requires name="Mental Endurance" />
+            
             <text>
                 Intense mental training has awarded you an additional action point. However, this focus leads one to neglect the body, giving the character a -1 Strength modifier.
             </text>
@@ -482,6 +484,7 @@
         <aspect name="Medicine">
             <feature descriptor="Skill Check">
                 <detail type="limit" value="Non-Combat Only" />
+                <detail type="inherits_from" value="Intelligence" />
             </feature>
             <feature descriptor="Base Difficulty" value="10" />
             <feature descriptor="Damage Healed" value="1d6" />

@@ -532,6 +532,7 @@ Aspect Point Cost: **7 AP**
 #### Details
 * Skill Check: Medicine
 	* Limited: **Non-Combat Only**
+	* Inherits Modifiers from: **Intelligence**
 * Base Difficulty: 10
 * Damage Healed: 1d6
 
@@ -640,9 +641,9 @@ Aspect Point Cost: **5 AP**
 Intense mental training has awarded you an additional action point. However, this focus leads one to neglect the body, giving the character a -1 Strength modifier.
 
 Aspect Point Cost: **1 AP**
-<br />Capstone Cost: **1 AP**
+<br />Capstone Cost: **9 AP**
 
-
+Requires: **[Mental Endurance](#mental-endurance)**<br />
 #### Details
 * Action Pool Refresh Modifier: +1
 * Core Aspect Modifier: -1
