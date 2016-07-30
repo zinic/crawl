@@ -64,6 +64,19 @@ Grants Aspect: **[Frigid Cone](#frigid-cone)**<br />
 
 
 ## Aspects
+### Adonic
+
+Super Strong
+
+Aspect Point Cost: **16 AP**
+<br />Capstone Cost: **52 AP**
+
+Requires: **[Intense Acrobatic Training](#intense-acrobatic-training)**<br />Requires: **[Intense Resistance Training](#intense-resistance-training)**<br />Requires: **[Intense Endurance Training](#intense-endurance-training)**<br />
+#### Details
+* Action Pool Modifier: +1
+* Action Pool Refresh Modifier: +1
+
+
 ### Blend into Crowds
 
 Allows a street-wise character to blend into a crowd and use this action as a sealth attempt. The crowd must be sufficiently thick such that the game master considers blending in acceptable for stealth.
@@ -349,9 +362,9 @@ Aspect Point Cost: **4 AP**
 Allows a character to attack 2 enemies standing side-by-side. The enemies must be in adjacent map cells. The attacker makes a single attack roll that both targets may then roll against. This attack incurs a **-2 modifier** to the attack roll.
 
 Aspect Point Cost: **5 AP**
-<br />Capstone Cost: **7 AP**
+<br />Capstone Cost: **13 AP**
 
-Requires: **[Fit](#fit)**<br />
+Requires: **[Fit](#fit)**<br />Requires: **[Slash](#slash)**<br />
 #### Details
 * Skill Check: Great Slash
 * Base Difficulty: 10
@@ -371,7 +384,20 @@ Aspect Point Cost: **1 AP**
 
 
 
-### Intense Training: Acrobatic
+### Indomitable
+
+You're big. You're hard to get around and there's no way an enemy gets the slip on you. This character can not be flanked.
+
+Aspect Point Cost: **7 AP**
+<br />Capstone Cost: **14 AP**
+
+Requires: **[Martial Artist](#martial-artist)**<br />
+#### Details
+* Can't be Flanked
+* HP Pool Modifier: +1
+
+
+### Intense Acrobatic Training
 
 This character has gone through regimented exercises to increase their overall mobility and fitness.
 
@@ -385,7 +411,7 @@ Requires: **[Fit](#fit)**<br />
 * HP Pool Modifier: +1
 
 
-### Intense Training: Endurance
+### Intense Endurance Training
 
 This character has gone through regimented exercises to increase their overall endurance.
 
@@ -398,7 +424,7 @@ Requires: **[Fit](#fit)**<br />
 * HP Pool Modifier: +1
 
 
-### Intense Training: Resistance
+### Intense Resistance Training
 
 This character has gone through regimented exercises to increase their overall strength and fitness.
 
@@ -410,18 +436,6 @@ Requires: **[Fit](#fit)**<br />
 * Core Aspect Modifier: +1
 	* Applies to: **Mobility**
 * HP Pool Modifier: +1
-
-
-### Intense Vigor
-
-This aspect applies to any physically fit character. All fit characters also receive +1 HP to their HP Pool.
-
-Aspect Point Cost: **8 AP**
-<br />Capstone Cost: **8 AP**
-
-
-#### Details
-* Action Pool Refresh Modifier: +1
 
 
 ### Keen Senses
@@ -497,9 +511,9 @@ Aspect Point Cost: **3 AP**
 This aspect grants a character expert martial arts knowledge. Because of this intense training, the character has acquired a unique understanding of how to strike at an opponent's weak points.
 
 Aspect Point Cost: **5 AP**
-<br />Capstone Cost: **5 AP**
+<br />Capstone Cost: **7 AP**
 
-
+Requires: **[Fit](#fit)**<br />
 #### Details
 * Crit Success Modifier: +1
 	* Limited: **Melee**
@@ -520,6 +534,31 @@ Aspect Point Cost: **7 AP**
 	* Limited: **Non-Combat Only**
 * Base Difficulty: 10
 * Damage Healed: 1d6
+
+
+### Mental Endurance
+
+Years of conditioning has left this character with a hardened mind. Stress rolls off their shoulders and their ability to tax their mind is far greater than normal.
+
+Aspect Point Cost: **8 AP**
+<br />Capstone Cost: **8 AP**
+
+
+#### Details
+* Action Pool Modifier: +1
+
+
+### Mentat
+
+Further training of the mind has left this character permanatly smarter.
+
+Aspect Point Cost: **8 AP**
+<br />Capstone Cost: **16 AP**
+
+Requires: **[Mental Endurance](#mental-endurance)**<br />
+#### Details
+* Core Aspect Modifier: +1
+	* Applies to: **Intelligence**
 
 
 ### Perception
@@ -669,6 +708,18 @@ Requires: **[Fit](#fit)**<br />
 	* Limited: **Thrusting Weapons**
 * Base Difficulty: 10
 * Action Point Cost: 1
+
+
+### Vigor
+
+TODO
+
+Aspect Point Cost: **8 AP**
+<br />Capstone Cost: **8 AP**
+
+
+#### Details
+* Action Pool Refresh Modifier: +1
 
 
 ### Volta
