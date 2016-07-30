@@ -6,7 +6,7 @@
             <feature name="Magic" cost="0" />
         </descriptor>
         
-        <descriptor name="Handedness">
+        <descriptor name="Weapon Handedness">
             <feature name="One-Handed" cost="0" />
             <feature name="Two-Handed" cost="1" />
         </descriptor>
@@ -194,7 +194,7 @@
         
         <item name="Knife" type="weapon">
             <feature descriptor="Attack Method" value="Slashing" />
-            <feature descriptor="Handedness" value="One-Handed" />
+            <feature descriptor="Weapon Handedness" value="One-Handed" />
             <feature descriptor="Range" value="Melee" />
             <feature descriptor="Damage" value="1d4" />
             <feature descriptor="Damage Type" value="Kinetic" />
@@ -202,7 +202,7 @@
 
         <item name="Dagger" type="weapon">
             <feature descriptor="Attack Method" value="Thrusting" />
-            <feature descriptor="Handedness" value="One-Handed" />
+            <feature descriptor="Weapon Handedness" value="One-Handed" />
             <feature descriptor="Range" value="Melee" />
             <feature descriptor="Damage" value="1d4" />
             <feature descriptor="Damage Type" value="Kinetic" />
@@ -213,14 +213,14 @@
 
         <item name="Wand of Firebolt" type="weapon">
             <feature descriptor="Attack Method" value="Magic" />
-            <feature descriptor="Handedness" value="One-Handed" />
+            <feature descriptor="Weapon Handedness" value="One-Handed" />
             
             <grants aspect="Firebolt" />
         </item>
 
         <item name="Wand of Frigid Cone" type="weapon">
             <feature descriptor="Attack Method" value="Magic" />
-            <feature descriptor="Handedness" value="One-Handed" />
+            <feature descriptor="Weapon Handedness" value="One-Handed" />
             
             <grants aspect="Frigid Cone" />
         </item>
