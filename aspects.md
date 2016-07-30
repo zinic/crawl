@@ -46,7 +46,7 @@ Monetary Cost: **360 $$**
 
 
 #### Wand of Firebolt
-Monetary Cost: **960 $$**
+Monetary Cost: **1080 $$**
 <br />
 Grants Aspect: **[Firebolt](#firebolt)**<br />
 #### Details
@@ -55,7 +55,7 @@ Grants Aspect: **[Firebolt](#firebolt)**<br />
 
 
 #### Wand of Frigid Cone
-Monetary Cost: **1440 $$**
+Monetary Cost: **1560 $$**
 <br />
 Grants Aspect: **[Frigid Cone](#frigid-cone)**<br />
 #### Details
@@ -122,8 +122,8 @@ Requires: **[Stab](#stab)**<br />
 
 This enhanced ersion of Dismiss has all of the same rules as Dimiss but with the added feature of being able to target magical effects as a reaction.
 
-Aspect Point Cost: **16 AP**
-<br />Capstone Cost: **23 AP**
+Aspect Point Cost: **17 AP**
+<br />Capstone Cost: **25 AP**
 
 Requires: **[Dismiss](#dismiss)**<br />
 #### Details
@@ -158,8 +158,8 @@ Target a magical effect with an invisible beam directed by the caster. The targe
 
 The spell requires the caster of the target spell to make an intelligence check vs. the dismiss caster's check roll. If the spell is not known, additional negatives apply to this check. Upon winning this opposed check, the target spell is dismissed and all of its effects immedieatly stop.
 
-Aspect Point Cost: **7 AP**
-<br />Capstone Cost: **7 AP**
+Aspect Point Cost: **8 AP**
+<br />Capstone Cost: **8 AP**
 
 
 #### Details
@@ -176,8 +176,8 @@ Aspect Point Cost: **7 AP**
 
 Projects a thin, barely-visible green field around the target. This field moves with the target and has range personal. The field, at time of cast, may be tuned to a single energy type. For any damage inflicted of this type, this field provides **2 DR**. In addition, any effect with this energy type with a check that the target must make is subject to a **+2 modifier**.
 
-Aspect Point Cost: **13 AP**
-<br />Capstone Cost: **13 AP**
+Aspect Point Cost: **14 AP**
+<br />Capstone Cost: **14 AP**
 
 
 #### Details
@@ -262,8 +262,8 @@ Requires: **[High Manual Dexterity](#high-manual-dexterity)**<br />
 
 The character conjures a ball of fire in either hand which may then be thrown. The attack roll recieves the character's intelligence modifier as an attack bonus.
 
-Aspect Point Cost: **8 AP**
-<br />Capstone Cost: **8 AP**
+Aspect Point Cost: **9 AP**
+<br />Capstone Cost: **9 AP**
 
 
 #### Details
@@ -293,8 +293,8 @@ Aspect Point Cost: **2 AP**
 
 The character conjures a kinetic shield that covers a target's body. This shield has a **DR of 4**. The shield lasts for 10 minutes or until an attack lands and the shield absorbs damage.
 
-Aspect Point Cost: **7 AP**
-<br />Capstone Cost: **7 AP**
+Aspect Point Cost: **8 AP**
+<br />Capstone Cost: **8 AP**
 
 
 #### Details
@@ -327,8 +327,8 @@ Requires: **[Fit](#fit)**<br />
 
 The character summons a cold blast directed in a cone shaped area in-front of them. This is considered an area attack for all affected map cells.
 
-Aspect Point Cost: **12 AP**
-<br />Capstone Cost: **12 AP**
+Aspect Point Cost: **13 AP**
+<br />Capstone Cost: **13 AP**
 
 
 #### Details
@@ -371,6 +371,7 @@ Requires: **[Fit](#fit)**<br />Requires: **[Slash](#slash)**<br />
 * Base Difficulty: 10
 * Skill Check Modifier: -2
 	* Applies to: **Great Slash**
+	* Inherits Modifiers from: **Mobility**
 * Extra Target: +1
 * Action Point Cost: 2
 
@@ -719,14 +720,34 @@ Requires: **[Duck and Dodge](#duck-and-dodge)**<br />Requires: **[Fit](#fit)**<b
 * Action Point Cost: 2
 
 
+### Purify
+
+Allows a caster to magically heal a poisoned or diseased character. The caster must roll their skill check versus the difficulty of the disease or poison.
+
+Aspect Point Cost: **12 AP**
+<br />Capstone Cost: **12 AP**
+
+
+#### Details
+* Skill Check: Purify
+	* Inherits Modifiers from: **Intelligence**
+* Action Point Cost: 1
+* Base Difficulty: gm_only
+* Heal Affliction: Diseased
+* Heal Affliction: Poisoned
+* Magic
+	* Magic Energy Type: **Meta**
+* Range: Melee
+
+
 ### Quell
 
 The character conjures a simple kinetic shield that covers their entire body. This shield has a **DR of 2**. The shield lasts for 10 minutes or until an attack lands and the shield absorbs damage.
 
 This spell may target *only the caster* and no one else.
 
-Aspect Point Cost: **5 AP**
-<br />Capstone Cost: **5 AP**
+Aspect Point Cost: **6 AP**
+<br />Capstone Cost: **6 AP**
 
 
 #### Details
@@ -771,6 +792,25 @@ Aspect Point Cost: **4 AP**
 * Action Point Cost: 1
 
 
+### Refresh
+
+The caster heals a target for 1d6 health points. This healing takes effect instantly and staunches any bleeding the character may be suffering from. This spell may be used as many times as needed on the same target.
+
+Aspect Point Cost: **8 AP**
+<br />Capstone Cost: **8 AP**
+
+
+#### Details
+* Skill Check: Refresh
+	* Inherits Modifiers from: **Intelligence**
+* Action Point Cost: 1
+* Base Difficulty: 10
+* Damage Healed: 1d6
+* Magic
+	* Magic Energy Type: **Meta**
+* Range: Melee
+
+
 ### Shot Call
 
 Allows a character to make a perception check. This check, if successful, grants a target ally a +1 modifier to their next ranged attack. The target ally must be within the character's line of sight as must be the target enemy however for the target ally to recieve the +1 modifier the target ally does not need to have line of sight on the target enemy.
@@ -803,12 +843,31 @@ Requires: **[Fit](#fit)**<br />
 * Action Point Cost: 1
 
 
+### Sooth
+
+Allows a caster to magically heal a sickened character.
+
+Aspect Point Cost: **9 AP**
+<br />Capstone Cost: **9 AP**
+
+
+#### Details
+* Skill Check: Sooth
+	* Inherits Modifiers from: **Intelligence**
+* Action Point Cost: 1
+* Base Difficulty: 10
+* Heal Affliction: Sickened
+* Magic
+	* Magic Energy Type: **Meta**
+* Range: Melee
+
+
 ### Spell Dart
 
 Spell Dart is a meta magic spell that allows a character to aim a single finger (of their choice) at a target and fire a crackling spark of pure magical energy at them. This spark flies like an arrow in speed and trajectory. Upon impact it explodes with a loud crack and a flurry of much smaller, short-lived magical sparks.
 
-Aspect Point Cost: **8 AP**
-<br />Capstone Cost: **8 AP**
+Aspect Point Cost: **9 AP**
+<br />Capstone Cost: **9 AP**
 
 
 #### Details
@@ -870,8 +929,8 @@ Aspect Point Cost: **8 AP**
 
 Upon casting, a bolt of lightning arcs from either of the character's hands toward the target enemy with a thundering crack. The attack roll recieves the character's intelligence modifier as an attack bonus.
 
-Aspect Point Cost: **8 AP**
-<br />Capstone Cost: **8 AP**
+Aspect Point Cost: **9 AP**
+<br />Capstone Cost: **9 AP**
 
 
 #### Details

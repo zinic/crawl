@@ -31,7 +31,7 @@
             <feature name="4" cost="25" />
         </descriptor>
         
-        <descriptor name="Magic" cost="0" />
+        <descriptor name="Magic" cost="1" />
         
         <descriptor name="Opportunistic Action" cost="5" />
         
@@ -58,6 +58,12 @@
         
         <descriptor name="Base Difficulty" formula="base_difficulty_cost" />
         
+        <descriptor name="Heal Affliction">
+            <feature name="Sickened" cost="3" />
+            <feature name="Diseased" cost="3" />
+            <feature name="Poisoned" cost="3" />
+        </descriptor>
+            
         <descriptor name="Skill Check Modifier">
             <feature name="+1" cost="3" />
             <feature name="+2" cost="5" />
@@ -554,7 +560,6 @@
             <feature descriptor="Skill Check">
                 <detail type="inherits_from" value="Intelligence" />
             </feature>
-            
             <feature descriptor="Damage Healed" value="1d6" />
             <feature descriptor="Action Point Cost" value="2" />
             <feature descriptor="Base Difficulty" value="10" />
@@ -775,6 +780,7 @@
             
             <feature descriptor="Skill Check Modifier" value="-2">
                 <detail type="targets" value="Great Slash" />
+                <detail type="inherits_from" value="Mobility" />
             </feature>
             
             <feature descriptor="Extra Target" value="+1" />
@@ -795,6 +801,59 @@
             
             <text>
                 Increases a character's natural talent in magic for a given energy type. This aspect must be taken multiple times for multiple energy types.
+            </text>
+        </aspect>
+        
+        <aspect name="Refresh">
+            <feature descriptor="Skill Check">
+                <detail type="inherits_from" value="Intelligence" />
+            </feature>
+            <feature descriptor="Action Point Cost" value="1" />
+            <feature descriptor="Base Difficulty" value="10" />            
+            <feature descriptor="Damage Healed" value="1d6" />
+            <feature descriptor="Magic">
+                <detail type="energy_type" value="Meta" />
+            </feature>
+            <feature descriptor="Range" value="Melee" />
+            
+            <text>
+                The caster heals a target for 1d6 health points. This healing takes effect instantly and staunches any bleeding the character may be suffering from. This spell may be used as many times as needed on the same target.
+            </text>
+        </aspect>
+        
+        <aspect name="Sooth">
+            <feature descriptor="Skill Check">
+                <detail type="inherits_from" value="Intelligence" />
+            </feature>
+            <feature descriptor="Action Point Cost" value="1" />
+            <feature descriptor="Base Difficulty" value="10" />
+            <feature descriptor="Heal Affliction" value="Sickened" />
+            <feature descriptor="Magic">
+                <detail type="energy_type" value="Meta" />
+            </feature>
+            <feature descriptor="Range" value="Melee" />
+            
+            <text>
+                Allows a caster to magically heal a sickened character.
+            </text>
+        </aspect>
+        
+        <aspect name="Purify">
+            <feature descriptor="Skill Check">
+                <detail type="inherits_from" value="Intelligence" />
+            </feature>
+            <feature descriptor="Action Point Cost" value="1" />
+            <feature descriptor="Base Difficulty" value="gm_only" />
+            <feature descriptor="Heal Affliction" value="Diseased" />
+            <feature descriptor="Heal Affliction" value="Poisoned" />
+
+            <feature descriptor="Magic">
+                <detail type="energy_type" value="Meta" />
+            </feature>
+            <feature descriptor="Range" value="Melee" />
+            
+            <text>
+                Allows a caster to magically heal a poisoned or diseased character. The caster must roll their skill check versus the difficulty of the disease or poison.
             </text>
         </aspect>
         
