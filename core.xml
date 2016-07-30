@@ -339,7 +339,9 @@
             <feature descriptor="Skill Check">
                 <detail type="inherits_from" value="Intelligence" />
             </feature>
-        
+            <feature descriptor="Action Point Cost" value="1" />
+            <feature descriptor="Base Difficulty" value="10" />            
+
             <text>
                 Knowledge and understanding of the related domain.
             </text>
@@ -349,6 +351,8 @@
             <feature descriptor="Skill Check">
                 <detail type="inherits_from" value="Intelligence" />
             </feature>
+            <feature descriptor="Action Point Cost" value="1" />
+            <feature descriptor="Base Difficulty" value="10" />            
 
             <text>
                 Knowledge and understanding of the related domain.
@@ -359,6 +363,8 @@
             <feature descriptor="Skill Check">
                 <detail type="inherits_from" value="Intelligence" />
             </feature>
+            <feature descriptor="Action Point Cost" value="1" />
+            <feature descriptor="Base Difficulty" value="10" />            
 
             <text>
                 Knowledge and understanding of the related domain.
@@ -369,6 +375,8 @@
             <feature descriptor="Skill Check">
                 <detail type="inherits_from" value="Intelligence" />
             </feature>
+            <feature descriptor="Action Point Cost" value="1" />
+            <feature descriptor="Base Difficulty" value="10" />            
             
             <text>
                 Knowledge and understanding of the related domain.
@@ -379,6 +387,8 @@
             <feature descriptor="Skill Check">
                 <detail type="inherits_from" value="Intelligence" />
             </feature>
+            <feature descriptor="Action Point Cost" value="1" />
+            <feature descriptor="Base Difficulty" value="10" />            
 
             <text>
                 Knowledge and understanding of the related domain.
@@ -389,6 +399,8 @@
             <feature descriptor="Skill Check">
                 <detail type="inherits_from" value="Intelligence" />
             </feature>
+            <feature descriptor="Action Point Cost" value="1" />
+            <feature descriptor="Base Difficulty" value="10" />            
 
             <text>
                 Knowledge and understanding of the related domain.
@@ -399,6 +411,8 @@
             <feature descriptor="Skill Check">
                 <detail type="inherits_from" value="Intelligence" />
             </feature>
+            <feature descriptor="Action Point Cost" value="1" />
+            <feature descriptor="Base Difficulty" value="10" />            
 
             <text>
                 Knowledge and understanding of the related domain.
@@ -673,6 +687,7 @@
         <aspect name="Stab">
             <feature descriptor="Skill Check">
                 <detail type="limit" value="Thrusting Weapons" />
+                <detail type="inherits_from" value="Strength" />
             </feature>
             <feature descriptor="Base Difficulty" value="10" />
             <feature descriptor="Action Point Cost" value="1" />
@@ -684,9 +699,23 @@
             </text>
         </aspect>
 
+        <aspect name="Swing">
+            <feature descriptor="Skill Check">
+                <detail type="limit" value="Swung Weapons" />
+                <detail type="inherits_from" value="Strength" />
+            </feature>
+            <feature descriptor="Base Difficulty" value="10" />
+            <feature descriptor="Action Point Cost" value="1" />
+
+            <text>
+                Grants a character a melee swing attack. This attack may be used with any swung melee weapon. This does not apply to slashing weapons which require different techniques.
+            </text>
+        </aspect>
+
         <aspect name="Slash">
             <feature descriptor="Skill Check">
                 <detail type="limit" value="Slashing Weapons" />
+                <detail type="inherits_from" value="Mobility" />
             </feature>
             <feature descriptor="Base Difficulty" value="10" />
             <feature descriptor="Action Point Cost" value="1" />
