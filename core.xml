@@ -6,9 +6,11 @@
             <feature name="Magic" cost="0" />
         </descriptor>
         
-        <descriptor name="Weapon Handedness">
-            <feature name="One-Handed" cost="0" />
-            <feature name="Two-Handed" cost="1" />
+        <descriptor name="Number of Hands Required">
+            <feature name="1" cost="0" />
+            <feature name="2" cost="1" />
+            <feature name="3" cost="1" />
+            <feature name="4" cost="1" />
         </descriptor>
         
         <descriptor name="Area Effect">
@@ -194,7 +196,7 @@
         
         <item name="Knife" type="weapon">
             <feature descriptor="Attack Method" value="Slashing" />
-            <feature descriptor="Weapon Handedness" value="One-Handed" />
+            <feature descriptor="Number of Hands Required" value="1" />
             <feature descriptor="Range" value="Melee" />
             <feature descriptor="Damage" value="1d4" />
             <feature descriptor="Damage Type" value="Kinetic" />
@@ -202,7 +204,7 @@
 
         <item name="Dagger" type="weapon">
             <feature descriptor="Attack Method" value="Thrusting" />
-            <feature descriptor="Weapon Handedness" value="One-Handed" />
+            <feature descriptor="Number of Hands Required" value="1" />
             <feature descriptor="Range" value="Melee" />
             <feature descriptor="Damage" value="1d4" />
             <feature descriptor="Damage Type" value="Kinetic" />
@@ -213,14 +215,14 @@
 
         <item name="Wand of Firebolt" type="weapon">
             <feature descriptor="Attack Method" value="Magic" />
-            <feature descriptor="Weapon Handedness" value="One-Handed" />
+            <feature descriptor="Number of Hands Required" value="1" />
             
             <grants aspect="Firebolt" />
         </item>
 
         <item name="Wand of Frigid Cone" type="weapon">
             <feature descriptor="Attack Method" value="Magic" />
-            <feature descriptor="Weapon Handedness" value="One-Handed" />
+            <feature descriptor="Number of Hands Required" value="1" />
             
             <grants aspect="Frigid Cone" />
         </item>

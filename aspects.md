@@ -25,7 +25,7 @@ Monetary Cost: **480 $$**
 
 #### Details
 * Attack Method: Thrusting
-* Handedness: One-Handed
+* Number of Hands Required: 1
 * Range: Melee
 * Damage: 1d4
 * Damage Type: Kinetic
@@ -39,7 +39,7 @@ Monetary Cost: **360 $$**
 
 #### Details
 * Attack Method: Slashing
-* Handedness: One-Handed
+* Number of Hands Required: 1
 * Range: Melee
 * Damage: 1d4
 * Damage Type: Kinetic
@@ -51,7 +51,7 @@ Monetary Cost: **960 $$**
 Grants Aspect: **[Firebolt](#firebolt)**<br />
 #### Details
 * Attack Method: Magic
-* Handedness: One-Handed
+* Number of Hands Required: 1
 
 
 #### Wand of Frigid Cone
@@ -60,7 +60,7 @@ Monetary Cost: **1440 $$**
 Grants Aspect: **[Frigid Cone](#frigid-cone)**<br />
 #### Details
 * Attack Method: Magic
-* Handedness: One-Handed
+* Number of Hands Required: 1
 
 
 ## Aspects
