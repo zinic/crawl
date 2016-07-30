@@ -1,6 +1,12 @@
 # The Crawl Aspect Document
 
 ## Items
+#### Bracers of Slap Fight
+Monetary Cost: **600 $$**
+<br />
+Grants Aspect: **[Frantic Defense](#frantic-defense)**<br />
+
+
 #### Chestplate
 
 A basic chestplate for defense.
@@ -48,6 +54,15 @@ Grants Aspect: **[Firebolt](#firebolt)**<br />
 * Handedness: One-Handed
 
 
+#### Wand of Frigid Cone
+Monetary Cost: **1440 $$**
+<br />
+Grants Aspect: **[Frigid Cone](#frigid-cone)**<br />
+#### Details
+* Attack Method: Magic
+* Handedness: One-Handed
+
+
 ## Aspects
 ### Blend into Crowds
 
@@ -69,7 +84,7 @@ Aspect Point Cost: **5 AP**
 Allows a to make a slashing attack as an opportunistic action.
 
 Aspect Point Cost: **4 AP**
-<br />Capstone Cost: **9 AP**
+<br />Capstone Cost: **10 AP**
 
 Requires: **[Slash](#slash)**<br />
 #### Details
@@ -82,12 +97,31 @@ Requires: **[Slash](#slash)**<br />
 Allows a to make a stabbing attack as an opportunistic action.
 
 Aspect Point Cost: **4 AP**
-<br />Capstone Cost: **9 AP**
+<br />Capstone Cost: **10 AP**
 
 Requires: **[Stab](#stab)**<br />
 #### Details
 * Action Point Cost: 1
 * Opportunistic Action
+
+
+### Countercast
+
+This enhanced ersion of Dismiss has all of the same rules as Dimiss but with the added feature of being able to target magical effects as a reaction.
+
+Aspect Point Cost: **16 AP**
+<br />Capstone Cost: **23 AP**
+
+Requires: **[Dismiss](#dismiss)**<br />
+#### Details
+* Skill Check: Countercast
+	* Inherits Modifiers from: **Intelligence**
+* Action Point Cost: 2
+* Base Difficulty: 10
+* Magic
+	* Magic Energy Type: **Meta**
+* Reactionary
+* Range: Medium
 
 
 ### Disable Device
@@ -231,12 +265,14 @@ Aspect Point Cost: **8 AP**
 
 ### Fit
 
-This aspect applies to any physically fit character.
+This aspect applies to any physically fit character. All fit characters also receive +1 HP to their HP Pool.
 
-Aspect Point Cost: **1 AP**
-<br />Capstone Cost: **1 AP**
+Aspect Point Cost: **2 AP**
+<br />Capstone Cost: **2 AP**
 
 
+#### Details
+* HP Pool Modifier: +1
 
 
 ### Foil
@@ -264,7 +300,7 @@ Aspect Point Cost: **7 AP**
 Allows a character to make a simple dodge-based defense against an incoming attack. The defense roll recieves the character's **mobility modifier** as a defense bonus.
 
 Aspect Point Cost: **3 AP**
-<br />Capstone Cost: **4 AP**
+<br />Capstone Cost: **5 AP**
 
 Requires: **[Fit](#fit)**<br />
 #### Details
@@ -313,7 +349,7 @@ Aspect Point Cost: **4 AP**
 Allows a character to attack 2 enemies standing side-by-side. The enemies must be in adjacent map cells. The attacker makes a single attack roll that both targets may then roll against. This attack incurs a **-2 modifier** to the attack roll.
 
 Aspect Point Cost: **5 AP**
-<br />Capstone Cost: **6 AP**
+<br />Capstone Cost: **7 AP**
 
 Requires: **[Fit](#fit)**<br />
 #### Details
@@ -339,38 +375,53 @@ Aspect Point Cost: **1 AP**
 
 This character has gone through regimented exercises to increase their overall mobility and fitness.
 
-Aspect Point Cost: **8 AP**
-<br />Capstone Cost: **9 AP**
+Aspect Point Cost: **10 AP**
+<br />Capstone Cost: **12 AP**
 
 Requires: **[Fit](#fit)**<br />
 #### Details
 * Core Aspect Modifier: +1
 	* Applies to: **Mobility**
+* HP Pool Modifier: +1
 
 
 ### Intense Training: Endurance
 
 This character has gone through regimented exercises to increase their overall endurance.
 
-Aspect Point Cost: **8 AP**
-<br />Capstone Cost: **9 AP**
+Aspect Point Cost: **10 AP**
+<br />Capstone Cost: **12 AP**
 
 Requires: **[Fit](#fit)**<br />
 #### Details
 * Action Pool Modifier: +1
+* HP Pool Modifier: +1
 
 
 ### Intense Training: Resistance
 
 This character has gone through regimented exercises to increase their overall strength and fitness.
 
-Aspect Point Cost: **8 AP**
-<br />Capstone Cost: **9 AP**
+Aspect Point Cost: **10 AP**
+<br />Capstone Cost: **12 AP**
 
 Requires: **[Fit](#fit)**<br />
 #### Details
 * Core Aspect Modifier: +1
 	* Applies to: **Mobility**
+* HP Pool Modifier: +1
+
+
+### Intense Vigor
+
+This aspect applies to any physically fit character. All fit characters also receive +1 HP to their HP Pool.
+
+Aspect Point Cost: **8 AP**
+<br />Capstone Cost: **8 AP**
+
+
+#### Details
+* Action Pool Refresh Modifier: +1
 
 
 ### Keen Senses
@@ -378,11 +429,23 @@ Requires: **[Fit](#fit)**<br />
 When a stealthed target character passes within 1 map cell of the character, as an opportunistic action, the character may make a perception check to oppose the target's stealth.
 
 Aspect Point Cost: **5 AP**
-<br />Capstone Cost: **13 AP**
+<br />Capstone Cost: **9 AP**
 
 Requires: **[Perception](#perception)**<br />
 #### Details
 * Opportunistic Action
+
+
+### Leadership
+
+Leadership allows a character to begin splitting aspect points between their self and another character. The player may split apsect points between the two characters as they see fit with the exception that the cohort may not have more than half of the available aspect points.
+
+Aspect Point Cost: **10 AP**
+<br />Capstone Cost: **10 AP**
+
+
+#### Details
+* NPC Cohort
 
 
 ### Leaping Strike
@@ -390,7 +453,7 @@ Requires: **[Perception](#perception)**<br />
 Allows a character to perform a jump action and an attack in one turn with a specified melee weapon type. The roll for this attack is treated as the character's Jump check as well. This attack grants a **+1 modifier** to the attack roll.
 
 Aspect Point Cost: **7 AP**
-<br />Capstone Cost: **8 AP**
+<br />Capstone Cost: **9 AP**
 
 Requires: **[Fit](#fit)**<br />
 #### Details
@@ -465,8 +528,8 @@ Allows a character to make a perception check.
 
 Take a look at your surroundings to attempt to find out interesting information. There is no base difficulty listed here - the game master is responsible for providing resonable difficulties based on the surroundings in the setting and the target of observation.
 
-Aspect Point Cost: **8 AP**
-<br />Capstone Cost: **8 AP**
+Aspect Point Cost: **4 AP**
+<br />Capstone Cost: **4 AP**
 
 
 #### Details
@@ -497,7 +560,7 @@ Requires: **[Filch](#filch)**<br />
 Allows a character to make a more acrobatic dodge. This defense roll requires the character to not be slowed. The defense roll receives the character's mobility modifier as a defense bonus in addition to a +2 modifier from the aspect itself.
 
 Aspect Point Cost: **8 AP**
-<br />Capstone Cost: **13 AP**
+<br />Capstone Cost: **14 AP**
 
 Requires: **[Duck and Dodge](#duck-and-dodge)**<br />Requires: **[Fit](#fit)**<br />
 #### Details
@@ -533,6 +596,20 @@ Aspect Point Cost: **5 AP**
 * Range: Personal
 
 
+### Quiescence
+
+Intense mental training has awarded you an additional action point. However, this focus leads one to neglect the body, giving the character a -1 Strength modifier.
+
+Aspect Point Cost: **1 AP**
+<br />Capstone Cost: **1 AP**
+
+
+#### Details
+* Action Pool Refresh Modifier: +1
+* Core Aspect Modifier: -1
+	* Applies to: **Strength**
+
+
 ### Quiet Steps
 
 Allows a character to make a stealth check by walking carefully. In order to enter stealth, the character must not be visible by any enemies. While using this aspect, a character must move at **half their move speed**.
@@ -548,12 +625,28 @@ Aspect Point Cost: **4 AP**
 * Action Point Cost: 1
 
 
+### Shot Call
+
+Allows a character to make a perception check. This check, if successful, grants a target ally a +1 modifier to their next ranged attack. The target ally must be within the character's line of sight as must be the target enemy however for the target ally to recieve the +1 modifier the target ally does not need to have line of sight on the target enemy.
+
+Aspect Point Cost: **3 AP**
+<br />Capstone Cost: **7 AP**
+
+Requires: **[Perception](#perception)**<br />
+#### Details
+* Skill Check Modifier: +1
+	* Applies to: **Ally's Attack**
+	* Limited: **Ranged Attacks Only**
+* Base Difficulty: 12
+* Action Point Cost: 1
+
+
 ### Slash
 
 Grants a character a melee slashing attack. This attack may be used with any slashing melee weapon.
 
 Aspect Point Cost: **4 AP**
-<br />Capstone Cost: **5 AP**
+<br />Capstone Cost: **6 AP**
 
 Requires: **[Fit](#fit)**<br />
 #### Details
@@ -568,7 +661,7 @@ Requires: **[Fit](#fit)**<br />
 Grants a character a melee stabbing attack. This attack may be used with any thrusting melee weapon.
 
 Aspect Point Cost: **4 AP**
-<br />Capstone Cost: **5 AP**
+<br />Capstone Cost: **6 AP**
 
 Requires: **[Fit](#fit)**<br />
 #### Details
