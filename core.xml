@@ -944,7 +944,7 @@
             </text>
         </aspect>
         
-        <aspect name="Spark Dart">
+        <aspect name="Spell Dart">
             <feature descriptor="Skill Check">
                 <detail type="inherits_from" value="Intelligence" />
             </feature>
@@ -959,7 +959,7 @@
             <feature descriptor="Damage" value="1d6" />
             
             <text>
-                Spark Dart is a meta magic spell that allows a character to aim a single finger (of their choice) at a target and fire a spark of pure magical energy at them. This spark flies like an arrow in speed and trajectory. Upon impact it explodes with a loud crack and a flurry of much smaller, short-lived magical sparks.
+                Spell Dart is a meta magic spell that allows a character to aim a single finger (of their choice) at a target and fire a crackling spark of pure magical energy at them. This spark flies like an arrow in speed and trajectory. Upon impact it explodes with a loud crack and a flurry of much smaller, short-lived magical sparks.
             </text>
         </aspect>
         
