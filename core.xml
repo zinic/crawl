@@ -551,7 +551,10 @@
         </aspect>
                
         <aspect name="Field Aid">
-            <feature descriptor="Skill Check" />
+            <feature descriptor="Skill Check">
+                <detail type="inherits_from" value="Intelligence" />
+            </feature>
+            
             <feature descriptor="Damage Healed" value="1d6" />
             <feature descriptor="Action Point Cost" value="2" />
             <feature descriptor="Base Difficulty" value="10" />

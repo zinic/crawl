@@ -236,6 +236,7 @@ Aspect Point Cost: **5 AP**
 Requires: **[Medicine](#medicine)**<br />
 #### Details
 * Skill Check: Field Aid
+	* Inherits Modifiers from: **Intelligence**
 * Damage Healed: 1d6
 * Action Point Cost: 2
 * Base Difficulty: 10
