@@ -944,6 +944,25 @@
             </text>
         </aspect>
         
+        <aspect name="Spark Dart">
+            <feature descriptor="Skill Check">
+                <detail type="inherits_from" value="Intelligence" />
+            </feature>
+            <feature descriptor="Action Point Cost" value="1" />
+            <feature descriptor="Base Difficulty" value="10" />
+            
+            <feature descriptor="Magic">
+                <detail type="energy_type" value="Meta" />
+            </feature>
+            
+            <feature descriptor="Range" value="Short" />
+            <feature descriptor="Damage" value="1d6" />
+            
+            <text>
+                Spark Dart is a meta magic spell that allows a character to aim a single finger (of their choice) at a target and fire a spark of pure magical energy at them. This spark flies like an arrow in speed and trajectory. Upon impact it explodes with a loud crack and a flurry of much smaller, short-lived magical sparks.
+            </text>
+        </aspect>
+        
         <aspect name="Countercast">
             <feature descriptor="Skill Check">
                 <detail type="inherits_from" value="Intelligence" />

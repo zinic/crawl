@@ -802,6 +802,25 @@ Requires: **[Fit](#fit)**<br />
 * Action Point Cost: 1
 
 
+### Spark Dart
+
+Spark Dart is a meta magic spell that allows a character to aim a single finger (of their choice) at a target and fire a spark of pure magical energy at them. This spark flies like an arrow in speed and trajectory. Upon impact it explodes with a loud crack and a flurry of much smaller, short-lived magical sparks.
+
+Aspect Point Cost: **8 AP**
+<br />Capstone Cost: **8 AP**
+
+
+#### Details
+* Skill Check: Spark Dart
+	* Inherits Modifiers from: **Intelligence**
+* Action Point Cost: 1
+* Base Difficulty: 10
+* Magic
+	* Magic Energy Type: **Meta**
+* Range: Short
+* Damage: 1d6
+
+
 ### Stab
 
 Grants a character a melee stabbing attack. This attack may be used with any thrusting melee weapon.

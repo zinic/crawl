@@ -372,6 +372,11 @@ Some armors may restrict movement and therefore come with a negative mobility ch
 Lastly, some armors may include an action point cost representing the amount of effort required to equip or unequip it.
 
 
+#### Attacking from Behind
+
+Characters being attacked from behind are subject to a -2 modifier to any defense roll they attempt.
+
+
 #### Surprise Attack
 
 Characters unaware of the presence of an enemy force may be subject to a surprise attack. In a surprise attack, the attacking force has the advantage. Initiative is rolled for combat as normal. However, during the first turn, only the attackers may act.
