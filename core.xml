@@ -335,6 +335,76 @@
             </text>
         </aspect>
 
+        <aspect name="Affluent Knowledge">
+            <feature descriptor="Skill Check">
+                <detail type="inherits_from" value="Intelligence" />
+            </feature>
+        
+            <text>
+                Knowledge and understanding of the related domain.
+            </text>
+        </aspect>
+
+        <aspect name="Mechanical Knowledge">
+            <feature descriptor="Skill Check">
+                <detail type="inherits_from" value="Intelligence" />
+            </feature>
+
+            <text>
+                Knowledge and understanding of the related domain.
+            </text>
+        </aspect>
+
+        <aspect name="Arcane Knowledge">
+            <feature descriptor="Skill Check">
+                <detail type="inherits_from" value="Intelligence" />
+            </feature>
+
+            <text>
+                Knowledge and understanding of the related domain.
+            </text>
+        </aspect>
+        
+        <aspect name="Martial Knowledge">
+            <feature descriptor="Skill Check">
+                <detail type="inherits_from" value="Intelligence" />
+            </feature>
+            
+            <text>
+                Knowledge and understanding of the related domain.
+            </text>
+        </aspect>
+        
+        <aspect name="Historical Knowledge">
+            <feature descriptor="Skill Check">
+                <detail type="inherits_from" value="Intelligence" />
+            </feature>
+
+            <text>
+                Knowledge and understanding of the related domain.
+            </text>
+        </aspect>
+        
+        <aspect name="Natural Sciences Knowledge">
+            <feature descriptor="Skill Check">
+                <detail type="inherits_from" value="Intelligence" />
+            </feature>
+
+            <text>
+                Knowledge and understanding of the related domain.
+            </text>
+        </aspect>
+        
+        <aspect name="Survival Knowledge">
+            <feature descriptor="Skill Check">
+                <detail type="inherits_from" value="Intelligence" />
+            </feature>
+
+            <text>
+                Knowledge and understanding of the related domain.
+            </text>
+        </aspect>
+
         <aspect name="Leadership">
             <feature descriptor="NPC Cohort" />
             

@@ -17,6 +17,8 @@ def check_aspect(aspect):
     for descriptor in aspect.descriptors:
         if descriptor.name == SKILL_CHECK_DESC:
             is_skill = True
+            
+            
         elif descriptor.name == BASE_DIFFICULTY_DESC:
             has_difficulty = True
         elif descriptor.name == ACTION_POINT_COST_DESC:
