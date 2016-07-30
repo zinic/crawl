@@ -10,6 +10,17 @@
 
 ### Races
 
+#### Elf
+
+Living in the large packets of forests across the planet thriving with magic, they must always be aware of natural wildlife. This caused them to adapt, to always be aware of their surroundings and natural immunity to the magical influence.
+
+* Size: 0
+* Grants Aspect: Perception
+* Core Aspect Modifier:
+    * Mobility +1
+* Damage Resistance +2 DR vs. Meta
+
+
 #### Human
 
 The jack-of-all trades. These individuals are hardy but otherwise mundane. They're quick learners however and because of this are given more apsect points to work with than other races.

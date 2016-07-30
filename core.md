@@ -163,6 +163,66 @@ Character movement speed is halved when the character steps into any significant
 Stepping in or out of rough terrain immedieately incurs this penalty.
 
 
+### Object and Character Size Modifiers
+
+By default all characters are treated as a 1.7 meter (~5 1/2 feet) tall humanoid. Deviations from this may be added to an aspect to modify a character's overall size. Object sizes must source their relative costs from this modifier.
+
+* Size -4
+    * Macroscopic or Insect
+    * Aspect Point Cost: 25
+* Size -3
+    * 0.0 meters - 0.3 meters
+    * Aspect Point Cost: 15
+* Size -2
+    * 0.3 meters - 1.0 meters
+    * Aspect Point Cost: 10
+* Size -1
+    * 1.0 meters - 1.5 meters
+    * Aspect Point Cost: 5
+* Size 0
+    * 1.5 meters - 2.0 meters
+    * Aspect Point Cost: 0
+* Size 1
+    * 2.0 - 2.5 meters
+    * Aspect Point Cost: 5
+* Size 2
+    * 2.5 meters - 3.5 meters
+    * Aspect Point Cost: 10    
+* Size 3
+    * 3.5 meters - 5.0 meters
+    * Aspect Point Cost: 15
+* Size 4
+    * Gargantuan or Dinosaur
+    * Aspect Point Cost: 25
+
+
+### Equipment
+
+Characters may have equipment. Weight is optional but trackable. Most items will require a slot to be equipped.
+
+#### Slots
+
+Certain items may require a character to equip it to a specific slot. The available slots are listed below.
+
+* Head (Helmet)
+* Neck (Amulet - Scarf)
+* Arms (Bracers - Bracelets)
+    * A character has as may Arms slots as they have arms.
+* Hands (Weapons - Tools)
+    * A character has as may Hands slots as they have hands.
+* Torso (Armor - Shirt)
+* Waist (Belt)
+* Legs (Pants)
+    * A character has as may Legs slots as they have legs.
+* Feet (Boots)
+    * A character has as may Feet slots as they have feet.
+
+
+#### Max Weight
+
+Size + Strength Modifier
+
+
 ### Initiative
 
 All characters are required to roll for initiative when combat begins. Initative controls which characters go when and in what order. All initiative rolls are a d20. Additional modifiers specific to the character may apply after the roll.
