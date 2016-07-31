@@ -679,7 +679,7 @@
                 <detail type="limit" value="Character Must Have a Shield" />
                 <detail type="inherits_from" value="Strength" />
             </feature>
-            <feature descriptor="Base Difficulty" value="6" />
+            <feature descriptor="Base Difficulty" value="5" />
             <feature descriptor="Action Point Cost" value="1" />
             
             <text>
@@ -687,16 +687,16 @@
             </text>
         </aspect>
         
-        <aspect name="Block">
+        <aspect name="Parry">
             <feature descriptor="Skill Check">
-                <detail type="limit" value="Character Must Have a Shield" />
-                <detail type="inherits_from" value="Strength" />
+                <detail type="inherits_from" value="Mobility" />
             </feature>
-            <feature descriptor="Base Difficulty" value="10" />
+            <feature descriptor="Extra Attack" value="+1" />
+            <feature descriptor="Base Difficulty" value="12" />
             <feature descriptor="Action Point Cost" value="1" />
             
             <text>
-                Allows a character to steady their body against a shield and attempt to absorb an incoming attack. This ability requires the character to have a working shield equipped.
+                Allows a character to parry an attack with their currently equipped weapon. Upon a successful parry, the defender is granted the ability to perform an attack upon their opponent.
             </text>
         </aspect>
         

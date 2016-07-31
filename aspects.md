@@ -96,15 +96,15 @@ Aspect Point Cost: **5 AP**
 
 Allows a character to steady their body against a shield and attempt to absorb an incoming attack. This ability requires the character to have a working shield equipped.
 
-Aspect Point Cost: **4 AP**
-<br />Capstone Cost: **4 AP**
+Aspect Point Cost: **7 AP**
+<br />Capstone Cost: **7 AP**
 
 
 #### Details
 * Skill Check: Block
 	* Limited: **Character Must Have a Shield**
 	* Inherits Modifiers from: **Strength**
-* Base Difficulty: 10
+* Base Difficulty: 5
 * Action Point Cost: 1
 
 
@@ -683,6 +683,23 @@ Requires: **[Mental Endurance](#mental-endurance)**<br />
 #### Details
 * Core Aspect Modifier: +1
 	* Applies to: **Intelligence**
+
+
+### Parry
+
+Allows a character to parry an attack with their currently equipped weapon. Upon a successful parry, the defender is granted the ability to perform an attack upon their opponent.
+
+Aspect Point Cost: **11 AP**
+<br />Capstone Cost: **11 AP**
+
+
+#### Details
+* Skill Check: Parry
+	* Limited: **Character Must Have a Shield**
+	* Inherits Modifiers from: **Strength**
+* Extra Attack: +1
+* Base Difficulty: 12
+* Action Point Cost: 1
 
 
 ### Perception
