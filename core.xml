@@ -307,6 +307,29 @@
             </text>
         </aspect>
         
+        <aspect name="Rage">
+            <feature descriptor="Action Point Cost" value="1" />
+            <feature descriptor="Damage Resistance" value="+4 DR">
+                <detail type="targets" value="Kinetic" />
+            </feature>
+            <feature descriptor="Damage Resistance" value="+4 DR">
+                <detail type="targets" value="Cold" />
+            </feature>
+            <feature descriptor="Damage Resistance" value="+4 DR">
+                <detail type="targets" value="Fire" />
+            </feature>
+            <feature descriptor="Damage Resistance" value="+4 DR">
+                <detail type="targets" value="Electric" />
+            </feature>
+            <feature descriptor="Duration" value="8 Turns" />
+            
+            <requires name="Vigor" />
+            
+            <text>
+                The character enters into a rage in which their body floods itself with chemicals that dull the senses and swell the muscles. Upon activation, the character gains intense damage resistance buffs for 8 combat turns.
+            </text>
+        </aspect>
+        
         <aspect name="Pivot and Roll">
             <feature descriptor="Skill Check">
                 <detail type="limit" value="Unusuable when Slowed" />

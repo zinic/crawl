@@ -695,8 +695,7 @@ Aspect Point Cost: **11 AP**
 
 #### Details
 * Skill Check: Parry
-	* Limited: **Character Must Have a Shield**
-	* Inherits Modifiers from: **Strength**
+	* Inherits Modifiers from: **Mobility**
 * Extra Attack: +1
 * Base Difficulty: 12
 * Action Point Cost: 1
@@ -823,6 +822,27 @@ Aspect Point Cost: **4 AP**
 	* Inherits Modifiers from: **Mobility**
 * Base Difficulty: 10
 * Action Point Cost: 1
+
+
+### Rage
+
+The character enters into a rage in which their body floods itself with chemicals that dull the senses and swell the muscles. Upon activation, the character gains intense damage resistance buffs for 8 combat turns.
+
+Aspect Point Cost: **12 AP**
+<br />Capstone Cost: **20 AP**
+
+Requires: **[Vigor](#vigor)**<br />
+#### Details
+* Action Point Cost: 1
+* Damage Resistance: +4 DR
+	* Applies to: **Kinetic**
+* Damage Resistance: +4 DR
+	* Applies to: **Cold**
+* Damage Resistance: +4 DR
+	* Applies to: **Fire**
+* Damage Resistance: +4 DR
+	* Applies to: **Electric**
+* Duration: 8 Turns
 
 
 ### Refresh
