@@ -295,7 +295,7 @@ Using an aspect requires a roll to determine the character's skill in execution.
 
 This roll may be modified from several sources including: magic, equipment and other aspects.
 
-Character aspects may be used at the cost of 1 action point. Certain aspects may require more than 1 action point to invoke but this depends on the aspect.
+Character aspects may have an action point cost associated with them. Only when characters are in initiative do action point costs matter. Outside of initiative, all aspects may be utilized with the aciton point cost being a guide to how long it may take the character - this is at the game masters discretion!
 
 
 ### Check Difficulty

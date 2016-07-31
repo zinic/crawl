@@ -876,6 +876,23 @@ Aspect Point Cost: **8 AP**
 * Range: Melee
 
 
+### Send
+
+Instantly send a message to the mind of a willing target, regardless of distance. The target must be known to the caster in that they must have met in-person at least once. This effect may be dismissed before the message is sent. Once the message is sent the target is granted the opportunity to reply with their own message. After this the conversation ends and send must be cast again to further communication.
+
+Aspect Point Cost: **4 AP**
+<br />Capstone Cost: **4 AP**
+
+
+#### Details
+* Skill Check: Send
+	* Inherits Modifiers from: **Intelligence**
+* Action Point Cost: 1
+* Base Difficulty: 12
+* Magic
+	* Magic Energy Type: **Meta**
+
+
 ### Shot Call
 
 Allows a character to make a perception check. This check, if successful, grants a target ally a +1 modifier to their next ranged attack. The target ally must be within the character's line of sight as must be the target enemy however for the target ally to recieve the +1 modifier the target ally does not need to have line of sight on the target enemy.

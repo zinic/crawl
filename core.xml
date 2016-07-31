@@ -1112,6 +1112,22 @@
             </text>
         </aspect>
         
+        <aspect name="Send">
+            <feature descriptor="Skill Check">
+                <detail type="inherits_from" value="Intelligence" />
+            </feature>
+            <feature descriptor="Action Point Cost" value="1" />
+            <feature descriptor="Base Difficulty" value="12" />
+            
+            <feature descriptor="Magic">
+                <detail type="energy_type" value="Meta" />
+            </feature>
+            
+            <text>
+                Instantly send a message to the mind of a willing target, regardless of distance. The target must be known to the caster in that they must have met in-person at least once. This effect may be dismissed before the message is sent. Once the message is sent the target is granted the opportunity to reply with their own message. After this the conversation ends and send must be cast again to further communication.
+            </text>
+        </aspect>
+        
         <aspect name="Countercast">
             <feature descriptor="Skill Check">
                 <detail type="inherits_from" value="Intelligence" />
