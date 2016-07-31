@@ -6,6 +6,12 @@
             <feature name="Magic" cost="0" />
         </descriptor>
         
+        <descriptor name="Affliction Immunity">
+            <feature name="Staggered" cost="8" />
+            <feature name="Sickened" cost="8" />
+            <feature name="Diseased" cost="13" />
+        </descriptor>
+        
         <descriptor name="Number of Hands Required">
             <feature name="1" cost="0" />
             <feature name="2" cost="1" />
@@ -304,6 +310,16 @@
             
             <text>
                 Allows a character to make a dive for nearby cover - once behind cover, all rules for cover now apply. The cover must be within the character's **Standing Forward Jump** range. All normal rules for making a standing forward jump apply to this check. Failing this check renders the character **prone**.
+            </text>
+        </aspect>
+        
+        <aspect name="Adrenaline Rush">
+            <feature descriptor="Affliction Immunity" value="Staggered" />
+            
+            <requires name="Vigor" />
+            
+            <text>
+                No matter how haggered, this character's body surges with adrenaline so long as their heart pumps. This makes them immune to the condition: Staggered.
             </text>
         </aspect>
         

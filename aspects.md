@@ -77,6 +77,18 @@ Requires: **[Intense Acrobatic Training](#intense-acrobatic-training)**<br />Req
 * Action Pool Refresh Modifier: +1
 
 
+### Adrenaline Rush
+
+No matter how haggered, this character's body surges with adrenaline so long as their heart pumps. This makes them immune to the condition: Staggered.
+
+Aspect Point Cost: **8 AP**
+<br />Capstone Cost: **16 AP**
+
+Requires: **[Vigor](#vigor)**<br />
+#### Details
+* Affliction Immunity: Staggered
+
+
 ### Blend into Crowds
 
 Allows a street-wise character to blend into a crowd and use this action as a sealth attempt. The crowd must be sufficiently thick such that the game master considers blending in acceptable for stealth.
