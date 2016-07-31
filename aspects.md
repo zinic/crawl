@@ -628,6 +628,22 @@ Requires: **[High Manual Dexterity](#high-manual-dexterity)**<br />
 * Base Difficulty: 10
 
 
+### Magic Trick
+
+Perform a minor trick or illusion such as clean a handheld object to summoning a playing card from your coat pocket or hiding a rabbit within a top hat until you reach in to pull it out.
+
+This aspect may not be used in combat.
+
+Aspect Point Cost: **1 AP**
+<br />Capstone Cost: **1 AP**
+
+
+#### Details
+* Magic
+	* Limited: **Non-Combat Only**
+	* Magic Energy Type: **Meta**
+
+
 ### Magical Energy Affinity
 
 Increases a character's natural talent in magic for a given energy type. This aspect must be taken multiple times for multiple energy types.
@@ -977,6 +993,25 @@ Requires: **[Fit](#fit)**<br />
 	* Inherits Modifiers from: **Strength**
 * Base Difficulty: 10
 * Action Point Cost: 1
+
+
+### Summon Water or Food
+
+This spell takes shape in two different ways. The caster may lift up an empty vessel and summon a small quantity of water to it. This quantity is enough water to quench the thirst of 1 person for 1 day.
+
+The caster may instead pick up an empty serving dish and summon a simple meal of a heavy, dense bread that tastes like dry oatmeal. This bread provides enough sustience for 1 person for 1 day.
+
+Aspect Point Cost: **6 AP**
+<br />Capstone Cost: **6 AP**
+
+
+#### Details
+* Skill Check: Summon Water or Food
+	* Inherits Modifiers from: **Intelligence**
+* Action Point Cost: 1
+* Base Difficulty: 8
+* Magic
+	* Magic Energy Type: **Meta**
 
 
 ### Swing

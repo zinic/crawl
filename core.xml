@@ -1128,6 +1128,37 @@
             </text>
         </aspect>
         
+        <aspect name="Summon Water or Food">
+            <feature descriptor="Skill Check">
+                <detail type="inherits_from" value="Intelligence" />
+            </feature>
+            <feature descriptor="Action Point Cost" value="1" />
+            <feature descriptor="Base Difficulty" value="8" />
+            
+            <feature descriptor="Magic">
+                <detail type="energy_type" value="Meta" />
+            </feature>
+            
+            <text>
+                This spell takes shape in two different ways. The caster may lift up an empty vessel and summon a small quantity of water to it. This quantity is enough water to quench the thirst of 1 person for 1 day.
+                
+                The caster may instead pick up an empty serving dish and summon a simple meal of a heavy, dense bread that tastes like dry oatmeal. This bread provides enough sustience for 1 person for 1 day.
+            </text>
+        </aspect>
+        
+        <aspect name="Magic Trick">
+            <feature descriptor="Magic">
+                <detail type="limit" value="Non-Combat Only" />
+                <detail type="energy_type" value="Meta" />
+            </feature>
+            
+            <text>
+                Perform a minor trick or illusion such as clean a handheld object to summoning a playing card from your coat pocket or hiding a rabbit within a top hat until you reach in to pull it out.
+                
+                This aspect may not be used in combat.
+            </text>
+        </aspect>
+        
         <aspect name="Countercast">
             <feature descriptor="Skill Check">
                 <detail type="inherits_from" value="Intelligence" />
