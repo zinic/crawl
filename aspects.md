@@ -92,6 +92,22 @@ Aspect Point Cost: **5 AP**
 * Base Difficulty: 10
 
 
+### Block
+
+Allows a character to steady their body against a shield and attempt to absorb an incoming attack. This ability requires the character to have a working shield equipped.
+
+Aspect Point Cost: **4 AP**
+<br />Capstone Cost: **4 AP**
+
+
+#### Details
+* Skill Check: Block
+	* Limited: **Character Must Have a Shield**
+	* Inherits Modifiers from: **Strength**
+* Base Difficulty: 10
+* Action Point Cost: 1
+
+
 ### Counter Slash
 
 Allows a to make a slashing attack as an opportunistic action.

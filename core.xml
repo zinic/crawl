@@ -48,6 +48,28 @@
             <feature name="Extreme" cost="5" />
         </descriptor>
         
+        <descriptor name="Number of Uses">
+            <feature name="1" cost="0" />
+            <feature name="2" cost="1" />
+            <feature name="3" cost="2" />
+            <feature name="4" cost="3" />
+            <feature name="5" cost="5" />
+            <feature name="Unlimited" cost="21" />
+        </descriptor>
+        
+        <descriptor name="Duration">
+            <feature name="1 Turn" cost="1" />
+            <feature name="2 Turns" cost="2" />
+            <feature name="4 Turns" cost="3" />
+            <feature name="8 Turns" cost="5" />
+            <feature name="10 Minutes" cost="8" />
+            <feature name="30 Minutes" cost="13" />
+            <feature name="1 Hour" cost="21" />
+            <feature name="12 Hours" cost="34" />
+            <feature name="1 Day" cost="47" />
+            <feature name="10 Days" cost="60" />
+        </descriptor>
+        
         <descriptor name="Damage Type">
             <feature name="Kinetic" cost="1" />
             <feature name="Cold" cost="1" />
@@ -138,6 +160,11 @@
             <feature name="-6 DR" cost="3" />
             <feature name="-8 DR" cost="4" />
             <feature name="-10 DR" cost="5" />
+        </descriptor>
+        
+        <descriptor name="Extra Attack">
+            <feature name="+1" cost="8" />
+            <feature name="+2" cost="13" />
         </descriptor>
         
         <descriptor name="Extra Target">
@@ -647,6 +674,32 @@
             </text>
         </aspect>
         
+        <aspect name="Block">
+            <feature descriptor="Skill Check">
+                <detail type="limit" value="Character Must Have a Shield" />
+                <detail type="inherits_from" value="Strength" />
+            </feature>
+            <feature descriptor="Base Difficulty" value="6" />
+            <feature descriptor="Action Point Cost" value="1" />
+            
+            <text>
+                Allows a character to steady their body against a shield and attempt to absorb an incoming attack. This ability requires the character to have a working shield equipped.
+            </text>
+        </aspect>
+        
+        <aspect name="Block">
+            <feature descriptor="Skill Check">
+                <detail type="limit" value="Character Must Have a Shield" />
+                <detail type="inherits_from" value="Strength" />
+            </feature>
+            <feature descriptor="Base Difficulty" value="10" />
+            <feature descriptor="Action Point Cost" value="1" />
+            
+            <text>
+                Allows a character to steady their body against a shield and attempt to absorb an incoming attack. This ability requires the character to have a working shield equipped.
+            </text>
+        </aspect>
+        
         <aspect name="Shot Call">
             <feature descriptor="Skill Check Modifier" value="+1">
                 <detail type="targets" value="Ally's Attack" />
@@ -912,15 +965,12 @@
             <feature descriptor="Damage Resistance" value="+2 DR">
                 <detail type="targets" value="Chosen upon Casting" />
             </feature>
-            
             <feature descriptor="Skill Check Modifier" value="+2">
                 <detail type="targets" value="Chosen upon Casting" />
             </feature>
-            
             <feature descriptor="Magic">
                 <detail type="energy_type" value="Meta" />
             </feature>
-            
             <feature descriptor="Range" value="Medium" />
             
             <text>
@@ -934,11 +984,9 @@
             </feature>
             <feature descriptor="Action Point Cost" value="1" />
             <feature descriptor="Base Difficulty" value="10" />
-            
             <feature descriptor="Magic">
                 <detail type="energy_type" value="Electric" />
             </feature>
-            
             <feature descriptor="Range" value="Medium" />
             <feature descriptor="Damage" value="1d4" />
             

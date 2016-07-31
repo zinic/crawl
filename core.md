@@ -200,6 +200,18 @@ By default all characters are treated as a 1.7 meter (~5 1/2 feet) tall humanoid
 
 Characters may have equipment. Weight is optional but trackable. Most items will require a slot to be equipped.
 
+#### Using Shields
+
+Unless a character has a defense aspect that allows the use of a shield, equipping the shield imparts no benefits to the character.
+
+#### Lightweight Items
+
+Lightweight items are items that may be worn without changing the available equipment slots on the character. They are, as their name implies, lightweight and therefore on their own, do not generally affect the use of the limb they are worn on.
+
+However, lightweight items can add up!
+
+Stacking more than 3 lightweight items in the same equipment slot, such as wearing 4 bracelets on 1 arm, incurs a -1 modifier to the character's mobility. This negative stacks if the character has more than one overloaded equipment slot.
+
 #### Slots
 
 Certain items may require a character to equip it to a specific slot. The available slots are listed below.
@@ -216,7 +228,6 @@ Certain items may require a character to equip it to a specific slot. The availa
     * A character has as may Legs slots as they have legs.
 * Feet (Boots)
     * A character has as may Feet slots as they have feet.
-
 
 #### Max Weight
 
