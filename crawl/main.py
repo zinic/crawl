@@ -50,13 +50,8 @@ def format_descriptor(descriptor):
                 example, get_formula(descriptor.formula)(example))
     
     else:
-        for name, value in sorted(descriptor.entries.items(), key=lambda tu: tu[0]):
-            try:
-                value = int(descriptor.entries[name])
-            except Exception:
-                print('NAME WAS: {}'.format(name))
-                
-            output += '* {}\n\t* Aspect Point Cost: {}\n'.format(name, descriptor.entries[name])
+        for name, value in descriptor.entries.items():
+            output += '* {}\n\t* Aspect Point Cost: {}\n'.format(name, value)
 
     return '{}<br /><br />\n'.format(output)
 

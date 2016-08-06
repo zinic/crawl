@@ -2,24 +2,24 @@
 
 ## Components
 #### Action Point Cost
-* -1
-	* Aspect Point Cost: 3
-* -2
-	* Aspect Point Cost: 5
-* -3
-	* Aspect Point Cost: 8
-* -4
-	* Aspect Point Cost: 13
 * -5
 	* Aspect Point Cost: 21
 * 1
 	* Aspect Point Cost: -1
-* 2
-	* Aspect Point Cost: -2
+* -4
+	* Aspect Point Cost: 13
 * 3
 	* Aspect Point Cost: -3
+* 2
+	* Aspect Point Cost: -2
+* -1
+	* Aspect Point Cost: 3
 * 4
 	* Aspect Point Cost: -5
+* -3
+	* Aspect Point Cost: 8
+* -2
+	* Aspect Point Cost: 5
 * 5
 	* Aspect Point Cost: -8
 <br /><br />
@@ -44,20 +44,20 @@
 #### Affliction Immunity
 * Diseased
 	* Aspect Point Cost: 13
-* Sickened
-	* Aspect Point Cost: 8
 * Staggered
+	* Aspect Point Cost: 8
+* Sickened
 	* Aspect Point Cost: 8
 <br /><br />
 
 
 #### Area Effect
+* Line
+	* Aspect Point Cost: 3
 * Cone
 	* Aspect Point Cost: 5
 * Dome
 	* Aspect Point Cost: 7
-* Line
-	* Aspect Point Cost: 3
 <br /><br />
 
 
@@ -71,26 +71,26 @@ This is used to modify an attack roll instead of a skill check modifier. This mo
 
 
 
-* +1
-	* Aspect Point Cost: 2
-* +2
-	* Aspect Point Cost: 3
-* +3
-	* Aspect Point Cost: 5
-* +4
-	* Aspect Point Cost: 8
-* +5
+* -5
 	* Aspect Point Cost: 13
-* -1
-	* Aspect Point Cost: 2
-* -2
-	* Aspect Point Cost: 3
 * -3
 	* Aspect Point Cost: 5
 * -4
 	* Aspect Point Cost: 8
-* -5
+* -2
+	* Aspect Point Cost: 3
+* +3
+	* Aspect Point Cost: 5
+* +2
+	* Aspect Point Cost: 3
+* +1
+	* Aspect Point Cost: 2
+* -1
+	* Aspect Point Cost: 2
+* +5
 	* Aspect Point Cost: 13
+* +4
+	* Aspect Point Cost: 8
 <br /><br />
 
 
@@ -100,15 +100,15 @@ Describes the attack method of a weapon. The attack method of a weapon defines w
 
 
 
-* Drawn Force
+* Thrusting
 	* Aspect Point Cost: 0
 * Magic
 	* Aspect Point Cost: 0
-* Slashing
-	* Aspect Point Cost: 0
 * Swinging
 	* Aspect Point Cost: 0
-* Thrusting
+* Drawn Force
+	* Aspect Point Cost: 0
+* Slashing
 	* Aspect Point Cost: 0
 <br /><br />
 
@@ -126,10 +126,10 @@ Describes the attack method of a weapon. The attack method of a weapon defines w
 
 
 #### Core Aspect Modifier
-* +1
-	* Aspect Point Cost: 8
 * +2
 	* Aspect Point Cost: 13
+* +1
+	* Aspect Point Cost: 8
 * -1
 	* Aspect Point Cost: -8
 * -2
@@ -138,16 +138,16 @@ Describes the attack method of a weapon. The attack method of a weapon defines w
 
 
 #### Crit Success Modifier
-* +1
-	* Aspect Point Cost: 5
-* +2
-	* Aspect Point Cost: 10
 * +3
 	* Aspect Point Cost: 15
-* +4
-	* Aspect Point Cost: 20
+* +2
+	* Aspect Point Cost: 10
+* +1
+	* Aspect Point Cost: 5
 * +5
 	* Aspect Point Cost: 25
+* +4
+	* Aspect Point Cost: 20
 <br /><br />
 
 
@@ -232,114 +232,114 @@ Describes the attack method of a weapon. The attack method of a weapon defines w
 
 
 #### Damage Resistance
-* +10 DR
-	* Aspect Point Cost: 5
-* +2 DR
-	* Aspect Point Cost: 1
-* +4 DR
-	* Aspect Point Cost: 2
-* +6 DR
+* -6 DR
 	* Aspect Point Cost: 3
-* +8 DR
-	* Aspect Point Cost: 4
 * -10 DR
 	* Aspect Point Cost: 5
 * -2 DR
 	* Aspect Point Cost: 1
-* -4 DR
-	* Aspect Point Cost: 2
-* -6 DR
-	* Aspect Point Cost: 3
 * -8 DR
 	* Aspect Point Cost: 4
+* +10 DR
+	* Aspect Point Cost: 5
+* +6 DR
+	* Aspect Point Cost: 3
+* +8 DR
+	* Aspect Point Cost: 4
+* +2 DR
+	* Aspect Point Cost: 1
+* +4 DR
+	* Aspect Point Cost: 2
+* -4 DR
+	* Aspect Point Cost: 2
 <br /><br />
 
 
 #### Damage Type
-* Cold
-	* Aspect Point Cost: 1
-* Electric
-	* Aspect Point Cost: 1
 * Fire
 	* Aspect Point Cost: 1
 * Kinetic
 	* Aspect Point Cost: 1
 * Meta
 	* Aspect Point Cost: 1
+* Cold
+	* Aspect Point Cost: 1
+* Electric
+	* Aspect Point Cost: 1
 <br /><br />
 
 
 #### Duration
-* 1 Day
-	* Aspect Point Cost: 47
-* 1 Hour
-	* Aspect Point Cost: 21
 * 1 Turn
 	* Aspect Point Cost: 1
-* 10 Days
-	* Aspect Point Cost: 60
 * 10 Minutes
 	* Aspect Point Cost: 8
-* 12 Hours
-	* Aspect Point Cost: 34
-* 2 Turns
-	* Aspect Point Cost: 2
-* 30 Minutes
-	* Aspect Point Cost: 13
 * 4 Turns
 	* Aspect Point Cost: 3
 * 8 Turns
 	* Aspect Point Cost: 5
+* 30 Minutes
+	* Aspect Point Cost: 13
+* 2 Turns
+	* Aspect Point Cost: 2
+* 10 Days
+	* Aspect Point Cost: 60
+* 1 Hour
+	* Aspect Point Cost: 21
+* 12 Hours
+	* Aspect Point Cost: 34
+* 1 Day
+	* Aspect Point Cost: 47
 <br /><br />
 
 
 #### Environment Mitigation
-* Echo Sight
-	* Aspect Point Cost: 15
-* Infrared Sight
-	* Aspect Point Cost: 10
 * Low Light Vision
 	* Aspect Point Cost: 5
+* Infrared Sight
+	* Aspect Point Cost: 10
+* Echo Sight
+	* Aspect Point Cost: 15
 <br /><br />
 
 
 #### Extra Attack
-* +1
-	* Aspect Point Cost: 8
 * +2
 	* Aspect Point Cost: 13
+* +1
+	* Aspect Point Cost: 8
 <br /><br />
 
 
 #### Extra Target
-* +1
-	* Aspect Point Cost: 5
-* +2
-	* Aspect Point Cost: 8
 * +3
 	* Aspect Point Cost: 13
+* +2
+	* Aspect Point Cost: 8
+* +1
+	* Aspect Point Cost: 5
 * +4
 	* Aspect Point Cost: 21
 <br /><br />
 
 
 #### HP Pool Modifier
-* +1
-	* Aspect Point Cost: 2
-* +2
-	* Aspect Point Cost: 4
-* +3
-	* Aspect Point Cost: 6
-* +4
-	* Aspect Point Cost: 8
-* -1
-	* Aspect Point Cost: 2
-* -2
-	* Aspect Point Cost: 4
-* -3
-	* Aspect Point Cost: 6
 * -4
 	* Aspect Point Cost: 8
+* +4
+	* Aspect Point Cost: 8
+* +3
+	* Aspect Point Cost: 6
+* +2
+	* Aspect Point Cost: 4
+* +1
+	* Aspect Point Cost: 2
+* -1
+	* Aspect Point Cost: 2
+* -3
+	* Aspect Point Cost: 6
+* -2
+	* Aspect Point Cost: 4
 <br /><br />
 
 
@@ -364,9 +364,9 @@ Describes the attack method of a weapon. The attack method of a weapon defines w
 #### Number of Hands Required
 * 1
 	* Aspect Point Cost: 0
-* 2
-	* Aspect Point Cost: 1
 * 3
+	* Aspect Point Cost: 1
+* 2
 	* Aspect Point Cost: 1
 * 4
 	* Aspect Point Cost: 1
@@ -374,18 +374,18 @@ Describes the attack method of a weapon. The attack method of a weapon defines w
 
 
 #### Number of Uses
-* 1
-	* Aspect Point Cost: 0
-* 2
-	* Aspect Point Cost: 1
-* 3
-	* Aspect Point Cost: 2
-* 4
-	* Aspect Point Cost: 3
-* 5
-	* Aspect Point Cost: 5
 * Unlimited
 	* Aspect Point Cost: 21
+* 1
+	* Aspect Point Cost: 0
+* 3
+	* Aspect Point Cost: 2
+* 2
+	* Aspect Point Cost: 1
+* 5
+	* Aspect Point Cost: 5
+* 4
+	* Aspect Point Cost: 3
 <br /><br />
 
 
@@ -399,18 +399,18 @@ See the core rules section: **Range Definitions** for more details.
 
 
 
-* Extreme
-	* Aspect Point Cost: 5
-* Long
-	* Aspect Point Cost: 4
-* Medium
-	* Aspect Point Cost: 3
-* Melee
-	* Aspect Point Cost: 1
-* Personal
-	* Aspect Point Cost: 0
 * Short
 	* Aspect Point Cost: 2
+* Personal
+	* Aspect Point Cost: 0
+* Long
+	* Aspect Point Cost: 4
+* Melee
+	* Aspect Point Cost: 1
+* Medium
+	* Aspect Point Cost: 3
+* Extreme
+	* Aspect Point Cost: 5
 <br /><br />
 
 
@@ -424,24 +424,24 @@ See the core rules section: **Object and Character Size Modifiers** for more det
 
 
 
-* -1
-	* Aspect Point Cost: 5
-* -2
-	* Aspect Point Cost: 10
-* -3
-	* Aspect Point Cost: 15
-* -4
-	* Aspect Point Cost: 25
 * 0
 	* Aspect Point Cost: 0
 * 1
 	* Aspect Point Cost: 5
-* 2
-	* Aspect Point Cost: 10
+* -4
+	* Aspect Point Cost: 25
 * 3
 	* Aspect Point Cost: 15
+* 2
+	* Aspect Point Cost: 10
+* -1
+	* Aspect Point Cost: 5
 * 4
 	* Aspect Point Cost: 25
+* -3
+	* Aspect Point Cost: 15
+* -2
+	* Aspect Point Cost: 10
 <br /><br />
 
 
@@ -455,26 +455,26 @@ See the core rules section: **Object and Character Size Modifiers** for more det
 
 
 
-* +1
-	* Aspect Point Cost: 3
-* +2
-	* Aspect Point Cost: 5
-* +3
-	* Aspect Point Cost: 8
-* +4
-	* Aspect Point Cost: 13
-* +5
-	* Aspect Point Cost: 21
-* -1
-	* Aspect Point Cost: -2
-* -2
-	* Aspect Point Cost: -3
+* -5
+	* Aspect Point Cost: -13
 * -3
 	* Aspect Point Cost: -5
 * -4
 	* Aspect Point Cost: -8
-* -5
-	* Aspect Point Cost: -13
+* -2
+	* Aspect Point Cost: -3
+* +3
+	* Aspect Point Cost: 8
+* +2
+	* Aspect Point Cost: 5
+* +1
+	* Aspect Point Cost: 3
+* -1
+	* Aspect Point Cost: -2
+* +5
+	* Aspect Point Cost: 21
+* +4
+	* Aspect Point Cost: 13
 <br /><br />
 
 
