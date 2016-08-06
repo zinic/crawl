@@ -752,7 +752,7 @@ Aspect Point Cost: **9 AP**
 Allows a to make a slashing attack as an opportunistic action.
 
 Aspect Point Cost: **4 AP**
-<br />Capstone Cost: **10 AP**
+<br />Capstone Cost: **8 AP**
 
 Requires: **[Slash](#slash)**<br />
 #### Details
@@ -766,7 +766,7 @@ Requires: **[Slash](#slash)**<br />
 Allows a to make a stabbing attack as an opportunistic action.
 
 Aspect Point Cost: **4 AP**
-<br />Capstone Cost: **10 AP**
+<br />Capstone Cost: **8 AP**
 
 Requires: **[Stab](#stab)**<br />
 #### Details
@@ -1058,7 +1058,7 @@ Aspect Point Cost: **4 AP**
 Allows a character to attack 2 enemies standing side-by-side. The enemies must be in adjacent map cells. The attacker makes a single attack roll that both targets may then roll against. This attack incurs a **-2 modifier** to the attack roll.
 
 Aspect Point Cost: **5 AP**
-<br />Capstone Cost: **13 AP**
+<br />Capstone Cost: **11 AP**
 
 Requires: **[Fit](#fit)**<br />Requires: **[Slash](#slash)**<br />
 #### Details
@@ -1660,9 +1660,9 @@ Requires: **[Perception](#perception)**<br />
 Grants a character a melee slashing attack. This attack may be used with any slashing melee weapon.
 
 Aspect Point Cost: **4 AP**
-<br />Capstone Cost: **6 AP**
+<br />Capstone Cost: **4 AP**
 
-Requires: **[Fit](#fit)**<br />
+
 #### Details
 * Skill Check: Slash
 	* Limited: **Slashing Weapons**
@@ -1717,9 +1717,9 @@ Aspect Point Cost: **9 AP**
 Grants a character a melee stabbing attack. This attack may be used with any thrusting melee weapon.
 
 Aspect Point Cost: **4 AP**
-<br />Capstone Cost: **6 AP**
+<br />Capstone Cost: **4 AP**
 
-Requires: **[Fit](#fit)**<br />
+
 #### Details
 * Skill Check: Stab
 	* Limited: **Thrusting Weapons**

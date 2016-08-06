@@ -973,8 +973,6 @@
             <feature descriptor="Base Difficulty" value="10" />
             <feature descriptor="Action Point Cost" value="1" />
 
-            <requires name="Fit" />
-            
             <text>
                 Grants a character a melee stabbing attack. This attack may be used with any thrusting melee weapon.
             </text>
@@ -1016,8 +1014,6 @@
             <feature descriptor="Base Difficulty" value="10" />
             <feature descriptor="Action Point Cost" value="1" />
 
-            <requires name="Fit" />
-            
             <text>
                 Grants a character a melee slashing attack. This attack may be used with any slashing melee weapon.
             </text>
