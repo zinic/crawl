@@ -397,7 +397,7 @@
             <feature descriptor="Base Difficulty" value="10" />
             
             <text>
-                Generic skill for scrounging for food, edibles, dungeoneering, etc. The game master is encouraged to add to the base difficulty depending on the situation.
+                Generic skill for scrounging for food, edibles, dungeoneering, etc. The game master is encouraged to add to the base difficulty depending on the situation. This is a useful skill for tracking.
             </text>
         </aspect>
         

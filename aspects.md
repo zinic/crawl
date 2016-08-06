@@ -1652,7 +1652,7 @@ Aspect Point Cost: **6 AP**
 
 ### Survival
 
-Generic skill for scrounging for food, edibles, dungeoneering, etc. The game master is encouraged to add to the base difficulty depending on the situation.
+Generic skill for scrounging for food, edibles, dungeoneering, etc. The game master is encouraged to add to the base difficulty depending on the situation. This is a useful skill for tracking.
 
 Aspect Point Cost: **5 AP**
 <br />Capstone Cost: **5 AP**
