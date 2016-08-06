@@ -43,11 +43,12 @@ def format_descriptor(descriptor):
     
     elif descriptor.formula is not None:
         output += '* Formula: {}\n\n'.format(descriptor.formula)
-        
-        output += '**Examples**\n\n'
-        for example in descriptor.examples:
-            output += '* **{}**\n\t* Aspect Point Cost: {}\n'.format(
-                example, get_formula(descriptor.formula)(example))
+
+        if len(descriptor.examples) > 0:        
+            output += '**Examples**\n\n'
+            for example in descriptor.examples:
+                output += '* **{}**\n\t* Aspect Point Cost: {}\n'.format(
+                    example, get_formula(descriptor.formula)(example))
     
     else:
         for name, value in descriptor.entries.items():

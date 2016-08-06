@@ -131,8 +131,6 @@ All skill checks should specifiy a base difficulty. The player may choose to aug
 
 * Formula: base_difficulty_cost
 
-**Examples**
-
 <br /><br />
 
 
