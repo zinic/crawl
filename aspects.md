@@ -66,6 +66,11 @@
 
 
 #### Attack Accuracy Modifier
+
+This is used to modify an attack roll instead of a skill check modifier. This modifier may be applied to enemy attack rolls as a negative modifier.
+
+
+
 * +1
 	* Aspect Point Cost: 2
 * +2
@@ -90,6 +95,11 @@
 
 
 #### Attack Method
+
+Describes the attack method of a weapon. The attack method of a weapon defines which attack aspects may be used with the weapon.
+
+
+
 * Drawn Force
 	* Aspect Point Cost: 0
 * Magic
@@ -352,6 +362,11 @@
 
 
 #### Range
+
+See the core rules section: **Range Definitions** for more details.
+
+
+
 * Extreme
 	* Aspect Point Cost: 5
 * Long
@@ -372,6 +387,11 @@
 
 
 #### Size
+
+See the core rules section: **Object and Character Size Modifiers** for more details.
+
+
+
 * -1
 	* Aspect Point Cost: 5
 * -2
@@ -398,6 +418,11 @@
 
 
 #### Skill Check Modifier
+
+**Note:** this component may not be used for attack rolls.
+
+
+
 * +1
 	* Aspect Point Cost: 3
 * +2
@@ -426,10 +451,29 @@
 
 **Examples**
 
+* **120 $$**
+	* Aspect Point Cost: 1
+* **660 $$**
+	* Aspect Point Cost: 5
+* **1200 $$**
+	* Aspect Point Cost: 10
+* **1800 $$**
+	* Aspect Point Cost: 15
+* **2400 $$**
+	* Aspect Point Cost: 20
+* **3600 $$**
+	* Aspect Point Cost: 30
+* **6400 $$**
+	* Aspect Point Cost: 53
 <br /><br />
 
 
 #### Throwable
+
+Marks an object as throwable. The attack of this weapon may be considered a ranged attack with a range of medium. This range may be increased with a strength check of an appropriate difficulty before the attack with the approval of the game master.
+
+
+
 * Aspect Point Cost: 1<br /><br />
 
 
@@ -561,7 +605,7 @@ Aspect Point Cost: **4 AP**
 #### Details
 * Skill Check: Archery
 	* Limited: **Drawn Force Weapons**
-	* Inherits Modifiers from: **Strength**
+	* Inherits Modifiers from: **Mobility**
 * Base Difficulty: 10
 * Action Point Cost: 1
 <br /><br />

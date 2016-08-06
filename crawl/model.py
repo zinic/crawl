@@ -2,6 +2,13 @@ from crawl.util import sanitize_text
 from crawl.formulas import get_formula
 
 
+def find_child(parent_xml, tag):
+    for child in parent_xml:
+        if child.tag == tag:
+            return child
+    return None
+
+
 def assemble_descriptor(feature_xml):
     name = feature_xml.attrib['descriptor']
     feature = feature_xml.attrib.get('value')
@@ -89,30 +96,31 @@ class DescriptorManager(object):
     def __init__(self):
         self.descriptors = dict()
 
-    def add_descdef(self, descdef_xml):
-        des_name = descdef_xml.attrib['name']
-        desdef = Descriptor(des_name)
+    def add_descdef(self, desdef_xml):
+        name = desdef_xml.attrib['name']
+        
+        desdef = Descriptor(name)
 
-        if 'formula' in descdef_xml.attrib:
-            desdef.formula = descdef_xml.attrib['formula']
+        text_xml = find_child(desdef_xml, 'text')
+        if text_xml is not None:
+            desdef.text = sanitize_text(text_xml.text)
+        
+        if 'formula' in desdef_xml.attrib:
+            desdef.formula = desdef_xml.attrib['formula']
 
-            for entry_xml in descdef_xml:
-                if entry_xml.tag != 'example':
-                    raise Exception('Unexpected element {}'.format(entry_xml.tag))
+            for entry_xml in desdef_xml:
+                if entry_xml.tag == 'example':
+                    desdef.add_example(entry_xml)     
 
-                desdef.add_example(entry_xml)     
-
-        elif 'cost' in descdef_xml.attrib:
-            desdef.cost = int(descdef_xml.attrib['cost'])
+        elif 'cost' in desdef_xml.attrib:
+            desdef.cost = int(desdef_xml.attrib['cost'])
 
         else:
-            for entry_xml in descdef_xml:
-                if entry_xml.tag != 'feature':
-                    raise Exception('Unexpected element {}'.format(entry_xml.tag))
+            for entry_xml in desdef_xml:
+                if entry_xml.tag == 'feature':
+                    desdef.add_feature(entry_xml)
 
-                desdef.add_entry(entry_xml)
-
-        self.descriptors[des_name] = desdef
+        self.descriptors[name] = desdef
 
     def get_feature(self, mod_name, feature_name):
         desdef = self.descriptors[mod_name]
@@ -135,11 +143,12 @@ class Descriptor(object):
         self.examples = list()
         self.formula = None
         self.cost = None
+        self.text = None
 
     def add_example(self, example_xml):
         self.examples.append(example_xml.attrib['value'])
 
-    def add_entry(self, entry_xml):
+    def add_feature(self, entry_xml):
         feature_name = entry_xml.attrib['name']
         self.entries[feature_name] = entry_xml.attrib['cost']
 

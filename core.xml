@@ -6,9 +6,17 @@
             <feature name="Slashing" cost="0" />
             <feature name="Thrusting" cost="0" />
             <feature name="Magic" cost="0" />
+            
+            <text>
+                Describes the attack method of a weapon. The attack method of a weapon defines which attack aspects may be used with the weapon.
+            </text>
         </descriptor>
         
-        <descriptor name="Throwable" cost="1" />
+        <descriptor name="Throwable" cost="1">
+            <text>
+                Marks an object as throwable. The attack of this weapon may be considered a ranged attack with a range of medium. This range may be increased with a strength check of an appropriate difficulty before the attack with the approval of the game master.
+            </text>
+        </descriptor>
         
         <descriptor name="Affliction Immunity">
             <feature name="Staggered" cost="8" />
@@ -34,11 +42,16 @@
             <feature name="-3" cost="15" />
             <feature name="-2" cost="10" />
             <feature name="-1" cost="5" />
+            
             <feature name="0" cost="0" />
             <feature name="1" cost="5" />
             <feature name="2" cost="10" />
             <feature name="3" cost="15" />
             <feature name="4" cost="25" />
+            
+            <text>
+                See the core rules section: **Object and Character Size Modifiers** for more details.    
+            </text>
         </descriptor>
         
         <descriptor name="Magic" cost="1" />
@@ -56,6 +69,10 @@
             <feature name="Medium" cost="3" />
             <feature name="Long" cost="4" />
             <feature name="Extreme" cost="5" />
+            
+            <text>
+                See the core rules section: **Range Definitions** for more details.
+            </text>
         </descriptor>
         
         <descriptor name="Number of Uses">
@@ -102,11 +119,16 @@
             <feature name="+3" cost="5" />
             <feature name="+4" cost="8" />
             <feature name="+5" cost="13" />
+            
             <feature name="-1" cost="2" />
             <feature name="-2" cost="3" />
             <feature name="-3" cost="5" />
             <feature name="-4" cost="8" />
-            <feature name="-5" cost="13" />            
+            <feature name="-5" cost="13" />
+            
+            <text>
+                This is used to modify an attack roll instead of a skill check modifier. This modifier may be applied to enemy attack rolls as a negative modifier.
+            </text>
         </descriptor>
             
         <descriptor name="Skill Check Modifier">
@@ -115,11 +137,16 @@
             <feature name="+3" cost="8" />
             <feature name="+4" cost="13" />
             <feature name="+5" cost="21" />
+            
             <feature name="-1" cost="-2" />
             <feature name="-2" cost="-3" />
             <feature name="-3" cost="-5" />
             <feature name="-4" cost="-8" />
             <feature name="-5" cost="-13" />
+            
+            <text>
+                **Note:** this component may not be used for attack rolls.
+            </text>
         </descriptor>
         
         <descriptor name="Core Aspect Modifier">
@@ -185,7 +212,15 @@
             <feature name="-10 DR" cost="5" />
         </descriptor>
         
-        <descriptor name="Starting Wealth Modifier" formula="monetary_cost" />
+        <descriptor name="Starting Wealth Modifier" formula="monetary_cost">
+            <example value="120 $$" />
+            <example value="660 $$" />
+            <example value="1200 $$" />
+            <example value="1800 $$" />
+            <example value="2400 $$" />
+            <example value="3600 $$" />
+            <example value="6400 $$" />
+        </descriptor>
         
         <descriptor name="Extra Attack">
             <feature name="+1" cost="8" />
@@ -917,7 +952,7 @@
         <aspect name="Archery">
             <feature descriptor="Skill Check">
                 <detail type="limit" value="Drawn Force Weapons" />
-                <detail type="inherits_from" value="Strength" />
+                <detail type="inherits_from" value="Mobility" />
             </feature>
             <feature descriptor="Base Difficulty" value="10" />
             <feature descriptor="Action Point Cost" value="1" />

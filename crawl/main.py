@@ -35,6 +35,9 @@ def check_aspect(aspect):
 def format_descriptor(descriptor):
     output = '#### {}\n'.format(descriptor.name)
     
+    if descriptor.text is not None:
+        output += '{}\n\n'.format(descriptor.text)
+    
     if descriptor.cost is not None:
         output += '* Aspect Point Cost: {}'.format(descriptor.cost)
     
@@ -47,8 +50,13 @@ def format_descriptor(descriptor):
                 example, get_formula(descriptor.formula)(example))
     
     else:
-        for name, value in sorted(descriptor.entries.items()):
-            output += '* {}\n\t* Aspect Point Cost: {}\n'.format(name, value)
+        for name, value in sorted(descriptor.entries.items(), key=lambda tu: tu[0]):
+            try:
+                value = int(descriptor.entries[name])
+            except Exception:
+                print('NAME WAS: {}'.format(name))
+                
+            output += '* {}\n\t* Aspect Point Cost: {}\n'.format(name, descriptor.entries[name])
 
     return '{}<br /><br />\n'.format(output)
 
@@ -242,7 +250,7 @@ def main():
         fout.write('# The Crawl Aspect Document\n\n')
         fout.write('## Components\n')
         
-        for _, descriptor in sorted(model.descriptors.descriptors.items()):
+        for name, descriptor in sorted(model.descriptors.descriptors.items()):
             fout.write('{}\n\n'.format(format_descriptor(descriptor)))
         
         fout.write('## Items\n')
