@@ -193,7 +193,7 @@ def process_document(root):
         else:
             raise Exception('Unexpected element: {}'.format(element.tag))
 
-    # Process definitions first
+    # Process.descriptors first
     for descdef_xml in descriptors_xml:
         model.descriptors.add_descdef(descdef_xml)
 
@@ -242,7 +242,7 @@ def main():
         fout.write('# The Crawl Aspect Document\n\n')
         fout.write('## Components\n')
         
-        for _, descriptor in sorted(model.descriptors.definitions.items()):
+        for _, descriptor in sorted(model.descriptors.descriptors.items()):
             fout.write('{}\n\n'.format(format_descriptor(descriptor)))
         
         fout.write('## Items\n')

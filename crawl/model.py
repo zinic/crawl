@@ -87,47 +87,47 @@ class AspectManager(object):
 class DescriptorManager(object):
 
     def __init__(self):
-        self.definitions = dict()
+        self.descriptors = dict()
 
     def add_descdef(self, descdef_xml):
-        moddef_name = descdef_xml.attrib['name']
-        moddef = ModifierDefinition(moddef_name)
+        des_name = descdef_xml.attrib['name']
+        desdef = Descriptor(des_name)
 
         if 'formula' in descdef_xml.attrib:
-            moddef.formula = descdef_xml.attrib['formula']
+            desdef.formula = descdef_xml.attrib['formula']
 
             for entry_xml in descdef_xml:
                 if entry_xml.tag != 'example':
                     raise Exception('Unexpected element {}'.format(entry_xml.tag))
 
-                moddef.add_example(entry_xml)     
+                desdef.add_example(entry_xml)     
 
         elif 'cost' in descdef_xml.attrib:
-            moddef.cost = int(descdef_xml.attrib['cost'])
+            desdef.cost = int(descdef_xml.attrib['cost'])
 
         else:
             for entry_xml in descdef_xml:
                 if entry_xml.tag != 'feature':
                     raise Exception('Unexpected element {}'.format(entry_xml.tag))
 
-                moddef.add_entry(entry_xml)
+                desdef.add_entry(entry_xml)
 
-        self.definitions[moddef_name] = moddef
+        self.descriptors[des_name] = desdef
 
     def get_feature(self, mod_name, feature_name):
-        moddef = self.definitions[mod_name]
+        desdef = self.descriptors[mod_name]
 
-        if len(moddef.entries) > 0:
-            return int(moddef.entries[feature_name])
+        if len(desdef.entries) > 0:
+            return int(desdef.entries[feature_name])
 
-        if moddef.formula != None:
-            return get_formula(moddef.formula)(feature_name)
+        if desdef.formula != None:
+            return get_formula(desdef.formula)(feature_name)
 
         else:
-            return moddef.cost
+            return desdef.cost
 
 
-class ModifierDefinition(object):
+class Descriptor(object):
 
     def __init__(self, name):
         self.name = name
