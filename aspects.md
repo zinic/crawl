@@ -1,10 +1,442 @@
 # The Crawl Aspect Document
 
+## Components
+#### Action Point Cost
+* -1
+	* Aspect Point Cost: 3
+* -2
+	* Aspect Point Cost: 5
+* -3
+	* Aspect Point Cost: 8
+* -4
+	* Aspect Point Cost: 13
+* -5
+	* Aspect Point Cost: 21
+* 1
+	* Aspect Point Cost: -1
+* 2
+	* Aspect Point Cost: -2
+* 3
+	* Aspect Point Cost: -3
+* 4
+	* Aspect Point Cost: -5
+* 5
+	* Aspect Point Cost: -8
+<br /><br />
+
+
+#### Action Pool Modifier
+* +1
+	* Aspect Point Cost: 8
+* -1
+	* Aspect Point Cost: -8
+<br /><br />
+
+
+#### Action Pool Refresh Modifier
+* +1
+	* Aspect Point Cost: 8
+* -1
+	* Aspect Point Cost: -8
+<br /><br />
+
+
+#### Affliction Immunity
+* Diseased
+	* Aspect Point Cost: 13
+* Sickened
+	* Aspect Point Cost: 8
+* Staggered
+	* Aspect Point Cost: 8
+<br /><br />
+
+
+#### Area Effect
+* Cone
+	* Aspect Point Cost: 5
+* Dome
+	* Aspect Point Cost: 7
+* Line
+	* Aspect Point Cost: 3
+<br /><br />
+
+
+#### Aspect Point Grant
+<br /><br />
+
+
+#### Attack Accuracy Modifier
+* +1
+	* Aspect Point Cost: 2
+* +2
+	* Aspect Point Cost: 3
+* +3
+	* Aspect Point Cost: 5
+* +4
+	* Aspect Point Cost: 8
+* +5
+	* Aspect Point Cost: 13
+* -1
+	* Aspect Point Cost: 2
+* -2
+	* Aspect Point Cost: 3
+* -3
+	* Aspect Point Cost: 5
+* -4
+	* Aspect Point Cost: 8
+* -5
+	* Aspect Point Cost: 13
+<br /><br />
+
+
+#### Attack Method
+* Magic
+	* Aspect Point Cost: 0
+* Slashing
+	* Aspect Point Cost: 0
+* Swinging
+	* Aspect Point Cost: 0
+* Thrusting
+	* Aspect Point Cost: 0
+<br /><br />
+
+
+#### Base Difficulty
+* Formula: base_difficulty_cost
+
+**Examples**
+
+<br /><br />
+
+
+#### Can't be Flanked
+* Aspect Point Cost: 5<br /><br />
+
+
+#### Core Aspect Modifier
+* +1
+	* Aspect Point Cost: 8
+* +2
+	* Aspect Point Cost: 13
+* -1
+	* Aspect Point Cost: -8
+* -2
+	* Aspect Point Cost: -13
+<br /><br />
+
+
+#### Crit Success Modifier
+* +1
+	* Aspect Point Cost: 5
+* +2
+	* Aspect Point Cost: 10
+* +3
+	* Aspect Point Cost: 15
+* +4
+	* Aspect Point Cost: 20
+* +5
+	* Aspect Point Cost: 25
+<br /><br />
+
+
+#### Damage
+* Formula: damage_cost
+
+**Examples**
+
+* **1d4**
+	* Aspect Point Cost: 1
+* **1d6**
+	* Aspect Point Cost: 2
+* **1d8**
+	* Aspect Point Cost: 3
+* **1d12**
+	* Aspect Point Cost: 5
+* **2d4**
+	* Aspect Point Cost: 4
+* **2d6**
+	* Aspect Point Cost: 6
+* **2d8**
+	* Aspect Point Cost: 8
+* **2d12**
+	* Aspect Point Cost: 12
+<br /><br />
+
+
+#### Damage Healed
+* Formula: damage_cost
+
+**Examples**
+
+* **1d4**
+	* Aspect Point Cost: 1
+* **1d6**
+	* Aspect Point Cost: 2
+* **1d8**
+	* Aspect Point Cost: 3
+* **1d12**
+	* Aspect Point Cost: 5
+* **2d4**
+	* Aspect Point Cost: 4
+* **2d6**
+	* Aspect Point Cost: 6
+* **2d8**
+	* Aspect Point Cost: 8
+* **2d12**
+	* Aspect Point Cost: 12
+<br /><br />
+
+
+#### Damage Resistance
+* +10 DR
+	* Aspect Point Cost: 5
+* +2 DR
+	* Aspect Point Cost: 1
+* +4 DR
+	* Aspect Point Cost: 2
+* +6 DR
+	* Aspect Point Cost: 3
+* +8 DR
+	* Aspect Point Cost: 4
+* -10 DR
+	* Aspect Point Cost: 5
+* -2 DR
+	* Aspect Point Cost: 1
+* -4 DR
+	* Aspect Point Cost: 2
+* -6 DR
+	* Aspect Point Cost: 3
+* -8 DR
+	* Aspect Point Cost: 4
+<br /><br />
+
+
+#### Damage Type
+* Cold
+	* Aspect Point Cost: 1
+* Electric
+	* Aspect Point Cost: 1
+* Fire
+	* Aspect Point Cost: 1
+* Kinetic
+	* Aspect Point Cost: 1
+* Meta
+	* Aspect Point Cost: 1
+<br /><br />
+
+
+#### Duration
+* 1 Day
+	* Aspect Point Cost: 47
+* 1 Hour
+	* Aspect Point Cost: 21
+* 1 Turn
+	* Aspect Point Cost: 1
+* 10 Days
+	* Aspect Point Cost: 60
+* 10 Minutes
+	* Aspect Point Cost: 8
+* 12 Hours
+	* Aspect Point Cost: 34
+* 2 Turns
+	* Aspect Point Cost: 2
+* 30 Minutes
+	* Aspect Point Cost: 13
+* 4 Turns
+	* Aspect Point Cost: 3
+* 8 Turns
+	* Aspect Point Cost: 5
+<br /><br />
+
+
+#### Environment Mitigation
+* Echo Sight
+	* Aspect Point Cost: 15
+* Infrared Sight
+	* Aspect Point Cost: 10
+* Low Light Vision
+	* Aspect Point Cost: 5
+<br /><br />
+
+
+#### Extra Attack
+* +1
+	* Aspect Point Cost: 8
+* +2
+	* Aspect Point Cost: 13
+<br /><br />
+
+
+#### Extra Target
+* +1
+	* Aspect Point Cost: 5
+* +2
+	* Aspect Point Cost: 8
+* +3
+	* Aspect Point Cost: 13
+* +4
+	* Aspect Point Cost: 21
+<br /><br />
+
+
+#### HP Pool Modifier
+* +1
+	* Aspect Point Cost: 2
+* +2
+	* Aspect Point Cost: 4
+* +3
+	* Aspect Point Cost: 6
+* +4
+	* Aspect Point Cost: 8
+* -1
+	* Aspect Point Cost: 2
+* -2
+	* Aspect Point Cost: 4
+* -3
+	* Aspect Point Cost: 6
+* -4
+	* Aspect Point Cost: 8
+<br /><br />
+
+
+#### Heal Affliction
+* Diseased
+	* Aspect Point Cost: 3
+* Poisoned
+	* Aspect Point Cost: 3
+* Sickened
+	* Aspect Point Cost: 3
+<br /><br />
+
+
+#### Magic
+* Aspect Point Cost: 1<br /><br />
+
+
+#### NPC Cohort
+* Aspect Point Cost: 10<br /><br />
+
+
+#### Number of Hands Required
+* 1
+	* Aspect Point Cost: 0
+* 2
+	* Aspect Point Cost: 1
+* 3
+	* Aspect Point Cost: 1
+* 4
+	* Aspect Point Cost: 1
+<br /><br />
+
+
+#### Number of Uses
+* 1
+	* Aspect Point Cost: 0
+* 2
+	* Aspect Point Cost: 1
+* 3
+	* Aspect Point Cost: 2
+* 4
+	* Aspect Point Cost: 3
+* 5
+	* Aspect Point Cost: 5
+* Unlimited
+	* Aspect Point Cost: 21
+<br /><br />
+
+
+#### Opportunistic Action
+* Aspect Point Cost: 5<br /><br />
+
+
+#### Range
+* Extreme
+	* Aspect Point Cost: 5
+* Long
+	* Aspect Point Cost: 4
+* Medium
+	* Aspect Point Cost: 3
+* Melee
+	* Aspect Point Cost: 1
+* Personal
+	* Aspect Point Cost: 0
+* Short
+	* Aspect Point Cost: 2
+<br /><br />
+
+
+#### Reactionary
+* Aspect Point Cost: 10<br /><br />
+
+
+#### Size
+* -1
+	* Aspect Point Cost: 5
+* -2
+	* Aspect Point Cost: 10
+* -3
+	* Aspect Point Cost: 15
+* -4
+	* Aspect Point Cost: 25
+* 0
+	* Aspect Point Cost: 0
+* 1
+	* Aspect Point Cost: 5
+* 2
+	* Aspect Point Cost: 10
+* 3
+	* Aspect Point Cost: 15
+* 4
+	* Aspect Point Cost: 25
+<br /><br />
+
+
+#### Skill Check
+* Aspect Point Cost: 3<br /><br />
+
+
+#### Skill Check Modifier
+* +1
+	* Aspect Point Cost: 3
+* +2
+	* Aspect Point Cost: 5
+* +3
+	* Aspect Point Cost: 8
+* +4
+	* Aspect Point Cost: 13
+* +5
+	* Aspect Point Cost: 21
+* -1
+	* Aspect Point Cost: -2
+* -2
+	* Aspect Point Cost: -3
+* -3
+	* Aspect Point Cost: -5
+* -4
+	* Aspect Point Cost: -8
+* -5
+	* Aspect Point Cost: -13
+<br /><br />
+
+
+#### Starting Wealth Modifier
+* Formula: monetary_cost
+
+**Examples**
+
+<br /><br />
+
+
+#### Throwable
+* Aspect Point Cost: 1<br /><br />
+
+
 ## Items
 #### Bracers of Slap Fight
 Monetary Cost: **600 $$**
 <br />
 Grants Aspect: **[Frantic Defense](#frantic-defense)**<br />
+<br /><br />
 
 
 #### Chestplate
@@ -17,6 +449,7 @@ Monetary Cost: **360 $$**
 #### Details
 * Damage Resistance: +6 DR
 	* Applies to: **Kinetic**
+<br /><br />
 
 
 #### Dagger
@@ -31,6 +464,7 @@ Monetary Cost: **480 $$**
 * Damage Type: Kinetic
 * Damage Resistance: -2 DR
 	* Applies to: **Kinetic**
+<br /><br />
 
 
 #### Knife
@@ -43,6 +477,14 @@ Monetary Cost: **360 $$**
 * Range: Melee
 * Damage: 1d4
 * Damage Type: Kinetic
+<br /><br />
+
+
+#### Ration
+Monetary Cost: **0 $$**
+<br />
+
+<br /><br />
 
 
 #### Wand of Firebolt
@@ -52,6 +494,7 @@ Grants Aspect: **[Firebolt](#firebolt)**<br />
 #### Details
 * Attack Method: Magic
 * Number of Hands Required: 1
+<br /><br />
 
 
 #### Wand of Frigid Cone
@@ -61,6 +504,7 @@ Grants Aspect: **[Frigid Cone](#frigid-cone)**<br />
 #### Details
 * Attack Method: Magic
 * Number of Hands Required: 1
+<br /><br />
 
 
 ## Aspects
@@ -75,9 +519,10 @@ Requires: **[Intense Acrobatic Training](#intense-acrobatic-training)**<br />Req
 #### Details
 * Action Pool Modifier: +1
 * Action Pool Refresh Modifier: +1
+<br /><br />
 
 
-### Adrenaline Rush
+### Adrenaline Cascade
 
 No matter how haggered, this character's body surges with adrenaline so long as their heart pumps. This makes them immune to the condition: Staggered.
 
@@ -87,6 +532,20 @@ Aspect Point Cost: **8 AP**
 Requires: **[Vigor](#vigor)**<br />
 #### Details
 * Affliction Immunity: Staggered
+<br /><br />
+
+
+### Affluent
+
+You're richer. For now.
+
+Aspect Point Cost: **10 AP**
+<br />Capstone Cost: **10 AP**
+
+
+#### Details
+* Starting Wealth Modifier: 1200 $$
+<br /><br />
 
 
 ### Blend into Crowds
@@ -102,11 +561,12 @@ Aspect Point Cost: **5 AP**
 	* Limited: **Non-Combat Only**
 	* Inherits Modifiers from: **Mobility**
 * Base Difficulty: 10
+<br /><br />
 
 
 ### Block
 
-Allows a character to steady their body against a shield and attempt to absorb an incoming attack. This ability requires the character to have a working shield equipped.
+Allows a character to steady their body against a shield and attempt to absorb an incoming attack completely. This ability requires the character to have a working shield equipped.
 
 Aspect Point Cost: **7 AP**
 <br />Capstone Cost: **7 AP**
@@ -114,10 +574,12 @@ Aspect Point Cost: **7 AP**
 
 #### Details
 * Skill Check: Block
+	* Combat Action: May be used as a defense.
 	* Limited: **Character Must Have a Shield**
 	* Inherits Modifiers from: **Strength**
 * Base Difficulty: 5
 * Action Point Cost: 1
+<br /><br />
 
 
 ### Counter Slash
@@ -131,6 +593,7 @@ Requires: **[Slash](#slash)**<br />
 #### Details
 * Action Point Cost: 1
 * Opportunistic Action
+<br /><br />
 
 
 ### Counter Stab
@@ -144,6 +607,7 @@ Requires: **[Stab](#stab)**<br />
 #### Details
 * Action Point Cost: 1
 * Opportunistic Action
+<br /><br />
 
 
 ### Countercast
@@ -163,6 +627,7 @@ Requires: **[Dismiss](#dismiss)**<br />
 	* Magic Energy Type: **Meta**
 * Reactionary
 * Range: Medium
+<br /><br />
 
 
 ### Disable Device
@@ -178,6 +643,7 @@ Requires: **[Lockpicking](#lockpicking)**<br />
 	* Limited: **Non-Combat Only**
 	* Inherits Modifiers from: **Lockpicking**
 * Base Difficulty: 10
+<br /><br />
 
 
 ### Dismiss
@@ -198,6 +664,7 @@ Aspect Point Cost: **8 AP**
 * Magic
 	* Magic Energy Type: **Meta**
 * Range: Medium
+<br /><br />
 
 
 ### Dissev
@@ -220,6 +687,7 @@ Aspect Point Cost: **14 AP**
 * Magic
 	* Magic Energy Type: **Meta**
 * Range: Medium
+<br /><br />
 
 
 ### Dive for Cover
@@ -232,9 +700,11 @@ Aspect Point Cost: **3 AP**
 Requires: **[Duck and Dodge](#duck-and-dodge)**<br />
 #### Details
 * Skill Check: Dive for Cover
+	* Combat Action: May be used as a defense.
 	* Inherits Modifiers from: **Standing Forward Jump**
 * Base Difficulty: 10
 * Action Point Cost: 2
+<br /><br />
 
 
 ### Duck and Dodge
@@ -247,9 +717,11 @@ Aspect Point Cost: **4 AP**
 
 #### Details
 * Skill Check: Duck and Dodge
+	* Combat Action: May be used as a defense.
 	* Inherits Modifiers from: **Mobility**
 * Base Difficulty: 10
 * Action Point Cost: 1
+<br /><br />
 
 
 ### Field Aid
@@ -268,6 +740,7 @@ Requires: **[Medicine](#medicine)**<br />
 * Damage Healed: 1d6
 * Action Point Cost: 2
 * Base Difficulty: 10
+<br /><br />
 
 
 ### Filch
@@ -284,6 +757,7 @@ Requires: **[High Manual Dexterity](#high-manual-dexterity)**<br />
 	* Limited: **No Character Targets**
 	* Inherits Modifiers from: **Mobility**
 * Base Difficulty: 10
+<br /><br />
 
 
 ### Firebolt
@@ -303,6 +777,7 @@ Aspect Point Cost: **9 AP**
 	* Magic Energy Type: **Fire**
 * Range: Medium
 * Damage: 1d4
+<br /><br />
 
 
 ### Fit
@@ -315,6 +790,7 @@ Aspect Point Cost: **2 AP**
 
 #### Details
 * HP Pool Modifier: +1
+<br /><br />
 
 
 ### Foil
@@ -335,6 +811,7 @@ Aspect Point Cost: **8 AP**
 * Magic
 	* Magic Energy Type: **Force**
 * Range: Melee
+<br /><br />
 
 
 ### Frantic Defense
@@ -347,8 +824,10 @@ Aspect Point Cost: **3 AP**
 Requires: **[Fit](#fit)**<br />
 #### Details
 * Skill Check: Frantic Defense
+	* Combat Action: May be used as a defense.
 	* Inherits Modifiers from: **Mobility**
 * Base Difficulty: 15
+<br /><br />
 
 
 ### Frigid Cone
@@ -369,6 +848,7 @@ Aspect Point Cost: **13 AP**
 * Area Effect: Cone
 * Range: Short
 * Damage: 1d4
+<br /><br />
 
 
 ### Gesture
@@ -384,6 +864,7 @@ Aspect Point Cost: **4 AP**
 	* Inherits Modifiers from: **Intelligence**
 * Base Difficulty: 10
 * Action Point Cost: 1
+<br /><br />
 
 
 ### Great Slash
@@ -402,6 +883,7 @@ Requires: **[Fit](#fit)**<br />Requires: **[Slash](#slash)**<br />
 	* Inherits Modifiers from: **Mobility**
 * Extra Target: +1
 * Action Point Cost: 2
+<br /><br />
 
 
 ### High Manual Dexterity
@@ -412,6 +894,7 @@ Aspect Point Cost: **1 AP**
 <br />Capstone Cost: **1 AP**
 
 
+<br /><br />
 
 
 ### Indomitable
@@ -425,6 +908,7 @@ Requires: **[Martial Artist](#martial-artist)**<br />
 #### Details
 * Can't be Flanked
 * HP Pool Modifier: +1
+<br /><br />
 
 
 ### Intense Acrobatic Training
@@ -439,6 +923,7 @@ Requires: **[Fit](#fit)**<br />
 * Core Aspect Modifier: +1
 	* Applies to: **Mobility**
 * HP Pool Modifier: +1
+<br /><br />
 
 
 ### Intense Endurance Training
@@ -452,6 +937,7 @@ Requires: **[Fit](#fit)**<br />
 #### Details
 * Action Pool Modifier: +1
 * HP Pool Modifier: +1
+<br /><br />
 
 
 ### Intense Resistance Training
@@ -466,6 +952,7 @@ Requires: **[Fit](#fit)**<br />
 * Core Aspect Modifier: +1
 	* Applies to: **Mobility**
 * HP Pool Modifier: +1
+<br /><br />
 
 
 ### Keen Senses
@@ -478,6 +965,7 @@ Aspect Point Cost: **5 AP**
 Requires: **[Perception](#perception)**<br />
 #### Details
 * Opportunistic Action
+<br /><br />
 
 
 ### Knowledge - Affluence
@@ -493,6 +981,7 @@ Aspect Point Cost: **4 AP**
 	* Inherits Modifiers from: **Intelligence**
 * Action Point Cost: 1
 * Base Difficulty: 10
+<br /><br />
 
 
 ### Knowledge - Arcane
@@ -508,6 +997,7 @@ Aspect Point Cost: **4 AP**
 	* Inherits Modifiers from: **Intelligence**
 * Action Point Cost: 1
 * Base Difficulty: 10
+<br /><br />
 
 
 ### Knowledge - Historical
@@ -523,6 +1013,7 @@ Aspect Point Cost: **4 AP**
 	* Inherits Modifiers from: **Intelligence**
 * Action Point Cost: 1
 * Base Difficulty: 10
+<br /><br />
 
 
 ### Knowledge - Martial
@@ -538,6 +1029,7 @@ Aspect Point Cost: **4 AP**
 	* Inherits Modifiers from: **Intelligence**
 * Action Point Cost: 1
 * Base Difficulty: 10
+<br /><br />
 
 
 ### Knowledge - Mechanical
@@ -553,6 +1045,7 @@ Aspect Point Cost: **4 AP**
 	* Inherits Modifiers from: **Intelligence**
 * Action Point Cost: 1
 * Base Difficulty: 10
+<br /><br />
 
 
 ### Knowledge - Natural Sciences
@@ -568,6 +1061,7 @@ Aspect Point Cost: **4 AP**
 	* Inherits Modifiers from: **Intelligence**
 * Action Point Cost: 1
 * Base Difficulty: 10
+<br /><br />
 
 
 ### Knowledge - Survival
@@ -583,6 +1077,7 @@ Aspect Point Cost: **4 AP**
 	* Inherits Modifiers from: **Intelligence**
 * Action Point Cost: 1
 * Base Difficulty: 10
+<br /><br />
 
 
 ### Leadership
@@ -595,6 +1090,7 @@ Aspect Point Cost: **10 AP**
 
 #### Details
 * NPC Cohort
+<br /><br />
 
 
 ### Leaping Strike
@@ -611,6 +1107,7 @@ Requires: **[Fit](#fit)**<br />
 * Skill Check Modifier: +1
 	* Applies to: **Leaping Strike**
 * Action Point Cost: 1
+<br /><br />
 
 
 ### Lockpicking
@@ -626,6 +1123,7 @@ Requires: **[High Manual Dexterity](#high-manual-dexterity)**<br />
 	* Limited: **Non-Combat Only**
 	* Inherits Modifiers from: **Mobility**
 * Base Difficulty: 10
+<br /><br />
 
 
 ### Magic Trick
@@ -642,6 +1140,7 @@ Aspect Point Cost: **1 AP**
 * Magic
 	* Limited: **Non-Combat Only**
 	* Magic Energy Type: **Meta**
+<br /><br />
 
 
 ### Magical Energy Affinity
@@ -655,6 +1154,7 @@ Aspect Point Cost: **3 AP**
 #### Details
 * Skill Check Modifier: +1
 	* Applies to: **All Magic of Chosen Energy Type**
+<br /><br />
 
 
 ### Martial Artist
@@ -668,6 +1168,7 @@ Requires: **[Fit](#fit)**<br />
 #### Details
 * Crit Success Modifier: +1
 	* Limited: **Melee**
+<br /><br />
 
 
 ### Medicine
@@ -686,6 +1187,28 @@ Aspect Point Cost: **7 AP**
 	* Inherits Modifiers from: **Intelligence**
 * Base Difficulty: 10
 * Damage Healed: 1d6
+<br /><br />
+
+
+### Melee Parry
+
+Allows a character to parry an attack with their currently equipped weapon. This parry is only useful for melee weapons and may only be used against melee attacks.
+
+Upon a successful parry, the incoming attack is deflected. The defender is granted the ability to perform an attack upon their opponent .
+
+Aspect Point Cost: **11 AP**
+<br />Capstone Cost: **11 AP**
+
+
+#### Details
+* Skill Check: Melee Parry
+	* Combat Action: May be used as a defense.
+	* Inherits Modifiers from: **Mobility**
+* Range: Melee
+* Extra Attack: +1
+* Base Difficulty: 14
+* Action Point Cost: 1
+<br /><br />
 
 
 ### Mental Endurance
@@ -698,6 +1221,7 @@ Aspect Point Cost: **8 AP**
 
 #### Details
 * Action Pool Modifier: +1
+<br /><br />
 
 
 ### Mentat
@@ -711,22 +1235,33 @@ Requires: **[Mental Endurance](#mental-endurance)**<br />
 #### Details
 * Core Aspect Modifier: +1
 	* Applies to: **Intelligence**
+<br /><br />
 
 
-### Parry
+### Obscura
 
-Allows a character to parry an attack with their currently equipped weapon. Upon a successful parry, the defender is granted the ability to perform an attack upon their opponent.
+Creates a roaming darkness that condenses as a weightless mist. This mist is only effective on incoming ranged attacks, making it far more difficult for attackers to target anything inside it.
 
-Aspect Point Cost: **11 AP**
-<br />Capstone Cost: **11 AP**
+The negative modifier to range attacks persists even inside the mist. Melee attacks however are unaffacted.
+
+Aspect Point Cost: **24 AP**
+<br />Capstone Cost: **24 AP**
 
 
 #### Details
-* Skill Check: Parry
-	* Inherits Modifiers from: **Mobility**
-* Extra Attack: +1
-* Base Difficulty: 12
+* Skill Check: Obscura
+	* Inherits Modifiers from: **Intelligence**
 * Action Point Cost: 1
+* Base Difficulty: 14
+* Magic
+	* Magic Energy Type: **Meta**
+* Attack Accuracy Modifier: -4
+	* Applies to: **Ranged Attacks**
+* Range: Medium
+* Area Effect: Dome
+	* Radius: 6
+* Duration: 4 Turns
+<br /><br />
 
 
 ### Perception
@@ -743,6 +1278,7 @@ Aspect Point Cost: **4 AP**
 * Skill Check: Perception
 * Action Point Cost: 1
 * Base Difficulty: gm_only
+<br /><br />
 
 
 ### Pickpocket
@@ -760,6 +1296,7 @@ Requires: **[Filch](#filch)**<br />
 	* Inherits Modifiers from: **Mobility**
 * Base Difficulty: 10
 * Action Point Cost: 1
+<br /><br />
 
 
 ### Pivot and Roll
@@ -778,6 +1315,7 @@ Requires: **[Duck and Dodge](#duck-and-dodge)**<br />Requires: **[Fit](#fit)**<b
 * Skill Check Modifier: +2
 	* Applies to: **Pivot and Roll**
 * Action Point Cost: 2
+<br /><br />
 
 
 ### Purify
@@ -798,6 +1336,7 @@ Aspect Point Cost: **12 AP**
 * Magic
 	* Magic Energy Type: **Meta**
 * Range: Melee
+<br /><br />
 
 
 ### Quell
@@ -821,6 +1360,7 @@ Aspect Point Cost: **6 AP**
 * Magic
 	* Magic Energy Type: **Force**
 * Range: Personal
+<br /><br />
 
 
 ### Quiescence
@@ -835,6 +1375,7 @@ Requires: **[Mental Endurance](#mental-endurance)**<br />
 * Action Pool Refresh Modifier: +1
 * Core Aspect Modifier: -1
 	* Applies to: **Strength**
+<br /><br />
 
 
 ### Quiet Steps
@@ -850,6 +1391,7 @@ Aspect Point Cost: **4 AP**
 	* Inherits Modifiers from: **Mobility**
 * Base Difficulty: 10
 * Action Point Cost: 1
+<br /><br />
 
 
 ### Rage
@@ -871,6 +1413,7 @@ Requires: **[Vigor](#vigor)**<br />
 * Damage Resistance: +4 DR
 	* Applies to: **Electric**
 * Duration: 8 Turns
+<br /><br />
 
 
 ### Refresh
@@ -890,6 +1433,7 @@ Aspect Point Cost: **8 AP**
 * Magic
 	* Magic Energy Type: **Meta**
 * Range: Melee
+<br /><br />
 
 
 ### Send
@@ -907,6 +1451,7 @@ Aspect Point Cost: **4 AP**
 * Base Difficulty: 12
 * Magic
 	* Magic Energy Type: **Meta**
+<br /><br />
 
 
 ### Shot Call
@@ -923,6 +1468,7 @@ Requires: **[Perception](#perception)**<br />
 	* Limited: **Ranged Attacks Only**
 * Base Difficulty: 12
 * Action Point Cost: 1
+<br /><br />
 
 
 ### Slash
@@ -939,6 +1485,7 @@ Requires: **[Fit](#fit)**<br />
 	* Inherits Modifiers from: **Mobility**
 * Base Difficulty: 10
 * Action Point Cost: 1
+<br /><br />
 
 
 ### Sooth
@@ -958,6 +1505,7 @@ Aspect Point Cost: **9 AP**
 * Magic
 	* Magic Energy Type: **Meta**
 * Range: Melee
+<br /><br />
 
 
 ### Spell Dart
@@ -977,6 +1525,7 @@ Aspect Point Cost: **9 AP**
 	* Magic Energy Type: **Meta**
 * Range: Short
 * Damage: 1d6
+<br /><br />
 
 
 ### Stab
@@ -993,6 +1542,7 @@ Requires: **[Fit](#fit)**<br />
 	* Inherits Modifiers from: **Strength**
 * Base Difficulty: 10
 * Action Point Cost: 1
+<br /><br />
 
 
 ### Summon Water or Food
@@ -1012,11 +1562,12 @@ Aspect Point Cost: **6 AP**
 * Base Difficulty: 8
 * Magic
 	* Magic Energy Type: **Meta**
+<br /><br />
 
 
 ### Swing
 
-Grants a character a melee swing attack. This attack may be used with any swung melee weapon. This does not apply to slashing weapons which require different techniques.
+Grants a character a melee swing attack. This attack may be used with swung melee weapons, including blugenoning, slings, staves and other similar weapon types. This does not apply to slashing weapons which require different techniques.
 
 Aspect Point Cost: **4 AP**
 <br />Capstone Cost: **4 AP**
@@ -1028,6 +1579,45 @@ Aspect Point Cost: **4 AP**
 	* Inherits Modifiers from: **Strength**
 * Base Difficulty: 10
 * Action Point Cost: 1
+<br /><br />
+
+
+### Toss
+
+Allows a character to use their mind to toss an object of size modifier -3 or smaller with their mind. This object may be thrown hard enough to 1d4 damage and is accurate up to range medium.
+
+Aspect Point Cost: **9 AP**
+<br />Capstone Cost: **9 AP**
+
+
+#### Details
+* Skill Check: Toss
+	* Limited: **Size Modifier -3 and Smaller Objects Only**
+	* Inherits Modifiers from: **Intelligence**
+* Action Point Cost: 1
+* Base Difficulty: 10
+* Magic
+	* Magic Energy Type: **Kinetic**
+* Range: Medium
+* Damage: 1d4
+<br /><br />
+
+
+### Treat Illness
+
+Allows a character to attempt to cure a disease. The disease should annotate information about what happens after it is cured. Often there is a recovery period afterward.
+
+To cure a disease the character must have all required materials at hand according to the game master - this may be things the character has on them or some special requirement in complex circumstances. Each disease also has a difficulty set that must be beat by this check.
+
+Aspect Point Cost: **5 AP**
+<br />Capstone Cost: **12 AP**
+
+Requires: **[Medicine](#medicine)**<br />
+#### Details
+* Skill Check: Treat Illness
+	* Inherits Modifiers from: **Intelligence**
+* Base Difficulty: 10
+<br /><br />
 
 
 ### Vigor
@@ -1040,6 +1630,7 @@ Aspect Point Cost: **8 AP**
 
 #### Details
 * Action Pool Refresh Modifier: +1
+<br /><br />
 
 
 ### Volta
@@ -1059,6 +1650,7 @@ Aspect Point Cost: **9 AP**
 	* Magic Energy Type: **Electric**
 * Range: Medium
 * Damage: 1d4
+<br /><br />
 
 
 ### Weapon Proficiency
@@ -1072,5 +1664,6 @@ Aspect Point Cost: **3 AP**
 #### Details
 * Skill Check Modifier: +1
 	* Applies to: **Bound Weapon Type**
+<br /><br />
 
 

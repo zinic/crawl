@@ -1,10 +1,14 @@
 <document>
     <descriptors>
         <descriptor name="Attack Method">
+            <feature name="Drawn Force" cost="0" />
+            <feature name="Swinging" cost="0" />
             <feature name="Slashing" cost="0" />
             <feature name="Thrusting" cost="0" />
             <feature name="Magic" cost="0" />
         </descriptor>
+        
+        <descriptor name="Throwable" cost="1" />
         
         <descriptor name="Affliction Immunity">
             <feature name="Staggered" cost="8" />
@@ -91,6 +95,19 @@
             <feature name="Diseased" cost="3" />
             <feature name="Poisoned" cost="3" />
         </descriptor>
+        
+        <descriptor name="Attack Accuracy Modifier">
+            <feature name="+1" cost="2" />
+            <feature name="+2" cost="3" />
+            <feature name="+3" cost="5" />
+            <feature name="+4" cost="8" />
+            <feature name="+5" cost="13" />
+            <feature name="-1" cost="2" />
+            <feature name="-2" cost="3" />
+            <feature name="-3" cost="5" />
+            <feature name="-4" cost="8" />
+            <feature name="-5" cost="13" />            
+        </descriptor>
             
         <descriptor name="Skill Check Modifier">
             <feature name="+1" cost="3" />
@@ -168,6 +185,8 @@
             <feature name="-10 DR" cost="5" />
         </descriptor>
         
+        <descriptor name="Starting Wealth Modifier" formula="monetary_cost" />
+        
         <descriptor name="Extra Attack">
             <feature name="+1" cost="8" />
             <feature name="+2" cost="13" />
@@ -182,9 +201,29 @@
         
         <descriptor name="Aspect Point Grant" />
         
-        <descriptor name="Damage" formula="damage_cost" />
+        <descriptor name="Damage" formula="damage_cost">
+            <example value="1d4" />
+            <example value="1d6" />
+            <example value="1d8" />
+            <example value="1d12" />
+            
+            <example value="2d4" />
+            <example value="2d6" />
+            <example value="2d8" />
+            <example value="2d12" />
+        </descriptor>
         
-        <descriptor name="Damage Healed" formula="damage_cost" />
+        <descriptor name="Damage Healed" formula="damage_cost">
+            <example value="1d4" />
+            <example value="1d6" />
+            <example value="1d8" />
+            <example value="1d12" />
+            
+            <example value="2d4" />
+            <example value="2d6" />
+            <example value="2d8" />
+            <example value="2d12" />
+        </descriptor>
         
         <descriptor name="HP Pool Modifier">
             <feature name="+1" cost="2" />
@@ -225,6 +264,13 @@
     </templates>
     
     <items>
+        <item name="Ration" type="consumable" cost="100">
+            
+            <text>
+                Rations, son. Good for 12 hours a use.
+            </text>
+        </item>
+        
         <item name="Chestplate" type="armor">
             <feature descriptor="Damage Resistance" value="+6 DR">
                 <detail type="targets" value="Kinetic" />
@@ -274,8 +320,17 @@
     </items>
     
     <aspects>
+        <aspect name="Affluent">
+            <feature descriptor="Starting Wealth Modifier" value="1200 $$" />
+            
+            <text>
+                You're richer. For now.
+            </text>
+        </aspect>
+        
         <aspect name="Frantic Defense">
              <feature descriptor="Skill Check">
+                <detail type="Combat Action" value="May be used as a defense." />
                 <detail type="inherits_from" value="Mobility" />
             </feature>
             <feature descriptor="Base Difficulty" value="15" />
@@ -289,6 +344,7 @@
         
         <aspect name="Duck and Dodge">
             <feature descriptor="Skill Check">
+                <detail type="Combat Action" value="May be used as a defense." />
                 <detail type="inherits_from" value="Mobility" />
             </feature>
             <feature descriptor="Base Difficulty" value="10" />
@@ -301,6 +357,7 @@
         
         <aspect name="Dive for Cover">
             <feature descriptor="Skill Check">
+                <detail type="Combat Action" value="May be used as a defense." />
                 <detail type="inherits_from" value="Standing Forward Jump" />
             </feature>
             <feature descriptor="Base Difficulty" value="10" />
@@ -313,7 +370,7 @@
             </text>
         </aspect>
         
-        <aspect name="Adrenaline Rush">
+        <aspect name="Adrenaline Cascade">
             <feature descriptor="Affliction Immunity" value="Staggered" />
             
             <requires name="Vigor" />
@@ -639,6 +696,21 @@
             </text>
         </aspect>
         
+        <aspect name="Treat Illness">
+            <feature descriptor="Skill Check">
+                <detail type="inherits_from" value="Intelligence" />
+            </feature>
+            <feature descriptor="Base Difficulty" value="10" />
+            
+            <requires name="Medicine" />
+            
+            <text>
+                Allows a character to attempt to cure a disease. The disease should annotate information about what happens after it is cured. Often there is a recovery period afterward.
+                
+                To cure a disease the character must have all required materials at hand according to the game master - this may be things the character has on them or some special requirement in complex circumstances. Each disease also has a difficulty set that must be beat by this check.
+            </text>
+        </aspect>
+        
         <aspect name="Medicine">
             <feature descriptor="Skill Check">
                 <detail type="limit" value="Non-Combat Only" />
@@ -715,6 +787,7 @@
         
         <aspect name="Block">
             <feature descriptor="Skill Check">
+                <detail type="Combat Action" value="May be used as a defense." />
                 <detail type="limit" value="Character Must Have a Shield" />
                 <detail type="inherits_from" value="Strength" />
             </feature>
@@ -722,20 +795,24 @@
             <feature descriptor="Action Point Cost" value="1" />
             
             <text>
-                Allows a character to steady their body against a shield and attempt to absorb an incoming attack. This ability requires the character to have a working shield equipped.
+                Allows a character to steady their body against a shield and attempt to absorb an incoming attack completely. This ability requires the character to have a working shield equipped.
             </text>
         </aspect>
         
-        <aspect name="Parry">
+        <aspect name="Melee Parry">
             <feature descriptor="Skill Check">
+                <detail type="Combat Action" value="May be used as a defense." />
                 <detail type="inherits_from" value="Mobility" />
             </feature>
+            <feature descriptor="Range" value="Melee" />
             <feature descriptor="Extra Attack" value="+1" />
-            <feature descriptor="Base Difficulty" value="12" />
+            <feature descriptor="Base Difficulty" value="14" />
             <feature descriptor="Action Point Cost" value="1" />
             
             <text>
-                Allows a character to parry an attack with their currently equipped weapon. Upon a successful parry, the defender is granted the ability to perform an attack upon their opponent.
+                Allows a character to parry an attack with their currently equipped weapon. This parry is only useful for melee weapons and may only be used against melee attacks.
+                
+                Upon a successful parry, the incoming attack is deflected. The defender is granted the ability to perform an attack upon their opponent .
             </text>
         </aspect>
         
@@ -808,7 +885,20 @@
             <feature descriptor="Action Point Cost" value="1" />
 
             <text>
-                Grants a character a melee swing attack. This attack may be used with any swung melee weapon. This does not apply to slashing weapons which require different techniques.
+                Grants a character a melee swing attack. This attack may be used with swung melee weapons, including blugenoning, slings, staves and other similar weapon types. This does not apply to slashing weapons which require different techniques.
+            </text>
+        </aspect>
+
+        <aspect name="Archery">
+            <feature descriptor="Skill Check">
+                <detail type="limit" value="Drawn Force Weapons" />
+                <detail type="inherits_from" value="Strength" />
+            </feature>
+            <feature descriptor="Base Difficulty" value="10" />
+            <feature descriptor="Action Point Cost" value="1" />
+
+            <text>
+                Allows a character to use a bow, cross bow or other similar drawn force weapon.
             </text>
         </aspect>
 
@@ -1112,6 +1202,33 @@
             </text>
         </aspect>
         
+        <aspect name="Obscura">
+            <feature descriptor="Skill Check">
+                <detail type="inherits_from" value="Intelligence" />
+            </feature>
+            <feature descriptor="Action Point Cost" value="1" />
+            <feature descriptor="Base Difficulty" value="14" />
+            
+            <feature descriptor="Magic">
+                <detail type="energy_type" value="Meta" />
+            </feature>
+            
+            <feature descriptor="Attack Accuracy Modifier" value="-4">
+                <detail type="targets" value="Ranged Attacks" />
+            </feature>
+            <feature descriptor="Range" value="Medium" />
+            <feature descriptor="Area Effect" value="Dome">
+                <detail type="Radius" value="6" />
+            </feature>
+            <feature descriptor="Duration" value="4 Turns" />
+            
+            <text>
+                Creates a roaming darkness that condenses as a weightless mist. This mist is only effective on incoming ranged attacks, making it far more difficult for attackers to target anything inside it.
+                
+                The negative modifier to range attacks persists even inside the mist. Melee attacks however are unaffacted.
+            </text>
+        </aspect>
+        
         <aspect name="Send">
             <feature descriptor="Skill Check">
                 <detail type="inherits_from" value="Intelligence" />
@@ -1177,6 +1294,26 @@
             
             <text>
                 This enhanced ersion of Dismiss has all of the same rules as Dimiss but with the added feature of being able to target magical effects as a reaction.
+            </text>
+        </aspect>
+        
+        <aspect name="Toss">
+            <feature descriptor="Skill Check">
+                <detail type="limit" value="Size Modifier -3 and Smaller Objects Only" />
+                <detail type="inherits_from" value="Intelligence" />
+            </feature>
+            <feature descriptor="Action Point Cost" value="1" />
+            <feature descriptor="Base Difficulty" value="10" />
+            
+            <feature descriptor="Magic">
+                <detail type="energy_type" value="Kinetic" />
+            </feature>
+            
+            <feature descriptor="Range" value="Medium" />
+            <feature descriptor="Damage" value="1d4" />
+            
+            <text>
+                Allows a character to use their mind to toss an object of size modifier -3 or smaller with their mind. This object may be thrown hard enough to 1d4 damage and is accurate up to range medium.
             </text>
         </aspect>
     </aspects>

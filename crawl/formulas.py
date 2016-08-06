@@ -1,6 +1,16 @@
 GM_ONLY = "gm_only"
 
 
+def get_formula(fname):
+    return globals()[fname]
+
+
+# Money converter
+def monetary_cost(money):
+    value = money.replace('$', '')
+    return int(value) / 120
+
+
 # Costs start at 4 and go up from there by 2
 def damage_value_cost(dmg):
     return (dmg - 4) / 2

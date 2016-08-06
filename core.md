@@ -48,6 +48,13 @@ Throughout a campaign, players will acrew aspect points as part of the party's p
 During downtime, characters may reflect on what they have experienced and learned recently. Any successfully attempted aspects may be paid for and acquired so long as the player has enough aspect points in their pool.
 
 
+#### Acquiring New Aspects
+
+As your characters grow, so should their abilities. Characters may attempt any aspect they qualify for, with the game master's discretion. Any associated skill checks should be made with at minimum, a -5 modifier. The game master is encouraged to raise the modifier up to -20, if the situation, or difficulty of execution of the new aspect warrants it. Game masters should track and make repeated attemps after failures easier but to never grant a negative modifier any less than -5.
+
+Once a character successfully utilizes a new aspect, they may then attempt to acquire it during downtime as described in **Progression**. This requires the character to utilize the new aspect successfully during downtime with no negative modifier. Upon failure, the character must wait until the next downtime to attempt to acquire the aspect. Upon success, the player may spend the necessary aspect points and acquire the aspect.
+
+
 ### Core Aspects
 
 Core aspects are character aspects that come with every character created. These are the basis for the primary ability checks a character can make and also represent the three primary physical features of the character.
@@ -202,7 +209,7 @@ Characters may have equipment. Weight is optional but trackable. Most items will
 
 #### Using Shields
 
-Unless a character has a defense aspect that allows the use of a shield, equipping the shield imparts no benefits to the character.
+Unless a character has a defense aspect that allows the use of a shield, the shield may only provide it's DR modifiers to the character. Certain aspects may allow shields to be used to completely block an incoming attack or defend against an attack that targets a near by ally.
 
 #### Lightweight Items
 
@@ -291,16 +298,18 @@ The number of health points a character can convert into action points is limite
 
 #### Using Aspects
 
-Using an aspect requires a roll to determine the character's skill in execution. Any aspect that requires a roll will also present a difficulty scale. The difficulty of an aspect is represented as a number that must be overcome by the character's roll for the character to be considered successful.
+Aspects define how they are used. Many aspects will requires a skill check roll to determine success and degree of success or failure in both cases. Skill checks may have a difficulty. The difficulty of a skill check is represented as a number that must be overcome by the character's roll for the character to be considered successful.
 
 This roll may be modified from several sources including: magic, equipment and other aspects.
 
-Character aspects may have an action point cost associated with them. Only when characters are in initiative do action point costs matter. Outside of initiative, all aspects may be utilized with the aciton point cost being a guide to how long it may take the character - this is at the game masters discretion!
+Character aspects may have an action point cost associated with them.
+
+Only when characters are in initiative do action point costs matter. Outside of initiative, all aspects may be utilized with the aciton point cost being a guide to how long it may take the character - this is at the game masters discretion!
 
 
 ### Check Difficulty
 
-Certain game actions are represented as a check: a challenge that a character must attempt to defeat with a roll. Each check must either be related to an acquired aspect or to one of the three core character aspects.
+Certain game actions are represented as a skill check: a challenge that a character must attempt to defeat with a roll. Each check must either be related to an acquired aspect or to one of the three core character aspects.
 
 The difficulty of a check is the number that the player must roll at or above to have been considered successful.
 
@@ -313,16 +322,20 @@ In this case, the game master has decided that the lock is moderately strong and
 
 Many aspects that affect a target may offer the target an opposing check. For example: attacking a character allows the character the ability to make an opposed check - a defense role, to mitigate the attack.
 
+Opposed skill checks, like certain skilled attacks, require your character to beat a difficulty to even be considered successful in their execution. For example, even if a defender fails to defend by failing their skill check, or chooses not to defend, your character's attack may still not land.
+
 
 #### Attacking
 
 Many aspects grant attacks. Despite having different damages, effects and or other modifiers; all attacks follow the rules below.
 
-All attacks begin with a d20 roll from the attacker. This represents their attempt to hit a target. A character's attack roll may be modified from several sources including: magic, equipment and aspects.
+All attacks begin with a d20 roll from the attacker. This represents their attempt to hit a target. If the attack has a skill check then this roll also represents their skill check roll. For example: a character may use an attack that has a skill check roll with a difficulty of 12. The attacking character rolls an 11 and fails the skill check, therefore their attack fails and the defending character need not defend.
+
+A character's attack roll may be modified from several sources including: magic, equipment and aspects.
 
 An attack is considered successful if the target's defense is less than or equal to the attacker's roll. This means that if both attacker and defender roll a total of 15, the attack is successful. If successful, the attack lands and its associated effects (including damage) then apply. If the defender can not defend themselves either by their will or by some other mechanic such as a desire to conserve action points, then the attack is considered successful automatically.
 
-Many attack aspects will require a roll despite the defender's lack of defense. Aspects such as these might include magic where the caster's success is determined by their attack roll. For example, a fire spell aspect may have a difficulty of 10. If the defender is unable to defend but the caster rolls a 9, then the spell fails and the defender is unaffected.
+Many attack aspects will require a skill check roll despite the defender's lack of defense. Aspects such as these might include magic where the caster's success is determined by their attack roll. For example, a fire spell aspect may have a difficulty of 10. If the defender is unable to defend but the caster rolls a 9, then the spell fails and the defender is unaffected.
 
 
 #### Defending
@@ -376,7 +389,20 @@ Characters may take damage over time during the game. Damage types are listed be
 
 #### Armor
 
-Characters may defend themselves not just with actions but with equipment. Armor imparts a function called **damage resistance**. The damage resistance of an armor is given as a number to reduce damage taken by - this damage must apply to an energy type. For example, an Iron Chestplate imparts **6 DR Kinetic**. This value means that the armor will reduce any incoming kinetic damage to the character by 6.
+##### Armor Stacking
+
+**All armor a character contributes to DR over all.**
+
+For example, the DR values from a characters helmet, bracers, chestpiece all combine (based on damage type) into a pool of DR.
+
+Helmet: DR Kinetic +2
+Bracers: DR Kinetic +2
+Chestpiece: DR Kinetic +6
+
+This character, equipped, would have a total of 10 DR vs. Kinetic damage.
+
+
+##### Encumberance
 
 Some armors may restrict movement and therefore come with a negative mobility check modifier. Some heavier armors may also require a certain strength check modifier from the character.
 
@@ -391,6 +417,13 @@ Characters being attacked from behind are subject to a -2 modifier to any defens
 #### Surprise Attack
 
 Characters unaware of the presence of an enemy force may be subject to a surprise attack. In a surprise attack, the attacking force has the advantage. Initiative is rolled for combat as normal. However, during the first turn, only the attackers may act.
+
+
+#### Targeted Attacks
+
+ The game master may allow a character to target a specific piece of armor in order to reduce the DR that applies to an attack to only that which the piece of armor gives. This however should incur a hefty penalty of at least a -10 modifier to the character's attack roll, or greater at the game master's discretion.
+
+Characters may defend themselves not just with actions but with equipment. Armor imparts a function called **damage resistance**. The damage resistance of an armor is given as a number to reduce damage taken by - this damage must apply to an energy type. For example, an Iron Chestplate imparts **6 DR Kinetic**. This value means that the armor will reduce any incoming kinetic damage to the character by 6.
 
 
 #### Ready Actions

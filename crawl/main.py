@@ -3,6 +3,8 @@ import datetime
 import xml.etree.ElementTree as etree
 
 from crawl.model import *
+from crawl.util import sanitize_text
+from crawl.formulas import get_formula
 
 
 SKILL_CHECK_DESC = 'Skill Check'
@@ -30,6 +32,27 @@ def check_aspect(aspect):
 
         if not has_difficulty:
             print('Aspect {} has a skill check but no associated base difficulty.'.format(aspect.name))
+
+
+def format_descriptor(descriptor):
+    output = '#### {}\n'.format(descriptor.name)
+    
+    if descriptor.cost is not None:
+        output += '* Aspect Point Cost: {}'.format(descriptor.cost)
+    
+    elif descriptor.formula is not None:
+        output += '* Formula: {}\n\n'.format(descriptor.formula)
+        
+        output += '**Examples**\n\n'
+        for example in descriptor.examples:
+            output += '* **{}**\n\t* Aspect Point Cost: {}\n'.format(
+                example, get_formula(descriptor.formula)(example))
+    
+    else:
+        for name, value in sorted(descriptor.entries.items()):
+            output += '* {}\n\t* Aspect Point Cost: {}\n'.format(name, value)
+
+    return '{}<br /><br />\n'.format(output)
 
 
 def format_item(item, model):
@@ -89,7 +112,7 @@ def format_item(item, model):
             if len(details) > 0:
                 output += details
     
-    return output
+    return '{}<br /><br />\n'.format(output)
 
 
 def format_aspect(aspect, model):
@@ -146,14 +169,7 @@ def format_aspect(aspect, model):
             if len(details) > 0:
                 output += details
 
-    return output
-
-
-def sanitize_text(text):
-    output = ''
-    for line in text.split('\n'):
-        output += '{}\n'.format(line.strip())
-    return output
+    return '{}<br /><br />\n'.format(output)
 
 
 def process_document(root):
@@ -185,24 +201,7 @@ def process_document(root):
 
     # Next process items
     for item_xml in items_xml:
-        item = Item(
-            item_xml.attrib['name'],
-            item_xml.attrib['type'])
-
-        for part_xml in item_xml:
-            if part_xml.tag == 'feature':
-                item.add_feature(part_xml)
-                
-            elif part_xml.tag == 'text':
-                item.text = sanitize_text(part_xml.text)
-                
-            elif part_xml.tag == 'grants':
-                item.add_grant(part_xml)
-                
-            else:
-                raise Exception('Unexpected element: {}'.format(part_xml.tag))
-
-        model.items.add(item)
+        model.items.add_item(item_xml)
 
     # Lastly process aspects
     for aspect_xml in aspects_xml:
@@ -243,6 +242,11 @@ def main():
 
     with open('out.md', 'w') as fout:
         fout.write('# The Crawl Aspect Document\n\n')
+        fout.write('## Components\n')
+        
+        for _, descriptor in sorted(model.descriptors.definitions.items()):
+            fout.write('{}\n\n'.format(format_descriptor(descriptor)))
+        
         fout.write('## Items\n')
 
         for _, item in sorted(model.items.items.items()):
