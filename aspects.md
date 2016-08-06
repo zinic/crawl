@@ -172,6 +172,22 @@ Describes the attack method of a weapon. The attack method of a weapon defines w
 	* Aspect Point Cost: 8
 * **2d12**
 	* Aspect Point Cost: 12
+* **3d4**
+	* Aspect Point Cost: 7
+* **3d6**
+	* Aspect Point Cost: 10
+* **3d8**
+	* Aspect Point Cost: 13
+* **3d12**
+	* Aspect Point Cost: 19
+* **4d4**
+	* Aspect Point Cost: 10
+* **4d6**
+	* Aspect Point Cost: 14
+* **4d8**
+	* Aspect Point Cost: 18
+* **4d12**
+	* Aspect Point Cost: 26
 <br /><br />
 
 
@@ -196,6 +212,22 @@ Describes the attack method of a weapon. The attack method of a weapon defines w
 	* Aspect Point Cost: 8
 * **2d12**
 	* Aspect Point Cost: 12
+* **3d4**
+	* Aspect Point Cost: 7
+* **3d6**
+	* Aspect Point Cost: 10
+* **3d8**
+	* Aspect Point Cost: 13
+* **3d12**
+	* Aspect Point Cost: 19
+* **4d4**
+	* Aspect Point Cost: 10
+* **4d6**
+	* Aspect Point Cost: 14
+* **4d8**
+	* Aspect Point Cost: 18
+* **4d12**
+	* Aspect Point Cost: 26
 <br /><br />
 
 

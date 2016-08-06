@@ -246,6 +246,16 @@
             <example value="2d6" />
             <example value="2d8" />
             <example value="2d12" />
+            
+            <example value="3d4" />
+            <example value="3d6" />
+            <example value="3d8" />
+            <example value="3d12" />
+            
+            <example value="4d4" />
+            <example value="4d6" />
+            <example value="4d8" />
+            <example value="4d12" />
         </descriptor>
         
         <descriptor name="Damage Healed" formula="damage_cost">
@@ -258,6 +268,16 @@
             <example value="2d6" />
             <example value="2d8" />
             <example value="2d12" />
+            
+            <example value="3d4" />
+            <example value="3d6" />
+            <example value="3d8" />
+            <example value="3d12" />
+            
+            <example value="4d4" />
+            <example value="4d6" />
+            <example value="4d8" />
+            <example value="4d12" />
         </descriptor>
         
         <descriptor name="HP Pool Modifier">
