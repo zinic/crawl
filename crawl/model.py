@@ -6,7 +6,7 @@ def assemble_descriptor(feature_xml):
     name = feature_xml.attrib['descriptor']
     feature = feature_xml.attrib.get('value')
 
-    desc = Descriptor(name, feature)
+    desc = AspectFeature(name, feature)
 
     for detail_xml in feature_xml:
         desc.add_detail(detail_xml)
@@ -151,7 +151,7 @@ class Detail(object):
         self.value = value
 
 
-class Descriptor(object):
+class AspectFeature(object):
 
     def __init__(self, name, feature=None):
         self.name = name
