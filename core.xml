@@ -422,6 +422,20 @@
             </text>
         </aspect>
         
+        <aspect name="Trap Finder">
+            <feature descriptor="Skill Check Modifier" value="+2">
+                <detail type="limit" value="Trap Finding Only" />
+                <detail type="targets" value="Perception" />
+            </feature>
+            
+            <requires name="Perception" />
+            <requires name="Quiet Steps" />
+            
+            <text>
+                Grants a character a +2 modifier to any perception check made when searching for potential traps.
+            </text>
+        </aspect>
+        
         <aspect name="Fit">
             <feature descriptor="HP Pool Modifier" value="+1" />
             
@@ -439,7 +453,7 @@
             <requires name="Intense Endurance Training" />            
 
             <text>
-                Super Strong
+                Super Strong, yo.
             </text>
         </aspect>
         
@@ -1169,11 +1183,9 @@
             </feature>
             <feature descriptor="Action Point Cost" value="1" />
             <feature descriptor="Base Difficulty" value="10" />
-            
             <feature descriptor="Magic">
                 <detail type="energy_type" value="Meta" />
             </feature>
-            
             <feature descriptor="Range" value="Medium" />
             
             <text>
@@ -1189,11 +1201,9 @@
             </feature>
             <feature descriptor="Action Point Cost" value="1" />
             <feature descriptor="Base Difficulty" value="10" />
-            
             <feature descriptor="Magic">
                 <detail type="energy_type" value="Meta" />
             </feature>
-            
             <feature descriptor="Range" value="Short" />
             <feature descriptor="Damage" value="1d6" />
             
@@ -1208,11 +1218,9 @@
             </feature>
             <feature descriptor="Action Point Cost" value="1" />
             <feature descriptor="Base Difficulty" value="14" />
-            
             <feature descriptor="Magic">
                 <detail type="energy_type" value="Meta" />
             </feature>
-            
             <feature descriptor="Attack Accuracy Modifier" value="-4">
                 <detail type="targets" value="Ranged Attacks" />
             </feature>
@@ -1265,14 +1273,33 @@
         
         <aspect name="Magic Trick">
             <feature descriptor="Magic">
-                <detail type="limit" value="Non-Combat Only" />
                 <detail type="energy_type" value="Meta" />
             </feature>
             
             <text>
                 Perform a minor trick or illusion such as clean a handheld object to summoning a playing card from your coat pocket or hiding a rabbit within a top hat until you reach in to pull it out.
                 
-                This aspect may not be used in combat.
+                This aspect is useless in combat.
+            </text>
+        </aspect>
+        
+        <aspect name="Farsight">
+            <feature descriptor="Skill Check">
+                <detail type="inherits_from" value="Perception" />
+            </feature>
+            <feature descriptor="Action Point Cost" value="2" />
+            <feature descriptor="Base Difficulty" value="14" />
+            <feature descriptor="Magic">
+                <detail type="energy_type" value="Meta" />
+            </feature>
+            <feature descriptor="Range" value="Medium" />            
+            
+            <requires name="Magic Trick" />
+            
+            <text>
+                Upon successful cast, Farsight grants the caster a glimpse of the area desired. This area is restricted to medium range. The casting skill check also represents the perception skill check of the caster as they gaze upon their target.
+                
+                This spell may be used in place of any perception check.
             </text>
         </aspect>
         

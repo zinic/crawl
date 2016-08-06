@@ -90,6 +90,8 @@
 
 
 #### Attack Method
+* Drawn Force
+	* Aspect Point Cost: 0
 * Magic
 	* Aspect Point Cost: 0
 * Slashing
@@ -510,7 +512,7 @@ Grants Aspect: **[Frigid Cone](#frigid-cone)**<br />
 ## Aspects
 ### Adonic
 
-Super Strong
+Super Strong, yo.
 
 Aspect Point Cost: **16 AP**
 <br />Capstone Cost: **52 AP**
@@ -545,6 +547,23 @@ Aspect Point Cost: **10 AP**
 
 #### Details
 * Starting Wealth Modifier: 1200 $$
+<br /><br />
+
+
+### Archery
+
+Allows a character to use a bow, cross bow or other similar drawn force weapon.
+
+Aspect Point Cost: **4 AP**
+<br />Capstone Cost: **4 AP**
+
+
+#### Details
+* Skill Check: Archery
+	* Limited: **Drawn Force Weapons**
+	* Inherits Modifiers from: **Strength**
+* Base Difficulty: 10
+* Action Point Cost: 1
 <br /><br />
 
 
@@ -721,6 +740,27 @@ Aspect Point Cost: **4 AP**
 	* Inherits Modifiers from: **Mobility**
 * Base Difficulty: 10
 * Action Point Cost: 1
+<br /><br />
+
+
+### Farsight
+
+Upon successful cast, Farsight grants the caster a glimpse of the area desired. This area is restricted to medium range. The casting skill check also represents the perception skill check of the caster as they gaze upon their target.
+
+This spell may be used in place of any perception check.
+
+Aspect Point Cost: **5 AP**
+<br />Capstone Cost: **6 AP**
+
+Requires: **[Magic Trick](#magic-trick)**<br />
+#### Details
+* Skill Check: Farsight
+	* Inherits Modifiers from: **Perception**
+* Action Point Cost: 2
+* Base Difficulty: 14
+* Magic
+	* Magic Energy Type: **Meta**
+* Range: Medium
 <br /><br />
 
 
@@ -1130,7 +1170,7 @@ Requires: **[High Manual Dexterity](#high-manual-dexterity)**<br />
 
 Perform a minor trick or illusion such as clean a handheld object to summoning a playing card from your coat pocket or hiding a rabbit within a top hat until you reach in to pull it out.
 
-This aspect may not be used in combat.
+This aspect is useless in combat.
 
 Aspect Point Cost: **1 AP**
 <br />Capstone Cost: **1 AP**
@@ -1138,7 +1178,6 @@ Aspect Point Cost: **1 AP**
 
 #### Details
 * Magic
-	* Limited: **Non-Combat Only**
 	* Magic Energy Type: **Meta**
 <br /><br />
 
@@ -1600,6 +1639,21 @@ Aspect Point Cost: **9 AP**
 	* Magic Energy Type: **Kinetic**
 * Range: Medium
 * Damage: 1d4
+<br /><br />
+
+
+### Trap Finder
+
+Grants a character a +2 modifier to any perception check made when searching for potential traps.
+
+Aspect Point Cost: **5 AP**
+<br />Capstone Cost: **13 AP**
+
+Requires: **[Perception](#perception)**<br />Requires: **[Quiet Steps](#quiet-steps)**<br />
+#### Details
+* Skill Check Modifier: +2
+	* Limited: **Trap Finding Only**
+	* Applies to: **Perception**
 <br /><br />
 
 

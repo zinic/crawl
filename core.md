@@ -45,7 +45,15 @@ Aspect points are the primary mechanisim for character advancement. They are gra
 
 Throughout a campaign, players will acrew aspect points as part of the party's progression. These points may be spent during downtime. The game master may declare any point during the campaign as downtime. Long rests that the party can take safely almost always qualify but it is up to the game master to say whether or not a rest may be considered downtime.
 
-During downtime, characters may reflect on what they have experienced and learned recently. Any successfully attempted aspects may be paid for and acquired so long as the player has enough aspect points in their pool.
+During downtime, characters may reflect on what they have experienced and learned recently.
+
+#### Upgrading Aspects
+
+With enough use of an aspect, there may come benefits from mastery. This is represented by a player upgrading specific features of aspects the character has utilized frequently. Players may not add new features to an aspect, they may only modify what the aspect grants.
+
+##### Aspect Upgrade Example
+
+During downtime, Claire decides to upgrade her Character, Nala's, Spell Dart aspect. She wants it to have a stronger punch and decides that the spell should do 1d6 in damage instead of 1d4. This change in cost is paid by the player and the aspect is considered upgraded at this point. In this case the cost difference is one aspect point.
 
 
 #### Acquiring New Aspects
