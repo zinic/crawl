@@ -37,5 +37,5 @@ def base_difficulty_cost(value):
         # returning 2 for the cost is the same cost as 10
         return 2
 
-    valint = int(value)    
-    return -1 * (valint - 15) / 2
+    valint = int(value)
+    return -1 * (valint - 13) / 2

@@ -539,7 +539,7 @@ Marks an object as throwable. The attack of this weapon may be considered a rang
 
 ## Items - 7
 #### Bracers of Slap Fight
-Monetary Cost: **600 $$**
+Monetary Cost: **480 $$**
 <br />
 Grants Aspect: **[Frantic Defense](#frantic-defense)**<br />
 <br /><br />
@@ -658,8 +658,8 @@ Aspect Point Cost: **10 AP**
 
 Allows the caster to augment their vision with magic. This darkens ther vision slightly but does not damage their perception. Other magical effects within the range of the caster will shine brightly in their sight. At game master discretion, some magic items, even hidden or obscured, may shine through these obstacles.
 
-Aspect Point Cost: **11 AP**
-<br />Capstone Cost: **11 AP**
+Aspect Point Cost: **10 AP**
+<br />Capstone Cost: **10 AP**
 
 
 #### Details
@@ -688,7 +688,7 @@ Aspect Point Cost: **4 AP**
 	* Limited: **Only Inherits from the Highest Modifier (Strength or Mobility)**
 	* Inherits Modifiers from: **Mobility**
 	* Inherits Modifiers from: **Strength**
-* Base Difficulty: 10
+* Base Difficulty: 8
 * Action Point Cost: 1
 <br /><br />
 
@@ -705,7 +705,7 @@ Aspect Point Cost: **5 AP**
 * Skill Check: Blend into Crowds
 	* Limited: **Non-Combat Only**
 	* Inherits Modifiers from: **Mobility**
-* Base Difficulty: 10
+* Base Difficulty: 8
 <br /><br />
 
 
@@ -713,8 +713,8 @@ Aspect Point Cost: **5 AP**
 
 Allows a character to steady their body against a shield and attempt to absorb an incoming attack completely. This ability requires the character to have a working shield equipped.
 
-Aspect Point Cost: **7 AP**
-<br />Capstone Cost: **7 AP**
+Aspect Point Cost: **6 AP**
+<br />Capstone Cost: **6 AP**
 
 
 #### Details
@@ -787,7 +787,7 @@ Requires: **[Dismiss](#dismiss)**<br />
 * Skill Check: Countercast
 	* Inherits Modifiers from: **Intelligence**
 * Action Point Cost: 2
-* Base Difficulty: 10
+* Base Difficulty: 8
 * Magic
 	* Magic Energy Type: **Meta**
 * Reactionary
@@ -807,7 +807,7 @@ Requires: **[Lockpicking](#lockpicking)**<br />
 * Skill Check: Disable Device
 	* Limited: **Non-Combat Only**
 	* Inherits Modifiers from: **Lockpicking**
-* Base Difficulty: 10
+* Base Difficulty: 8
 <br /><br />
 
 
@@ -825,7 +825,7 @@ Aspect Point Cost: **8 AP**
 * Skill Check: Dismiss
 	* Inherits Modifiers from: **Intelligence**
 * Action Point Cost: 1
-* Base Difficulty: 10
+* Base Difficulty: 8
 * Magic
 	* Magic Energy Type: **Meta**
 * Range: Medium
@@ -844,7 +844,7 @@ Aspect Point Cost: **14 AP**
 * Skill Check: Dissev
 	* Inherits Modifiers from: **Intelligence**
 * Action Point Cost: 1
-* Base Difficulty: 10
+* Base Difficulty: 8
 * Damage Resistance: +2 DR
 	* Applies to: **Chosen upon Casting**
 * Skill Check Modifier: +2
@@ -867,7 +867,7 @@ Requires: **[Duck and Dodge](#duck-and-dodge)**<br />
 * Skill Check: Dive for Cover
 	* Combat Action: May be used as a defense.
 	* Inherits Modifiers from: **Standing Forward Jump**
-* Base Difficulty: 10
+* Base Difficulty: 8
 * Action Point Cost: 2
 <br /><br />
 
@@ -884,7 +884,7 @@ Aspect Point Cost: **4 AP**
 * Skill Check: Duck and Dodge
 	* Combat Action: May be used as a defense.
 	* Inherits Modifiers from: **Mobility**
-* Base Difficulty: 10
+* Base Difficulty: 8
 * Action Point Cost: 1
 <br /><br />
 
@@ -895,8 +895,8 @@ Upon successful cast, Farsight grants the caster a glimpse of the area desired. 
 
 This spell may be used in place of any perception check.
 
-Aspect Point Cost: **5 AP**
-<br />Capstone Cost: **6 AP**
+Aspect Point Cost: **4 AP**
+<br />Capstone Cost: **5 AP**
 
 Requires: **[Magic Trick](#magic-trick)**<br />
 #### Details
@@ -925,7 +925,7 @@ Requires: **[Medicine](#medicine)**<br />
 	* Inherits Modifiers from: **Intelligence**
 * Damage Healed: 1d6
 * Action Point Cost: 2
-* Base Difficulty: 10
+* Base Difficulty: 8
 <br /><br />
 
 
@@ -942,7 +942,7 @@ Requires: **[High Manual Dexterity](#high-manual-dexterity)**<br />
 	* Limited: **Non-Combat Only**
 	* Limited: **No Character Targets**
 	* Inherits Modifiers from: **Mobility**
-* Base Difficulty: 10
+* Base Difficulty: 8
 <br /><br />
 
 
@@ -958,7 +958,7 @@ Aspect Point Cost: **9 AP**
 * Skill Check: Firebolt
 	* Inherits Modifiers from: **Intelligence**
 * Action Point Cost: 1
-* Base Difficulty: 10
+* Base Difficulty: 8
 * Magic
 	* Magic Energy Type: **Fire**
 * Range: Medium
@@ -991,7 +991,7 @@ Aspect Point Cost: **8 AP**
 * Skill Check: Foil
 	* Inherits Modifiers from: **Intelligence**
 * Action Point Cost: 1
-* Base Difficulty: 10
+* Base Difficulty: 8
 * Damage Resistance: +4 DR
 	* Applies to: **Kinetic**
 * Magic
@@ -1004,8 +1004,8 @@ Aspect Point Cost: **8 AP**
 
 Allows a character to make a simple dodge-based defense against an incoming attack. The defense roll recieves the character's **mobility modifier** as a defense bonus.
 
-Aspect Point Cost: **3 AP**
-<br />Capstone Cost: **5 AP**
+Aspect Point Cost: **2 AP**
+<br />Capstone Cost: **4 AP**
 
 Requires: **[Fit](#fit)**<br />
 #### Details
@@ -1028,7 +1028,7 @@ Aspect Point Cost: **13 AP**
 * Skill Check: Frigid Cone
 	* Inherits Modifiers from: **Intelligence**
 * Action Point Cost: 1
-* Base Difficulty: 10
+* Base Difficulty: 8
 * Magic
 	* Magic Energy Type: **Cold**
 * Area Effect: Cone
@@ -1048,7 +1048,7 @@ Aspect Point Cost: **4 AP**
 #### Details
 * Skill Check: Gesture
 	* Inherits Modifiers from: **Intelligence**
-* Base Difficulty: 10
+* Base Difficulty: 8
 * Action Point Cost: 1
 <br /><br />
 
@@ -1063,7 +1063,7 @@ Aspect Point Cost: **5 AP**
 Requires: **[Fit](#fit)**<br />Requires: **[Slash](#slash)**<br />
 #### Details
 * Skill Check: Great Slash
-* Base Difficulty: 10
+* Base Difficulty: 8
 * Skill Check Modifier: -2
 	* Applies to: **Great Slash**
 	* Inherits Modifiers from: **Mobility**
@@ -1166,7 +1166,7 @@ Aspect Point Cost: **4 AP**
 * Skill Check: Knowledge - Affluence
 	* Inherits Modifiers from: **Intelligence**
 * Action Point Cost: 1
-* Base Difficulty: 10
+* Base Difficulty: 8
 <br /><br />
 
 
@@ -1182,7 +1182,7 @@ Aspect Point Cost: **4 AP**
 * Skill Check: Knowledge - Arcane
 	* Inherits Modifiers from: **Intelligence**
 * Action Point Cost: 1
-* Base Difficulty: 10
+* Base Difficulty: 8
 <br /><br />
 
 
@@ -1198,7 +1198,7 @@ Aspect Point Cost: **4 AP**
 * Skill Check: Knowledge - Historical
 	* Inherits Modifiers from: **Intelligence**
 * Action Point Cost: 1
-* Base Difficulty: 10
+* Base Difficulty: 8
 <br /><br />
 
 
@@ -1214,7 +1214,7 @@ Aspect Point Cost: **4 AP**
 * Skill Check: Knowledge - Martial
 	* Inherits Modifiers from: **Intelligence**
 * Action Point Cost: 1
-* Base Difficulty: 10
+* Base Difficulty: 8
 <br /><br />
 
 
@@ -1230,7 +1230,7 @@ Aspect Point Cost: **4 AP**
 * Skill Check: Knowledge - Mechanical
 	* Inherits Modifiers from: **Intelligence**
 * Action Point Cost: 1
-* Base Difficulty: 10
+* Base Difficulty: 8
 <br /><br />
 
 
@@ -1246,7 +1246,7 @@ Aspect Point Cost: **4 AP**
 * Skill Check: Knowledge - Natural Sciences
 	* Inherits Modifiers from: **Intelligence**
 * Action Point Cost: 1
-* Base Difficulty: 10
+* Base Difficulty: 8
 <br /><br />
 
 
@@ -1262,7 +1262,7 @@ Aspect Point Cost: **4 AP**
 * Skill Check: Knowledge - Survival
 	* Inherits Modifiers from: **Intelligence**
 * Action Point Cost: 1
-* Base Difficulty: 10
+* Base Difficulty: 8
 <br /><br />
 
 
@@ -1289,7 +1289,7 @@ Aspect Point Cost: **7 AP**
 Requires: **[Fit](#fit)**<br />
 #### Details
 * Skill Check: Leaping Strike
-* Base Difficulty: 10
+* Base Difficulty: 8
 * Skill Check Modifier: +1
 	* Applies to: **Leaping Strike**
 * Action Point Cost: 1
@@ -1308,7 +1308,7 @@ Requires: **[High Manual Dexterity](#high-manual-dexterity)**<br />
 * Skill Check: Lockpicking
 	* Limited: **Non-Combat Only**
 	* Inherits Modifiers from: **Mobility**
-* Base Difficulty: 10
+* Base Difficulty: 8
 <br /><br />
 
 
@@ -1370,7 +1370,7 @@ Aspect Point Cost: **7 AP**
 * Skill Check: Medicine
 	* Limited: **Non-Combat Only**
 	* Inherits Modifiers from: **Intelligence**
-* Base Difficulty: 10
+* Base Difficulty: 8
 * Damage Healed: 1d6
 <br /><br />
 
@@ -1381,8 +1381,8 @@ Allows a character to parry an attack with their currently equipped weapon. This
 
 Upon a successful parry, the incoming attack is deflected. The defender is granted the ability to perform an attack upon their opponent .
 
-Aspect Point Cost: **11 AP**
-<br />Capstone Cost: **11 AP**
+Aspect Point Cost: **10 AP**
+<br />Capstone Cost: **10 AP**
 
 
 #### Details
@@ -1429,8 +1429,8 @@ Creates a roaming darkness that condenses as a weightless mist. This mist is onl
 
 The negative modifier to range attacks persists even inside the mist. Melee attacks however are unaffacted.
 
-Aspect Point Cost: **24 AP**
-<br />Capstone Cost: **24 AP**
+Aspect Point Cost: **23 AP**
+<br />Capstone Cost: **23 AP**
 
 
 #### Details
@@ -1479,7 +1479,7 @@ Requires: **[Filch](#filch)**<br />
 #### Details
 * Skill Check: Pickpocket
 	* Inherits Modifiers from: **Mobility**
-* Base Difficulty: 10
+* Base Difficulty: 8
 * Action Point Cost: 1
 <br /><br />
 
@@ -1496,7 +1496,7 @@ Requires: **[Duck and Dodge](#duck-and-dodge)**<br />Requires: **[Fit](#fit)**<b
 * Skill Check: Pivot and Roll
 	* Limited: **Unusuable when Slowed**
 	* Inherits Modifiers from: **Mobility**
-* Base Difficulty: 10
+* Base Difficulty: 8
 * Skill Check Modifier: +2
 	* Applies to: **Pivot and Roll**
 * Action Point Cost: 2
@@ -1538,7 +1538,7 @@ Aspect Point Cost: **6 AP**
 	* Inherits Modifiers from: **Intelligence**
 	* Limited: **Caster Only**
 * Action Point Cost: 1
-* Base Difficulty: 10
+* Base Difficulty: 8
 * Damage Resistance: +2 DR
 	* Applies to: **Kinetic**
 * Magic
@@ -1573,7 +1573,7 @@ Aspect Point Cost: **4 AP**
 #### Details
 * Skill Check: Quiet Steps
 	* Inherits Modifiers from: **Mobility**
-* Base Difficulty: 10
+* Base Difficulty: 8
 * Action Point Cost: 1
 <br /><br />
 
@@ -1612,7 +1612,7 @@ Aspect Point Cost: **8 AP**
 * Skill Check: Refresh
 	* Inherits Modifiers from: **Intelligence**
 * Action Point Cost: 1
-* Base Difficulty: 10
+* Base Difficulty: 8
 * Damage Healed: 1d6
 * Magic
 	* Magic Energy Type: **Meta**
@@ -1624,8 +1624,8 @@ Aspect Point Cost: **8 AP**
 
 Instantly send a message to the mind of a willing target, regardless of distance. The target must be known to the caster in that they must have met in-person at least once. This effect may be dismissed before the message is sent. Once the message is sent the target is granted the opportunity to reply with their own message. After this the conversation ends and send must be cast again to further communication.
 
-Aspect Point Cost: **4 AP**
-<br />Capstone Cost: **4 AP**
+Aspect Point Cost: **3 AP**
+<br />Capstone Cost: **3 AP**
 
 
 #### Details
@@ -1642,8 +1642,8 @@ Aspect Point Cost: **4 AP**
 
 Allows a character to make a perception check. This check, if successful, grants a target ally a +1 modifier to their next ranged attack. The target ally must be within the character's line of sight as must be the target enemy however for the target ally to recieve the +1 modifier the target ally does not need to have line of sight on the target enemy.
 
-Aspect Point Cost: **3 AP**
-<br />Capstone Cost: **7 AP**
+Aspect Point Cost: **2 AP**
+<br />Capstone Cost: **6 AP**
 
 Requires: **[Perception](#perception)**<br />
 #### Details
@@ -1667,7 +1667,7 @@ Aspect Point Cost: **4 AP**
 * Skill Check: Slash
 	* Limited: **Slashing Weapons**
 	* Inherits Modifiers from: **Mobility**
-* Base Difficulty: 10
+* Base Difficulty: 8
 * Action Point Cost: 1
 <br /><br />
 
@@ -1684,7 +1684,7 @@ Aspect Point Cost: **9 AP**
 * Skill Check: Sooth
 	* Inherits Modifiers from: **Intelligence**
 * Action Point Cost: 1
-* Base Difficulty: 10
+* Base Difficulty: 8
 * Heal Affliction: Sickened
 * Magic
 	* Magic Energy Type: **Meta**
@@ -1704,7 +1704,7 @@ Aspect Point Cost: **9 AP**
 * Skill Check: Spell Dart
 	* Inherits Modifiers from: **Intelligence**
 * Action Point Cost: 1
-* Base Difficulty: 10
+* Base Difficulty: 8
 * Magic
 	* Magic Energy Type: **Meta**
 * Range: Short
@@ -1724,7 +1724,7 @@ Aspect Point Cost: **4 AP**
 * Skill Check: Stab
 	* Limited: **Thrusting Weapons**
 	* Inherits Modifiers from: **Strength**
-* Base Difficulty: 10
+* Base Difficulty: 8
 * Action Point Cost: 1
 <br /><br />
 
@@ -1735,8 +1735,8 @@ This spell takes shape in two different ways. The caster may lift up an empty ve
 
 The caster may instead pick up an empty serving dish and summon a simple meal of a heavy, dense bread that tastes like dry oatmeal. This bread provides enough sustience for 1 person for 1 day.
 
-Aspect Point Cost: **6 AP**
-<br />Capstone Cost: **6 AP**
+Aspect Point Cost: **5 AP**
+<br />Capstone Cost: **5 AP**
 
 
 #### Details
@@ -1760,7 +1760,7 @@ Aspect Point Cost: **5 AP**
 #### Details
 * Skill Check: Survival
 	* Inherits Modifiers from: **Standing Forward Jump**
-* Base Difficulty: 10
+* Base Difficulty: 8
 <br /><br />
 
 
@@ -1776,7 +1776,7 @@ Aspect Point Cost: **4 AP**
 * Skill Check: Swing
 	* Limited: **Swung Weapons**
 	* Inherits Modifiers from: **Strength**
-* Base Difficulty: 10
+* Base Difficulty: 8
 * Action Point Cost: 1
 <br /><br />
 
@@ -1794,7 +1794,7 @@ Aspect Point Cost: **9 AP**
 	* Limited: **Size Modifier -3 and Smaller Objects Only**
 	* Inherits Modifiers from: **Intelligence**
 * Action Point Cost: 1
-* Base Difficulty: 10
+* Base Difficulty: 8
 * Magic
 	* Magic Energy Type: **Kinetic**
 * Range: Medium
@@ -1830,7 +1830,7 @@ Requires: **[Medicine](#medicine)**<br />
 #### Details
 * Skill Check: Treat Illness
 	* Inherits Modifiers from: **Intelligence**
-* Base Difficulty: 10
+* Base Difficulty: 8
 <br /><br />
 
 
@@ -1859,7 +1859,7 @@ Aspect Point Cost: **9 AP**
 * Skill Check: Volta
 	* Inherits Modifiers from: **Intelligence**
 * Action Point Cost: 1
-* Base Difficulty: 10
+* Base Difficulty: 8
 * Magic
 	* Magic Energy Type: **Electric**
 * Range: Medium
