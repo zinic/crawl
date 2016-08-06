@@ -7,7 +7,7 @@ This is my workspace for The Crawl: a TTRPG inspired by D&D, GURPS and Diablo.
 
 We'll be starting this game with **100** aspect points.
 
-Starting with 1,000$$.
+Starting with 1,200$$.
 
 #### Contents
 
