@@ -1604,6 +1604,21 @@ Aspect Point Cost: **6 AP**
 <br /><br />
 
 
+### Survival
+
+Generic skill for scrounging for food, edibles, dungeoneering, etc. The game master is encouraged to add to the base difficulty depending on the situation.
+
+Aspect Point Cost: **5 AP**
+<br />Capstone Cost: **5 AP**
+
+
+#### Details
+* Skill Check: Survival
+	* Inherits Modifiers from: **Standing Forward Jump**
+* Base Difficulty: 10
+<br /><br />
+
+
 ### Swing
 
 Grants a character a melee swing attack. This attack may be used with swung melee weapons, including blugenoning, slings, staves and other similar weapon types. This does not apply to slashing weapons which require different techniques.

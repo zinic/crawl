@@ -354,6 +354,17 @@
                 Allows a character to make a simple dodge-based defense against an incoming attack. The defense roll recieves the character's **mobility modifier** as a defense bonus.
             </text>
         </aspect>
+
+        <aspect name="Survival">
+            <feature descriptor="Skill Check">
+                <detail type="inherits_from" value="Standing Forward Jump" />
+            </feature>
+            <feature descriptor="Base Difficulty" value="10" />
+            
+            <text>
+                Generic skill for scrounging for food, edibles, dungeoneering, etc. The game master is encouraged to add to the base difficulty depending on the situation.
+            </text>
+        </aspect>
         
         <aspect name="Dive for Cover">
             <feature descriptor="Skill Check">
