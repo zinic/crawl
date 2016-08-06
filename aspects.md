@@ -42,6 +42,11 @@
 
 
 #### Affliction Immunity
+
+Grants immunity to a certain affliction and all of its effects.
+
+
+
 * **Diseased**
 	* Aspect Point Cost: 13
 * **Staggered**
@@ -52,6 +57,11 @@
 
 
 #### Area Effect
+
+
+
+
+
 * **Line**
 	* Aspect Point Cost: 3
 * **Cone**
@@ -377,6 +387,11 @@ This aspect or item is magic imbued and will show up on arcane sight.
 
 
 #### Number of Hands Required
+
+The number of hands required to utilize the aspect or item.
+
+
+
 * **1**
 	* Aspect Point Cost: 0
 * **3**

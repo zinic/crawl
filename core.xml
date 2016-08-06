@@ -22,6 +22,10 @@
             <feature name="Staggered" cost="8" />
             <feature name="Sickened" cost="8" />
             <feature name="Diseased" cost="13" />
+            
+            <text>
+                Grants immunity to a certain affliction and all of its effects.
+            </text>
         </descriptor>
         
         <descriptor name="Number of Hands Required">
@@ -29,12 +33,20 @@
             <feature name="2" cost="1" />
             <feature name="3" cost="1" />
             <feature name="4" cost="1" />
+            
+            <text>
+                The number of hands required to utilize the aspect or item.
+            </text>
         </descriptor>
         
         <descriptor name="Area Effect">
             <feature name="Line" cost="3" />
             <feature name="Cone" cost="5" />
             <feature name="Dome" cost="7" />
+            
+            <text>
+                
+            </text>
         </descriptor>
         
         <descriptor name="Size">
