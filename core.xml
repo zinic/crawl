@@ -1132,7 +1132,6 @@
             </feature>
             <feature descriptor="Action Point Cost" value="1" />
             <feature descriptor="Base Difficulty" value="gm_only" />
-            <feature descriptor="Heal Affliction" value="Diseased" />
             <feature descriptor="Heal Affliction" value="Poisoned" />
 
             <feature descriptor="Magic">
@@ -1141,7 +1140,25 @@
             <feature descriptor="Range" value="Melee" />
             
             <text>
-                Allows a caster to magically heal a poisoned or diseased character. The caster must roll their skill check versus the difficulty of the disease or poison.
+                Allows a caster to magically heal a poisoned character. The caster must roll their skill check versus the difficulty of the poison.
+            </text>
+        </aspect>
+        
+        <aspect name="Cleanse">
+            <feature descriptor="Skill Check">
+                <detail type="inherits_from" value="Intelligence" />
+            </feature>
+            <feature descriptor="Action Point Cost" value="1" />
+            <feature descriptor="Base Difficulty" value="gm_only" />
+            <feature descriptor="Heal Affliction" value="Diseased" />
+
+            <feature descriptor="Magic">
+                <detail type="energy_type" value="Meta" />
+            </feature>
+            <feature descriptor="Range" value="Melee" />
+            
+            <text>
+                Allows a caster to magically heal a diseased character. The caster must roll their skill check versus the difficulty of the disease.
             </text>
         </aspect>
         

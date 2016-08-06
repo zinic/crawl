@@ -49,7 +49,9 @@ During downtime, characters may reflect on what they have experienced and learne
 
 #### Upgrading Aspects
 
-With enough use of an aspect, there may come benefits from mastery. This is represented by a player upgrading specific features of aspects the character has utilized frequently. Players may not add new features to an aspect, they may only modify what the aspect grants.
+With enough use of an aspect, there may come benefits from mastery. During downtime, players may upgrade character aspects that have seen frequent use.
+
+Players may not add new features to an aspect, they may only modify what the aspect grants.
 
 ##### Aspect Upgrade Example
 

@@ -727,6 +727,26 @@ Aspect Point Cost: **7 AP**
 <br /><br />
 
 
+### Cleanse
+
+Allows a caster to magically heal a diseased character. The caster must roll their skill check versus the difficulty of the disease.
+
+Aspect Point Cost: **9 AP**
+<br />Capstone Cost: **9 AP**
+
+
+#### Details
+* Skill Check: Cleanse
+	* Inherits Modifiers from: **Intelligence**
+* Action Point Cost: 1
+* Base Difficulty: gm_only
+* Heal Affliction: Diseased
+* Magic
+	* Magic Energy Type: **Meta**
+* Range: Melee
+<br /><br />
+
+
 ### Counter Slash
 
 Allows a to make a slashing attack as an opportunistic action.
@@ -1485,10 +1505,10 @@ Requires: **[Duck and Dodge](#duck-and-dodge)**<br />Requires: **[Fit](#fit)**<b
 
 ### Purify
 
-Allows a caster to magically heal a poisoned or diseased character. The caster must roll their skill check versus the difficulty of the disease or poison.
+Allows a caster to magically heal a poisoned character. The caster must roll their skill check versus the difficulty of the poison.
 
-Aspect Point Cost: **12 AP**
-<br />Capstone Cost: **12 AP**
+Aspect Point Cost: **9 AP**
+<br />Capstone Cost: **9 AP**
 
 
 #### Details
@@ -1496,7 +1516,6 @@ Aspect Point Cost: **12 AP**
 	* Inherits Modifiers from: **Intelligence**
 * Action Point Cost: 1
 * Base Difficulty: gm_only
-* Heal Affliction: Diseased
 * Heal Affliction: Poisoned
 * Magic
 	* Magic Energy Type: **Meta**
