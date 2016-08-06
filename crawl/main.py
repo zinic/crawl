@@ -249,12 +249,12 @@ def main():
         for name, descriptor in sorted(model.descriptors.descriptors.items()):
             fout.write('{}\n\n'.format(format_descriptor(descriptor)))
         
-        fout.write('## Items\n')
+        fout.write('## Items - {}\n'.format(len(model.items.items)))
 
         for _, item in sorted(model.items.items.items()):
             fout.write('{}\n\n'.format(format_item(item, model)))
 
-        fout.write('## Aspects\n')
+        fout.write('## Aspects - {}\n'.format(len(model.aspects.aspects)))
 
         for _, aspect in sorted(model.aspects.aspects.items()):
             if do_check:

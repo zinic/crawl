@@ -537,7 +537,7 @@ Marks an object as throwable. The attack of this weapon may be considered a rang
 * Aspect Point Cost: 1<br /><br />
 
 
-## Items
+## Items - 7
 #### Bracers of Slap Fight
 Monetary Cost: **600 $$**
 <br />
@@ -613,7 +613,7 @@ Grants Aspect: **[Frigid Cone](#frigid-cone)**<br />
 <br /><br />
 
 
-## Aspects
+## Aspects - 74
 ### Adonic
 
 Super Strong, yo.
