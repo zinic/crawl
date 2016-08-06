@@ -537,7 +537,17 @@ Marks an object as throwable. The attack of this weapon may be considered a rang
 * Aspect Point Cost: 1<br /><br />
 
 
-## Items - 7
+## Items - 9
+#### Bracers of Magic
+Monetary Cost: **360 $$**
+<br />
+
+#### Details
+* Skill Check Modifier: +1
+	* Applies to: **Meta Magic Only**
+<br /><br />
+
+
 #### Bracers of Slap Fight
 Monetary Cost: **600 $$**
 <br />
@@ -570,6 +580,16 @@ Monetary Cost: **480 $$**
 * Damage Type: Kinetic
 * Damage Resistance: -2 DR
 	* Applies to: **Kinetic**
+<br /><br />
+
+
+#### Headscarf of Illumination
+Monetary Cost: **960 $$**
+<br />
+
+#### Details
+* Core Aspect Modifier: +1
+	* Applies to: **Intelligence**
 <br /><br />
 
 

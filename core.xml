@@ -360,6 +360,18 @@
             </text>
         </item>
         
+        <item name="Bracers of Magic" type="armor">
+            <feature descriptor="Skill Check Modifier" value="+1">
+                <detail type="targets" value="Meta Magic Only" />
+            </feature>
+        </item>
+        
+        <item name="Headscarf of Illumination" type="armor">
+            <feature descriptor="Core Aspect Modifier" value="+1">
+                <detail type="targets" value="Intelligence" />
+            </feature>
+        </item>
+        
         <item name="Knife" type="weapon">
             <feature descriptor="Attack Method" value="Slashing" />
             <feature descriptor="Number of Hands Required" value="1" />
