@@ -51,7 +51,7 @@ def format_descriptor(descriptor):
     
     else:
         for name, value in descriptor.entries.items():
-            output += '* {}\n\t* Aspect Point Cost: {}\n'.format(name, value)
+            output += '* **{}**\n\t* Aspect Point Cost: {}\n'.format(name, value)
 
     return '{}<br /><br />\n'.format(output)
 

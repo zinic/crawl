@@ -2,61 +2,61 @@
 
 ## Components
 #### Action Point Cost
-* -5
+* **-5**
 	* Aspect Point Cost: 21
-* 1
+* **1**
 	* Aspect Point Cost: -1
-* -4
+* **-4**
 	* Aspect Point Cost: 13
-* 3
+* **3**
 	* Aspect Point Cost: -3
-* 2
+* **2**
 	* Aspect Point Cost: -2
-* -1
+* **-1**
 	* Aspect Point Cost: 3
-* 4
+* **4**
 	* Aspect Point Cost: -5
-* -3
+* **-3**
 	* Aspect Point Cost: 8
-* -2
+* **-2**
 	* Aspect Point Cost: 5
-* 5
+* **5**
 	* Aspect Point Cost: -8
 <br /><br />
 
 
 #### Action Pool Modifier
-* +1
+* **+1**
 	* Aspect Point Cost: 8
-* -1
+* **-1**
 	* Aspect Point Cost: -8
 <br /><br />
 
 
 #### Action Pool Refresh Modifier
-* +1
+* **+1**
 	* Aspect Point Cost: 8
-* -1
+* **-1**
 	* Aspect Point Cost: -8
 <br /><br />
 
 
 #### Affliction Immunity
-* Diseased
+* **Diseased**
 	* Aspect Point Cost: 13
-* Staggered
+* **Staggered**
 	* Aspect Point Cost: 8
-* Sickened
+* **Sickened**
 	* Aspect Point Cost: 8
 <br /><br />
 
 
 #### Area Effect
-* Line
+* **Line**
 	* Aspect Point Cost: 3
-* Cone
+* **Cone**
 	* Aspect Point Cost: 5
-* Dome
+* **Dome**
 	* Aspect Point Cost: 7
 <br /><br />
 
@@ -71,25 +71,25 @@ This is used to modify an attack roll instead of a skill check modifier. This mo
 
 
 
-* -5
+* **-5**
 	* Aspect Point Cost: 13
-* -3
+* **-3**
 	* Aspect Point Cost: 5
-* -4
+* **-4**
 	* Aspect Point Cost: 8
-* -2
+* **-2**
 	* Aspect Point Cost: 3
-* +3
+* **+3**
 	* Aspect Point Cost: 5
-* +2
+* **+2**
 	* Aspect Point Cost: 3
-* +1
+* **+1**
 	* Aspect Point Cost: 2
-* -1
+* **-1**
 	* Aspect Point Cost: 2
-* +5
+* **+5**
 	* Aspect Point Cost: 13
-* +4
+* **+4**
 	* Aspect Point Cost: 8
 <br /><br />
 
@@ -100,20 +100,25 @@ Describes the attack method of a weapon. The attack method of a weapon defines w
 
 
 
-* Thrusting
+* **Thrusting**
 	* Aspect Point Cost: 0
-* Magic
+* **Magic**
 	* Aspect Point Cost: 0
-* Swinging
+* **Swinging**
 	* Aspect Point Cost: 0
-* Drawn Force
+* **Drawn Force**
 	* Aspect Point Cost: 0
-* Slashing
+* **Slashing**
 	* Aspect Point Cost: 0
 <br /><br />
 
 
 #### Base Difficulty
+
+All skill checks should specifiy a base difficulty. The player may choose to augment the difficulty in the future only by lowering it.
+
+
+
 * Formula: base_difficulty_cost
 
 **Examples**
@@ -126,27 +131,27 @@ Describes the attack method of a weapon. The attack method of a weapon defines w
 
 
 #### Core Aspect Modifier
-* +2
+* **+2**
 	* Aspect Point Cost: 13
-* +1
+* **+1**
 	* Aspect Point Cost: 8
-* -1
+* **-1**
 	* Aspect Point Cost: -8
-* -2
+* **-2**
 	* Aspect Point Cost: -13
 <br /><br />
 
 
 #### Crit Success Modifier
-* +3
+* **+3**
 	* Aspect Point Cost: 15
-* +2
+* **+2**
 	* Aspect Point Cost: 10
-* +1
+* **+1**
 	* Aspect Point Cost: 5
-* +5
+* **+5**
 	* Aspect Point Cost: 25
-* +4
+* **+4**
 	* Aspect Point Cost: 20
 <br /><br />
 
@@ -232,128 +237,138 @@ Describes the attack method of a weapon. The attack method of a weapon defines w
 
 
 #### Damage Resistance
-* -6 DR
+* **-6 DR**
 	* Aspect Point Cost: 3
-* -10 DR
+* **-10 DR**
 	* Aspect Point Cost: 5
-* -2 DR
+* **-2 DR**
 	* Aspect Point Cost: 1
-* -8 DR
+* **-8 DR**
 	* Aspect Point Cost: 4
-* +10 DR
+* **+10 DR**
 	* Aspect Point Cost: 5
-* +6 DR
+* **+6 DR**
 	* Aspect Point Cost: 3
-* +8 DR
+* **+8 DR**
 	* Aspect Point Cost: 4
-* +2 DR
+* **+2 DR**
 	* Aspect Point Cost: 1
-* +4 DR
+* **+4 DR**
 	* Aspect Point Cost: 2
-* -4 DR
+* **-4 DR**
 	* Aspect Point Cost: 2
 <br /><br />
 
 
 #### Damage Type
-* Fire
+
+Damage types may be added to aspects and items that cause damage. Additional types may be added in an attempt to make the weapon more effective against well defended enemeies.
+
+
+
+* **Fire**
 	* Aspect Point Cost: 1
-* Kinetic
+* **Kinetic**
 	* Aspect Point Cost: 1
-* Meta
+* **Meta**
 	* Aspect Point Cost: 1
-* Cold
+* **Cold**
 	* Aspect Point Cost: 1
-* Electric
+* **Electric**
 	* Aspect Point Cost: 1
 <br /><br />
 
 
 #### Duration
-* 1 Turn
+* **1 Turn**
 	* Aspect Point Cost: 1
-* 10 Minutes
+* **10 Minutes**
 	* Aspect Point Cost: 8
-* 4 Turns
+* **4 Turns**
 	* Aspect Point Cost: 3
-* 8 Turns
+* **8 Turns**
 	* Aspect Point Cost: 5
-* 30 Minutes
+* **30 Minutes**
 	* Aspect Point Cost: 13
-* 2 Turns
+* **2 Turns**
 	* Aspect Point Cost: 2
-* 10 Days
+* **10 Days**
 	* Aspect Point Cost: 60
-* 1 Hour
+* **1 Hour**
 	* Aspect Point Cost: 21
-* 12 Hours
+* **12 Hours**
 	* Aspect Point Cost: 34
-* 1 Day
+* **1 Day**
 	* Aspect Point Cost: 47
 <br /><br />
 
 
 #### Environment Mitigation
-* Low Light Vision
+* **Low Light Vision**
 	* Aspect Point Cost: 5
-* Infrared Sight
+* **Infrared Sight**
 	* Aspect Point Cost: 10
-* Echo Sight
+* **Echo Sight**
 	* Aspect Point Cost: 15
 <br /><br />
 
 
 #### Extra Attack
-* +2
+* **+2**
 	* Aspect Point Cost: 13
-* +1
+* **+1**
 	* Aspect Point Cost: 8
 <br /><br />
 
 
 #### Extra Target
-* +3
+* **+3**
 	* Aspect Point Cost: 13
-* +2
+* **+2**
 	* Aspect Point Cost: 8
-* +1
+* **+1**
 	* Aspect Point Cost: 5
-* +4
+* **+4**
 	* Aspect Point Cost: 21
 <br /><br />
 
 
 #### HP Pool Modifier
-* -4
+* **-4**
 	* Aspect Point Cost: 8
-* +4
+* **+4**
 	* Aspect Point Cost: 8
-* +3
+* **+3**
 	* Aspect Point Cost: 6
-* +2
+* **+2**
 	* Aspect Point Cost: 4
-* +1
+* **+1**
 	* Aspect Point Cost: 2
-* -1
+* **-1**
 	* Aspect Point Cost: 2
-* -3
+* **-3**
 	* Aspect Point Cost: 6
-* -2
+* **-2**
 	* Aspect Point Cost: 4
 <br /><br />
 
 
 #### Heal Affliction
-* Diseased
+* **Diseased**
 	* Aspect Point Cost: 3
-* Poisoned
+* **Poisoned**
 	* Aspect Point Cost: 3
-* Sickened
+* **Sickened**
 	* Aspect Point Cost: 3
 <br /><br />
 
 
 #### Magic
+
+This aspect or item is magic imbued and will show up on arcane sight.
+
+
+
 * Aspect Point Cost: 1<br /><br />
 
 
@@ -362,29 +377,29 @@ Describes the attack method of a weapon. The attack method of a weapon defines w
 
 
 #### Number of Hands Required
-* 1
+* **1**
 	* Aspect Point Cost: 0
-* 3
+* **3**
 	* Aspect Point Cost: 1
-* 2
+* **2**
 	* Aspect Point Cost: 1
-* 4
+* **4**
 	* Aspect Point Cost: 1
 <br /><br />
 
 
 #### Number of Uses
-* Unlimited
+* **Unlimited**
 	* Aspect Point Cost: 21
-* 1
+* **1**
 	* Aspect Point Cost: 0
-* 3
+* **3**
 	* Aspect Point Cost: 2
-* 2
+* **2**
 	* Aspect Point Cost: 1
-* 5
+* **5**
 	* Aspect Point Cost: 5
-* 4
+* **4**
 	* Aspect Point Cost: 3
 <br /><br />
 
@@ -399,17 +414,17 @@ See the core rules section: **Range Definitions** for more details.
 
 
 
-* Short
+* **Short**
 	* Aspect Point Cost: 2
-* Personal
+* **Personal**
 	* Aspect Point Cost: 0
-* Long
+* **Long**
 	* Aspect Point Cost: 4
-* Melee
+* **Melee**
 	* Aspect Point Cost: 1
-* Medium
+* **Medium**
 	* Aspect Point Cost: 3
-* Extreme
+* **Extreme**
 	* Aspect Point Cost: 5
 <br /><br />
 
@@ -424,23 +439,23 @@ See the core rules section: **Object and Character Size Modifiers** for more det
 
 
 
-* 0
+* **0**
 	* Aspect Point Cost: 0
-* 1
+* **1**
 	* Aspect Point Cost: 5
-* -4
+* **-4**
 	* Aspect Point Cost: 25
-* 3
+* **3**
 	* Aspect Point Cost: 15
-* 2
+* **2**
 	* Aspect Point Cost: 10
-* -1
+* **-1**
 	* Aspect Point Cost: 5
-* 4
+* **4**
 	* Aspect Point Cost: 25
-* -3
+* **-3**
 	* Aspect Point Cost: 15
-* -2
+* **-2**
 	* Aspect Point Cost: 10
 <br /><br />
 
@@ -455,25 +470,25 @@ See the core rules section: **Object and Character Size Modifiers** for more det
 
 
 
-* -5
+* **-5**
 	* Aspect Point Cost: -13
-* -3
+* **-3**
 	* Aspect Point Cost: -5
-* -4
+* **-4**
 	* Aspect Point Cost: -8
-* -2
+* **-2**
 	* Aspect Point Cost: -3
-* +3
+* **+3**
 	* Aspect Point Cost: 8
-* +2
+* **+2**
 	* Aspect Point Cost: 5
-* +1
+* **+1**
 	* Aspect Point Cost: 3
-* -1
+* **-1**
 	* Aspect Point Cost: -2
-* +5
+* **+5**
 	* Aspect Point Cost: 21
-* +4
+* **+4**
 	* Aspect Point Cost: 13
 <br /><br />
 
@@ -623,6 +638,26 @@ Aspect Point Cost: **10 AP**
 
 #### Details
 * Starting Wealth Modifier: 1200 $$
+<br /><br />
+
+
+### Arcane Sight
+
+Allows the caster to augment their vision with magic. This darkens ther vision slightly but does not damage their perception. Other magical effects within the range of the caster will shine brightly in their sight. At game master discretion, some magic items, even hidden or obscured, may shine through these obstacles.
+
+Aspect Point Cost: **11 AP**
+<br />Capstone Cost: **11 AP**
+
+
+#### Details
+* Skill Check: Arcane Sight
+	* Inherits Modifiers from: **Perception**
+* Action Point Cost: 1
+* Base Difficulty: 12
+* Magic
+	* Magic Energy Type: **Meta**
+* Range: Short
+* Duration: 8 Turns
 <br /><br />
 
 

@@ -54,7 +54,11 @@
             </text>
         </descriptor>
         
-        <descriptor name="Magic" cost="1" />
+        <descriptor name="Magic" cost="1">
+            <text>
+                This aspect or item is magic imbued and will show up on arcane sight.
+            </text>
+        </descriptor>
         
         <descriptor name="Opportunistic Action" cost="5" />
         
@@ -103,9 +107,17 @@
             <feature name="Fire" cost="1" />
             <feature name="Electric" cost="1" />
             <feature name="Meta" cost="1" />
+            
+            <text>
+                Damage types may be added to aspects and items that cause damage. Additional types may be added in an attempt to make the weapon more effective against well defended enemeies.
+            </text>
         </descriptor>
         
-        <descriptor name="Base Difficulty" formula="base_difficulty_cost" />
+        <descriptor name="Base Difficulty" formula="base_difficulty_cost">
+            <text>
+                All skill checks should specifiy a base difficulty. The player may choose to augment the difficulty in the future only by lowering it.
+            </text>
+        </descriptor>
         
         <descriptor name="Heal Affliction">
             <feature name="Sickened" cost="3" />
@@ -1163,6 +1175,24 @@
             
             <text>
                 The character conjures a kinetic shield that covers a target's body. This shield has a **DR of 4**. The shield lasts for 10 minutes or until an attack lands and the shield absorbs damage.
+            </text>
+        </aspect>
+        
+        <aspect name="Arcane Sight">
+            <feature descriptor="Skill Check">
+                <detail type="inherits_from" value="Perception" />
+            </feature>
+            <feature descriptor="Action Point Cost" value="1" />
+            <feature descriptor="Base Difficulty" value="12" />
+            
+            <feature descriptor="Magic">
+                <detail type="energy_type" value="Meta" />
+            </feature>
+            <feature descriptor="Range" value="Short" />
+            <feature descriptor="Duration" value="8 Turns" />
+            
+            <text>
+                Allows the caster to augment their vision with magic. This darkens ther vision slightly but does not damage their perception. Other magical effects within the range of the caster will shine brightly in their sight. At game master discretion, some magic items, even hidden or obscured, may shine through these obstacles.
             </text>
         </aspect>
         
