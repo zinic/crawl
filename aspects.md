@@ -1,6 +1,6 @@
 # The Crawl Aspect Document
 
-## Components
+## Components - 34
 #### Action Point Cost
 * **-5**
 	* Aspect Point Cost: 21

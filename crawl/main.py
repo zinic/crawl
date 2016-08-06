@@ -244,7 +244,7 @@ def main():
 
     with open('out.md', 'w') as fout:
         fout.write('# The Crawl Aspect Document\n\n')
-        fout.write('## Components\n')
+        fout.write('## Components - {}\n'.format(len(model.descriptors.descriptors)))
         
         for name, descriptor in sorted(model.descriptors.descriptors.items()):
             fout.write('{}\n\n'.format(format_descriptor(descriptor)))
