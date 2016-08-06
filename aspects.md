@@ -596,7 +596,7 @@ Aspect Point Cost: **10 AP**
 
 ### Archery
 
-Allows a character to use a bow, cross bow or other similar drawn force weapon.
+Allows a character to use a bow, cross bow or other similar drawn force weapon. The skill check uses the higher of either the character's mobility modifier or the character's strength modifier.
 
 Aspect Point Cost: **4 AP**
 <br />Capstone Cost: **4 AP**
@@ -605,7 +605,9 @@ Aspect Point Cost: **4 AP**
 #### Details
 * Skill Check: Archery
 	* Limited: **Drawn Force Weapons**
+	* Limited: **Only Inherits from the Highest Modifier (Strength or Mobility)**
 	* Inherits Modifiers from: **Mobility**
+	* Inherits Modifiers from: **Strength**
 * Base Difficulty: 10
 * Action Point Cost: 1
 <br /><br />

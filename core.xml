@@ -952,13 +952,15 @@
         <aspect name="Archery">
             <feature descriptor="Skill Check">
                 <detail type="limit" value="Drawn Force Weapons" />
+                <detail type="limit" value="Only Inherits from the Highest Modifier (Strength or Mobility)" />
                 <detail type="inherits_from" value="Mobility" />
+                <detail type="inherits_from" value="Strength" />
             </feature>
             <feature descriptor="Base Difficulty" value="10" />
             <feature descriptor="Action Point Cost" value="1" />
 
             <text>
-                Allows a character to use a bow, cross bow or other similar drawn force weapon.
+                Allows a character to use a bow, cross bow or other similar drawn force weapon. The skill check uses the higher of either the character's mobility modifier or the character's strength modifier.
             </text>
         </aspect>
 
