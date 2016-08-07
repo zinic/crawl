@@ -343,6 +343,15 @@
     </templates>
     
     <items>
+        <item name="Ring of Healthiness" type="ring">
+            <feature descriptor="HP Pool Modifier" value="+4" />
+            <feature descriptor="Magic" />
+
+            <text>
+                Makes you feel healthier when you wear it.
+            </text>
+        </item>
+
         <item name="Ration" type="consumable" cost="100">
             
             <text>
