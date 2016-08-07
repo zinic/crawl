@@ -400,6 +400,22 @@
             </feature>
         </item>
 
+        <item name="Rock of Firebolt" type="weapon">
+            <feature descriptor="Attack Method" value="Magic" />
+            <feature descriptor="Number of Hands Required" value="1" />
+            <feature descriptor="Number of Uses" value="1" />
+            
+            <grants aspect="Firebolt" />
+        </item>
+
+        <item name="Rock of Frigid Cone" type="weapon">
+            <feature descriptor="Attack Method" value="Magic" />
+            <feature descriptor="Number of Hands Required" value="1" />
+            <feature descriptor="Number of Uses" value="1" />
+            
+            <grants aspect="Frigid Cone" />
+        </item>
+
         <item name="Wand of Firebolt" type="weapon">
             <feature descriptor="Attack Method" value="Magic" />
             <feature descriptor="Number of Hands Required" value="1" />

@@ -537,7 +537,7 @@ Marks an object as throwable. The attack of this weapon may be considered a rang
 * Aspect Point Cost: 1<br /><br />
 
 
-## Items - 10
+## Items - 12
 #### Bracers of Magic
 Monetary Cost: **360 $$**
 <br />
@@ -623,6 +623,28 @@ Monetary Cost: **1080 $$**
 #### Details
 * HP Pool Modifier: +4
 * Magic
+<br /><br />
+
+
+#### Rock of Firebolt
+Monetary Cost: **1200 $$**
+<br />
+Grants Aspect: **[Firebolt](#firebolt)**<br />
+#### Details
+* Attack Method: Magic
+* Number of Hands Required: 1
+* Number of Uses: 1
+<br /><br />
+
+
+#### Rock of Frigid Cone
+Monetary Cost: **1680 $$**
+<br />
+Grants Aspect: **[Frigid Cone](#frigid-cone)**<br />
+#### Details
+* Attack Method: Magic
+* Number of Hands Required: 1
+* Number of Uses: 1
 <br /><br />
 
 
