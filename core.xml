@@ -419,6 +419,7 @@
         <item name="Wand of Firebolt" type="weapon">
             <feature descriptor="Attack Method" value="Magic" />
             <feature descriptor="Number of Hands Required" value="1" />
+            <feature descriptor="Number of Uses" value="Unlimited" />
             
             <grants aspect="Firebolt" />
         </item>
@@ -426,6 +427,7 @@
         <item name="Wand of Frigid Cone" type="weapon">
             <feature descriptor="Attack Method" value="Magic" />
             <feature descriptor="Number of Hands Required" value="1" />
+            <feature descriptor="Number of Uses" value="Unlimited" />
             
             <grants aspect="Frigid Cone" />
         </item>

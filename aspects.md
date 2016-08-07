@@ -649,22 +649,24 @@ Grants Aspect: **[Frigid Cone](#frigid-cone)**<br />
 
 
 #### Wand of Firebolt
-Monetary Cost: **1200 $$**
+Monetary Cost: **3720 $$**
 <br />
 Grants Aspect: **[Firebolt](#firebolt)**<br />
 #### Details
 * Attack Method: Magic
 * Number of Hands Required: 1
+* Number of Uses: Unlimited
 <br /><br />
 
 
 #### Wand of Frigid Cone
-Monetary Cost: **1680 $$**
+Monetary Cost: **4200 $$**
 <br />
 Grants Aspect: **[Frigid Cone](#frigid-cone)**<br />
 #### Details
 * Attack Method: Magic
 * Number of Hands Required: 1
+* Number of Uses: Unlimited
 <br /><br />
 
 
