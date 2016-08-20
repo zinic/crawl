@@ -554,7 +554,7 @@ Marks an object as throwable. The attack of this weapon may be considered a rang
 * Aspect Point Cost: 1<br /><br />
 
 
-## Items - 12
+## Items - 13
 #### Bracers of Magic
 Monetary Cost: **360 $$**
 <br />
@@ -684,6 +684,26 @@ Grants Aspect: **[Frigid Cone](#frigid-cone)**<br />
 * Attack Method: Magic
 * Number of Hands Required: 1
 * Number of Uses: Unlimited
+<br /><br />
+
+
+#### Wand of Volta
+
+Upon casting, a bolt of lightning arcs from either of the character's hands toward the target enemy with a thundering crack. The attack roll recieves the character's intelligence modifier as an attack bonus.
+
+Monetary Cost: **1680 $$**
+<br />
+
+#### Details
+* Skill Roll: Wand of Volta
+	* Inherits Modifiers from: **Intelligence**
+* Action Point Cost: 1
+* Failure Chance: 8
+* Magic
+	* Magic Energy Type: **Electric**
+* Range: Medium
+* Area Effect: Line
+* Damage: 1d6
 <br /><br />
 
 
@@ -1678,21 +1698,19 @@ Requires: **[Vigor](#vigor)**<br />
 
 The caster heals a target for 1d6 health points. This healing takes effect instantly and staunches any bleeding the character may be suffering from. This spell may be used as many times as needed on the same target.
 
-Aspect Point Cost: **29 AP**
-<br />Capstone Cost: **29 AP**
+Aspect Point Cost: **9 AP**
+<br />Capstone Cost: **9 AP**
 
 
 #### Details
 * Skill Roll: Refresh
 	* Inherits Modifiers from: **Intelligence**
-* Action Point Cost: 2
+* Action Point Cost: 1
 * Failure Chance: 8
-* Target Restriction: Enemies Only
-* Damage Healed: 2d6
+* Damage Healed: 1d6
 * Magic
 	* Magic Energy Type: **Meta**
-* Range: Short
-* Area Effect: Dome
+* Range: Melee
 <br /><br />
 
 

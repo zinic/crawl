@@ -429,6 +429,24 @@
             <grants aspect="Frigid Cone" />
         </item>
 
+        <item name="Wand of Volta" type="weapon">
+            <effect descriptor="Skill Roll">
+                <detail type="inherits_from" value="Intelligence" />
+            </effect>
+            <effect descriptor="Action Point Cost" value="1" />
+            <effect descriptor="Failure Chance" value="8" />
+            <effect descriptor="Magic">
+                <detail type="energy_type" value="Electric" />
+            </effect>
+            <effect descriptor="Range" value="Medium" />
+            <effect descriptor="Area Effect" value="Line" />
+            <effect descriptor="Damage" value="1d6" />
+            
+            <text>
+                Upon casting, a bolt of lightning arcs from either of the character's hands toward the target enemy with a thundering crack. The attack roll recieves the character's intelligence modifier as an attack bonus.
+            </text>
+        </item>
+
         <item name="Wand of Firebolt" type="weapon">
             <effect descriptor="Attack Method" value="Magic" />
             <effect descriptor="Number of Hands Required" value="1" />
@@ -1144,15 +1162,13 @@
             <effect descriptor="Skill Roll">
                 <detail type="inherits_from" value="Intelligence" />
             </effect>
-            <effect descriptor="Action Point Cost" value="2" />
+            <effect descriptor="Action Point Cost" value="1" />
             <effect descriptor="Failure Chance" value="8" />            
-            <effect descriptor="Target Restriction" value="Enemies Only" />
-            <effect descriptor="Damage Healed" value="2d6" />
+            <effect descriptor="Damage Healed" value="1d6" />
             <effect descriptor="Magic">
                 <detail type="energy_type" value="Meta" />
             </effect>
-            <effect descriptor="Range" value="Short" />
-            <effect descriptor="Area Effect" value="Dome" />
+            <effect descriptor="Range" value="Melee" />
             
             <text>
                 The caster heals a target for 1d6 health points. This healing takes effect instantly and staunches any bleeding the character may be suffering from. This spell may be used as many times as needed on the same target.
