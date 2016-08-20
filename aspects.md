@@ -1,6 +1,6 @@
 # The Crawl Aspect Document
 
-## Components - 34
+## Components - 35
 #### Action Point Cost
 * **-5**
 	* Aspect Point Cost: 21
@@ -9,19 +9,19 @@
 * **-4**
 	* Aspect Point Cost: 13
 * **3**
-	* Aspect Point Cost: -3
+	* Aspect Point Cost: -8
 * **2**
-	* Aspect Point Cost: -2
+	* Aspect Point Cost: -3
 * **-1**
 	* Aspect Point Cost: 3
 * **4**
-	* Aspect Point Cost: -5
+	* Aspect Point Cost: -13
 * **-3**
 	* Aspect Point Cost: 8
 * **-2**
 	* Aspect Point Cost: 5
 * **5**
-	* Aspect Point Cost: -8
+	* Aspect Point Cost: -21
 <br /><br />
 
 
@@ -533,6 +533,18 @@ See the core rules section: **Object and Character Size Modifiers** for more det
 <br /><br />
 
 
+#### Target Restriction
+
+
+
+
+* **Enemies Only**
+	* Aspect Point Cost: 10
+* **Allies Only**
+	* Aspect Point Cost: 10
+<br /><br />
+
+
 #### Throwable
 
 Marks an object as throwable. The attack of this weapon may be considered a ranged attack with a range of medium. This range may be increased with a strength check of an appropriate difficulty before the attack with the approval of the game master.
@@ -841,8 +853,8 @@ Requires: **[Stab](#stab)**<br />
 
 This enhanced ersion of Dismiss has all of the same rules as Dimiss but with the added effect of being able to target magical effects as a reaction.
 
-Aspect Point Cost: **18 AP**
-<br />Capstone Cost: **27 AP**
+Aspect Point Cost: **17 AP**
+<br />Capstone Cost: **26 AP**
 
 Requires: **[Dismiss](#dismiss)**<br />
 #### Details
@@ -921,8 +933,8 @@ Aspect Point Cost: **15 AP**
 
 Allows a character to make a dive for nearby cover - once behind cover, all rules for cover now apply. The cover must be within the character's **Standing Forward Jump** range. All normal rules for making a standing forward jump apply to this check. Failing this check renders the character **prone**.
 
-Aspect Point Cost: **4 AP**
-<br />Capstone Cost: **9 AP**
+Aspect Point Cost: **3 AP**
+<br />Capstone Cost: **8 AP**
 
 Requires: **[Duck and Dodge](#duck-and-dodge)**<br />
 #### Details
@@ -957,8 +969,8 @@ Upon successful cast, Farsight grants the caster a glimpse of the area desired. 
 
 This spell may be used in place of any perception check.
 
-Aspect Point Cost: **5 AP**
-<br />Capstone Cost: **6 AP**
+Aspect Point Cost: **4 AP**
+<br />Capstone Cost: **5 AP**
 
 Requires: **[Magic Trick](#magic-trick)**<br />
 #### Details
@@ -978,8 +990,8 @@ Allows a character to perform healing on the battlefield via simple medical proc
 
 A successful Field Aid staunches bleeding and may heal 1d6 health points of damage.
 
-Aspect Point Cost: **6 AP**
-<br />Capstone Cost: **14 AP**
+Aspect Point Cost: **5 AP**
+<br />Capstone Cost: **13 AP**
 
 Requires: **[Medicine](#medicine)**<br />
 #### Details
@@ -1119,8 +1131,8 @@ Aspect Point Cost: **5 AP**
 
 Allows a character to attack 2 enemies standing side-by-side. The enemies must be in adjacent map cells. The attacker makes a single attack roll that both targets may then roll against. This attack incurs a **-2 modifier** to the attack roll.
 
-Aspect Point Cost: **6 AP**
-<br />Capstone Cost: **13 AP**
+Aspect Point Cost: **5 AP**
+<br />Capstone Cost: **12 AP**
 
 Requires: **[Fit](#fit)**<br />Requires: **[Slash](#slash)**<br />
 #### Details
@@ -1550,8 +1562,8 @@ Requires: **[Filch](#filch)**<br />
 
 Allows a character to make a more acrobatic dodge. This defense roll requires the character to not be slowed. The defense roll receives the character's mobility modifier as a defense bonus in addition to a +2 modifier from the aspect itself.
 
-Aspect Point Cost: **9 AP**
-<br />Capstone Cost: **16 AP**
+Aspect Point Cost: **8 AP**
+<br />Capstone Cost: **15 AP**
 
 Requires: **[Duck and Dodge](#duck-and-dodge)**<br />Requires: **[Fit](#fit)**<br />
 #### Details

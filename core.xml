@@ -11,6 +11,14 @@
                 Describes the attack method of a weapon. The attack method of a weapon defines which attack aspects may be used with the weapon.
             </text>
         </descriptor>
+
+        <descriptor name="Target Restriction">
+            <value name="Allies Only" cost="10" />
+            <value name="Enemies Only" cost="10" />
+            
+            <text>
+            </text>
+        </descriptor>
         
         <descriptor name="Throwable" cost="1">
             <text>
@@ -190,10 +198,10 @@
         
         <descriptor name="Action Point Cost">
             <value name="1" cost="-1" />
-            <value name="2" cost="-2" />
-            <value name="3" cost="-3" />
-            <value name="4" cost="-5" />
-            <value name="5" cost="-8" />
+            <value name="2" cost="-3" />
+            <value name="3" cost="-8" />
+            <value name="4" cost="-13" />
+            <value name="5" cost="-21" />
             
             <value name="-1" cost="3" />
             <value name="-2" cost="5" />
