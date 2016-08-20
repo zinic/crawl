@@ -123,17 +123,6 @@ Describes the attack method of a weapon. The attack method of a weapon defines w
 <br /><br />
 
 
-#### Base Difficulty
-
-All skill checks should specifiy a base difficulty. The player may choose to augment the difficulty in the future only by lowering it.
-
-
-
-* Formula: base_difficulty_cost
-
-<br /><br />
-
-
 #### Can't be Flanked
 * Aspect Point Cost: 5<br /><br />
 
@@ -341,6 +330,17 @@ Damage types may be added to aspects and items that cause damage. Additional typ
 <br /><br />
 
 
+#### Failure Chance
+
+All skill checks should specifiy a base difficulty. The player may choose to augment the difficulty in the future only by lowering it.
+
+
+
+* Formula: base_difficulty_cost
+
+<br /><br />
+
+
 #### HP Pool Modifier
 * **-4**
 	* Aspect Point Cost: 8
@@ -443,6 +443,11 @@ See the core rules section: **Range Definitions** for more details.
 
 
 #### Reactionary
+
+This allows the associated aspect to be used as a reactionary action. That is to say that when a condition is met, an aspect that has the reactionary effect may be used immediately.
+
+
+
 * Aspect Point Cost: 10<br /><br />
 
 
@@ -473,11 +478,11 @@ See the core rules section: **Object and Character Size Modifiers** for more det
 <br /><br />
 
 
-#### Skill Check
+#### Skill Roll
 * Aspect Point Cost: 3<br /><br />
 
 
-#### Skill Check Modifier
+#### Skill Roll Modifier
 
 **Note:** this component may not be used for attack rolls.
 
@@ -543,7 +548,7 @@ Monetary Cost: **360 $$**
 <br />
 
 #### Details
-* Skill Check Modifier: +1
+* Skill Roll Modifier: +1
 	* Applies to: **Meta Magic Only**
 <br /><br />
 
@@ -720,10 +725,10 @@ Aspect Point Cost: **11 AP**
 
 
 #### Details
-* Skill Check: Arcane Sight
+* Skill Roll: Arcane Sight
 	* Inherits Modifiers from: **Perception**
 * Action Point Cost: 1
-* Base Difficulty: 12
+* Failure Chance: 12
 * Magic
 	* Magic Energy Type: **Meta**
 * Range: Short
@@ -740,12 +745,12 @@ Aspect Point Cost: **5 AP**
 
 
 #### Details
-* Skill Check: Archery
+* Skill Roll: Archery
 	* Limited: **Drawn Force Weapons**
 	* Limited: **Only Inherits from the Highest Modifier (Strength or Mobility)**
 	* Inherits Modifiers from: **Mobility**
 	* Inherits Modifiers from: **Strength**
-* Base Difficulty: 8
+* Failure Chance: 8
 * Action Point Cost: 1
 <br /><br />
 
@@ -759,10 +764,10 @@ Aspect Point Cost: **6 AP**
 
 
 #### Details
-* Skill Check: Blend into Crowds
+* Skill Roll: Blend into Crowds
 	* Limited: **Non-Combat Only**
 	* Inherits Modifiers from: **Mobility**
-* Base Difficulty: 8
+* Failure Chance: 8
 <br /><br />
 
 
@@ -775,11 +780,11 @@ Aspect Point Cost: **7 AP**
 
 
 #### Details
-* Skill Check: Block
+* Skill Roll: Block
 	* Combat Action: May be used as a defense.
 	* Limited: **Character Must Have a Shield**
 	* Inherits Modifiers from: **Strength**
-* Base Difficulty: 5
+* Failure Chance: 5
 * Action Point Cost: 1
 <br /><br />
 
@@ -793,10 +798,10 @@ Aspect Point Cost: **9 AP**
 
 
 #### Details
-* Skill Check: Cleanse
+* Skill Roll: Cleanse
 	* Inherits Modifiers from: **Intelligence**
 * Action Point Cost: 1
-* Base Difficulty: gm_only
+* Failure Chance: gm_only
 * Heal Affliction: Diseased
 * Magic
 	* Magic Energy Type: **Meta**
@@ -834,17 +839,17 @@ Requires: **[Stab](#stab)**<br />
 
 ### Countercast
 
-This enhanced ersion of Dismiss has all of the same rules as Dimiss but with the added feature of being able to target magical effects as a reaction.
+This enhanced ersion of Dismiss has all of the same rules as Dimiss but with the added effect of being able to target magical effects as a reaction.
 
 Aspect Point Cost: **18 AP**
 <br />Capstone Cost: **27 AP**
 
 Requires: **[Dismiss](#dismiss)**<br />
 #### Details
-* Skill Check: Countercast
+* Skill Roll: Countercast
 	* Inherits Modifiers from: **Intelligence**
 * Action Point Cost: 2
-* Base Difficulty: 8
+* Failure Chance: 8
 * Magic
 	* Magic Energy Type: **Meta**
 * Reactionary
@@ -861,10 +866,10 @@ Aspect Point Cost: **6 AP**
 
 Requires: **[Lockpicking](#lockpicking)**<br />
 #### Details
-* Skill Check: Disable Device
+* Skill Roll: Disable Device
 	* Limited: **Non-Combat Only**
 	* Inherits Modifiers from: **Lockpicking**
-* Base Difficulty: 8
+* Failure Chance: 8
 <br /><br />
 
 
@@ -879,10 +884,10 @@ Aspect Point Cost: **9 AP**
 
 
 #### Details
-* Skill Check: Dismiss
+* Skill Roll: Dismiss
 	* Inherits Modifiers from: **Intelligence**
 * Action Point Cost: 1
-* Base Difficulty: 8
+* Failure Chance: 8
 * Magic
 	* Magic Energy Type: **Meta**
 * Range: Medium
@@ -898,13 +903,13 @@ Aspect Point Cost: **15 AP**
 
 
 #### Details
-* Skill Check: Dissev
+* Skill Roll: Dissev
 	* Inherits Modifiers from: **Intelligence**
 * Action Point Cost: 1
-* Base Difficulty: 8
+* Failure Chance: 8
 * Damage Resistance: +2 DR
 	* Applies to: **Chosen upon Casting**
-* Skill Check Modifier: +2
+* Skill Roll Modifier: +2
 	* Applies to: **Chosen upon Casting**
 * Magic
 	* Magic Energy Type: **Meta**
@@ -921,10 +926,10 @@ Aspect Point Cost: **4 AP**
 
 Requires: **[Duck and Dodge](#duck-and-dodge)**<br />
 #### Details
-* Skill Check: Dive for Cover
+* Skill Roll: Dive for Cover
 	* Combat Action: May be used as a defense.
 	* Inherits Modifiers from: **Standing Forward Jump**
-* Base Difficulty: 8
+* Failure Chance: 8
 * Action Point Cost: 2
 <br /><br />
 
@@ -938,10 +943,10 @@ Aspect Point Cost: **5 AP**
 
 
 #### Details
-* Skill Check: Duck and Dodge
+* Skill Roll: Duck and Dodge
 	* Combat Action: May be used as a defense.
 	* Inherits Modifiers from: **Mobility**
-* Base Difficulty: 8
+* Failure Chance: 8
 * Action Point Cost: 1
 <br /><br />
 
@@ -957,10 +962,10 @@ Aspect Point Cost: **5 AP**
 
 Requires: **[Magic Trick](#magic-trick)**<br />
 #### Details
-* Skill Check: Farsight
+* Skill Roll: Farsight
 	* Inherits Modifiers from: **Perception**
 * Action Point Cost: 2
-* Base Difficulty: 14
+* Failure Chance: 14
 * Magic
 	* Magic Energy Type: **Meta**
 * Range: Medium
@@ -978,11 +983,11 @@ Aspect Point Cost: **6 AP**
 
 Requires: **[Medicine](#medicine)**<br />
 #### Details
-* Skill Check: Field Aid
+* Skill Roll: Field Aid
 	* Inherits Modifiers from: **Intelligence**
 * Damage Healed: 1d6
 * Action Point Cost: 2
-* Base Difficulty: 8
+* Failure Chance: 8
 <br /><br />
 
 
@@ -995,11 +1000,11 @@ Aspect Point Cost: **6 AP**
 
 Requires: **[High Manual Dexterity](#high-manual-dexterity)**<br />
 #### Details
-* Skill Check: Filch
+* Skill Roll: Filch
 	* Limited: **Non-Combat Only**
 	* Limited: **No Character Targets**
 	* Inherits Modifiers from: **Mobility**
-* Base Difficulty: 8
+* Failure Chance: 8
 <br /><br />
 
 
@@ -1012,10 +1017,10 @@ Aspect Point Cost: **10 AP**
 
 
 #### Details
-* Skill Check: Firebolt
+* Skill Roll: Firebolt
 	* Inherits Modifiers from: **Intelligence**
 * Action Point Cost: 1
-* Base Difficulty: 8
+* Failure Chance: 8
 * Magic
 	* Magic Energy Type: **Fire**
 * Range: Medium
@@ -1045,10 +1050,10 @@ Aspect Point Cost: **9 AP**
 
 
 #### Details
-* Skill Check: Foil
+* Skill Roll: Foil
 	* Inherits Modifiers from: **Intelligence**
 * Action Point Cost: 1
-* Base Difficulty: 8
+* Failure Chance: 8
 * Damage Resistance: +4 DR
 	* Applies to: **Kinetic**
 * Magic
@@ -1066,10 +1071,10 @@ Aspect Point Cost: **3 AP**
 
 Requires: **[Fit](#fit)**<br />
 #### Details
-* Skill Check: Frantic Defense
+* Skill Roll: Frantic Defense
 	* Combat Action: May be used as a defense.
 	* Inherits Modifiers from: **Mobility**
-* Base Difficulty: 15
+* Failure Chance: 15
 <br /><br />
 
 
@@ -1082,10 +1087,10 @@ Aspect Point Cost: **14 AP**
 
 
 #### Details
-* Skill Check: Frigid Cone
+* Skill Roll: Frigid Cone
 	* Inherits Modifiers from: **Intelligence**
 * Action Point Cost: 1
-* Base Difficulty: 8
+* Failure Chance: 8
 * Magic
 	* Magic Energy Type: **Cold**
 * Area Effect: Cone
@@ -1103,9 +1108,9 @@ Aspect Point Cost: **5 AP**
 
 
 #### Details
-* Skill Check: Gesture
+* Skill Roll: Gesture
 	* Inherits Modifiers from: **Intelligence**
-* Base Difficulty: 8
+* Failure Chance: 8
 * Action Point Cost: 1
 <br /><br />
 
@@ -1119,9 +1124,9 @@ Aspect Point Cost: **6 AP**
 
 Requires: **[Fit](#fit)**<br />Requires: **[Slash](#slash)**<br />
 #### Details
-* Skill Check: Great Slash
-* Base Difficulty: 8
-* Skill Check Modifier: -2
+* Skill Roll: Great Slash
+* Failure Chance: 8
+* Skill Roll Modifier: -2
 	* Applies to: **Great Slash**
 	* Inherits Modifiers from: **Mobility**
 * Extra Target: +1
@@ -1220,10 +1225,10 @@ Aspect Point Cost: **5 AP**
 
 
 #### Details
-* Skill Check: Knowledge - Affluence
+* Skill Roll: Knowledge - Affluence
 	* Inherits Modifiers from: **Intelligence**
 * Action Point Cost: 1
-* Base Difficulty: 8
+* Failure Chance: 8
 <br /><br />
 
 
@@ -1236,10 +1241,10 @@ Aspect Point Cost: **5 AP**
 
 
 #### Details
-* Skill Check: Knowledge - Arcane
+* Skill Roll: Knowledge - Arcane
 	* Inherits Modifiers from: **Intelligence**
 * Action Point Cost: 1
-* Base Difficulty: 8
+* Failure Chance: 8
 <br /><br />
 
 
@@ -1252,10 +1257,10 @@ Aspect Point Cost: **5 AP**
 
 
 #### Details
-* Skill Check: Knowledge - Historical
+* Skill Roll: Knowledge - Historical
 	* Inherits Modifiers from: **Intelligence**
 * Action Point Cost: 1
-* Base Difficulty: 8
+* Failure Chance: 8
 <br /><br />
 
 
@@ -1268,10 +1273,10 @@ Aspect Point Cost: **5 AP**
 
 
 #### Details
-* Skill Check: Knowledge - Martial
+* Skill Roll: Knowledge - Martial
 	* Inherits Modifiers from: **Intelligence**
 * Action Point Cost: 1
-* Base Difficulty: 8
+* Failure Chance: 8
 <br /><br />
 
 
@@ -1284,10 +1289,10 @@ Aspect Point Cost: **5 AP**
 
 
 #### Details
-* Skill Check: Knowledge - Mechanical
+* Skill Roll: Knowledge - Mechanical
 	* Inherits Modifiers from: **Intelligence**
 * Action Point Cost: 1
-* Base Difficulty: 8
+* Failure Chance: 8
 <br /><br />
 
 
@@ -1300,10 +1305,10 @@ Aspect Point Cost: **5 AP**
 
 
 #### Details
-* Skill Check: Knowledge - Natural Sciences
+* Skill Roll: Knowledge - Natural Sciences
 	* Inherits Modifiers from: **Intelligence**
 * Action Point Cost: 1
-* Base Difficulty: 8
+* Failure Chance: 8
 <br /><br />
 
 
@@ -1316,10 +1321,10 @@ Aspect Point Cost: **5 AP**
 
 
 #### Details
-* Skill Check: Knowledge - Survival
+* Skill Roll: Knowledge - Survival
 	* Inherits Modifiers from: **Intelligence**
 * Action Point Cost: 1
-* Base Difficulty: 8
+* Failure Chance: 8
 <br /><br />
 
 
@@ -1345,9 +1350,9 @@ Aspect Point Cost: **8 AP**
 
 Requires: **[Fit](#fit)**<br />
 #### Details
-* Skill Check: Leaping Strike
-* Base Difficulty: 8
-* Skill Check Modifier: +1
+* Skill Roll: Leaping Strike
+* Failure Chance: 8
+* Skill Roll Modifier: +1
 	* Applies to: **Leaping Strike**
 * Action Point Cost: 1
 <br /><br />
@@ -1362,10 +1367,10 @@ Aspect Point Cost: **6 AP**
 
 Requires: **[High Manual Dexterity](#high-manual-dexterity)**<br />
 #### Details
-* Skill Check: Lockpicking
+* Skill Roll: Lockpicking
 	* Limited: **Non-Combat Only**
 	* Inherits Modifiers from: **Mobility**
-* Base Difficulty: 8
+* Failure Chance: 8
 <br /><br />
 
 
@@ -1394,7 +1399,7 @@ Aspect Point Cost: **3 AP**
 
 
 #### Details
-* Skill Check Modifier: +1
+* Skill Roll Modifier: +1
 	* Applies to: **All Magic of Chosen Energy Type**
 <br /><br />
 
@@ -1424,10 +1429,10 @@ Aspect Point Cost: **8 AP**
 
 
 #### Details
-* Skill Check: Medicine
+* Skill Roll: Medicine
 	* Limited: **Non-Combat Only**
 	* Inherits Modifiers from: **Intelligence**
-* Base Difficulty: 8
+* Failure Chance: 8
 * Damage Healed: 1d6
 <br /><br />
 
@@ -1443,12 +1448,12 @@ Aspect Point Cost: **11 AP**
 
 
 #### Details
-* Skill Check: Melee Parry
+* Skill Roll: Melee Parry
 	* Combat Action: May be used as a defense.
 	* Inherits Modifiers from: **Mobility**
 * Range: Melee
 * Extra Attack: +1
-* Base Difficulty: 14
+* Failure Chance: 14
 * Action Point Cost: 1
 <br /><br />
 
@@ -1491,10 +1496,10 @@ Aspect Point Cost: **24 AP**
 
 
 #### Details
-* Skill Check: Obscura
+* Skill Roll: Obscura
 	* Inherits Modifiers from: **Intelligence**
 * Action Point Cost: 1
-* Base Difficulty: 14
+* Failure Chance: 14
 * Magic
 	* Magic Energy Type: **Meta**
 * Attack Accuracy Modifier: -4
@@ -1517,9 +1522,9 @@ Aspect Point Cost: **4 AP**
 
 
 #### Details
-* Skill Check: Perception
+* Skill Roll: Perception
 * Action Point Cost: 1
-* Base Difficulty: gm_only
+* Failure Chance: gm_only
 <br /><br />
 
 
@@ -1534,9 +1539,9 @@ Aspect Point Cost: **5 AP**
 
 Requires: **[Filch](#filch)**<br />
 #### Details
-* Skill Check: Pickpocket
+* Skill Roll: Pickpocket
 	* Inherits Modifiers from: **Mobility**
-* Base Difficulty: 8
+* Failure Chance: 8
 * Action Point Cost: 1
 <br /><br />
 
@@ -1550,11 +1555,11 @@ Aspect Point Cost: **9 AP**
 
 Requires: **[Duck and Dodge](#duck-and-dodge)**<br />Requires: **[Fit](#fit)**<br />
 #### Details
-* Skill Check: Pivot and Roll
+* Skill Roll: Pivot and Roll
 	* Limited: **Unusuable when Slowed**
 	* Inherits Modifiers from: **Mobility**
-* Base Difficulty: 8
-* Skill Check Modifier: +2
+* Failure Chance: 8
+* Skill Roll Modifier: +2
 	* Applies to: **Pivot and Roll**
 * Action Point Cost: 2
 <br /><br />
@@ -1569,10 +1574,10 @@ Aspect Point Cost: **9 AP**
 
 
 #### Details
-* Skill Check: Purify
+* Skill Roll: Purify
 	* Inherits Modifiers from: **Intelligence**
 * Action Point Cost: 1
-* Base Difficulty: gm_only
+* Failure Chance: gm_only
 * Heal Affliction: Poisoned
 * Magic
 	* Magic Energy Type: **Meta**
@@ -1591,11 +1596,11 @@ Aspect Point Cost: **7 AP**
 
 
 #### Details
-* Skill Check: Quell
+* Skill Roll: Quell
 	* Inherits Modifiers from: **Intelligence**
 	* Limited: **Caster Only**
 * Action Point Cost: 1
-* Base Difficulty: 8
+* Failure Chance: 8
 * Damage Resistance: +2 DR
 	* Applies to: **Kinetic**
 * Magic
@@ -1628,9 +1633,9 @@ Aspect Point Cost: **5 AP**
 
 
 #### Details
-* Skill Check: Quiet Steps
+* Skill Roll: Quiet Steps
 	* Inherits Modifiers from: **Mobility**
-* Base Difficulty: 8
+* Failure Chance: 8
 * Action Point Cost: 1
 <br /><br />
 
@@ -1666,10 +1671,10 @@ Aspect Point Cost: **9 AP**
 
 
 #### Details
-* Skill Check: Refresh
+* Skill Roll: Refresh
 	* Inherits Modifiers from: **Intelligence**
 * Action Point Cost: 1
-* Base Difficulty: 8
+* Failure Chance: 8
 * Damage Healed: 1d6
 * Magic
 	* Magic Energy Type: **Meta**
@@ -1686,10 +1691,10 @@ Aspect Point Cost: **4 AP**
 
 
 #### Details
-* Skill Check: Send
+* Skill Roll: Send
 	* Inherits Modifiers from: **Intelligence**
 * Action Point Cost: 1
-* Base Difficulty: 12
+* Failure Chance: 12
 * Magic
 	* Magic Energy Type: **Meta**
 <br /><br />
@@ -1704,10 +1709,10 @@ Aspect Point Cost: **3 AP**
 
 Requires: **[Perception](#perception)**<br />
 #### Details
-* Skill Check Modifier: +1
+* Skill Roll Modifier: +1
 	* Applies to: **Ally's Attack**
 	* Limited: **Ranged Attacks Only**
-* Base Difficulty: 12
+* Failure Chance: 12
 * Action Point Cost: 1
 <br /><br />
 
@@ -1721,10 +1726,10 @@ Aspect Point Cost: **5 AP**
 
 
 #### Details
-* Skill Check: Slash
+* Skill Roll: Slash
 	* Limited: **Slashing Weapons**
 	* Inherits Modifiers from: **Mobility**
-* Base Difficulty: 8
+* Failure Chance: 8
 * Action Point Cost: 1
 <br /><br />
 
@@ -1738,10 +1743,10 @@ Aspect Point Cost: **10 AP**
 
 
 #### Details
-* Skill Check: Sooth
+* Skill Roll: Sooth
 	* Inherits Modifiers from: **Intelligence**
 * Action Point Cost: 1
-* Base Difficulty: 8
+* Failure Chance: 8
 * Heal Affliction: Sickened
 * Magic
 	* Magic Energy Type: **Meta**
@@ -1758,10 +1763,10 @@ Aspect Point Cost: **10 AP**
 
 
 #### Details
-* Skill Check: Spell Dart
+* Skill Roll: Spell Dart
 	* Inherits Modifiers from: **Intelligence**
 * Action Point Cost: 1
-* Base Difficulty: 8
+* Failure Chance: 8
 * Magic
 	* Magic Energy Type: **Meta**
 * Range: Short
@@ -1778,10 +1783,10 @@ Aspect Point Cost: **5 AP**
 
 
 #### Details
-* Skill Check: Stab
+* Skill Roll: Stab
 	* Limited: **Thrusting Weapons**
 	* Inherits Modifiers from: **Strength**
-* Base Difficulty: 8
+* Failure Chance: 8
 * Action Point Cost: 1
 <br /><br />
 
@@ -1797,10 +1802,10 @@ Aspect Point Cost: **6 AP**
 
 
 #### Details
-* Skill Check: Summon Water or Food
+* Skill Roll: Summon Water or Food
 	* Inherits Modifiers from: **Intelligence**
 * Action Point Cost: 1
-* Base Difficulty: 8
+* Failure Chance: 8
 * Magic
 	* Magic Energy Type: **Meta**
 <br /><br />
@@ -1815,9 +1820,9 @@ Aspect Point Cost: **6 AP**
 
 
 #### Details
-* Skill Check: Survival
+* Skill Roll: Survival
 	* Inherits Modifiers from: **Standing Forward Jump**
-* Base Difficulty: 8
+* Failure Chance: 8
 <br /><br />
 
 
@@ -1830,10 +1835,10 @@ Aspect Point Cost: **5 AP**
 
 
 #### Details
-* Skill Check: Swing
+* Skill Roll: Swing
 	* Limited: **Swung Weapons**
 	* Inherits Modifiers from: **Strength**
-* Base Difficulty: 8
+* Failure Chance: 8
 * Action Point Cost: 1
 <br /><br />
 
@@ -1847,11 +1852,11 @@ Aspect Point Cost: **10 AP**
 
 
 #### Details
-* Skill Check: Toss
+* Skill Roll: Toss
 	* Limited: **Size Modifier -3 and Smaller Objects Only**
 	* Inherits Modifiers from: **Intelligence**
 * Action Point Cost: 1
-* Base Difficulty: 8
+* Failure Chance: 8
 * Magic
 	* Magic Energy Type: **Kinetic**
 * Range: Medium
@@ -1868,7 +1873,7 @@ Aspect Point Cost: **5 AP**
 
 Requires: **[Perception](#perception)**<br />Requires: **[Quiet Steps](#quiet-steps)**<br />
 #### Details
-* Skill Check Modifier: +2
+* Skill Roll Modifier: +2
 	* Limited: **Trap Finding Only**
 	* Applies to: **Perception**
 <br /><br />
@@ -1885,9 +1890,9 @@ Aspect Point Cost: **6 AP**
 
 Requires: **[Medicine](#medicine)**<br />
 #### Details
-* Skill Check: Treat Illness
+* Skill Roll: Treat Illness
 	* Inherits Modifiers from: **Intelligence**
-* Base Difficulty: 8
+* Failure Chance: 8
 <br /><br />
 
 
@@ -1913,10 +1918,10 @@ Aspect Point Cost: **10 AP**
 
 
 #### Details
-* Skill Check: Volta
+* Skill Roll: Volta
 	* Inherits Modifiers from: **Intelligence**
 * Action Point Cost: 1
-* Base Difficulty: 8
+* Failure Chance: 8
 * Magic
 	* Magic Energy Type: **Electric**
 * Range: Medium
@@ -1933,7 +1938,7 @@ Aspect Point Cost: **3 AP**
 
 
 #### Details
-* Skill Check Modifier: +1
+* Skill Roll Modifier: +1
 	* Applies to: **Bound Weapon Type**
 <br /><br />
 

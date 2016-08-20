@@ -7,20 +7,20 @@ from crawl.util import sanitize_text
 from crawl.formulas import get_formula
 
 
-SKILL_CHECK_DESC = 'Skill Check'
-BASE_DIFFICULTY_DESC = 'Base Difficulty'
+SKILL_CHECK_DESC = 'Skill Roll'
+FAILURE_CHANCE_DESC = 'Failure Chance'
 ACTION_POINT_COST_DESC = 'Action Point Cost'
 
 def check_aspect(aspect):
     is_skill = False
     has_action_cost = False
-    has_difficulty = False
+    has_failure_chance = False
 
-    for descriptor in aspect.descriptors:
+    for descriptor in aspect.effects:
         if descriptor.name == SKILL_CHECK_DESC:
             is_skill = True
-        elif descriptor.name == BASE_DIFFICULTY_DESC:
-            has_difficulty = True
+        elif descriptor.name == FAILURE_CHANCE_DESC:
+            has_failure_chance = True
         elif descriptor.name == ACTION_POINT_COST_DESC:
             has_action_cost = True
 
@@ -28,8 +28,8 @@ def check_aspect(aspect):
         if not has_action_cost:
             print('Aspect {} has a skill check but no associated action point cost.'.format(aspect.name))
 
-        if not has_difficulty:
-            print('Aspect {} has a skill check but no associated base difficulty.'.format(aspect.name))
+        if not has_failure_chance:
+            print('Aspect {} has a skill check but no associated failure chance.'.format(aspect.name))
 
 
 def format_descriptor(descriptor):
@@ -76,10 +76,10 @@ def format_item(item, model):
     
     output += '\n'
     
-    if len(item.descriptors) > 0:
+    if len(item.effects) > 0:
         output += '#### Details\n'
 
-        for descriptor in item.descriptors:
+        for descriptor in item.effects:
             details = ''
 
             for detail in descriptor.details:
@@ -90,7 +90,7 @@ def format_item(item, model):
                     details += '\t* Magic Energy Type: **{}**\n'.format(detail.value)
 
                 elif detail.type == 'base_difficulty':
-                    details += '\t* Base Difficulty: **{}**\n'.format(detail.value)
+                    details += '\t* Failure Chance: **{}**\n'.format(detail.value)
 
                 elif detail.type == 'inherits_from':
                     details += '\t* Inherits Modifiers from: **{}**\n'.format(detail.value)
@@ -103,10 +103,10 @@ def format_item(item, model):
 
             output += '* {}'.format(descriptor.name)
 
-            if descriptor.feature is not None:
-                output += ': {}'.format(descriptor.feature)
+            if descriptor.effect is not None:
+                output += ': {}'.format(descriptor.effect)
 
-            elif descriptor.name == 'Skill Check':
+            elif descriptor.name == 'Skill Roll':
                 output += ': {}'.format(item.name)
 
             output += '\n'
@@ -133,13 +133,13 @@ def format_aspect(aspect, model):
 
     output += '\n'
 
-    if len(aspect.descriptors) > 0:
+    if len(aspect.effects) > 0:
         output += '#### Details\n'
 
-        for descriptor in aspect.descriptors:
+        for effect in aspect.effects:
             details = ''
 
-            for detail in descriptor.details:
+            for detail in effect.details:
                 if detail.type == 'targets':
                     details += '\t* Applies to: **{}**\n'.format(detail.value)
 
@@ -147,7 +147,7 @@ def format_aspect(aspect, model):
                     details += '\t* Magic Energy Type: **{}**\n'.format(detail.value)
 
                 elif detail.type == 'base_difficulty':
-                    details += '\t* Base Difficulty: **{}**\n'.format(detail.value)
+                    details += '\t* Failure Chance: **{}**\n'.format(detail.value)
 
                 elif detail.type == 'inherits_from':
                     details += '\t* Inherits Modifiers from: **{}**\n'.format(detail.value)
@@ -158,12 +158,12 @@ def format_aspect(aspect, model):
                 else:
                     details += '\t* {}: {}\n'.format(detail.type, detail.value)
 
-            output += '* {}'.format(descriptor.name)
+            output += '* {}'.format(effect.name)
 
-            if descriptor.feature is not None:
-                output += ': {}'.format(descriptor.feature)
+            if effect.effect is not None:
+                output += ': {}'.format(effect.effect)
 
-            elif descriptor.name == 'Skill Check':
+            elif effect.name == 'Skill Roll':
                 output += ': {}'.format(aspect.name)
 
             output += '\n'
@@ -197,9 +197,9 @@ def process_document(root):
         else:
             raise Exception('Unexpected element: {}'.format(element.tag))
 
-    # Process.descriptors first
+    # Process.effects first
     for descdef_xml in descriptors_xml:
-        model.descriptors.add_descdef(descdef_xml)
+        model.effects.add_descdef(descdef_xml)
 
     # Next process items
     for item_xml in items_xml:
@@ -211,8 +211,8 @@ def process_document(root):
             aspect_xml.attrib['name'])
 
         for part_xml in aspect_xml:
-            if part_xml.tag == 'feature':
-                aspect.add_feature(part_xml)
+            if part_xml.tag == 'effect':
+                aspect.add_effect(part_xml)
 
             elif part_xml.tag == 'requires':
                 aspect.add_requirement(part_xml)
@@ -244,9 +244,9 @@ def main():
 
     with open('out.md', 'w') as fout:
         fout.write('# The Crawl Aspect Document\n\n')
-        fout.write('## Components - {}\n'.format(len(model.descriptors.descriptors)))
+        fout.write('## Components - {}\n'.format(len(model.effects.effects)))
         
-        for name, descriptor in sorted(model.descriptors.descriptors.items()):
+        for name, descriptor in sorted(model.effects.effects.items()):
             fout.write('{}\n\n'.format(format_descriptor(descriptor)))
         
         fout.write('## Items - {}\n'.format(len(model.items.items)))

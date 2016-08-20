@@ -9,13 +9,13 @@ def find_child(parent_xml, tag):
     return None
 
 
-def assemble_descriptor(feature_xml):
-    name = feature_xml.attrib['descriptor']
-    feature = feature_xml.attrib.get('value')
+def assemble_descriptor(effect_xml):
+    name = effect_xml.attrib['descriptor']
+    effect = effect_xml.attrib.get('value')
 
-    desc = AspectFeature(name, feature)
+    desc = AspectEffect(name, effect)
 
-    for detail_xml in feature_xml:
+    for detail_xml in effect_xml:
         desc.add_detail(detail_xml)
 
     return desc
@@ -26,13 +26,13 @@ class DocumentManager(object):
     def __init__(self):
         self.items = ItemManager()
         self.aspects = AspectManager()
-        self.descriptors = DescriptorManager()
+        self.effects = DescriptorManager()
 
     def item_cost(self, name):
-        return self.items.cost(name, self.aspects, self.descriptors)
+        return self.items.cost(name, self.aspects, self.effects)
 
     def aspect_cost(self, name):
-        return self.aspects.cost(name, self.descriptors)
+        return self.aspects.cost(name, self.effects)
 
 
 class ItemManager(object):
@@ -51,8 +51,8 @@ class ItemManager(object):
 
         else:
             for part_xml in item_xml:
-                if part_xml.tag == 'feature':
-                    item.add_feature(part_xml)
+                if part_xml.tag == 'effect':
+                    item.add_effect(part_xml)
                     
                 elif part_xml.tag == 'text':
                     item.text = sanitize_text(part_xml.text)
@@ -94,7 +94,7 @@ class AspectManager(object):
 class DescriptorManager(object):
 
     def __init__(self):
-        self.descriptors = dict()
+        self.effects = dict()
 
     def add_descdef(self, desdef_xml):
         name = desdef_xml.attrib['name']
@@ -117,19 +117,19 @@ class DescriptorManager(object):
 
         else:
             for entry_xml in desdef_xml:
-                if entry_xml.tag == 'feature':
-                    desdef.add_feature(entry_xml)
+                if entry_xml.tag == 'value':
+                    desdef.add_effect(entry_xml)
 
-        self.descriptors[name] = desdef
+        self.effects[name] = desdef
 
-    def get_feature(self, mod_name, feature_name):
-        desdef = self.descriptors[mod_name]
+    def get_effect(self, mod_name, effect_name):
+        desdef = self.effects[mod_name]
 
         if len(desdef.entries) > 0:
-            return int(desdef.entries[feature_name])
+            return int(desdef.entries[effect_name])
 
         if desdef.formula != None:
-            return get_formula(desdef.formula)(feature_name)
+            return get_formula(desdef.formula)(effect_name)
 
         else:
             return desdef.cost
@@ -148,9 +148,9 @@ class Descriptor(object):
     def add_example(self, example_xml):
         self.examples.append(example_xml.attrib['value'])
 
-    def add_feature(self, entry_xml):
-        feature_name = entry_xml.attrib['name']
-        self.entries[feature_name] = entry_xml.attrib['cost']
+    def add_effect(self, entry_xml):
+        effect_name = entry_xml.attrib['name']
+        self.entries[effect_name] = entry_xml.attrib['cost']
 
 
 class Detail(object):
@@ -160,11 +160,11 @@ class Detail(object):
         self.value = value
 
 
-class AspectFeature(object):
+class AspectEffect(object):
 
-    def __init__(self, name, feature=None):
+    def __init__(self, name, effect=None):
         self.name = name
-        self.feature = feature
+        self.effect = effect
 
         self.details = list()
 
@@ -185,11 +185,11 @@ class Aspect(object):
     def __init__(self, name):
         self.name = name
         self.text = ''
-        self.descriptors = list()
+        self.effects = list()
         self.requirements = list()
 
-    def add_feature(self, feature_xml):
-        self.descriptors.append(assemble_descriptor(feature_xml))
+    def add_effect(self, effect_xml):
+        self.effects.append(assemble_descriptor(effect_xml))
 
     def add_requirement(self, req_xml):
         self.requirements.append(Requirement(
@@ -197,9 +197,9 @@ class Aspect(object):
 
     def cost(self, descriptor_manager):
         cost = 0
-        for descriptor in self.descriptors:
-            cost += descriptor_manager.get_feature(
-                descriptor.name, descriptor.feature)
+        for descriptor in self.effects:
+            cost += descriptor_manager.get_effect(
+                descriptor.name, descriptor.effect)
 
         return cost if cost != 0 else 1
 
@@ -212,18 +212,18 @@ class Item(object):
         self.type = item_type
         self.cost = None
         self.grants = list()
-        self.descriptors = list()
+        self.effects = list()
 
-    def add_feature(self, feature_xml):
-        self.descriptors.append(assemble_descriptor(feature_xml))
+    def add_effect(self, effect_xml):
+        self.effects.append(assemble_descriptor(effect_xml))
 
     def add_grant(self, grant_xml):
         self.grants.append(grant_xml.attrib['aspect'])
 
     def ap_cost(self, descriptor_manager):
         cost = 0
-        for descriptor in self.descriptors:
-            cost += descriptor_manager.get_feature(
-                descriptor.name, descriptor.feature)
+        for descriptor in self.effects:
+            cost += descriptor_manager.get_effect(
+                descriptor.name, descriptor.effect)
 
         return cost
