@@ -554,7 +554,7 @@ Marks an object as throwable. The attack of this weapon may be considered a rang
 * Aspect Point Cost: 1<br /><br />
 
 
-## Items - 13
+## Items - 14
 #### Bracers of Magic
 Monetary Cost: **360 $$**
 <br />
@@ -627,6 +627,19 @@ Monetary Cost: **360 $$**
 Monetary Cost: **0 $$**
 <br />
 
+<br /><br />
+
+
+#### Ring of Action
+
+Makes you feel healthier when you wear it.
+
+Monetary Cost: **1080 $$**
+<br />
+
+#### Details
+* Action Pool Refresh Modifier: +1
+* Magic
 <br /><br />
 
 

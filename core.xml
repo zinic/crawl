@@ -365,6 +365,15 @@
             </text>
         </item>
 
+        <item name="Ring of Action" type="ring">
+            <effect descriptor="Action Pool Refresh Modifier" value="+1" />
+            <effect descriptor="Magic" />
+
+            <text>
+                Makes you feel healthier when you wear it.
+            </text>
+        </item>
+
         <item name="Ration" type="consumable" cost="100">
             
             <text>
