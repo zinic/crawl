@@ -1152,6 +1152,9 @@
             <effect descriptor="Skill Roll Modifier" value="+1">
                 <detail type="targets" value="All Magic of Chosen Energy Type" />
             </effect>
+            <effect descriptor="Attack Accuracy Modifier" value="+1">
+                <detail type="targets" value="All Magic of Chosen Energy Type" />
+            </effect>
             
             <text>
                 Increases a character's natural talent in magic for a given energy type. This aspect must be taken multiple times for multiple energy types.

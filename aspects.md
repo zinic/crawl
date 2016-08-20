@@ -1426,12 +1426,14 @@ Aspect Point Cost: **1 AP**
 
 Increases a character's natural talent in magic for a given energy type. This aspect must be taken multiple times for multiple energy types.
 
-Aspect Point Cost: **3 AP**
-<br />Capstone Cost: **3 AP**
+Aspect Point Cost: **5 AP**
+<br />Capstone Cost: **5 AP**
 
 
 #### Details
 * Skill Roll Modifier: +1
+	* Applies to: **All Magic of Chosen Energy Type**
+* Attack Accuracy Modifier: +1
 	* Applies to: **All Magic of Chosen Energy Type**
 <br /><br />
 
