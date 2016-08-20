@@ -1678,8 +1678,8 @@ Requires: **[Vigor](#vigor)**<br />
 
 The caster heals a target for 1d6 health points. This healing takes effect instantly and staunches any bleeding the character may be suffering from. This spell may be used as many times as needed on the same target.
 
-Aspect Point Cost: **9 AP**
-<br />Capstone Cost: **9 AP**
+Aspect Point Cost: **31 AP**
+<br />Capstone Cost: **31 AP**
 
 
 #### Details
@@ -1687,10 +1687,12 @@ Aspect Point Cost: **9 AP**
 	* Inherits Modifiers from: **Intelligence**
 * Action Point Cost: 1
 * Failure Chance: 8
-* Damage Healed: 1d6
+* Target Restriction: Enemies Only
+* Damage Healed: 2d6
 * Magic
 	* Magic Energy Type: **Meta**
-* Range: Melee
+* Range: Short
+* Area Effect: Dome
 <br /><br />
 
 
