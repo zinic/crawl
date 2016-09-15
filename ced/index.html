@@ -1,0 +1,40 @@
+<html>
+    <head>
+        <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+        <script type="text/javascript">
+            var core_xml;
+            
+            $.ajax({
+                url: "core.xml"
+            }).done(function (data) {
+                core_xml = $(data);
+                
+                core_xml.find("descriptor").each(
+                    function (didx, descriptor) {
+                        $descriptor = $(descriptor);
+                        
+                        console.log("Descriptor: " + $descriptor.attr("name"));
+                        
+                        $descriptor.find("feature").each(
+                            function (fidx, feature) {
+                                $feature = $(feature);
+                                
+                                console.log("\tFeature: " + $feature.attr("name") + "- Cost: " + $feature.attr("cost"));
+                            });
+                    });
+            });
+        </script>
+    </head>
+    
+    <body>
+        <div>
+            <div id="core_aspects">
+                <ul>
+                    <li>Strength</li>
+                    <li>Mobility</li>
+                    <li>Intelligence</li>
+                </ul>
+            </div>
+        </div>
+    </body>
+</html>
