@@ -83,8 +83,29 @@
         <descriptor name="Opportunistic Action" cost="5" />
         
         <descriptor name="Can't be Flanked" cost="5" />
-        
-        <descriptor name="Skill Roll" cost="3" />
+
+        <descriptor name="Skill">
+            <value name="Non-Combat" cost="2" />
+            <value name="Concentration" cost="3" />
+            <value name="Attack" cost="5" />
+            <value name="Defense" cost="5" />
+            
+            <text>
+                Skills granted by aspects come in a few different flavors.
+                
+                Non-Combat
+                Skills that may be used outside of combat only. This may be due to restrictions within the skill itself or for other reasons explained in the aspect text.
+                
+                Concentration
+                Skills that may be used provided the character can concentrate on their action. Concentration skills may be used in combat for action points.
+                
+                Attack
+                Skills that may be used to attack or directly affect another target character. Attacks, like concentration skills, come with an action point cost.
+                
+                Defense
+                Skills that may be used to defend against an incoming attack. Defenses, like concentration and attack skills come with an action point cost. 
+            </text>
+        </descriptor>
         
         <descriptor name="Range">
             <value name="Personal" cost="0" />
@@ -106,6 +127,10 @@
             <value name="4" cost="3" />
             <value name="5" cost="5" />
             <value name="Unlimited" cost="21" />
+            
+            <text>
+                Useful for items that have consumable uses.
+            </text>
         </descriptor>
         
         <descriptor name="Duration">
@@ -119,6 +144,10 @@
             <value name="12 Hours" cost="34" />
             <value name="1 Day" cost="47" />
             <value name="10 Days" cost="60" />
+            
+            <text>
+                Denotes the duration of an effect.
+            </text>
         </descriptor>
         
         <descriptor name="Damage Type">
@@ -141,7 +170,7 @@
         
         <descriptor name="Heal Affliction">
             <value name="Sickened" cost="3" />
-            <value name="Diseased" cost="3" />
+            <value name="Diseased" cost="5" />
             <value name="Poisoned" cost="3" />
         </descriptor>
         
@@ -163,7 +192,7 @@
             </text>
         </descriptor>
             
-        <descriptor name="Skill Roll Modifier">
+        <descriptor name="Concentration Check Modifier">
             <value name="+1" cost="3" />
             <value name="+2" cost="5" />
             <value name="+3" cost="8" />
@@ -197,17 +226,13 @@
         </descriptor>
         
         <descriptor name="Action Point Cost">
+            <value name="0" cost="3" />
             <value name="1" cost="-1" />
             <value name="2" cost="-3" />
             <value name="3" cost="-8" />
             <value name="4" cost="-13" />
             <value name="5" cost="-21" />
-            
-            <value name="-1" cost="3" />
-            <value name="-2" cost="5" />
-            <value name="-3" cost="8" />
-            <value name="-4" cost="13" />
-            <value name="-5" cost="21" />
+            <value name="6" cost="-34" />
         </descriptor>
         
         <descriptor name="Reactionary" cost="10">
@@ -392,7 +417,7 @@
         </item>
         
         <item name="Bracers of Magic" type="armor">
-            <effect descriptor="Skill Roll Modifier" value="+1">
+            <effect descriptor="Concentration Check Modifier" value="+1">
                 <detail type="targets" value="Meta Magic Only" />
             </effect>
         </item>
@@ -439,7 +464,7 @@
         </item>
 
         <item name="Wand of Volta" type="weapon">
-            <effect descriptor="Skill Roll">
+            <effect descriptor="Skill" value="Concentration">
                 <detail type="inherits_from" value="Intelligence" />
             </effect>
             <effect descriptor="Action Point Cost" value="1" />
@@ -487,11 +512,11 @@
         </aspect>
         
         <aspect name="Frantic Defense">
-             <effect descriptor="Skill Roll">
-                <detail type="Combat Action" value="May be used as a defense." />
+             <effect descriptor="Skill" value="Defense">
                 <detail type="inherits_from" value="Mobility" />
             </effect>
             <effect descriptor="Failure Chance" value="15" />
+            <effect descriptor="Action Point Cost" value="0" />
             
             <requires name="Fit" />
             
@@ -501,8 +526,7 @@
         </aspect>
         
         <aspect name="Duck and Dodge">
-            <effect descriptor="Skill Roll">
-                <detail type="Combat Action" value="May be used as a defense." />
+            <effect descriptor="Skill" value="Concentration">
                 <detail type="inherits_from" value="Mobility" />
             </effect>
             <effect descriptor="Failure Chance" value="8" />
@@ -514,8 +538,8 @@
         </aspect>
 
         <aspect name="Survival">
-            <effect descriptor="Skill Roll">
-                <detail type="inherits_from" value="Standing Forward Jump" />
+            <effect descriptor="Skill" value="Non-Combat">
+                <detail type="inherits_from" value="Intelligence" />
             </effect>
             <effect descriptor="Failure Chance" value="8" />
             
@@ -525,8 +549,7 @@
         </aspect>
         
         <aspect name="Dive for Cover">
-            <effect descriptor="Skill Roll">
-                <detail type="Combat Action" value="May be used as a defense." />
+            <effect descriptor="Skill" value="Concentration">
                 <detail type="inherits_from" value="Standing Forward Jump" />
             </effect>
             <effect descriptor="Failure Chance" value="8" />
@@ -573,12 +596,12 @@
         </aspect>
         
         <aspect name="Pivot and Roll">
-            <effect descriptor="Skill Roll">
+            <effect descriptor="Skill" value="Concentration">
                 <detail type="limit" value="Unusuable when Slowed" />
                 <detail type="inherits_from" value="Mobility" />
             </effect>
             <effect descriptor="Failure Chance" value="8" />
-            <effect descriptor="Skill Roll Modifier" value="+2">
+            <effect descriptor="Concentration Check Modifier" value="+2">
                 <detail type="targets" value="Pivot and Roll" />
             </effect>
             
@@ -592,7 +615,7 @@
         </aspect>
         
         <aspect name="Trap Finder">
-            <effect descriptor="Skill Roll Modifier" value="+2">
+            <effect descriptor="Concentration Check Modifier" value="+2">
                 <detail type="limit" value="Trap Finding Only" />
                 <detail type="targets" value="Perception" />
             </effect>
@@ -648,7 +671,7 @@
         </aspect>
 
         <aspect name="Knowledge - Affluence">
-            <effect descriptor="Skill Roll">
+            <effect descriptor="Skill" value="Concentration">
                 <detail type="inherits_from" value="Intelligence" />
             </effect>
             <effect descriptor="Action Point Cost" value="1" />
@@ -660,7 +683,7 @@
         </aspect>
 
         <aspect name="Knowledge - Mechanical">
-            <effect descriptor="Skill Roll">
+            <effect descriptor="Skill" value="Concentration">
                 <detail type="inherits_from" value="Intelligence" />
             </effect>
             <effect descriptor="Action Point Cost" value="1" />
@@ -672,7 +695,7 @@
         </aspect>
 
         <aspect name="Knowledge - Arcane">
-            <effect descriptor="Skill Roll">
+            <effect descriptor="Skill" value="Concentration">
                 <detail type="inherits_from" value="Intelligence" />
             </effect>
             <effect descriptor="Action Point Cost" value="1" />
@@ -684,7 +707,7 @@
         </aspect>
         
         <aspect name="Knowledge - Martial">
-            <effect descriptor="Skill Roll">
+            <effect descriptor="Skill" value="Concentration">
                 <detail type="inherits_from" value="Intelligence" />
             </effect>
             <effect descriptor="Action Point Cost" value="1" />
@@ -696,7 +719,7 @@
         </aspect>
         
         <aspect name="Knowledge - Historical">
-            <effect descriptor="Skill Roll">
+            <effect descriptor="Skill" value="Concentration">
                 <detail type="inherits_from" value="Intelligence" />
             </effect>
             <effect descriptor="Action Point Cost" value="1" />
@@ -708,7 +731,7 @@
         </aspect>
         
         <aspect name="Knowledge - Natural Sciences">
-            <effect descriptor="Skill Roll">
+            <effect descriptor="Skill" value="Concentration">
                 <detail type="inherits_from" value="Intelligence" />
             </effect>
             <effect descriptor="Action Point Cost" value="1" />
@@ -720,7 +743,7 @@
         </aspect>
         
         <aspect name="Knowledge - Survival">
-            <effect descriptor="Skill Roll">
+            <effect descriptor="Skill" value="Concentration">
                 <detail type="inherits_from" value="Intelligence" />
             </effect>
             <effect descriptor="Action Point Cost" value="1" />
@@ -806,7 +829,7 @@
         </aspect>
 
         <aspect name="Gesture">
-            <effect descriptor="Skill Roll">
+            <effect descriptor="Skill" value="Concentration">
                 <detail type="inherits_from" value="Intelligence" />
             </effect>
             <effect descriptor="Failure Chance" value="8" />
@@ -818,8 +841,7 @@
         </aspect>
         
         <aspect name="Filch">
-            <effect descriptor="Skill Roll">
-                <detail type="limit" value="Non-Combat Only" />
+            <effect descriptor="Skill" value="Non-Combat">
                 <detail type="limit" value="No Character Targets" />
                 <detail type="inherits_from" value="Mobility" />
             </effect>
@@ -833,7 +855,7 @@
         </aspect>
         
         <aspect name="Pickpocket">
-            <effect descriptor="Skill Roll">
+            <effect descriptor="Skill" value="Concentration">
                 <detail type="inherits_from" value="Mobility" />
             </effect>
             <effect descriptor="Failure Chance" value="8" />
@@ -849,8 +871,7 @@
         </aspect>
         
         <aspect name="Lockpicking">
-            <effect descriptor="Skill Roll">
-                <detail type="limit" value="Non-Combat Only" />
+            <effect descriptor="Skill" value="Non-Combat">
                 <detail type="inherits_from" value="Mobility" />
             </effect>
             <effect descriptor="Failure Chance" value="8" />
@@ -863,7 +884,7 @@
         </aspect>
                
         <aspect name="Field Aid">
-            <effect descriptor="Skill Roll">
+            <effect descriptor="Skill" value="Concentration">
                 <detail type="inherits_from" value="Intelligence" />
             </effect>
             <effect descriptor="Damage Healed" value="1d6" />
@@ -880,7 +901,7 @@
         </aspect>
         
         <aspect name="Treat Illness">
-            <effect descriptor="Skill Roll">
+            <effect descriptor="Skill" value="Non-Combat">
                 <detail type="inherits_from" value="Intelligence" />
             </effect>
             <effect descriptor="Failure Chance" value="8" />
@@ -895,8 +916,7 @@
         </aspect>
         
         <aspect name="Medicine">
-            <effect descriptor="Skill Roll">
-                <detail type="limit" value="Non-Combat Only" />
+            <effect descriptor="Skill" value="Non-Combat">
                 <detail type="inherits_from" value="Intelligence" />
             </effect>
             <effect descriptor="Failure Chance" value="8" />
@@ -910,7 +930,7 @@
         </aspect>
         
         <aspect name="Perception">
-            <effect descriptor="Skill Roll" />
+            <effect descriptor="Skill" value="Concentration" />
             <effect descriptor="Action Point Cost" value="1" />
             <effect descriptor="Failure Chance" value="gm_only" />
             
@@ -931,8 +951,7 @@
         </aspect>
         
         <aspect name="Disable Device">
-            <effect descriptor="Skill Roll">
-                <detail type="limit" value="Non-Combat Only" />
+            <effect descriptor="Skill" value="Non-Combat">
                 <detail type="inherits_from" value="Lockpicking" />
             </effect>
             <effect descriptor="Failure Chance" value="8" />
@@ -945,8 +964,7 @@
         </aspect>
         
         <aspect name="Blend into Crowds">
-            <effect descriptor="Skill Roll">
-                <detail type="limit" value="Non-Combat Only" />
+            <effect descriptor="Skill" value="Non-Combat">
                 <detail type="inherits_from" value="Mobility" />
             </effect>
             <effect descriptor="Failure Chance" value="8" />
@@ -957,7 +975,7 @@
         </aspect>
         
         <aspect name="Quiet Steps">
-            <effect descriptor="Skill Roll">
+            <effect descriptor="Skill" value="Concentration">
                 <detail type="inherits_from" value="Mobility" />
             </effect>
             <effect descriptor="Failure Chance" value="8" />
@@ -969,8 +987,7 @@
         </aspect>
         
         <aspect name="Block">
-            <effect descriptor="Skill Roll">
-                <detail type="Combat Action" value="May be used as a defense." />
+            <effect descriptor="Skill" value="Concentration">
                 <detail type="limit" value="Character Must Have a Shield" />
                 <detail type="inherits_from" value="Strength" />
             </effect>
@@ -983,8 +1000,7 @@
         </aspect>
         
         <aspect name="Melee Parry">
-            <effect descriptor="Skill Roll">
-                <detail type="Combat Action" value="May be used as a defense." />
+            <effect descriptor="Skill" value="Concentration">
                 <detail type="inherits_from" value="Mobility" />
             </effect>
             <effect descriptor="Range" value="Melee" />
@@ -1000,7 +1016,7 @@
         </aspect>
         
         <aspect name="Shot Call">
-            <effect descriptor="Skill Roll Modifier" value="+1">
+            <effect descriptor="Concentration Check Modifier" value="+1">
                 <detail type="targets" value="Ally's Attack" />
                 <detail type="limit" value="Ranged Attacks Only" />
             </effect>
@@ -1035,7 +1051,7 @@
         </aspect>
         
         <aspect name="Weapon Proficiency">
-            <effect descriptor="Skill Roll Modifier" value="+1">
+            <effect descriptor="Concentration Check Modifier" value="+1">
                 <detail type="targets" value="Bound Weapon Type" />
             </effect>
             
@@ -1045,7 +1061,7 @@
         </aspect>
 
         <aspect name="Stab">
-            <effect descriptor="Skill Roll">
+            <effect descriptor="Skill" value="Concentration">
                 <detail type="limit" value="Thrusting Weapons" />
                 <detail type="inherits_from" value="Strength" />
             </effect>
@@ -1058,7 +1074,7 @@
         </aspect>
 
         <aspect name="Swing">
-            <effect descriptor="Skill Roll">
+            <effect descriptor="Skill" value="Concentration">
                 <detail type="limit" value="Swung Weapons" />
                 <detail type="inherits_from" value="Strength" />
             </effect>
@@ -1071,7 +1087,7 @@
         </aspect>
 
         <aspect name="Archery">
-            <effect descriptor="Skill Roll">
+            <effect descriptor="Skill" value="Concentration">
                 <detail type="limit" value="Drawn Force Weapons" />
                 <detail type="limit" value="Only Inherits from the Highest Modifier (Strength or Mobility)" />
                 <detail type="inherits_from" value="Mobility" />
@@ -1086,7 +1102,7 @@
         </aspect>
 
         <aspect name="Slash">
-            <effect descriptor="Skill Roll">
+            <effect descriptor="Skill" value="Concentration">
                 <detail type="limit" value="Slashing Weapons" />
                 <detail type="inherits_from" value="Mobility" />
             </effect>
@@ -1121,10 +1137,10 @@
         </aspect>
         
         <aspect name="Leaping Strike">
-            <effect descriptor="Skill Roll" />
+            <effect descriptor="Skill" value="Concentration" />
             <effect descriptor="Failure Chance" value="8" />
             
-            <effect descriptor="Skill Roll Modifier" value="+1">
+            <effect descriptor="Concentration Check Modifier" value="+1">
                 <detail type="targets" value="Leaping Strike" />
             </effect>
             
@@ -1138,10 +1154,10 @@
         </aspect>
         
         <aspect name="Great Slash">
-            <effect descriptor="Skill Roll" />
+            <effect descriptor="Skill" value="Concentration" />
             <effect descriptor="Failure Chance" value="8" />
             
-            <effect descriptor="Skill Roll Modifier" value="-2">
+            <effect descriptor="Concentration Check Modifier" value="-2">
                 <detail type="targets" value="Great Slash" />
                 <detail type="inherits_from" value="Mobility" />
             </effect>
@@ -1158,7 +1174,7 @@
         </aspect>
         
         <aspect name="Magical Energy Affinity">
-            <effect descriptor="Skill Roll Modifier" value="+1">
+            <effect descriptor="Concentration Check Modifier" value="+1">
                 <detail type="targets" value="All Magic of Chosen Energy Type" />
             </effect>
             <effect descriptor="Attack Accuracy Modifier" value="+1">
@@ -1171,7 +1187,7 @@
         </aspect>
         
         <aspect name="Refresh">
-            <effect descriptor="Skill Roll">
+            <effect descriptor="Skill" value="Concentration">
                 <detail type="inherits_from" value="Intelligence" />
             </effect>
             <effect descriptor="Action Point Cost" value="1" />
@@ -1188,7 +1204,7 @@
         </aspect>
         
         <aspect name="Sooth">
-            <effect descriptor="Skill Roll">
+            <effect descriptor="Skill" value="Concentration">
                 <detail type="inherits_from" value="Intelligence" />
             </effect>
             <effect descriptor="Action Point Cost" value="1" />
@@ -1205,7 +1221,7 @@
         </aspect>
         
         <aspect name="Purify">
-            <effect descriptor="Skill Roll">
+            <effect descriptor="Skill" value="Concentration">
                 <detail type="inherits_from" value="Intelligence" />
             </effect>
             <effect descriptor="Action Point Cost" value="1" />
@@ -1223,7 +1239,7 @@
         </aspect>
         
         <aspect name="Cleanse">
-            <effect descriptor="Skill Roll">
+            <effect descriptor="Skill" value="Concentration">
                 <detail type="inherits_from" value="Intelligence" />
             </effect>
             <effect descriptor="Action Point Cost" value="1" />
@@ -1241,7 +1257,7 @@
         </aspect>
         
         <aspect name="Quell">
-            <effect descriptor="Skill Roll">
+            <effect descriptor="Skill" value="Concentration">
                 <detail type="inherits_from" value="Intelligence" />
                 <detail type="limit" value="Caster Only" />
             </effect>
@@ -1265,7 +1281,7 @@
         </aspect>
         
         <aspect name="Foil">
-            <effect descriptor="Skill Roll">
+            <effect descriptor="Skill" value="Concentration">
                 <detail type="inherits_from" value="Intelligence" />
             </effect>
             <effect descriptor="Action Point Cost" value="1" />
@@ -1286,7 +1302,7 @@
         </aspect>
         
         <aspect name="Arcane Sight">
-            <effect descriptor="Skill Roll">
+            <effect descriptor="Skill" value="Concentration">
                 <detail type="inherits_from" value="Perception" />
             </effect>
             <effect descriptor="Action Point Cost" value="1" />
@@ -1304,7 +1320,7 @@
         </aspect>
         
         <aspect name="Dissev">
-            <effect descriptor="Skill Roll">
+            <effect descriptor="Skill" value="Concentration">
                 <detail type="inherits_from" value="Intelligence" />
             </effect>
             <effect descriptor="Action Point Cost" value="1" />
@@ -1313,7 +1329,7 @@
             <effect descriptor="Damage Resistance" value="+2 DR">
                 <detail type="targets" value="Chosen upon Casting" />
             </effect>
-            <effect descriptor="Skill Roll Modifier" value="+2">
+            <effect descriptor="Concentration Check Modifier" value="+2">
                 <detail type="targets" value="Chosen upon Casting" />
             </effect>
             <effect descriptor="Magic">
@@ -1327,7 +1343,7 @@
         </aspect>
         
         <aspect name="Volta">
-            <effect descriptor="Skill Roll">
+            <effect descriptor="Skill" value="Attack">
                 <detail type="inherits_from" value="Intelligence" />
             </effect>
             <effect descriptor="Action Point Cost" value="1" />
@@ -1344,7 +1360,7 @@
         </aspect>
         
         <aspect name="Firebolt">
-            <effect descriptor="Skill Roll">
+            <effect descriptor="Skill" value="Attack">
                 <detail type="inherits_from" value="Intelligence" />
             </effect>
             <effect descriptor="Action Point Cost" value="1" />
@@ -1363,7 +1379,7 @@
         </aspect>
         
         <aspect name="Frigid Cone">
-            <effect descriptor="Skill Roll">
+            <effect descriptor="Skill" value="Attack">
                 <detail type="inherits_from" value="Intelligence" />
             </effect>
             <effect descriptor="Action Point Cost" value="1" />
@@ -1383,7 +1399,7 @@
         </aspect>
         
         <aspect name="Dismiss">
-            <effect descriptor="Skill Roll">
+            <effect descriptor="Skill" value="Attack">
                 <detail type="inherits_from" value="Intelligence" />
             </effect>
             <effect descriptor="Action Point Cost" value="1" />
@@ -1401,7 +1417,7 @@
         </aspect>
         
         <aspect name="Spell Dart">
-            <effect descriptor="Skill Roll">
+            <effect descriptor="Skill" value="Attack">
                 <detail type="inherits_from" value="Intelligence" />
             </effect>
             <effect descriptor="Action Point Cost" value="1" />
@@ -1418,7 +1434,7 @@
         </aspect>
         
         <aspect name="Obscura">
-            <effect descriptor="Skill Roll">
+            <effect descriptor="Skill" value="Concentration">
                 <detail type="inherits_from" value="Intelligence" />
             </effect>
             <effect descriptor="Action Point Cost" value="1" />
@@ -1443,7 +1459,7 @@
         </aspect>
         
         <aspect name="Send">
-            <effect descriptor="Skill Roll">
+            <effect descriptor="Skill" value="Concentration">
                 <detail type="inherits_from" value="Intelligence" />
             </effect>
             <effect descriptor="Action Point Cost" value="1" />
@@ -1459,7 +1475,7 @@
         </aspect>
         
         <aspect name="Summon Water or Food">
-            <effect descriptor="Skill Roll">
+            <effect descriptor="Skill" value="Concentration">
                 <detail type="inherits_from" value="Intelligence" />
             </effect>
             <effect descriptor="Action Point Cost" value="1" />
@@ -1489,7 +1505,7 @@
         </aspect>
         
         <aspect name="Farsight">
-            <effect descriptor="Skill Roll">
+            <effect descriptor="Skill" value="Concentration">
                 <detail type="inherits_from" value="Perception" />
             </effect>
             <effect descriptor="Action Point Cost" value="2" />
@@ -1509,7 +1525,7 @@
         </aspect>
         
         <aspect name="Countercast">
-            <effect descriptor="Skill Roll">
+            <effect descriptor="Skill" value="Attack">
                 <detail type="inherits_from" value="Intelligence" />
             </effect>
             <effect descriptor="Action Point Cost" value="2" />
@@ -1525,12 +1541,12 @@
             <requires name="Dismiss" />
             
             <text>
-                This enhanced ersion of Dismiss has all of the same rules as Dimiss but with the added effect of being able to target magical effects as a reaction.
+                This enhanced version of Dismiss has all of the same rules as Dismiss but with the added effect of being able to target magical effects as a reaction.
             </text>
         </aspect>
         
         <aspect name="Toss">
-            <effect descriptor="Skill Roll">
+            <effect descriptor="Skill" value="Attack">
                 <detail type="limit" value="Size Modifier -3 and Smaller Objects Only" />
                 <detail type="inherits_from" value="Intelligence" />
             </effect>

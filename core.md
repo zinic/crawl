@@ -306,18 +306,18 @@ A character may choose to spend health points and convert them into an action po
 The number of health points a character can convert into action points is limited by the character's action point pool size. You may not convert health points into more action points than a character has room in their action point pool.
 
 
-#### Using Aspects
+#### Using Aspect Skills
 
-Aspects define how they are used. Many aspects will requires a skill check roll to determine success and degree of success or failure in both cases. Skill checks may have a difficulty. The difficulty of a skill check is represented as a number that must be overcome by the character's roll for the character to be considered successful.
+Aspects may grant skills that define how they are used. Many skills require a skill check: a roll using a d20. The outcome of this roll is used to determine success of the skill and the degree of success or failure and degree of failure. Skill checks have a failure chance that represent the relative difficulty of performing the skill correctly. This difficulty is represented as a number that must be overcome by the character's roll for the character to be considered successful.
 
 This roll may be modified from several sources including: magic, equipment and other aspects.
 
-Character aspects may have an action point cost associated with them.
+Lastly, all skills have an action point cost associated with them.
 
-Only when characters are in initiative do action point costs matter. Outside of initiative, all aspects may be utilized with the aciton point cost being a guide to how long it may take the character - this is at the game masters discretion!
+Only when characters are in initiative do action point costs matter. Outside of initiative, all skills may be utilized with the action point cost becoming a guide to how long it may take the character - this is at the game masters discretion!
 
 
-### Check Difficulty
+### Skill Check Difficulty
 
 Certain game actions are represented as a skill check: a challenge that a character must attempt to defeat with a roll. Each check must either be related to an acquired aspect or to one of the three core character aspects.
 
@@ -326,6 +326,13 @@ The difficulty of a check is the number that the player must roll at or above to
 For example: a character is attempting to unlock a door with a lock pick. The character makes a lockpicking check against the difficulty of the lock using all of the character’s relevant modifiers.
 
 In this case, the game master has decided that the lock is moderately strong and therefore chooses a difficulty of 16. If the player’s check is equal to or higher than 16, then the lock clicks free and the door opens.
+
+
+#### Uncontested Skill Retries
+
+Failed skill rolls that are uncontested may be retried by the character: e.g. a rogue trying to pick a lock while the party waits safely around them. This costs the character time. The game master is encouraged to pick a time using the action point cost of the skill as a guide if present. This time is doubled for further attempts.
+
+For example: a character fails their roll and it took them 1 minute to make the attempt. They then fail their second roll which took them 2 minutes this time around. The third roll finally succeeds, this attempt taking 4 minutes. The character therefore spent a total of 7 minutes.
 
 
 #### Opposed Checks

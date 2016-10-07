@@ -7,29 +7,33 @@ from crawl.util import sanitize_text
 from crawl.formulas import get_formula
 
 
-SKILL_CHECK_DESC = 'Skill Roll'
+SKILL_DESC = 'Skill'
+SKILL_TYPE_NON_COMBAT = 'Non-Combat'
 FAILURE_CHANCE_DESC = 'Failure Chance'
 ACTION_POINT_COST_DESC = 'Action Point Cost'
 
 def check_aspect(aspect):
     is_skill = False
+    skill_type = None
     has_action_cost = False
     has_failure_chance = False
 
     for descriptor in aspect.effects:
-        if descriptor.name == SKILL_CHECK_DESC:
+        if descriptor.name == SKILL_DESC:
             is_skill = True
+            skill_type = descriptor.effect
+            
         elif descriptor.name == FAILURE_CHANCE_DESC:
             has_failure_chance = True
         elif descriptor.name == ACTION_POINT_COST_DESC:
             has_action_cost = True
 
     if is_skill:
-        if not has_action_cost:
-            print('Aspect {} has a skill check but no associated action point cost.'.format(aspect.name))
+        if not has_action_cost and skill_type != SKILL_TYPE_NON_COMBAT:
+            print('Aspect {} has a skill but no associated action point cost.'.format(aspect.name))
 
         if not has_failure_chance:
-            print('Aspect {} has a skill check but no associated failure chance.'.format(aspect.name))
+            print('Aspect {} has a skill but no associated failure chance.'.format(aspect.name))
 
 
 def format_descriptor(descriptor):
@@ -106,7 +110,7 @@ def format_item(item, model):
             if descriptor.effect is not None:
                 output += ': {}'.format(descriptor.effect)
 
-            elif descriptor.name == 'Skill Roll':
+            elif descriptor.name == SKILL_DESC:
                 output += ': {}'.format(item.name)
 
             output += '\n'
@@ -163,7 +167,7 @@ def format_aspect(aspect, model):
             if effect.effect is not None:
                 output += ': {}'.format(effect.effect)
 
-            elif effect.name == 'Skill Roll':
+            elif effect.name == SKILL_DESC:
                 output += ': {}'.format(aspect.name)
 
             output += '\n'

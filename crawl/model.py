@@ -123,11 +123,15 @@ class DescriptorManager(object):
         self.effects[name] = desdef
 
     def get_effect(self, mod_name, effect_name):
-        desdef = self.effects[mod_name]
-
-        if len(desdef.entries) > 0:
-            return int(desdef.entries[effect_name])
-
+        
+        try:
+            desdef = self.effects[mod_name]
+            if len(desdef.entries) > 0:
+                return int(desdef.entries[effect_name])
+        except:
+            print('Unable to find {} for effect {}'.format(mod_name, effect_name))
+            return -1
+        
         if desdef.formula != None:
             return get_formula(desdef.formula)(effect_name)
 
