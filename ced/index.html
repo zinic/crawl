@@ -1,0 +1,36 @@
+<html>
+    <head>
+        <title>Crawl Character Editor</title>
+        <meta charset="utf-8" />
+        
+        <script type="text/javascript" src="jquery-1.10.2.js"></script>
+        <script type="text/javascript" src="ced.js"></script>
+        
+        <link type="text/css" href="style.css" rel="stylesheet" />
+    </head>
+    
+    <body>
+        <div>
+            <div id="core_aspects">
+                <ul>
+                    <li>Strength</li>
+                    <li>Mobility</li>
+                    <li>Intelligence</li>
+                </ul>
+            </div>
+            
+            <div id="aspects">
+                <button id="add_aspect_button" onclick="add_aspect();">Add Aspect</button>
+            </div>
+            
+            <div id="add_definition_panel" class="hidden">
+                What up sukka?
+                
+                <button id="add_definition_button" onclick="add_definition();">Add</button>
+                <button id="cancel_add_definition_button" onclick="cancel_add_definition();">Cancel</button>
+            </div>
+            
+            <div id="inventory"></div>
+        </div>
+    </body>
+</html>

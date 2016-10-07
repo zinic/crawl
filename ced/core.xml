@@ -1,0 +1,1552 @@
+<document>
+    <descriptors>
+        <descriptor name="Attack Method">
+            <value name="Drawn Force" cost="0" />
+            <value name="Swinging" cost="0" />
+            <value name="Slashing" cost="0" />
+            <value name="Thrusting" cost="0" />
+            <value name="Magic" cost="0" />
+            
+            <text>
+                Describes the attack method of a weapon. The attack method of a weapon defines which attack aspects may be used with the weapon.
+            </text>
+        </descriptor>
+
+        <descriptor name="Target Restriction">
+            <value name="Allies Only" cost="10" />
+            <value name="Enemies Only" cost="10" />
+            
+            <text>
+            </text>
+        </descriptor>
+        
+        <descriptor name="Throwable" cost="1">
+            <text>
+                Marks an object as throwable. The attack of this weapon may be considered a ranged attack with a range of medium. This range may be increased with a strength check of an appropriate difficulty before the attack with the approval of the game master.
+            </text>
+        </descriptor>
+        
+        <descriptor name="Affliction Immunity">
+            <value name="Staggered" cost="8" />
+            <value name="Sickened" cost="8" />
+            <value name="Diseased" cost="13" />
+            
+            <text>
+                Grants immunity to a certain affliction and all of its effects.
+            </text>
+        </descriptor>
+        
+        <descriptor name="Number of Hands Required">
+            <value name="1" cost="0" />
+            <value name="2" cost="1" />
+            <value name="3" cost="1" />
+            <value name="4" cost="1" />
+            
+            <text>
+                The number of hands required to utilize the aspect or item.
+            </text>
+        </descriptor>
+        
+        <descriptor name="Area Effect">
+            <value name="Line" cost="3" />
+            <value name="Cone" cost="5" />
+            <value name="Dome" cost="7" />
+            
+            <text>
+                
+            </text>
+        </descriptor>
+        
+        <descriptor name="Size">
+            <value name="-4" cost="25"/>
+            <value name="-3" cost="15" />
+            <value name="-2" cost="10" />
+            <value name="-1" cost="5" />
+            
+            <value name="0" cost="0" />
+            <value name="1" cost="5" />
+            <value name="2" cost="10" />
+            <value name="3" cost="15" />
+            <value name="4" cost="25" />
+            
+            <text>
+                See the core rules section: **Object and Character Size Modifiers** for more details.    
+            </text>
+        </descriptor>
+        
+        <descriptor name="Magic" cost="1">
+            <text>
+                This aspect or item is magic imbued and will show up on arcane sight.
+            </text>
+        </descriptor>
+        
+        <descriptor name="Opportunistic Action" cost="5" />
+        
+        <descriptor name="Can't be Flanked" cost="5" />
+        
+        <descriptor name="Skill Roll" cost="3" />
+        
+        <descriptor name="Range">
+            <value name="Personal" cost="0" />
+            <value name="Melee" cost="1" />
+            <value name="Short" cost="2" />
+            <value name="Medium" cost="3" />
+            <value name="Long" cost="4" />
+            <value name="Extreme" cost="5" />
+            
+            <text>
+                See the core rules section: **Range Definitions** for more details.
+            </text>
+        </descriptor>
+        
+        <descriptor name="Number of Uses">
+            <value name="1" cost="0" />
+            <value name="2" cost="1" />
+            <value name="3" cost="2" />
+            <value name="4" cost="3" />
+            <value name="5" cost="5" />
+            <value name="Unlimited" cost="21" />
+        </descriptor>
+        
+        <descriptor name="Duration">
+            <value name="1 Turn" cost="1" />
+            <value name="2 Turns" cost="2" />
+            <value name="4 Turns" cost="3" />
+            <value name="8 Turns" cost="5" />
+            <value name="10 Minutes" cost="8" />
+            <value name="30 Minutes" cost="13" />
+            <value name="1 Hour" cost="21" />
+            <value name="12 Hours" cost="34" />
+            <value name="1 Day" cost="47" />
+            <value name="10 Days" cost="60" />
+        </descriptor>
+        
+        <descriptor name="Damage Type">
+            <value name="Kinetic" cost="1" />
+            <value name="Cold" cost="1" />
+            <value name="Fire" cost="1" />
+            <value name="Electric" cost="1" />
+            <value name="Meta" cost="1" />
+            
+            <text>
+                Damage types may be added to aspects and items that cause damage. Additional types may be added in an attempt to make the weapon more effective against well defended enemeies.
+            </text>
+        </descriptor>
+        
+        <descriptor name="Failure Chance" formula="base_difficulty_cost">
+            <text>
+                All skill checks should specifiy a base difficulty. The player may choose to augment the difficulty in the future only by lowering it.
+            </text>
+        </descriptor>
+        
+        <descriptor name="Heal Affliction">
+            <value name="Sickened" cost="3" />
+            <value name="Diseased" cost="3" />
+            <value name="Poisoned" cost="3" />
+        </descriptor>
+        
+        <descriptor name="Attack Accuracy Modifier">
+            <value name="+1" cost="2" />
+            <value name="+2" cost="3" />
+            <value name="+3" cost="5" />
+            <value name="+4" cost="8" />
+            <value name="+5" cost="13" />
+            
+            <value name="-1" cost="2" />
+            <value name="-2" cost="3" />
+            <value name="-3" cost="5" />
+            <value name="-4" cost="8" />
+            <value name="-5" cost="13" />
+            
+            <text>
+                This is used to modify an attack roll instead of a skill check modifier. This modifier may be applied to enemy attack rolls as a negative modifier.
+            </text>
+        </descriptor>
+            
+        <descriptor name="Skill Roll Modifier">
+            <value name="+1" cost="3" />
+            <value name="+2" cost="5" />
+            <value name="+3" cost="8" />
+            <value name="+4" cost="13" />
+            <value name="+5" cost="21" />
+            
+            <value name="-1" cost="-2" />
+            <value name="-2" cost="-3" />
+            <value name="-3" cost="-5" />
+            <value name="-4" cost="-8" />
+            <value name="-5" cost="-13" />
+            
+            <text>
+                **Note:** this component may not be used for attack rolls.
+            </text>
+        </descriptor>
+        
+        <descriptor name="Core Aspect Modifier">
+            <value name="+1" cost="8" />
+            <value name="+2" cost="13" />
+            <value name="-1" cost="-8" />
+            <value name="-2" cost="-13" />
+        </descriptor>
+        
+        <descriptor name="Crit Success Modifier">
+            <value name="+1" cost="5" />
+            <value name="+2" cost="10" />
+            <value name="+3" cost="15" />
+            <value name="+4" cost="20" />
+            <value name="+5" cost="25" />
+        </descriptor>
+        
+        <descriptor name="Action Point Cost">
+            <value name="1" cost="-1" />
+            <value name="2" cost="-3" />
+            <value name="3" cost="-8" />
+            <value name="4" cost="-13" />
+            <value name="5" cost="-21" />
+            
+            <value name="-1" cost="3" />
+            <value name="-2" cost="5" />
+            <value name="-3" cost="8" />
+            <value name="-4" cost="13" />
+            <value name="-5" cost="21" />
+        </descriptor>
+        
+        <descriptor name="Reactionary" cost="10">
+            <text>
+                This allows the associated aspect to be used as a reactionary action. That is to say that when a condition is met, an aspect that has the reactionary effect may be used immediately.
+            </text>
+        </descriptor>
+        
+        <descriptor name="NPC Cohort" cost="10">
+        </descriptor>
+        
+        <descriptor name="Environment Mitigation">
+            <value name="Low Light Vision" cost="5" />
+            <value name="Infrared Sight" cost="10" />
+            <value name="Echo Sight" cost="15" />
+        </descriptor>
+        
+        <descriptor name="Action Pool Refresh Modifier">
+            <value name="+1" cost="8" />
+            <value name="-1" cost="-8" />
+        </descriptor>
+        
+        <descriptor name="Action Pool Modifier">
+            <value name="+1" cost="8" />
+            <value name="-1" cost="-8" />
+        </descriptor>
+        
+        <descriptor name="Damage Resistance">
+            <value name="+2 DR" cost="1" />
+            <value name="+4 DR" cost="2" />
+            <value name="+6 DR" cost="3" />
+            <value name="+8 DR" cost="4" />
+            <value name="+10 DR" cost="5" />
+            
+            <value name="-2 DR" cost="1" />
+            <value name="-4 DR" cost="2" />
+            <value name="-6 DR" cost="3" />
+            <value name="-8 DR" cost="4" />
+            <value name="-10 DR" cost="5" />
+        </descriptor>
+        
+        <descriptor name="Starting Wealth Modifier" formula="monetary_cost">
+            <example value="120 $$" />
+            <example value="660 $$" />
+            <example value="1200 $$" />
+            <example value="1800 $$" />
+            <example value="2400 $$" />
+            <example value="3600 $$" />
+            <example value="6400 $$" />
+        </descriptor>
+        
+        <descriptor name="Extra Attack">
+            <value name="+1" cost="8" />
+            <value name="+2" cost="13" />
+        </descriptor>
+        
+        <descriptor name="Extra Target">
+            <value name="+1" cost="5" />
+            <value name="+2" cost="8" />
+            <value name="+3" cost="13" />
+            <value name="+4" cost="21" />
+        </descriptor>
+        
+        <descriptor name="Aspect Point Grant" />
+        
+        <descriptor name="Damage" formula="damage_cost">
+            <example value="1d4" />
+            <example value="1d6" />
+            <example value="1d8" />
+            <example value="1d12" />
+            
+            <example value="2d4" />
+            <example value="2d6" />
+            <example value="2d8" />
+            <example value="2d12" />
+            
+            <example value="3d4" />
+            <example value="3d6" />
+            <example value="3d8" />
+            <example value="3d12" />
+            
+            <example value="4d4" />
+            <example value="4d6" />
+            <example value="4d8" />
+            <example value="4d12" />
+        </descriptor>
+        
+        <descriptor name="Damage Healed" formula="damage_cost">
+            <example value="1d4" />
+            <example value="1d6" />
+            <example value="1d8" />
+            <example value="1d12" />
+            
+            <example value="2d4" />
+            <example value="2d6" />
+            <example value="2d8" />
+            <example value="2d12" />
+            
+            <example value="3d4" />
+            <example value="3d6" />
+            <example value="3d8" />
+            <example value="3d12" />
+            
+            <example value="4d4" />
+            <example value="4d6" />
+            <example value="4d8" />
+            <example value="4d12" />
+        </descriptor>
+        
+        <descriptor name="HP Pool Modifier">
+            <value name="+1" cost="2" />
+            <value name="+2" cost="4" />
+            <value name="+3" cost="6" />
+            <value name="+4" cost="8" />
+            <value name="-1" cost="2" />
+            <value name="-2" cost="4" />
+            <value name="-3" cost="6" />
+            <value name="-4" cost="8" />
+        </descriptor>
+    </descriptors>
+    
+    <templates>
+        <template name="Human">
+            <effect descriptor="Size" value="0" />
+            <effect descriptor="Aspect Point Grant" value="10" />
+            
+            <text>
+            </text>
+        </template>
+
+        <template name="Dwarf">
+            <effect descriptor="Size" value="-1" />
+            <effect name="Environment Mitigation" value="Infrared Sight" />
+
+            <text>
+            </text>
+        </template>
+
+        <template name="Tola">
+            <effect descriptor="Size" value="0" />
+            
+            <text>
+                Tola are slender individuals, humanoid but with pale skin. Born in darkness they have a the natural ability to see in it.
+            </text>
+        </template>
+    </templates>
+    
+    <items>
+        <item name="Ring of Healthiness" type="ring">
+            <effect descriptor="HP Pool Modifier" value="+4" />
+            <effect descriptor="Magic" />
+
+            <text>
+                Makes you feel healthier when you wear it.
+            </text>
+        </item>
+
+        <item name="Ring of Action" type="ring">
+            <effect descriptor="Action Pool Refresh Modifier" value="+1" />
+            <effect descriptor="Magic" />
+
+            <text>
+                Makes you feel healthier when you wear it.
+            </text>
+        </item>
+
+        <item name="Ration" type="consumable" cost="100">
+            
+            <text>
+                Rations, son. Good for 12 hours a use.
+            </text>
+        </item>
+        
+        <item name="Chestplate" type="armor">
+            <effect descriptor="Damage Resistance" value="+6 DR">
+                <detail type="targets" value="Kinetic" />
+            </effect>
+            
+            <text>
+                A basic chestplate for defense.
+            </text>
+        </item>
+        
+        <item name="Bracers of Magic" type="armor">
+            <effect descriptor="Skill Roll Modifier" value="+1">
+                <detail type="targets" value="Meta Magic Only" />
+            </effect>
+        </item>
+        
+        <item name="Headscarf of Illumination" type="armor">
+            <effect descriptor="Core Aspect Modifier" value="+1">
+                <detail type="targets" value="Intelligence" />
+            </effect>
+        </item>
+        
+        <item name="Knife" type="weapon">
+            <effect descriptor="Attack Method" value="Slashing" />
+            <effect descriptor="Number of Hands Required" value="1" />
+            <effect descriptor="Range" value="Melee" />
+            <effect descriptor="Damage" value="1d4" />
+            <effect descriptor="Damage Type" value="Kinetic" />
+        </item>
+
+        <item name="Dagger" type="weapon">
+            <effect descriptor="Attack Method" value="Thrusting" />
+            <effect descriptor="Number of Hands Required" value="1" />
+            <effect descriptor="Range" value="Melee" />
+            <effect descriptor="Damage" value="1d4" />
+            <effect descriptor="Damage Type" value="Kinetic" />
+            <effect descriptor="Damage Resistance" value="-2 DR">
+                <detail type="targets" value="Kinetic" />
+            </effect>
+        </item>
+
+        <item name="Rock of Firebolt" type="weapon">
+            <effect descriptor="Attack Method" value="Magic" />
+            <effect descriptor="Number of Hands Required" value="1" />
+            <effect descriptor="Number of Uses" value="1" />
+            
+            <grants aspect="Firebolt" />
+        </item>
+
+        <item name="Rock of Frigid Cone" type="weapon">
+            <effect descriptor="Attack Method" value="Magic" />
+            <effect descriptor="Number of Hands Required" value="1" />
+            <effect descriptor="Number of Uses" value="1" />
+            
+            <grants aspect="Frigid Cone" />
+        </item>
+
+        <item name="Wand of Volta" type="weapon">
+            <effect descriptor="Skill Roll">
+                <detail type="inherits_from" value="Intelligence" />
+            </effect>
+            <effect descriptor="Action Point Cost" value="1" />
+            <effect descriptor="Failure Chance" value="8" />
+            <effect descriptor="Magic">
+                <detail type="energy_type" value="Electric" />
+            </effect>
+            <effect descriptor="Range" value="Medium" />
+            <effect descriptor="Area Effect" value="Line" />
+            <effect descriptor="Damage" value="1d6" />
+            
+            <text>
+                Upon casting, a bolt of lightning arcs from either of the character's hands toward the target enemy with a thundering crack. The attack roll recieves the character's intelligence modifier as an attack bonus.
+            </text>
+        </item>
+
+        <item name="Wand of Firebolt" type="weapon">
+            <effect descriptor="Attack Method" value="Magic" />
+            <effect descriptor="Number of Hands Required" value="1" />
+            <effect descriptor="Number of Uses" value="Unlimited" />
+            
+            <grants aspect="Firebolt" />
+        </item>
+
+        <item name="Wand of Frigid Cone" type="weapon">
+            <effect descriptor="Attack Method" value="Magic" />
+            <effect descriptor="Number of Hands Required" value="1" />
+            <effect descriptor="Number of Uses" value="Unlimited" />
+            
+            <grants aspect="Frigid Cone" />
+        </item>
+
+        <item name="Bracers of Slap Fight" type="armor">
+            <grants aspect="Frantic Defense" />
+        </item>
+    </items>
+    
+    <aspects>
+        <aspect name="Affluent">
+            <effect descriptor="Starting Wealth Modifier" value="1200 $$" />
+            
+            <text>
+                You're richer. For now.
+            </text>
+        </aspect>
+        
+        <aspect name="Frantic Defense">
+             <effect descriptor="Skill Roll">
+                <detail type="Combat Action" value="May be used as a defense." />
+                <detail type="inherits_from" value="Mobility" />
+            </effect>
+            <effect descriptor="Failure Chance" value="15" />
+            
+            <requires name="Fit" />
+            
+            <text>
+                Allows a character to make a simple dodge-based defense against an incoming attack. The defense roll recieves the character's **mobility modifier** as a defense bonus.
+            </text>           
+        </aspect>
+        
+        <aspect name="Duck and Dodge">
+            <effect descriptor="Skill Roll">
+                <detail type="Combat Action" value="May be used as a defense." />
+                <detail type="inherits_from" value="Mobility" />
+            </effect>
+            <effect descriptor="Failure Chance" value="8" />
+            <effect descriptor="Action Point Cost" value="1" />
+            
+            <text>
+                Allows a character to make a simple dodge-based defense against an incoming attack. The defense roll recieves the character's **mobility modifier** as a defense bonus.
+            </text>
+        </aspect>
+
+        <aspect name="Survival">
+            <effect descriptor="Skill Roll">
+                <detail type="inherits_from" value="Standing Forward Jump" />
+            </effect>
+            <effect descriptor="Failure Chance" value="8" />
+            
+            <text>
+                Generic skill for scrounging for food, edibles, dungeoneering, etc. The game master is encouraged to add to the base difficulty depending on the situation. This is a useful skill for tracking.
+            </text>
+        </aspect>
+        
+        <aspect name="Dive for Cover">
+            <effect descriptor="Skill Roll">
+                <detail type="Combat Action" value="May be used as a defense." />
+                <detail type="inherits_from" value="Standing Forward Jump" />
+            </effect>
+            <effect descriptor="Failure Chance" value="8" />
+            <effect descriptor="Action Point Cost" value="2" />
+            
+            <requires name="Duck and Dodge" />
+            
+            <text>
+                Allows a character to make a dive for nearby cover - once behind cover, all rules for cover now apply. The cover must be within the character's **Standing Forward Jump** range. All normal rules for making a standing forward jump apply to this check. Failing this check renders the character **prone**.
+            </text>
+        </aspect>
+        
+        <aspect name="Adrenaline Cascade">
+            <effect descriptor="Affliction Immunity" value="Staggered" />
+            
+            <requires name="Vigor" />
+            
+            <text>
+                No matter how haggered, this character's body surges with adrenaline so long as their heart pumps. This makes them immune to the condition: Staggered.
+            </text>
+        </aspect>
+        
+        <aspect name="Rage">
+            <effect descriptor="Action Point Cost" value="1" />
+            <effect descriptor="Damage Resistance" value="+4 DR">
+                <detail type="targets" value="Kinetic" />
+            </effect>
+            <effect descriptor="Damage Resistance" value="+4 DR">
+                <detail type="targets" value="Cold" />
+            </effect>
+            <effect descriptor="Damage Resistance" value="+4 DR">
+                <detail type="targets" value="Fire" />
+            </effect>
+            <effect descriptor="Damage Resistance" value="+4 DR">
+                <detail type="targets" value="Electric" />
+            </effect>
+            <effect descriptor="Duration" value="8 Turns" />
+            
+            <requires name="Vigor" />
+            
+            <text>
+                The character enters into a rage in which their body floods itself with chemicals that dull the senses and swell the muscles. Upon activation, the character gains intense damage resistance buffs for 8 combat turns.
+            </text>
+        </aspect>
+        
+        <aspect name="Pivot and Roll">
+            <effect descriptor="Skill Roll">
+                <detail type="limit" value="Unusuable when Slowed" />
+                <detail type="inherits_from" value="Mobility" />
+            </effect>
+            <effect descriptor="Failure Chance" value="8" />
+            <effect descriptor="Skill Roll Modifier" value="+2">
+                <detail type="targets" value="Pivot and Roll" />
+            </effect>
+            
+            <effect descriptor="Action Point Cost" value="2" />
+            <requires name="Duck and Dodge" />
+            <requires name="Fit" />
+            
+            <text>
+                Allows a character to make a more acrobatic dodge. This defense roll requires the character to not be slowed. The defense roll receives the character's mobility modifier as a defense bonus in addition to a +2 modifier from the aspect itself.
+            </text>
+        </aspect>
+        
+        <aspect name="Trap Finder">
+            <effect descriptor="Skill Roll Modifier" value="+2">
+                <detail type="limit" value="Trap Finding Only" />
+                <detail type="targets" value="Perception" />
+            </effect>
+            
+            <requires name="Perception" />
+            <requires name="Quiet Steps" />
+            
+            <text>
+                Grants a character a +2 modifier to any perception check made when searching for potential traps.
+            </text>
+        </aspect>
+        
+        <aspect name="Fit">
+            <effect descriptor="HP Pool Modifier" value="+1" />
+            
+            <text>
+                This aspect applies to any physically fit character. All fit characters also receive +1 HP to their HP Pool.
+            </text>
+        </aspect>
+
+        <aspect name="Adonic">
+            <effect descriptor="Action Pool Modifier" value="+1" />
+            <effect descriptor="Action Pool Refresh Modifier" value="+1" />
+
+            <requires name="Intense Acrobatic Training" />            
+            <requires name="Intense Resistance Training" />            
+            <requires name="Intense Endurance Training" />            
+
+            <text>
+                Super Strong, yo.
+            </text>
+        </aspect>
+        
+        <aspect name="Vigor">
+            <effect descriptor="Action Pool Refresh Modifier" value="+1" />
+            
+            <text>
+                TODO
+            </text>
+        </aspect>
+        
+        <aspect name="Quiescence">
+            <effect descriptor="Action Pool Refresh Modifier" value="+1" />
+            <effect descriptor="Core Aspect Modifier" value="-1">
+                <detail type="targets" value="Strength" />
+            </effect>
+            
+            <requires name="Mental Endurance" />
+            
+            <text>
+                Intense mental training has awarded you an additional action point. However, this focus leads one to neglect the body, giving the character a -1 Strength modifier.
+            </text>
+        </aspect>
+
+        <aspect name="Knowledge - Affluence">
+            <effect descriptor="Skill Roll">
+                <detail type="inherits_from" value="Intelligence" />
+            </effect>
+            <effect descriptor="Action Point Cost" value="1" />
+            <effect descriptor="Failure Chance" value="8" />            
+
+            <text>
+                Knowledge and understanding of the related domain.
+            </text>
+        </aspect>
+
+        <aspect name="Knowledge - Mechanical">
+            <effect descriptor="Skill Roll">
+                <detail type="inherits_from" value="Intelligence" />
+            </effect>
+            <effect descriptor="Action Point Cost" value="1" />
+            <effect descriptor="Failure Chance" value="8" />            
+
+            <text>
+                Knowledge and understanding of the related domain.
+            </text>
+        </aspect>
+
+        <aspect name="Knowledge - Arcane">
+            <effect descriptor="Skill Roll">
+                <detail type="inherits_from" value="Intelligence" />
+            </effect>
+            <effect descriptor="Action Point Cost" value="1" />
+            <effect descriptor="Failure Chance" value="8" />            
+
+            <text>
+                Knowledge and understanding of the related domain.
+            </text>
+        </aspect>
+        
+        <aspect name="Knowledge - Martial">
+            <effect descriptor="Skill Roll">
+                <detail type="inherits_from" value="Intelligence" />
+            </effect>
+            <effect descriptor="Action Point Cost" value="1" />
+            <effect descriptor="Failure Chance" value="8" />            
+            
+            <text>
+                Knowledge and understanding of the related domain.
+            </text>
+        </aspect>
+        
+        <aspect name="Knowledge - Historical">
+            <effect descriptor="Skill Roll">
+                <detail type="inherits_from" value="Intelligence" />
+            </effect>
+            <effect descriptor="Action Point Cost" value="1" />
+            <effect descriptor="Failure Chance" value="8" />            
+
+            <text>
+                Knowledge and understanding of the related domain.
+            </text>
+        </aspect>
+        
+        <aspect name="Knowledge - Natural Sciences">
+            <effect descriptor="Skill Roll">
+                <detail type="inherits_from" value="Intelligence" />
+            </effect>
+            <effect descriptor="Action Point Cost" value="1" />
+            <effect descriptor="Failure Chance" value="8" />            
+
+            <text>
+                Knowledge and understanding of the related domain.
+            </text>
+        </aspect>
+        
+        <aspect name="Knowledge - Survival">
+            <effect descriptor="Skill Roll">
+                <detail type="inherits_from" value="Intelligence" />
+            </effect>
+            <effect descriptor="Action Point Cost" value="1" />
+            <effect descriptor="Failure Chance" value="8" />            
+
+            <text>
+                Knowledge and understanding of the related domain.
+            </text>
+        </aspect>
+
+        <aspect name="Leadership">
+            <effect descriptor="NPC Cohort" />
+            
+            <text>
+                Leadership allows a character to begin splitting aspect points between their self and another character. The player may split apsect points between the two characters as they see fit with the exception that the cohort may not have more than half of the available aspect points.
+            </text>
+        </aspect>
+
+        <aspect name="Indomitable">
+            <effect descriptor="Can't be Flanked" />
+            <effect descriptor="HP Pool Modifier" value="+1" />
+            
+            <requires name="Martial Artist" />
+            
+            <text>
+                You're big. You're hard to get around and there's no way an enemy gets the slip on you. This character can not be flanked.
+            </text>
+        </aspect>
+
+        <aspect name="Intense Endurance Training">
+            <effect descriptor="Action Pool Modifier" value="+1" />
+            <effect descriptor="HP Pool Modifier" value="+1" />
+            
+            <requires name="Fit" />
+            
+            <text>
+                This character has gone through regimented exercises to increase their overall endurance.
+            </text>
+        </aspect>
+        
+        <aspect name="Intense Acrobatic Training">
+            <effect descriptor="Core Aspect Modifier" value="+1">
+                <detail type="targets" value="Mobility" />
+            </effect>
+            <effect descriptor="HP Pool Modifier" value="+1" />
+            
+            <requires name="Fit" />
+            
+            <text>
+                This character has gone through regimented exercises to increase their overall mobility and fitness.
+            </text>
+        </aspect>
+        
+        <aspect name="Intense Resistance Training">
+            <effect descriptor="Core Aspect Modifier" value="+1">
+                <detail type="targets" value="Mobility" />
+            </effect>
+            <effect descriptor="HP Pool Modifier" value="+1" />
+            
+            <requires name="Fit" />
+            
+            <text>
+                This character has gone through regimented exercises to increase their overall strength and fitness.
+            </text>
+        </aspect>
+        
+        <aspect name="Martial Artist">
+            <effect descriptor="Crit Success Modifier" value="+1">
+                <detail type="limit" value="Melee" />
+            </effect>
+
+            <requires name="Fit" />
+            
+            <text>
+                This aspect grants a character expert martial arts knowledge. Because of this intense training, the character has acquired a unique understanding of how to strike at an opponent's weak points.
+            </text>
+        </aspect>
+        
+        <aspect name="High Manual Dexterity">
+            <text>
+                This aspect is often taken by characters that are considered good with their hands. This aspect alone grants no additional checks or modifiers.
+            </text>
+        </aspect>
+
+        <aspect name="Gesture">
+            <effect descriptor="Skill Roll">
+                <detail type="inherits_from" value="Intelligence" />
+            </effect>
+            <effect descriptor="Failure Chance" value="8" />
+            <effect descriptor="Action Point Cost" value="1" />
+            
+            <text>
+                Grants a dextrous character the ability to attempt to communicate with another character via gesturing. This action is not limited to just the character's hands. The action has a difficulty set by the game master based on the complexity of the ideas being communicated. Both characters are required to make gesture checks - the target does not need to have this aspect in order to make the check.
+            </text>
+        </aspect>
+        
+        <aspect name="Filch">
+            <effect descriptor="Skill Roll">
+                <detail type="limit" value="Non-Combat Only" />
+                <detail type="limit" value="No Character Targets" />
+                <detail type="inherits_from" value="Mobility" />
+            </effect>
+            <effect descriptor="Failure Chance" value="8" />
+            
+            <requires name="High Manual Dexterity" />
+            
+            <text>
+                Grants a careful character the ability to secretly pilfer small objects from their surroundings. The object must fit in their hand easily. The character must make a filch check greater than the difficulty of the task set by the game master. If the character is being watched, all other characters with the **Keen Senses** aspect are granted a perception check. This perception check is opposed against the character's filch check.
+            </text>
+        </aspect>
+        
+        <aspect name="Pickpocket">
+            <effect descriptor="Skill Roll">
+                <detail type="inherits_from" value="Mobility" />
+            </effect>
+            <effect descriptor="Failure Chance" value="8" />
+            <effect descriptor="Action Point Cost" value="1" />
+            
+            <requires name="Filch" />
+            
+            <text>
+                Grants a careful character the ability to pilfer objects from a target. The character must first make a pickpocket check. If the target is unaware of the attempt then the game master is required to select an appropriate difficulty. Upon failure, the target character becomes aware of the actions taken against them. Upon success, the target object is lifted from the target character.
+
+                If the target character is already aware of the attempt then this character is granted a **mobility check** that opposes the character's pickpocket check. Note that this does not remove the check's difficulty - the character must still beat the difficulty of the filch check in addition to defeating the target character's mobility check.
+            </text>
+        </aspect>
+        
+        <aspect name="Lockpicking">
+            <effect descriptor="Skill Roll">
+                <detail type="limit" value="Non-Combat Only" />
+                <detail type="inherits_from" value="Mobility" />
+            </effect>
+            <effect descriptor="Failure Chance" value="8" />
+            
+            <requires name="High Manual Dexterity" />
+            
+            <text>
+                Grants a character the knowledge necessary to disable simple lock devices. Lock devices are granted a difficulty by the game master depending on their complexity and make. The character must make a lockpicking check against this difficulty to successfully disable the lock. This check recieves the character's **mobility modifier** as a bonus.
+            </text>
+        </aspect>
+               
+        <aspect name="Field Aid">
+            <effect descriptor="Skill Roll">
+                <detail type="inherits_from" value="Intelligence" />
+            </effect>
+            <effect descriptor="Damage Healed" value="1d6" />
+            <effect descriptor="Action Point Cost" value="2" />
+            <effect descriptor="Failure Chance" value="8" />
+            
+            <requires name="Medicine" />
+            
+            <text>
+                Allows a character to perform healing on the battlefield via simple medical procedures. Any visible damage to the target may be healed by this check. Internal damage requires a different check. Any character healed by this aspect may not be healed by it again for 12 hours.
+
+                A successful Field Aid staunches bleeding and may heal 1d6 health points of damage.
+            </text>
+        </aspect>
+        
+        <aspect name="Treat Illness">
+            <effect descriptor="Skill Roll">
+                <detail type="inherits_from" value="Intelligence" />
+            </effect>
+            <effect descriptor="Failure Chance" value="8" />
+            
+            <requires name="Medicine" />
+            
+            <text>
+                Allows a character to attempt to cure a disease. The disease should annotate information about what happens after it is cured. Often there is a recovery period afterward.
+                
+                To cure a disease the character must have all required materials at hand according to the game master - this may be things the character has on them or some special requirement in complex circumstances. Each disease also has a difficulty set that must be beat by this check.
+            </text>
+        </aspect>
+        
+        <aspect name="Medicine">
+            <effect descriptor="Skill Roll">
+                <detail type="limit" value="Non-Combat Only" />
+                <detail type="inherits_from" value="Intelligence" />
+            </effect>
+            <effect descriptor="Failure Chance" value="8" />
+            <effect descriptor="Damage Healed" value="1d6" />
+            
+            <text>
+                Allows a character to make a medicine check. This check has use in diagnosing and healing others. A successful medicine check may heal 1d6 health points. This takes the character 10 minutes. Any character healed by this aspect may not be healed by it again for 12 hours.
+
+                When diagnosing, the game master chooses a suitable difficulty for the complications the target is suffering. If the medicine check passes, the character is enlightened as to the cause of the complications.
+            </text>
+        </aspect>
+        
+        <aspect name="Perception">
+            <effect descriptor="Skill Roll" />
+            <effect descriptor="Action Point Cost" value="1" />
+            <effect descriptor="Failure Chance" value="gm_only" />
+            
+            <text>
+                Allows a character to make a perception check.
+
+                Take a look at your surroundings to attempt to find out interesting information. There is no base difficulty listed here - the game master is responsible for providing resonable difficulties based on the surroundings in the setting and the target of observation.
+            </text>
+        </aspect>
+        
+        <aspect name="Keen Senses">
+            <effect descriptor="Opportunistic Action" />
+            <requires name="Perception" />
+            
+            <text>
+                When a stealthed target character passes within 1 map cell of the character, as an opportunistic action, the character may make a perception check to oppose the target's stealth.
+            </text>
+        </aspect>
+        
+        <aspect name="Disable Device">
+            <effect descriptor="Skill Roll">
+                <detail type="limit" value="Non-Combat Only" />
+                <detail type="inherits_from" value="Lockpicking" />
+            </effect>
+            <effect descriptor="Failure Chance" value="8" />
+            
+            <requires name="Lockpicking" />
+
+            <text>
+                Grants a character with an understanding of small mechanical devices the ability to attempt to disable them. This covers any manner of device designed as a trap or a lock. All devices are granted a difficulty by the game master depending on their complexity and make. The character must make a disable device check against this difficulty to successfully disable the device.
+            </text>
+        </aspect>
+        
+        <aspect name="Blend into Crowds">
+            <effect descriptor="Skill Roll">
+                <detail type="limit" value="Non-Combat Only" />
+                <detail type="inherits_from" value="Mobility" />
+            </effect>
+            <effect descriptor="Failure Chance" value="8" />
+            
+            <text>
+                Allows a street-wise character to blend into a crowd and use this action as a sealth attempt. The crowd must be sufficiently thick such that the game master considers blending in acceptable for stealth.
+            </text>
+        </aspect>
+        
+        <aspect name="Quiet Steps">
+            <effect descriptor="Skill Roll">
+                <detail type="inherits_from" value="Mobility" />
+            </effect>
+            <effect descriptor="Failure Chance" value="8" />
+            <effect descriptor="Action Point Cost" value="1" />
+            
+            <text>
+                Allows a character to make a stealth check by walking carefully. In order to enter stealth, the character must not be visible by any enemies. While using this aspect, a character must move at **half their move speed**.
+            </text>
+        </aspect>
+        
+        <aspect name="Block">
+            <effect descriptor="Skill Roll">
+                <detail type="Combat Action" value="May be used as a defense." />
+                <detail type="limit" value="Character Must Have a Shield" />
+                <detail type="inherits_from" value="Strength" />
+            </effect>
+            <effect descriptor="Failure Chance" value="5" />
+            <effect descriptor="Action Point Cost" value="1" />
+            
+            <text>
+                Allows a character to steady their body against a shield and attempt to absorb an incoming attack completely. This ability requires the character to have a working shield equipped.
+            </text>
+        </aspect>
+        
+        <aspect name="Melee Parry">
+            <effect descriptor="Skill Roll">
+                <detail type="Combat Action" value="May be used as a defense." />
+                <detail type="inherits_from" value="Mobility" />
+            </effect>
+            <effect descriptor="Range" value="Melee" />
+            <effect descriptor="Extra Attack" value="+1" />
+            <effect descriptor="Failure Chance" value="14" />
+            <effect descriptor="Action Point Cost" value="1" />
+            
+            <text>
+                Allows a character to parry an attack with their currently equipped weapon. This parry is only useful for melee weapons and may only be used against melee attacks.
+                
+                Upon a successful parry, the incoming attack is deflected. The defender is granted the ability to perform an attack upon their opponent .
+            </text>
+        </aspect>
+        
+        <aspect name="Shot Call">
+            <effect descriptor="Skill Roll Modifier" value="+1">
+                <detail type="targets" value="Ally's Attack" />
+                <detail type="limit" value="Ranged Attacks Only" />
+            </effect>
+            <effect descriptor="Failure Chance" value="12" />
+            <effect descriptor="Action Point Cost" value="1" />
+            
+            <requires name="Perception" />
+            
+            <text>
+                Allows a character to make a perception check. This check, if successful, grants a target ally a +1 modifier to their next ranged attack. The target ally must be within the character's line of sight as must be the target enemy however for the target ally to recieve the +1 modifier the target ally does not need to have line of sight on the target enemy.
+            </text>
+        </aspect>
+        
+        <aspect name="Mental Endurance">
+            <effect descriptor="Action Pool Modifier" value="+1" />
+            
+            <text>
+                Years of conditioning has left this character with a hardened mind. Stress rolls off their shoulders and their ability to tax their mind is far greater than normal.
+            </text>
+        </aspect>
+
+        <aspect name="Mentat">
+            <effect descriptor="Core Aspect Modifier" value="+1">
+                <detail type="targets" value="Intelligence" />
+            </effect>
+
+            <requires name="Mental Endurance" />
+            
+            <text>
+                Further training of the mind has left this character permanatly smarter.    
+            </text>
+        </aspect>
+        
+        <aspect name="Weapon Proficiency">
+            <effect descriptor="Skill Roll Modifier" value="+1">
+                <detail type="targets" value="Bound Weapon Type" />
+            </effect>
+            
+            <text>
+                Allows a character to attack more effectively with their weapon of choice. This aspect grants the character a +1 modifier on all attack rolls made with their weapon of choice. This aspect must be taken for every weapon type the character wishes to use.
+            </text>
+        </aspect>
+
+        <aspect name="Stab">
+            <effect descriptor="Skill Roll">
+                <detail type="limit" value="Thrusting Weapons" />
+                <detail type="inherits_from" value="Strength" />
+            </effect>
+            <effect descriptor="Failure Chance" value="8" />
+            <effect descriptor="Action Point Cost" value="1" />
+
+            <text>
+                Grants a character a melee stabbing attack. This attack may be used with any thrusting melee weapon.
+            </text>
+        </aspect>
+
+        <aspect name="Swing">
+            <effect descriptor="Skill Roll">
+                <detail type="limit" value="Swung Weapons" />
+                <detail type="inherits_from" value="Strength" />
+            </effect>
+            <effect descriptor="Failure Chance" value="8" />
+            <effect descriptor="Action Point Cost" value="1" />
+
+            <text>
+                Grants a character a melee swing attack. This attack may be used with swung melee weapons, including blugenoning, slings, staves and other similar weapon types. This does not apply to slashing weapons which require different techniques.
+            </text>
+        </aspect>
+
+        <aspect name="Archery">
+            <effect descriptor="Skill Roll">
+                <detail type="limit" value="Drawn Force Weapons" />
+                <detail type="limit" value="Only Inherits from the Highest Modifier (Strength or Mobility)" />
+                <detail type="inherits_from" value="Mobility" />
+                <detail type="inherits_from" value="Strength" />
+            </effect>
+            <effect descriptor="Failure Chance" value="8" />
+            <effect descriptor="Action Point Cost" value="1" />
+
+            <text>
+                Allows a character to use a bow, cross bow or other similar drawn force weapon. The skill check uses the higher of either the character's mobility modifier or the character's strength modifier.
+            </text>
+        </aspect>
+
+        <aspect name="Slash">
+            <effect descriptor="Skill Roll">
+                <detail type="limit" value="Slashing Weapons" />
+                <detail type="inherits_from" value="Mobility" />
+            </effect>
+            <effect descriptor="Failure Chance" value="8" />
+            <effect descriptor="Action Point Cost" value="1" />
+
+            <text>
+                Grants a character a melee slashing attack. This attack may be used with any slashing melee weapon.
+            </text>
+        </aspect>
+        
+        <aspect name="Counter Slash">
+            <effect descriptor="Action Point Cost" value="1" />
+            <effect descriptor="Opportunistic Action" />
+            
+            <requires name="Slash" />
+            
+            <text>
+                Allows a to make a slashing attack as an opportunistic action.
+            </text>
+        </aspect>
+        
+        <aspect name="Counter Stab">
+            <effect descriptor="Action Point Cost" value="1" />
+            <effect descriptor="Opportunistic Action" />
+            
+            <requires name="Stab" />
+            
+            <text>
+                Allows a to make a stabbing attack as an opportunistic action.
+            </text>
+        </aspect>
+        
+        <aspect name="Leaping Strike">
+            <effect descriptor="Skill Roll" />
+            <effect descriptor="Failure Chance" value="8" />
+            
+            <effect descriptor="Skill Roll Modifier" value="+1">
+                <detail type="targets" value="Leaping Strike" />
+            </effect>
+            
+            <effect descriptor="Action Point Cost" value="1" />
+
+            <requires name="Fit" />
+
+            <text>
+                Allows a character to perform a jump action and an attack in one turn with a specified melee weapon type. The roll for this attack is treated as the character's Jump check as well. This attack grants a **+1 modifier** to the attack roll.
+            </text>
+        </aspect>
+        
+        <aspect name="Great Slash">
+            <effect descriptor="Skill Roll" />
+            <effect descriptor="Failure Chance" value="8" />
+            
+            <effect descriptor="Skill Roll Modifier" value="-2">
+                <detail type="targets" value="Great Slash" />
+                <detail type="inherits_from" value="Mobility" />
+            </effect>
+            
+            <effect descriptor="Extra Target" value="+1" />
+            <effect descriptor="Action Point Cost" value="2" />
+
+            <requires name="Fit" />
+            <requires name="Slash" />
+            
+            <text>
+                Allows a character to attack 2 enemies standing side-by-side. The enemies must be in adjacent map cells. The attacker makes a single attack roll that both targets may then roll against. This attack incurs a **-2 modifier** to the attack roll.
+            </text>
+        </aspect>
+        
+        <aspect name="Magical Energy Affinity">
+            <effect descriptor="Skill Roll Modifier" value="+1">
+                <detail type="targets" value="All Magic of Chosen Energy Type" />
+            </effect>
+            <effect descriptor="Attack Accuracy Modifier" value="+1">
+                <detail type="targets" value="All Magic of Chosen Energy Type" />
+            </effect>
+            
+            <text>
+                Increases a character's natural talent in magic for a given energy type. This aspect must be taken multiple times for multiple energy types.
+            </text>
+        </aspect>
+        
+        <aspect name="Refresh">
+            <effect descriptor="Skill Roll">
+                <detail type="inherits_from" value="Intelligence" />
+            </effect>
+            <effect descriptor="Action Point Cost" value="1" />
+            <effect descriptor="Failure Chance" value="8" />            
+            <effect descriptor="Damage Healed" value="1d6" />
+            <effect descriptor="Magic">
+                <detail type="energy_type" value="Meta" />
+            </effect>
+            <effect descriptor="Range" value="Melee" />
+            
+            <text>
+                The caster heals a target for 1d6 health points. This healing takes effect instantly and staunches any bleeding the character may be suffering from. This spell may be used as many times as needed on the same target.
+            </text>
+        </aspect>
+        
+        <aspect name="Sooth">
+            <effect descriptor="Skill Roll">
+                <detail type="inherits_from" value="Intelligence" />
+            </effect>
+            <effect descriptor="Action Point Cost" value="1" />
+            <effect descriptor="Failure Chance" value="8" />
+            <effect descriptor="Heal Affliction" value="Sickened" />
+            <effect descriptor="Magic">
+                <detail type="energy_type" value="Meta" />
+            </effect>
+            <effect descriptor="Range" value="Melee" />
+            
+            <text>
+                Allows a caster to magically heal a sickened character.
+            </text>
+        </aspect>
+        
+        <aspect name="Purify">
+            <effect descriptor="Skill Roll">
+                <detail type="inherits_from" value="Intelligence" />
+            </effect>
+            <effect descriptor="Action Point Cost" value="1" />
+            <effect descriptor="Failure Chance" value="gm_only" />
+            <effect descriptor="Heal Affliction" value="Poisoned" />
+
+            <effect descriptor="Magic">
+                <detail type="energy_type" value="Meta" />
+            </effect>
+            <effect descriptor="Range" value="Melee" />
+            
+            <text>
+                Allows a caster to magically heal a poisoned character. The caster must roll their skill check versus the difficulty of the poison.
+            </text>
+        </aspect>
+        
+        <aspect name="Cleanse">
+            <effect descriptor="Skill Roll">
+                <detail type="inherits_from" value="Intelligence" />
+            </effect>
+            <effect descriptor="Action Point Cost" value="1" />
+            <effect descriptor="Failure Chance" value="gm_only" />
+            <effect descriptor="Heal Affliction" value="Diseased" />
+
+            <effect descriptor="Magic">
+                <detail type="energy_type" value="Meta" />
+            </effect>
+            <effect descriptor="Range" value="Melee" />
+            
+            <text>
+                Allows a caster to magically heal a diseased character. The caster must roll their skill check versus the difficulty of the disease.
+            </text>
+        </aspect>
+        
+        <aspect name="Quell">
+            <effect descriptor="Skill Roll">
+                <detail type="inherits_from" value="Intelligence" />
+                <detail type="limit" value="Caster Only" />
+            </effect>
+            <effect descriptor="Action Point Cost" value="1" />
+            <effect descriptor="Failure Chance" value="8" />            
+            <effect descriptor="Damage Resistance" value="+2 DR">
+                <detail type="targets" value="Kinetic" />
+            </effect>
+            
+            <effect descriptor="Magic">
+                <detail type="energy_type" value="Force" />
+            </effect>
+            
+            <effect descriptor="Range" value="Personal" />
+            
+            <text>
+                The character conjures a simple kinetic shield that covers their entire body. This shield has a **DR of 2**. The shield lasts for 10 minutes or until an attack lands and the shield absorbs damage.
+                
+                This spell may target *only the caster* and no one else.
+            </text>
+        </aspect>
+        
+        <aspect name="Foil">
+            <effect descriptor="Skill Roll">
+                <detail type="inherits_from" value="Intelligence" />
+            </effect>
+            <effect descriptor="Action Point Cost" value="1" />
+            <effect descriptor="Failure Chance" value="8" />            
+            <effect descriptor="Damage Resistance" value="+4 DR">
+                <detail type="targets" value="Kinetic" />
+            </effect>
+            
+            <effect descriptor="Magic">
+                <detail type="energy_type" value="Force" />
+            </effect>
+            
+            <effect descriptor="Range" value="Melee" />
+            
+            <text>
+                The character conjures a kinetic shield that covers a target's body. This shield has a **DR of 4**. The shield lasts for 10 minutes or until an attack lands and the shield absorbs damage.
+            </text>
+        </aspect>
+        
+        <aspect name="Arcane Sight">
+            <effect descriptor="Skill Roll">
+                <detail type="inherits_from" value="Perception" />
+            </effect>
+            <effect descriptor="Action Point Cost" value="1" />
+            <effect descriptor="Failure Chance" value="12" />
+            
+            <effect descriptor="Magic">
+                <detail type="energy_type" value="Meta" />
+            </effect>
+            <effect descriptor="Range" value="Short" />
+            <effect descriptor="Duration" value="8 Turns" />
+            
+            <text>
+                Allows the caster to augment their vision with magic. This darkens ther vision slightly but does not damage their perception. Other magical effects within the range of the caster will shine brightly in their sight. At game master discretion, some magic items, even hidden or obscured, may shine through these obstacles.
+            </text>
+        </aspect>
+        
+        <aspect name="Dissev">
+            <effect descriptor="Skill Roll">
+                <detail type="inherits_from" value="Intelligence" />
+            </effect>
+            <effect descriptor="Action Point Cost" value="1" />
+            <effect descriptor="Failure Chance" value="8" />
+            
+            <effect descriptor="Damage Resistance" value="+2 DR">
+                <detail type="targets" value="Chosen upon Casting" />
+            </effect>
+            <effect descriptor="Skill Roll Modifier" value="+2">
+                <detail type="targets" value="Chosen upon Casting" />
+            </effect>
+            <effect descriptor="Magic">
+                <detail type="energy_type" value="Meta" />
+            </effect>
+            <effect descriptor="Range" value="Medium" />
+            
+            <text>
+                Projects a thin, barely-visible green field around the target. This field moves with the target and has range personal. The field, at time of cast, may be tuned to a single energy type. For any damage inflicted of this type, this field provides **2 DR**. In addition, any effect with this energy type with a check that the target must make is subject to a **+2 modifier**.
+            </text>
+        </aspect>
+        
+        <aspect name="Volta">
+            <effect descriptor="Skill Roll">
+                <detail type="inherits_from" value="Intelligence" />
+            </effect>
+            <effect descriptor="Action Point Cost" value="1" />
+            <effect descriptor="Failure Chance" value="8" />
+            <effect descriptor="Magic">
+                <detail type="energy_type" value="Electric" />
+            </effect>
+            <effect descriptor="Range" value="Medium" />
+            <effect descriptor="Damage" value="1d4" />
+            
+            <text>
+                Upon casting, a bolt of lightning arcs from either of the character's hands toward the target enemy with a thundering crack. The attack roll recieves the character's intelligence modifier as an attack bonus.
+            </text>
+        </aspect>
+        
+        <aspect name="Firebolt">
+            <effect descriptor="Skill Roll">
+                <detail type="inherits_from" value="Intelligence" />
+            </effect>
+            <effect descriptor="Action Point Cost" value="1" />
+            <effect descriptor="Failure Chance" value="8" />
+            
+            <effect descriptor="Magic">
+                <detail type="energy_type" value="Fire" />
+            </effect>
+            
+            <effect descriptor="Range" value="Medium" />
+            <effect descriptor="Damage" value="1d4" />
+            
+            <text>
+                The character conjures a ball of fire in either hand which may then be thrown. The attack roll recieves the character's intelligence modifier as an attack bonus.
+            </text>
+        </aspect>
+        
+        <aspect name="Frigid Cone">
+            <effect descriptor="Skill Roll">
+                <detail type="inherits_from" value="Intelligence" />
+            </effect>
+            <effect descriptor="Action Point Cost" value="1" />
+            <effect descriptor="Failure Chance" value="8" />
+            
+            <effect descriptor="Magic">
+                <detail type="energy_type" value="Cold" />
+            </effect>
+            
+            <effect descriptor="Area Effect" value="Cone" />
+            <effect descriptor="Range" value="Short" />
+            <effect descriptor="Damage" value="1d4" />
+            
+            <text>
+                The character summons a cold blast directed in a cone shaped area in-front of them. This is considered an area attack for all affected map cells.
+            </text>
+        </aspect>
+        
+        <aspect name="Dismiss">
+            <effect descriptor="Skill Roll">
+                <detail type="inherits_from" value="Intelligence" />
+            </effect>
+            <effect descriptor="Action Point Cost" value="1" />
+            <effect descriptor="Failure Chance" value="8" />
+            <effect descriptor="Magic">
+                <detail type="energy_type" value="Meta" />
+            </effect>
+            <effect descriptor="Range" value="Medium" />
+            
+            <text>
+                Target a magical effect with an invisible beam directed by the caster. The target must be within **medium range** and the magical effect must be understood by the caster. The caster may be required by the game master to make an appropriate check for identifying the target spell's effects. Attacking a spell without understanding its effects incurs a **-4 modifier** to the dismiss check.
+
+                The spell requires the caster of the target spell to make an intelligence check vs. the dismiss caster's check roll. If the spell is not known, additional negatives apply to this check. Upon winning this opposed check, the target spell is dismissed and all of its effects immedieatly stop.
+            </text>
+        </aspect>
+        
+        <aspect name="Spell Dart">
+            <effect descriptor="Skill Roll">
+                <detail type="inherits_from" value="Intelligence" />
+            </effect>
+            <effect descriptor="Action Point Cost" value="1" />
+            <effect descriptor="Failure Chance" value="8" />
+            <effect descriptor="Magic">
+                <detail type="energy_type" value="Meta" />
+            </effect>
+            <effect descriptor="Range" value="Short" />
+            <effect descriptor="Damage" value="1d6" />
+            
+            <text>
+                Spell Dart is a meta magic spell that allows a character to aim a single finger (of their choice) at a target and fire a crackling spark of pure magical energy at them. This spark flies like an arrow in speed and trajectory. Upon impact it explodes with a loud crack and a flurry of much smaller, short-lived magical sparks.
+            </text>
+        </aspect>
+        
+        <aspect name="Obscura">
+            <effect descriptor="Skill Roll">
+                <detail type="inherits_from" value="Intelligence" />
+            </effect>
+            <effect descriptor="Action Point Cost" value="1" />
+            <effect descriptor="Failure Chance" value="14" />
+            <effect descriptor="Magic">
+                <detail type="energy_type" value="Meta" />
+            </effect>
+            <effect descriptor="Attack Accuracy Modifier" value="-4">
+                <detail type="targets" value="Ranged Attacks" />
+            </effect>
+            <effect descriptor="Range" value="Medium" />
+            <effect descriptor="Area Effect" value="Dome">
+                <detail type="Radius" value="6" />
+            </effect>
+            <effect descriptor="Duration" value="4 Turns" />
+            
+            <text>
+                Creates a roaming darkness that condenses as a weightless mist. This mist is only effective on incoming ranged attacks, making it far more difficult for attackers to target anything inside it.
+                
+                The negative modifier to range attacks persists even inside the mist. Melee attacks however are unaffacted.
+            </text>
+        </aspect>
+        
+        <aspect name="Send">
+            <effect descriptor="Skill Roll">
+                <detail type="inherits_from" value="Intelligence" />
+            </effect>
+            <effect descriptor="Action Point Cost" value="1" />
+            <effect descriptor="Failure Chance" value="12" />
+            
+            <effect descriptor="Magic">
+                <detail type="energy_type" value="Meta" />
+            </effect>
+            
+            <text>
+                Instantly send a message to the mind of a willing target, regardless of distance. The target must be known to the caster in that they must have met in-person at least once. This effect may be dismissed before the message is sent. Once the message is sent the target is granted the opportunity to reply with their own message. After this the conversation ends and send must be cast again to further communication.
+            </text>
+        </aspect>
+        
+        <aspect name="Summon Water or Food">
+            <effect descriptor="Skill Roll">
+                <detail type="inherits_from" value="Intelligence" />
+            </effect>
+            <effect descriptor="Action Point Cost" value="1" />
+            <effect descriptor="Failure Chance" value="8" />
+            
+            <effect descriptor="Magic">
+                <detail type="energy_type" value="Meta" />
+            </effect>
+            
+            <text>
+                This spell takes shape in two different ways. The caster may lift up an empty vessel and summon a small quantity of water to it. This quantity is enough water to quench the thirst of 1 person for 1 day.
+                
+                The caster may instead pick up an empty serving dish and summon a simple meal of a heavy, dense bread that tastes like dry oatmeal. This bread provides enough sustience for 1 person for 1 day.
+            </text>
+        </aspect>
+        
+        <aspect name="Magic Trick">
+            <effect descriptor="Magic">
+                <detail type="energy_type" value="Meta" />
+            </effect>
+            
+            <text>
+                Perform a minor trick or illusion such as clean a handheld object to summoning a playing card from your coat pocket or hiding a rabbit within a top hat until you reach in to pull it out.
+                
+                This aspect is useless in combat.
+            </text>
+        </aspect>
+        
+        <aspect name="Farsight">
+            <effect descriptor="Skill Roll">
+                <detail type="inherits_from" value="Perception" />
+            </effect>
+            <effect descriptor="Action Point Cost" value="2" />
+            <effect descriptor="Failure Chance" value="14" />
+            <effect descriptor="Magic">
+                <detail type="energy_type" value="Meta" />
+            </effect>
+            <effect descriptor="Range" value="Medium" />            
+            
+            <requires name="Magic Trick" />
+            
+            <text>
+                Upon successful cast, Farsight grants the caster a glimpse of the area desired. This area is restricted to medium range. The casting skill check also represents the perception skill check of the caster as they gaze upon their target.
+                
+                This spell may be used in place of any perception check.
+            </text>
+        </aspect>
+        
+        <aspect name="Countercast">
+            <effect descriptor="Skill Roll">
+                <detail type="inherits_from" value="Intelligence" />
+            </effect>
+            <effect descriptor="Action Point Cost" value="2" />
+            <effect descriptor="Failure Chance" value="8" />
+            
+            <effect descriptor="Magic">
+                <detail type="energy_type" value="Meta" />
+            </effect>
+            
+            <effect descriptor="Reactionary" />
+            <effect descriptor="Range" value="Medium" />
+            
+            <requires name="Dismiss" />
+            
+            <text>
+                This enhanced ersion of Dismiss has all of the same rules as Dimiss but with the added effect of being able to target magical effects as a reaction.
+            </text>
+        </aspect>
+        
+        <aspect name="Toss">
+            <effect descriptor="Skill Roll">
+                <detail type="limit" value="Size Modifier -3 and Smaller Objects Only" />
+                <detail type="inherits_from" value="Intelligence" />
+            </effect>
+            <effect descriptor="Action Point Cost" value="1" />
+            <effect descriptor="Failure Chance" value="8" />
+            
+            <effect descriptor="Magic">
+                <detail type="energy_type" value="Kinetic" />
+            </effect>
+            
+            <effect descriptor="Range" value="Medium" />
+            <effect descriptor="Damage" value="1d4" />
+            
+            <text>
+                Allows a character to use their mind to toss an object of size modifier -3 or smaller with their mind. This object may be thrown hard enough to 1d4 damage and is accurate up to range medium.
+            </text>
+        </aspect>
+    </aspects>
+</document>
