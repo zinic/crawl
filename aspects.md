@@ -1029,8 +1029,8 @@ Aspect Point Cost: **8 AP**
 
 Projects a thin, barely-visible green field around the target. This field moves with the target and has range personal. The field, at time of cast, may be tuned to a single energy type. For any damage inflicted of this type, this field provides **2 DR**. In addition, any effect with this energy type with a check that the target must make is subject to a **+2 modifier**.
 
-Aspect Point Cost: **12 AP**
-<br />Capstone Cost: **12 AP**
+Aspect Point Cost: **15 AP**
+<br />Capstone Cost: **15 AP**
 
 
 #### Details
@@ -1038,6 +1038,7 @@ Aspect Point Cost: **12 AP**
 	* Inherits Modifiers from: **Intelligence**
 * Action Point Cost: 1
 * Failure Chance: 8
+* Duration: 4 Turns
 * Damage Resistance: +2 DR
 	* Applies to: **Chosen upon Casting**
 * Concentration Check Modifier: +2
@@ -1173,8 +1174,8 @@ Aspect Point Cost: **2 AP**
 
 The character conjures a kinetic shield that covers a target's body. This shield has a **DR of 4**. The shield lasts for 10 minutes or until an attack lands and the shield absorbs damage.
 
-Aspect Point Cost: **6 AP**
-<br />Capstone Cost: **6 AP**
+Aspect Point Cost: **14 AP**
+<br />Capstone Cost: **14 AP**
 
 
 #### Details
@@ -1182,6 +1183,7 @@ Aspect Point Cost: **6 AP**
 	* Inherits Modifiers from: **Intelligence**
 * Action Point Cost: 1
 * Failure Chance: 8
+* Duration: 10 Minutes
 * Damage Resistance: +4 DR
 	* Applies to: **Kinetic**
 * Magic
