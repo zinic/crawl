@@ -85,10 +85,10 @@
         <descriptor name="Can't be Flanked" cost="5" />
 
         <descriptor name="Skill">
-            <value name="Non-Combat" cost="2" />
-            <value name="Concentration" cost="3" />
-            <value name="Attack" cost="5" />
-            <value name="Defense" cost="5" />
+            <value name="Non-Combat" cost="1" />
+            <value name="Concentration" cost="1" />
+            <value name="Attack" cost="3" />
+            <value name="Defense" cost="2" />
             
             <text>
                 Skills granted by aspects come in a few different flavors.
@@ -777,7 +777,7 @@
                 Knowledge and understanding of the related domain.
             </text>
         </aspect>
-        
+                
         <aspect name="Knowledge - Natural Sciences">
             <effect descriptor="Skill" value="Concentration">
                 <detail type="inherits_from" value="Intelligence" />
