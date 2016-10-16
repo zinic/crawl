@@ -104,15 +104,17 @@ Describes the attack method of a weapon. The attack method of a weapon defines w
 
 
 
+* **Magic**
+	* Aspect Point Cost: 0
 * **Thrusting**
 	* Aspect Point Cost: 0
-* **Magic**
+* **Bludgeoning**
+	* Aspect Point Cost: 0
+* **Slashing**
 	* Aspect Point Cost: 0
 * **Swinging**
 	* Aspect Point Cost: 0
 * **Drawn Force**
-	* Aspect Point Cost: 0
-* **Slashing**
 	* Aspect Point Cost: 0
 <br /><br />
 
@@ -1324,7 +1326,7 @@ Aspect Point Cost: **10 AP**
 Requires: **[Fit](#fit)**<br />
 #### Details
 * Core Aspect Modifier: +1
-	* Applies to: **Mobility**
+	* Applies to: **Strength**
 * HP Pool Modifier: +1
 <br /><br />
 

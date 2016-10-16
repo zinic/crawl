@@ -4,6 +4,7 @@
             <value name="Drawn Force" cost="0" />
             <value name="Swinging" cost="0" />
             <value name="Slashing" cost="0" />
+            <value name="Bludgeoning" cost="0" />
             <value name="Thrusting" cost="0" />
             <value name="Magic" cost="0" />
             
@@ -847,7 +848,7 @@
         
         <aspect name="Intense Resistance Training">
             <effect descriptor="Core Aspect Modifier" value="+1">
-                <detail type="targets" value="Mobility" />
+                <detail type="targets" value="Strength" />
             </effect>
             <effect descriptor="HP Pool Modifier" value="+1" />
             

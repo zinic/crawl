@@ -551,7 +551,7 @@ function on_xml_load(xml_data) {
 
 function main() {
     $.ajax({
-        url: 'core.xml'
+        url: 'https://raw.githubusercontent.com/zinic/crawl/master/core.xml'
     }).done(on_xml_load);
 }
 
