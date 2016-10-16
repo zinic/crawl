@@ -174,24 +174,6 @@
             <value name="Poisoned" cost="3" />
         </descriptor>
         
-        <descriptor name="Defense Effectiveness Modifier">
-            <value name="+1" cost="2" />
-            <value name="+2" cost="3" />
-            <value name="+3" cost="5" />
-            <value name="+4" cost="8" />
-            <value name="+5" cost="13" />
-            
-            <value name="-1" cost="2" />
-            <value name="-2" cost="3" />
-            <value name="-3" cost="5" />
-            <value name="-4" cost="8" />
-            <value name="-5" cost="13" />
-            
-            <text>
-                This is used to modify a defense roll instead of a skill check modifier. This modifier may be applied to enemy defense rolls as a negative modifier.
-            </text>
-        </descriptor>
-
         <descriptor name="Attack Accuracy Modifier">
             <value name="+1" cost="2" />
             <value name="+2" cost="3" />
@@ -216,24 +198,6 @@
             <value name="+3" cost="8" />
             <value name="+4" cost="13" />
             <value name="+5" cost="21" />
-            
-            <value name="-1" cost="-2" />
-            <value name="-2" cost="-3" />
-            <value name="-3" cost="-5" />
-            <value name="-4" cost="-8" />
-            <value name="-5" cost="-13" />
-            
-            <text>
-                **Note:** this component may not be used for attack rolls.
-            </text>
-        </descriptor>
-
-        <descriptor name="Non-Combat Check Modifier">
-            <value name="+1" cost="2" />
-            <value name="+2" cost="3" />
-            <value name="+3" cost="5" />
-            <value name="+4" cost="8" />
-            <value name="+5" cost="13" />
             
             <value name="-1" cost="-2" />
             <value name="-2" cost="-3" />
@@ -731,18 +695,6 @@
         </aspect>
 
         <aspect name="Knowledge - Arcane">
-            <effect descriptor="Skill" value="Concentration">
-                <detail type="inherits_from" value="Intelligence" />
-            </effect>
-            <effect descriptor="Action Point Cost" value="1" />
-            <effect descriptor="Failure Chance" value="8" />            
-
-            <text>
-                Knowledge and understanding of the related domain.
-            </text>
-        </aspect>
-
-        <aspect name="Knowledge - Occult">
             <effect descriptor="Skill" value="Concentration">
                 <detail type="inherits_from" value="Intelligence" />
             </effect>

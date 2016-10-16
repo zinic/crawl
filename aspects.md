@@ -1,6 +1,6 @@
 # The Crawl Aspect Document
 
-## Components - 35
+## Components - 37
 #### Action Point Cost
 * **1**
 	* Aspect Point Cost: -1
@@ -299,6 +299,35 @@ Damage types may be added to aspects and items that cause damage. Additional typ
 <br /><br />
 
 
+#### Defense Effectiveness Modifier
+
+This is used to modify a defense roll instead of a skill check modifier. This modifier may be applied to enemy defense rolls as a negative modifier.
+
+
+
+* **-5**
+	* Aspect Point Cost: 13
+* **-3**
+	* Aspect Point Cost: 5
+* **-4**
+	* Aspect Point Cost: 8
+* **-2**
+	* Aspect Point Cost: 3
+* **+3**
+	* Aspect Point Cost: 5
+* **+2**
+	* Aspect Point Cost: 3
+* **+1**
+	* Aspect Point Cost: 2
+* **-1**
+	* Aspect Point Cost: 2
+* **+5**
+	* Aspect Point Cost: 13
+* **+4**
+	* Aspect Point Cost: 8
+<br /><br />
+
+
 #### Duration
 
 Denotes the duration of an effect.
@@ -410,6 +439,35 @@ This aspect or item is magic imbued and will show up on arcane sight.
 
 #### NPC Cohort
 * Aspect Point Cost: 10<br /><br />
+
+
+#### Non-Combat Check Modifier
+
+**Note:** this component may not be used for attack rolls.
+
+
+
+* **-5**
+	* Aspect Point Cost: -13
+* **-3**
+	* Aspect Point Cost: -5
+* **-4**
+	* Aspect Point Cost: -8
+* **-2**
+	* Aspect Point Cost: -3
+* **+3**
+	* Aspect Point Cost: 5
+* **+2**
+	* Aspect Point Cost: 3
+* **+1**
+	* Aspect Point Cost: 2
+* **-1**
+	* Aspect Point Cost: -2
+* **+5**
+	* Aspect Point Cost: 13
+* **+4**
+	* Aspect Point Cost: 8
+<br /><br />
 
 
 #### Number of Hands Required
@@ -749,7 +807,7 @@ Monetary Cost: **1680 $$**
 <br /><br />
 
 
-## Aspects - 74
+## Aspects - 75
 ### Adonic
 
 Super Strong, yo.
@@ -1365,6 +1423,22 @@ Aspect Point Cost: **5 AP**
 
 
 ### Knowledge - Natural Sciences
+
+Knowledge and understanding of the related domain.
+
+Aspect Point Cost: **5 AP**
+<br />Capstone Cost: **5 AP**
+
+
+#### Details
+* Skill: Concentration
+	* Inherits Modifiers from: **Intelligence**
+* Action Point Cost: 1
+* Failure Chance: 8
+<br /><br />
+
+
+### Knowledge - Occult
 
 Knowledge and understanding of the related domain.
 
