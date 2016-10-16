@@ -2,26 +2,20 @@
 
 ## Components - 35
 #### Action Point Cost
-* **-5**
-	* Aspect Point Cost: 21
 * **1**
 	* Aspect Point Cost: -1
-* **-4**
-	* Aspect Point Cost: 13
+* **0**
+	* Aspect Point Cost: 3
 * **3**
 	* Aspect Point Cost: -8
 * **2**
 	* Aspect Point Cost: -3
-* **-1**
-	* Aspect Point Cost: 3
-* **4**
-	* Aspect Point Cost: -13
-* **-3**
-	* Aspect Point Cost: 8
-* **-2**
-	* Aspect Point Cost: 5
 * **5**
 	* Aspect Point Cost: -21
+* **4**
+	* Aspect Point Cost: -13
+* **6**
+	* Aspect Point Cost: -34
 <br /><br />
 
 
@@ -125,6 +119,35 @@ Describes the attack method of a weapon. The attack method of a weapon defines w
 
 #### Can't be Flanked
 * Aspect Point Cost: 5<br /><br />
+
+
+#### Concentration Check Modifier
+
+**Note:** this component may not be used for attack rolls.
+
+
+
+* **-5**
+	* Aspect Point Cost: -13
+* **-3**
+	* Aspect Point Cost: -5
+* **-4**
+	* Aspect Point Cost: -8
+* **-2**
+	* Aspect Point Cost: -3
+* **+3**
+	* Aspect Point Cost: 8
+* **+2**
+	* Aspect Point Cost: 5
+* **+1**
+	* Aspect Point Cost: 3
+* **-1**
+	* Aspect Point Cost: -2
+* **+5**
+	* Aspect Point Cost: 21
+* **+4**
+	* Aspect Point Cost: 13
+<br /><br />
 
 
 #### Core Aspect Modifier
@@ -277,6 +300,11 @@ Damage types may be added to aspects and items that cause damage. Additional typ
 
 
 #### Duration
+
+Denotes the duration of an effect.
+
+
+
 * **1 Turn**
 	* Aspect Point Cost: 1
 * **10 Minutes**
@@ -363,7 +391,7 @@ All skill checks should specifiy a base difficulty. The player may choose to aug
 
 #### Heal Affliction
 * **Diseased**
-	* Aspect Point Cost: 3
+	* Aspect Point Cost: 5
 * **Poisoned**
 	* Aspect Point Cost: 3
 * **Sickened**
@@ -402,6 +430,11 @@ The number of hands required to utilize the aspect or item.
 
 
 #### Number of Uses
+
+Useful for items that have consumable uses.
+
+
+
 * **Unlimited**
 	* Aspect Point Cost: 21
 * **1**
@@ -478,36 +511,32 @@ See the core rules section: **Object and Character Size Modifiers** for more det
 <br /><br />
 
 
-#### Skill Roll
-* Aspect Point Cost: 3<br /><br />
+#### Skill
+
+Skills granted by aspects come in a few different flavors.
+
+Non-Combat
+Skills that may be used outside of combat only. This may be due to restrictions within the skill itself or for other reasons explained in the aspect text.
+
+Concentration
+Skills that may be used provided the character can concentrate on their action. Concentration skills may be used in combat for action points.
+
+Attack
+Skills that may be used to attack or directly affect another target character. Attacks, like concentration skills, come with an action point cost.
+
+Defense
+Skills that may be used to defend against an incoming attack. Defenses, like concentration and attack skills come with an action point cost.
 
 
-#### Skill Roll Modifier
 
-**Note:** this component may not be used for attack rolls.
-
-
-
-* **-5**
-	* Aspect Point Cost: -13
-* **-3**
-	* Aspect Point Cost: -5
-* **-4**
-	* Aspect Point Cost: -8
-* **-2**
-	* Aspect Point Cost: -3
-* **+3**
-	* Aspect Point Cost: 8
-* **+2**
-	* Aspect Point Cost: 5
-* **+1**
+* **Non-Combat**
+	* Aspect Point Cost: 2
+* **Concentration**
 	* Aspect Point Cost: 3
-* **-1**
-	* Aspect Point Cost: -2
-* **+5**
-	* Aspect Point Cost: 21
-* **+4**
-	* Aspect Point Cost: 13
+* **Defense**
+	* Aspect Point Cost: 5
+* **Attack**
+	* Aspect Point Cost: 5
 <br /><br />
 
 
@@ -560,13 +589,13 @@ Monetary Cost: **360 $$**
 <br />
 
 #### Details
-* Skill Roll Modifier: +1
+* Concentration Check Modifier: +1
 	* Applies to: **Meta Magic Only**
 <br /><br />
 
 
 #### Bracers of Slap Fight
-Monetary Cost: **600 $$**
+Monetary Cost: **1200 $$**
 <br />
 Grants Aspect: **[Frantic Defense](#frantic-defense)**<br />
 <br /><br />
@@ -657,7 +686,7 @@ Monetary Cost: **1080 $$**
 
 
 #### Rock of Firebolt
-Monetary Cost: **1200 $$**
+Monetary Cost: **1440 $$**
 <br />
 Grants Aspect: **[Firebolt](#firebolt)**<br />
 #### Details
@@ -668,7 +697,7 @@ Grants Aspect: **[Firebolt](#firebolt)**<br />
 
 
 #### Rock of Frigid Cone
-Monetary Cost: **1680 $$**
+Monetary Cost: **1920 $$**
 <br />
 Grants Aspect: **[Frigid Cone](#frigid-cone)**<br />
 #### Details
@@ -679,7 +708,7 @@ Grants Aspect: **[Frigid Cone](#frigid-cone)**<br />
 
 
 #### Wand of Firebolt
-Monetary Cost: **3720 $$**
+Monetary Cost: **3960 $$**
 <br />
 Grants Aspect: **[Firebolt](#firebolt)**<br />
 #### Details
@@ -690,7 +719,7 @@ Grants Aspect: **[Firebolt](#firebolt)**<br />
 
 
 #### Wand of Frigid Cone
-Monetary Cost: **4200 $$**
+Monetary Cost: **4440 $$**
 <br />
 Grants Aspect: **[Frigid Cone](#frigid-cone)**<br />
 #### Details
@@ -708,7 +737,7 @@ Monetary Cost: **1680 $$**
 <br />
 
 #### Details
-* Skill Roll: Wand of Volta
+* Skill: Concentration
 	* Inherits Modifiers from: **Intelligence**
 * Action Point Cost: 1
 * Failure Chance: 8
@@ -770,7 +799,7 @@ Aspect Point Cost: **11 AP**
 
 
 #### Details
-* Skill Roll: Arcane Sight
+* Skill: Concentration
 	* Inherits Modifiers from: **Perception**
 * Action Point Cost: 1
 * Failure Chance: 12
@@ -790,7 +819,7 @@ Aspect Point Cost: **5 AP**
 
 
 #### Details
-* Skill Roll: Archery
+* Skill: Concentration
 	* Limited: **Drawn Force Weapons**
 	* Limited: **Only Inherits from the Highest Modifier (Strength or Mobility)**
 	* Inherits Modifiers from: **Mobility**
@@ -804,13 +833,12 @@ Aspect Point Cost: **5 AP**
 
 Allows a street-wise character to blend into a crowd and use this action as a sealth attempt. The crowd must be sufficiently thick such that the game master considers blending in acceptable for stealth.
 
-Aspect Point Cost: **6 AP**
-<br />Capstone Cost: **6 AP**
+Aspect Point Cost: **5 AP**
+<br />Capstone Cost: **5 AP**
 
 
 #### Details
-* Skill Roll: Blend into Crowds
-	* Limited: **Non-Combat Only**
+* Skill: Non-Combat
 	* Inherits Modifiers from: **Mobility**
 * Failure Chance: 8
 <br /><br />
@@ -825,8 +853,7 @@ Aspect Point Cost: **7 AP**
 
 
 #### Details
-* Skill Roll: Block
-	* Combat Action: May be used as a defense.
+* Skill: Concentration
 	* Limited: **Character Must Have a Shield**
 	* Inherits Modifiers from: **Strength**
 * Failure Chance: 5
@@ -838,12 +865,12 @@ Aspect Point Cost: **7 AP**
 
 Allows a caster to magically heal a diseased character. The caster must roll their skill check versus the difficulty of the disease.
 
-Aspect Point Cost: **9 AP**
-<br />Capstone Cost: **9 AP**
+Aspect Point Cost: **11 AP**
+<br />Capstone Cost: **11 AP**
 
 
 #### Details
-* Skill Roll: Cleanse
+* Skill: Concentration
 	* Inherits Modifiers from: **Intelligence**
 * Action Point Cost: 1
 * Failure Chance: gm_only
@@ -884,14 +911,14 @@ Requires: **[Stab](#stab)**<br />
 
 ### Countercast
 
-This enhanced ersion of Dismiss has all of the same rules as Dimiss but with the added effect of being able to target magical effects as a reaction.
+This enhanced version of Dismiss has all of the same rules as Dismiss but with the added effect of being able to target magical effects as a reaction.
 
-Aspect Point Cost: **17 AP**
-<br />Capstone Cost: **26 AP**
+Aspect Point Cost: **19 AP**
+<br />Capstone Cost: **30 AP**
 
 Requires: **[Dismiss](#dismiss)**<br />
 #### Details
-* Skill Roll: Countercast
+* Skill: Attack
 	* Inherits Modifiers from: **Intelligence**
 * Action Point Cost: 2
 * Failure Chance: 8
@@ -906,13 +933,12 @@ Requires: **[Dismiss](#dismiss)**<br />
 
 Grants a character with an understanding of small mechanical devices the ability to attempt to disable them. This covers any manner of device designed as a trap or a lock. All devices are granted a difficulty by the game master depending on their complexity and make. The character must make a disable device check against this difficulty to successfully disable the device.
 
-Aspect Point Cost: **6 AP**
-<br />Capstone Cost: **13 AP**
+Aspect Point Cost: **5 AP**
+<br />Capstone Cost: **11 AP**
 
 Requires: **[Lockpicking](#lockpicking)**<br />
 #### Details
-* Skill Roll: Disable Device
-	* Limited: **Non-Combat Only**
+* Skill: Non-Combat
 	* Inherits Modifiers from: **Lockpicking**
 * Failure Chance: 8
 <br /><br />
@@ -924,12 +950,12 @@ Target a magical effect with an invisible beam directed by the caster. The targe
 
 The spell requires the caster of the target spell to make an intelligence check vs. the dismiss caster's check roll. If the spell is not known, additional negatives apply to this check. Upon winning this opposed check, the target spell is dismissed and all of its effects immedieatly stop.
 
-Aspect Point Cost: **9 AP**
-<br />Capstone Cost: **9 AP**
+Aspect Point Cost: **11 AP**
+<br />Capstone Cost: **11 AP**
 
 
 #### Details
-* Skill Roll: Dismiss
+* Skill: Attack
 	* Inherits Modifiers from: **Intelligence**
 * Action Point Cost: 1
 * Failure Chance: 8
@@ -948,13 +974,13 @@ Aspect Point Cost: **15 AP**
 
 
 #### Details
-* Skill Roll: Dissev
+* Skill: Concentration
 	* Inherits Modifiers from: **Intelligence**
 * Action Point Cost: 1
 * Failure Chance: 8
 * Damage Resistance: +2 DR
 	* Applies to: **Chosen upon Casting**
-* Skill Roll Modifier: +2
+* Concentration Check Modifier: +2
 	* Applies to: **Chosen upon Casting**
 * Magic
 	* Magic Energy Type: **Meta**
@@ -971,8 +997,7 @@ Aspect Point Cost: **3 AP**
 
 Requires: **[Duck and Dodge](#duck-and-dodge)**<br />
 #### Details
-* Skill Roll: Dive for Cover
-	* Combat Action: May be used as a defense.
+* Skill: Concentration
 	* Inherits Modifiers from: **Standing Forward Jump**
 * Failure Chance: 8
 * Action Point Cost: 2
@@ -988,8 +1013,7 @@ Aspect Point Cost: **5 AP**
 
 
 #### Details
-* Skill Roll: Duck and Dodge
-	* Combat Action: May be used as a defense.
+* Skill: Concentration
 	* Inherits Modifiers from: **Mobility**
 * Failure Chance: 8
 * Action Point Cost: 1
@@ -1007,7 +1031,7 @@ Aspect Point Cost: **4 AP**
 
 Requires: **[Magic Trick](#magic-trick)**<br />
 #### Details
-* Skill Roll: Farsight
+* Skill: Concentration
 	* Inherits Modifiers from: **Perception**
 * Action Point Cost: 2
 * Failure Chance: 14
@@ -1024,11 +1048,11 @@ Allows a character to perform healing on the battlefield via simple medical proc
 A successful Field Aid staunches bleeding and may heal 1d6 health points of damage.
 
 Aspect Point Cost: **5 AP**
-<br />Capstone Cost: **13 AP**
+<br />Capstone Cost: **12 AP**
 
 Requires: **[Medicine](#medicine)**<br />
 #### Details
-* Skill Roll: Field Aid
+* Skill: Concentration
 	* Inherits Modifiers from: **Intelligence**
 * Damage Healed: 1d6
 * Action Point Cost: 2
@@ -1040,13 +1064,12 @@ Requires: **[Medicine](#medicine)**<br />
 
 Grants a careful character the ability to secretly pilfer small objects from their surroundings. The object must fit in their hand easily. The character must make a filch check greater than the difficulty of the task set by the game master. If the character is being watched, all other characters with the **Keen Senses** aspect are granted a perception check. This perception check is opposed against the character's filch check.
 
-Aspect Point Cost: **6 AP**
-<br />Capstone Cost: **7 AP**
+Aspect Point Cost: **5 AP**
+<br />Capstone Cost: **6 AP**
 
 Requires: **[High Manual Dexterity](#high-manual-dexterity)**<br />
 #### Details
-* Skill Roll: Filch
-	* Limited: **Non-Combat Only**
+* Skill: Non-Combat
 	* Limited: **No Character Targets**
 	* Inherits Modifiers from: **Mobility**
 * Failure Chance: 8
@@ -1057,12 +1080,12 @@ Requires: **[High Manual Dexterity](#high-manual-dexterity)**<br />
 
 The character conjures a ball of fire in either hand which may then be thrown. The attack roll recieves the character's intelligence modifier as an attack bonus.
 
-Aspect Point Cost: **10 AP**
-<br />Capstone Cost: **10 AP**
+Aspect Point Cost: **12 AP**
+<br />Capstone Cost: **12 AP**
 
 
 #### Details
-* Skill Roll: Firebolt
+* Skill: Attack
 	* Inherits Modifiers from: **Intelligence**
 * Action Point Cost: 1
 * Failure Chance: 8
@@ -1095,7 +1118,7 @@ Aspect Point Cost: **9 AP**
 
 
 #### Details
-* Skill Roll: Foil
+* Skill: Concentration
 	* Inherits Modifiers from: **Intelligence**
 * Action Point Cost: 1
 * Failure Chance: 8
@@ -1111,15 +1134,15 @@ Aspect Point Cost: **9 AP**
 
 Allows a character to make a simple dodge-based defense against an incoming attack. The defense roll recieves the character's **mobility modifier** as a defense bonus.
 
-Aspect Point Cost: **3 AP**
-<br />Capstone Cost: **5 AP**
+Aspect Point Cost: **8 AP**
+<br />Capstone Cost: **10 AP**
 
 Requires: **[Fit](#fit)**<br />
 #### Details
-* Skill Roll: Frantic Defense
-	* Combat Action: May be used as a defense.
+* Skill: Defense
 	* Inherits Modifiers from: **Mobility**
 * Failure Chance: 15
+* Action Point Cost: 0
 <br /><br />
 
 
@@ -1127,12 +1150,12 @@ Requires: **[Fit](#fit)**<br />
 
 The character summons a cold blast directed in a cone shaped area in-front of them. This is considered an area attack for all affected map cells.
 
-Aspect Point Cost: **14 AP**
-<br />Capstone Cost: **14 AP**
+Aspect Point Cost: **16 AP**
+<br />Capstone Cost: **16 AP**
 
 
 #### Details
-* Skill Roll: Frigid Cone
+* Skill: Attack
 	* Inherits Modifiers from: **Intelligence**
 * Action Point Cost: 1
 * Failure Chance: 8
@@ -1153,7 +1176,7 @@ Aspect Point Cost: **5 AP**
 
 
 #### Details
-* Skill Roll: Gesture
+* Skill: Concentration
 	* Inherits Modifiers from: **Intelligence**
 * Failure Chance: 8
 * Action Point Cost: 1
@@ -1169,9 +1192,9 @@ Aspect Point Cost: **5 AP**
 
 Requires: **[Fit](#fit)**<br />Requires: **[Slash](#slash)**<br />
 #### Details
-* Skill Roll: Great Slash
+* Skill: Concentration
 * Failure Chance: 8
-* Skill Roll Modifier: -2
+* Concentration Check Modifier: -2
 	* Applies to: **Great Slash**
 	* Inherits Modifiers from: **Mobility**
 * Extra Target: +1
@@ -1270,7 +1293,7 @@ Aspect Point Cost: **5 AP**
 
 
 #### Details
-* Skill Roll: Knowledge - Affluence
+* Skill: Concentration
 	* Inherits Modifiers from: **Intelligence**
 * Action Point Cost: 1
 * Failure Chance: 8
@@ -1286,7 +1309,7 @@ Aspect Point Cost: **5 AP**
 
 
 #### Details
-* Skill Roll: Knowledge - Arcane
+* Skill: Concentration
 	* Inherits Modifiers from: **Intelligence**
 * Action Point Cost: 1
 * Failure Chance: 8
@@ -1302,7 +1325,7 @@ Aspect Point Cost: **5 AP**
 
 
 #### Details
-* Skill Roll: Knowledge - Historical
+* Skill: Concentration
 	* Inherits Modifiers from: **Intelligence**
 * Action Point Cost: 1
 * Failure Chance: 8
@@ -1318,7 +1341,7 @@ Aspect Point Cost: **5 AP**
 
 
 #### Details
-* Skill Roll: Knowledge - Martial
+* Skill: Concentration
 	* Inherits Modifiers from: **Intelligence**
 * Action Point Cost: 1
 * Failure Chance: 8
@@ -1334,7 +1357,7 @@ Aspect Point Cost: **5 AP**
 
 
 #### Details
-* Skill Roll: Knowledge - Mechanical
+* Skill: Concentration
 	* Inherits Modifiers from: **Intelligence**
 * Action Point Cost: 1
 * Failure Chance: 8
@@ -1350,7 +1373,7 @@ Aspect Point Cost: **5 AP**
 
 
 #### Details
-* Skill Roll: Knowledge - Natural Sciences
+* Skill: Concentration
 	* Inherits Modifiers from: **Intelligence**
 * Action Point Cost: 1
 * Failure Chance: 8
@@ -1366,7 +1389,7 @@ Aspect Point Cost: **5 AP**
 
 
 #### Details
-* Skill Roll: Knowledge - Survival
+* Skill: Concentration
 	* Inherits Modifiers from: **Intelligence**
 * Action Point Cost: 1
 * Failure Chance: 8
@@ -1395,9 +1418,9 @@ Aspect Point Cost: **8 AP**
 
 Requires: **[Fit](#fit)**<br />
 #### Details
-* Skill Roll: Leaping Strike
+* Skill: Concentration
 * Failure Chance: 8
-* Skill Roll Modifier: +1
+* Concentration Check Modifier: +1
 	* Applies to: **Leaping Strike**
 * Action Point Cost: 1
 <br /><br />
@@ -1407,13 +1430,12 @@ Requires: **[Fit](#fit)**<br />
 
 Grants a character the knowledge necessary to disable simple lock devices. Lock devices are granted a difficulty by the game master depending on their complexity and make. The character must make a lockpicking check against this difficulty to successfully disable the lock. This check recieves the character's **mobility modifier** as a bonus.
 
-Aspect Point Cost: **6 AP**
-<br />Capstone Cost: **7 AP**
+Aspect Point Cost: **5 AP**
+<br />Capstone Cost: **6 AP**
 
 Requires: **[High Manual Dexterity](#high-manual-dexterity)**<br />
 #### Details
-* Skill Roll: Lockpicking
-	* Limited: **Non-Combat Only**
+* Skill: Non-Combat
 	* Inherits Modifiers from: **Mobility**
 * Failure Chance: 8
 <br /><br />
@@ -1444,7 +1466,7 @@ Aspect Point Cost: **5 AP**
 
 
 #### Details
-* Skill Roll Modifier: +1
+* Concentration Check Modifier: +1
 	* Applies to: **All Magic of Chosen Energy Type**
 * Attack Accuracy Modifier: +1
 	* Applies to: **All Magic of Chosen Energy Type**
@@ -1471,13 +1493,12 @@ Allows a character to make a medicine check. This check has use in diagnosing an
 
 When diagnosing, the game master chooses a suitable difficulty for the complications the target is suffering. If the medicine check passes, the character is enlightened as to the cause of the complications.
 
-Aspect Point Cost: **8 AP**
-<br />Capstone Cost: **8 AP**
+Aspect Point Cost: **7 AP**
+<br />Capstone Cost: **7 AP**
 
 
 #### Details
-* Skill Roll: Medicine
-	* Limited: **Non-Combat Only**
+* Skill: Non-Combat
 	* Inherits Modifiers from: **Intelligence**
 * Failure Chance: 8
 * Damage Healed: 1d6
@@ -1495,8 +1516,7 @@ Aspect Point Cost: **11 AP**
 
 
 #### Details
-* Skill Roll: Melee Parry
-	* Combat Action: May be used as a defense.
+* Skill: Concentration
 	* Inherits Modifiers from: **Mobility**
 * Range: Melee
 * Extra Attack: +1
@@ -1543,7 +1563,7 @@ Aspect Point Cost: **24 AP**
 
 
 #### Details
-* Skill Roll: Obscura
+* Skill: Concentration
 	* Inherits Modifiers from: **Intelligence**
 * Action Point Cost: 1
 * Failure Chance: 14
@@ -1569,7 +1589,7 @@ Aspect Point Cost: **4 AP**
 
 
 #### Details
-* Skill Roll: Perception
+* Skill: Concentration
 * Action Point Cost: 1
 * Failure Chance: gm_only
 <br /><br />
@@ -1582,11 +1602,11 @@ Grants a careful character the ability to pilfer objects from a target. The char
 If the target character is already aware of the attempt then this character is granted a **mobility check** that opposes the character's pickpocket check. Note that this does not remove the check's difficulty - the character must still beat the difficulty of the filch check in addition to defeating the target character's mobility check.
 
 Aspect Point Cost: **5 AP**
-<br />Capstone Cost: **12 AP**
+<br />Capstone Cost: **11 AP**
 
 Requires: **[Filch](#filch)**<br />
 #### Details
-* Skill Roll: Pickpocket
+* Skill: Concentration
 	* Inherits Modifiers from: **Mobility**
 * Failure Chance: 8
 * Action Point Cost: 1
@@ -1602,11 +1622,11 @@ Aspect Point Cost: **8 AP**
 
 Requires: **[Duck and Dodge](#duck-and-dodge)**<br />Requires: **[Fit](#fit)**<br />
 #### Details
-* Skill Roll: Pivot and Roll
+* Skill: Concentration
 	* Limited: **Unusuable when Slowed**
 	* Inherits Modifiers from: **Mobility**
 * Failure Chance: 8
-* Skill Roll Modifier: +2
+* Concentration Check Modifier: +2
 	* Applies to: **Pivot and Roll**
 * Action Point Cost: 2
 <br /><br />
@@ -1621,7 +1641,7 @@ Aspect Point Cost: **9 AP**
 
 
 #### Details
-* Skill Roll: Purify
+* Skill: Concentration
 	* Inherits Modifiers from: **Intelligence**
 * Action Point Cost: 1
 * Failure Chance: gm_only
@@ -1643,7 +1663,7 @@ Aspect Point Cost: **7 AP**
 
 
 #### Details
-* Skill Roll: Quell
+* Skill: Concentration
 	* Inherits Modifiers from: **Intelligence**
 	* Limited: **Caster Only**
 * Action Point Cost: 1
@@ -1680,7 +1700,7 @@ Aspect Point Cost: **5 AP**
 
 
 #### Details
-* Skill Roll: Quiet Steps
+* Skill: Concentration
 	* Inherits Modifiers from: **Mobility**
 * Failure Chance: 8
 * Action Point Cost: 1
@@ -1718,7 +1738,7 @@ Aspect Point Cost: **9 AP**
 
 
 #### Details
-* Skill Roll: Refresh
+* Skill: Concentration
 	* Inherits Modifiers from: **Intelligence**
 * Action Point Cost: 1
 * Failure Chance: 8
@@ -1738,7 +1758,7 @@ Aspect Point Cost: **4 AP**
 
 
 #### Details
-* Skill Roll: Send
+* Skill: Concentration
 	* Inherits Modifiers from: **Intelligence**
 * Action Point Cost: 1
 * Failure Chance: 12
@@ -1756,7 +1776,7 @@ Aspect Point Cost: **3 AP**
 
 Requires: **[Perception](#perception)**<br />
 #### Details
-* Skill Roll Modifier: +1
+* Concentration Check Modifier: +1
 	* Applies to: **Ally's Attack**
 	* Limited: **Ranged Attacks Only**
 * Failure Chance: 12
@@ -1773,7 +1793,7 @@ Aspect Point Cost: **5 AP**
 
 
 #### Details
-* Skill Roll: Slash
+* Skill: Concentration
 	* Limited: **Slashing Weapons**
 	* Inherits Modifiers from: **Mobility**
 * Failure Chance: 8
@@ -1790,7 +1810,7 @@ Aspect Point Cost: **10 AP**
 
 
 #### Details
-* Skill Roll: Sooth
+* Skill: Concentration
 	* Inherits Modifiers from: **Intelligence**
 * Action Point Cost: 1
 * Failure Chance: 8
@@ -1805,12 +1825,12 @@ Aspect Point Cost: **10 AP**
 
 Spell Dart is a meta magic spell that allows a character to aim a single finger (of their choice) at a target and fire a crackling spark of pure magical energy at them. This spark flies like an arrow in speed and trajectory. Upon impact it explodes with a loud crack and a flurry of much smaller, short-lived magical sparks.
 
-Aspect Point Cost: **10 AP**
-<br />Capstone Cost: **10 AP**
+Aspect Point Cost: **12 AP**
+<br />Capstone Cost: **12 AP**
 
 
 #### Details
-* Skill Roll: Spell Dart
+* Skill: Attack
 	* Inherits Modifiers from: **Intelligence**
 * Action Point Cost: 1
 * Failure Chance: 8
@@ -1830,7 +1850,7 @@ Aspect Point Cost: **5 AP**
 
 
 #### Details
-* Skill Roll: Stab
+* Skill: Concentration
 	* Limited: **Thrusting Weapons**
 	* Inherits Modifiers from: **Strength**
 * Failure Chance: 8
@@ -1849,7 +1869,7 @@ Aspect Point Cost: **6 AP**
 
 
 #### Details
-* Skill Roll: Summon Water or Food
+* Skill: Concentration
 	* Inherits Modifiers from: **Intelligence**
 * Action Point Cost: 1
 * Failure Chance: 8
@@ -1862,13 +1882,13 @@ Aspect Point Cost: **6 AP**
 
 Generic skill for scrounging for food, edibles, dungeoneering, etc. The game master is encouraged to add to the base difficulty depending on the situation. This is a useful skill for tracking.
 
-Aspect Point Cost: **6 AP**
-<br />Capstone Cost: **6 AP**
+Aspect Point Cost: **5 AP**
+<br />Capstone Cost: **5 AP**
 
 
 #### Details
-* Skill Roll: Survival
-	* Inherits Modifiers from: **Standing Forward Jump**
+* Skill: Non-Combat
+	* Inherits Modifiers from: **Intelligence**
 * Failure Chance: 8
 <br /><br />
 
@@ -1882,7 +1902,7 @@ Aspect Point Cost: **5 AP**
 
 
 #### Details
-* Skill Roll: Swing
+* Skill: Concentration
 	* Limited: **Swung Weapons**
 	* Inherits Modifiers from: **Strength**
 * Failure Chance: 8
@@ -1894,12 +1914,12 @@ Aspect Point Cost: **5 AP**
 
 Allows a character to use their mind to toss an object of size modifier -3 or smaller with their mind. This object may be thrown hard enough to 1d4 damage and is accurate up to range medium.
 
-Aspect Point Cost: **10 AP**
-<br />Capstone Cost: **10 AP**
+Aspect Point Cost: **12 AP**
+<br />Capstone Cost: **12 AP**
 
 
 #### Details
-* Skill Roll: Toss
+* Skill: Attack
 	* Limited: **Size Modifier -3 and Smaller Objects Only**
 	* Inherits Modifiers from: **Intelligence**
 * Action Point Cost: 1
@@ -1920,7 +1940,7 @@ Aspect Point Cost: **5 AP**
 
 Requires: **[Perception](#perception)**<br />Requires: **[Quiet Steps](#quiet-steps)**<br />
 #### Details
-* Skill Roll Modifier: +2
+* Concentration Check Modifier: +2
 	* Limited: **Trap Finding Only**
 	* Applies to: **Perception**
 <br /><br />
@@ -1932,12 +1952,12 @@ Allows a character to attempt to cure a disease. The disease should annotate inf
 
 To cure a disease the character must have all required materials at hand according to the game master - this may be things the character has on them or some special requirement in complex circumstances. Each disease also has a difficulty set that must be beat by this check.
 
-Aspect Point Cost: **6 AP**
-<br />Capstone Cost: **14 AP**
+Aspect Point Cost: **5 AP**
+<br />Capstone Cost: **12 AP**
 
 Requires: **[Medicine](#medicine)**<br />
 #### Details
-* Skill Roll: Treat Illness
+* Skill: Non-Combat
 	* Inherits Modifiers from: **Intelligence**
 * Failure Chance: 8
 <br /><br />
@@ -1960,12 +1980,12 @@ Aspect Point Cost: **8 AP**
 
 Upon casting, a bolt of lightning arcs from either of the character's hands toward the target enemy with a thundering crack. The attack roll recieves the character's intelligence modifier as an attack bonus.
 
-Aspect Point Cost: **10 AP**
-<br />Capstone Cost: **10 AP**
+Aspect Point Cost: **12 AP**
+<br />Capstone Cost: **12 AP**
 
 
 #### Details
-* Skill Roll: Volta
+* Skill: Attack
 	* Inherits Modifiers from: **Intelligence**
 * Action Point Cost: 1
 * Failure Chance: 8
@@ -1985,7 +2005,7 @@ Aspect Point Cost: **3 AP**
 
 
 #### Details
-* Skill Roll Modifier: +1
+* Concentration Check Modifier: +1
 	* Applies to: **Bound Weapon Type**
 <br /><br />
 
