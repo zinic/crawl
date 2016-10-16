@@ -5,9 +5,9 @@ This is my workspace for The Crawl: a TTRPG inspired by D&D, GURPS and Diablo.
 
 ### Character Creation
 
-We'll be starting this game with **100** aspect points.
+We'll be starting this game with **80** aspect points.
 
-Starting with 1,200$$.
+Starting with *2,00$$* in starting wealth.
 
 #### Contents
 
