@@ -379,13 +379,15 @@ Denotes the duration of an effect.
 
 #### Extra Target
 * **+3**
-	* Aspect Point Cost: 13
-* **+2**
 	* Aspect Point Cost: 8
-* **+1**
+* **+2**
 	* Aspect Point Cost: 5
-* **+4**
+* **+1**
+	* Aspect Point Cost: 3
+* **+5**
 	* Aspect Point Cost: 21
+* **+4**
+	* Aspect Point Cost: 13
 <br /><br />
 
 
@@ -1249,8 +1251,8 @@ Aspect Point Cost: **2 AP**
 
 Allows a character to attack 2 enemies standing side-by-side. The enemies must be in adjacent map cells. The attacker makes a single attack roll that both targets may then roll against. This attack incurs a **-2 modifier** to the attack roll.
 
-Aspect Point Cost: **1 AP**
-<br />Capstone Cost: **5 AP**
+Aspect Point Cost: **-1 AP**
+<br />Capstone Cost: **3 AP**
 
 Requires: **[Fit](#fit)**<br />Requires: **[Slash](#slash)**<br />
 #### Details
