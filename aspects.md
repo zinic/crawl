@@ -1174,8 +1174,8 @@ Aspect Point Cost: **2 AP**
 
 The character conjures a kinetic shield that covers a target's body. This shield has a **DR of 4**. The shield lasts for 10 minutes or until an attack lands and the shield absorbs damage.
 
-Aspect Point Cost: **14 AP**
-<br />Capstone Cost: **14 AP**
+Aspect Point Cost: **9 AP**
+<br />Capstone Cost: **9 AP**
 
 
 #### Details
@@ -1183,7 +1183,7 @@ Aspect Point Cost: **14 AP**
 	* Inherits Modifiers from: **Intelligence**
 * Action Point Cost: 1
 * Failure Chance: 8
-* Duration: 10 Minutes
+* Duration: 4 Turns
 * Damage Resistance: +4 DR
 	* Applies to: **Kinetic**
 * Magic
