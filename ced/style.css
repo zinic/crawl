@@ -1,3 +1,122 @@
 .hidden {
     visibility: hidden;
 }
+
+.field_name {
+    font-weight: bold;
+}
+
+.selected {
+    background-color: #b0b0b0;
+}
+
+.simple_list {
+    list-style-type: none;
+}
+
+.formatted_aspect {
+    margin-bottom: 35px;
+}
+
+.icon_wrapper {
+    float: right;
+}
+
+.icon_wrapper img:hover {
+    opacity: 1;
+}
+
+.icon {
+    opacity: .5;
+    padding-right: 10px;
+}
+
+.effect_selector_pane {
+    display: inline-block;
+}
+
+#modal_pane {
+    position: absolute;
+
+    top: 0px;
+    left: 0px;
+    
+    width: 100%;
+    height: 100%;    
+}
+
+#aspect_editor_pane {
+    border: solid 1px black;
+    
+    position: relative;
+
+    padding-top: 20px;
+    padding-left: 20px;
+    padding-bottom: 20px;
+    
+    top: 10%;
+    left: 10%;
+    
+    width: 80%;
+}
+
+#ae_effects_list_pane {
+    width: 40%;
+}
+
+#ae_description_text {
+    width: 80%;
+    
+    margin-left: 20px;
+}
+
+#ap_total {
+    width: 55px;
+}
+
+#character_details {
+    position: absolute;
+    margin-top: 25px;
+    margin-left: 25px;
+}
+
+#character_aspect_pane {
+    position: absolute;
+    top: 250px;
+    margin-left: 25px;
+    width: 500px;
+}
+
+#character_core_aspects {
+    position: absolute;
+    left: 300px;
+    margin-top: 25px;
+    margin-left: 25px;
+}
+
+#add_aspect_button {
+    float: left;
+    margin-right: 50px;
+}
+
+#aspect_list_search_pane {
+    float: none;
+}
+
+#aspect_list_pane {
+    position: absolute;
+    width: 700px;
+    height: 400px;
+    
+    left: 600px;
+    margin-top: 25px;
+    margin-right: 25px;
+}
+
+#aspect_list {
+    height: inherit;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    border: solid 2px grey;
+    padding: 15px;
+}
