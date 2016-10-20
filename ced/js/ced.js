@@ -30,8 +30,12 @@ window.Notify = (function() {
 function Character() {
     var aspect_editor = null;
     
+    this.id = null;
+    this.rev = null;
+    
     this.data = {
         aspects: {},
+        type: 'character',
         ap_total: 0,
         name: '',
         age: '',
@@ -76,19 +80,40 @@ function Character() {
         this.save();
     };
 
-    this.load = function() {
-        var data = html5_localstore.get_obj('character');
-
-        if (is_set(data)) {
-            this.data = data;
-        }
+    this.load = function(character_name, callback) {
+        var _this = this;
+        
+        couchdb.get(character_name, function (data) {
+            _this.id = data.id;
+            _this.rev = data.value._rev;
+            _this.data = data.value;
+            
+            callback();
+        });
     };
 
     this.save = function() {
-        html5_localstore.save_obj('character', this.data);
+        var _this = this;
+            
+        if (is_set(this.id)) {
+            var doc = $.extend({}, this.data);
+            doc._rev = this.rev;
+            
+            couchdb.update(this.id, doc, function (resp) {
+                _this.rev = resp.rev;
+            });
+        } else {
+            if (this.data.name === '' || !is_set(this.data.name)) {
+                alert('Please set a name for the character first then click save to begin.');
+                return;
+            }
+            
+            couchdb.save_new(this.data, function (resp) {
+                _this.id = resp.id;
+                _this.rev = resp.rev;
+            });
+        }
     };
-
-    this.load();
 }
 
 function AspectEditor($aspect) {
@@ -202,6 +227,10 @@ function wc_update_aspect_list_search() {
 function wc_select_aspect(name) {
     registry.select_aspect(name);
     render();
+}
+
+function wc_load_character() {
+    registry.character.load($('#name_input').val(), render);
 }
 
 function wc_save_character() {

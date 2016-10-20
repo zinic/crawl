@@ -13,7 +13,7 @@
         <script type="text/javascript" src="js/keys.lib.js"></script>
         <script type="text/javascript" src="js/core.lib.js"></script>
         <script type="text/javascript" src="js/formulas.lib.js"></script>
-        <script type="text/javascript" src="js/localstore.lib.js"></script>
+        <script type="text/javascript" src="js/storage.lib.js"></script>
         <script type="text/javascript" src="js/vdoc.lib.js"></script>
         <script type="text/javascript" src="js/ced.js"></script>
     </head>
@@ -76,12 +76,17 @@ images/
             <div id="character_details">
                 <h2>Character Info</h2>
                 
+                <button id="cd_load_character_button" onclick="wc_load_character();">Load</button>
+                <button id="cd_save_character_button" onclick="wc_save_character();">Save</button>
+                <br />
+                <br />
+                
                 <table>
                     <thead></thead>
                     <tbody>
                         <tr>
                             <td>Name</td>
-                            <td><input id="name_input" type="text" onchange="wc_save_character();" /></td>
+                            <td><input id="name_input" type="text" /></td>
                         </tr>
                         <tr>
                             <td>Gender</td>
