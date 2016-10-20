@@ -73,10 +73,9 @@ function CouchDBStorage() {
                 }
             },
             error: function (err) {
-                notifier.error(err);
+                notifier.error('Failed to save. Check your credentials!');
                 
                 console.log('Errored out on save: ' + err);
-                console.dir(err);
             }
         });
     };
@@ -103,10 +102,9 @@ function CouchDBStorage() {
                 }
             },
             error: function (err) {
-                notifier.error(err);
+                notifier.error('Failed to save. Check your credentials!');
                 
-                console.log('Error on save: ' + err);
-                console.dir(err);
+                console.log('Error on update: ' + err);
             }
         });
     };
@@ -127,10 +125,9 @@ function CouchDBStorage() {
                 receiver(doc.rows[0]);
             },
             error: function (err) {
-                notifier.error(err);
+                notifier.error('Failed to load. Check your credentials!');
 
                 console.log('Error on load: ' + err);
-                console.dir(err);
             }
         });
     };
