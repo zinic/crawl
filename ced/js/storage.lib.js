@@ -73,6 +73,8 @@ function CouchDBStorage() {
                 }
             },
             error: function (err) {
+                notifier.error(err);
+                
                 console.log('Errored out on save: ' + err);
                 console.dir(err);
             }
@@ -101,7 +103,9 @@ function CouchDBStorage() {
                 }
             },
             error: function (err) {
-                console.log('Errored out on save: ' + err);
+                notifier.error(err);
+                
+                console.log('Error on save: ' + err);
                 console.dir(err);
             }
         });
@@ -123,7 +127,9 @@ function CouchDBStorage() {
                 receiver(doc.rows[0]);
             },
             error: function (err) {
-                console.log('Errored out on load: ' + err);
+                notifier.error(err);
+
+                console.log('Error on load: ' + err);
                 console.dir(err);
             }
         });
