@@ -139,6 +139,10 @@ function AspectEditor($aspect) {
 
 function Registry($doc) {
     this.$doc = $doc;
+    this.db_login = {
+        username: '',
+        password: ''
+    };
     this.character = new Character();
     this.selected_aspect = null;
     this.aspect_list_filter = null;
@@ -558,6 +562,16 @@ function render_aspect_list() {
     $('#aspect_list').html(list_html);
 }
 
+function wc_login() {
+    couchdb.username = $('#db_login_username').val();
+    couchdb.password = $('#db_login_password').val();
+
+    $('#modal_pane').addClass('hidden');
+    $('#db_login_pane').addClass('hidden');
+    $('#master_pane').removeClass('hidden');
+
+    render();
+}
 
 function on_xml_load(xml_data) {
     var $doc = new CoreDocument(xml_data);
@@ -574,8 +588,10 @@ function on_xml_load(xml_data) {
         });
     });
     */
-
-    render();
+    
+    $('#modal_pane').removeClass('hidden');
+    $('#db_login_pane').removeClass('hidden');
+    $('#master_pane').addClass('hidden');
 }
 
 function main() {

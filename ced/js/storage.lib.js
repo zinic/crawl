@@ -48,7 +48,12 @@ var html5_localstore = new LocalStorage();
 
 
 function CouchDBStorage() {
+    this.username = '';
+    this.password = '';
+    
     this.save_new = function(object, receiver) {
+        var auth_str = btoa(this.username + ':' + this.password);
+        
         $.ajax({
             method: 'POST',
             url: '/db/ced',
@@ -57,7 +62,7 @@ function CouchDBStorage() {
             data: JSON.stringify(object),
 
             beforeSend: function(xhr) {
-                xhr.setRequestHeader('Authorization', 'Basic ' + btoa('root:root'));
+                xhr.setRequestHeader('Authorization', 'Basic ' + auth_str);
             },
             
             success: function (doc) {
@@ -75,6 +80,8 @@ function CouchDBStorage() {
     };
     
     this.update = function(id, object, receiver) {
+        var auth_str = btoa(this.username + ':' + this.password);
+
         $.ajax({
             method: 'PUT',
             url: '/db/ced/' + id,
@@ -83,7 +90,7 @@ function CouchDBStorage() {
             data: JSON.stringify(object),
 
             beforeSend: function(xhr) {
-                xhr.setRequestHeader('Authorization', 'Basic ' + btoa('root:root'));
+                xhr.setRequestHeader('Authorization', 'Basic ' + auth_str);
             },
             
             success: function (doc) {
@@ -101,13 +108,15 @@ function CouchDBStorage() {
     };
 
     this.get = function(key, receiver) {
+        var auth_str = btoa(this.username + ':' + this.password);
+
         $.ajax({
             type: 'GET',
             url: '/db/ced/_design/ced/_view/character-name?key="' + key + '"',
             dataType: 'json',
 
             beforeSend: function(xhr) {
-                xhr.setRequestHeader('Authorization', 'Basic ' + btoa('root:root'));
+                xhr.setRequestHeader('Authorization', 'Basic ' + auth_str);
             },
 
             success: function (doc) {

@@ -1,2 +1,5 @@
 *.pyc
 out.md
+nginx.prod.conf
+nginx.log
+nginx.pid

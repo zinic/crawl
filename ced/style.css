@@ -45,6 +45,21 @@
     height: 100%;    
 }
 
+#db_login_pane {
+    border: solid 1px black;
+    
+    position: relative;
+
+    padding-top: 20px;
+    padding-left: 20px;
+    padding-bottom: 20px;
+    
+    top: 10%;
+    left: 10%;
+    
+    width: 80%;
+}
+
 #aspect_editor_pane {
     border: solid 1px black;
     
