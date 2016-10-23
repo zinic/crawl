@@ -1,6 +1,6 @@
 # The Crawl Aspect Document
 
-## Components - 37
+## Components - 40
 #### Action Point Cost
 * **1**
 	* Aspect Point Cost: -2
@@ -330,6 +330,35 @@ This is used to modify a defense roll instead of a skill check modifier. This mo
 <br /><br />
 
 
+#### Delayed Effect Duration
+
+Denotes the duration or preparation time required before an aspect becomes effective.
+
+
+
+* **1 Turn**
+	* Aspect Point Cost: -1
+* **10 Minutes**
+	* Aspect Point Cost: -8
+* **4 Turns**
+	* Aspect Point Cost: -3
+* **8 Turns**
+	* Aspect Point Cost: -5
+* **30 Minutes**
+	* Aspect Point Cost: -13
+* **2 Turns**
+	* Aspect Point Cost: -2
+* **10 Days**
+	* Aspect Point Cost: -60
+* **1 Hour**
+	* Aspect Point Cost: -21
+* **12 Hours**
+	* Aspect Point Cost: -34
+* **1 Day**
+	* Aspect Point Cost: -47
+<br /><br />
+
+
 #### Duration
 
 Denotes the duration of an effect.
@@ -516,6 +545,17 @@ Useful for items that have consumable uses.
 * Aspect Point Cost: 5<br /><br />
 
 
+#### Presence Modifier
+
+**Note:** this component may not be used for attack rolls.
+
+
+
+* Formula: presence_mod_cost
+
+<br /><br />
+
+
 #### Range
 
 See the core rules section: **Range Definitions** for more details.
@@ -634,6 +674,15 @@ Skills that may be used to defend against an incoming attack. Defenses, like con
 * **Allies Only**
 	* Aspect Point Cost: 10
 <br /><br />
+
+
+#### Teleportation
+
+Allows the aspect this descriptor is tagged to, to impart a teleportation effect. To add more targets to teleport consider Extra Target.
+
+
+
+* Aspect Point Cost: 15<br /><br />
 
 
 #### Throwable
@@ -811,7 +860,7 @@ Monetary Cost: **1320 $$**
 <br /><br />
 
 
-## Aspects - 75
+## Aspects - 77
 ### Adonic
 
 Super Strong, yo.
@@ -988,6 +1037,20 @@ Requires: **[Dismiss](#dismiss)**<br />
 	* Magic Energy Type: **Meta**
 * Reactionary
 * Range: Medium
+<br /><br />
+
+
+### Deathrattle
+
+Similar to magic trick. This ability produces a signature that may be enhanced later.
+
+Aspect Point Cost: **1 AP**
+<br />Capstone Cost: **1 AP**
+
+
+#### Details
+* Magic
+	* Magic Energy Type: **Meta**
 <br /><br />
 
 
@@ -1263,6 +1326,27 @@ Requires: **[Fit](#fit)**<br />Requires: **[Slash](#slash)**<br />
 	* Inherits Modifiers from: **Mobility**
 * Extra Target: +1
 * Action Point Cost: 2
+<br /><br />
+
+
+### He Who Walks Behind
+
+Allows a character to teleport. They vanish upon success and appear at their intended target location after the delayed effect duration of 1 turn.
+
+Aspect Point Cost: **18 AP**
+<br />Capstone Cost: **19 AP**
+
+Requires: **[Magic Trick](#magic-trick)**<br />
+#### Details
+* Skill: Concentration
+	* Inherits Modifiers from: **Intelligence**
+* Delayed Effect Duration: 1 Turn
+* Action Point Cost: 1
+* Failure Chance: 10
+* Magic
+	* Magic Energy Type: **Meta**
+* Range: Short
+* Teleportation
 <br /><br />
 
 

@@ -22,11 +22,11 @@ Character damage is represented by health points. A character has a certain pool
 Health point pools, unmodified, start with a maximum of 6 for all characters. This is due to how the damage scales with aspect points as defined in the aspects document.
 
 
-#### Action Point Pool
+#### Energy Point Pool
 
-Character endurance and execution of combat actions are represented as action points. A character has a certain pool of action points representing just how much endurance they can expend in a short period of time (the time of one turn).
+Character endurance and execution of combat actions are represented as energy points. A character has a certain pool of energy points representing just how much endurance they can expend in a short period of time (the time of one turn).
 
-Action point pools, unmodified, start with a maximum of 1 for all characters.
+Energy point pools, unmodified, start with a maximum of 1 for all characters.
 
 
 ### Aspects
@@ -292,18 +292,18 @@ Turns in the crawl last for only a moment. There is no exact interval given here
 
 ### Effort
 
-Certain character actions cost effort in the form of action points. During the beginning of a character's turn, the character recieves 1 action point. Action points may be saved for future turns to pay for more powerful or complex actions.
+Certain character actions cost effort in the form of energy points. During the beginning of a character's turn, the character recieves 1 energy point. Energy points may be saved for future turns to pay for more powerful or complex actions.
 
-Characters may save action points according to their own aspects.
+Characters may save energy points according to their own aspects.
 
-Characters may have aspects that grant additional action points under certain circumstances. Certain equipment and magic may also grant use of additional action points.
+Characters may have aspects that grant additional energy points under certain circumstances. Certain equipment and magic may also grant use of additional energy points.
 
 
 #### Maximum Effort
 
-A character may choose to spend health points and convert them into an action points. This loss of health points counts as damage to the character and is treated the same.
+A character may choose to spend health points and convert them into an energy points. This loss of health points counts as damage to the character and is treated the same.
 
-The number of health points a character can convert into action points is limited by the character's action point pool size. You may not convert health points into more action points than a character has room in their action point pool.
+The number of health points a character can convert into energy points is limited by the character's energy point pool size. You may not convert health points into more energy points than a character has room in their energy point pool.
 
 
 #### Using Aspect Skills
@@ -312,9 +312,9 @@ Aspects may grant skills that define how they are used. Many skills require a sk
 
 This roll may be modified from several sources including: magic, equipment and other aspects.
 
-Lastly, all skills have an action point cost associated with them.
+Lastly, all skills have an energy point cost associated with them.
 
-Only when characters are in initiative do action point costs matter. Outside of initiative, all skills may be utilized with the action point cost becoming a guide to how long it may take the character - this is at the game masters discretion!
+Only when characters are in initiative do energy point costs matter. Outside of initiative, all skills may be utilized with the energy point cost becoming a guide to how long it may take the character - this is at the game masters discretion!
 
 
 ### Skill Check Difficulty
@@ -330,7 +330,7 @@ In this case, the game master has decided that the lock is moderately strong and
 
 #### Uncontested Skill Retries
 
-Failed skill rolls that are uncontested may be retried by the character: e.g. a rogue trying to pick a lock while the party waits safely around them. This costs the character time. The game master is encouraged to pick a time using the action point cost of the skill as a guide if present. This time is doubled for further attempts.
+Failed skill rolls that are uncontested may be retried by the character: e.g. a rogue trying to pick a lock while the party waits safely around them. This costs the character time. The game master is encouraged to pick a time using the energy point cost of the skill as a guide if present. This time is doubled for further attempts.
 
 For example: a character fails their roll and it took them 1 minute to make the attempt. They then fail their second roll which took them 2 minutes this time around. The third roll finally succeeds, this attempt taking 4 minutes. The character therefore spent a total of 7 minutes.
 
@@ -350,7 +350,7 @@ All attacks begin with a d20 roll from the attacker. This represents their attem
 
 A character's attack roll may be modified from several sources including: magic, equipment and aspects.
 
-An attack is considered successful if the target's defense is less than or equal to the attacker's roll. This means that if both attacker and defender roll a total of 15, the attack is successful. If successful, the attack lands and its associated effects (including damage) then apply. If the defender can not defend themselves either by their will or by some other mechanic such as a desire to conserve action points, then the attack is considered successful automatically.
+An attack is considered successful if the target's defense is less than or equal to the attacker's roll. This means that if both attacker and defender roll a total of 15, the attack is successful. If successful, the attack lands and its associated effects (including damage) then apply. If the defender can not defend themselves either by their will or by some other mechanic such as a desire to conserve energy points, then the attack is considered successful automatically.
 
 Many attack aspects will require a skill check roll despite the defender's lack of defense. Aspects such as these might include magic where the caster's success is determined by their attack roll. For example, a fire spell aspect may have a difficulty of 10. If the defender is unable to defend but the caster rolls a 9, then the spell fails and the defender is unaffected.
 
@@ -423,7 +423,7 @@ This character, equipped, would have a total of 10 DR vs. Kinetic damage.
 
 Some armors may restrict movement and therefore come with a negative mobility check modifier. Some heavier armors may also require a certain strength check modifier from the character.
 
-Lastly, some armors may include an action point cost representing the amount of effort required to equip or unequip it.
+Lastly, some armors may include an energy point cost representing the amount of effort required to equip or unequip it.
 
 
 #### Attacking from Behind
@@ -445,14 +445,14 @@ Characters may defend themselves not just with actions but with equipment. Armor
 
 #### Ready Actions
 
-A character may choose to ready an action of any type. The action will execute when a specific set of conditions are met. If the conditions are not met by the character's next turn, the action is not executed but the action points are still spent.
+A character may choose to ready an action of any type. The action will execute when a specific set of conditions are met. If the conditions are not met by the character's next turn, the action is not executed but the energy points are still spent.
 
 In order to ready an action, the character must first be able to satisfy the action’s point cost. The character then specifies the conditions necessary for the action to execute. The complexity of the conditions is subject to the discretion of the game master.
 
 
 #### Turn Holding
 
-In addition to readying an action, a character may choose to hold their turn. In order to hold their turn, the character may not spend any action points and must declare that they are holding their turn. The character’s turn will execute either after every other character turn has ended, or when the character opts to rejoin the combat initiative order.
+In addition to readying an action, a character may choose to hold their turn. In order to hold their turn, the character may not spend any energy points and must declare that they are holding their turn. The character’s turn will execute either after every other character turn has ended, or when the character opts to rejoin the combat initiative order.
 
 When rejoining, the character must wait for the current character’s turn to end before executing their own turn. This means that holding a turn may not interrupt another character’s turn.
 
@@ -556,7 +556,7 @@ A character may move through map cells occupied by a friendly character or entit
 
 #### Full Run
 
-All characters may choose to run at their top speed. A full run is a movement action that consumes the character’s entire turn and costs 1 action point. This movement must be done in a relatively straight line and is subject to gamemaster discretion.
+All characters may choose to run at their top speed. A full run is a movement action that consumes the character’s entire turn and costs 1 energy point. This movement must be done in a relatively straight line and is subject to gamemaster discretion.
 
 The character, while running, moves at double their normal movement speed.
 
@@ -574,7 +574,7 @@ Any enemy in a character’s melee threat range may be grabbed. Grabbing a chara
 
 Grabbing a target removes the character's threat, meaning that they may not act on opportunity until they break from the grab.
 
-A grab is a standard attack that costs 1 action point.
+A grab is a standard attack that costs 1 energy point.
 
 
 #### Grapple
@@ -583,7 +583,7 @@ Any character that has been grabbed may be grappled. Grappling a target characte
 
 To escape a grapple a target must make an opposed strength check against the character they are grappled by. If successful, the target regains their turn and is considered free. The target is released in the same map cell and is considered squeezing with the character that was grappling them.
 
-A grapple is a standard attack that costs 1 action point.
+A grapple is a standard attack that costs 1 energy point.
 
 
 #### Charging
@@ -599,29 +599,29 @@ The charging character receives a bonus of 2 on their attack roll. After the att
 
 When a character wishes to climb or scale obstacles, they must make a mobility check against the difficulty of the obstacle. A character has two options when choosing to make this mobility check:
 
-* The character may spend 1 action point to climb or scale an obstacle. By spending an action point, they receive a +10 modifier to their mobility check.
+* The character may spend 1 energy point to climb or scale an obstacle. By spending an energy point, they receive a +10 modifier to their mobility check.
 
-* The character may instead choose to climb or scale an obstacle without spending an action point. Doing so incurs no penalty but grants no positive modifier either.
+* The character may instead choose to climb or scale an obstacle without spending an energy point. Doing so incurs no penalty but grants no positive modifier either.
 
 Obstacle difficulty begins at 5. Difficulty raises by 5 for every meter of difference between the surface the character is on and the distance the character is attempting to scale.
 
 A two meter obstacle will, therefore, require a mobility check greater than 15 to pass successfully.
 
-Upon failure, if the character has spent an action point to attempt the climb they simply fall back down to where they had attempted the climb without additional effect. However, if the character did not spend an action point then their current turn ends and they fall back to where they had attempted the climb. In addition, the character is now considered prone.
+Upon failure, if the character has spent an energy point to attempt the climb they simply fall back down to where they had attempted the climb without additional effect. However, if the character did not spend an energy point then their current turn ends and they fall back to where they had attempted the climb. In addition, the character is now considered prone.
 
 Note, falling may have additional consequences regardless of whether or not the character chose to spend a movement action on the check. See falling damage for more information.
 
 
 #### Two-Meter Step
 
-A character may make a special movement action that costs 1 action point called a two-meter step. As the name implies, a character may take a two meter step or a step equal to one map cell without incuring opportunistic actions. After a character takes a two-meter step they may not take any further action and their turn ends.
+A character may make a special movement action that costs 1 energy point called a two-meter step. As the name implies, a character may take a two meter step or a step equal to one map cell without incuring opportunistic actions. After a character takes a two-meter step they may not take any further action and their turn ends.
 
 
 #### Standing Vertical Jump
 
 A character may make a standing jump vertically in meters equal to half their strength modifier.
 
-A standing jump requires 1 action point and may be preformed as part of an ongoing movement action. For example, a character may move their entire movement to reach an obstacle. They may then choose to attempt to jump up onto the obstacle at the cost of 1 action point.
+A standing jump requires 1 energy point and may be preformed as part of an ongoing movement action. For example, a character may move their entire movement to reach an obstacle. They may then choose to attempt to jump up onto the obstacle at the cost of 1 energy point.
 
 The character may attempt a higher jump by performing a strength check. The strength check has a difficulty equal to the number of meters the character is attempting to jump over their standing vertical jump maximum multiplied by 10.
 
@@ -632,7 +632,7 @@ For example, a character with a strength modifier of +2 can safely jump vertical
 
 A character may make a standing jump forward in meters equal to half their strength modifier.
 
-A standing jump requires 1 action point and may be performed as part of an ongoing movement action. For example, a character may move their entire movement to reach an obstacle. They may then choose to attempt to jump over the obstacle at the cost of 1 action point.
+A standing jump requires 1 energy point and may be performed as part of an ongoing movement action. For example, a character may move their entire movement to reach an obstacle. They may then choose to attempt to jump over the obstacle at the cost of 1 energy point.
 
 The character may attempt a longer jump by performing a strength check. The strength check has a difficulty equal to the number of meters the character is attempting to jump over their standing forward jump maximum multiplied by 5.
 
@@ -641,7 +641,7 @@ For example, a character with a strength modifier of +2 can safely jump 1 meters
 
 #### Running Jump
 
-A character may make a running jump in meters equal to their strength modifier combined with their mobility modifier. A running jump costs 1 action point. In addition, a running jump requires 2 map cells of movement and may be performed as part of an ongoing movement action.
+A character may make a running jump in meters equal to their strength modifier combined with their mobility modifier. A running jump costs 1 energy point. In addition, a running jump requires 2 map cells of movement and may be performed as part of an ongoing movement action.
 
 For example, a character may move to reach an obstacle. They may then choose to attempt to perform a running jump over the obstacle at the cost of 1 aciton point.
 
@@ -807,14 +807,14 @@ The character is laying on the ground. While in this position, the following eff
 
 The character is incapacitated to a certain degree. While stunned, the following effects apply to the character:
 
-* While stunned, the character is unable to save action points.
+* While stunned, the character is unable to save energy points.
 * Defense rolls are capped at a maximum of 10.
-* Speaking requires an action point.
+* Speaking requires an energy point.
 
 
 #### Slowed
 
-A character that has the slowed status must pay 1 action point or forfeit their turn. In addition, the slowed character incurs -2 modifier for every dodge attempt made until the condition is removed.
+A character that has the slowed status must pay 1 energy point or forfeit their turn. In addition, the slowed character incurs -2 modifier for every dodge attempt made until the condition is removed.
 
 
 #### Blindness
@@ -826,7 +826,7 @@ A character that has lost more than eighty percent of their vision is rendered b
 
 A character that is grappled is unable to take any action or aspect that requires willful control of the character's body.
 
-The grappled character may spend an action point to attempt escape. Escape is an opposed strength check between the character and their attacker. Upon escape, the character’s ability to move freely is regained. The character is released in the same map cell as their attacker and is considered squeezing with them.
+The grappled character may spend an energy point to attempt escape. Escape is an opposed strength check between the character and their attacker. Upon escape, the character’s ability to move freely is regained. The character is released in the same map cell as their attacker and is considered squeezing with them.
 
 
 #### Sickened
@@ -845,4 +845,4 @@ When a character is forced to occupy fifty percent or less of a map cell, they a
 
 A character that has a health point value of less than one fourth their health point total is considered staggered. A staggered character that receives further damage is subject to a percent check (2d10 or d100).
 
-If the target character rolls less than 50, they must lose an action point or forfeit their turn. This condition’s may be mitigated by equipment, items and abilities.
+If the target character rolls less than 50, they must lose an energy point or forfeit their turn. This condition’s may be mitigated by equipment, items and abilities.

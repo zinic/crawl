@@ -13,6 +13,13 @@
             </text>
         </descriptor>
 
+        <descriptor name="Teleportation" cost="15">
+            
+            <text>
+                Allows the aspect this descriptor is tagged to, to impart a teleportation effect. To add more targets to teleport consider Extra Target.
+            </text>
+        </descriptor>
+
         <descriptor name="Target Restriction">
             <value name="Allies Only" cost="10" />
             <value name="Enemies Only" cost="10" />
@@ -151,6 +158,23 @@
             </text>
         </descriptor>
         
+        <descriptor name="Delayed Effect Duration">
+            <value name="1 Turn" cost="-1" />
+            <value name="2 Turns" cost="-2" />
+            <value name="4 Turns" cost="-3" />
+            <value name="8 Turns" cost="-5" />
+            <value name="10 Minutes" cost="-8" />
+            <value name="30 Minutes" cost="-13" />
+            <value name="1 Hour" cost="-21" />
+            <value name="12 Hours" cost="-34" />
+            <value name="1 Day" cost="-47" />
+            <value name="10 Days" cost="-60" />
+            
+            <text>
+                Denotes the duration or preparation time required before an aspect becomes effective. 
+            </text>
+        </descriptor>
+        
         <descriptor name="Damage Type">
             <value name="Kinetic" cost="1" />
             <value name="Cold" cost="1" />
@@ -247,6 +271,12 @@
             </text>
         </descriptor>
         
+        <descriptor name="Presence Modifier" formula="presence_mod_cost">
+            <text>
+                **Note:** this component may not be used for attack rolls.
+            </text>
+        </descriptor>
+
         <descriptor name="Core Aspect Modifier">
             <value name="+1" cost="8" />
             <value name="+2" cost="13" />
@@ -1556,6 +1586,16 @@
             </text>
         </aspect>
         
+        <aspect name="Deathrattle">
+            <effect descriptor="Magic">
+                <detail type="energy_type" value="Meta" />
+            </effect>
+
+            <text>
+                Similar to magic trick. This ability produces a signature that may be enhanced later.
+            </text>
+        </aspect>
+        
         <aspect name="Farsight">
             <effect descriptor="Skill" value="Concentration">
                 <detail type="inherits_from" value="Perception" />
@@ -1573,6 +1613,26 @@
                 Upon successful cast, Farsight grants the caster a glimpse of the area desired. This area is restricted to medium range. The casting skill check also represents the perception skill check of the caster as they gaze upon their target.
                 
                 This spell may be used in place of any perception check.
+            </text>
+        </aspect>
+        
+        <aspect name="He Who Walks Behind">
+            <effect descriptor="Skill" value="Concentration">
+                <detail type="inherits_from" value="Intelligence" />
+            </effect>
+            <effect descriptor="Delayed Effect Duration" value="1 Turn" />
+            <effect descriptor="Action Point Cost" value="1" />
+            <effect descriptor="Failure Chance" value="10" />
+            <effect descriptor="Magic">
+                <detail type="energy_type" value="Meta" />
+            </effect>
+            <effect descriptor="Range" value="Short" />            
+            <effect descriptor="Teleportation" />            
+            
+            <requires name="Magic Trick" />
+            
+            <text>
+                Allows a character to teleport. They vanish upon success and appear at their intended target location after the delayed effect duration of 1 turn.
             </text>
         </aspect>
         

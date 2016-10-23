@@ -4,6 +4,11 @@ GM_ONLY = "gm_only"
 def get_formula(fname):
     return globals()[fname]
 
+# Presence modifier costs
+def presence_mod_cost(value):
+    ival = int(value.replace('+', ''))
+    return int(ival * 1.75)
+
 
 # Money converter
 def monetary_cost(money):
