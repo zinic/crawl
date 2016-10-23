@@ -904,8 +904,8 @@ Aspect Point Cost: **16 AP**
 
 Requires: **[Intense Acrobatic Training](#intense-acrobatic-training)**<br />Requires: **[Intense Resistance Training](#intense-resistance-training)**<br />Requires: **[Intense Endurance Training](#intense-endurance-training)**<br />
 #### Details
-* Action Pool Modifier (*8 AP*): +1
-* Action Pool Refresh Modifier (*8 AP*): +1
+* Action Pool Modifier (**8 AP**): +1
+* Action Pool Refresh Modifier (**8 AP**): +1
 <br /><br />
 
 
@@ -918,7 +918,7 @@ Aspect Point Cost: **8 AP**
 
 Requires: **[Vigor](#vigor)**<br />
 #### Details
-* Affliction Immunity (*8 AP*): Staggered
+* Affliction Immunity (**8 AP**): Staggered
 <br /><br />
 
 
@@ -931,7 +931,7 @@ Aspect Point Cost: **10 AP**
 
 
 #### Details
-* Starting Wealth Modifier (*10 AP*): 1200 $$
+* Starting Wealth Modifier (**10 AP**): 1200 $$
 <br /><br />
 
 
@@ -944,14 +944,14 @@ Aspect Point Cost: **7 AP**
 
 
 #### Details
-* Skill (*1 AP*): Concentration
+* Skill (**1 AP**): Concentration
 	* Inherits Modifiers from: **Perception**
-* Energy Point Cost (*2 AP*): 1
-* Failure Chance (*-4 AP*): 12
-* Magic (*1 AP*)
+* Energy Point Cost (**2 AP**): 1
+* Failure Chance (**-4 AP**): 12
+* Magic (**1 AP**)
 	* Magic Energy Type: **Meta**
-* Range (*2 AP*): Short
-* Duration (*5 AP*): 8 Turns
+* Range (**2 AP**): Short
+* Duration (**5 AP**): 8 Turns
 <br /><br />
 
 
@@ -964,13 +964,13 @@ Aspect Point Cost: **3 AP**
 
 
 #### Details
-* Skill (*1 AP*): Concentration
+* Skill (**1 AP**): Concentration
 	* Limited: **Drawn Force Weapons**
 	* Limited: **Only Inherits from the Highest Modifier (Strength or Mobility)**
 	* Inherits Modifiers from: **Mobility**
 	* Inherits Modifiers from: **Strength**
-* Failure Chance (*0 AP*): 8
-* Energy Point Cost (*2 AP*): 1
+* Failure Chance (**0 AP**): 8
+* Energy Point Cost (**2 AP**): 1
 <br /><br />
 
 
@@ -983,9 +983,9 @@ Aspect Point Cost: **1 AP**
 
 
 #### Details
-* Skill (*1 AP*): Non-Combat
+* Skill (**1 AP**): Non-Combat
 	* Inherits Modifiers from: **Mobility**
-* Failure Chance (*0 AP*): 8
+* Failure Chance (**0 AP**): 8
 <br /><br />
 
 
@@ -998,11 +998,11 @@ Aspect Point Cost: **6 AP**
 
 
 #### Details
-* Skill (*1 AP*): Concentration
+* Skill (**1 AP**): Concentration
 	* Limited: **Character Must Have a Shield**
 	* Inherits Modifiers from: **Strength**
-* Failure Chance (*3 AP*): 5
-* Energy Point Cost (*2 AP*): 1
+* Failure Chance (**3 AP**): 5
+* Energy Point Cost (**2 AP**): 1
 <br /><br />
 
 
@@ -1015,14 +1015,14 @@ Aspect Point Cost: **18 AP**
 
 
 #### Details
-* Skill (*1 AP*): Concentration
+* Skill (**1 AP**): Concentration
 	* Inherits Modifiers from: **Intelligence**
-* Range (*0 AP*): Personal
-* Failure Chance (*0 AP*): 8
-* Energy Point Cost (*3 AP*): 0
-* Reactionary (*10 AP*)
-* Damage Healed (*3 AP*): 1d8
-* Magic (*1 AP*)
+* Range (**0 AP**): Personal
+* Failure Chance (**0 AP**): 8
+* Energy Point Cost (**3 AP**): 0
+* Reactionary (**10 AP**)
+* Damage Healed (**3 AP**): 1d8
+* Magic (**1 AP**)
 	* Magic Energy Type: **Meta**
 <br /><br />
 
@@ -1036,14 +1036,14 @@ Aspect Point Cost: **12 AP**
 
 
 #### Details
-* Skill (*1 AP*): Concentration
+* Skill (**1 AP**): Concentration
 	* Inherits Modifiers from: **Intelligence**
-* Energy Point Cost (*2 AP*): 1
-* Failure Chance (*2 AP*): gm_only
-* Heal Affliction (*5 AP*): Diseased
-* Magic (*1 AP*)
+* Energy Point Cost (**2 AP**): 1
+* Failure Chance (**2 AP**): gm_only
+* Heal Affliction (**5 AP**): Diseased
+* Magic (**1 AP**)
 	* Magic Energy Type: **Meta**
-* Range (*1 AP*): Melee
+* Range (**1 AP**): Melee
 <br /><br />
 
 
@@ -1056,8 +1056,8 @@ Aspect Point Cost: **7 AP**
 
 Requires: **[Slash](#slash)**<br />
 #### Details
-* Energy Point Cost (*2 AP*): 1
-* Opportunistic Action (*5 AP*)
+* Energy Point Cost (**2 AP**): 1
+* Opportunistic Action (**5 AP**)
 <br /><br />
 
 
@@ -1070,8 +1070,8 @@ Aspect Point Cost: **7 AP**
 
 Requires: **[Stab](#stab)**<br />
 #### Details
-* Energy Point Cost (*2 AP*): 1
-* Opportunistic Action (*5 AP*)
+* Energy Point Cost (**2 AP**): 1
+* Opportunistic Action (**5 AP**)
 <br /><br />
 
 
@@ -1084,14 +1084,14 @@ Aspect Point Cost: **18 AP**
 
 Requires: **[Dismiss](#dismiss)**<br />
 #### Details
-* Skill (*3 AP*): Attack
+* Skill (**3 AP**): Attack
 	* Inherits Modifiers from: **Intelligence**
-* Energy Point Cost (*1 AP*): 2
-* Failure Chance (*0 AP*): 8
-* Magic (*1 AP*)
+* Energy Point Cost (**1 AP**): 2
+* Failure Chance (**0 AP**): 8
+* Magic (**1 AP**)
 	* Magic Energy Type: **Meta**
-* Reactionary (*10 AP*)
-* Range (*3 AP*): Medium
+* Reactionary (**10 AP**)
+* Range (**3 AP**): Medium
 <br /><br />
 
 
@@ -1104,7 +1104,7 @@ Aspect Point Cost: **1 AP**
 
 
 #### Details
-* Magic (*1 AP*)
+* Magic (**1 AP**)
 	* Magic Energy Type: **Meta**
 <br /><br />
 
@@ -1118,9 +1118,9 @@ Aspect Point Cost: **1 AP**
 
 Requires: **[Lockpicking](#lockpicking)**<br />
 #### Details
-* Skill (*1 AP*): Non-Combat
+* Skill (**1 AP**): Non-Combat
 	* Inherits Modifiers from: **Lockpicking**
-* Failure Chance (*0 AP*): 8
+* Failure Chance (**0 AP**): 8
 <br /><br />
 
 
@@ -1135,13 +1135,13 @@ Aspect Point Cost: **9 AP**
 
 
 #### Details
-* Skill (*3 AP*): Attack
+* Skill (**3 AP**): Attack
 	* Inherits Modifiers from: **Intelligence**
-* Energy Point Cost (*2 AP*): 1
-* Failure Chance (*0 AP*): 8
-* Magic (*1 AP*)
+* Energy Point Cost (**2 AP**): 1
+* Failure Chance (**0 AP**): 8
+* Magic (**1 AP**)
 	* Magic Energy Type: **Meta**
-* Range (*3 AP*): Medium
+* Range (**3 AP**): Medium
 <br /><br />
 
 
@@ -1154,18 +1154,18 @@ Aspect Point Cost: **16 AP**
 
 
 #### Details
-* Skill (*1 AP*): Concentration
+* Skill (**1 AP**): Concentration
 	* Inherits Modifiers from: **Intelligence**
-* Energy Point Cost (*2 AP*): 1
-* Failure Chance (*0 AP*): 8
-* Duration (*3 AP*): 4 Turns
-* Damage Resistance (*1 AP*): +2 DR
+* Energy Point Cost (**2 AP**): 1
+* Failure Chance (**0 AP**): 8
+* Duration (**3 AP**): 4 Turns
+* Damage Resistance (**1 AP**): +2 DR
 	* Applies to: **Chosen upon Casting**
-* Concentration Check Modifier (*5 AP*): +2
+* Concentration Check Modifier (**5 AP**): +2
 	* Applies to: **Chosen upon Casting**
-* Magic (*1 AP*)
+* Magic (**1 AP**)
 	* Magic Energy Type: **Meta**
-* Range (*3 AP*): Medium
+* Range (**3 AP**): Medium
 <br /><br />
 
 
@@ -1178,10 +1178,10 @@ Aspect Point Cost: **2 AP**
 
 Requires: **[Duck and Dodge](#duck-and-dodge)**<br />
 #### Details
-* Skill (*1 AP*): Concentration
+* Skill (**1 AP**): Concentration
 	* Inherits Modifiers from: **Standing Forward Jump**
-* Failure Chance (*0 AP*): 8
-* Energy Point Cost (*1 AP*): 2
+* Failure Chance (**0 AP**): 8
+* Energy Point Cost (**1 AP**): 2
 <br /><br />
 
 
@@ -1194,10 +1194,10 @@ Aspect Point Cost: **3 AP**
 
 
 #### Details
-* Skill (*1 AP*): Concentration
+* Skill (**1 AP**): Concentration
 	* Inherits Modifiers from: **Mobility**
-* Failure Chance (*0 AP*): 8
-* Energy Point Cost (*2 AP*): 1
+* Failure Chance (**0 AP**): 8
+* Energy Point Cost (**2 AP**): 1
 <br /><br />
 
 
@@ -1212,13 +1212,13 @@ Aspect Point Cost: **1 AP**
 
 Requires: **[Magic Trick](#magic-trick)**<br />
 #### Details
-* Skill (*1 AP*): Concentration
+* Skill (**1 AP**): Concentration
 	* Inherits Modifiers from: **Perception**
-* Energy Point Cost (*1 AP*): 2
-* Failure Chance (*-6 AP*): 14
-* Magic (*1 AP*)
+* Energy Point Cost (**1 AP**): 2
+* Failure Chance (**-6 AP**): 14
+* Magic (**1 AP**)
 	* Magic Energy Type: **Meta**
-* Range (*3 AP*): Medium
+* Range (**3 AP**): Medium
 <br /><br />
 
 
@@ -1233,11 +1233,11 @@ Aspect Point Cost: **4 AP**
 
 Requires: **[Medicine](#medicine)**<br />
 #### Details
-* Skill (*1 AP*): Concentration
+* Skill (**1 AP**): Concentration
 	* Inherits Modifiers from: **Intelligence**
-* Damage Healed (*2 AP*): 1d6
-* Energy Point Cost (*1 AP*): 2
-* Failure Chance (*0 AP*): 8
+* Damage Healed (**2 AP**): 1d6
+* Energy Point Cost (**1 AP**): 2
+* Failure Chance (**0 AP**): 8
 <br /><br />
 
 
@@ -1250,10 +1250,10 @@ Aspect Point Cost: **1 AP**
 
 Requires: **[High Manual Dexterity](#high-manual-dexterity)**<br />
 #### Details
-* Skill (*1 AP*): Non-Combat
+* Skill (**1 AP**): Non-Combat
 	* Limited: **No Character Targets**
 	* Inherits Modifiers from: **Mobility**
-* Failure Chance (*0 AP*): 8
+* Failure Chance (**0 AP**): 8
 <br /><br />
 
 
@@ -1266,14 +1266,14 @@ Aspect Point Cost: **10 AP**
 
 
 #### Details
-* Skill (*3 AP*): Attack
+* Skill (**3 AP**): Attack
 	* Inherits Modifiers from: **Intelligence**
-* Energy Point Cost (*2 AP*): 1
-* Failure Chance (*0 AP*): 8
-* Magic (*1 AP*)
+* Energy Point Cost (**2 AP**): 1
+* Failure Chance (**0 AP**): 8
+* Magic (**1 AP**)
 	* Magic Energy Type: **Fire**
-* Range (*3 AP*): Medium
-* Damage (*1 AP*): 1d4
+* Range (**3 AP**): Medium
+* Damage (**1 AP**): 1d4
 <br /><br />
 
 
@@ -1286,7 +1286,7 @@ Aspect Point Cost: **2 AP**
 
 
 #### Details
-* HP Pool Modifier (*2 AP*): +1
+* HP Pool Modifier (**2 AP**): +1
 <br /><br />
 
 
@@ -1299,16 +1299,16 @@ Aspect Point Cost: **10 AP**
 
 
 #### Details
-* Skill (*1 AP*): Concentration
+* Skill (**1 AP**): Concentration
 	* Inherits Modifiers from: **Intelligence**
-* Energy Point Cost (*2 AP*): 1
-* Failure Chance (*0 AP*): 8
-* Duration (*3 AP*): 4 Turns
-* Damage Resistance (*2 AP*): +4 DR
+* Energy Point Cost (**2 AP**): 1
+* Failure Chance (**0 AP**): 8
+* Duration (**3 AP**): 4 Turns
+* Damage Resistance (**2 AP**): +4 DR
 	* Applies to: **Kinetic**
-* Magic (*1 AP*)
+* Magic (**1 AP**)
 	* Magic Energy Type: **Force**
-* Range (*1 AP*): Melee
+* Range (**1 AP**): Melee
 <br /><br />
 
 
@@ -1321,10 +1321,10 @@ Aspect Point Cost: **1 AP**
 
 Requires: **[Fit](#fit)**<br />
 #### Details
-* Skill (*2 AP*): Defense
+* Skill (**2 AP**): Defense
 	* Inherits Modifiers from: **Mobility**
-* Failure Chance (*-4 AP*): 12
-* Energy Point Cost (*3 AP*): 0
+* Failure Chance (**-4 AP**): 12
+* Energy Point Cost (**3 AP**): 0
 <br /><br />
 
 
@@ -1337,15 +1337,15 @@ Aspect Point Cost: **14 AP**
 
 
 #### Details
-* Skill (*3 AP*): Attack
+* Skill (**3 AP**): Attack
 	* Inherits Modifiers from: **Intelligence**
-* Energy Point Cost (*2 AP*): 1
-* Failure Chance (*0 AP*): 8
-* Magic (*1 AP*)
+* Energy Point Cost (**2 AP**): 1
+* Failure Chance (**0 AP**): 8
+* Magic (**1 AP**)
 	* Magic Energy Type: **Cold**
-* Area Effect (*5 AP*): Cone
-* Range (*2 AP*): Short
-* Damage (*1 AP*): 1d4
+* Area Effect (**5 AP**): Cone
+* Range (**2 AP**): Short
+* Damage (**1 AP**): 1d4
 <br /><br />
 
 
@@ -1358,10 +1358,10 @@ Aspect Point Cost: **3 AP**
 
 
 #### Details
-* Skill (*1 AP*): Concentration
+* Skill (**1 AP**): Concentration
 	* Inherits Modifiers from: **Intelligence**
-* Failure Chance (*0 AP*): 8
-* Energy Point Cost (*2 AP*): 1
+* Failure Chance (**0 AP**): 8
+* Energy Point Cost (**2 AP**): 1
 <br /><br />
 
 
@@ -1374,13 +1374,13 @@ Aspect Point Cost: **2 AP**
 
 Requires: **[Fit](#fit)**<br />Requires: **[Slash](#slash)**<br />
 #### Details
-* Skill (*1 AP*): Concentration
-* Failure Chance (*0 AP*): 8
-* Concentration Check Modifier (*-3 AP*): -2
+* Skill (**1 AP**): Concentration
+* Failure Chance (**0 AP**): 8
+* Concentration Check Modifier (**-3 AP**): -2
 	* Applies to: **Great Slash**
 	* Inherits Modifiers from: **Mobility**
-* Extra Target (*3 AP*): +1
-* Energy Point Cost (*1 AP*): 2
+* Extra Target (**3 AP**): +1
+* Energy Point Cost (**1 AP**): 2
 <br /><br />
 
 
@@ -1393,15 +1393,15 @@ Aspect Point Cost: **18 AP**
 
 Requires: **[Magic Trick](#magic-trick)**<br />
 #### Details
-* Skill (*1 AP*): Concentration
+* Skill (**1 AP**): Concentration
 	* Inherits Modifiers from: **Intelligence**
-* Delayed Effect Duration (*-1 AP*): 1 Turn
-* Energy Point Cost (*2 AP*): 1
-* Failure Chance (*-2 AP*): 10
-* Magic (*1 AP*)
+* Delayed Effect Duration (**-1 AP**): 1 Turn
+* Energy Point Cost (**2 AP**): 1
+* Failure Chance (**-2 AP**): 10
+* Magic (**1 AP**)
 	* Magic Energy Type: **Meta**
-* Range (*2 AP*): Short
-* Teleportation (*15 AP*)
+* Range (**2 AP**): Short
+* Teleportation (**15 AP**)
 <br /><br />
 
 
@@ -1425,8 +1425,8 @@ Aspect Point Cost: **7 AP**
 
 Requires: **[Martial Artist](#martial-artist)**<br />
 #### Details
-* Can't be Flanked (*5 AP*)
-* HP Pool Modifier (*2 AP*): +1
+* Can't be Flanked (**5 AP**)
+* HP Pool Modifier (**2 AP**): +1
 <br /><br />
 
 
@@ -1439,9 +1439,9 @@ Aspect Point Cost: **10 AP**
 
 Requires: **[Fit](#fit)**<br />
 #### Details
-* Core Aspect Modifier (*8 AP*): +1
+* Core Aspect Modifier (**8 AP**): +1
 	* Applies to: **Mobility**
-* HP Pool Modifier (*2 AP*): +1
+* HP Pool Modifier (**2 AP**): +1
 <br /><br />
 
 
@@ -1454,8 +1454,8 @@ Aspect Point Cost: **10 AP**
 
 Requires: **[Fit](#fit)**<br />
 #### Details
-* Action Pool Modifier (*8 AP*): +1
-* HP Pool Modifier (*2 AP*): +1
+* Action Pool Modifier (**8 AP**): +1
+* HP Pool Modifier (**2 AP**): +1
 <br /><br />
 
 
@@ -1468,9 +1468,9 @@ Aspect Point Cost: **10 AP**
 
 Requires: **[Fit](#fit)**<br />
 #### Details
-* Core Aspect Modifier (*8 AP*): +1
+* Core Aspect Modifier (**8 AP**): +1
 	* Applies to: **Strength**
-* HP Pool Modifier (*2 AP*): +1
+* HP Pool Modifier (**2 AP**): +1
 <br /><br />
 
 
@@ -1483,7 +1483,7 @@ Aspect Point Cost: **5 AP**
 
 Requires: **[Perception](#perception)**<br />
 #### Details
-* Opportunistic Action (*5 AP*)
+* Opportunistic Action (**5 AP**)
 <br /><br />
 
 
@@ -1496,10 +1496,10 @@ Aspect Point Cost: **3 AP**
 
 
 #### Details
-* Skill (*1 AP*): Concentration
+* Skill (**1 AP**): Concentration
 	* Inherits Modifiers from: **Intelligence**
-* Energy Point Cost (*2 AP*): 1
-* Failure Chance (*0 AP*): 8
+* Energy Point Cost (**2 AP**): 1
+* Failure Chance (**0 AP**): 8
 <br /><br />
 
 
@@ -1512,10 +1512,10 @@ Aspect Point Cost: **3 AP**
 
 
 #### Details
-* Skill (*1 AP*): Concentration
+* Skill (**1 AP**): Concentration
 	* Inherits Modifiers from: **Intelligence**
-* Energy Point Cost (*2 AP*): 1
-* Failure Chance (*0 AP*): 8
+* Energy Point Cost (**2 AP**): 1
+* Failure Chance (**0 AP**): 8
 <br /><br />
 
 
@@ -1528,10 +1528,10 @@ Aspect Point Cost: **3 AP**
 
 
 #### Details
-* Skill (*1 AP*): Concentration
+* Skill (**1 AP**): Concentration
 	* Inherits Modifiers from: **Intelligence**
-* Energy Point Cost (*2 AP*): 1
-* Failure Chance (*0 AP*): 8
+* Energy Point Cost (**2 AP**): 1
+* Failure Chance (**0 AP**): 8
 <br /><br />
 
 
@@ -1544,10 +1544,10 @@ Aspect Point Cost: **3 AP**
 
 
 #### Details
-* Skill (*1 AP*): Concentration
+* Skill (**1 AP**): Concentration
 	* Inherits Modifiers from: **Intelligence**
-* Energy Point Cost (*2 AP*): 1
-* Failure Chance (*0 AP*): 8
+* Energy Point Cost (**2 AP**): 1
+* Failure Chance (**0 AP**): 8
 <br /><br />
 
 
@@ -1560,10 +1560,10 @@ Aspect Point Cost: **3 AP**
 
 
 #### Details
-* Skill (*1 AP*): Concentration
+* Skill (**1 AP**): Concentration
 	* Inherits Modifiers from: **Intelligence**
-* Energy Point Cost (*2 AP*): 1
-* Failure Chance (*0 AP*): 8
+* Energy Point Cost (**2 AP**): 1
+* Failure Chance (**0 AP**): 8
 <br /><br />
 
 
@@ -1576,10 +1576,10 @@ Aspect Point Cost: **3 AP**
 
 
 #### Details
-* Skill (*1 AP*): Concentration
+* Skill (**1 AP**): Concentration
 	* Inherits Modifiers from: **Intelligence**
-* Energy Point Cost (*2 AP*): 1
-* Failure Chance (*0 AP*): 8
+* Energy Point Cost (**2 AP**): 1
+* Failure Chance (**0 AP**): 8
 <br /><br />
 
 
@@ -1592,10 +1592,10 @@ Aspect Point Cost: **3 AP**
 
 
 #### Details
-* Skill (*1 AP*): Concentration
+* Skill (**1 AP**): Concentration
 	* Inherits Modifiers from: **Intelligence**
-* Energy Point Cost (*2 AP*): 1
-* Failure Chance (*0 AP*): 8
+* Energy Point Cost (**2 AP**): 1
+* Failure Chance (**0 AP**): 8
 <br /><br />
 
 
@@ -1608,10 +1608,10 @@ Aspect Point Cost: **3 AP**
 
 
 #### Details
-* Skill (*1 AP*): Concentration
+* Skill (**1 AP**): Concentration
 	* Inherits Modifiers from: **Intelligence**
-* Energy Point Cost (*2 AP*): 1
-* Failure Chance (*0 AP*): 8
+* Energy Point Cost (**2 AP**): 1
+* Failure Chance (**0 AP**): 8
 <br /><br />
 
 
@@ -1624,7 +1624,7 @@ Aspect Point Cost: **10 AP**
 
 
 #### Details
-* NPC Cohort (*10 AP*)
+* NPC Cohort (**10 AP**)
 <br /><br />
 
 
@@ -1637,11 +1637,11 @@ Aspect Point Cost: **6 AP**
 
 Requires: **[Fit](#fit)**<br />
 #### Details
-* Skill (*1 AP*): Concentration
-* Failure Chance (*0 AP*): 8
-* Concentration Check Modifier (*3 AP*): +1
+* Skill (**1 AP**): Concentration
+* Failure Chance (**0 AP**): 8
+* Concentration Check Modifier (**3 AP**): +1
 	* Applies to: **Leaping Strike**
-* Energy Point Cost (*2 AP*): 1
+* Energy Point Cost (**2 AP**): 1
 <br /><br />
 
 
@@ -1654,9 +1654,9 @@ Aspect Point Cost: **1 AP**
 
 Requires: **[High Manual Dexterity](#high-manual-dexterity)**<br />
 #### Details
-* Skill (*1 AP*): Non-Combat
+* Skill (**1 AP**): Non-Combat
 	* Inherits Modifiers from: **Mobility**
-* Failure Chance (*0 AP*): 8
+* Failure Chance (**0 AP**): 8
 <br /><br />
 
 
@@ -1671,7 +1671,7 @@ Aspect Point Cost: **1 AP**
 
 
 #### Details
-* Magic (*1 AP*)
+* Magic (**1 AP**)
 	* Magic Energy Type: **Meta**
 <br /><br />
 
@@ -1685,9 +1685,9 @@ Aspect Point Cost: **5 AP**
 
 
 #### Details
-* Concentration Check Modifier (*3 AP*): +1
+* Concentration Check Modifier (**3 AP**): +1
 	* Applies to: **All Magic of Chosen Energy Type**
-* Attack Accuracy Modifier (*2 AP*): +1
+* Attack Accuracy Modifier (**2 AP**): +1
 	* Applies to: **All Magic of Chosen Energy Type**
 <br /><br />
 
@@ -1701,7 +1701,7 @@ Aspect Point Cost: **5 AP**
 
 Requires: **[Fit](#fit)**<br />
 #### Details
-* Crit Success Modifier (*5 AP*): +1
+* Crit Success Modifier (**5 AP**): +1
 	* Limited: **Melee**
 <br /><br />
 
@@ -1717,10 +1717,10 @@ Aspect Point Cost: **3 AP**
 
 
 #### Details
-* Skill (*1 AP*): Non-Combat
+* Skill (**1 AP**): Non-Combat
 	* Inherits Modifiers from: **Intelligence**
-* Failure Chance (*0 AP*): 8
-* Damage Healed (*2 AP*): 1d6
+* Failure Chance (**0 AP**): 8
+* Damage Healed (**2 AP**): 1d6
 <br /><br />
 
 
@@ -1735,12 +1735,12 @@ Aspect Point Cost: **6 AP**
 
 
 #### Details
-* Skill (*1 AP*): Concentration
+* Skill (**1 AP**): Concentration
 	* Inherits Modifiers from: **Mobility**
-* Range (*1 AP*): Melee
-* Extra Attack (*8 AP*): +1
-* Failure Chance (*-6 AP*): 14
-* Energy Point Cost (*2 AP*): 1
+* Range (**1 AP**): Melee
+* Extra Attack (**8 AP**): +1
+* Failure Chance (**-6 AP**): 14
+* Energy Point Cost (**2 AP**): 1
 <br /><br />
 
 
@@ -1753,7 +1753,7 @@ Aspect Point Cost: **8 AP**
 
 
 #### Details
-* Action Pool Modifier (*8 AP*): +1
+* Action Pool Modifier (**8 AP**): +1
 <br /><br />
 
 
@@ -1766,7 +1766,7 @@ Aspect Point Cost: **8 AP**
 
 Requires: **[Mental Endurance](#mental-endurance)**<br />
 #### Details
-* Core Aspect Modifier (*8 AP*): +1
+* Core Aspect Modifier (**8 AP**): +1
 	* Applies to: **Intelligence**
 <br /><br />
 
@@ -1782,18 +1782,18 @@ Aspect Point Cost: **19 AP**
 
 
 #### Details
-* Skill (*1 AP*): Concentration
+* Skill (**1 AP**): Concentration
 	* Inherits Modifiers from: **Intelligence**
-* Energy Point Cost (*2 AP*): 1
-* Failure Chance (*-6 AP*): 14
-* Magic (*1 AP*)
+* Energy Point Cost (**2 AP**): 1
+* Failure Chance (**-6 AP**): 14
+* Magic (**1 AP**)
 	* Magic Energy Type: **Meta**
-* Attack Accuracy Modifier (*8 AP*): -4
+* Attack Accuracy Modifier (**8 AP**): -4
 	* Applies to: **Ranged Attacks**
-* Range (*3 AP*): Medium
-* Area Effect (*7 AP*): Dome
+* Range (**3 AP**): Medium
+* Area Effect (**7 AP**): Dome
 	* Radius: 6
-* Duration (*3 AP*): 4 Turns
+* Duration (**3 AP**): 4 Turns
 <br /><br />
 
 
@@ -1808,9 +1808,9 @@ Aspect Point Cost: **5 AP**
 
 
 #### Details
-* Skill (*1 AP*): Concentration
-* Energy Point Cost (*2 AP*): 1
-* Failure Chance (*2 AP*): gm_only
+* Skill (**1 AP**): Concentration
+* Energy Point Cost (**2 AP**): 1
+* Failure Chance (**2 AP**): gm_only
 <br /><br />
 
 
@@ -1825,10 +1825,10 @@ Aspect Point Cost: **3 AP**
 
 Requires: **[Filch](#filch)**<br />
 #### Details
-* Skill (*1 AP*): Concentration
+* Skill (**1 AP**): Concentration
 	* Inherits Modifiers from: **Mobility**
-* Failure Chance (*0 AP*): 8
-* Energy Point Cost (*2 AP*): 1
+* Failure Chance (**0 AP**): 8
+* Energy Point Cost (**2 AP**): 1
 <br /><br />
 
 
@@ -1841,13 +1841,13 @@ Aspect Point Cost: **7 AP**
 
 Requires: **[Duck and Dodge](#duck-and-dodge)**<br />Requires: **[Fit](#fit)**<br />
 #### Details
-* Skill (*1 AP*): Concentration
+* Skill (**1 AP**): Concentration
 	* Limited: **Unusuable when Slowed**
 	* Inherits Modifiers from: **Mobility**
-* Failure Chance (*0 AP*): 8
-* Concentration Check Modifier (*5 AP*): +2
+* Failure Chance (**0 AP**): 8
+* Concentration Check Modifier (**5 AP**): +2
 	* Applies to: **Pivot and Roll**
-* Energy Point Cost (*1 AP*): 2
+* Energy Point Cost (**1 AP**): 2
 <br /><br />
 
 
@@ -1860,14 +1860,14 @@ Aspect Point Cost: **10 AP**
 
 
 #### Details
-* Skill (*1 AP*): Concentration
+* Skill (**1 AP**): Concentration
 	* Inherits Modifiers from: **Intelligence**
-* Energy Point Cost (*2 AP*): 1
-* Failure Chance (*2 AP*): gm_only
-* Heal Affliction (*3 AP*): Poisoned
-* Magic (*1 AP*)
+* Energy Point Cost (**2 AP**): 1
+* Failure Chance (**2 AP**): gm_only
+* Heal Affliction (**3 AP**): Poisoned
+* Magic (**1 AP**)
 	* Magic Energy Type: **Meta**
-* Range (*1 AP*): Melee
+* Range (**1 AP**): Melee
 <br /><br />
 
 
@@ -1882,16 +1882,16 @@ Aspect Point Cost: **5 AP**
 
 
 #### Details
-* Skill (*1 AP*): Concentration
+* Skill (**1 AP**): Concentration
 	* Inherits Modifiers from: **Intelligence**
 	* Limited: **Caster Only**
-* Energy Point Cost (*2 AP*): 1
-* Failure Chance (*0 AP*): 8
-* Damage Resistance (*1 AP*): +2 DR
+* Energy Point Cost (**2 AP**): 1
+* Failure Chance (**0 AP**): 8
+* Damage Resistance (**1 AP**): +2 DR
 	* Applies to: **Kinetic**
-* Magic (*1 AP*)
+* Magic (**1 AP**)
 	* Magic Energy Type: **Force**
-* Range (*0 AP*): Personal
+* Range (**0 AP**): Personal
 <br /><br />
 
 
@@ -1904,8 +1904,8 @@ Aspect Point Cost: **1 AP**
 
 Requires: **[Mental Endurance](#mental-endurance)**<br />
 #### Details
-* Action Pool Refresh Modifier (*8 AP*): +1
-* Core Aspect Modifier (*-8 AP*): -1
+* Action Pool Refresh Modifier (**8 AP**): +1
+* Core Aspect Modifier (**-8 AP**): -1
 	* Applies to: **Strength**
 <br /><br />
 
@@ -1919,10 +1919,10 @@ Aspect Point Cost: **3 AP**
 
 
 #### Details
-* Skill (*1 AP*): Concentration
+* Skill (**1 AP**): Concentration
 	* Inherits Modifiers from: **Mobility**
-* Failure Chance (*0 AP*): 8
-* Energy Point Cost (*2 AP*): 1
+* Failure Chance (**0 AP**): 8
+* Energy Point Cost (**2 AP**): 1
 <br /><br />
 
 
@@ -1935,16 +1935,16 @@ Aspect Point Cost: **15 AP**
 
 Requires: **[Vigor](#vigor)**<br />
 #### Details
-* Energy Point Cost (*2 AP*): 1
-* Damage Resistance (*2 AP*): +4 DR
+* Energy Point Cost (**2 AP**): 1
+* Damage Resistance (**2 AP**): +4 DR
 	* Applies to: **Kinetic**
-* Damage Resistance (*2 AP*): +4 DR
+* Damage Resistance (**2 AP**): +4 DR
 	* Applies to: **Cold**
-* Damage Resistance (*2 AP*): +4 DR
+* Damage Resistance (**2 AP**): +4 DR
 	* Applies to: **Fire**
-* Damage Resistance (*2 AP*): +4 DR
+* Damage Resistance (**2 AP**): +4 DR
 	* Applies to: **Electric**
-* Duration (*5 AP*): 8 Turns
+* Duration (**5 AP**): 8 Turns
 <br /><br />
 
 
@@ -1957,14 +1957,14 @@ Aspect Point Cost: **7 AP**
 
 
 #### Details
-* Skill (*1 AP*): Concentration
+* Skill (**1 AP**): Concentration
 	* Inherits Modifiers from: **Intelligence**
-* Energy Point Cost (*2 AP*): 1
-* Failure Chance (*0 AP*): 8
-* Damage Healed (*2 AP*): 1d6
-* Magic (*1 AP*)
+* Energy Point Cost (**2 AP**): 1
+* Failure Chance (**0 AP**): 8
+* Damage Healed (**2 AP**): 1d6
+* Magic (**1 AP**)
 	* Magic Energy Type: **Meta**
-* Range (*1 AP*): Melee
+* Range (**1 AP**): Melee
 <br /><br />
 
 
@@ -1977,11 +1977,11 @@ Aspect Point Cost: **1 AP**
 
 
 #### Details
-* Skill (*1 AP*): Concentration
+* Skill (**1 AP**): Concentration
 	* Inherits Modifiers from: **Intelligence**
-* Energy Point Cost (*2 AP*): 1
-* Failure Chance (*-4 AP*): 12
-* Magic (*1 AP*)
+* Energy Point Cost (**2 AP**): 1
+* Failure Chance (**-4 AP**): 12
+* Magic (**1 AP**)
 	* Magic Energy Type: **Meta**
 <br /><br />
 
@@ -1995,11 +1995,11 @@ Aspect Point Cost: **1 AP**
 
 Requires: **[Perception](#perception)**<br />
 #### Details
-* Concentration Check Modifier (*3 AP*): +1
+* Concentration Check Modifier (**3 AP**): +1
 	* Applies to: **Ally's Attack**
 	* Limited: **Ranged Attacks Only**
-* Failure Chance (*-4 AP*): 12
-* Energy Point Cost (*2 AP*): 1
+* Failure Chance (**-4 AP**): 12
+* Energy Point Cost (**2 AP**): 1
 <br /><br />
 
 
@@ -2012,11 +2012,11 @@ Aspect Point Cost: **3 AP**
 
 
 #### Details
-* Skill (*1 AP*): Concentration
+* Skill (**1 AP**): Concentration
 	* Limited: **Slashing Weapons**
 	* Inherits Modifiers from: **Mobility**
-* Failure Chance (*0 AP*): 8
-* Energy Point Cost (*2 AP*): 1
+* Failure Chance (**0 AP**): 8
+* Energy Point Cost (**2 AP**): 1
 <br /><br />
 
 
@@ -2029,14 +2029,14 @@ Aspect Point Cost: **8 AP**
 
 
 #### Details
-* Skill (*1 AP*): Concentration
+* Skill (**1 AP**): Concentration
 	* Inherits Modifiers from: **Intelligence**
-* Energy Point Cost (*2 AP*): 1
-* Failure Chance (*0 AP*): 8
-* Heal Affliction (*3 AP*): Sickened
-* Magic (*1 AP*)
+* Energy Point Cost (**2 AP**): 1
+* Failure Chance (**0 AP**): 8
+* Heal Affliction (**3 AP**): Sickened
+* Magic (**1 AP**)
 	* Magic Energy Type: **Meta**
-* Range (*1 AP*): Melee
+* Range (**1 AP**): Melee
 <br /><br />
 
 
@@ -2049,14 +2049,14 @@ Aspect Point Cost: **10 AP**
 
 
 #### Details
-* Skill (*3 AP*): Attack
+* Skill (**3 AP**): Attack
 	* Inherits Modifiers from: **Intelligence**
-* Energy Point Cost (*2 AP*): 1
-* Failure Chance (*0 AP*): 8
-* Magic (*1 AP*)
+* Energy Point Cost (**2 AP**): 1
+* Failure Chance (**0 AP**): 8
+* Magic (**1 AP**)
 	* Magic Energy Type: **Meta**
-* Range (*2 AP*): Short
-* Damage (*2 AP*): 1d6
+* Range (**2 AP**): Short
+* Damage (**2 AP**): 1d6
 <br /><br />
 
 
@@ -2069,11 +2069,11 @@ Aspect Point Cost: **3 AP**
 
 
 #### Details
-* Skill (*1 AP*): Concentration
+* Skill (**1 AP**): Concentration
 	* Limited: **Thrusting Weapons**
 	* Inherits Modifiers from: **Strength**
-* Failure Chance (*0 AP*): 8
-* Energy Point Cost (*2 AP*): 1
+* Failure Chance (**0 AP**): 8
+* Energy Point Cost (**2 AP**): 1
 <br /><br />
 
 
@@ -2088,11 +2088,11 @@ Aspect Point Cost: **4 AP**
 
 
 #### Details
-* Skill (*1 AP*): Concentration
+* Skill (**1 AP**): Concentration
 	* Inherits Modifiers from: **Intelligence**
-* Energy Point Cost (*2 AP*): 1
-* Failure Chance (*0 AP*): 8
-* Magic (*1 AP*)
+* Energy Point Cost (**2 AP**): 1
+* Failure Chance (**0 AP**): 8
+* Magic (**1 AP**)
 	* Magic Energy Type: **Meta**
 <br /><br />
 
@@ -2106,9 +2106,9 @@ Aspect Point Cost: **1 AP**
 
 
 #### Details
-* Skill (*1 AP*): Non-Combat
+* Skill (**1 AP**): Non-Combat
 	* Inherits Modifiers from: **Intelligence**
-* Failure Chance (*0 AP*): 8
+* Failure Chance (**0 AP**): 8
 <br /><br />
 
 
@@ -2121,11 +2121,11 @@ Aspect Point Cost: **3 AP**
 
 
 #### Details
-* Skill (*1 AP*): Concentration
+* Skill (**1 AP**): Concentration
 	* Limited: **Swung Weapons**
 	* Inherits Modifiers from: **Strength**
-* Failure Chance (*0 AP*): 8
-* Energy Point Cost (*2 AP*): 1
+* Failure Chance (**0 AP**): 8
+* Energy Point Cost (**2 AP**): 1
 <br /><br />
 
 
@@ -2138,15 +2138,15 @@ Aspect Point Cost: **10 AP**
 
 
 #### Details
-* Skill (*3 AP*): Attack
+* Skill (**3 AP**): Attack
 	* Limited: **Size Modifier -3 and Smaller Objects Only**
 	* Inherits Modifiers from: **Intelligence**
-* Energy Point Cost (*2 AP*): 1
-* Failure Chance (*0 AP*): 8
-* Magic (*1 AP*)
+* Energy Point Cost (**2 AP**): 1
+* Failure Chance (**0 AP**): 8
+* Magic (**1 AP**)
 	* Magic Energy Type: **Kinetic**
-* Range (*3 AP*): Medium
-* Damage (*1 AP*): 1d4
+* Range (**3 AP**): Medium
+* Damage (**1 AP**): 1d4
 <br /><br />
 
 
@@ -2159,7 +2159,7 @@ Aspect Point Cost: **5 AP**
 
 Requires: **[Perception](#perception)**<br />Requires: **[Quiet Steps](#quiet-steps)**<br />
 #### Details
-* Concentration Check Modifier (*5 AP*): +2
+* Concentration Check Modifier (**5 AP**): +2
 	* Limited: **Trap Finding Only**
 	* Applies to: **Perception**
 <br /><br />
@@ -2176,9 +2176,9 @@ Aspect Point Cost: **1 AP**
 
 Requires: **[Medicine](#medicine)**<br />
 #### Details
-* Skill (*1 AP*): Non-Combat
+* Skill (**1 AP**): Non-Combat
 	* Inherits Modifiers from: **Intelligence**
-* Failure Chance (*0 AP*): 8
+* Failure Chance (**0 AP**): 8
 <br /><br />
 
 
@@ -2191,7 +2191,7 @@ Aspect Point Cost: **8 AP**
 
 
 #### Details
-* Action Pool Refresh Modifier (*8 AP*): +1
+* Action Pool Refresh Modifier (**8 AP**): +1
 <br /><br />
 
 
@@ -2204,14 +2204,14 @@ Aspect Point Cost: **10 AP**
 
 
 #### Details
-* Skill (*3 AP*): Attack
+* Skill (**3 AP**): Attack
 	* Inherits Modifiers from: **Intelligence**
-* Energy Point Cost (*2 AP*): 1
-* Failure Chance (*0 AP*): 8
-* Magic (*1 AP*)
+* Energy Point Cost (**2 AP**): 1
+* Failure Chance (**0 AP**): 8
+* Magic (**1 AP**)
 	* Magic Energy Type: **Electric**
-* Range (*3 AP*): Medium
-* Damage (*1 AP*): 1d4
+* Range (**3 AP**): Medium
+* Damage (**1 AP**): 1d4
 <br /><br />
 
 
@@ -2224,7 +2224,7 @@ Aspect Point Cost: **3 AP**
 
 
 #### Details
-* Concentration Check Modifier (*3 AP*): +1
+* Concentration Check Modifier (**3 AP**): +1
 	* Applies to: **Bound Weapon Type**
 <br /><br />
 
