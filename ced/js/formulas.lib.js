@@ -38,7 +38,7 @@ function Formulas() {
         }
 
         var ival = parseInt(value);
-        return Math.floor(-1 * (ival - 15) / 2);
+        return Math.floor(-1 * (ival - 8));
     };
 }
 

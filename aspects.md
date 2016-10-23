@@ -86,15 +86,13 @@ Describes the attack method of a weapon. The attack method of a weapon defines w
 
 
 
-* **Magic**
+* **Bludgeoning**
 	* Aspect Point Cost: 0
 * **Thrusting**
 	* Aspect Point Cost: 0
-* **Bludgeoning**
+* **Magic**
 	* Aspect Point Cost: 0
 * **Slashing**
-	* Aspect Point Cost: 0
-* **Swinging**
 	* Aspect Point Cost: 0
 * **Drawn Force**
 	* Aspect Point Cost: 0
@@ -1024,6 +1022,23 @@ Aspect Point Cost: **18 AP**
 * Damage Healed (**3 AP**): 1d8
 * Magic (**1 AP**)
 	* Magic Energy Type: **Meta**
+<br /><br />
+
+
+### Bludgeon
+
+Grants a character a melee attack that's proficient with blugeoning weapons. This attack may be used with heavy, blunt melee weapons, including staves and other similar weapon types. This does not apply to slashing weapons which require different techniques.
+
+Aspect Point Cost: **3 AP**
+<br />Capstone Cost: **3 AP**
+
+
+#### Details
+* Skill (**1 AP**): Concentration
+	* Limited: **Bludgeoning Weapons**
+	* Inherits Modifiers from: **Strength**
+* Failure Chance (**0 AP**): 8
+* Energy Point Cost (**2 AP**): 1
 <br /><br />
 
 
@@ -2109,23 +2124,6 @@ Aspect Point Cost: **1 AP**
 * Skill (**1 AP**): Non-Combat
 	* Inherits Modifiers from: **Intelligence**
 * Failure Chance (**0 AP**): 8
-<br /><br />
-
-
-### Swing
-
-Grants a character a melee swing attack. This attack may be used with swung melee weapons, including blugenoning, slings, staves and other similar weapon types. This does not apply to slashing weapons which require different techniques.
-
-Aspect Point Cost: **3 AP**
-<br />Capstone Cost: **3 AP**
-
-
-#### Details
-* Skill (**1 AP**): Concentration
-	* Limited: **Swung Weapons**
-	* Inherits Modifiers from: **Strength**
-* Failure Chance (**0 AP**): 8
-* Energy Point Cost (**2 AP**): 1
 <br /><br />
 
 
