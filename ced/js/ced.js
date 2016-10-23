@@ -74,14 +74,21 @@ function Character() {
                 _this.rev = resp.rev;
             });
         } else {
-            if (this.data.name === '' || !is_set(this.data.name)) {
+            var character_name = this.data.name;
+            if (character_name === '' || !is_set(character_name)) {
                 alert('Please set a name for the character first then click save to begin.');
                 return;
             }
 
-            couchdb.save_new(this.data, function(resp) {
-                _this.id = resp.id;
-                _this.rev = resp.rev;
+            couchdb.get(character_name, function(data) {
+                if (is_set(data)) {
+                    alert('A character named "' + character_name + '" already exists. Please load the character before editing.');
+                } else {
+                    couchdb.save_new(this.data, function(resp) {
+                        _this.id = resp.id;
+                        _this.rev = resp.rev;
+                    });
+                }
             });
         }
     };
