@@ -927,6 +927,15 @@
             </text>
         </aspect>
         
+        <aspect name="Back Row Specialist">
+            <effect descriptor="Skill" value="Concentration">
+            </effect>
+            
+            <text>
+                This aspect allows a character to ignore attacking throug certain hexes.
+            </text>
+        </aspect>
+
         <aspect name="Martial Artist">
             <effect descriptor="Crit Success Modifier" value="+1">
                 <detail type="limit" value="Melee" />

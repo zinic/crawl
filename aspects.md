@@ -900,7 +900,7 @@ Monetary Cost: **1440 $$**
 <br /><br />
 
 
-## Aspects - 78
+## Aspects - 79
 ### Adonic
 
 Super Strong, yo.
@@ -977,6 +977,19 @@ Aspect Point Cost: **3 AP**
 	* Inherits Modifiers from: **Strength**
 * Failure Chance (**0 AP**): 8
 * Energy Point Cost (**2 AP**): 1
+<br /><br />
+
+
+### Back Row Specialist
+
+This aspect allows a character to ignore attacking throug certain hexes.
+
+Aspect Point Cost: **1 AP**
+<br />Capstone Cost: **1 AP**
+
+
+#### Details
+* Skill (**1 AP**): Concentration
 <br /><br />
 
 
