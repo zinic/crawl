@@ -372,19 +372,19 @@ Denotes the duration of an effect.
 
 #### Energy Point Cost
 * **1**
-	* Aspect Point Cost: -2
+	* Aspect Point Cost: 2
 * **0**
 	* Aspect Point Cost: 3
 * **3**
-	* Aspect Point Cost: -8
+	* Aspect Point Cost: 0
 * **2**
-	* Aspect Point Cost: -5
+	* Aspect Point Cost: 1
 * **5**
-	* Aspect Point Cost: -21
+	* Aspect Point Cost: -2
 * **4**
-	* Aspect Point Cost: -13
+	* Aspect Point Cost: -1
 * **6**
-	* Aspect Point Cost: -34
+	* Aspect Point Cost: -3
 <br /><br />
 
 
@@ -740,7 +740,7 @@ Monetary Cost: **360 $$**
 
 
 #### Bracers of Slap Fight
-Monetary Cost: **0 $$**
+Monetary Cost: **360 $$**
 <br />
 Grants Aspect: **[Frantic Defense](#frantic-defense)**<br />
 <br /><br />
@@ -831,7 +831,7 @@ Monetary Cost: **1080 $$**
 
 
 #### Rock of Firebolt
-Monetary Cost: **720 $$**
+Monetary Cost: **1200 $$**
 <br />
 Grants Aspect: **[Firebolt](#firebolt)**<br />
 #### Details
@@ -842,7 +842,7 @@ Grants Aspect: **[Firebolt](#firebolt)**<br />
 
 
 #### Rock of Frigid Cone
-Monetary Cost: **1200 $$**
+Monetary Cost: **1680 $$**
 <br />
 Grants Aspect: **[Frigid Cone](#frigid-cone)**<br />
 #### Details
@@ -853,7 +853,7 @@ Grants Aspect: **[Frigid Cone](#frigid-cone)**<br />
 
 
 #### Wand of Firebolt
-Monetary Cost: **3240 $$**
+Monetary Cost: **3720 $$**
 <br />
 Grants Aspect: **[Firebolt](#firebolt)**<br />
 #### Details
@@ -864,7 +864,7 @@ Grants Aspect: **[Firebolt](#firebolt)**<br />
 
 
 #### Wand of Frigid Cone
-Monetary Cost: **3720 $$**
+Monetary Cost: **4200 $$**
 <br />
 Grants Aspect: **[Frigid Cone](#frigid-cone)**<br />
 #### Details
@@ -878,7 +878,7 @@ Grants Aspect: **[Frigid Cone](#frigid-cone)**<br />
 
 Upon casting, a bolt of lightning arcs from either of the character's hands toward the target enemy with a thundering crack. The attack roll recieves the character's intelligence modifier as an attack bonus.
 
-Monetary Cost: **960 $$**
+Monetary Cost: **1440 $$**
 <br />
 
 #### Details
@@ -939,8 +939,8 @@ Aspect Point Cost: **10 AP**
 
 Allows the caster to augment their vision with magic. This darkens ther vision slightly but does not damage their perception. Other magical effects within the range of the caster will shine brightly in their sight. At game master discretion, some magic items, even hidden or obscured, may shine through these obstacles.
 
-Aspect Point Cost: **3 AP**
-<br />Capstone Cost: **3 AP**
+Aspect Point Cost: **7 AP**
+<br />Capstone Cost: **7 AP**
 
 
 #### Details
@@ -959,8 +959,8 @@ Aspect Point Cost: **3 AP**
 
 Allows a character to use a bow, cross bow or other similar drawn force weapon. The skill check uses the higher of either the character's mobility modifier or the character's strength modifier.
 
-Aspect Point Cost: **-1 AP**
-<br />Capstone Cost: **-1 AP**
+Aspect Point Cost: **3 AP**
+<br />Capstone Cost: **3 AP**
 
 
 #### Details
@@ -993,8 +993,8 @@ Aspect Point Cost: **1 AP**
 
 Allows a character to steady their body against a shield and attempt to absorb an incoming attack completely. This ability requires the character to have a working shield equipped.
 
-Aspect Point Cost: **2 AP**
-<br />Capstone Cost: **2 AP**
+Aspect Point Cost: **6 AP**
+<br />Capstone Cost: **6 AP**
 
 
 #### Details
@@ -1031,8 +1031,8 @@ Aspect Point Cost: **18 AP**
 
 Allows a caster to magically heal a diseased character. The caster must roll their skill check versus the difficulty of the disease.
 
-Aspect Point Cost: **8 AP**
-<br />Capstone Cost: **8 AP**
+Aspect Point Cost: **12 AP**
+<br />Capstone Cost: **12 AP**
 
 
 #### Details
@@ -1051,8 +1051,8 @@ Aspect Point Cost: **8 AP**
 
 Allows a to make a slashing attack as an opportunistic action.
 
-Aspect Point Cost: **3 AP**
-<br />Capstone Cost: **2 AP**
+Aspect Point Cost: **7 AP**
+<br />Capstone Cost: **10 AP**
 
 Requires: **[Slash](#slash)**<br />
 #### Details
@@ -1065,8 +1065,8 @@ Requires: **[Slash](#slash)**<br />
 
 Allows a to make a stabbing attack as an opportunistic action.
 
-Aspect Point Cost: **3 AP**
-<br />Capstone Cost: **2 AP**
+Aspect Point Cost: **7 AP**
+<br />Capstone Cost: **10 AP**
 
 Requires: **[Stab](#stab)**<br />
 #### Details
@@ -1079,8 +1079,8 @@ Requires: **[Stab](#stab)**<br />
 
 This enhanced version of Dismiss has all of the same rules as Dismiss but with the added effect of being able to target magical effects as a reaction.
 
-Aspect Point Cost: **12 AP**
-<br />Capstone Cost: **17 AP**
+Aspect Point Cost: **18 AP**
+<br />Capstone Cost: **27 AP**
 
 Requires: **[Dismiss](#dismiss)**<br />
 #### Details
@@ -1130,8 +1130,8 @@ Target a magical effect with an invisible beam directed by the caster. The targe
 
 The spell requires the caster of the target spell to make an intelligence check vs. the dismiss caster's check roll. If the spell is not known, additional negatives apply to this check. Upon winning this opposed check, the target spell is dismissed and all of its effects immedieatly stop.
 
-Aspect Point Cost: **5 AP**
-<br />Capstone Cost: **5 AP**
+Aspect Point Cost: **9 AP**
+<br />Capstone Cost: **9 AP**
 
 
 #### Details
@@ -1149,8 +1149,8 @@ Aspect Point Cost: **5 AP**
 
 Projects a thin, barely-visible green field around the target. This field moves with the target and has range personal. The field, at time of cast, may be tuned to a single energy type. For any damage inflicted of this type, this field provides **2 DR**. In addition, any effect with this energy type with a check that the target must make is subject to a **+2 modifier**.
 
-Aspect Point Cost: **12 AP**
-<br />Capstone Cost: **12 AP**
+Aspect Point Cost: **16 AP**
+<br />Capstone Cost: **16 AP**
 
 
 #### Details
@@ -1173,8 +1173,8 @@ Aspect Point Cost: **12 AP**
 
 Allows a character to make a dive for nearby cover - once behind cover, all rules for cover now apply. The cover must be within the character's **Standing Forward Jump** range. All normal rules for making a standing forward jump apply to this check. Failing this check renders the character **prone**.
 
-Aspect Point Cost: **-4 AP**
-<br />Capstone Cost: **-5 AP**
+Aspect Point Cost: **2 AP**
+<br />Capstone Cost: **5 AP**
 
 Requires: **[Duck and Dodge](#duck-and-dodge)**<br />
 #### Details
@@ -1189,8 +1189,8 @@ Requires: **[Duck and Dodge](#duck-and-dodge)**<br />
 
 Allows a character to make a simple dodge-based defense against an incoming attack. The defense roll recieves the character's **mobility modifier** as a defense bonus.
 
-Aspect Point Cost: **-1 AP**
-<br />Capstone Cost: **-1 AP**
+Aspect Point Cost: **3 AP**
+<br />Capstone Cost: **3 AP**
 
 
 #### Details
@@ -1207,8 +1207,8 @@ Upon successful cast, Farsight grants the caster a glimpse of the area desired. 
 
 This spell may be used in place of any perception check.
 
-Aspect Point Cost: **-6 AP**
-<br />Capstone Cost: **-5 AP**
+Aspect Point Cost: **1 AP**
+<br />Capstone Cost: **2 AP**
 
 Requires: **[Magic Trick](#magic-trick)**<br />
 #### Details
@@ -1228,8 +1228,8 @@ Allows a character to perform healing on the battlefield via simple medical proc
 
 A successful Field Aid staunches bleeding and may heal 1d6 health points of damage.
 
-Aspect Point Cost: **-2 AP**
-<br />Capstone Cost: **1 AP**
+Aspect Point Cost: **4 AP**
+<br />Capstone Cost: **7 AP**
 
 Requires: **[Medicine](#medicine)**<br />
 #### Details
@@ -1261,8 +1261,8 @@ Requires: **[High Manual Dexterity](#high-manual-dexterity)**<br />
 
 The character conjures a ball of fire in either hand which may then be thrown. The attack roll recieves the character's intelligence modifier as an attack bonus.
 
-Aspect Point Cost: **6 AP**
-<br />Capstone Cost: **6 AP**
+Aspect Point Cost: **10 AP**
+<br />Capstone Cost: **10 AP**
 
 
 #### Details
@@ -1294,8 +1294,8 @@ Aspect Point Cost: **2 AP**
 
 The character conjures a kinetic shield that covers a target's body. This shield has a **DR of 4**. The shield lasts for 10 minutes or until an attack lands and the shield absorbs damage.
 
-Aspect Point Cost: **6 AP**
-<br />Capstone Cost: **6 AP**
+Aspect Point Cost: **10 AP**
+<br />Capstone Cost: **10 AP**
 
 
 #### Details
@@ -1316,14 +1316,14 @@ Aspect Point Cost: **6 AP**
 
 Allows a character to make a simple dodge-based defense against an incoming attack. The defense roll recieves the character's **mobility modifier** as a defense bonus.
 
-Aspect Point Cost: **-2 AP**
-<br />Capstone Cost: **0 AP**
+Aspect Point Cost: **1 AP**
+<br />Capstone Cost: **3 AP**
 
 Requires: **[Fit](#fit)**<br />
 #### Details
 * Skill: Defense
 	* Inherits Modifiers from: **Mobility**
-* Failure Chance: 15
+* Failure Chance: 12
 * Energy Point Cost: 0
 <br /><br />
 
@@ -1332,8 +1332,8 @@ Requires: **[Fit](#fit)**<br />
 
 The character summons a cold blast directed in a cone shaped area in-front of them. This is considered an area attack for all affected map cells.
 
-Aspect Point Cost: **10 AP**
-<br />Capstone Cost: **10 AP**
+Aspect Point Cost: **14 AP**
+<br />Capstone Cost: **14 AP**
 
 
 #### Details
@@ -1353,8 +1353,8 @@ Aspect Point Cost: **10 AP**
 
 Grants a dextrous character the ability to attempt to communicate with another character via gesturing. This action is not limited to just the character's hands. The action has a difficulty set by the game master based on the complexity of the ideas being communicated. Both characters are required to make gesture checks - the target does not need to have this aspect in order to make the check.
 
-Aspect Point Cost: **-1 AP**
-<br />Capstone Cost: **-1 AP**
+Aspect Point Cost: **3 AP**
+<br />Capstone Cost: **3 AP**
 
 
 #### Details
@@ -1369,8 +1369,8 @@ Aspect Point Cost: **-1 AP**
 
 Allows a character to attack 2 enemies standing side-by-side. The enemies must be in adjacent map cells. The attacker makes a single attack roll that both targets may then roll against. This attack incurs a **-2 modifier** to the attack roll.
 
-Aspect Point Cost: **-4 AP**
-<br />Capstone Cost: **-3 AP**
+Aspect Point Cost: **2 AP**
+<br />Capstone Cost: **7 AP**
 
 Requires: **[Fit](#fit)**<br />Requires: **[Slash](#slash)**<br />
 #### Details
@@ -1388,8 +1388,8 @@ Requires: **[Fit](#fit)**<br />Requires: **[Slash](#slash)**<br />
 
 Allows a character to teleport. They vanish upon success and appear at their intended target location after the delayed effect duration of 1 turn.
 
-Aspect Point Cost: **14 AP**
-<br />Capstone Cost: **15 AP**
+Aspect Point Cost: **18 AP**
+<br />Capstone Cost: **19 AP**
 
 Requires: **[Magic Trick](#magic-trick)**<br />
 #### Details
@@ -1479,7 +1479,7 @@ Requires: **[Fit](#fit)**<br />
 When a stealthed target character passes within 1 map cell of the character, as an opportunistic action, the character may make a perception check to oppose the target's stealth.
 
 Aspect Point Cost: **5 AP**
-<br />Capstone Cost: **6 AP**
+<br />Capstone Cost: **10 AP**
 
 Requires: **[Perception](#perception)**<br />
 #### Details
@@ -1491,8 +1491,8 @@ Requires: **[Perception](#perception)**<br />
 
 Knowledge and understanding of the related domain.
 
-Aspect Point Cost: **-1 AP**
-<br />Capstone Cost: **-1 AP**
+Aspect Point Cost: **3 AP**
+<br />Capstone Cost: **3 AP**
 
 
 #### Details
@@ -1507,8 +1507,8 @@ Aspect Point Cost: **-1 AP**
 
 Knowledge and understanding of the related domain.
 
-Aspect Point Cost: **-1 AP**
-<br />Capstone Cost: **-1 AP**
+Aspect Point Cost: **3 AP**
+<br />Capstone Cost: **3 AP**
 
 
 #### Details
@@ -1523,8 +1523,8 @@ Aspect Point Cost: **-1 AP**
 
 Knowledge and understanding of the related domain.
 
-Aspect Point Cost: **-1 AP**
-<br />Capstone Cost: **-1 AP**
+Aspect Point Cost: **3 AP**
+<br />Capstone Cost: **3 AP**
 
 
 #### Details
@@ -1539,8 +1539,8 @@ Aspect Point Cost: **-1 AP**
 
 Knowledge and understanding of the related domain.
 
-Aspect Point Cost: **-1 AP**
-<br />Capstone Cost: **-1 AP**
+Aspect Point Cost: **3 AP**
+<br />Capstone Cost: **3 AP**
 
 
 #### Details
@@ -1555,8 +1555,8 @@ Aspect Point Cost: **-1 AP**
 
 Knowledge and understanding of the related domain.
 
-Aspect Point Cost: **-1 AP**
-<br />Capstone Cost: **-1 AP**
+Aspect Point Cost: **3 AP**
+<br />Capstone Cost: **3 AP**
 
 
 #### Details
@@ -1571,8 +1571,8 @@ Aspect Point Cost: **-1 AP**
 
 Knowledge and understanding of the related domain.
 
-Aspect Point Cost: **-1 AP**
-<br />Capstone Cost: **-1 AP**
+Aspect Point Cost: **3 AP**
+<br />Capstone Cost: **3 AP**
 
 
 #### Details
@@ -1587,8 +1587,8 @@ Aspect Point Cost: **-1 AP**
 
 Knowledge and understanding of the related domain.
 
-Aspect Point Cost: **-1 AP**
-<br />Capstone Cost: **-1 AP**
+Aspect Point Cost: **3 AP**
+<br />Capstone Cost: **3 AP**
 
 
 #### Details
@@ -1603,8 +1603,8 @@ Aspect Point Cost: **-1 AP**
 
 Knowledge and understanding of the related domain.
 
-Aspect Point Cost: **-1 AP**
-<br />Capstone Cost: **-1 AP**
+Aspect Point Cost: **3 AP**
+<br />Capstone Cost: **3 AP**
 
 
 #### Details
@@ -1632,8 +1632,8 @@ Aspect Point Cost: **10 AP**
 
 Allows a character to perform a jump action and an attack in one turn with a specified melee weapon type. The roll for this attack is treated as the character's Jump check as well. This attack grants a **+1 modifier** to the attack roll.
 
-Aspect Point Cost: **2 AP**
-<br />Capstone Cost: **4 AP**
+Aspect Point Cost: **6 AP**
+<br />Capstone Cost: **8 AP**
 
 Requires: **[Fit](#fit)**<br />
 #### Details
@@ -1730,8 +1730,8 @@ Allows a character to parry an attack with their currently equipped weapon. This
 
 Upon a successful parry, the incoming attack is deflected. The defender is granted the ability to perform an attack upon their opponent .
 
-Aspect Point Cost: **2 AP**
-<br />Capstone Cost: **2 AP**
+Aspect Point Cost: **6 AP**
+<br />Capstone Cost: **6 AP**
 
 
 #### Details
@@ -1777,8 +1777,8 @@ Creates a roaming darkness that condenses as a weightless mist. This mist is onl
 
 The negative modifier to range attacks persists even inside the mist. Melee attacks however are unaffacted.
 
-Aspect Point Cost: **15 AP**
-<br />Capstone Cost: **15 AP**
+Aspect Point Cost: **19 AP**
+<br />Capstone Cost: **19 AP**
 
 
 #### Details
@@ -1803,8 +1803,8 @@ Allows a character to make a perception check.
 
 Take a look at your surroundings to attempt to find out interesting information. There is no base difficulty listed here - the game master is responsible for providing resonable difficulties based on the surroundings in the setting and the target of observation.
 
-Aspect Point Cost: **1 AP**
-<br />Capstone Cost: **1 AP**
+Aspect Point Cost: **5 AP**
+<br />Capstone Cost: **5 AP**
 
 
 #### Details
@@ -1820,8 +1820,8 @@ Grants a careful character the ability to pilfer objects from a target. The char
 
 If the target character is already aware of the attempt then this character is granted a **mobility check** that opposes the character's pickpocket check. Note that this does not remove the check's difficulty - the character must still beat the difficulty of the filch check in addition to defeating the target character's mobility check.
 
-Aspect Point Cost: **-1 AP**
-<br />Capstone Cost: **1 AP**
+Aspect Point Cost: **3 AP**
+<br />Capstone Cost: **5 AP**
 
 Requires: **[Filch](#filch)**<br />
 #### Details
@@ -1836,8 +1836,8 @@ Requires: **[Filch](#filch)**<br />
 
 Allows a character to make a more acrobatic dodge. This defense roll requires the character to not be slowed. The defense roll receives the character's mobility modifier as a defense bonus in addition to a +2 modifier from the aspect itself.
 
-Aspect Point Cost: **1 AP**
-<br />Capstone Cost: **2 AP**
+Aspect Point Cost: **7 AP**
+<br />Capstone Cost: **12 AP**
 
 Requires: **[Duck and Dodge](#duck-and-dodge)**<br />Requires: **[Fit](#fit)**<br />
 #### Details
@@ -1855,8 +1855,8 @@ Requires: **[Duck and Dodge](#duck-and-dodge)**<br />Requires: **[Fit](#fit)**<b
 
 Allows a caster to magically heal a poisoned character. The caster must roll their skill check versus the difficulty of the poison.
 
-Aspect Point Cost: **6 AP**
-<br />Capstone Cost: **6 AP**
+Aspect Point Cost: **10 AP**
+<br />Capstone Cost: **10 AP**
 
 
 #### Details
@@ -1877,8 +1877,8 @@ The character conjures a simple kinetic shield that covers their entire body. Th
 
 This spell may target *only the caster* and no one else.
 
-Aspect Point Cost: **1 AP**
-<br />Capstone Cost: **1 AP**
+Aspect Point Cost: **5 AP**
+<br />Capstone Cost: **5 AP**
 
 
 #### Details
@@ -1914,8 +1914,8 @@ Requires: **[Mental Endurance](#mental-endurance)**<br />
 
 Allows a character to make a stealth check by walking carefully. In order to enter stealth, the character must not be visible by any enemies. While using this aspect, a character must move at **half their move speed**.
 
-Aspect Point Cost: **-1 AP**
-<br />Capstone Cost: **-1 AP**
+Aspect Point Cost: **3 AP**
+<br />Capstone Cost: **3 AP**
 
 
 #### Details
@@ -1930,8 +1930,8 @@ Aspect Point Cost: **-1 AP**
 
 The character enters into a rage in which their body floods itself with chemicals that dull the senses and swell the muscles. Upon activation, the character gains intense damage resistance buffs for 8 combat turns.
 
-Aspect Point Cost: **11 AP**
-<br />Capstone Cost: **19 AP**
+Aspect Point Cost: **15 AP**
+<br />Capstone Cost: **23 AP**
 
 Requires: **[Vigor](#vigor)**<br />
 #### Details
@@ -1952,8 +1952,8 @@ Requires: **[Vigor](#vigor)**<br />
 
 The caster heals a target for 1d6 health points. This healing takes effect instantly and staunches any bleeding the character may be suffering from. This spell may be used as many times as needed on the same target.
 
-Aspect Point Cost: **3 AP**
-<br />Capstone Cost: **3 AP**
+Aspect Point Cost: **7 AP**
+<br />Capstone Cost: **7 AP**
 
 
 #### Details
@@ -1972,8 +1972,8 @@ Aspect Point Cost: **3 AP**
 
 Instantly send a message to the mind of a willing target, regardless of distance. The target must be known to the caster in that they must have met in-person at least once. This effect may be dismissed before the message is sent. Once the message is sent the target is granted the opportunity to reply with their own message. After this the conversation ends and send must be cast again to further communication.
 
-Aspect Point Cost: **-4 AP**
-<br />Capstone Cost: **-4 AP**
+Aspect Point Cost: **1 AP**
+<br />Capstone Cost: **1 AP**
 
 
 #### Details
@@ -1990,8 +1990,8 @@ Aspect Point Cost: **-4 AP**
 
 Allows a character to make a perception check. This check, if successful, grants a target ally a +1 modifier to their next ranged attack. The target ally must be within the character's line of sight as must be the target enemy however for the target ally to recieve the +1 modifier the target ally does not need to have line of sight on the target enemy.
 
-Aspect Point Cost: **-3 AP**
-<br />Capstone Cost: **-2 AP**
+Aspect Point Cost: **1 AP**
+<br />Capstone Cost: **6 AP**
 
 Requires: **[Perception](#perception)**<br />
 #### Details
@@ -2007,8 +2007,8 @@ Requires: **[Perception](#perception)**<br />
 
 Grants a character a melee slashing attack. This attack may be used with any slashing melee weapon.
 
-Aspect Point Cost: **-1 AP**
-<br />Capstone Cost: **-1 AP**
+Aspect Point Cost: **3 AP**
+<br />Capstone Cost: **3 AP**
 
 
 #### Details
@@ -2024,8 +2024,8 @@ Aspect Point Cost: **-1 AP**
 
 Allows a caster to magically heal a sickened character.
 
-Aspect Point Cost: **4 AP**
-<br />Capstone Cost: **4 AP**
+Aspect Point Cost: **8 AP**
+<br />Capstone Cost: **8 AP**
 
 
 #### Details
@@ -2044,8 +2044,8 @@ Aspect Point Cost: **4 AP**
 
 Spell Dart is a meta magic spell that allows a character to aim a single finger (of their choice) at a target and fire a crackling spark of pure magical energy at them. This spark flies like an arrow in speed and trajectory. Upon impact it explodes with a loud crack and a flurry of much smaller, short-lived magical sparks.
 
-Aspect Point Cost: **6 AP**
-<br />Capstone Cost: **6 AP**
+Aspect Point Cost: **10 AP**
+<br />Capstone Cost: **10 AP**
 
 
 #### Details
@@ -2064,8 +2064,8 @@ Aspect Point Cost: **6 AP**
 
 Grants a character a melee stabbing attack. This attack may be used with any thrusting melee weapon.
 
-Aspect Point Cost: **-1 AP**
-<br />Capstone Cost: **-1 AP**
+Aspect Point Cost: **3 AP**
+<br />Capstone Cost: **3 AP**
 
 
 #### Details
@@ -2083,8 +2083,8 @@ This spell takes shape in two different ways. The caster may lift up an empty ve
 
 The caster may instead pick up an empty serving dish and summon a simple meal of a heavy, dense bread that tastes like dry oatmeal. This bread provides enough sustience for 1 person for 1 day.
 
-Aspect Point Cost: **1 AP**
-<br />Capstone Cost: **1 AP**
+Aspect Point Cost: **4 AP**
+<br />Capstone Cost: **4 AP**
 
 
 #### Details
@@ -2116,8 +2116,8 @@ Aspect Point Cost: **1 AP**
 
 Grants a character a melee swing attack. This attack may be used with swung melee weapons, including blugenoning, slings, staves and other similar weapon types. This does not apply to slashing weapons which require different techniques.
 
-Aspect Point Cost: **-1 AP**
-<br />Capstone Cost: **-1 AP**
+Aspect Point Cost: **3 AP**
+<br />Capstone Cost: **3 AP**
 
 
 #### Details
@@ -2133,8 +2133,8 @@ Aspect Point Cost: **-1 AP**
 
 Allows a character to use their mind to toss an object of size modifier -3 or smaller with their mind. This object may be thrown hard enough to 1d4 damage and is accurate up to range medium.
 
-Aspect Point Cost: **6 AP**
-<br />Capstone Cost: **6 AP**
+Aspect Point Cost: **10 AP**
+<br />Capstone Cost: **10 AP**
 
 
 #### Details
@@ -2155,7 +2155,7 @@ Aspect Point Cost: **6 AP**
 Grants a character a +2 modifier to any perception check made when searching for potential traps.
 
 Aspect Point Cost: **5 AP**
-<br />Capstone Cost: **5 AP**
+<br />Capstone Cost: **13 AP**
 
 Requires: **[Perception](#perception)**<br />Requires: **[Quiet Steps](#quiet-steps)**<br />
 #### Details
@@ -2199,8 +2199,8 @@ Aspect Point Cost: **8 AP**
 
 Upon casting, a bolt of lightning arcs from either of the character's hands toward the target enemy with a thundering crack. The attack roll recieves the character's intelligence modifier as an attack bonus.
 
-Aspect Point Cost: **6 AP**
-<br />Capstone Cost: **6 AP**
+Aspect Point Cost: **10 AP**
+<br />Capstone Cost: **10 AP**
 
 
 #### Details

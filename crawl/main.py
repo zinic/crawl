@@ -12,11 +12,15 @@ SKILL_TYPE_NON_COMBAT = 'Non-Combat'
 FAILURE_CHANCE_DESC = 'Failure Chance'
 ENERGY_POINT_COST_DESC = 'Energy Point Cost'
 
-def check_aspect(aspect):
+def check_aspect(aspect, model):
     is_skill = False
     skill_type = None
     has_action_cost = False
     has_failure_chance = False
+
+    base_cost, _ = model.aspect_cost(aspect.name)
+    if base_cost <= 0:
+        print('WARNING: Aspect {} has a zero or negative point cost: {}'.format(aspect.name, base_cost))
 
     for descriptor in aspect.effects:
         if descriptor.name == SKILL_DESC:
@@ -30,10 +34,10 @@ def check_aspect(aspect):
 
     if is_skill:
         if not has_action_cost and skill_type != SKILL_TYPE_NON_COMBAT:
-            print('Aspect {} has a skill but no associated action point cost.'.format(aspect.name))
+            print('WARNING: Aspect {} has a skill but no associated action point cost.'.format(aspect.name))
 
         if not has_failure_chance:
-            print('Aspect {} has a skill but no associated failure chance.'.format(aspect.name))
+            print('WARNING: Aspect {} has a skill but no associated failure chance.'.format(aspect.name))
 
 
 def format_descriptor(descriptor):
@@ -262,7 +266,7 @@ def main():
 
         for _, aspect in sorted(model.aspects.aspects.items()):
             if do_check:
-                check_aspect(aspect)
+                check_aspect(aspect, model)
 
             fout.write('{}\n\n'.format(format_aspect(aspect, model)))
 
