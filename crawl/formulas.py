@@ -43,4 +43,4 @@ def base_difficulty_cost(value):
         return 2
 
     valint = int(value)
-    return -1 * (valint - 15) / 2
+    return -1 * (valint - 8)

@@ -188,6 +188,23 @@
         </descriptor>
         
         <descriptor name="Failure Chance" formula="base_difficulty_cost">
+            <example value="0" />
+            <example value="2" />
+            <example value="4" />
+            <example value="6" />
+            <example value="8" />
+            <example value="10" />
+            <example value="12" />
+            <example value="14" />
+            <example value="16" />
+            <example value="18" />
+            <example value="20" />
+            <example value="22" />
+            <example value="24" />
+            <example value="26" />
+            <example value="28" />
+            <example value="30" />
+            
             <text>
                 All skill checks should specifiy a base difficulty. The player may choose to augment the difficulty in the future only by lowering it.
             </text>
