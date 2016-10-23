@@ -991,15 +991,16 @@ Aspect Point Cost: **1 AP**
 
 Allows a character to steady their body against a shield and attempt to absorb an incoming attack completely. This ability requires the character to have a working shield equipped.
 
-Aspect Point Cost: **7 AP**
-<br />Capstone Cost: **7 AP**
+Aspect Point Cost: **6 AP**
+<br />Capstone Cost: **6 AP**
 
 
 #### Details
 * Skill (**2 AP**): Defense
 	* Limited: **Character Must Have a Shield**
 	* Inherits Modifiers from: **Strength**
-* Failure Chance (**3 AP**): 5
+* Defense Effectiveness Modifier (**2 AP**): +1
+* Failure Chance (**0 AP**): 8
 * Energy Point Cost (**2 AP**): 1
 <br /><br />
 
