@@ -684,9 +684,13 @@
         
         <aspect name="Blood Soaked Life">
             <effect descriptor="Skill" value="Concentration">
+                <detail type="inherits_from" value="Intelligence" />
             </effect>
+
+            <effect descriptor="Range" value="Personal" />
+
             <effect descriptor="Failure Chance" value="8" />
-            <effect descriptor="Energy Point Cost" value="1" />
+            <effect descriptor="Energy Point Cost" value="0" />
 
             <effect descriptor="Reactionary" />
             <effect descriptor="Damage Healed" value="1d8" />

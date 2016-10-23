@@ -976,14 +976,16 @@ Aspect Point Cost: **4 AP**
 
 Allows a character to make a more acrobatic dodge. This defense roll requires the character to not be slowed. The defense roll receives the character's mobility modifier as a defense bonus in addition to a +2 modifier from the aspect itself.
 
-Aspect Point Cost: **16 AP**
-<br />Capstone Cost: **16 AP**
+Aspect Point Cost: **21 AP**
+<br />Capstone Cost: **21 AP**
 
 
 #### Details
 * Skill: Concentration
+	* Inherits Modifiers from: **Intelligence**
+* Range: Personal
 * Failure Chance: 8
-* Energy Point Cost: 1
+* Energy Point Cost: 0
 * Reactionary
 * Damage Healed: 1d8
 * Magic
