@@ -609,7 +609,7 @@
         </aspect>
         
         <aspect name="Duck and Dodge">
-            <effect descriptor="Skill" value="Concentration">
+            <effect descriptor="Skill" value="Defense">
                 <detail type="inherits_from" value="Mobility" />
             </effect>
             <effect descriptor="Failure Chance" value="8" />
@@ -1104,7 +1104,7 @@
         </aspect>
         
         <aspect name="Block">
-            <effect descriptor="Skill" value="Concentration">
+            <effect descriptor="Skill" value="Defense">
                 <detail type="limit" value="Character Must Have a Shield" />
                 <detail type="inherits_from" value="Strength" />
             </effect>

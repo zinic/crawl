@@ -991,12 +991,12 @@ Aspect Point Cost: **1 AP**
 
 Allows a character to steady their body against a shield and attempt to absorb an incoming attack completely. This ability requires the character to have a working shield equipped.
 
-Aspect Point Cost: **6 AP**
-<br />Capstone Cost: **6 AP**
+Aspect Point Cost: **7 AP**
+<br />Capstone Cost: **7 AP**
 
 
 #### Details
-* Skill (**1 AP**): Concentration
+* Skill (**2 AP**): Defense
 	* Limited: **Character Must Have a Shield**
 	* Inherits Modifiers from: **Strength**
 * Failure Chance (**3 AP**): 5
@@ -1189,7 +1189,7 @@ Aspect Point Cost: **16 AP**
 Allows a character to make a dive for nearby cover - once behind cover, all rules for cover now apply. The cover must be within the character's **Standing Forward Jump** range. All normal rules for making a standing forward jump apply to this check. Failing this check renders the character **prone**.
 
 Aspect Point Cost: **2 AP**
-<br />Capstone Cost: **5 AP**
+<br />Capstone Cost: **6 AP**
 
 Requires: **[Duck and Dodge](#duck-and-dodge)**<br />
 #### Details
@@ -1204,12 +1204,12 @@ Requires: **[Duck and Dodge](#duck-and-dodge)**<br />
 
 Allows a character to make a simple dodge-based defense against an incoming attack. The defense roll recieves the character's **mobility modifier** as a defense bonus.
 
-Aspect Point Cost: **3 AP**
-<br />Capstone Cost: **3 AP**
+Aspect Point Cost: **4 AP**
+<br />Capstone Cost: **4 AP**
 
 
 #### Details
-* Skill (**1 AP**): Concentration
+* Skill (**2 AP**): Defense
 	* Inherits Modifiers from: **Mobility**
 * Failure Chance (**0 AP**): 8
 * Energy Point Cost (**2 AP**): 1
@@ -1852,7 +1852,7 @@ Requires: **[Filch](#filch)**<br />
 Allows a character to make a more acrobatic dodge. This defense roll requires the character to not be slowed. The defense roll receives the character's mobility modifier as a defense bonus in addition to a +2 modifier from the aspect itself.
 
 Aspect Point Cost: **7 AP**
-<br />Capstone Cost: **12 AP**
+<br />Capstone Cost: **13 AP**
 
 Requires: **[Duck and Dodge](#duck-and-dodge)**<br />Requires: **[Fit](#fit)**<br />
 #### Details
