@@ -576,25 +576,31 @@ Any enemy in a character’s melee threat range may be grabbed. Grabbing a chara
 
 Grabbing a target removes the character's threat, meaning that they may not act on opportunity until they break from the grab.
 
-A grab is a standard attack that costs 1 energy point.
+A grab is an attack skill that costs 1 energy point.
+
+Characters that are grabbed may not move from away from their oppressor until they win an opposed strength check. In addition, the game master may add additional restrictions to the character when using a weapon or item held in the hand of a grabbed arm.
 
 
 #### Grapple
 
 Any character that has been grabbed may be grappled. Grappling a target character requires an opposed strength check between the attacker and the target. If the attacker wins this check, the target is considered grappled.
 
-To escape a grapple a target must make an opposed strength check against the character they are grappled by. If successful, the target regains their turn and is considered free. The target is released in the same map cell and is considered squeezing with the character that was grappling them.
+To escape a grapple a target must make an opposed strength check against the character they are grappled by **at a modifier of -2**. If successful, the target regains their turn and is considered free. The target is released in the same map cell and is considered squeezing with the character that was grappling them.
 
-A grapple is a standard attack that costs 1 energy point.
+A grapple is an attack skill that costs 1 energy point.
+
+Characters that are grappled may not move at all. They may only attempt skills that do require movement or they may attempt to break from the grapple.
 
 
 #### Charging
 
-Any character with a melee attack may perform a special combat maneuver called a charge. A charge is an action that consumes the character’s entire turn. A charge grants the attacking character their full run speed (double movement).
+Any character with a melee attack may perform a special combat maneuver called a charge. A charge is an a special attack action that grants the attacking character their full run speed (double movement). This comes at the cost of 1 energy point.
 
-A charge can only be performed when there are no obstacles between the attacking character and their target. There must also be at least 2 map cells of distance between the character and their target, otherwise the character can’t get enough of a running start to enhance the force of their attack.
+A charge can only be performed when there are no obstacles between the attacking character and their target. There must also be at least 2 map cells of distance between the character and their target, otherwise the character is considered unable to get enough of a running start to enhance the force of their attack.
 
-The charging character receives a bonus of 2 on their attack roll. After the attack, the character must suffer a -2 to their defense rolls until the start of their next turn.
+The charging character receives a bonus of +2 on their attack. Note, the character must also pay the energy point cost of the attack in addition to the energy point cost of the charge.
+
+After the attack, the character must suffer a -2 to any defense rolls they attempt until the start of their next turn.
 
 
 #### Climbing and Scaling

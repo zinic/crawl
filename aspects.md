@@ -1,6 +1,6 @@
 # The Crawl Aspect Document
 
-## Components - 41
+## Components - 42
 #### Action Pool Modifier
 * **+1**
 	* Aspect Point Cost: 8
@@ -508,6 +508,16 @@ This aspect or item is magic imbued and will show up on arcane sight.
 
 
 * Aspect Point Cost: 1<br /><br />
+
+
+#### Melee Reach
+* **+2 Map Cell**
+	* Aspect Point Cost: 4
+* **+3 Map Cell**
+	* Aspect Point Cost: 6
+* **+1 Map Cell**
+	* Aspect Point Cost: 2
+<br /><br />
 
 
 #### NPC Cohort

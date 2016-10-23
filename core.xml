@@ -12,6 +12,12 @@
             </text>
         </descriptor>
 
+        <descriptor name="Melee Reach">
+            <value name="+1 Map Cell" cost="2" />
+            <value name="+2 Map Cell" cost="4" />
+            <value name="+3 Map Cell" cost="6" />
+        </descriptor>
+
         <descriptor name="Teleportation" cost="15">
             <text>
                 Allows the aspect this descriptor is tagged to, to impart a teleportation effect. To add more targets to teleport consider Extra Target.
