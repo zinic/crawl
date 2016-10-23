@@ -1015,7 +1015,6 @@ Aspect Point Cost: **6 AP**
 
 ### Blood Soaked Life
 
-Allows a character to make a more acrobatic dodge. This defense roll requires the character to not be slowed. The defense roll receives the character's mobility modifier as a defense bonus in addition to a +2 modifier from the aspect itself.
 
 Aspect Point Cost: **5 AP**
 <br />Capstone Cost: **5 AP**

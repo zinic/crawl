@@ -716,7 +716,6 @@
             <effect descriptor="Effect Trigger" value="When HP Damage is Delt" />
             
             <text>
-                Allows a character to make a more acrobatic dodge. This defense roll requires the character to not be slowed. The defense roll receives the character's mobility modifier as a defense bonus in addition to a +2 modifier from the aspect itself.
             </text>
         </aspect>
         
