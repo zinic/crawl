@@ -18,7 +18,6 @@ Living in the large packets of forests across the planet thriving with magic, th
 * Grants Aspect: Perception
 * Core Aspect Modifier:
     * Mobility +1
-* Damage Resistance +2 DR vs. Meta
 
 
 #### Human
@@ -28,6 +27,8 @@ The jack-of-all trades. These individuals are hardy but otherwise mundane. They'
 * Size: 0
 * Grants Aspect Points: 13
 
+
+## DO NOT USE UNTIL I BALANCE THE BELOW RACES
 
 #### Dwarf
 
