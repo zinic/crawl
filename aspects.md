@@ -1927,7 +1927,7 @@ Requires: **[Mental Endurance](#mental-endurance)**<br />
 
 ### Quiet Steps
 
-Allows a character to make a stealth check by walking carefully. In order to enter stealth, the character must not be visible by any enemies. While using this aspect, a character must move at **half their move speed**.
+Allows a character to make a stealth check by walking carefully. In order to enter stealth, the character must not be visible by any enemies.
 
 Aspect Point Cost: **3 AP**
 <br />Capstone Cost: **3 AP**
