@@ -28,6 +28,9 @@ class DocumentManager(object):
         self.aspects = AspectManager()
         self.effects = DescriptorManager()
 
+    def effect_cost(self, mod_name, effect_name):
+        return self.effects.get_effect(mod_name, effect_name)
+
     def item_cost(self, name):
         return self.items.cost(name, self.aspects, self.effects)
 
@@ -123,7 +126,6 @@ class DescriptorManager(object):
         self.effects[name] = desdef
 
     def get_effect(self, mod_name, effect_name):
-        
         try:
             desdef = self.effects[mod_name]
             if len(desdef.entries) > 0:

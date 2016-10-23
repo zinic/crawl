@@ -166,8 +166,9 @@ def format_aspect(aspect, model):
                 else:
                     details += '\t* {}: {}\n'.format(detail.type, detail.value)
 
-            output += '* {}'.format(effect.name)
-
+            effect_cost = model.effect_cost(effect.name, effect.effect)
+            output += '* {} (*{} AP*)'.format(effect.name, effect_cost)
+            
             if effect.effect is not None:
                 output += ': {}'.format(effect.effect)
 
