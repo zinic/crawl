@@ -202,15 +202,10 @@ class Aspect(object):
             req_xml.attrib['name']))
 
     def cost(self, descriptor_manager):
-        print('Calculating th ecost of: {}'.format(self.name))
-        
         cost = 0
         for descriptor in self.effects:
-            unit_cost = descriptor_manager.get_effect(
+            cost += descriptor_manager.get_effect(
                 descriptor.name, descriptor.effect)
-            cost += unit_cost
-            
-            print('Cost of descriptor {} at {} is {} - Total is now: {}'.format(descriptor.name, descriptor.effect, unit_cost, cost))
 
         return cost if cost != 0 else 1
 
