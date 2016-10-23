@@ -1,32 +1,3 @@
-window.Notify = (function() {
-    var raise = function(msg, type) {
-        $.notify(msg, {
-            clickToHide: true,
-
-            autoHide: true,
-            autoHideDelay: 2000,
-
-            className: type
-        });
-    };
-
-    this.error = function(msg) {
-        raise(msg, 'error');
-    };
-
-    this.warn = function(msg) {
-        raise(msg, 'warn');
-    };
-
-    this.info = function(msg) {
-        raise(msg, 'info');
-    };
-
-    this.success = function(msg) {
-        raise(msg, 'success');
-    };
-})();
-
 function Character() {
     var aspect_editor = null;
     
