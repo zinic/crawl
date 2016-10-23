@@ -1,9 +1,9 @@
 function Character() {
     var aspect_editor = null;
-    
+
     this.id = null;
     this.rev = null;
-    
+
     this.data = {
         aspects: {},
         type: 'character',
@@ -12,7 +12,7 @@ function Character() {
         age: '',
         gender: 'Undefined'
     };
-    
+
     this.edit_aspect = function(name) {
         var $aspect = new Aspect(this.data.aspects[name]);
         aspect_editor = new AspectEditor($aspect);
@@ -53,24 +53,24 @@ function Character() {
 
     this.load = function(character_name, callback) {
         var _this = this;
-        
-        couchdb.get(character_name, function (data) {
+
+        couchdb.get(character_name, function(data) {
             _this.id = data.id;
             _this.rev = data.value._rev;
             _this.data = data.value;
-            
+
             callback();
         });
     };
 
     this.save = function() {
         var _this = this;
-            
+
         if (is_set(this.id)) {
             var doc = $.extend({}, this.data);
             doc._rev = this.rev;
-            
-            couchdb.update(this.id, doc, function (resp) {
+
+            couchdb.update(this.id, doc, function(resp) {
                 _this.rev = resp.rev;
             });
         } else {
@@ -78,8 +78,8 @@ function Character() {
                 alert('Please set a name for the character first then click save to begin.');
                 return;
             }
-            
-            couchdb.save_new(this.data, function (resp) {
+
+            couchdb.save_new(this.data, function(resp) {
                 _this.id = resp.id;
                 _this.rev = resp.rev;
             });
@@ -89,11 +89,11 @@ function Character() {
 
 function AspectEditor($aspect) {
     this.render = function() {
-        $("#ae_name_input").val($aspect.name());  
+        $("#ae_name_input").val($aspect.name());
         $("#ae_description_text").val($aspect.text());
-        
+
         var list_html = '';
-        $aspect.each_effect(function ($effect) {
+        $aspect.each_effect(function($effect) {
             list_html += vdoc.li(
                 vdoc.span(
                 vdoc.attribute('class', 'field_name'),
@@ -101,10 +101,10 @@ function AspectEditor($aspect) {
                 vdoc.span(':'),
                 vdoc.span($effect.value()));
         });
-        
+
         $('#ae_effects_list').html(vdoc.ul(list_html));
     };
-    
+
     this.render();
 }
 
@@ -151,7 +151,7 @@ function render_character() {
     $('#gender_input').val(character.data.gender);
 
     var list_html = '';
-    $.each(character.data.aspects, function (aspect_name, value) {
+    $.each(character.data.aspects, function(aspect_name, value) {
         var $aspect = new Aspect(value);
 
         list_html += vdoc.li(
@@ -181,7 +181,7 @@ function render_character() {
         vdoc.span(vdoc.attribute('style', 'float: none;')),
 
         // Character info
-        format_character_aspect($aspect));        
+        format_character_aspect($aspect));
     });
 
     $('#character_aspect_list').html(list_html);
@@ -222,7 +222,7 @@ function wc_edit_character_aspect(name) {
     $('#modal_pane').removeClass('hidden');
     $('#aspect_editor_pane').removeClass('hidden');
     $('#master_pane').addClass('hidden');
-    
+
     registry.character.edit_aspect(name);
 }
 
@@ -274,6 +274,24 @@ function Effect(xml) {
     this.value = function() {
         return $effect.attr('value');
     };
+
+    this.cost = function() {
+        var $descriptor = registry.$doc.find_descriptor(this.descriptor());
+        var formula = $descriptor.formula();
+        var desc_cost = $descriptor.cost();
+
+        if (is_set(formula)) {
+            var formula_func = formulas.get(formula);
+            return formula_func(this.value());
+        }
+
+        if (is_set(desc_cost)) {
+            return parseInt(desc_cost);
+        }
+
+        var $desc_value = $descriptor.find_value(this.value());
+        return parseInt($desc_value.cost());
+    };
 }
 
 function Aspect(xml) {
@@ -285,20 +303,8 @@ function Aspect(xml) {
 
     this.cost = function() {
         var cost = 0;
-        this.each_effect(function(effect) {
-            var $descriptor = registry.$doc.find_descriptor(effect.descriptor());
-            var formula = $descriptor.formula();
-            var desc_cost = $descriptor.cost();
-
-            if (is_set(formula)) {
-                var formula_func = formulas.get(formula);
-                cost += formula_func(effect.value());
-            } else if (is_set(desc_cost)) {
-                cost += parseInt(desc_cost);
-            } else {
-                var $desc_value = $descriptor.find_value(effect.value());
-                cost += parseInt($desc_value.cost());
-            }
+        this.each_effect(function($effect) {
+            cost += $effect.cost();
         });
 
         return cost;
@@ -462,6 +468,10 @@ function format_aspect($aspect) {
     return vdoc.div(
         vdoc.attribute('class', 'formatted_aspect'),
         vdoc.h3($aspect.name()),
+        vdoc.div(
+        vdoc.span('Aspect Point Cost: ' + $aspect.cost()),
+        vdoc.br(),
+        vdoc.br()),
         vdoc.ul(function() {
         var inner_html = '';
 
@@ -469,34 +479,33 @@ function format_aspect($aspect) {
             inner_html += vdoc.li(
                 vdoc.span(
                 vdoc.attribute('class', 'field_name'),
-                $effect.descriptor(), ': '),
+                $effect.descriptor(), ' (' + $effect.cost() + 'AP): '),
                 vdoc.span($effect.value()),
-                vdoc.ul(
-                    function () {
-                        var list_html = '';
-                        
-                        $effect.each_detail(function ($detail){
-                            var detail_text = $detail.type();
-                            
-                            switch (detail_text) {
-                                case 'inherits_from':
-                                    detail_text = 'Inherits Modifiers From';
-                                    break;
-                                
-                                case 'limit':
-                                    detail_text = 'Limited';
-                                    break;
-                            }
-                            
-                            list_html += vdoc.li(
-                                vdoc.span(
-                                vdoc.attribute('class', 'field_name'),
-                                detail_text, ': '),
-                                vdoc.span($detail.value()));
-                        });
-                        
-                        return list_html;
-                    }));
+                vdoc.ul(function() {
+                var list_html = '';
+
+                $effect.each_detail(function($detail) {
+                    var detail_text = $detail.type();
+
+                    switch (detail_text) {
+                        case 'inherits_from':
+                            detail_text = 'Inherits Modifiers From';
+                            break;
+
+                        case 'limit':
+                            detail_text = 'Limited';
+                            break;
+                    }
+
+                    list_html += vdoc.li(
+                        vdoc.span(
+                        vdoc.attribute('class', 'field_name'),
+                        detail_text, ': '),
+                        vdoc.span($detail.value()));
+                });
+
+                return list_html;
+            }));
         });
 
         return inner_html;
@@ -545,21 +554,9 @@ function wc_login() {
 }
 
 function on_xml_load(xml_data) {
-    var $doc = new CoreDocument(xml_data);
-    var registry = new Registry($doc);
+    var registry = new Registry(new CoreDocument(xml_data));
     window.registry = registry;
 
-    // Debug output
-    /*
-    $doc.each_descriptor(function($descriptor) {
-        console.log('Descriptor: ' + $descriptor.name());
-
-        $descriptor.each_feature(function($feature) {
-            console.log('\tFeature: ' + $feature.name() + '- Cost: ' + $feature.cost());
-        });
-    });
-    */
-    
     $('#modal_pane').removeClass('hidden');
     $('#db_login_pane').removeClass('hidden');
     $('#master_pane').addClass('hidden');
