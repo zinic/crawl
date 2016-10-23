@@ -10,7 +10,7 @@ from crawl.formulas import get_formula
 SKILL_DESC = 'Skill'
 SKILL_TYPE_NON_COMBAT = 'Non-Combat'
 FAILURE_CHANCE_DESC = 'Failure Chance'
-ACTION_POINT_COST_DESC = 'Action Point Cost'
+ENERGY_POINT_COST_DESC = 'Energy Point Cost'
 
 def check_aspect(aspect):
     is_skill = False
@@ -25,7 +25,7 @@ def check_aspect(aspect):
             
         elif descriptor.name == FAILURE_CHANCE_DESC:
             has_failure_chance = True
-        elif descriptor.name == ACTION_POINT_COST_DESC:
+        elif descriptor.name == ENERGY_POINT_COST_DESC:
             has_action_cost = True
 
     if is_skill:

@@ -1,24 +1,6 @@
 # The Crawl Aspect Document
 
 ## Components - 40
-#### Action Point Cost
-* **1**
-	* Aspect Point Cost: -2
-* **0**
-	* Aspect Point Cost: 3
-* **3**
-	* Aspect Point Cost: -8
-* **2**
-	* Aspect Point Cost: -5
-* **5**
-	* Aspect Point Cost: -21
-* **4**
-	* Aspect Point Cost: -13
-* **6**
-	* Aspect Point Cost: -34
-<br /><br />
-
-
 #### Action Pool Modifier
 * **+1**
 	* Aspect Point Cost: 8
@@ -385,6 +367,24 @@ Denotes the duration of an effect.
 	* Aspect Point Cost: 34
 * **1 Day**
 	* Aspect Point Cost: 47
+<br /><br />
+
+
+#### Energy Point Cost
+* **1**
+	* Aspect Point Cost: -2
+* **0**
+	* Aspect Point Cost: 3
+* **3**
+	* Aspect Point Cost: -8
+* **2**
+	* Aspect Point Cost: -5
+* **5**
+	* Aspect Point Cost: -21
+* **4**
+	* Aspect Point Cost: -13
+* **6**
+	* Aspect Point Cost: -34
 <br /><br />
 
 
@@ -850,7 +850,7 @@ Monetary Cost: **1320 $$**
 #### Details
 * Skill: Concentration
 	* Inherits Modifiers from: **Intelligence**
-* Action Point Cost: 1
+* Energy Point Cost: 1
 * Failure Chance: 8
 * Magic
 	* Magic Energy Type: **Electric**
@@ -860,7 +860,7 @@ Monetary Cost: **1320 $$**
 <br /><br />
 
 
-## Aspects - 77
+## Aspects - 78
 ### Adonic
 
 Super Strong, yo.
@@ -912,7 +912,7 @@ Aspect Point Cost: **8 AP**
 #### Details
 * Skill: Concentration
 	* Inherits Modifiers from: **Perception**
-* Action Point Cost: 1
+* Energy Point Cost: 1
 * Failure Chance: 12
 * Magic
 	* Magic Energy Type: **Meta**
@@ -936,7 +936,7 @@ Aspect Point Cost: **2 AP**
 	* Inherits Modifiers from: **Mobility**
 	* Inherits Modifiers from: **Strength**
 * Failure Chance: 8
-* Action Point Cost: 1
+* Energy Point Cost: 1
 <br /><br />
 
 
@@ -968,7 +968,26 @@ Aspect Point Cost: **4 AP**
 	* Limited: **Character Must Have a Shield**
 	* Inherits Modifiers from: **Strength**
 * Failure Chance: 5
-* Action Point Cost: 1
+* Energy Point Cost: 1
+<br /><br />
+
+
+### Blood Soaked Life
+
+Allows a character to make a more acrobatic dodge. This defense roll requires the character to not be slowed. The defense roll receives the character's mobility modifier as a defense bonus in addition to a +2 modifier from the aspect itself.
+
+Aspect Point Cost: **16 AP**
+<br />Capstone Cost: **16 AP**
+
+
+#### Details
+* Skill: Concentration
+* Failure Chance: 8
+* Energy Point Cost: 1
+* Reactionary
+* Damage Healed: 1d8
+* Magic
+	* Magic Energy Type: **Meta**
 <br /><br />
 
 
@@ -983,7 +1002,7 @@ Aspect Point Cost: **8 AP**
 #### Details
 * Skill: Concentration
 	* Inherits Modifiers from: **Intelligence**
-* Action Point Cost: 1
+* Energy Point Cost: 1
 * Failure Chance: gm_only
 * Heal Affliction: Diseased
 * Magic
@@ -1001,7 +1020,7 @@ Aspect Point Cost: **3 AP**
 
 Requires: **[Slash](#slash)**<br />
 #### Details
-* Action Point Cost: 1
+* Energy Point Cost: 1
 * Opportunistic Action
 <br /><br />
 
@@ -1015,7 +1034,7 @@ Aspect Point Cost: **3 AP**
 
 Requires: **[Stab](#stab)**<br />
 #### Details
-* Action Point Cost: 1
+* Energy Point Cost: 1
 * Opportunistic Action
 <br /><br />
 
@@ -1031,7 +1050,7 @@ Requires: **[Dismiss](#dismiss)**<br />
 #### Details
 * Skill: Attack
 	* Inherits Modifiers from: **Intelligence**
-* Action Point Cost: 2
+* Energy Point Cost: 2
 * Failure Chance: 8
 * Magic
 	* Magic Energy Type: **Meta**
@@ -1082,7 +1101,7 @@ Aspect Point Cost: **8 AP**
 #### Details
 * Skill: Attack
 	* Inherits Modifiers from: **Intelligence**
-* Action Point Cost: 1
+* Energy Point Cost: 1
 * Failure Chance: 8
 * Magic
 	* Magic Energy Type: **Meta**
@@ -1101,7 +1120,7 @@ Aspect Point Cost: **15 AP**
 #### Details
 * Skill: Concentration
 	* Inherits Modifiers from: **Intelligence**
-* Action Point Cost: 1
+* Energy Point Cost: 1
 * Failure Chance: 8
 * Duration: 4 Turns
 * Damage Resistance: +2 DR
@@ -1126,7 +1145,7 @@ Requires: **[Duck and Dodge](#duck-and-dodge)**<br />
 * Skill: Concentration
 	* Inherits Modifiers from: **Standing Forward Jump**
 * Failure Chance: 8
-* Action Point Cost: 2
+* Energy Point Cost: 2
 <br /><br />
 
 
@@ -1142,7 +1161,7 @@ Aspect Point Cost: **2 AP**
 * Skill: Concentration
 	* Inherits Modifiers from: **Mobility**
 * Failure Chance: 8
-* Action Point Cost: 1
+* Energy Point Cost: 1
 <br /><br />
 
 
@@ -1159,7 +1178,7 @@ Requires: **[Magic Trick](#magic-trick)**<br />
 #### Details
 * Skill: Concentration
 	* Inherits Modifiers from: **Perception**
-* Action Point Cost: 2
+* Energy Point Cost: 2
 * Failure Chance: 14
 * Magic
 	* Magic Energy Type: **Meta**
@@ -1181,7 +1200,7 @@ Requires: **[Medicine](#medicine)**<br />
 * Skill: Concentration
 	* Inherits Modifiers from: **Intelligence**
 * Damage Healed: 1d6
-* Action Point Cost: 2
+* Energy Point Cost: 2
 * Failure Chance: 8
 <br /><br />
 
@@ -1213,7 +1232,7 @@ Aspect Point Cost: **9 AP**
 #### Details
 * Skill: Attack
 	* Inherits Modifiers from: **Intelligence**
-* Action Point Cost: 1
+* Energy Point Cost: 1
 * Failure Chance: 8
 * Magic
 	* Magic Energy Type: **Fire**
@@ -1246,7 +1265,7 @@ Aspect Point Cost: **9 AP**
 #### Details
 * Skill: Concentration
 	* Inherits Modifiers from: **Intelligence**
-* Action Point Cost: 1
+* Energy Point Cost: 1
 * Failure Chance: 8
 * Duration: 4 Turns
 * Damage Resistance: +4 DR
@@ -1269,7 +1288,7 @@ Requires: **[Fit](#fit)**<br />
 * Skill: Defense
 	* Inherits Modifiers from: **Mobility**
 * Failure Chance: 15
-* Action Point Cost: 0
+* Energy Point Cost: 0
 <br /><br />
 
 
@@ -1284,7 +1303,7 @@ Aspect Point Cost: **13 AP**
 #### Details
 * Skill: Attack
 	* Inherits Modifiers from: **Intelligence**
-* Action Point Cost: 1
+* Energy Point Cost: 1
 * Failure Chance: 8
 * Magic
 	* Magic Energy Type: **Cold**
@@ -1306,7 +1325,7 @@ Aspect Point Cost: **2 AP**
 * Skill: Concentration
 	* Inherits Modifiers from: **Intelligence**
 * Failure Chance: 8
-* Action Point Cost: 1
+* Energy Point Cost: 1
 <br /><br />
 
 
@@ -1325,7 +1344,7 @@ Requires: **[Fit](#fit)**<br />Requires: **[Slash](#slash)**<br />
 	* Applies to: **Great Slash**
 	* Inherits Modifiers from: **Mobility**
 * Extra Target: +1
-* Action Point Cost: 2
+* Energy Point Cost: 2
 <br /><br />
 
 
@@ -1341,7 +1360,7 @@ Requires: **[Magic Trick](#magic-trick)**<br />
 * Skill: Concentration
 	* Inherits Modifiers from: **Intelligence**
 * Delayed Effect Duration: 1 Turn
-* Action Point Cost: 1
+* Energy Point Cost: 1
 * Failure Chance: 10
 * Magic
 	* Magic Energy Type: **Meta**
@@ -1443,7 +1462,7 @@ Aspect Point Cost: **2 AP**
 #### Details
 * Skill: Concentration
 	* Inherits Modifiers from: **Intelligence**
-* Action Point Cost: 1
+* Energy Point Cost: 1
 * Failure Chance: 8
 <br /><br />
 
@@ -1459,7 +1478,7 @@ Aspect Point Cost: **2 AP**
 #### Details
 * Skill: Concentration
 	* Inherits Modifiers from: **Intelligence**
-* Action Point Cost: 1
+* Energy Point Cost: 1
 * Failure Chance: 8
 <br /><br />
 
@@ -1475,7 +1494,7 @@ Aspect Point Cost: **2 AP**
 #### Details
 * Skill: Concentration
 	* Inherits Modifiers from: **Intelligence**
-* Action Point Cost: 1
+* Energy Point Cost: 1
 * Failure Chance: 8
 <br /><br />
 
@@ -1491,7 +1510,7 @@ Aspect Point Cost: **2 AP**
 #### Details
 * Skill: Concentration
 	* Inherits Modifiers from: **Intelligence**
-* Action Point Cost: 1
+* Energy Point Cost: 1
 * Failure Chance: 8
 <br /><br />
 
@@ -1507,7 +1526,7 @@ Aspect Point Cost: **2 AP**
 #### Details
 * Skill: Concentration
 	* Inherits Modifiers from: **Intelligence**
-* Action Point Cost: 1
+* Energy Point Cost: 1
 * Failure Chance: 8
 <br /><br />
 
@@ -1523,7 +1542,7 @@ Aspect Point Cost: **2 AP**
 #### Details
 * Skill: Concentration
 	* Inherits Modifiers from: **Intelligence**
-* Action Point Cost: 1
+* Energy Point Cost: 1
 * Failure Chance: 8
 <br /><br />
 
@@ -1539,7 +1558,7 @@ Aspect Point Cost: **2 AP**
 #### Details
 * Skill: Concentration
 	* Inherits Modifiers from: **Intelligence**
-* Action Point Cost: 1
+* Energy Point Cost: 1
 * Failure Chance: 8
 <br /><br />
 
@@ -1555,7 +1574,7 @@ Aspect Point Cost: **2 AP**
 #### Details
 * Skill: Concentration
 	* Inherits Modifiers from: **Intelligence**
-* Action Point Cost: 1
+* Energy Point Cost: 1
 * Failure Chance: 8
 <br /><br />
 
@@ -1586,7 +1605,7 @@ Requires: **[Fit](#fit)**<br />
 * Failure Chance: 8
 * Concentration Check Modifier: +1
 	* Applies to: **Leaping Strike**
-* Action Point Cost: 1
+* Energy Point Cost: 1
 <br /><br />
 
 
@@ -1685,7 +1704,7 @@ Aspect Point Cost: **8 AP**
 * Range: Melee
 * Extra Attack: +1
 * Failure Chance: 14
-* Action Point Cost: 1
+* Energy Point Cost: 1
 <br /><br />
 
 
@@ -1729,7 +1748,7 @@ Aspect Point Cost: **21 AP**
 #### Details
 * Skill: Concentration
 	* Inherits Modifiers from: **Intelligence**
-* Action Point Cost: 1
+* Energy Point Cost: 1
 * Failure Chance: 14
 * Magic
 	* Magic Energy Type: **Meta**
@@ -1754,7 +1773,7 @@ Aspect Point Cost: **1 AP**
 
 #### Details
 * Skill: Concentration
-* Action Point Cost: 1
+* Energy Point Cost: 1
 * Failure Chance: gm_only
 <br /><br />
 
@@ -1773,7 +1792,7 @@ Requires: **[Filch](#filch)**<br />
 * Skill: Concentration
 	* Inherits Modifiers from: **Mobility**
 * Failure Chance: 8
-* Action Point Cost: 1
+* Energy Point Cost: 1
 <br /><br />
 
 
@@ -1792,7 +1811,7 @@ Requires: **[Duck and Dodge](#duck-and-dodge)**<br />Requires: **[Fit](#fit)**<b
 * Failure Chance: 8
 * Concentration Check Modifier: +2
 	* Applies to: **Pivot and Roll**
-* Action Point Cost: 2
+* Energy Point Cost: 2
 <br /><br />
 
 
@@ -1807,7 +1826,7 @@ Aspect Point Cost: **6 AP**
 #### Details
 * Skill: Concentration
 	* Inherits Modifiers from: **Intelligence**
-* Action Point Cost: 1
+* Energy Point Cost: 1
 * Failure Chance: gm_only
 * Heal Affliction: Poisoned
 * Magic
@@ -1830,7 +1849,7 @@ Aspect Point Cost: **4 AP**
 * Skill: Concentration
 	* Inherits Modifiers from: **Intelligence**
 	* Limited: **Caster Only**
-* Action Point Cost: 1
+* Energy Point Cost: 1
 * Failure Chance: 8
 * Damage Resistance: +2 DR
 	* Applies to: **Kinetic**
@@ -1867,7 +1886,7 @@ Aspect Point Cost: **2 AP**
 * Skill: Concentration
 	* Inherits Modifiers from: **Mobility**
 * Failure Chance: 8
-* Action Point Cost: 1
+* Energy Point Cost: 1
 <br /><br />
 
 
@@ -1880,7 +1899,7 @@ Aspect Point Cost: **11 AP**
 
 Requires: **[Vigor](#vigor)**<br />
 #### Details
-* Action Point Cost: 1
+* Energy Point Cost: 1
 * Damage Resistance: +4 DR
 	* Applies to: **Kinetic**
 * Damage Resistance: +4 DR
@@ -1904,7 +1923,7 @@ Aspect Point Cost: **6 AP**
 #### Details
 * Skill: Concentration
 	* Inherits Modifiers from: **Intelligence**
-* Action Point Cost: 1
+* Energy Point Cost: 1
 * Failure Chance: 8
 * Damage Healed: 1d6
 * Magic
@@ -1924,7 +1943,7 @@ Aspect Point Cost: **1 AP**
 #### Details
 * Skill: Concentration
 	* Inherits Modifiers from: **Intelligence**
-* Action Point Cost: 1
+* Energy Point Cost: 1
 * Failure Chance: 12
 * Magic
 	* Magic Energy Type: **Meta**
@@ -1944,7 +1963,7 @@ Requires: **[Perception](#perception)**<br />
 	* Applies to: **Ally's Attack**
 	* Limited: **Ranged Attacks Only**
 * Failure Chance: 12
-* Action Point Cost: 1
+* Energy Point Cost: 1
 <br /><br />
 
 
@@ -1961,7 +1980,7 @@ Aspect Point Cost: **2 AP**
 	* Limited: **Slashing Weapons**
 	* Inherits Modifiers from: **Mobility**
 * Failure Chance: 8
-* Action Point Cost: 1
+* Energy Point Cost: 1
 <br /><br />
 
 
@@ -1976,7 +1995,7 @@ Aspect Point Cost: **7 AP**
 #### Details
 * Skill: Concentration
 	* Inherits Modifiers from: **Intelligence**
-* Action Point Cost: 1
+* Energy Point Cost: 1
 * Failure Chance: 8
 * Heal Affliction: Sickened
 * Magic
@@ -1996,7 +2015,7 @@ Aspect Point Cost: **9 AP**
 #### Details
 * Skill: Attack
 	* Inherits Modifiers from: **Intelligence**
-* Action Point Cost: 1
+* Energy Point Cost: 1
 * Failure Chance: 8
 * Magic
 	* Magic Energy Type: **Meta**
@@ -2018,7 +2037,7 @@ Aspect Point Cost: **2 AP**
 	* Limited: **Thrusting Weapons**
 	* Inherits Modifiers from: **Strength**
 * Failure Chance: 8
-* Action Point Cost: 1
+* Energy Point Cost: 1
 <br /><br />
 
 
@@ -2035,7 +2054,7 @@ Aspect Point Cost: **3 AP**
 #### Details
 * Skill: Concentration
 	* Inherits Modifiers from: **Intelligence**
-* Action Point Cost: 1
+* Energy Point Cost: 1
 * Failure Chance: 8
 * Magic
 	* Magic Energy Type: **Meta**
@@ -2070,7 +2089,7 @@ Aspect Point Cost: **2 AP**
 	* Limited: **Swung Weapons**
 	* Inherits Modifiers from: **Strength**
 * Failure Chance: 8
-* Action Point Cost: 1
+* Energy Point Cost: 1
 <br /><br />
 
 
@@ -2086,7 +2105,7 @@ Aspect Point Cost: **9 AP**
 * Skill: Attack
 	* Limited: **Size Modifier -3 and Smaller Objects Only**
 	* Inherits Modifiers from: **Intelligence**
-* Action Point Cost: 1
+* Energy Point Cost: 1
 * Failure Chance: 8
 * Magic
 	* Magic Energy Type: **Kinetic**
@@ -2151,7 +2170,7 @@ Aspect Point Cost: **9 AP**
 #### Details
 * Skill: Attack
 	* Inherits Modifiers from: **Intelligence**
-* Action Point Cost: 1
+* Energy Point Cost: 1
 * Failure Chance: 8
 * Magic
 	* Magic Energy Type: **Electric**
