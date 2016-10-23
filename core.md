@@ -305,6 +305,8 @@ A character may choose to spend health points and convert them into an energy po
 
 The number of health points a character can convert into energy points is limited by the character's energy point pool size. You may not convert health points into more energy points than a character has room in their energy point pool.
 
+Lastly, any EP derived from Maximum Effort may be used for attack **only once per-turn**. This restirction **does not apply** for using EP derived from Maximum Effort to effect defenses or to concentrate using a non-attack skill.
+
 
 #### Using Aspect Skills
 
