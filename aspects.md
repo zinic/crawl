@@ -1,6 +1,6 @@
 # The Crawl Aspect Document
 
-## Components - 40
+## Components - 41
 #### Action Pool Modifier
 * **+1**
 	* Aspect Point Cost: 8
@@ -368,11 +368,19 @@ Denotes the duration of an effect.
 <br /><br />
 
 
+#### Effect Trigger
+* **When HP Damage is Delt**
+	* Aspect Point Cost: -2
+* **When Attacking**
+	* Aspect Point Cost: -1
+* **When Defending**
+	* Aspect Point Cost: -1
+<br /><br />
+
+
 #### Energy Point Cost
 * **1**
 	* Aspect Point Cost: 2
-* **0**
-	* Aspect Point Cost: 3
 * **3**
 	* Aspect Point Cost: 0
 * **2**
@@ -1009,20 +1017,20 @@ Aspect Point Cost: **6 AP**
 
 Allows a character to make a more acrobatic dodge. This defense roll requires the character to not be slowed. The defense roll receives the character's mobility modifier as a defense bonus in addition to a +2 modifier from the aspect itself.
 
-Aspect Point Cost: **18 AP**
-<br />Capstone Cost: **18 AP**
+Aspect Point Cost: **5 AP**
+<br />Capstone Cost: **5 AP**
 
 
 #### Details
 * Skill (**1 AP**): Concentration
 	* Inherits Modifiers from: **Intelligence**
-* Range (**0 AP**): Personal
+* Energy Point Cost (**2 AP**): 1
 * Failure Chance (**0 AP**): 8
-* Energy Point Cost (**3 AP**): 0
-* Reactionary (**10 AP**)
 * Damage Healed (**3 AP**): 1d8
 * Magic (**1 AP**)
 	* Magic Energy Type: **Meta**
+* Range (**0 AP**): Personal
+* Effect Trigger (**-2 AP**): When HP Damage is Delt
 <br /><br />
 
 
@@ -1340,7 +1348,7 @@ Requires: **[Fit](#fit)**<br />
 * Skill (**2 AP**): Defense
 	* Inherits Modifiers from: **Mobility**
 * Failure Chance (**-4 AP**): 12
-* Energy Point Cost (**3 AP**): 0
+* Energy Point Cost (**2 AP**): 1
 <br /><br />
 
 

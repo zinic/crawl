@@ -18,6 +18,12 @@
             </text>
         </descriptor>
 
+        <descriptor name="Effect Trigger">
+            <value name="When Attacking" cost="-1" />
+            <value name="When Defending" cost="-1" />
+            <value name="When HP Damage is Delt" cost="-2" />
+        </descriptor>
+
         <descriptor name="Target Restriction">
             <value name="Allies Only" cost="10" />
             <value name="Enemies Only" cost="10" />
@@ -308,7 +314,6 @@
         </descriptor>
         
         <descriptor name="Energy Point Cost">
-            <value name="0" cost="3" />
             <value name="1" cost="2" />
             <value name="2" cost="1" />
             <value name="3" cost="0" />
@@ -599,7 +604,7 @@
                 <detail type="inherits_from" value="Mobility" />
             </effect>
             <effect descriptor="Failure Chance" value="12" />
-            <effect descriptor="Energy Point Cost" value="0" />
+            <effect descriptor="Energy Point Cost" value="1" />
             
             <requires name="Fit" />
             
@@ -701,18 +706,14 @@
             <effect descriptor="Skill" value="Concentration">
                 <detail type="inherits_from" value="Intelligence" />
             </effect>
-
-            <effect descriptor="Range" value="Personal" />
-
-            <effect descriptor="Failure Chance" value="8" />
-            <effect descriptor="Energy Point Cost" value="0" />
-
-            <effect descriptor="Reactionary" />
+            <effect descriptor="Energy Point Cost" value="1" />
+            <effect descriptor="Failure Chance" value="8" />            
             <effect descriptor="Damage Healed" value="1d8" />
-            
             <effect descriptor="Magic">
                 <detail type="energy_type" value="Meta" />
             </effect>
+            <effect descriptor="Range" value="Personal" />
+            <effect descriptor="Effect Trigger" value="When HP Damage is Delt" />
             
             <text>
                 Allows a character to make a more acrobatic dodge. This defense roll requires the character to not be slowed. The defense roll receives the character's mobility modifier as a defense bonus in addition to a +2 modifier from the aspect itself.
