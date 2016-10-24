@@ -557,6 +557,8 @@ This aspect or item is magic imbued and will show up on arcane sight.
 
 The number of hands required to utilize the aspect or item.
 
+Weapons that use more than one hand grant the character's strength modifier as a flat damage bonus. For example, a character with a strength modifier of +2 receives +2 damage in addition to the result of their damage roll.
+
 
 
 * **1**

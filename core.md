@@ -301,11 +301,11 @@ Characters may have aspects that grant additional energy points under certain ci
 
 #### Maximum Effort
 
-A character may choose to spend health points and convert them into an energy points. This loss of health points counts as damage to the character and is treated the same.
+A character may choose to spend health points and convert them into an energy points in times of dire need. This loss of health points counts as damage to the character and is treated the same.
 
-The number of health points a character can convert into energy points is limited by the character's energy point pool size. You may not convert health points into more energy points than a character has room in their energy point pool.
+For attacks, a character may convert **only 1 HP per turn**.
 
-Lastly, any EP derived from Maximum Effort may be used for attack **only once per-turn**. This restirction **does not apply** for using EP derived from Maximum Effort to effect defenses or to concentrate using a non-attack skill.
+For all other actions, the number of health points a character may convert into energy points is limited by the character's energy point pool size. You may not convert health points into more energy points than a character has room in their energy point pool.
 
 
 #### Using Aspect Skills
@@ -600,7 +600,7 @@ A charge can only be performed when there are no obstacles between the attacking
 
 The charging character receives a bonus of +2 on their attack. Note, the character must also pay the energy point cost of the attack in addition to the energy point cost of the charge.
 
-After the attack, the character must suffer a -2 to any defense rolls they attempt until the start of their next turn.
+After the attack, the character must suffer a -2 to any defense rolls they attempt until the start of their next turn. Consecutive charges stack only the **the -2 defense modifier** - for example a character that has charged twice in the same turn is subject to a **-4 defense modifier**.
 
 
 #### Climbing and Scaling
