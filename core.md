@@ -60,9 +60,9 @@ During downtime, Claire decides to upgrade her Character, Nala's, Spell Dart asp
 
 #### Acquiring New Aspects
 
-As your characters grow, so should their abilities. Characters may attempt any aspect they qualify for, with the game master's discretion. Any associated skill checks should be made with at minimum, a -5 modifier. The game master is encouraged to raise the modifier up to -20, if the situation, or difficulty of execution of the new aspect warrants it. Game masters should track and make repeated attemps after failures easier but to never grant a negative modifier any less than -5.
+As your characters grow, so should their abilities.
 
-Once a character successfully utilizes a new aspect, they may then attempt to acquire it during downtime as described in **Progression**. This requires the character to utilize the new aspect successfully during downtime with no negative modifier. Upon failure, the character must wait until the next downtime to attempt to acquire the aspect. Upon success, the player may spend the necessary aspect points and acquire the aspect.
+Once a character successfully utilizes a new aspect (see Using Unlearned Aspect Skills), they may then attempt to acquire it during downtime as described in **Progression**. This requires the character to utilize the new aspect successfully during downtime with no negative modifier. Upon failure, the character must wait until the next downtime to attempt to acquire the aspect. Upon success, the player may spend the necessary aspect points and acquire the aspect.
 
 
 ### Core Aspects
@@ -303,9 +303,11 @@ Characters may have aspects that grant additional energy points under certain ci
 
 A character may choose to spend health points and convert them into an energy points in times of dire need. This loss of health points counts as damage to the character and is treated the same.
 
+Maximum effort may only be used in to circumstances:
+
 For attacks, a character may convert **only 1 HP per turn**.
 
-For all other actions, the number of health points a character may convert into energy points is limited by the character's energy point pool size. You may not convert health points into more energy points than a character has room in their energy point pool.
+For defense, the number of health points a character may convert into energy points is limited by the character's energy point pool size. You may not convert health points into more energy points than a character has room in their energy point pool.
 
 
 #### Using Aspect Skills
@@ -317,6 +319,11 @@ This roll may be modified from several sources including: magic, equipment and o
 Lastly, all skills have an energy point cost associated with them.
 
 Only when characters are in initiative do energy point costs matter. Outside of initiative, all skills may be utilized with the energy point cost becoming a guide to how long it may take the character - this is at the game masters discretion!
+
+
+#### Using Unlearned Aspect Skills
+
+If a character meets all the requirements of an aspect, they may attempt to use the aspect without having learned it. The skill roll is subject to a -10 modifier. The game master is encouraged to raise the modifier up to -20, if the situation, or difficulty of execution of the new aspect warrants it.
 
 
 ### Skill Check Difficulty
