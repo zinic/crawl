@@ -370,8 +370,17 @@ An attack is considered defeated only if the defender's defense roll is greater 
 
 #### Critical Hits
 
-Rolling a 20 on a d20 attack roll is considered a **critical hit**. If the defender has a defense they can utilize, they may attempt to defend against the critical hit but at a **-10** modifier to their roll. Upon successful hit, the attacker must roll a d20 against the table below to determine the result.
+Rolling a 20 on an attack roll is considered a **critical hit**. This attack does its normal damage plus an additional modifier from the critical table. The effect is determined by a d20 roll by the attacker.
 
+If the defender has a defense they can utilize, they may attempt to defend against the critical hit but at a **-10** modifier to their roll.
+
+
+#### Critical Failure
+
+Rolling a 1 on an attack roll is considered a **critical failure**. This attack does no damage plus an additional modifier from the critical table. The effect is determined by a d20 roll by the attacker.
+
+
+#### Critical Hit Table
 
 | Roll Range | Result |
 | ---------- | ------ |
@@ -383,6 +392,20 @@ Rolling a 20 on a d20 attack roll is considered a **critical hit**. If the defen
 | 14 - 16 | Bleeding Torso Wound |
 | 17 - 19 | Face Strike - Damaged Senses for 1d6 Turns |
 | 20 | Bleeding Neck Wound - x2 Damage |
+
+
+#### Critical Failure Table
+
+| Roll Range | Result |
+| ---------- | ------ |
+| 1 | Vital Organ Wound - Take Bleed Damage for 1d4 Turns |
+| 2 - 4 | Left Leg Incapacitated |
+| 5 - 7 | Right Leg Incapacitated |
+| 8 - 10 | Right Arm Incapacitated |
+| 11 - 13 | Left Arm Incapacitated |
+| 14 - 16 | Bleeding Torso Wound - Take Bleed Damage |
+| 17 - 19 | Face Strike - Damaged Senses for 1d6 Turns |
+| 20 | Bleeding Neck Wound - Take Bleed Damage for 1d4 Turns |
 
 
 #### Critical Skill Success
@@ -688,12 +711,14 @@ Unless otherwise stated by the aspect, only attacks and defenses will reveal a c
 
 #### Health Points
 
-All characters have a health point value that represents the amount of damage they may sustain before dying. A character is considered unconscious at 0 health points. A  character is considered dead when they recieve damage equal to twice their health point pool.
+All characters have a health point value that represents the amount of damage they may sustain before dying. A character at 0 HP is considered wounded enough to potentially fall unconscious. The moment a character reaches 0 HP must roll a strength check (failure chance of 8). If the character succeeds the check they are still conscious. The character need not roll for consciousness unless they take further damage. Further damage immediately invokes another strength check.
+
+A character is considered dead when they receive damage equal to twice their health point pool.
 
 For example:
-    A character with 50 HP is unconscious at 0 HP and dead at -50 HP.
+    A character with 50 HP is potentially unconscious at 0 HP and dead at -50 HP.
 
-A character’s body may be destroyed once the character is dead as a matter of action - there is no fruther damage needed. Once a character's body has been destroyed, they may not be revived.
+A character’s body may be destroyed once the character is dead as a matter of action - there is no further damage needed. Once a character's body has been destroyed, they may not be revived.
 
 
 #### Healing
