@@ -516,12 +516,10 @@ Increases the effective attack range of a weapon or skill with range melee.
 
 
 
-* **+2 Map Cell**
-	* Aspect Point Cost: 4
-* **+3 Map Cell****
-	* Aspect Point Cost: 6
 * **+1 Map Cell**
 	* Aspect Point Cost: 2
+* **+2 Map Cell****
+	* Aspect Point Cost: 4
 <br /><br />
 
 
@@ -1529,7 +1527,7 @@ Requires: **[Fit](#fit)**<br />
 
 ### Keen Senses
 
-When a stealthed target character passes within 1 map cell of the character, as an opportunistic action, the character may make a perception check to oppose the target's stealth.
+When a target character passes or appears within melee range of the character, as an opportunistic action, the character may make a perception check to oppose the target's stealth. If the target has no active stealth then the perception check has a failure chance of 8.
 
 Aspect Point Cost: **5 AP**
 <br />Capstone Cost: **10 AP**

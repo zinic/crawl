@@ -14,8 +14,7 @@
 
         <descriptor name="Melee Reach">
             <value name="+1 Map Cell" cost="2" />
-            <value name="+2 Map Cell" cost="4" />
-            <value name="+3 Map Cell**" cost="6" />
+            <value name="+2 Map Cell**" cost="4" />
             
             <text>
                 Increases the effective attack range of a weapon or skill with range melee. 
@@ -1084,7 +1083,7 @@
             <requires name="Perception" />
             
             <text>
-                When a stealthed target character passes within 1 map cell of the character, as an opportunistic action, the character may make a perception check to oppose the target's stealth.
+                When a target character passes or appears within melee range of the character, as an opportunistic action, the character may make a perception check to oppose the target's stealth. If the target has no active stealth then the perception check has a failure chance of 8.
             </text>
         </aspect>
         
