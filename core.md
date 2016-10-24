@@ -391,14 +391,14 @@ Rolling a 1 on an attack roll is considered a **critical failure**. This attack 
 
 | Roll Range | Result |
 | ---------- | ------ |
-| 1 | Wound to Vital Organs - x2 Damage |
+| 1 | Wound to Vital Organs - Take Bleed Damage for 1d4 Turns |
 | 2 - 4 | Left Leg Incapacitated |
 | 5 - 7 | Right Leg Incapacitated |
 | 8 - 10 | Right Arm Incapacitated |
 | 11 - 13 | Left Arm Incapacitated |
-| 14 - 16 | Bleeding Torso Wound |
+| 14 - 16 | Bleeding Torso Wound - Take 1d4 Bleed Damage |
 | 17 - 19 | Face Strike - Damaged Senses for 1d6 Turns |
-| 20 | Bleeding Neck Wound - x2 Damage |
+| 20 | Bleeding Neck Wound - Take 1d4 Bleed Damage - Attacker does x2 Damage |
 
 
 #### Critical Failure Table
@@ -410,7 +410,7 @@ Rolling a 1 on an attack roll is considered a **critical failure**. This attack 
 | 5 - 7 | Right Leg Incapacitated |
 | 8 - 10 | Right Arm Incapacitated |
 | 11 - 13 | Left Arm Incapacitated |
-| 14 - 16 | Bleeding Torso Wound - Take Bleed Damage |
+| 14 - 16 | Bleeding Torso Wound - Take 1d4 Bleed Damage |
 | 17 - 19 | Face Strike - Damaged Senses for 1d6 Turns |
 | 20 | Bleeding Neck Wound - Take Bleed Damage for 1d4 Turns |
 
