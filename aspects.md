@@ -511,9 +511,14 @@ This aspect or item is magic imbued and will show up on arcane sight.
 
 
 #### Melee Reach
+
+Increases the effective attack range of a weapon or skill with range melee.
+
+
+
 * **+2 Map Cell**
 	* Aspect Point Cost: 4
-* **+3 Map Cell**
+* **+3 Map Cell****
 	* Aspect Point Cost: 6
 * **+1 Map Cell**
 	* Aspect Point Cost: 2

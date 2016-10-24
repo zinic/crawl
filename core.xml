@@ -15,7 +15,11 @@
         <descriptor name="Melee Reach">
             <value name="+1 Map Cell" cost="2" />
             <value name="+2 Map Cell" cost="4" />
-            <value name="+3 Map Cell" cost="6" />
+            <value name="+3 Map Cell**" cost="6" />
+            
+            <text>
+                Increases the effective attack range of a weapon or skill with range melee. 
+            </text>
         </descriptor>
 
         <descriptor name="Teleportation" cost="15">
