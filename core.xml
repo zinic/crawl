@@ -110,7 +110,7 @@
         <descriptor name="Skill">
             <value name="Non-Combat" cost="1" />
             <value name="Concentration" cost="1" />
-            <value name="Attack" cost="3" />
+            <value name="Attack" cost="2" />
             <value name="Defense" cost="2" />
             
             <text>
@@ -1199,7 +1199,7 @@
         </aspect>
 
         <aspect name="Stab">
-            <effect descriptor="Skill" value="Concentration">
+            <effect descriptor="Skill" value="Attack">
                 <detail type="limit" value="Thrusting Weapons" />
                 <detail type="inherits_from" value="Strength" />
             </effect>
@@ -1212,7 +1212,7 @@
         </aspect>
 
         <aspect name="Bludgeon">
-            <effect descriptor="Skill" value="Concentration">
+            <effect descriptor="Skill" value="Attack">
                 <detail type="limit" value="Bludgeoning Weapons" />
                 <detail type="inherits_from" value="Strength" />
             </effect>
@@ -1225,7 +1225,7 @@
         </aspect>
 
         <aspect name="Archery">
-            <effect descriptor="Skill" value="Concentration">
+            <effect descriptor="Skill" value="Attack">
                 <detail type="limit" value="Drawn Force Weapons" />
                 <detail type="limit" value="Only Inherits from the Highest Modifier (Strength or Mobility)" />
                 <detail type="inherits_from" value="Mobility" />
@@ -1240,7 +1240,7 @@
         </aspect>
 
         <aspect name="Slash">
-            <effect descriptor="Skill" value="Concentration">
+            <effect descriptor="Skill" value="Attack">
                 <detail type="limit" value="Slashing Weapons" />
                 <detail type="inherits_from" value="Mobility" />
             </effect>

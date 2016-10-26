@@ -693,7 +693,7 @@ Skills that may be used to defend against an incoming attack. Defenses, like con
 * **Defense**
 	* Aspect Point Cost: 2
 * **Attack**
-	* Aspect Point Cost: 3
+	* Aspect Point Cost: 2
 <br /><br />
 
 
@@ -852,7 +852,7 @@ Monetary Cost: **1080 $$**
 
 
 #### Rock of Firebolt
-Monetary Cost: **1200 $$**
+Monetary Cost: **1080 $$**
 <br />
 Grants Aspect: **[Firebolt](#firebolt)**<br />
 #### Details
@@ -863,7 +863,7 @@ Grants Aspect: **[Firebolt](#firebolt)**<br />
 
 
 #### Rock of Frigid Cone
-Monetary Cost: **1680 $$**
+Monetary Cost: **1560 $$**
 <br />
 Grants Aspect: **[Frigid Cone](#frigid-cone)**<br />
 #### Details
@@ -874,7 +874,7 @@ Grants Aspect: **[Frigid Cone](#frigid-cone)**<br />
 
 
 #### Wand of Firebolt
-Monetary Cost: **3720 $$**
+Monetary Cost: **3600 $$**
 <br />
 Grants Aspect: **[Firebolt](#firebolt)**<br />
 #### Details
@@ -885,7 +885,7 @@ Grants Aspect: **[Firebolt](#firebolt)**<br />
 
 
 #### Wand of Frigid Cone
-Monetary Cost: **4200 $$**
+Monetary Cost: **4080 $$**
 <br />
 Grants Aspect: **[Frigid Cone](#frigid-cone)**<br />
 #### Details
@@ -980,12 +980,12 @@ Aspect Point Cost: **7 AP**
 
 Allows a character to use a bow, cross bow or other similar drawn force weapon. The skill check uses the higher of either the character's mobility modifier or the character's strength modifier.
 
-Aspect Point Cost: **3 AP**
-<br />Capstone Cost: **3 AP**
+Aspect Point Cost: **4 AP**
+<br />Capstone Cost: **4 AP**
 
 
 #### Details
-* Skill (**1 AP**): Concentration
+* Skill (**2 AP**): Attack
 	* Limited: **Drawn Force Weapons**
 	* Limited: **Only Inherits from the Highest Modifier (Strength or Mobility)**
 	* Inherits Modifiers from: **Mobility**
@@ -1065,12 +1065,12 @@ Aspect Point Cost: **5 AP**
 
 Grants a character a melee attack that's proficient with blugeoning weapons. This attack may be used with heavy, blunt melee weapons, including staves and other similar weapon types. This does not apply to slashing weapons which require different techniques.
 
-Aspect Point Cost: **3 AP**
-<br />Capstone Cost: **3 AP**
+Aspect Point Cost: **4 AP**
+<br />Capstone Cost: **4 AP**
 
 
 #### Details
-* Skill (**1 AP**): Concentration
+* Skill (**2 AP**): Attack
 	* Limited: **Bludgeoning Weapons**
 	* Inherits Modifiers from: **Strength**
 * Failure Chance (**0 AP**): 8
@@ -1103,7 +1103,7 @@ Aspect Point Cost: **12 AP**
 Allows a to make a slashing attack as an opportunistic action.
 
 Aspect Point Cost: **7 AP**
-<br />Capstone Cost: **10 AP**
+<br />Capstone Cost: **11 AP**
 
 Requires: **[Slash](#slash)**<br />
 #### Details
@@ -1117,7 +1117,7 @@ Requires: **[Slash](#slash)**<br />
 Allows a to make a stabbing attack as an opportunistic action.
 
 Aspect Point Cost: **7 AP**
-<br />Capstone Cost: **10 AP**
+<br />Capstone Cost: **11 AP**
 
 Requires: **[Stab](#stab)**<br />
 #### Details
@@ -1130,12 +1130,12 @@ Requires: **[Stab](#stab)**<br />
 
 This enhanced version of Dismiss has all of the same rules as Dismiss but with the added effect of being able to target magical effects as a reaction.
 
-Aspect Point Cost: **18 AP**
-<br />Capstone Cost: **27 AP**
+Aspect Point Cost: **17 AP**
+<br />Capstone Cost: **25 AP**
 
 Requires: **[Dismiss](#dismiss)**<br />
 #### Details
-* Skill (**3 AP**): Attack
+* Skill (**2 AP**): Attack
 	* Inherits Modifiers from: **Intelligence**
 * Energy Point Cost (**1 AP**): 2
 * Failure Chance (**0 AP**): 8
@@ -1181,12 +1181,12 @@ Target a magical effect with an invisible beam directed by the caster. The targe
 
 The spell requires the caster of the target spell to make an intelligence check vs. the dismiss caster's check roll. If the spell is not known, additional negatives apply to this check. Upon winning this opposed check, the target spell is dismissed and all of its effects immedieatly stop.
 
-Aspect Point Cost: **9 AP**
-<br />Capstone Cost: **9 AP**
+Aspect Point Cost: **8 AP**
+<br />Capstone Cost: **8 AP**
 
 
 #### Details
-* Skill (**3 AP**): Attack
+* Skill (**2 AP**): Attack
 	* Inherits Modifiers from: **Intelligence**
 * Energy Point Cost (**2 AP**): 1
 * Failure Chance (**0 AP**): 8
@@ -1312,12 +1312,12 @@ Requires: **[High Manual Dexterity](#high-manual-dexterity)**<br />
 
 The character conjures a ball of fire in either hand which may then be thrown. The attack roll recieves the character's intelligence modifier as an attack bonus.
 
-Aspect Point Cost: **10 AP**
-<br />Capstone Cost: **10 AP**
+Aspect Point Cost: **9 AP**
+<br />Capstone Cost: **9 AP**
 
 
 #### Details
-* Skill (**3 AP**): Attack
+* Skill (**2 AP**): Attack
 	* Inherits Modifiers from: **Intelligence**
 * Energy Point Cost (**2 AP**): 1
 * Failure Chance (**0 AP**): 8
@@ -1383,12 +1383,12 @@ Requires: **[Fit](#fit)**<br />
 
 The character summons a cold blast directed in a cone shaped area in-front of them. This is considered an area attack for all affected map cells.
 
-Aspect Point Cost: **14 AP**
-<br />Capstone Cost: **14 AP**
+Aspect Point Cost: **13 AP**
+<br />Capstone Cost: **13 AP**
 
 
 #### Details
-* Skill (**3 AP**): Attack
+* Skill (**2 AP**): Attack
 	* Inherits Modifiers from: **Intelligence**
 * Energy Point Cost (**2 AP**): 1
 * Failure Chance (**0 AP**): 8
@@ -1421,7 +1421,7 @@ Aspect Point Cost: **3 AP**
 Allows a character to attack 2 enemies standing side-by-side. The enemies must be in adjacent map cells. The attacker makes a single attack roll that both targets may then roll against. This attack incurs a **-2 modifier** to the attack roll.
 
 Aspect Point Cost: **2 AP**
-<br />Capstone Cost: **7 AP**
+<br />Capstone Cost: **8 AP**
 
 Requires: **[Fit](#fit)**<br />Requires: **[Slash](#slash)**<br />
 #### Details
@@ -2058,12 +2058,12 @@ Requires: **[Perception](#perception)**<br />
 
 Grants a character a melee slashing attack. This attack may be used with any slashing melee weapon.
 
-Aspect Point Cost: **3 AP**
-<br />Capstone Cost: **3 AP**
+Aspect Point Cost: **4 AP**
+<br />Capstone Cost: **4 AP**
 
 
 #### Details
-* Skill (**1 AP**): Concentration
+* Skill (**2 AP**): Attack
 	* Limited: **Slashing Weapons**
 	* Inherits Modifiers from: **Mobility**
 * Failure Chance (**0 AP**): 8
@@ -2095,12 +2095,12 @@ Aspect Point Cost: **8 AP**
 
 Spell Dart is a meta magic spell that allows a character to aim a single finger (of their choice) at a target and fire a crackling spark of pure magical energy at them. This spark flies like an arrow in speed and trajectory. Upon impact it explodes with a loud crack and a flurry of much smaller, short-lived magical sparks.
 
-Aspect Point Cost: **10 AP**
-<br />Capstone Cost: **10 AP**
+Aspect Point Cost: **9 AP**
+<br />Capstone Cost: **9 AP**
 
 
 #### Details
-* Skill (**3 AP**): Attack
+* Skill (**2 AP**): Attack
 	* Inherits Modifiers from: **Intelligence**
 * Energy Point Cost (**2 AP**): 1
 * Failure Chance (**0 AP**): 8
@@ -2115,12 +2115,12 @@ Aspect Point Cost: **10 AP**
 
 Grants a character a melee stabbing attack. This attack may be used with any thrusting melee weapon.
 
-Aspect Point Cost: **3 AP**
-<br />Capstone Cost: **3 AP**
+Aspect Point Cost: **4 AP**
+<br />Capstone Cost: **4 AP**
 
 
 #### Details
-* Skill (**1 AP**): Concentration
+* Skill (**2 AP**): Attack
 	* Limited: **Thrusting Weapons**
 	* Inherits Modifiers from: **Strength**
 * Failure Chance (**0 AP**): 8
@@ -2167,12 +2167,12 @@ Aspect Point Cost: **1 AP**
 
 Allows a character to use their mind to toss an object of size modifier -3 or smaller with their mind. This object may be thrown hard enough to 1d4 damage and is accurate up to range medium.
 
-Aspect Point Cost: **10 AP**
-<br />Capstone Cost: **10 AP**
+Aspect Point Cost: **9 AP**
+<br />Capstone Cost: **9 AP**
 
 
 #### Details
-* Skill (**3 AP**): Attack
+* Skill (**2 AP**): Attack
 	* Limited: **Size Modifier -3 and Smaller Objects Only**
 	* Inherits Modifiers from: **Intelligence**
 * Energy Point Cost (**2 AP**): 1
@@ -2233,12 +2233,12 @@ Aspect Point Cost: **8 AP**
 
 Upon casting, a bolt of lightning arcs from either of the character's hands toward the target enemy with a thundering crack. The attack roll recieves the character's intelligence modifier as an attack bonus.
 
-Aspect Point Cost: **10 AP**
-<br />Capstone Cost: **10 AP**
+Aspect Point Cost: **9 AP**
+<br />Capstone Cost: **9 AP**
 
 
 #### Details
-* Skill (**3 AP**): Attack
+* Skill (**2 AP**): Attack
 	* Inherits Modifiers from: **Intelligence**
 * Energy Point Cost (**2 AP**): 1
 * Failure Chance (**0 AP**): 8
