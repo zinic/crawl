@@ -1997,15 +1997,14 @@ Requires: **[Vigor](#vigor)**<br />
 
 ### Reaching Strike
 
-Grants a character a specialized melee attack that's proficient with blugeoning weapons but allows the attacker to ignore the negative for attacking through occupied map cells.
+Grants a character a specialized melee attack that's proficient with weapons of requirements but allows the attacker to ignore the negative for attacking through occupied map cells.
 
 Aspect Point Cost: **6 AP**
-<br />Capstone Cost: **6 AP**
+<br />Capstone Cost: **10 AP**
 
-
+Requires: **[Slash](#slash)**<br />
 #### Details
 * Skill (**2 AP**): Attack
-	* Limited: **Bludgeoning Weapons**
 	* Inherits Modifiers from: **Strength**
 * Careful Blow (**2 AP**)
 * Failure Chance (**0 AP**): 8
