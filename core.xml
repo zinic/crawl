@@ -12,6 +12,12 @@
             </text>
         </descriptor>
 
+        <descriptor name="Careful Blow" cost="2">
+            <text>
+                Allows melee attacks to ignore the penalty for attacking through an occupied map cell.
+            </text>
+        </descriptor>
+
         <descriptor name="Melee Reach">
             <value name="+1 Map Cell" cost="2" />
             <value name="+2 Map Cell**" cost="4" />
@@ -938,15 +944,6 @@
             </text>
         </aspect>
         
-        <aspect name="Back Row Specialist">
-            <effect descriptor="Skill" value="Concentration">
-            </effect>
-            
-            <text>
-                This aspect allows a character to ignore attacking throug certain hexes.
-            </text>
-        </aspect>
-
         <aspect name="Martial Artist">
             <effect descriptor="Crit Success Modifier" value="+1">
                 <detail type="limit" value="Melee" />
@@ -1221,6 +1218,20 @@
 
             <text>
                 Grants a character a melee attack that's proficient with blugeoning weapons. This attack may be used with heavy, blunt melee weapons, including staves and other similar weapon types. This does not apply to slashing weapons which require different techniques.
+            </text>
+        </aspect>
+
+        <aspect name="Reaching Strike">
+            <effect descriptor="Skill" value="Attack">
+                <detail type="limit" value="Bludgeoning Weapons" />
+                <detail type="inherits_from" value="Strength" />
+            </effect>
+            <effect descriptor="Careful Blow" />
+            <effect descriptor="Failure Chance" value="8" />
+            <effect descriptor="Energy Point Cost" value="1" />
+
+            <text>
+                Grants a character a specialized melee attack that's proficient with blugeoning weapons but allows the attacker to ignore the negative for attacking through occupied map cells.
             </text>
         </aspect>
 

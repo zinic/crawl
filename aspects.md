@@ -1,6 +1,6 @@
 # The Crawl Aspect Document
 
-## Components - 42
+## Components - 43
 #### Action Pool Modifier
 * **+1**
 	* Aspect Point Cost: 8
@@ -101,6 +101,15 @@ Describes the attack method of a weapon. The attack method of a weapon defines w
 
 #### Can't be Flanked
 * Aspect Point Cost: 5<br /><br />
+
+
+#### Careful Blow
+
+Allows melee attacks to ignore the penalty for attacking through an occupied map cell.
+
+
+
+* Aspect Point Cost: 2<br /><br />
 
 
 #### Concentration Check Modifier
@@ -992,19 +1001,6 @@ Aspect Point Cost: **4 AP**
 	* Inherits Modifiers from: **Strength**
 * Failure Chance (**0 AP**): 8
 * Energy Point Cost (**2 AP**): 1
-<br /><br />
-
-
-### Back Row Specialist
-
-This aspect allows a character to ignore attacking throug certain hexes.
-
-Aspect Point Cost: **1 AP**
-<br />Capstone Cost: **1 AP**
-
-
-#### Details
-* Skill (**1 AP**): Concentration
 <br /><br />
 
 
@@ -1996,6 +1992,24 @@ Requires: **[Vigor](#vigor)**<br />
 * Damage Resistance (**2 AP**): +4 DR
 	* Applies to: **Electric**
 * Duration (**5 AP**): 8 Turns
+<br /><br />
+
+
+### Reaching Strike
+
+Grants a character a specialized melee attack that's proficient with blugeoning weapons but allows the attacker to ignore the negative for attacking through occupied map cells.
+
+Aspect Point Cost: **6 AP**
+<br />Capstone Cost: **6 AP**
+
+
+#### Details
+* Skill (**2 AP**): Attack
+	* Limited: **Bludgeoning Weapons**
+	* Inherits Modifiers from: **Strength**
+* Careful Blow (**2 AP**)
+* Failure Chance (**0 AP**): 8
+* Energy Point Cost (**2 AP**): 1
 <br /><br />
 
 
