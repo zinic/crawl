@@ -541,6 +541,18 @@
             <effect descriptor="Damage Type" value="Kinetic" />
         </item>
 
+        <item name="Laminated Knife" type="weapon">
+            <effect descriptor="Attack Method" value="Slashing" />
+            <effect descriptor="Number of Hands Required" value="1" />
+            <effect descriptor="Range" value="Melee" />
+            <effect descriptor="Damage" value="1d10" />
+            <effect descriptor="Damage Resistance" value="-2 DR">
+                <detail type="targets" value="Kinetic" />
+            </effect>
+            <effect descriptor="Magic" />
+            <effect descriptor="Damage Type" value="Kinetic" />
+        </item>
+
         <item name="Dagger" type="weapon">
             <effect descriptor="Attack Method" value="Thrusting" />
             <effect descriptor="Number of Hands Required" value="1" />

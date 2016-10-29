@@ -758,7 +758,7 @@ Marks an object as throwable. The attack of this weapon may be considered a rang
 * Aspect Point Cost: 1<br /><br />
 
 
-## Items - 14
+## Items - 15
 #### Bracers of Magic
 Monetary Cost: **360 $$**
 <br />
@@ -823,6 +823,22 @@ Monetary Cost: **360 $$**
 * Number of Hands Required: 1
 * Range: Melee
 * Damage: 1d4
+* Damage Type: Kinetic
+<br /><br />
+
+
+#### Laminated Knife
+Monetary Cost: **960 $$**
+<br />
+
+#### Details
+* Attack Method: Slashing
+* Number of Hands Required: 1
+* Range: Melee
+* Damage: 1d10
+* Damage Resistance: -2 DR
+	* Applies to: **Kinetic**
+* Magic
 * Damage Type: Kinetic
 <br /><br />
 
