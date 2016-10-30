@@ -150,7 +150,7 @@
         </descriptor>
         
         <descriptor name="Number of Uses">
-            <value name="1" cost="0" />
+            <value name="1" cost="-1" />
             <value name="2" cost="1" />
             <value name="3" cost="2" />
             <value name="4" cost="3" />

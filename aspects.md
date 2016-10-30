@@ -593,7 +593,7 @@ Useful for items that have consumable uses.
 * **Unlimited**
 	* Aspect Point Cost: 21
 * **1**
-	* Aspect Point Cost: 0
+	* Aspect Point Cost: -1
 * **3**
 	* Aspect Point Cost: 2
 * **2**
@@ -877,7 +877,7 @@ Monetary Cost: **1080 $$**
 
 
 #### Rock of Firebolt
-Monetary Cost: **1080 $$**
+Monetary Cost: **960 $$**
 <br />
 Grants Aspect: **[Firebolt](#firebolt)**<br />
 #### Details
@@ -888,7 +888,7 @@ Grants Aspect: **[Firebolt](#firebolt)**<br />
 
 
 #### Rock of Frigid Cone
-Monetary Cost: **1560 $$**
+Monetary Cost: **1440 $$**
 <br />
 Grants Aspect: **[Frigid Cone](#frigid-cone)**<br />
 #### Details
