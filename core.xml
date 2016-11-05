@@ -654,6 +654,16 @@
             </text>
         </aspect>
 
+        <aspect name="Healing Potion">
+            <effect descriptor="Number of Uses" value="1" />
+            <effect descriptor="Energy Point Cost" value="1" />
+            <effect descriptor="Damage Healed" value="1d8" />
+            
+            <text>
+                Single use potion for healing.
+            </text>
+        </aspect>
+
         <aspect name="Survival">
             <effect descriptor="Skill" value="Non-Combat">
                 <detail type="inherits_from" value="Intelligence" />
