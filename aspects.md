@@ -758,7 +758,7 @@ Marks an object as throwable. The attack of this weapon may be considered a rang
 * Aspect Point Cost: 1<br /><br />
 
 
-## Items - 15
+## Items - 16
 #### Bracers of Magic
 Monetary Cost: **360 $$**
 <br />
@@ -811,6 +811,20 @@ Monetary Cost: **960 $$**
 #### Details
 * Core Aspect Modifier: +1
 	* Applies to: **Intelligence**
+<br /><br />
+
+
+#### Healing Potion
+
+Single use potion for healing.
+
+Monetary Cost: **480 $$**
+<br />
+
+#### Details
+* Number of Uses: 1
+* Energy Point Cost: 1
+* Damage Healed: 1d8
 <br /><br />
 
 
@@ -940,7 +954,7 @@ Monetary Cost: **1440 $$**
 <br /><br />
 
 
-## Aspects - 80
+## Aspects - 79
 ### Adonic
 
 Super Strong, yo.
@@ -1465,21 +1479,6 @@ Requires: **[Magic Trick](#magic-trick)**<br />
 	* Magic Energy Type: **Meta**
 * Range (**2 AP**): Short
 * Teleportation (**15 AP**)
-<br /><br />
-
-
-### Healing Potion
-
-Single use potion for healing.
-
-Aspect Point Cost: **4 AP**
-<br />Capstone Cost: **4 AP**
-
-
-#### Details
-* Number of Uses (**-1 AP**): 1
-* Energy Point Cost (**2 AP**): 1
-* Damage Healed (**3 AP**): 1d8
 <br /><br />
 
 

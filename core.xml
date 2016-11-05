@@ -486,6 +486,16 @@
     </templates>
     
     <items>
+        <item name="Healing Potion" type="potion">
+            <effect descriptor="Number of Uses" value="1" />
+            <effect descriptor="Energy Point Cost" value="1" />
+            <effect descriptor="Damage Healed" value="1d8" />
+            
+            <text>
+                Single use potion for healing.
+            </text>
+        </item>
+                
         <item name="Ring of Healthiness" type="ring">
             <effect descriptor="HP Pool Modifier" value="+4" />
             <effect descriptor="Magic" />
@@ -651,16 +661,6 @@
             
             <text>
                 Allows a character to make a simple dodge-based defense against an incoming attack. The defense roll recieves the character's **mobility modifier** as a defense bonus.
-            </text>
-        </aspect>
-
-        <aspect name="Healing Potion">
-            <effect descriptor="Number of Uses" value="1" />
-            <effect descriptor="Energy Point Cost" value="1" />
-            <effect descriptor="Damage Healed" value="1d8" />
-            
-            <text>
-                Single use potion for healing.
             </text>
         </aspect>
 
