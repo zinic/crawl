@@ -490,7 +490,8 @@
             <effect descriptor="Number of Uses" value="1" />
             <effect descriptor="Energy Point Cost" value="1" />
             <effect descriptor="Damage Healed" value="1d8" />
-            
+            <effect descriptor="Magic" />
+
             <text>
                 Single use potion for healing.
             </text>

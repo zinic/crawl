@@ -818,13 +818,14 @@ Monetary Cost: **960 $$**
 
 Single use potion for healing.
 
-Monetary Cost: **480 $$**
+Monetary Cost: **600 $$**
 <br />
 
 #### Details
 * Number of Uses: 1
 * Energy Point Cost: 1
 * Damage Healed: 1d8
+* Magic
 <br /><br />
 
 
