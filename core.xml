@@ -531,7 +531,7 @@
             </effect>
                         
             <effect descriptor="Damage Resistance" value="-2 DR">
-                <detail type="targets" value="Kinetic" />
+                <detail type="targets" value="Cold" />
             </effect>
             <effect descriptor="Magic" />
             <effect descriptor="Damage Type" value="Kinetic" />

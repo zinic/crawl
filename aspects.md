@@ -924,7 +924,7 @@ Monetary Cost: **720 $$**
 * Damage: 1d6
 	* Applies to: **Cold Damage**
 * Damage Resistance: -2 DR
-	* Applies to: **Kinetic**
+	* Applies to: **Cold**
 * Magic
 * Damage Type: Kinetic
 <br /><br />
