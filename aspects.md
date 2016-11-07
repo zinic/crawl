@@ -758,7 +758,7 @@ Marks an object as throwable. The attack of this weapon may be considered a rang
 * Aspect Point Cost: 1<br /><br />
 
 
-## Items - 16
+## Items - 17
 #### Bracers of Magic
 Monetary Cost: **360 $$**
 <br />
@@ -910,6 +910,23 @@ Grants Aspect: **[Frigid Cone](#frigid-cone)**<br />
 * Attack Method: Magic
 * Number of Hands Required: 1
 * Number of Uses: 1
+<br /><br />
+
+
+#### Sven's Short Sword
+Monetary Cost: **720 $$**
+<br />
+
+#### Details
+* Attack Method: Slashing
+* Number of Hands Required: 1
+* Range: Melee
+* Damage: 1d6
+	* Applies to: **Cold Damage**
+* Damage Resistance: -2 DR
+	* Applies to: **Kinetic**
+* Magic
+* Damage Type: Kinetic
 <br /><br />
 
 

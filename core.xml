@@ -522,6 +522,21 @@
             </text>
         </item>
         
+        <item name="Sven's Short Sword" type="weapon">
+            <effect descriptor="Attack Method" value="Slashing" />
+            <effect descriptor="Number of Hands Required" value="1" />
+            <effect descriptor="Range" value="Melee" />
+            <effect descriptor="Damage" value="1d6">
+                <detail type="targets" value="Cold Damage" />
+            </effect>
+                        
+            <effect descriptor="Damage Resistance" value="-2 DR">
+                <detail type="targets" value="Kinetic" />
+            </effect>
+            <effect descriptor="Magic" />
+            <effect descriptor="Damage Type" value="Kinetic" />
+        </item>
+        
         <item name="Chestplate" type="armor">
             <effect descriptor="Damage Resistance" value="+6 DR">
                 <detail type="targets" value="Kinetic" />
