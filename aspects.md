@@ -758,7 +758,7 @@ Marks an object as throwable. The attack of this weapon may be considered a rang
 * Aspect Point Cost: 1<br /><br />
 
 
-## Items - 17
+## Items - 18
 #### Bracers of Magic
 Monetary Cost: **360 $$**
 <br />
@@ -855,6 +855,21 @@ Monetary Cost: **960 $$**
 	* Applies to: **Kinetic**
 * Magic
 * Damage Type: Kinetic
+<br /><br />
+
+
+#### Radiant Helmet
+
+Magic helemt
+
+Monetary Cost: **840 $$**
+<br />
+
+#### Details
+* HP Pool Modifier: +2
+* Damage Resistance: +4 DR
+	* Applies to: **Kinetic**
+* Magic
 <br /><br />
 
 

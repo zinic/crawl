@@ -497,6 +497,18 @@
             </text>
         </item>
                 
+        <item name="Radiant Helmet" type="armor">
+            <effect descriptor="HP Pool Modifier" value="+2" />
+            <effect descriptor="Damage Resistance" value="+4 DR">
+                <detail type="targets" value="Kinetic" />
+            </effect>
+            <effect descriptor="Magic" />
+
+            <text>
+                Magic helemt
+            </text>
+        </item>
+ 
         <item name="Ring of Healthiness" type="ring">
             <effect descriptor="HP Pool Modifier" value="+4" />
             <effect descriptor="Magic" />
