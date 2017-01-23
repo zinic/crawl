@@ -1,0 +1,634 @@
+<document>
+    <formulas>
+        <formula id="Easy Progression" type="custom" equation="i">
+        </formula>
+
+        <formula id="Normal Progression" type="custom" equation="fib(i)">
+        </formula>
+
+        <formula id="Hard Progression" type="custom" equation="fib(i) * 2">
+        </formula>
+
+        <formula id="Heroic Progression" type="custom" equation="pow(2, i)">
+        </formula>
+
+        <formula id="Damage Cost" type="provided" function="damage_cost">
+        </formula>
+
+        <formula id="Absolute" type="provided" function="absolute">
+        </formula>
+    </formulas>
+
+    <rules>
+        <!-- Item Rules -->
+
+        <rule name="Number of Uses" class="item">
+            <formula ref="Easy Progression">
+                <argument name="start" value="-3"/>
+            </formula>
+
+            <option name="1"/>
+            <option name="2"/>
+            <option name="3"/>
+
+            <text>
+                Useful for items that have consumable uses.
+            </text>
+        </rule>
+
+        <rule name="Item Attribute" class="item">
+            <formula ref="Absolute">
+            </formula>
+
+            <option name="Magic" cost="1">
+                <text>
+                    This aspect or item is magic imbued and will show up on arcane sight.
+                </text>
+            </option>
+        </rule>
+
+        <rule name="Attack Method" class="item">
+            <formula ref="Absolute">
+            </formula>
+
+            <option name="Drawn Force" cost="0"/>
+            <option name="Slashing" cost="0"/>
+            <option name="Bludgeoning" cost="0"/>
+            <option name="Thrusting" cost="0"/>
+            <option name="Magic" cost="0"/>
+
+            <option name="Throwable" cost="1">
+                <text>
+                    Marks an object as throwable. The attack of this weapon may be considered a ranged attack with a
+                    range of medium. This range may be increased with a strength check of an appropriate difficulty
+                    before the attack with the approval of the game master.
+                </text>
+            </option>
+
+
+            <text>
+                Describes the attack method of a weapon. The attack method of a weapon defines which attack aspects may
+                be used with the weapon.
+            </text>
+        </rule>
+
+
+        <!-- Character Rules -->
+
+        <rule name="Melee Attack Modifier" class="character">
+            <formula ref="Absolute">
+            </formula>
+
+            <option name="Careful Blow" cost="2">
+                <text>
+                    Allows melee attacks to ignore the penalty for attacking through an occupied map cell.
+                </text>
+            </option>
+        </rule>
+
+        <rule name="Teleportation" class="character">
+            <formula ref="Absolute">
+            </formula>
+
+            <option name="Teleportation" cost="15">
+                <text>
+                    Allows the aspect this descriptor is tagged to, to impart a teleportation effect. To add more
+                    targets to teleport consider Extra Target.
+                </text>
+            </option>
+        </rule>
+
+        <rule name="Effect Trigger" class="character">
+            <formula ref="Absolute">
+            </formula>
+
+            <option name="When Attacking" cost="-1"/>
+            <option name="When Defending" cost="-1"/>
+            <option name="When HP Damage is Delt" cost="-2"/>
+        </rule>
+
+        <rule name="Affliction Immunity" class="character">
+            <formula ref="Absolute">
+                <argument name="cost" value="8"/>
+            </formula>
+
+            <option name="Staggered"/>
+            <option name="Sickened"/>
+            <option name="Diseased"/>
+
+            <text>
+                Grants immunity to a certain affliction and all of its effects.
+            </text>
+        </rule>
+
+        <rule name="Number of Hands Required" class="character">
+            <formula ref="Absolute">
+            </formula>
+
+            <option name="1" cost="0"/>
+            <option name="2" cost="1"/>
+            <option name="3" cost="1"/>
+            <option name="4" cost="1"/>
+
+            <text>
+                The number of hands required to utilize the aspect or item.
+
+                Weapons that use more than one hand grant the character's strength modifier as a flat damage bonus. For
+                example, a character with a strength modifier of +2 receives +2 damage in addition to the result of
+                their damage roll.
+            </text>
+        </rule>
+
+        <rule name="Area Effect" class="character">
+            <formula ref="Normal Progression">
+                <argument name="start" value="3"/>
+            </formula>
+
+            <option name="Line"/>
+            <option name="Cone"/>
+            <option name="Dome"/>
+
+            <text>
+
+            </text>
+        </rule>
+
+        <rule name="Combat Expertise">
+            <formula ref="Absolute">
+            </formula>
+
+            <option name="Can't be Flanked" cost="5"/>
+        </rule>
+
+        <rule name="Skill" class="character">
+            <formula ref="Absolute">
+            </formula>
+
+            <option name="Non-Combat" cost="0"/>
+            <option name="Concentration" cost="1"/>
+            <option name="Attack" cost="2"/>
+            <option name="Defense" cost="2"/>
+
+            <text>
+                Skills granted by aspects come in a few different flavors.
+
+                Non-Combat
+                Skills that may be used outside of combat only. This may be due to restrictions within the skill itself
+                or for other reasons explained in the aspect text.
+
+                Concentration
+                Skills that may be used provided the character can concentrate on their action. Concentration skills may
+                be used in combat for action points.
+
+                Attack
+                Skills that may be used to attack or directly affect another target character. Attacks, like
+                concentration skills, come with an action point cost.
+
+                Defense
+                Skills that may be used to defend against an incoming attack. Defenses, like concentration and attack
+                skills come with an action point cost.
+            </text>
+        </rule>
+
+        <rule name="Presence Modifier">
+            <formula ref="Absolute">
+            </formula>
+
+            <text>
+                **Note:** this component may not be used for attack rolls.
+            </text>
+        </rule>
+
+        <rule name="Damage Resistance" class="character">
+            <formula ref="Normal Progression">
+            </formula>
+
+            <option name="-10 DR" cost="5"/>
+            <option name="-8 DR" cost="4"/>
+            <option name="-6 DR" cost="3"/>
+            <option name="-4 DR" cost="2"/>
+            <option name="-2 DR" cost="1"/>
+
+            <option name="+2 DR" cost="1"/>
+            <option name="+4 DR" cost="2"/>
+            <option name="+6 DR" cost="3"/>
+            <option name="+8 DR" cost="4"/>
+            <option name="+10 DR" cost="5"/>
+        </rule>
+
+        <rule name="Starting Wealth Modifier" class="character">
+            <formula ref="Normal Progression">
+            </formula>
+
+            <option name="100 $$"/>
+            <option name="200 $$"/>
+            <option name="300 $$"/>
+            <option name="400 $$"/>
+            <option name="500 $$"/>
+        </rule>
+
+        <rule name="Extra Attack" class="character">
+            <formula ref="Normal Progression">
+            </formula>
+
+
+            <option name="+1"/>
+            <option name="+2"/>
+        </rule>
+
+        <rule name="Extra Target" class="character">
+            <formula ref="Normal Progression">
+            </formula>
+
+
+            <option name="+1"/>
+            <option name="+2"/>
+            <option name="+3"/>
+            <option name="+4"/>
+            <option name="+5"/>
+        </rule>
+
+        <rule name="Damage">
+            <formula ref="Damage Cost"/>
+
+            <option name="1d4"/>
+            <option name="1d6"/>
+            <option name="1d8"/>
+            <option name="1d12"/>
+
+            <option name="2d4"/>
+            <option name="2d6"/>
+            <option name="2d8"/>
+            <option name="2d12"/>
+
+            <option name="3d4"/>
+            <option name="3d6"/>
+            <option name="3d8"/>
+            <option name="3d12"/>
+
+            <option name="4d4"/>
+            <option name="4d6"/>
+            <option name="4d8"/>
+            <option name="4d12"/>
+        </rule>
+
+        <rule name="Damage Healed">
+            <formula ref="Damage Cost"/>
+
+            <option name="1d4"/>
+            <option name="1d6"/>
+            <option name="1d8"/>
+            <option name="1d12"/>
+
+            <option name="2d4"/>
+            <option name="2d6"/>
+            <option name="2d8"/>
+            <option name="2d12"/>
+
+            <option name="3d4"/>
+            <option name="3d6"/>
+            <option name="3d8"/>
+            <option name="3d12"/>
+
+            <option name="4d4"/>
+            <option name="4d6"/>
+            <option name="4d8"/>
+            <option name="4d12"/>
+        </rule>
+
+        <rule name="HP Pool Modifier" class="character">
+            <formula ref="Normal Progression">
+            </formula>
+
+            <option name="+1" cost="2"/>
+            <option name="+2" cost="4"/>
+            <option name="+3" cost="6"/>
+            <option name="+4" cost="8"/>
+            <option name="-1" cost="2"/>
+            <option name="-2" cost="4"/>
+            <option name="-3" cost="6"/>
+            <option name="-4" cost="8"/>
+        </rule>
+
+        <rule name="Target Restriction" class="character">
+            <formula ref="Absolute">
+                <argument name="Cost" value="10"/>
+            </formula>
+
+            <option name="Allies Only"/>
+            <option name="Enemies Only"/>
+        </rule>
+
+        <rule name="Core Aspect Modifier" class="character">
+            <formula ref="Hard Progression">
+            </formula>
+
+            <option name="-2"/>
+            <option name="-1"/>
+            <option name="+1"/>
+            <option name="+2"/>
+        </rule>
+
+        <rule name="Crit Success Modifier" class="character">
+            <formula ref="Normal Progression">
+            </formula>
+
+            <option name="+1"/>
+            <option name="+2"/>
+            <option name="+3"/>
+            <option name="+4"/>
+            <option name="+5"/>
+        </rule>
+
+        <rule name="Energy Point Cost" class="character">
+            <formula ref="Normal Progression">
+            </formula>
+
+            <option name="1" cost="2"/>
+            <option name="2" cost="1"/>
+            <option name="3" cost="0"/>
+            <option name="4" cost="-1"/>
+            <option name="5" cost="-2"/>
+            <option name="6" cost="-3"/>
+        </rule>
+
+        <rule name="Out of Turn Action" class="character">
+            <formula ref="Normal Progression">
+            </formula>
+
+            <option name="Opportunistic" />
+            <option name="Reactionary" />
+
+            <text>
+                This allows the associated aspect to be used as a reactionary action. That is to say that when a
+                condition is met, an aspect that has the reactionary effect may be used immediately.
+            </text>
+        </rule>
+
+        <rule name="NPC Cohort" class="character">
+            <formula ref="Absolute">
+                <argument name="cost" value="1"/>
+            </formula>
+
+            <option name="NPC Cohort"/>
+        </rule>
+
+        <rule name="Environment Mitigation" class="character">
+            <formula ref="Normal Progression">
+            </formula>
+
+            <option name="Low Light Vision"/>
+            <option name="Infrared Sight"/>
+            <option name="Echo Sight"/>
+        </rule>
+
+        <rule name="Action Refresh Modifier" class="character">
+            <formula ref="Normal Progression">
+            </formula>
+
+            <option name="-1 Action Refresh"/>
+            <option name="+1 Action Refresh"/>
+        </rule>
+
+        <rule name="Action Pool Modifier" class="character">
+            <formula ref="Normal Progression">
+            </formula>
+
+            <option name="-1 Action Pool"/>
+            <option name="+1 Action Pool"/>
+        </rule>
+
+        <rule name="Delayed Effect Duration" class="character">
+            <formula ref="Normal Progression">
+            </formula>
+
+            <option name="1 Turn"/>
+            <option name="2 Turns"/>
+            <option name="4 Turns"/>
+            <option name="8 Turns"/>
+            <option name="10 Minutes"/>
+            <option name="30 Minutes"/>
+            <option name="1 Hour"/>
+            <option name="12 Hours"/>
+            <option name="1 Day"/>
+
+            <text>
+                Denotes the duration or preparation time required before an aspect becomes effective.
+            </text>
+        </rule>
+
+        <rule name="Damage Type" class="character">
+            <formula ref="Absolute">
+                <argument name="Cost" value="1"/>
+            </formula>
+
+            <option name="Kinetic"/>
+            <option name="Cold"/>
+            <option name="Fire"/>
+            <option name="Electric"/>
+            <option name="Meta"/>
+
+            <text>
+                Damage types may be added to aspects and items that cause damage. Additional types may be added in an
+                attempt to make the weapon more effective against well defended enemeies.
+            </text>
+        </rule>
+
+        <rule name="Failure Chance" class="character">
+            <formula ref="Normal Progression">
+            </formula>
+
+            <option name="0"/>
+            <option name="2"/>
+            <option name="4"/>
+            <option name="6"/>
+            <option name="8"/>
+            <option name="10"/>
+            <option name="12"/>
+            <option name="14"/>
+            <option name="16"/>
+            <option name="18"/>
+            <option name="20"/>
+            <option name="22"/>
+            <option name="24"/>
+            <option name="26"/>
+            <option name="28"/>
+
+            <text>
+                All skill checks should specifiy a base difficulty. The player may choose to augment the difficulty in
+                the future only by lowering it.
+            </text>
+        </rule>
+
+        <rule name="Range" class="character">
+            <formula ref="Normal Progression">
+            </formula>
+
+            <option name="Personal"/>
+            <option name="Melee"/>
+            <option name="Short"/>
+            <option name="Medium"/>
+            <option name="Long"/>
+            <option name="Extreme"/>
+
+            <text>
+                See the core rules section: **Range Definitions** for more details.
+            </text>
+        </rule>
+
+        <rule name="Effect Duration" class="character">
+            <formula ref="Hard Progression">
+            </formula>
+
+            <!-- Order should be preserved so this looks okay to me -->
+            <option name="1 Turn"/>
+            <option name="2 Turns"/>
+            <option name="4 Turns"/>
+            <option name="8 Turns"/>
+            <option name="10 Minutes"/>
+            <option name="30 Minutes"/>
+            <option name="1 Hour"/>
+            <option name="12 Hours"/>
+            <option name="1 Day"/>
+        </rule>
+
+        <rule name="Melee Reach" class="character">
+            <formula ref="Normal Progression">
+            </formula>
+
+            <option name="+1 Map Cell"/>
+            <option name="+2 Map Cells"/>
+        </rule>
+
+        <rule name="Heals Affliction" class="character">
+            <formula ref="Normal Progression">
+            </formula>
+
+            <option name="Sickened"/>
+            <option name="Diseased"/>
+            <option name="Poisoned"/>
+        </rule>
+
+        <rule name="Defense Bonus" class="character">
+            <formula ref="Normal Progression">
+            </formula>
+
+            <option name="-4 Defense Effectiveness"/>
+            <option name="-3 Defense Effectiveness"/>
+            <option name="-2 Defense Effectiveness"/>
+            <option name="-1 Defense Effectiveness"/>
+
+            <option name="+1 Defense Effectiveness"/>
+            <option name="+2 Defense Effectiveness"/>
+            <option name="+3 Defense Effectiveness"/>
+            <option name="+4 Defense Effectiveness"/>
+
+            <text>
+                This is used to modify a defense roll instead of a skill check modifier. This modifier may be applied to
+                enemy defense rolls as a negative modifier.
+            </text>
+        </rule>
+
+        <rule name="Defense Negative" class="character">
+            <formula ref="Normal Progression">
+            </formula>
+
+            <option name="-1 Defense Effectiveness"/>
+            <option name="-2 Defense Effectiveness"/>
+            <option name="-3 Defense Effectiveness"/>
+            <option name="-4 Defense Effectiveness"/>
+
+            <text>
+                This is used to modify a defense roll instead of a skill check modifier. This modifier may be applied to
+                enemy defense rolls as a negative modifier.
+            </text>
+        </rule>
+
+        <rule name="Accuracy Bonus" class="character">
+            <formula ref="Normal Progression">
+            </formula>
+
+            <option name="+1 Attack Accuracy"/>
+            <option name="+2 Attack Accuracy"/>
+            <option name="+3 Attack Accuracy"/>
+            <option name="+4 Attack Accuracy"/>
+
+            <text>
+                This is used to modify a defense roll instead of a skill check modifier. This modifier may be applied to
+                enemy defense rolls as a negative modifier.
+            </text>
+        </rule>
+
+        <rule name="Accuracy Negative" class="character">
+            <formula ref="Normal Progression">
+            </formula>
+
+            <option name="-1 Attack Accuracy"/>
+            <option name="-2 Attack Accuracy"/>
+            <option name="-3 Attack Accuracy"/>
+            <option name="-4 Attack Accuracy"/>
+
+            <text>
+                This is used to modify a defense roll instead of a skill check modifier. This modifier may be applied to
+                enemy defense rolls as a negative modifier.
+            </text>
+        </rule>
+
+        <rule name="Concentration Bonus" class="character">
+            <formula ref="Normal Progression">
+            </formula>
+
+            <option name="+1"/>
+            <option name="+2"/>
+            <option name="+3"/>
+            <option name="+4"/>
+            <option name="+5"/>
+
+            <text>
+                **Note:** this component may not be used for attack rolls.
+            </text>
+        </rule>
+
+        <rule name="Concentration Negative" class="character">
+            <formula ref="Normal Progression">
+            </formula>
+
+            <option name="-1"/>
+            <option name="-2"/>
+            <option name="-3"/>
+            <option name="-4"/>
+            <option name="-5"/>
+
+            <text>
+                **Note:** this component may not be used for attack rolls.
+            </text>
+        </rule>
+
+        <rule name="Actor Size" class="character">
+            <formula ref="Normal Progression">
+            </formula>
+
+            <option name="-4 Size Modifier"/>
+            <option name="-3 Size Modifier"/>
+            <option name="-2 Size Modifier"/>
+            <option name="-1 Size Modifier"/>
+            <option name="0 Size Modifier"/>
+            <option name="+1 Size Modifier"/>
+            <option name="+2 Size Modifier"/>
+            <option name="+3 Size Modifier"/>
+            <option name="+4 Size Modifier"/>
+        </rule>
+    </rules>
+
+    <templates>
+        <template name="Attack">
+            <requires rule="Skill" value="Attack"/>
+            <requires rule="Failure Chance"/>
+            <requires rule="Energy Point Cost"/>
+        </template>
+    </templates>
+
+    <aspects>
+        <aspect></aspect>
+    </aspects>
+</document>
