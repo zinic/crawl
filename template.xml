@@ -1,6 +1,12 @@
 <document>
     <formulas>
-        <formula id="Easy Progression" type="custom" equation="i">
+        <!-- # Formula Progressions -->
+
+        <!-- ## Costs -->
+        <formula id="Basic Progression" type="custom" equation="i">
+        </formula>
+
+        <formula id="Easy Progression" type="custom" equation="i * 2">
         </formula>
 
         <formula id="Normal Progression" type="custom" equation="fib(i)">
@@ -12,6 +18,23 @@
         <formula id="Heroic Progression" type="custom" equation="pow(2, i)">
         </formula>
 
+        <!-- Flat Cost Progressions -->
+        <formula id="Basic Flat" type="custom" equation="2">
+        </formula>
+
+        <formula id="Easy Flat" type="custom" equation="3">
+        </formula>
+
+        <formula id="Normal Flat" type="custom" equation="5">
+        </formula>
+
+        <formula id="Hard Flat" type="custom" equation="8">
+        </formula>
+
+        <formula id="Heroic Flat" type="custom" equation="13">
+        </formula>
+
+        <!-- Provided -->
         <formula id="Damage Cost" type="provided" function="damage_cost">
         </formula>
 
@@ -23,24 +46,23 @@
         <!-- Item Rules -->
 
         <rule name="Number of Uses" class="item">
-            <formula ref="Easy Progression">
-                <argument name="start" value="-3"/>
+            <formula ref="Basic Progression">
+                <argument name="Returns AP"/>
             </formula>
 
-            <option name="1"/>
-            <option name="2"/>
-            <option name="3"/>
+            <option name="{rn} Uses" name-range="5,2"/>
+            <option name="1 Use Only"/>
 
             <text>
                 Useful for items that have consumable uses.
             </text>
         </rule>
 
-        <rule name="Item Attribute" class="item">
-            <formula ref="Absolute">
+        <rule name="Magic" class="item">
+            <formula ref="Basic Flat">
             </formula>
 
-            <option name="Magic" cost="1">
+            <option name="Magic">
                 <text>
                     This aspect or item is magic imbued and will show up on arcane sight.
                 </text>
@@ -48,16 +70,16 @@
         </rule>
 
         <rule name="Attack Method" class="item">
-            <formula ref="Absolute">
+            <formula ref="Basic Flat">
             </formula>
 
-            <option name="Drawn Force" cost="0"/>
-            <option name="Slashing" cost="0"/>
-            <option name="Bludgeoning" cost="0"/>
-            <option name="Thrusting" cost="0"/>
-            <option name="Magic" cost="0"/>
+            <option name="Drawn Force"/>
+            <option name="Slashing"/>
+            <option name="Bludgeoning"/>
+            <option name="Thrusting"/>
+            <option name="Magic"/>
 
-            <option name="Throwable" cost="1">
+            <option name="Throwable">
                 <text>
                     Marks an object as throwable. The attack of this weapon may be considered a ranged attack with a
                     range of medium. This range may be increased with a strength check of an appropriate difficulty
@@ -75,11 +97,11 @@
 
         <!-- Character Rules -->
 
-        <rule name="Melee Attack Modifier" class="character">
-            <formula ref="Absolute">
+        <rule name="Careful Blow" class="character">
+            <formula ref="Easy Flat">
             </formula>
 
-            <option name="Careful Blow" cost="2">
+            <option name="Careful Blow">
                 <text>
                     Allows melee attacks to ignore the penalty for attacking through an occupied map cell.
                 </text>
@@ -87,10 +109,11 @@
         </rule>
 
         <rule name="Teleportation" class="character">
-            <formula ref="Absolute">
+            <formula ref="Heroic Progression">
+                <argument name="Hard Start"/>
             </formula>
 
-            <option name="Teleportation" cost="15">
+            <option name="Simple Teleportation">
                 <text>
                     Allows the aspect this descriptor is tagged to, to impart a teleportation effect. To add more
                     targets to teleport consider Extra Target.
@@ -99,18 +122,17 @@
         </rule>
 
         <rule name="Effect Trigger" class="character">
-            <formula ref="Absolute">
+            <formula ref="Easy Flat">
+                <argument name="Returns AP"/>
             </formula>
 
-            <option name="When Attacking" cost="-1"/>
-            <option name="When Defending" cost="-1"/>
-            <option name="When HP Damage is Delt" cost="-2"/>
+            <option name="When Attacking"/>
+            <option name="When Defending"/>
+            <option name="When HP Damage is Delt"/>
         </rule>
 
         <rule name="Affliction Immunity" class="character">
-            <formula ref="Absolute">
-                <argument name="cost" value="8"/>
-            </formula>
+            <formula ref="Heroic Flat"/>
 
             <option name="Staggered"/>
             <option name="Sickened"/>
@@ -122,13 +144,11 @@
         </rule>
 
         <rule name="Number of Hands Required" class="character">
-            <formula ref="Absolute">
+            <formula ref="Easy Flat">
             </formula>
 
             <option name="1" cost="0"/>
             <option name="2" cost="1"/>
-            <option name="3" cost="1"/>
-            <option name="4" cost="1"/>
 
             <text>
                 The number of hands required to utilize the aspect or item.
@@ -140,8 +160,8 @@
         </rule>
 
         <rule name="Area Effect" class="character">
-            <formula ref="Normal Progression">
-                <argument name="start" value="3"/>
+            <formula ref="Heroic Progression">
+                <argument name="Basic Start"/>
             </formula>
 
             <option name="Line"/>
@@ -154,14 +174,14 @@
         </rule>
 
         <rule name="Combat Expertise">
-            <formula ref="Absolute">
+            <formula ref="Hard Flat">
             </formula>
 
-            <option name="Can't be Flanked" cost="5"/>
+            <option name="Can't be Flanked"/>
         </rule>
 
         <rule name="Skill" class="character">
-            <formula ref="Absolute">
+            <formula ref="Basic Flat">
             </formula>
 
             <option name="Non-Combat" cost="0"/>
@@ -199,21 +219,18 @@
             </text>
         </rule>
 
-        <rule name="Damage Resistance" class="character">
-            <formula ref="Normal Progression">
+        <rule name="Damage Resistance Bonus" class="character">
+            <formula ref="Damage Cost">
             </formula>
 
-            <option name="-10 DR" cost="5"/>
-            <option name="-8 DR" cost="4"/>
-            <option name="-6 DR" cost="3"/>
-            <option name="-4 DR" cost="2"/>
-            <option name="-2 DR" cost="1"/>
+            <option name="+{i} DR" name-range="1,14"/>
+        </rule>
 
-            <option name="+2 DR" cost="1"/>
-            <option name="+4 DR" cost="2"/>
-            <option name="+6 DR" cost="3"/>
-            <option name="+8 DR" cost="4"/>
-            <option name="+10 DR" cost="5"/>
+        <rule name="Damage Resistance Negative" class="character">
+            <formula ref="Damage Cost">
+            </formula>
+
+            <option name="-{i} DR" name-range="1,14"/>
         </rule>
 
         <rule name="Starting Wealth Modifier" class="character">
@@ -228,7 +245,8 @@
         </rule>
 
         <rule name="Extra Attack" class="character">
-            <formula ref="Normal Progression">
+            <formula ref="Heroic Progression">
+                <argument name="Normal Start"/>
             </formula>
 
 
@@ -254,21 +272,25 @@
             <option name="1d4"/>
             <option name="1d6"/>
             <option name="1d8"/>
+            <option name="1d10"/>
             <option name="1d12"/>
 
             <option name="2d4"/>
             <option name="2d6"/>
             <option name="2d8"/>
+            <option name="2d10"/>
             <option name="2d12"/>
 
             <option name="3d4"/>
             <option name="3d6"/>
             <option name="3d8"/>
+            <option name="3d10"/>
             <option name="3d12"/>
 
             <option name="4d4"/>
             <option name="4d6"/>
             <option name="4d8"/>
+            <option name="4d10"/>
             <option name="4d12"/>
         </rule>
 
@@ -278,41 +300,45 @@
             <option name="1d4"/>
             <option name="1d6"/>
             <option name="1d8"/>
+            <option name="1d10"/>
             <option name="1d12"/>
 
             <option name="2d4"/>
             <option name="2d6"/>
             <option name="2d8"/>
+            <option name="2d10"/>
             <option name="2d12"/>
 
             <option name="3d4"/>
             <option name="3d6"/>
             <option name="3d8"/>
+            <option name="3d10"/>
             <option name="3d12"/>
 
             <option name="4d4"/>
             <option name="4d6"/>
             <option name="4d8"/>
+            <option name="4d10"/>
             <option name="4d12"/>
         </rule>
 
-        <rule name="HP Pool Modifier" class="character">
-            <formula ref="Normal Progression">
+        <rule name="HP Pool Bonus" class="character">
+            <formula ref="Damage Cost">
             </formula>
 
-            <option name="+1" cost="2"/>
-            <option name="+2" cost="4"/>
-            <option name="+3" cost="6"/>
-            <option name="+4" cost="8"/>
-            <option name="-1" cost="2"/>
-            <option name="-2" cost="4"/>
-            <option name="-3" cost="6"/>
-            <option name="-4" cost="8"/>
+            <option name="+{i}" name-range="1,10"/>
+        </rule>
+
+        <rule name="HP Pool Negative" class="character">
+            <formula ref="Damage Cost">
+                <argument name="Returns AP"/>
+            </formula>
+
+            <option name="-{i}" name-range="1,10"/>
         </rule>
 
         <rule name="Target Restriction" class="character">
-            <formula ref="Absolute">
-                <argument name="Cost" value="10"/>
+            <formula ref="Heroic Flat">
             </formula>
 
             <option name="Allies Only"/>
@@ -352,12 +378,13 @@
             <option name="6" cost="-3"/>
         </rule>
 
-        <rule name="Out of Turn Action" class="character">
-            <formula ref="Normal Progression">
+        <rule name="Opportunistic Action" class="character">
+            <formula ref="Heroic Progression">
+                <argument name="Easy Start"/>
             </formula>
 
-            <option name="Opportunistic" />
-            <option name="Reactionary" />
+            <option name="Opportunistic"/>
+            <option name="Reactionary"/>
 
             <text>
                 This allows the associated aspect to be used as a reactionary action. That is to say that when a
@@ -366,9 +393,7 @@
         </rule>
 
         <rule name="NPC Cohort" class="character">
-            <formula ref="Absolute">
-                <argument name="cost" value="1"/>
-            </formula>
+            <formula ref="Normal Flat"/>
 
             <option name="NPC Cohort"/>
         </rule>
@@ -418,9 +443,7 @@
         </rule>
 
         <rule name="Damage Type" class="character">
-            <formula ref="Absolute">
-                <argument name="Cost" value="1"/>
-            </formula>
+            <formula ref="Basic Flat"/>
 
             <option name="Kinetic"/>
             <option name="Cold"/>

@@ -1,5 +1,6 @@
-import math
+import re
 import sys
+import math
 import xml.etree.ElementTree as etree
 
 from cdoc.formulas import *
@@ -27,18 +28,80 @@ def formula_absolute(rule):
 
 # Costs start at 4 and go up from there by 2
 def damage_value_cost(dmg):
-    return int((dmg - 4) / 2)
+    return dmg
+
+
+class OptionPositionInfo(object):
+    def __init__(self, option, range_name, position):
+        self.option = option
+        self.range_name =range_name
+        self.position = position
+
+    def format_name(self):
+        option_name = self.option.name
+
+        matched = dict()
+        if '{rn}' in option_name:
+            matched['rn'] = self.range_name
+
+        if '{position}' in option_name:
+            matched['position'] = self.position
+
+        return option_name.format(**matched)
+
+
+def iterate_options(rule):
+    i = 0
+
+    # Process args first
+    for argument in rule.formula().arguments():
+        if argument.name == 'Basic Start':
+            i = 1
+        elif argument.name == 'Easy Start':
+            i = 2
+        elif argument.name == 'Normal Start':
+            i = 3
+        elif argument.name == 'Hard Start':
+            i = 5
+        elif argument.name == 'Heroic Start':
+            i = 8
+
+    for option in rule.options():
+        values = [i]
+
+        if option.has_attr('name-range'):
+            start, end = [int(v) for v in option.attr('name-range').split(',')]
+            if start < end:
+                values = range(start, end + 1)
+            else:
+                values = reversed(range(end, start + 1))
+
+        for r in values:
+            i += 1
+            yield OptionPositionInfo(option, r, i)
+
+
+DICE_REGEX = re.compile('[\d]+d[\d]+')
 
 
 def formula_damage_cost(rule):
-    results = list()
-    for option in rule.options():
-        roll = option.name
-        num, die = [int(v) for v in roll.split('d')]
-        cost = num + damage_value_cost(num * die)
+    cost_filter = lambda c: c
+    for argument in rule.formula().arguments():
+        if argument == 'Returns AP':
+            cost_filter = lambda c: -1 * c
 
-        results.append('{}: {}'.format(option.name, cost))
-    return results
+    for op_info in iterate_options(rule):
+        cost = damage_value_cost(op_info.position)
+        formatted_name = op_info.format_name()
+
+        if DICE_REGEX.match(formatted_name):
+            # Figure out the number of dice and number of sides
+            num_dice, sides = [int(v) for v in formatted_name.split('d')]
+
+            # Cost is number of dice + damage value
+            cost = num_dice - 1 + damage_value_cost(num_dice * sides)
+
+        yield formatted_name, cost_filter(cost)
 
 
 class FormulaDefinition(object):
@@ -50,7 +113,7 @@ class FormulaRepo(NamedRepo):
     def __init__(self):
         self._provided = {
             'absolute': formula_absolute,
-            'damage_cost': formula_damage_cost
+            'damage_cost': formula_damage_cost,
         }
 
     def calc_provided(self, rule, formula):
@@ -66,20 +129,15 @@ class FormulaRepo(NamedRepo):
             'fib': Fibonacci(1000),
         }
 
-        # Track results
-        results = list()
-        i = rule.formula().argument('start', 0, int)
-
-        for option in rule.options():
+        for op_info in iterate_options(rule):
             # Increase the rule iteration num and overwrite it in the eval env
-            i += 1
-            env['i'] = i
+            env['i'] = op_info.position
 
             # Run the calc - this is so nasty
             cost = eval(formula.equation, env)
-            results.append('{}: {}'.format(option.name, int(cost)))
 
-        return results
+            # Yield the result
+            yield op_info.format_name(), int(cost)
 
     def calc(self, rule):
         fref = rule.formula()
@@ -117,7 +175,7 @@ def main():
     rule_filter = ''
 
     if len(sys.argv) > 1:
-        rule_filter = sys.argv[1]
+        rule_filter = sys.argv[1].lower()
 
     # Process the doc
     core_tree = etree.parse('template.xml')
@@ -130,7 +188,7 @@ def main():
     rule_defs = load_rules(model)
 
     for rule in rule_defs.values():
-        if rule_filter is not None and rule_filter not in rule.name:
+        if rule_filter is not None and rule_filter not in rule.name.lower():
             continue
 
         if not rule.has_node('formula'):
@@ -140,8 +198,11 @@ def main():
         results = formula_defs.calc(rule)
         if results is not None:
             print('Rule: {}'.format(rule.name))
-            for result in results:
-                print('\t{}'.format(result))
+            for name, cost in results:
+                if rule.formula().argument('Returns AP', False, bool) is True:
+                    cost *= -1
+
+                print('\t{}: {} AP'.format(name, cost))
 
     print('OK')
 

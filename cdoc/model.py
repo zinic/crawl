@@ -102,7 +102,7 @@ class RuleFormula(XMLNode):
     def argument(self, name, default=None, arg_type=str):
         for argument in self.arguments():
             if argument.name == name:
-                return arg_type(argument.value)
+                return arg_type(argument.value) if argument.has_attr('value') else arg_type(argument.name)
         return default
 
     def arguments(self):
