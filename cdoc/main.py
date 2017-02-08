@@ -7,15 +7,6 @@ from cdoc.formulas import *
 from cdoc.model import *
 
 
-class NamedRepo(dict):
-    def register(self, k, v):
-        self[k] = v
-
-
-class RuleRepo(NamedRepo):
-    pass
-
-
 def formula_absolute(rule):
     default_cost = rule.formula().argument('cost', 0)
 
@@ -34,7 +25,7 @@ def damage_value_cost(dmg):
 class OptionPositionInfo(object):
     def __init__(self, option, range_name, position):
         self.option = option
-        self.range_name =range_name
+        self.range_name = range_name
         self.position = position
 
     def format_name(self):
@@ -54,7 +45,7 @@ def iterate_options(rule):
     i = 0
 
     # Process args first
-    for argument in rule.formula().arguments():
+    for argument in rule.formula.arguments:
         if argument.name == 'Basic Start':
             i = 1
         elif argument.name == 'Easy Start':
@@ -66,11 +57,11 @@ def iterate_options(rule):
         elif argument.name == 'Heroic Start':
             i = 8
 
-    for option in rule.options():
+    for option in rule.options:
         values = [i]
 
-        if option.has_attr('name-range'):
-            start, end = [int(v) for v in option.attr('name-range').split(',')]
+        if option.range is not None:
+            start, end = [int(v) for v in option.range.split(',')]
             if start < end:
                 values = range(start, end + 1)
             else:
@@ -85,11 +76,6 @@ DICE_REGEX = re.compile('[\d]+d[\d]+')
 
 
 def formula_damage_cost(rule):
-    cost_filter = lambda c: c
-    for argument in rule.formula().arguments():
-        if argument == 'Returns AP':
-            cost_filter = lambda c: -1 * c
-
     for op_info in iterate_options(rule):
         cost = damage_value_cost(op_info.position)
         formatted_name = op_info.format_name()
@@ -101,16 +87,12 @@ def formula_damage_cost(rule):
             # Cost is number of dice + damage value
             cost = num_dice - 1 + damage_value_cost(num_dice * sides)
 
-        yield formatted_name, cost_filter(cost)
+        yield formatted_name, cost
 
 
-class FormulaDefinition(object):
-    def __init__(self):
-        pass
-
-
-class FormulaRepo(NamedRepo):
-    def __init__(self):
+class FormulaContext():
+    def __init__(self, model):
+        self._model = model
         self._provided = {
             'absolute': formula_absolute,
             'damage_cost': formula_damage_cost,
@@ -139,36 +121,98 @@ class FormulaRepo(NamedRepo):
             # Yield the result
             yield op_info.format_name(), int(cost)
 
+    def cost_of(self, rule, target):
+        for name, cost in self.calc(rule):
+            if name == target:
+                return cost
+        raise Exception('Unable to find cost for rule {} targeting {}'.format(rule.name, target))
+
     def calc(self, rule):
-        fref = rule.formula()
-        if fref.has_attr('ref'):
-            formula = self[fref.ref]
+        fref = rule.formula.ref
+        formula = self._model.formula(fref)
 
-            if formula.type == 'custom':
-                return self.calc_custom(rule, formula)
-            elif formula.type == 'provided':
-                return self.calc_provided(rule, formula)
+        cost_filter = lambda c: c
+        for argument in rule.formula.arguments:
+            if argument.name == 'Returns AP':
+                cost_filter = lambda c: -1 * c
 
-        else:
-            print('Formula definition for {} has no ref!'.format(rule.name))
+        if formula.type == 'custom':
+            for name, cost in self.calc_custom(rule, formula):
+                yield name, cost_filter(cost)
+
+        elif formula.type == 'provided':
+            for name, cost in self.calc_provided(rule, formula):
+                yield name, cost_filter(cost)
 
 
-def load_rules(model):
-    repo = RuleRepo()
+def write_line(line, output):
+    output.write('{}\n'.format(line))
+
+
+def format_rules(model, output):
+    formula_ctx = FormulaContext(model)
+
+    write_line('## Rules', output)
 
     for rule in model.rules():
-        repo.register(rule.name, rule)
+        write_line('#### Rule: {}'.format(rule.name), output)
 
-    return repo
+        if rule.text is not None:
+            write_line(rule.text, output)
+
+        for name, cost in formula_ctx.calc(rule):
+            write_line('* **{}**\n\t* Aspect Point Cost: {}\n'.format(name, cost), output)
 
 
-def load_formulas(model):
-    repo = FormulaRepo()
+def iterate_costs(model, aspect):
+    formula_ctx = FormulaContext(model)
 
-    for formula in model.formulas():
-        repo.register(formula.id, formula)
+    for aspect_rule in aspect.rules:
+        rule = model.rule(aspect_rule.ref)
 
-    return repo
+        if rule is None:
+            raise Exception('Rule {} does not exist'.format(aspect_rule.ref))
+
+        ap_cost = formula_ctx.cost_of(rule, aspect_rule.value)
+
+        yield aspect_rule, ap_cost
+
+
+def format_aspects(model, output):
+    write_line('## Aspects', output)
+
+    for aspect in model.aspects():
+        write_line('### {}'.format(aspect.name), output)
+
+        if aspect.text is not None:
+            write_line(aspect.text, output)
+
+        for requirement in aspect.requirements:
+            write_line('Requires: **[{}](#)**\n'.format(requirement.name), output)
+
+        write_line('', output)
+
+        ap_cost = 0
+        cost_breakdown = ''
+        for rule, cost in iterate_costs(model, aspect):
+            cost_breakdown += '* {} (**{} AP**): {}\n'.format(rule.ref, cost, rule.value)
+            ap_cost += cost
+
+        write_line('Aspect Point Cost: {}'.format(ap_cost), output)
+        write_line('#### Details\n{}'.format(cost_breakdown), output)
+
+
+def format_markdown(model):
+    with open('output.md', 'w') as output:
+        write_line('# Crawl Aspect Document', output)
+        format_rules(model, output)
+        format_aspects(model, output)
+
+    for aspect in model.aspects():
+        template = model.template(aspect.template)
+
+        if template is not None:
+            template.validate(aspect)
 
 
 def main():
@@ -184,25 +228,7 @@ def main():
     model = Document(root)
     model.check()
 
-    formula_defs = load_formulas(model)
-    rule_defs = load_rules(model)
-
-    for rule in rule_defs.values():
-        if rule_filter is not None and rule_filter not in rule.name.lower():
-            continue
-
-        if not rule.has_node('formula'):
-            print('Rule {} has no formula!'.format(rule.name))
-            continue
-
-        results = formula_defs.calc(rule)
-        if results is not None:
-            print('Rule: {}'.format(rule.name))
-            for name, cost in results:
-                if rule.formula().argument('Returns AP', False, bool) is True:
-                    cost *= -1
-
-                print('\t{}: {} AP'.format(name, cost))
+    format_markdown(model)
 
     print('OK')
 

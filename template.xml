@@ -3,62 +3,64 @@
         <!-- # Formula Progressions -->
 
         <!-- ## Costs -->
-        <formula id="Basic Progression" type="custom" equation="i">
+        <formula name="Failure Chance" type="custom" equation="i - 5">
         </formula>
 
-        <formula id="Easy Progression" type="custom" equation="i * 2">
+        <formula name="Basic Progression" type="custom" equation="i">
         </formula>
 
-        <formula id="Normal Progression" type="custom" equation="fib(i)">
+        <formula name="Easy Progression" type="custom" equation="i * 2">
         </formula>
 
-        <formula id="Hard Progression" type="custom" equation="fib(i) * 2">
+        <formula name="Normal Progression" type="custom" equation="fib(i)">
         </formula>
 
-        <formula id="Heroic Progression" type="custom" equation="pow(2, i)">
+        <formula name="Hard Progression" type="custom" equation="fib(i) * 2">
+        </formula>
+
+        <formula name="Heroic Progression" type="custom" equation="pow(2, i)">
         </formula>
 
         <!-- Flat Cost Progressions -->
-        <formula id="Basic Flat" type="custom" equation="2">
+        <formula name="Basic Flat" type="custom" equation="2">
         </formula>
 
-        <formula id="Easy Flat" type="custom" equation="3">
+        <formula name="Easy Flat" type="custom" equation="3">
         </formula>
 
-        <formula id="Normal Flat" type="custom" equation="5">
+        <formula name="Normal Flat" type="custom" equation="5">
         </formula>
 
-        <formula id="Hard Flat" type="custom" equation="8">
+        <formula name="Hard Flat" type="custom" equation="8">
         </formula>
 
-        <formula id="Heroic Flat" type="custom" equation="13">
+        <formula name="Heroic Flat" type="custom" equation="13">
         </formula>
 
         <!-- Provided -->
-        <formula id="Damage Cost" type="provided" function="damage_cost">
+        <formula name="Damage Cost" type="provided" function="damage_cost">
         </formula>
 
-        <formula id="Absolute" type="provided" function="absolute">
+        <formula name="Absolute" type="provided" function="absolute">
         </formula>
     </formulas>
 
     <rules>
         <!-- Item Rules -->
 
-        <rule name="Number of Uses" class="item">
+        <rule name="Number of Uses" category="item">
             <formula ref="Basic Progression">
                 <argument name="Returns AP"/>
             </formula>
 
-            <option name="{rn} Uses" name-range="5,2"/>
-            <option name="1 Use Only"/>
+            <option name="{rn} Use(s)" range="5,1"/>
 
             <text>
                 Useful for items that have consumable uses.
             </text>
         </rule>
 
-        <rule name="Magic" class="item">
+        <rule name="Magic" category="item">
             <formula ref="Basic Flat">
             </formula>
 
@@ -69,7 +71,7 @@
             </option>
         </rule>
 
-        <rule name="Attack Method" class="item">
+        <rule name="Attack Method" category="item">
             <formula ref="Basic Flat">
             </formula>
 
@@ -97,7 +99,7 @@
 
         <!-- Character Rules -->
 
-        <rule name="Careful Blow" class="character">
+        <rule name="Careful Blow" category="all">
             <formula ref="Easy Flat">
             </formula>
 
@@ -108,7 +110,7 @@
             </option>
         </rule>
 
-        <rule name="Teleportation" class="character">
+        <rule name="Teleportation" category="all">
             <formula ref="Heroic Progression">
                 <argument name="Hard Start"/>
             </formula>
@@ -121,7 +123,7 @@
             </option>
         </rule>
 
-        <rule name="Effect Trigger" class="character">
+        <rule name="Effect Trigger" category="all">
             <formula ref="Easy Flat">
                 <argument name="Returns AP"/>
             </formula>
@@ -131,7 +133,20 @@
             <option name="When HP Damage is Delt"/>
         </rule>
 
-        <rule name="Affliction Immunity" class="character">
+        <rule name="Heal Affliction" category="all">
+            <formula ref="Hard Flat"/>
+
+            <option name="Staggered"/>
+            <option name="Sickened"/>
+            <option name="Diseased"/>
+            <option name="Poisoned"/>
+
+            <text>
+                Grants immunity to a certain affliction and all of its effects.
+            </text>
+        </rule>
+
+        <rule name="Affliction Immunity" category="all">
             <formula ref="Heroic Flat"/>
 
             <option name="Staggered"/>
@@ -143,7 +158,7 @@
             </text>
         </rule>
 
-        <rule name="Number of Hands Required" class="character">
+        <rule name="Number of Hands Required" category="all">
             <formula ref="Easy Flat">
             </formula>
 
@@ -159,7 +174,7 @@
             </text>
         </rule>
 
-        <rule name="Area Effect" class="character">
+        <rule name="Area Effect" category="all">
             <formula ref="Heroic Progression">
                 <argument name="Basic Start"/>
             </formula>
@@ -173,14 +188,14 @@
             </text>
         </rule>
 
-        <rule name="Combat Expertise">
+        <rule name="Combat Expertise" category="all">
             <formula ref="Hard Flat">
             </formula>
 
             <option name="Can't be Flanked"/>
         </rule>
 
-        <rule name="Skill" class="character">
+        <rule name="Skill" category="all">
             <formula ref="Basic Flat">
             </formula>
 
@@ -210,63 +225,50 @@
             </text>
         </rule>
 
-        <rule name="Presence Modifier">
-            <formula ref="Absolute">
+        <rule name="Presence Modifier" category="all">
+            <formula ref="Normal Progression">
+                <argument name="Basic Start"/>
             </formula>
+
+            <option name="+{rn}" range="1,6"/>
 
             <text>
                 **Note:** this component may not be used for attack rolls.
             </text>
         </rule>
 
-        <rule name="Damage Resistance Bonus" class="character">
+        <rule name="Damage Resistance" category="all">
             <formula ref="Damage Cost">
             </formula>
 
-            <option name="+{i} DR" name-range="1,14"/>
+            <option name="+{rn} DR" range="1,24"/>
         </rule>
 
-        <rule name="Damage Resistance Negative" class="character">
-            <formula ref="Damage Cost">
+        <rule name="Starting Wealth Modifier" category="all">
+            <formula ref="Basic Progression">
             </formula>
 
-            <option name="-{i} DR" name-range="1,14"/>
+            <option name="{rn}00 $$" range="1,24"/>
         </rule>
 
-        <rule name="Starting Wealth Modifier" class="character">
-            <formula ref="Normal Progression">
-            </formula>
-
-            <option name="100 $$"/>
-            <option name="200 $$"/>
-            <option name="300 $$"/>
-            <option name="400 $$"/>
-            <option name="500 $$"/>
-        </rule>
-
-        <rule name="Extra Attack" class="character">
+        <rule name="Extra Attack" category="all">
             <formula ref="Heroic Progression">
-                <argument name="Normal Start"/>
+                <argument name="Basic Start"/>
             </formula>
 
 
-            <option name="+1"/>
-            <option name="+2"/>
+            <option name="+{rn}" range="1,3"/>
         </rule>
 
-        <rule name="Extra Target" class="character">
+        <rule name="Extra Target" category="all">
             <formula ref="Normal Progression">
             </formula>
 
 
-            <option name="+1"/>
-            <option name="+2"/>
-            <option name="+3"/>
-            <option name="+4"/>
-            <option name="+5"/>
+            <option name="+{rn}" range="1,5"/>
         </rule>
 
-        <rule name="Damage">
+        <rule name="Damage" category="all">
             <formula ref="Damage Cost"/>
 
             <option name="1d4"/>
@@ -294,7 +296,7 @@
             <option name="4d12"/>
         </rule>
 
-        <rule name="Damage Healed">
+        <rule name="Damage Healed" category="all">
             <formula ref="Damage Cost"/>
 
             <option name="1d4"/>
@@ -322,22 +324,22 @@
             <option name="4d12"/>
         </rule>
 
-        <rule name="HP Pool Bonus" class="character">
+        <rule name="HP Pool Bonus" category="all">
             <formula ref="Damage Cost">
             </formula>
 
-            <option name="+{i}" name-range="1,10"/>
+            <option name="+{rn}" range="1,10"/>
         </rule>
 
-        <rule name="HP Pool Negative" class="character">
+        <rule name="HP Pool Negative" category="all">
             <formula ref="Damage Cost">
                 <argument name="Returns AP"/>
             </formula>
 
-            <option name="-{i}" name-range="1,10"/>
+            <option name="-{rn}" range="1,10"/>
         </rule>
 
-        <rule name="Target Restriction" class="character">
+        <rule name="Target Restriction" category="all">
             <formula ref="Heroic Flat">
             </formula>
 
@@ -345,40 +347,37 @@
             <option name="Enemies Only"/>
         </rule>
 
-        <rule name="Core Aspect Modifier" class="character">
+        <rule name="Core Aspect Bonus" category="all">
             <formula ref="Hard Progression">
             </formula>
 
-            <option name="-2"/>
-            <option name="-1"/>
-            <option name="+1"/>
-            <option name="+2"/>
+            <option name="+{rn}" range="1,3"/>
         </rule>
 
-        <rule name="Crit Success Modifier" class="character">
+        <rule name="Core Aspect Negative" category="all">
+            <formula ref="Hard Progression">
+                <argument name="Returns AP"/>
+            </formula>
+
+            <option name="-{rn}" range="1,3"/>
+        </rule>
+
+        <rule name="Crit Success Modifier" category="all">
             <formula ref="Normal Progression">
             </formula>
 
-            <option name="+1"/>
-            <option name="+2"/>
-            <option name="+3"/>
-            <option name="+4"/>
-            <option name="+5"/>
+            <option name="+{rn}" range="1,5"/>
         </rule>
 
-        <rule name="Energy Point Cost" class="character">
+        <rule name="Energy Point Cost" category="all">
             <formula ref="Normal Progression">
+                <argument name="Returns AP"/>
             </formula>
 
-            <option name="1" cost="2"/>
-            <option name="2" cost="1"/>
-            <option name="3" cost="0"/>
-            <option name="4" cost="-1"/>
-            <option name="5" cost="-2"/>
-            <option name="6" cost="-3"/>
+            <option name="+{rn}" range="1,5"/>
         </rule>
 
-        <rule name="Opportunistic Action" class="character">
+        <rule name="Opportunistic Action" category="all">
             <formula ref="Heroic Progression">
                 <argument name="Easy Start"/>
             </formula>
@@ -392,14 +391,15 @@
             </text>
         </rule>
 
-        <rule name="NPC Cohort" class="character">
+        <rule name="NPC Cohort" category="all">
             <formula ref="Normal Flat"/>
 
             <option name="NPC Cohort"/>
         </rule>
 
-        <rule name="Environment Mitigation" class="character">
+        <rule name="Environment Mitigation" category="all">
             <formula ref="Normal Progression">
+                <argument name="Basic Start"/>
             </formula>
 
             <option name="Low Light Vision"/>
@@ -407,23 +407,49 @@
             <option name="Echo Sight"/>
         </rule>
 
-        <rule name="Action Refresh Modifier" class="character">
-            <formula ref="Normal Progression">
+        <rule name="Energy Point Refresh Bonus" category="all">
+            <formula ref="Heroic Progression">
+                <argument name="Basic Start"/>
             </formula>
 
-            <option name="-1 Action Refresh"/>
-            <option name="+1 Action Refresh"/>
+            <option name="+{rn} Energy Point Refresh" range="1,2"/>
         </rule>
 
-        <rule name="Action Pool Modifier" class="character">
-            <formula ref="Normal Progression">
+        <rule name="Energy Point Refresh Negative" category="all">
+            <formula ref="Heroic Progression">
+                <argument name="Returns AP"/>
+                <argument name="Basic Start"/>
             </formula>
 
-            <option name="-1 Action Pool"/>
-            <option name="+1 Action Pool"/>
+            <option name="+{rn} Energy Point Refresh" range="1,2"/>
         </rule>
 
-        <rule name="Delayed Effect Duration" class="character">
+        <rule name="Energy Point Pool Bonus" category="all">
+            <formula ref="Heroic Progression">
+                <argument name="Basic Start"/>
+            </formula>
+
+            <option name="+{rn} Energy Point Pool" range="1,2"/>
+        </rule>
+
+        <rule name="Energy Point Pool Negative" category="all">
+            <formula ref="Heroic Progression">
+                <argument name="Basic Start"/>
+                <argument name="Returns AP"/>
+            </formula>
+
+            <option name="-{rn} Energy Point Pool" range="1,2"/>
+        </rule>
+
+        <rule name="Energy Point Pool Mality" category="all">
+            <formula ref="Heroic Progression">
+                <argument name="Basic Start"/>
+            </formula>
+
+            <option name="-{rn} Energy Point Pool" range="1,2"/>
+        </rule>
+
+        <rule name="Delayed Effect Duration" category="all">
             <formula ref="Normal Progression">
             </formula>
 
@@ -442,7 +468,7 @@
             </text>
         </rule>
 
-        <rule name="Damage Type" class="character">
+        <rule name="Damage Type" category="all">
             <formula ref="Basic Flat"/>
 
             <option name="Kinetic"/>
@@ -457,25 +483,13 @@
             </text>
         </rule>
 
-        <rule name="Failure Chance" class="character">
-            <formula ref="Normal Progression">
+        <rule name="Failure Chance" category="all">
+            <formula ref="Failure Chance">
             </formula>
 
-            <option name="0"/>
-            <option name="2"/>
-            <option name="4"/>
-            <option name="6"/>
-            <option name="8"/>
-            <option name="10"/>
-            <option name="12"/>
-            <option name="14"/>
-            <option name="16"/>
-            <option name="18"/>
-            <option name="20"/>
-            <option name="22"/>
-            <option name="24"/>
-            <option name="26"/>
-            <option name="28"/>
+            <option name="Critical Success Only"/>
+            <option name="{rn}" range="19,2"/>
+            <option name="Critical Failure Only"/>
 
             <text>
                 All skill checks should specifiy a base difficulty. The player may choose to augment the difficulty in
@@ -483,7 +497,7 @@
             </text>
         </rule>
 
-        <rule name="Range" class="character">
+        <rule name="Range" category="all">
             <formula ref="Normal Progression">
             </formula>
 
@@ -499,7 +513,7 @@
             </text>
         </rule>
 
-        <rule name="Effect Duration" class="character">
+        <rule name="Effect Duration" category="all">
             <formula ref="Hard Progression">
             </formula>
 
@@ -515,15 +529,15 @@
             <option name="1 Day"/>
         </rule>
 
-        <rule name="Melee Reach" class="character">
+        <rule name="Melee Reach" category="all">
             <formula ref="Normal Progression">
+                <argument name="Normal Start"/>
             </formula>
 
-            <option name="+1 Map Cell"/>
-            <option name="+2 Map Cells"/>
+            <option name="+{rn} Map Cell(s)" range="1,2"/>
         </rule>
 
-        <rule name="Heals Affliction" class="character">
+        <rule name="Heals Affliction" category="all">
             <formula ref="Normal Progression">
             </formula>
 
@@ -532,19 +546,11 @@
             <option name="Poisoned"/>
         </rule>
 
-        <rule name="Defense Bonus" class="character">
+        <rule name="Defense Bonus" category="all">
             <formula ref="Normal Progression">
             </formula>
 
-            <option name="-4 Defense Effectiveness"/>
-            <option name="-3 Defense Effectiveness"/>
-            <option name="-2 Defense Effectiveness"/>
-            <option name="-1 Defense Effectiveness"/>
-
-            <option name="+1 Defense Effectiveness"/>
-            <option name="+2 Defense Effectiveness"/>
-            <option name="+3 Defense Effectiveness"/>
-            <option name="+4 Defense Effectiveness"/>
+            <option name="+{rn} Defense Effectiveness" range="1,5"/>
 
             <text>
                 This is used to modify a defense roll instead of a skill check modifier. This modifier may be applied to
@@ -552,14 +558,11 @@
             </text>
         </rule>
 
-        <rule name="Defense Negative" class="character">
+        <rule name="Defense Negative" category="all">
             <formula ref="Normal Progression">
             </formula>
 
-            <option name="-1 Defense Effectiveness"/>
-            <option name="-2 Defense Effectiveness"/>
-            <option name="-3 Defense Effectiveness"/>
-            <option name="-4 Defense Effectiveness"/>
+            <option name="-{rn} Defense Effectiveness" range="1,5"/>
 
             <text>
                 This is used to modify a defense roll instead of a skill check modifier. This modifier may be applied to
@@ -567,14 +570,11 @@
             </text>
         </rule>
 
-        <rule name="Accuracy Bonus" class="character">
+        <rule name="Accuracy Bonus" category="all">
             <formula ref="Normal Progression">
             </formula>
 
-            <option name="+1 Attack Accuracy"/>
-            <option name="+2 Attack Accuracy"/>
-            <option name="+3 Attack Accuracy"/>
-            <option name="+4 Attack Accuracy"/>
+            <option name="+{rn} Attack Accuracy" range="1,5"/>
 
             <text>
                 This is used to modify a defense roll instead of a skill check modifier. This modifier may be applied to
@@ -582,14 +582,11 @@
             </text>
         </rule>
 
-        <rule name="Accuracy Negative" class="character">
+        <rule name="Accuracy Negative" category="all">
             <formula ref="Normal Progression">
             </formula>
 
-            <option name="-1 Attack Accuracy"/>
-            <option name="-2 Attack Accuracy"/>
-            <option name="-3 Attack Accuracy"/>
-            <option name="-4 Attack Accuracy"/>
+            <option name="-{rn} Attack Accuracy" range="1,5"/>
 
             <text>
                 This is used to modify a defense roll instead of a skill check modifier. This modifier may be applied to
@@ -597,61 +594,1318 @@
             </text>
         </rule>
 
-        <rule name="Concentration Bonus" class="character">
+        <rule name="Concentration Bonus" category="all">
             <formula ref="Normal Progression">
             </formula>
 
-            <option name="+1"/>
-            <option name="+2"/>
-            <option name="+3"/>
-            <option name="+4"/>
-            <option name="+5"/>
+            <option name="+{rn} Concentration" range="1,5"/>
 
             <text>
                 **Note:** this component may not be used for attack rolls.
             </text>
         </rule>
 
-        <rule name="Concentration Negative" class="character">
+        <rule name="Concentration Negative" category="all">
             <formula ref="Normal Progression">
             </formula>
 
-            <option name="-1"/>
-            <option name="-2"/>
-            <option name="-3"/>
-            <option name="-4"/>
-            <option name="-5"/>
+            <option name="-{rn} Concentration" range="1,5"/>
 
             <text>
                 **Note:** this component may not be used for attack rolls.
             </text>
         </rule>
 
-        <rule name="Actor Size" class="character">
-            <formula ref="Normal Progression">
+        <rule name="Actor Size Bonus" category="all">
+            <formula ref="Hard Progression">
             </formula>
 
-            <option name="-4 Size Modifier"/>
-            <option name="-3 Size Modifier"/>
-            <option name="-2 Size Modifier"/>
-            <option name="-1 Size Modifier"/>
-            <option name="0 Size Modifier"/>
             <option name="+1 Size Modifier"/>
             <option name="+2 Size Modifier"/>
             <option name="+3 Size Modifier"/>
             <option name="+4 Size Modifier"/>
         </rule>
+
+        <rule name="Actor Size Negative" category="all">
+            <formula ref="Hard Progression">
+            </formula>
+
+            <option name="-1 Size Modifier"/>
+            <option name="-2 Size Modifier"/>
+            <option name="-3 Size Modifier"/>
+            <option name="-4 Size Modifier"/>
+        </rule>
     </rules>
 
     <templates>
+        <template name="None"/>
+
         <template name="Attack">
-            <requires rule="Skill" value="Attack"/>
+            <requires rule="Skill"/>
+            <requires rule="Failure Chance"/>
+            <requires rule="Energy Point Cost"/>
+        </template>
+
+        <template name="Defense">
+            <requires rule="Skill"/>
             <requires rule="Failure Chance"/>
             <requires rule="Energy Point Cost"/>
         </template>
     </templates>
 
     <aspects>
-        <aspect></aspect>
+        <aspect name="Affluent" template="None">
+            <rule ref="Starting Wealth Modifier" value="1200 $$"/>
+
+            <text>
+                You're richer. For now.
+            </text>
+        </aspect>
+
+
+        <aspect name="Affluent">
+            <rule ref="Starting Wealth Modifier" value="1200 $$"/>
+
+            <text>
+                You're richer. For now.
+            </text>
+        </aspect>
+
+        <aspect name="Frantic Defense">
+            <rule ref="Skill" value="Defense">
+                <detail type="inherits_from" value="Mobility"/>
+            </rule>
+            <rule ref="Failure Chance" value="12"/>
+            <rule ref="Energy Point Cost" value="+1"/>
+
+            <requires name="Fit"/>
+
+            <text>
+                Allows a character to make a simple dodge-based defense against an incoming attack. The defense roll
+                recieves the character's **mobility modifier** as a defense bonus.
+            </text>
+        </aspect>
+
+        <aspect name="Duck and Dodge">
+            <rule ref="Skill" value="Defense">
+                <detail type="inherits_from" value="Mobility"/>
+            </rule>
+            <rule ref="Failure Chance" value="8"/>
+            <rule ref="Energy Point Cost" value="+1"/>
+
+            <text>
+                Allows a character to make a simple dodge-based defense against an incoming attack. The defense roll
+                recieves the character's **mobility modifier** as a defense bonus.
+            </text>
+        </aspect>
+
+        <aspect name="Survival">
+            <rule ref="Skill" value="Non-Combat">
+                <detail type="inherits_from" value="Intelligence"/>
+            </rule>
+            <rule ref="Failure Chance" value="8"/>
+
+            <text>
+                Generic skill for scrounging for food, edibles, dungeoneering, etc. The game master is encouraged to add
+                to the base difficulty depending on the situation. This is a useful skill for tracking.
+            </text>
+        </aspect>
+
+        <aspect name="Dive for Cover">
+            <rule ref="Skill" value="Concentration">
+                <detail type="inherits_from" value="Standing Forward Jump"/>
+            </rule>
+            <rule ref="Failure Chance" value="8"/>
+            <rule ref="Energy Point Cost" value="+2"/>
+
+            <requires name="Duck and Dodge"/>
+
+            <text>
+                Allows a character to make a dive for nearby cover - once behind cover, all rules for cover now apply.
+                The cover must be within the character's **Standing Forward Jump** range. All normal rules for making a
+                standing forward jump apply to this check. Failing this check renders the character **prone**.
+            </text>
+        </aspect>
+
+        <aspect name="Adrenaline Cascade">
+            <rule ref="Affliction Immunity" value="Staggered"/>
+
+            <requires name="Vigor"/>
+
+            <text>
+                No matter how haggered, this character's body surges with adrenaline so long as their heart pumps. This
+                makes them immune to the condition: Staggered.
+            </text>
+        </aspect>
+
+        <aspect name="Rage">
+            <rule ref="Energy Point Cost" value="+1"/>
+            <rule ref="Damage Resistance" value="+4 DR">
+                <detail type="targets" value="Kinetic"/>
+            </rule>
+            <rule ref="Damage Resistance" value="+4 DR">
+                <detail type="targets" value="Cold"/>
+            </rule>
+            <rule ref="Damage Resistance" value="+4 DR">
+                <detail type="targets" value="Fire"/>
+            </rule>
+            <rule ref="Damage Resistance" value="+4 DR">
+                <detail type="targets" value="Electric"/>
+            </rule>
+            <rule ref="Effect Duration" value="8 Turns"/>
+
+            <requires name="Vigor"/>
+
+            <text>
+                The character enters into a rage in which their body floods itself with chemicals that dull the senses
+                and swell the muscles. Upon activation, the character gains intense damage resistance buffs for 8 combat
+                turns.
+            </text>
+        </aspect>
+
+        <aspect name="Pivot and Roll">
+            <rule ref="Skill" value="Concentration">
+                <detail type="limit" value="Unusuable when Slowed"/>
+                <detail type="inherits_from" value="Mobility"/>
+            </rule>
+            <rule ref="Failure Chance" value="8"/>
+            <rule ref="Concentration Bonus" value="+2 Concentration">
+                <detail type="targets" value="Pivot and Roll"/>
+            </rule>
+
+            <rule ref="Energy Point Cost" value="+2"/>
+            <requires name="Duck and Dodge"/>
+            <requires name="Fit"/>
+
+            <text>
+                Allows a character to make a more acrobatic dodge. This defense roll requires the character to not be
+                slowed. The defense roll receives the character's mobility modifier as a defense bonus in addition to a
+                +2 modifier from the aspect itself.
+            </text>
+        </aspect>
+
+        <aspect name="Blood Soaked Life">
+            <rule ref="Skill" value="Concentration">
+                <detail type="inherits_from" value="Intelligence"/>
+            </rule>
+            <rule ref="Energy Point Cost" value="+1"/>
+            <rule ref="Failure Chance" value="8"/>
+            <rule ref="Damage Healed" value="1d8"/>
+            <rule ref="Magic" value="Magic">
+                <detail type="energy_type" value="Meta"/>
+            </rule>
+            <rule ref="Range" value="Personal"/>
+            <rule ref="Effect Trigger" value="When HP Damage is Delt"/>
+
+            <text>
+            </text>
+        </aspect>
+
+        <aspect name="Trap Finder">
+            <rule ref="Concentration Bonus" value="+2 Concentration">
+                <detail type="limit" value="Trap Finding Only"/>
+                <detail type="targets" value="Perception"/>
+            </rule>
+
+            <requires name="Perception"/>
+            <requires name="Quiet Steps"/>
+
+            <text>
+                Grants a character a +2 modifier to any perception check made when searching for potential traps.
+            </text>
+        </aspect>
+
+        <aspect name="Fit">
+            <rule ref="HP Pool Bonus" value="+1"/>
+
+            <text>
+                This aspect applies to any physically fit character. All fit characters also receive +1 HP to their HP
+                Pool.
+            </text>
+        </aspect>
+
+        <aspect name="Adonic">
+            <rule ref="Energy Point Pool Bonus" value="+1 Energy Point Pool"/>
+            <rule ref="Energy Point Refresh Bonus" value="+1 Energy Point Refresh"/>
+
+            <requires name="Intense Acrobatic Training"/>
+            <requires name="Intense Resistance Training"/>
+            <requires name="Intense Endurance Training"/>
+
+            <text>
+                Super Strong, yo.
+            </text>
+        </aspect>
+
+        <aspect name="Vigor">
+            <rule ref="Energy Point Refresh Bonus" value="+1 Energy Point Refresh"/>
+
+            <text>
+                TODO
+            </text>
+        </aspect>
+
+        <aspect name="Quiescence">
+            <rule ref="Energy Point Refresh Bonus" value="+1 Energy Point Refresh"/>
+            <rule ref="Core Aspect Negative" value="-1">
+                <detail type="targets" value="Strength"/>
+            </rule>
+
+            <requires name="Mental Endurance"/>
+
+            <text>
+                Intense mental training has awarded you an additional action point. However, this focus leads one to
+                neglect the body, giving the character a -1 Strength modifier.
+            </text>
+        </aspect>
+
+        <aspect name="Knowledge - Affluence">
+            <rule ref="Skill" value="Concentration">
+                <detail type="inherits_from" value="Intelligence"/>
+            </rule>
+            <rule ref="Energy Point Cost" value="+1"/>
+            <rule ref="Failure Chance" value="8"/>
+
+            <text>
+                Knowledge and understanding of the related domain.
+            </text>
+        </aspect>
+
+        <aspect name="Knowledge - Mechanical">
+            <rule ref="Skill" value="Concentration">
+                <detail type="inherits_from" value="Intelligence"/>
+            </rule>
+            <rule ref="Energy Point Cost" value="+1"/>
+            <rule ref="Failure Chance" value="8"/>
+
+            <text>
+                Knowledge and understanding of the related domain.
+            </text>
+        </aspect>
+
+        <aspect name="Knowledge - Arcane">
+            <rule ref="Skill" value="Concentration">
+                <detail type="inherits_from" value="Intelligence"/>
+            </rule>
+            <rule ref="Energy Point Cost" value="+1"/>
+            <rule ref="Failure Chance" value="8"/>
+
+            <text>
+                Knowledge and understanding of the related domain.
+            </text>
+        </aspect>
+
+        <aspect name="Knowledge - Occult">
+            <rule ref="Skill" value="Concentration">
+                <detail type="inherits_from" value="Intelligence"/>
+            </rule>
+            <rule ref="Energy Point Cost" value="+1"/>
+            <rule ref="Failure Chance" value="8"/>
+
+            <text>
+                Knowledge and understanding of the related domain.
+            </text>
+        </aspect>
+
+        <aspect name="Knowledge - Martial">
+            <rule ref="Skill" value="Concentration">
+                <detail type="inherits_from" value="Intelligence"/>
+            </rule>
+            <rule ref="Energy Point Cost" value="+1"/>
+            <rule ref="Failure Chance" value="8"/>
+
+            <text>
+                Knowledge and understanding of the related domain.
+            </text>
+        </aspect>
+
+        <aspect name="Knowledge - Historical">
+            <rule ref="Skill" value="Concentration">
+                <detail type="inherits_from" value="Intelligence"/>
+            </rule>
+            <rule ref="Energy Point Cost" value="+1"/>
+            <rule ref="Failure Chance" value="8"/>
+
+            <text>
+                Knowledge and understanding of the related domain.
+            </text>
+        </aspect>
+
+        <aspect name="Knowledge - Natural Sciences">
+            <rule ref="Skill" value="Concentration">
+                <detail type="inherits_from" value="Intelligence"/>
+            </rule>
+            <rule ref="Energy Point Cost" value="+1"/>
+            <rule ref="Failure Chance" value="8"/>
+
+            <text>
+                Knowledge and understanding of the related domain.
+            </text>
+        </aspect>
+
+        <aspect name="Knowledge - Survival">
+            <rule ref="Skill" value="Concentration">
+                <detail type="inherits_from" value="Intelligence"/>
+            </rule>
+            <rule ref="Energy Point Cost" value="+1"/>
+            <rule ref="Failure Chance" value="8"/>
+
+            <text>
+                Knowledge and understanding of the related domain.
+            </text>
+        </aspect>
+
+        <aspect name="Leadership">
+            <rule ref="NPC Cohort" value="NPC Cohort"/>
+
+            <text>
+                Leadership allows a character to begin splitting aspect points between their self and another character.
+                The player may split apsect points between the two characters as they see fit with the exception that
+                the cohort may not have more than half of the available aspect points.
+            </text>
+        </aspect>
+
+        <aspect name="Indomitable">
+            <rule ref="Combat Expertise" value="Can't be Flanked"/>
+            <rule ref="HP Pool Bonus" value="+1"/>
+
+            <requires name="Martial Artist"/>
+
+            <text>
+                You're big. You're hard to get around and there's no way an enemy gets the slip on you. This character
+                can not be flanked.
+            </text>
+        </aspect>
+
+        <aspect name="Intense Endurance Training">
+            <rule ref="Energy Point Pool Bonus" value="+1 Energy Point Pool"/>
+            <rule ref="HP Pool Bonus" value="+1"/>
+
+            <requires name="Fit"/>
+
+            <text>
+                This character has gone through regimented exercises to increase their overall endurance.
+            </text>
+        </aspect>
+
+        <aspect name="Intense Acrobatic Training">
+            <rule ref="Core Aspect Bonus" value="+1">
+                <detail type="targets" value="Mobility"/>
+            </rule>
+            <rule ref="HP Pool Bonus" value="+1"/>
+
+            <requires name="Fit"/>
+
+            <text>
+                This character has gone through regimented exercises to increase their overall mobility and fitness.
+            </text>
+        </aspect>
+
+        <aspect name="Intense Resistance Training">
+            <rule ref="Core Aspect Bonus" value="+1">
+                <detail type="targets" value="Strength"/>
+            </rule>
+            <rule ref="HP Pool Bonus" value="+1"/>
+
+            <requires name="Fit"/>
+
+            <text>
+                This character has gone through regimented exercises to increase their overall strength and fitness.
+            </text>
+        </aspect>
+
+        <aspect name="Martial Artist">
+            <rule ref="Crit Success Modifier" value="+1">
+                <detail type="limit" value="Melee"/>
+            </rule>
+
+            <requires name="Fit"/>
+
+            <text>
+                This aspect grants a character expert martial arts knowledge. Because of this intense training, the
+                character has acquired a unique understanding of how to strike at an opponent's weak points.
+            </text>
+        </aspect>
+
+        <aspect name="High Manual Dexterity">
+            <text>
+                This aspect is often taken by characters that are considered good with their hands. This aspect alone
+                grants no additional checks or modifiers.
+            </text>
+        </aspect>
+
+        <aspect name="Gesture">
+            <rule ref="Skill" value="Concentration">
+                <detail type="inherits_from" value="Intelligence"/>
+            </rule>
+            <rule ref="Failure Chance" value="8"/>
+            <rule ref="Energy Point Cost" value="+1"/>
+
+            <text>
+                Grants a dextrous character the ability to attempt to communicate with another character via gesturing.
+                This action is not limited to just the character's hands. The action has a difficulty set by the game
+                master based on the complexity of the ideas being communicated. Both characters are required to make
+                gesture checks - the target does not need to have this aspect in order to make the check.
+            </text>
+        </aspect>
+
+        <aspect name="Filch">
+            <rule ref="Skill" value="Non-Combat">
+                <detail type="limit" value="No Character Targets"/>
+                <detail type="inherits_from" value="Mobility"/>
+            </rule>
+            <rule ref="Failure Chance" value="8"/>
+
+            <requires name="High Manual Dexterity"/>
+
+            <text>
+                Grants a careful character the ability to secretly pilfer small objects from their surroundings. The
+                object must fit in their hand easily. The character must make a filch check greater than the difficulty
+                of the task set by the game master. If the character is being watched, all other characters with the
+                **Keen Senses** aspect are granted a perception check. This perception check is opposed against the
+                character's filch check.
+            </text>
+        </aspect>
+
+        <aspect name="Pickpocket">
+            <rule ref="Skill" value="Concentration">
+                <detail type="inherits_from" value="Mobility"/>
+            </rule>
+            <rule ref="Failure Chance" value="8"/>
+            <rule ref="Energy Point Cost" value="+1"/>
+
+            <requires name="Filch"/>
+
+            <text>
+                Grants a careful character the ability to pilfer objects from a target. The character must first make a
+                pickpocket check. If the target is unaware of the attempt then the game master is required to select an
+                appropriate difficulty. Upon failure, the target character becomes aware of the actions taken against
+                them. Upon success, the target object is lifted from the target character.
+
+                If the target character is already aware of the attempt then this character is granted a **mobility
+                check** that opposes the character's pickpocket check. Note that this does not remove the check's
+                difficulty - the character must still beat the difficulty of the filch check in addition to defeating
+                the target character's mobility check.
+            </text>
+        </aspect>
+
+        <aspect name="Lockpicking">
+            <rule ref="Skill" value="Non-Combat">
+                <detail type="inherits_from" value="Mobility"/>
+            </rule>
+            <rule ref="Failure Chance" value="8"/>
+
+            <requires name="High Manual Dexterity"/>
+
+            <text>
+                Grants a character the knowledge necessary to disable simple lock devices. Lock devices are granted a
+                difficulty by the game master depending on their complexity and make. The character must make a
+                lockpicking check against this difficulty to successfully disable the lock. This check recieves the
+                character's **mobility modifier** as a bonus.
+            </text>
+        </aspect>
+
+        <aspect name="Field Aid">
+            <rule ref="Skill" value="Concentration">
+                <detail type="inherits_from" value="Intelligence"/>
+            </rule>
+            <rule ref="Damage Healed" value="1d6"/>
+            <rule ref="Energy Point Cost" value="+2"/>
+            <rule ref="Failure Chance" value="8"/>
+
+            <requires name="Medicine"/>
+
+            <text>
+                Allows a character to perform healing on the battlefield via simple medical procedures. Any visible
+                damage to the target may be healed by this check. Internal damage requires a different check. Any
+                character healed by this aspect may not be healed by it again for 12 hours.
+
+                A successful Field Aid staunches bleeding and may heal 1d6 health points of damage.
+            </text>
+        </aspect>
+
+        <aspect name="Treat Illness">
+            <rule ref="Skill" value="Non-Combat">
+                <detail type="inherits_from" value="Intelligence"/>
+            </rule>
+            <rule ref="Failure Chance" value="8"/>
+
+            <requires name="Medicine"/>
+
+            <text>
+                Allows a character to attempt to cure a disease. The disease should annotate information about what
+                happens after it is cured. Often there is a recovery period afterward.
+
+                To cure a disease the character must have all required materials at hand according to the game master -
+                this may be things the character has on them or some special requirement in complex circumstances. Each
+                disease also has a difficulty set that must be beat by this check.
+            </text>
+        </aspect>
+
+        <aspect name="Medicine">
+            <rule ref="Skill" value="Non-Combat">
+                <detail type="inherits_from" value="Intelligence"/>
+            </rule>
+            <rule ref="Failure Chance" value="8"/>
+            <rule ref="Damage Healed" value="1d6"/>
+
+            <text>
+                Allows a character to make a medicine check. This check has use in diagnosing and healing others. A
+                successful medicine check may heal 1d6 health points. This takes the character 10 minutes. Any character
+                healed by this aspect may not be healed by it again for 12 hours.
+
+                When diagnosing, the game master chooses a suitable difficulty for the complications the target is
+                suffering. If the medicine check passes, the character is enlightened as to the cause of the
+                complications.
+            </text>
+        </aspect>
+
+        <aspect name="Perception">
+            <rule ref="Skill" value="Concentration"/>
+            <rule ref="Energy Point Cost" value="+1"/>
+            <rule ref="Failure Chance" value="8"/>
+
+            <text>
+                Allows a character to make a perception check.
+
+                Take a look at your surroundings to attempt to find out interesting information. There is no base
+                difficulty listed here - the game master is responsible for providing resonable difficulties based on
+                the surroundings in the setting and the target of observation.
+            </text>
+        </aspect>
+
+        <aspect name="Keen Senses">
+            <rule ref="Opportunistic Action" value="Opportunistic"/>
+            <requires name="Perception"/>
+
+            <text>
+                When a target character passes or appears within melee range of the character, as an opportunistic
+                action, the character may make a perception check to oppose the target's stealth. If the target has no
+                active stealth then the perception check has a failure chance of 8.
+            </text>
+        </aspect>
+
+        <aspect name="Disable Device">
+            <rule ref="Skill" value="Non-Combat">
+                <detail type="inherits_from" value="Lockpicking"/>
+            </rule>
+            <rule ref="Failure Chance" value="8"/>
+
+            <requires name="Lockpicking"/>
+
+            <text>
+                Grants a character with an understanding of small mechanical devices the ability to attempt to disable
+                them. This covers any manner of device designed as a trap or a lock. All devices are granted a
+                difficulty by the game master depending on their complexity and make. The character must make a disable
+                device check against this difficulty to successfully disable the device.
+            </text>
+        </aspect>
+
+        <aspect name="Blend into Crowds">
+            <rule ref="Skill" value="Non-Combat">
+                <detail type="inherits_from" value="Mobility"/>
+            </rule>
+            <rule ref="Failure Chance" value="8"/>
+
+            <text>
+                Allows a street-wise character to blend into a crowd and use this action as a sealth attempt. The crowd
+                must be sufficiently thick such that the game master considers blending in acceptable for stealth.
+            </text>
+        </aspect>
+
+        <aspect name="Quiet Steps">
+            <rule ref="Skill" value="Concentration">
+                <detail type="inherits_from" value="Mobility"/>
+            </rule>
+            <rule ref="Failure Chance" value="8"/>
+            <rule ref="Energy Point Cost" value="+1"/>
+
+            <text>
+                Allows a character to make a stealth check by walking carefully. In order to enter stealth, the
+                character must not be visible by any enemies.
+            </text>
+        </aspect>
+
+        <aspect name="Block">
+            <rule ref="Skill" value="Defense">
+                <detail type="limit" value="Character Must Have a Shield"/>
+                <detail type="inherits_from" value="Strength"/>
+            </rule>
+            <rule ref="Defense Bonus" value="+1 Defense Effectiveness"/>
+            <rule ref="Failure Chance" value="8"/>
+            <rule ref="Energy Point Cost" value="+1"/>
+
+            <text>
+                Allows a character to steady their body against a shield and attempt to absorb an incoming attack
+                completely. This ability requires the character to have a working shield equipped.
+            </text>
+        </aspect>
+
+        <aspect name="Melee Parry">
+            <rule ref="Skill" value="Concentration">
+                <detail type="inherits_from" value="Mobility"/>
+            </rule>
+            <rule ref="Range" value="Melee"/>
+            <rule ref="Extra Attack" value="+1"/>
+            <rule ref="Failure Chance" value="14"/>
+            <rule ref="Energy Point Cost" value="+1"/>
+
+            <text>
+                Allows a character to parry an attack with their currently equipped weapon. This parry is only useful
+                for melee weapons and may only be used against melee attacks.
+
+                Upon a successful parry, the incoming attack is deflected. The defender is granted the ability to
+                perform an attack upon their opponent .
+            </text>
+        </aspect>
+
+        <aspect name="Shot Call">
+            <rule ref="Concentration Bonus" value="+1 Concentration">
+                <detail type="targets" value="Ally's Attack"/>
+                <detail type="limit" value="Ranged Attacks Only"/>
+            </rule>
+            <rule ref="Failure Chance" value="12"/>
+            <rule ref="Energy Point Cost" value="+1"/>
+
+            <requires name="Perception"/>
+
+            <text>
+                Allows a character to make a perception check. This check, if successful, grants a target ally a +1
+                modifier to their next ranged attack. The target ally must be within the character's line of sight as
+                must be the target enemy however for the target ally to recieve the +1 modifier the target ally does not
+                need to have line of sight on the target enemy.
+            </text>
+        </aspect>
+
+        <aspect name="Mental Endurance">
+            <rule ref="Energy Point Pool Bonus" value="+1 Energy Point Pool"/>
+
+            <text>
+                Years of conditioning has left this character with a hardened mind. Stress rolls off their shoulders and
+                their ability to tax their mind is far greater than normal.
+            </text>
+        </aspect>
+
+        <aspect name="Mentat">
+            <rule ref="Core Aspect Bonus" value="+1">
+                <detail type="targets" value="Intelligence"/>
+            </rule>
+
+            <requires name="Mental Endurance"/>
+
+            <text>
+                Further training of the mind has left this character permanatly smarter.
+            </text>
+        </aspect>
+
+        <aspect name="Weapon Proficiency">
+            <rule ref="Concentration Bonus" value="+1 Concentration">
+                <detail type="targets" value="Bound Weapon Type"/>
+            </rule>
+
+            <text>
+                Allows a character to attack more effectively with their weapon of choice. This aspect grants the
+                character a +1 modifier on all attack rolls made with their weapon of choice. This aspect must be taken
+                for every weapon type the character wishes to use.
+            </text>
+        </aspect>
+
+        <aspect name="Stab">
+            <rule ref="Skill" value="Attack">
+                <detail type="limit" value="Thrusting Weapons"/>
+                <detail type="inherits_from" value="Strength"/>
+            </rule>
+            <rule ref="Failure Chance" value="8"/>
+            <rule ref="Energy Point Cost" value="+1"/>
+
+            <text>
+                Grants a character a melee stabbing attack. This attack may be used with any thrusting melee weapon.
+            </text>
+        </aspect>
+
+        <aspect name="Bludgeon">
+            <rule ref="Skill" value="Attack">
+                <detail type="limit" value="Bludgeoning Weapons"/>
+                <detail type="inherits_from" value="Strength"/>
+            </rule>
+            <rule ref="Failure Chance" value="8"/>
+            <rule ref="Energy Point Cost" value="+1"/>
+
+            <text>
+                Grants a character a melee attack that's proficient with blugeoning weapons. This attack may be used
+                with heavy, blunt melee weapons, including staves and other similar weapon types. This does not apply to
+                slashing weapons which require different techniques.
+            </text>
+        </aspect>
+
+        <aspect name="Reaching Strike">
+            <rule ref="Skill" value="Attack">
+                <detail type="inherits_from" value="Strength"/>
+            </rule>
+            <rule ref="Careful Blow" value="Careful Blow"/>
+            <rule ref="Failure Chance" value="8"/>
+            <rule ref="Energy Point Cost" value="+1"/>
+
+            <requires name="Slash"/>
+
+            <text>
+                Grants a character a specialized melee attack that's proficient with weapons of requirements but allows
+                the attacker to ignore the negative for attacking through occupied map cells.
+            </text>
+        </aspect>
+
+        <aspect name="Archery">
+            <rule ref="Skill" value="Attack">
+                <detail type="limit" value="Drawn Force Weapons"/>
+                <detail type="limit" value="Only Inherits from the Highest Modifier (Strength or Mobility)"/>
+                <detail type="inherits_from" value="Mobility"/>
+                <detail type="inherits_from" value="Strength"/>
+            </rule>
+            <rule ref="Failure Chance" value="8"/>
+            <rule ref="Energy Point Cost" value="+1"/>
+
+            <text>
+                Allows a character to use a bow, cross bow or other similar drawn force weapon. The skill check uses the
+                higher of either the character's mobility modifier or the character's strength modifier.
+            </text>
+        </aspect>
+
+        <aspect name="Slash">
+            <rule ref="Skill" value="Attack">
+                <detail type="limit" value="Slashing Weapons"/>
+                <detail type="inherits_from" value="Mobility"/>
+            </rule>
+            <rule ref="Failure Chance" value="8"/>
+            <rule ref="Energy Point Cost" value="+1"/>
+
+            <text>
+                Grants a character a melee slashing attack. This attack may be used with any slashing melee weapon.
+            </text>
+        </aspect>
+
+        <aspect name="Counter Slash">
+            <rule ref="Energy Point Cost" value="+1"/>
+            <rule ref="Opportunistic Action" value="Opportunistic"/>
+
+            <requires name="Slash"/>
+
+            <text>
+                Allows a to make a slashing attack as an opportunistic action.
+            </text>
+        </aspect>
+
+        <aspect name="Counter Stab">
+            <rule ref="Energy Point Cost" value="+1"/>
+            <rule ref="Opportunistic Action" value="Opportunistic"/>
+
+            <requires name="Stab"/>
+
+            <text>
+                Allows a to make a stabbing attack as an opportunistic action.
+            </text>
+        </aspect>
+
+        <aspect name="Leaping Strike">
+            <rule ref="Skill" value="Concentration"/>
+            <rule ref="Failure Chance" value="8"/>
+
+            <rule ref="Concentration Bonus" value="+1 Concentration">
+                <detail type="targets" value="Leaping Strike"/>
+            </rule>
+
+            <rule ref="Energy Point Cost" value="+1"/>
+
+            <requires name="Fit"/>
+
+            <text>
+                Allows a character to perform a jump action and an attack in one turn with a specified melee weapon
+                type. The roll for this attack is treated as the character's Jump check as well. This attack grants a
+                **+1 modifier** to the attack roll.
+            </text>
+        </aspect>
+
+        <aspect name="Great Slash">
+            <rule ref="Skill" value="Concentration"/>
+            <rule ref="Failure Chance" value="8"/>
+
+            <rule ref="Concentration Negative" value="-2 Concentration">
+                <detail type="targets" value="Great Slash"/>
+                <detail type="inherits_from" value="Mobility"/>
+            </rule>
+
+            <rule ref="Extra Target" value="+1"/>
+            <rule ref="Energy Point Cost" value="+2"/>
+
+            <requires name="Fit"/>
+            <requires name="Slash"/>
+
+            <text>
+                Allows a character to attack 2 enemies standing side-by-side. The enemies must be in adjacent map cells.
+                The attacker makes a single attack roll that both targets may then roll against. This attack incurs a
+                **-2 modifier** to the attack roll.
+            </text>
+        </aspect>
+
+        <aspect name="Magical Energy Affinity">
+            <rule ref="Concentration Bonus" value="+1 Concentration">
+                <detail type="targets" value="All Magic of Chosen Energy Type"/>
+            </rule>
+            <rule ref="Accuracy Bonus" value="+1 Attack Accuracy">
+                <detail type="targets" value="All Magic of Chosen Energy Type"/>
+            </rule>
+
+            <text>
+                Increases a character's natural talent in magic for a given energy type. This aspect must be taken
+                multiple times for multiple energy types.
+            </text>
+        </aspect>
+
+        <aspect name="Refresh">
+            <rule ref="Skill" value="Concentration">
+                <detail type="inherits_from" value="Intelligence"/>
+            </rule>
+            <rule ref="Energy Point Cost" value="+1"/>
+            <rule ref="Failure Chance" value="8"/>
+            <rule ref="Damage Healed" value="1d6"/>
+            <rule ref="Magic" value="Magic">
+                <detail type="energy_type" value="Meta"/>
+            </rule>
+            <rule ref="Range" value="Melee"/>
+
+            <text>
+                The caster heals a target for 1d6 health points. This healing takes effect instantly and staunches any
+                bleeding the character may be suffering from. This spell may be used as many times as needed on the same
+                target.
+            </text>
+        </aspect>
+
+        <aspect name="Sooth">
+            <rule ref="Skill" value="Concentration">
+                <detail type="inherits_from" value="Intelligence"/>
+            </rule>
+            <rule ref="Energy Point Cost" value="+1"/>
+            <rule ref="Failure Chance" value="8"/>
+            <rule ref="Heal Affliction" value="Sickened"/>
+            <rule ref="Magic" value="Magic">
+                <detail type="energy_type" value="Meta"/>
+            </rule>
+            <rule ref="Range" value="Melee"/>
+
+            <text>
+                Allows a caster to magically heal a sickened character.
+            </text>
+        </aspect>
+
+        <aspect name="Purify">
+            <rule ref="Skill" value="Concentration">
+                <detail type="inherits_from" value="Intelligence"/>
+            </rule>
+            <rule ref="Energy Point Cost" value="+1"/>
+            <rule ref="Failure Chance" value="8"/>
+            <rule ref="Heal Affliction" value="Poisoned"/>
+
+            <rule ref="Magic" value="Magic">
+                <detail type="energy_type" value="Meta"/>
+            </rule>
+            <rule ref="Range" value="Melee"/>
+
+            <text>
+                Allows a caster to magically heal a poisoned character. The caster must roll their skill check versus
+                the difficulty of the poison.
+            </text>
+        </aspect>
+
+        <aspect name="Cleanse">
+            <rule ref="Skill" value="Concentration">
+                <detail type="inherits_from" value="Intelligence"/>
+            </rule>
+            <rule ref="Energy Point Cost" value="+1"/>
+            <rule ref="Failure Chance" value="8"/>
+            <rule ref="Heal Affliction" value="Diseased"/>
+
+            <rule ref="Magic" value="Magic">
+                <detail type="energy_type" value="Meta"/>
+            </rule>
+            <rule ref="Range" value="Melee"/>
+
+            <text>
+                Allows a caster to magically heal a diseased character. The caster must roll their skill check versus
+                the difficulty of the disease.
+            </text>
+        </aspect>
+
+        <aspect name="Quell">
+            <rule ref="Skill" value="Concentration">
+                <detail type="inherits_from" value="Intelligence"/>
+                <detail type="limit" value="Caster Only"/>
+            </rule>
+            <rule ref="Energy Point Cost" value="+1"/>
+            <rule ref="Failure Chance" value="8"/>
+            <rule ref="Damage Resistance" value="+2 DR">
+                <detail type="targets" value="Kinetic"/>
+            </rule>
+
+            <rule ref="Magic" value="Magic">
+                <detail type="energy_type" value="Force"/>
+            </rule>
+
+            <rule ref="Range" value="Personal"/>
+
+            <text>
+                The character conjures a simple kinetic shield that covers their entire body. This shield has a **DR of
+                2**. The shield lasts for 10 minutes or until an attack lands and the shield absorbs damage.
+
+                This spell may target *only the caster* and no one else.
+            </text>
+        </aspect>
+
+        <aspect name="Foil">
+            <rule ref="Skill" value="Concentration">
+                <detail type="inherits_from" value="Intelligence"/>
+            </rule>
+            <rule ref="Energy Point Cost" value="+1"/>
+            <rule ref="Failure Chance" value="8"/>
+            <rule ref="Effect Duration" value="4 Turns"/>
+            <rule ref="Damage Resistance" value="+4 DR">
+                <detail type="targets" value="Kinetic"/>
+            </rule>
+
+            <rule ref="Magic" value="Magic">
+                <detail type="energy_type" value="Force"/>
+            </rule>
+
+            <rule ref="Range" value="Melee"/>
+
+            <text>
+                The character conjures a kinetic shield that covers a target's body. This shield has a **DR of 4**. The
+                shield lasts for 10 minutes or until an attack lands and the shield absorbs damage.
+            </text>
+        </aspect>
+
+        <aspect name="Arcane Sight">
+            <rule ref="Skill" value="Concentration">
+                <detail type="inherits_from" value="Perception"/>
+            </rule>
+            <rule ref="Energy Point Cost" value="+1"/>
+            <rule ref="Failure Chance" value="12"/>
+
+            <rule ref="Magic" value="Magic">
+                <detail type="energy_type" value="Meta"/>
+            </rule>
+            <rule ref="Range" value="Short"/>
+            <rule ref="Effect Duration" value="8 Turns"/>
+
+            <text>
+                Allows the caster to augment their vision with magic. This darkens ther vision slightly but does not
+                damage their perception. Other magical effects within the range of the caster will shine brightly in
+                their sight. At game master discretion, some magic items, even hidden or obscured, may shine through
+                these obstacles.
+            </text>
+        </aspect>
+
+        <aspect name="Dissev">
+            <rule ref="Skill" value="Concentration">
+                <detail type="inherits_from" value="Intelligence"/>
+            </rule>
+            <rule ref="Energy Point Cost" value="+1"/>
+            <rule ref="Failure Chance" value="8"/>
+            <rule ref="Effect Duration" value="4 Turns"/>
+
+            <rule ref="Damage Resistance" value="+2 DR">
+                <detail type="targets" value="Chosen upon Casting"/>
+            </rule>
+            <rule ref="Concentration Bonus" value="+2 Concentration">
+                <detail type="targets" value="Chosen upon Casting"/>
+            </rule>
+            <rule ref="Magic" value="Magic">
+                <detail type="energy_type" value="Meta"/>
+            </rule>
+            <rule ref="Range" value="Medium"/>
+
+            <text>
+                Projects a thin, barely-visible green field around the target. This field moves with the target and has
+                range personal. The field, at time of cast, may be tuned to a single energy type. For any damage
+                inflicted of this type, this field provides **2 DR**. In addition, any effect with this energy type with
+                a check that the target must make is subject to a **+2 modifier**.
+            </text>
+        </aspect>
+
+        <aspect name="Volta">
+            <rule ref="Skill" value="Attack">
+                <detail type="inherits_from" value="Intelligence"/>
+            </rule>
+            <rule ref="Energy Point Cost" value="+1"/>
+            <rule ref="Failure Chance" value="8"/>
+            <rule ref="Magic" value="Magic">
+                <detail type="energy_type" value="Electric"/>
+            </rule>
+            <rule ref="Range" value="Medium"/>
+            <rule ref="Damage" value="1d4"/>
+
+            <text>
+                Upon casting, a bolt of lightning arcs from either of the character's hands toward the target enemy with
+                a thundering crack. The attack roll recieves the character's intelligence modifier as an attack bonus.
+            </text>
+        </aspect>
+
+        <aspect name="Firebolt">
+            <rule ref="Skill" value="Attack">
+                <detail type="inherits_from" value="Intelligence"/>
+            </rule>
+            <rule ref="Energy Point Cost" value="+1"/>
+            <rule ref="Failure Chance" value="8"/>
+
+            <rule ref="Magic" value="Magic">
+                <detail type="energy_type" value="Fire"/>
+            </rule>
+
+            <rule ref="Range" value="Medium"/>
+            <rule ref="Damage" value="1d4"/>
+
+            <text>
+                The character conjures a ball of fire in either hand which may then be thrown. The attack roll recieves
+                the character's intelligence modifier as an attack bonus.
+            </text>
+        </aspect>
+
+        <aspect name="Frigid Cone">
+            <rule ref="Skill" value="Attack">
+                <detail type="inherits_from" value="Intelligence"/>
+            </rule>
+            <rule ref="Energy Point Cost" value="+1"/>
+            <rule ref="Failure Chance" value="8"/>
+
+            <rule ref="Magic" value="Magic">
+                <detail type="energy_type" value="Cold"/>
+            </rule>
+
+            <rule ref="Area Effect" value="Cone"/>
+            <rule ref="Range" value="Short"/>
+            <rule ref="Damage" value="1d4"/>
+
+            <text>
+                The character summons a cold blast directed in a cone shaped area in-front of them. This is considered
+                an area attack for all affected map cells.
+            </text>
+        </aspect>
+
+        <aspect name="Dismiss">
+            <rule ref="Skill" value="Attack">
+                <detail type="inherits_from" value="Intelligence"/>
+            </rule>
+            <rule ref="Energy Point Cost" value="+1"/>
+            <rule ref="Failure Chance" value="8"/>
+            <rule ref="Magic" value="Magic">
+                <detail type="energy_type" value="Meta"/>
+            </rule>
+            <rule ref="Range" value="Medium"/>
+
+            <text>
+                Target a magical effect with an invisible beam directed by the caster. The target must be within
+                **medium range** and the magical effect must be understood by the caster. The caster may be required by
+                the game master to make an appropriate check for identifying the target spell's effects. Attacking a
+                spell without understanding its effects incurs a **-4 modifier** to the dismiss check.
+
+                The spell requires the caster of the target spell to make an intelligence check vs. the dismiss caster's
+                check roll. If the spell is not known, additional negatives apply to this check. Upon winning this
+                opposed check, the target spell is dismissed and all of its effects immedieatly stop.
+            </text>
+        </aspect>
+
+        <aspect name="Spell Dart">
+            <rule ref="Skill" value="Attack">
+                <detail type="inherits_from" value="Intelligence"/>
+            </rule>
+            <rule ref="Energy Point Cost" value="+1"/>
+            <rule ref="Failure Chance" value="8"/>
+            <rule ref="Magic" value="Magic">
+                <detail type="energy_type" value="Meta"/>
+            </rule>
+            <rule ref="Range" value="Short"/>
+            <rule ref="Damage" value="1d6"/>
+
+            <text>
+                Spell Dart is a meta magic spell that allows a character to aim a single finger (of their choice) at a
+                target and fire a crackling spark of pure magical energy at them. This spark flies like an arrow in
+                speed and trajectory. Upon impact it explodes with a loud crack and a flurry of much smaller,
+                short-lived magical sparks.
+            </text>
+        </aspect>
+
+        <aspect name="Obscura">
+            <rule ref="Skill" value="Concentration">
+                <detail type="inherits_from" value="Intelligence"/>
+            </rule>
+            <rule ref="Energy Point Cost" value="+1"/>
+            <rule ref="Failure Chance" value="14"/>
+            <rule ref="Magic" value="Magic">
+                <detail type="energy_type" value="Meta"/>
+            </rule>
+            <rule ref="Accuracy Negative" value="-4 Attack Accuracy">
+                <detail type="targets" value="Ranged Attacks"/>
+            </rule>
+            <rule ref="Range" value="Medium"/>
+            <rule ref="Area Effect" value="Dome">
+                <detail type="Radius" value="6"/>
+            </rule>
+            <rule ref="Effect Duration" value="4 Turns"/>
+
+            <text>
+                Creates a roaming darkness that condenses as a weightless mist. This mist is only effective on incoming
+                ranged attacks, making it far more difficult for attackers to target anything inside it.
+
+                The negative modifier to range attacks persists even inside the mist. Melee attacks however are
+                unaffacted.
+            </text>
+        </aspect>
+
+        <aspect name="Send">
+            <rule ref="Skill" value="Concentration">
+                <detail type="inherits_from" value="Intelligence"/>
+            </rule>
+            <rule ref="Energy Point Cost" value="+1"/>
+            <rule ref="Failure Chance" value="12"/>
+
+            <rule ref="Magic" value="Magic">
+                <detail type="energy_type" value="Meta"/>
+            </rule>
+
+            <text>
+                Instantly send a message to the mind of a willing target, regardless of distance. The target must be
+                known to the caster in that they must have met in-person at least once. This effect may be dismissed
+                before the message is sent. Once the message is sent the target is granted the opportunity to reply with
+                their own message. After this the conversation ends and send must be cast again to further
+                communication.
+            </text>
+        </aspect>
+
+        <aspect name="Summon Water or Food">
+            <rule ref="Skill" value="Concentration">
+                <detail type="inherits_from" value="Intelligence"/>
+            </rule>
+            <rule ref="Energy Point Cost" value="+1"/>
+            <rule ref="Failure Chance" value="8"/>
+
+            <rule ref="Magic" value="Magic">
+                <detail type="energy_type" value="Meta"/>
+            </rule>
+
+            <text>
+                This spell takes shape in two different ways. The caster may lift up an empty vessel and summon a small
+                quantity of water to it. This quantity is enough water to quench the thirst of 1 person for 1 day.
+
+                The caster may instead pick up an empty serving dish and summon a simple meal of a heavy, dense bread
+                that tastes like dry oatmeal. This bread provides enough sustience for 1 person for 1 day.
+            </text>
+        </aspect>
+
+        <aspect name="Magic Trick">
+            <rule ref="Magic" value="Magic">
+                <detail type="energy_type" value="Meta"/>
+            </rule>
+
+            <text>
+                Perform a minor trick or illusion such as clean a handheld object to summoning a playing card from your
+                coat pocket or hiding a rabbit within a top hat until you reach in to pull it out.
+
+                This aspect is useless in combat.
+            </text>
+        </aspect>
+
+        <aspect name="Deathrattle">
+            <rule ref="Magic" value="Magic">
+                <detail type="energy_type" value="Meta"/>
+            </rule>
+
+            <text>
+                Similar to magic trick. This ability produces a signature that may be enhanced later.
+            </text>
+        </aspect>
+
+        <aspect name="Farsight">
+            <rule ref="Skill" value="Concentration">
+                <detail type="inherits_from" value="Perception"/>
+            </rule>
+            <rule ref="Energy Point Cost" value="+2"/>
+            <rule ref="Failure Chance" value="14"/>
+            <rule ref="Magic" value="Magic">
+                <detail type="energy_type" value="Meta"/>
+            </rule>
+            <rule ref="Range" value="Medium"/>
+
+            <requires name="Magic Trick"/>
+
+            <text>
+                Upon successful cast, Farsight grants the caster a glimpse of the area desired. This area is restricted
+                to medium range. The casting skill check also represents the perception skill check of the caster as
+                they gaze upon their target.
+
+                This spell may be used in place of any perception check.
+            </text>
+        </aspect>
+
+        <aspect name="He Who Walks Behind">
+            <rule ref="Skill" value="Concentration">
+                <detail type="inherits_from" value="Intelligence"/>
+            </rule>
+            <rule ref="Delayed Effect Duration" value="1 Turn"/>
+            <rule ref="Energy Point Cost" value="+1"/>
+            <rule ref="Failure Chance" value="10"/>
+            <rule ref="Magic" value="Magic">
+                <detail type="energy_type" value="Meta"/>
+            </rule>
+            <rule ref="Range" value="Short"/>
+            <rule ref="Teleportation" value="Simple Teleportation"/>
+
+            <requires name="Magic Trick"/>
+
+            <text>
+                Allows a character to teleport. They vanish upon success and appear at their intended target location
+                after the delayed effect duration of 1 turn.
+            </text>
+        </aspect>
+
+        <aspect name="Countercast">
+            <rule ref="Skill" value="Attack">
+                <detail type="inherits_from" value="Intelligence"/>
+            </rule>
+            <rule ref="Energy Point Cost" value="+2"/>
+            <rule ref="Failure Chance" value="8"/>
+
+            <rule ref="Magic" value="Magic">
+                <detail type="energy_type" value="Meta"/>
+            </rule>
+
+            <rule ref="Opportunistic Action" value="Reactionary"/>
+            <rule ref="Range" value="Medium"/>
+
+            <requires name="Dismiss"/>
+
+            <text>
+                This enhanced version of Dismiss has all of the same rules as Dismiss but with the added effect of being
+                able to target magical effects as a reaction.
+            </text>
+        </aspect>
+
+        <aspect name="Toss">
+            <rule ref="Skill" value="Attack">
+                <detail type="limit" value="Size Modifier -3 and Smaller Objects Only"/>
+                <detail type="inherits_from" value="Intelligence"/>
+            </rule>
+            <rule ref="Energy Point Cost" value="+1"/>
+            <rule ref="Failure Chance" value="8"/>
+
+            <rule ref="Magic" value="Magic">
+                <detail type="energy_type" value="Kinetic"/>
+            </rule>
+
+            <rule ref="Range" value="Medium"/>
+            <rule ref="Damage" value="1d4"/>
+
+            <text>
+                Allows a character to use their mind to toss an object of size modifier -3 or smaller with their mind.
+                This object may be thrown hard enough to 1d4 damage and is accurate up to range medium.
+            </text>
+        </aspect>
     </aspects>
 </document>
