@@ -61,6 +61,13 @@ class XMLBacked(object):
     def __init__(self, xml):
         self._xml = xml if isinstance(xml, XMLNode) else XMLNode(xml)
 
+    @property
+    def text(self):
+        text_xml = self._xml.node('text')
+        if text_xml is not None:
+            return sanitize_text(text_xml.text())
+        return ''
+
     def _wrap(self, tag, wrapper_cls):
         return wrapper_cls(self._xml.node(tag))
 
@@ -107,19 +114,6 @@ class Document(XMLBacked):
     def aspects(self):
         return self._wrap_set('aspects', 'aspect', Aspect)
 
-    def check(self):
-        if self._xml.tag() != DOCUMENT_TAG:
-            raise DocumentCheckError('Expected document tag at XML top-level')
-
-        for expected in (RULES_TAG, TEMPLATES_TAG, ASPECTS_TAG,):
-            if self._xml.node(expected) is None:
-                raise DocumentCheckError('Expected {} in document but found no matching XML node.'.format(
-                    expected))
-
-        for rule in self.rules():
-            if rule.category is None:
-                raise DocumentCheckError('Rule "{}" is lacking a category.'.format(rule.name))
-
 
 class Formula(XMLBacked):
     pass
@@ -150,13 +144,6 @@ class RuleOption(XMLBacked):
 
 
 class Template(XMLBacked):
-    def validate(self, aspect):
-        for requirement in self.requirements:
-            aspect_rule = aspect.rule(requirement.rule)
-
-            if aspect_rule is None:
-                raise DocumentCheckError('Aspect {} does not conform to template {}'.format(aspect.name, self.name))
-
     @property
     def requirements(self):
         return self._wrap_each('requires', TemplateRequirement)
@@ -167,16 +154,6 @@ class TemplateRequirement(XMLBacked):
 
 
 class Aspect(XMLBacked):
-    @property
-    def text(self):
-        text_xml = self._xml.node('text')
-        if text_xml is not None:
-            return text_xml.text()
-        return ''
-
-    def rule(self, name):
-        return find_node(self.rules, name, attribute='ref')
-
     @property
     def rules(self):
         return self._wrap_each('rule', AspectRule)

@@ -12,13 +12,13 @@
         <formula name="Easy Progression" type="custom" equation="i * 2">
         </formula>
 
-        <formula name="Normal Progression" type="custom" equation="fib(i)">
+        <formula name="Normal Progression" type="custom" equation="fib(i + 1)">
         </formula>
 
-        <formula name="Hard Progression" type="custom" equation="fib(i) * 2">
+        <formula name="Hard Progression" type="custom" equation="fib(i + 3)">
         </formula>
 
-        <formula name="Heroic Progression" type="custom" equation="pow(2, i)">
+        <formula name="Heroic Progression" type="custom" equation="fib(i + 5)">
         </formula>
 
         <!-- Flat Cost Progressions -->
@@ -40,14 +40,10 @@
         <!-- Provided -->
         <formula name="Damage Cost" type="provided" function="damage_cost">
         </formula>
-
-        <formula name="Absolute" type="provided" function="absolute">
-        </formula>
     </formulas>
 
     <rules>
         <!-- Item Rules -->
-
         <rule name="Number of Uses" category="item">
             <formula ref="Basic Progression">
                 <argument name="Returns AP"/>
@@ -98,7 +94,6 @@
 
 
         <!-- Character Rules -->
-
         <rule name="Careful Blow" category="all">
             <formula ref="Easy Flat">
             </formula>
@@ -110,9 +105,19 @@
             </option>
         </rule>
 
+        <rule name="Simple Feature" category="all">
+            <formula ref="Basic Flat">
+            </formula>
+
+            <option name="Simple Feature">
+                <text>
+                    Allows melee attacks to ignore the penalty for attacking through an occupied map cell.
+                </text>
+            </option>
+        </rule>
+
         <rule name="Teleportation" category="all">
             <formula ref="Heroic Progression">
-                <argument name="Hard Start"/>
             </formula>
 
             <option name="Simple Teleportation">
@@ -162,13 +167,13 @@
             <formula ref="Easy Flat">
             </formula>
 
-            <option name="1" cost="0"/>
-            <option name="2" cost="1"/>
+            <option name="1"/>
+            <option name="2"/>
 
             <text>
                 The number of hands required to utilize the aspect or item.
 
-                Weapons that use more than one hand grant the character's strength modifier as a flat damage bonus. For
+                Weapons that use more than one hand grant the character's strength modifier as a flat damage Positive Modifier. For
                 example, a character with a strength modifier of +2 receives +2 damage in addition to the result of
                 their damage roll.
             </text>
@@ -176,7 +181,6 @@
 
         <rule name="Area Effect" category="all">
             <formula ref="Heroic Progression">
-                <argument name="Basic Start"/>
             </formula>
 
             <option name="Line"/>
@@ -199,10 +203,10 @@
             <formula ref="Basic Flat">
             </formula>
 
-            <option name="Non-Combat" cost="0"/>
-            <option name="Concentration" cost="1"/>
-            <option name="Attack" cost="2"/>
-            <option name="Defense" cost="2"/>
+            <option name="Non-Combat"/>
+            <option name="Concentration"/>
+            <option name="Attack"/>
+            <option name="Defense"/>
 
             <text>
                 Skills granted by aspects come in a few different flavors.
@@ -227,7 +231,6 @@
 
         <rule name="Presence Modifier" category="all">
             <formula ref="Normal Progression">
-                <argument name="Basic Start"/>
             </formula>
 
             <option name="+{rn}" range="1,6"/>
@@ -253,7 +256,6 @@
 
         <rule name="Extra Attack" category="all">
             <formula ref="Heroic Progression">
-                <argument name="Basic Start"/>
             </formula>
 
 
@@ -324,14 +326,14 @@
             <option name="4d12"/>
         </rule>
 
-        <rule name="HP Pool Bonus" category="all">
+        <rule name="HP Pool Positive Modifier" category="all">
             <formula ref="Damage Cost">
             </formula>
 
             <option name="+{rn}" range="1,10"/>
         </rule>
 
-        <rule name="HP Pool Negative" category="all">
+        <rule name="HP Pool Negative Modifier" category="all">
             <formula ref="Damage Cost">
                 <argument name="Returns AP"/>
             </formula>
@@ -347,14 +349,14 @@
             <option name="Enemies Only"/>
         </rule>
 
-        <rule name="Core Aspect Bonus" category="all">
+        <rule name="Core Aspect Positive Modifier" category="all">
             <formula ref="Hard Progression">
             </formula>
 
             <option name="+{rn}" range="1,3"/>
         </rule>
 
-        <rule name="Core Aspect Negative" category="all">
+        <rule name="Core Aspect Negative Modifier" category="all">
             <formula ref="Hard Progression">
                 <argument name="Returns AP"/>
             </formula>
@@ -379,7 +381,6 @@
 
         <rule name="Opportunistic Action" category="all">
             <formula ref="Heroic Progression">
-                <argument name="Easy Start"/>
             </formula>
 
             <option name="Opportunistic"/>
@@ -399,7 +400,6 @@
 
         <rule name="Environment Mitigation" category="all">
             <formula ref="Normal Progression">
-                <argument name="Basic Start"/>
             </formula>
 
             <option name="Low Light Vision"/>
@@ -407,34 +407,30 @@
             <option name="Echo Sight"/>
         </rule>
 
-        <rule name="Energy Point Refresh Bonus" category="all">
+        <rule name="Energy Point Refresh Positive Modifier" category="all">
             <formula ref="Heroic Progression">
-                <argument name="Basic Start"/>
             </formula>
 
             <option name="+{rn} Energy Point Refresh" range="1,2"/>
         </rule>
 
-        <rule name="Energy Point Refresh Negative" category="all">
+        <rule name="Energy Point Refresh Negative Modifier" category="all">
             <formula ref="Heroic Progression">
                 <argument name="Returns AP"/>
-                <argument name="Basic Start"/>
             </formula>
 
-            <option name="+{rn} Energy Point Refresh" range="1,2"/>
+            <option name="-{rn} Energy Point Refresh" range="1,2"/>
         </rule>
 
-        <rule name="Energy Point Pool Bonus" category="all">
+        <rule name="Energy Point Pool Positive Modifier" category="all">
             <formula ref="Heroic Progression">
-                <argument name="Basic Start"/>
             </formula>
 
             <option name="+{rn} Energy Point Pool" range="1,2"/>
         </rule>
 
-        <rule name="Energy Point Pool Negative" category="all">
+        <rule name="Energy Point Pool Negative Modifier" category="all">
             <formula ref="Heroic Progression">
-                <argument name="Basic Start"/>
                 <argument name="Returns AP"/>
             </formula>
 
@@ -443,7 +439,6 @@
 
         <rule name="Energy Point Pool Mality" category="all">
             <formula ref="Heroic Progression">
-                <argument name="Basic Start"/>
             </formula>
 
             <option name="-{rn} Energy Point Pool" range="1,2"/>
@@ -531,7 +526,6 @@
 
         <rule name="Melee Reach" category="all">
             <formula ref="Normal Progression">
-                <argument name="Normal Start"/>
             </formula>
 
             <option name="+{rn} Map Cell(s)" range="1,2"/>
@@ -546,7 +540,7 @@
             <option name="Poisoned"/>
         </rule>
 
-        <rule name="Defense Bonus" category="all">
+        <rule name="Defense Positive Modifier" category="all">
             <formula ref="Normal Progression">
             </formula>
 
@@ -558,7 +552,7 @@
             </text>
         </rule>
 
-        <rule name="Defense Negative" category="all">
+        <rule name="Defense Negative Modifier" category="all">
             <formula ref="Normal Progression">
             </formula>
 
@@ -570,7 +564,7 @@
             </text>
         </rule>
 
-        <rule name="Accuracy Bonus" category="all">
+        <rule name="Accuracy Positive Modifier" category="all">
             <formula ref="Normal Progression">
             </formula>
 
@@ -582,7 +576,7 @@
             </text>
         </rule>
 
-        <rule name="Accuracy Negative" category="all">
+        <rule name="Accuracy Negative Modifier" category="all">
             <formula ref="Normal Progression">
             </formula>
 
@@ -594,7 +588,7 @@
             </text>
         </rule>
 
-        <rule name="Concentration Bonus" category="all">
+        <rule name="Concentration Positive Modifier" category="all">
             <formula ref="Normal Progression">
             </formula>
 
@@ -605,7 +599,7 @@
             </text>
         </rule>
 
-        <rule name="Concentration Negative" category="all">
+        <rule name="Concentration Negative Modifier" category="all">
             <formula ref="Normal Progression">
             </formula>
 
@@ -616,7 +610,7 @@
             </text>
         </rule>
 
-        <rule name="Actor Size Bonus" category="all">
+        <rule name="Actor Size Positive Modifier" category="all">
             <formula ref="Hard Progression">
             </formula>
 
@@ -626,7 +620,7 @@
             <option name="+4 Size Modifier"/>
         </rule>
 
-        <rule name="Actor Size Negative" category="all">
+        <rule name="Actor Size Negative Modifier" category="all">
             <formula ref="Hard Progression">
             </formula>
 
@@ -671,7 +665,7 @@
             </text>
         </aspect>
 
-        <aspect name="Frantic Defense">
+        <aspect name="Frantic Defense" template="Defense">
             <rule ref="Skill" value="Defense">
                 <detail type="inherits_from" value="Mobility"/>
             </rule>
@@ -682,7 +676,7 @@
 
             <text>
                 Allows a character to make a simple dodge-based defense against an incoming attack. The defense roll
-                recieves the character's **mobility modifier** as a defense bonus.
+                recieves the character's **mobility modifier** as a defense Positive Modifier.
             </text>
         </aspect>
 
@@ -695,7 +689,7 @@
 
             <text>
                 Allows a character to make a simple dodge-based defense against an incoming attack. The defense roll
-                recieves the character's **mobility modifier** as a defense bonus.
+                recieves the character's **mobility modifier** as a defense Positive Modifier.
             </text>
         </aspect>
 
@@ -769,7 +763,7 @@
                 <detail type="inherits_from" value="Mobility"/>
             </rule>
             <rule ref="Failure Chance" value="8"/>
-            <rule ref="Concentration Bonus" value="+2 Concentration">
+            <rule ref="Concentration Positive Modifier" value="+2 Concentration">
                 <detail type="targets" value="Pivot and Roll"/>
             </rule>
 
@@ -779,7 +773,7 @@
 
             <text>
                 Allows a character to make a more acrobatic dodge. This defense roll requires the character to not be
-                slowed. The defense roll receives the character's mobility modifier as a defense bonus in addition to a
+                slowed. The defense roll receives the character's mobility modifier as a defense Positive Modifier in addition to a
                 +2 modifier from the aspect itself.
             </text>
         </aspect>
@@ -802,7 +796,7 @@
         </aspect>
 
         <aspect name="Trap Finder">
-            <rule ref="Concentration Bonus" value="+2 Concentration">
+            <rule ref="Concentration Positive Modifier" value="+2 Concentration">
                 <detail type="limit" value="Trap Finding Only"/>
                 <detail type="targets" value="Perception"/>
             </rule>
@@ -816,7 +810,7 @@
         </aspect>
 
         <aspect name="Fit">
-            <rule ref="HP Pool Bonus" value="+1"/>
+            <rule ref="HP Pool Positive Modifier" value="+1"/>
 
             <text>
                 This aspect applies to any physically fit character. All fit characters also receive +1 HP to their HP
@@ -825,8 +819,8 @@
         </aspect>
 
         <aspect name="Adonic">
-            <rule ref="Energy Point Pool Bonus" value="+1 Energy Point Pool"/>
-            <rule ref="Energy Point Refresh Bonus" value="+1 Energy Point Refresh"/>
+            <rule ref="Energy Point Pool Positive Modifier" value="+1 Energy Point Pool"/>
+            <rule ref="Energy Point Refresh Positive Modifier" value="+1 Energy Point Refresh"/>
 
             <requires name="Intense Acrobatic Training"/>
             <requires name="Intense Resistance Training"/>
@@ -838,7 +832,7 @@
         </aspect>
 
         <aspect name="Vigor">
-            <rule ref="Energy Point Refresh Bonus" value="+1 Energy Point Refresh"/>
+            <rule ref="Energy Point Refresh Positive Modifier" value="+1 Energy Point Refresh"/>
 
             <text>
                 TODO
@@ -846,8 +840,8 @@
         </aspect>
 
         <aspect name="Quiescence">
-            <rule ref="Energy Point Refresh Bonus" value="+1 Energy Point Refresh"/>
-            <rule ref="Core Aspect Negative" value="-1">
+            <rule ref="Energy Point Refresh Positive Modifier" value="+1 Energy Point Refresh"/>
+            <rule ref="Core Aspect Negative Modifier" value="-1">
                 <detail type="targets" value="Strength"/>
             </rule>
 
@@ -967,7 +961,7 @@
 
         <aspect name="Indomitable">
             <rule ref="Combat Expertise" value="Can't be Flanked"/>
-            <rule ref="HP Pool Bonus" value="+1"/>
+            <rule ref="HP Pool Positive Modifier" value="+1"/>
 
             <requires name="Martial Artist"/>
 
@@ -978,8 +972,8 @@
         </aspect>
 
         <aspect name="Intense Endurance Training">
-            <rule ref="Energy Point Pool Bonus" value="+1 Energy Point Pool"/>
-            <rule ref="HP Pool Bonus" value="+1"/>
+            <rule ref="Energy Point Pool Positive Modifier" value="+1 Energy Point Pool"/>
+            <rule ref="HP Pool Positive Modifier" value="+1"/>
 
             <requires name="Fit"/>
 
@@ -989,10 +983,10 @@
         </aspect>
 
         <aspect name="Intense Acrobatic Training">
-            <rule ref="Core Aspect Bonus" value="+1">
+            <rule ref="Core Aspect Positive Modifier" value="+1">
                 <detail type="targets" value="Mobility"/>
             </rule>
-            <rule ref="HP Pool Bonus" value="+1"/>
+            <rule ref="HP Pool Positive Modifier" value="+1"/>
 
             <requires name="Fit"/>
 
@@ -1002,10 +996,10 @@
         </aspect>
 
         <aspect name="Intense Resistance Training">
-            <rule ref="Core Aspect Bonus" value="+1">
+            <rule ref="Core Aspect Positive Modifier" value="+1">
                 <detail type="targets" value="Strength"/>
             </rule>
-            <rule ref="HP Pool Bonus" value="+1"/>
+            <rule ref="HP Pool Positive Modifier" value="+1"/>
 
             <requires name="Fit"/>
 
@@ -1028,6 +1022,8 @@
         </aspect>
 
         <aspect name="High Manual Dexterity">
+            <rule ref="Simple Feature"/>
+
             <text>
                 This aspect is often taken by characters that are considered good with their hands. This aspect alone
                 grants no additional checks or modifiers.
@@ -1101,7 +1097,7 @@
                 Grants a character the knowledge necessary to disable simple lock devices. Lock devices are granted a
                 difficulty by the game master depending on their complexity and make. The character must make a
                 lockpicking check against this difficulty to successfully disable the lock. This check recieves the
-                character's **mobility modifier** as a bonus.
+                character's **mobility modifier** as a Positive Modifier.
             </text>
         </aspect>
 
@@ -1231,7 +1227,7 @@
                 <detail type="limit" value="Character Must Have a Shield"/>
                 <detail type="inherits_from" value="Strength"/>
             </rule>
-            <rule ref="Defense Bonus" value="+1 Defense Effectiveness"/>
+            <rule ref="Defense Positive Modifier" value="+1 Defense Effectiveness"/>
             <rule ref="Failure Chance" value="8"/>
             <rule ref="Energy Point Cost" value="+1"/>
 
@@ -1260,7 +1256,7 @@
         </aspect>
 
         <aspect name="Shot Call">
-            <rule ref="Concentration Bonus" value="+1 Concentration">
+            <rule ref="Concentration Positive Modifier" value="+1 Concentration">
                 <detail type="targets" value="Ally's Attack"/>
                 <detail type="limit" value="Ranged Attacks Only"/>
             </rule>
@@ -1278,7 +1274,7 @@
         </aspect>
 
         <aspect name="Mental Endurance">
-            <rule ref="Energy Point Pool Bonus" value="+1 Energy Point Pool"/>
+            <rule ref="Energy Point Pool Positive Modifier" value="+1 Energy Point Pool"/>
 
             <text>
                 Years of conditioning has left this character with a hardened mind. Stress rolls off their shoulders and
@@ -1287,7 +1283,7 @@
         </aspect>
 
         <aspect name="Mentat">
-            <rule ref="Core Aspect Bonus" value="+1">
+            <rule ref="Core Aspect Positive Modifier" value="+1">
                 <detail type="targets" value="Intelligence"/>
             </rule>
 
@@ -1299,7 +1295,7 @@
         </aspect>
 
         <aspect name="Weapon Proficiency">
-            <rule ref="Concentration Bonus" value="+1 Concentration">
+            <rule ref="Concentration Positive Modifier" value="+1 Concentration">
                 <detail type="targets" value="Bound Weapon Type"/>
             </rule>
 
@@ -1409,7 +1405,7 @@
             <rule ref="Skill" value="Concentration"/>
             <rule ref="Failure Chance" value="8"/>
 
-            <rule ref="Concentration Bonus" value="+1 Concentration">
+            <rule ref="Concentration Positive Modifier" value="+1 Concentration">
                 <detail type="targets" value="Leaping Strike"/>
             </rule>
 
@@ -1428,7 +1424,7 @@
             <rule ref="Skill" value="Concentration"/>
             <rule ref="Failure Chance" value="8"/>
 
-            <rule ref="Concentration Negative" value="-2 Concentration">
+            <rule ref="Concentration Negative Modifier" value="-2 Concentration">
                 <detail type="targets" value="Great Slash"/>
                 <detail type="inherits_from" value="Mobility"/>
             </rule>
@@ -1447,10 +1443,10 @@
         </aspect>
 
         <aspect name="Magical Energy Affinity">
-            <rule ref="Concentration Bonus" value="+1 Concentration">
+            <rule ref="Concentration Positive Modifier" value="+1 Concentration">
                 <detail type="targets" value="All Magic of Chosen Energy Type"/>
             </rule>
-            <rule ref="Accuracy Bonus" value="+1 Attack Accuracy">
+            <rule ref="Accuracy Positive Modifier" value="+1 Attack Accuracy">
                 <detail type="targets" value="All Magic of Chosen Energy Type"/>
             </rule>
 
@@ -1614,7 +1610,7 @@
             <rule ref="Damage Resistance" value="+2 DR">
                 <detail type="targets" value="Chosen upon Casting"/>
             </rule>
-            <rule ref="Concentration Bonus" value="+2 Concentration">
+            <rule ref="Concentration Positive Modifier" value="+2 Concentration">
                 <detail type="targets" value="Chosen upon Casting"/>
             </rule>
             <rule ref="Magic" value="Magic">
@@ -1644,7 +1640,7 @@
 
             <text>
                 Upon casting, a bolt of lightning arcs from either of the character's hands toward the target enemy with
-                a thundering crack. The attack roll recieves the character's intelligence modifier as an attack bonus.
+                a thundering crack. The attack roll recieves the character's intelligence modifier as an attack Positive Modifier.
             </text>
         </aspect>
 
@@ -1664,7 +1660,7 @@
 
             <text>
                 The character conjures a ball of fire in either hand which may then be thrown. The attack roll recieves
-                the character's intelligence modifier as an attack bonus.
+                the character's intelligence modifier as an attack Positive Modifier.
             </text>
         </aspect>
 
@@ -1741,7 +1737,7 @@
             <rule ref="Magic" value="Magic">
                 <detail type="energy_type" value="Meta"/>
             </rule>
-            <rule ref="Accuracy Negative" value="-4 Attack Accuracy">
+            <rule ref="Accuracy Negative Modifier" value="-4 Attack Accuracy">
                 <detail type="targets" value="Ranged Attacks"/>
             </rule>
             <rule ref="Range" value="Medium"/>
