@@ -195,7 +195,7 @@ By default all characters are treated as a 1.7 meter (~5 1/2 feet) tall humanoid
 * Size 0
     * 1.5 meters - 2.0 meters
 * Size 1
-    * 2.0 - 2.5 meters
+    * 2.0 meters - 2.5 meters
 * Size 2
     * 2.5 meters - 3.5 meters
 * Size 3
@@ -372,7 +372,17 @@ Opposed skill checks, like certain skilled attacks, require your character to be
 
 Many aspects grant attacks. Despite having different damages, effects and or other modifiers; all attacks follow the rules below.
 
-All attacks begin with a d20 roll from the attacker. This represents their attempt to hit a target. If the attack has a skill check then this roll also represents their skill check roll. For example: a character may use an attack that has a skill check roll with a difficulty of 12. The attacking character rolls an 11 and fails the skill check, therefore their attack fails and the defending character need not defend.
+##### Default Hit Location
+
+Unless specified by the player with a **Targeted Attack** all attacks aim and strike for the target's torso.
+
+##### Executing an Attack
+
+All attacks begin with a d20 roll from the attacker and target the torso.
+
+This roll represents the attacker's attempt to hit a target. If the attack has a skill check then this roll also represents their skill check roll.
+
+For example: a character may use an attack that has a skill check roll with a difficulty of 12. The attacking character rolls an 11 and fails the skill check, therefore their attack fails and the defending character need not defend.
 
 A character's attack roll may be modified from several sources including: magic, equipment and aspects.
 
@@ -384,6 +394,8 @@ Many attack aspects will require a skill check roll despite the defender's lack 
 #### Defending
 
 Manay aspects grant denfenses. Despite having different effects and or other modifiers; all defenses follow the rules below.
+
+##### Executing a Defense
 
 Characters, unless otherwise affected, may defend themselves when being attacked.
 
