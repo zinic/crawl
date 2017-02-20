@@ -186,31 +186,22 @@ By default all characters are treated as a 1.7 meter (~5 1/2 feet) tall humanoid
 
 * Size -4
     * Macroscopic or Insect
-    * Aspect Point Cost: 25
 * Size -3
     * 0.0 meters - 0.3 meters
-    * Aspect Point Cost: 15
 * Size -2
     * 0.3 meters - 1.0 meters
-    * Aspect Point Cost: 10
 * Size -1
     * 1.0 meters - 1.5 meters
-    * Aspect Point Cost: 5
 * Size 0
     * 1.5 meters - 2.0 meters
-    * Aspect Point Cost: 0
 * Size 1
     * 2.0 - 2.5 meters
-    * Aspect Point Cost: 5
 * Size 2
     * 2.5 meters - 3.5 meters
-    * Aspect Point Cost: 10    
 * Size 3
     * 3.5 meters - 5.0 meters
-    * Aspect Point Cost: 15
 * Size 4
     * Gargantuan or Dinosaur
-    * Aspect Point Cost: 25
 
 
 ### Equipment
@@ -223,33 +214,58 @@ Unless a character has a defense aspect that allows the use of a shield, the shi
 
 #### Lightweight Items
 
-Lightweight items are items that may be worn without changing the available equipment slots on the character. They are, as their name implies, lightweight and therefore on their own, do not generally affect the use of the limb they are worn on.
+Lightweight items are items that may be worn without changing the available equipment slots on the character. They are, as their name implies, lightweight and therefore on their own do not generally affect the use of the limb they are worn on.
 
 However, lightweight items can add up!
 
-Stacking more than 3 lightweight items in the same equipment slot, such as wearing 4 bracelets on 1 arm, incurs a -1 modifier to the character's mobility. This negative stacks if the character has more than one overloaded equipment slot.
+Stacking more than 2 lightweight items in the same equipment slot incurs a stacking -1 modifier to the character's mobility. This negative modifier stacks both if the character has more than one overloaded equipment or has overloaded a single slot with more than 2 lightweight items.
 
 #### Slots
 
 Certain items may require a character to equip it to a specific slot. The available slots are listed below.
 
-* Head (Helmet)
-* Neck (Amulet - Scarf)
-* Arms (Bracers - Bracelets)
-    * A character has as may Arms slots as they have arms.
-* Hands (Weapons - Tools)
-    * A character has as may Hands slots as they have hands.
-* Torso (Armor - Shirt)
-* Waist (Belt)
-* Legs (Pants)
-    * A character has as may Legs slots as they have legs.
-* Feet (Boots)
-    * A character has as may Feet slots as they have feet.
+* Head
+    * The head slot covers not just the character's head but also their neck.
+* Arms
+    * Items and armor that slot for a character's arms must take into consideration both arms. Lightweight items that are slotted for the arms may specify if they fit on both or on one arm.
+* Torso
+    * A character's torso is the largest single hit location.
+* Legs
+    * Items and armor that slot for a character's legs must take into consideration both legs. Lightweight items that are slotted for the legs may specify if they fit on both or on one leg.
 
 #### Max Weight
 
-Size + Strength Modifier
+**Note: This is an optional rule.**
 
+Characters are able to carry a base weight of 25kg (~55lb). For each positive strength modifier, this limit increases according to the table below:
+
+|Modifier|Weight Capacity|
+|---|---|
+|+1 Core Strength|50kg|
+|+2 Core Strength|80kg|
+|+3 Core Strength|110kg|
+|+4 Core Strength|170kg|
+|+5 Core Strength|260kg|
+|+6 Core Strength|410kg|
+|+7 Core Strength|650kg|
+|+8 Core Strength|1040kg|
+|+9 Core Strength|1670kg|
+|+10 Core Strength|2690kg|
+
+#### Weight Encumberance
+
+**Note: This is an optional rule.**
+
+Characters that are carrying more than their weight capacity are subject to negative mobility modifiers.
+
+|Modifier|Weight Capacity|
+|---|---|
+| Up to **20kg** | -1 Core Mobility |
+| Up to **45kg** | -2 Core Mobility |
+| Up to **70kg** | -3 Core Mobility |
+| Up to **100kg** | -4 Core Mobility |
+| Up to **130kg** | -5 Core Mobility |
+| Greater than **130kg** | **Character is Immobile** |
 
 ### Initiative
 
@@ -301,13 +317,14 @@ Characters may have aspects that grant additional energy points under certain ci
 
 #### Maximum Effort
 
-A character may choose to spend health points and convert them into an energy points in times of dire need. This loss of health points counts as damage to the character and is treated the same.
+A character may choose to spend health points and convert them into an energy points in times of dire need. This loss of health points counts as damage to the character and is treated the same. Aspects and effects may modify this rule.
 
-Maximum effort may only be used in to circumstances:
+Maximum effort may only be used in the following circumstances:
 
-For attacks, a character may convert **only 1 HP per turn**.
-
-For defense, the number of health points a character may convert into energy points is limited by the character's energy point pool size. You may not convert health points into more energy points than a character has room in their energy point pool.
+* **Attacks**
+    * A character may choose to spend **2 Health Points** to perform one final attack on their turn. This may only be used at the end of the character's turn and only if the character has exhausted all their energy points.
+* **Defense**
+    * A character may choose to spend **2 Health Points** to perform a defense. As long as the character has a positive amount of healh points, the character may spend them to perform additional defenses. To clarify, a character may not use maximum effort if they have less than 0 health points in their health pool or if by using maximum effort the character would then have less than 0 health points.
 
 
 #### Using Aspect Skills
@@ -323,7 +340,7 @@ Only when characters are in initiative do energy point costs matter. Outside of 
 
 #### Using Unlearned Aspect Skills
 
-If a character meets all the requirements of an aspect, they may attempt to use the aspect without having learned it. The skill roll is subject to a -10 modifier. The game master is encouraged to raise the modifier up to -20, if the situation, or difficulty of execution of the new aspect warrants it.
+If a character meets all the requirements of an aspect, they may attempt to use the aspect without having learned it. The skill roll is subject to a -5 modifier. The game master is encouraged to raise the modifier up to -20, if the situation, or difficulty of execution of the new aspect warrants it.
 
 
 ### Skill Check Difficulty
@@ -438,19 +455,6 @@ Characters may take damage over time during the game. Damage types are listed be
 
 #### Armor
 
-##### Armor Stacking
-
-**All armor a character contributes to DR over all.**
-
-For example, the DR values from a characters helmet, bracers, chestpiece all combine (based on damage type) into a pool of DR.
-
-Helmet: DR Kinetic +2
-Bracers: DR Kinetic +2
-Chestpiece: DR Kinetic +6
-
-This character, equipped, would have a total of 10 DR vs. Kinetic damage.
-
-
 ##### Encumberance
 
 Some armors may restrict movement and therefore come with a negative mobility check modifier. Some heavier armors may also require a certain strength check modifier from the character.
@@ -470,7 +474,7 @@ Characters unaware of the presence of an enemy force may be subject to a surpris
 
 #### Targeted Attacks
 
- The game master may allow a character to target a specific piece of armor in order to reduce the DR that applies to an attack to only that which the piece of armor gives. This however should incur a hefty penalty of at least a -10 modifier to the character's attack roll, or greater at the game master's discretion.
+The game master may allow a character to target a specific piece of armor in order to reduce the DR that applies to an attack to only that which the piece of armor gives. This however should incur a hefty penalty of at least a -10 modifier to the character's attack roll, or greater at the game master's discretion.
 
 Characters may defend themselves not just with actions but with equipment. Armor imparts a function called **damage resistance**. The damage resistance of an armor is given as a number to reduce damage taken by - this damage must apply to an energy type. For example, an Iron Chestplate imparts **6 DR Kinetic**. This value means that the armor will reduce any incoming kinetic damage to the character by 6.
 
@@ -540,7 +544,7 @@ Cover may be destroyed and targeted specifically. Cover has a health point value
 
 #### Kinetic Damage
 
-Kinetic damage is a core game-play mechanic.
+Kinetic damage is a core game-play mechanic and many aspects, effects and equipment will utilize it.
 
 Kinetic damage is a specific classification of damage that encompass most damage incurred from a kinetic source. This includes falling, being thrown against a surface and being blasted by raw gravitational energy. The amount of kinetic damage the character sustains is directly related to the amount of kinetic potential the character is subject to.
 
@@ -586,13 +590,6 @@ All characters start with a base ‘fit’ movement speed of 5 map cells or 10 m
 A character may move through map cells occupied by a friendly character or entity with no penalty.
 
 
-#### Full Run
-
-All characters may choose to run at their top speed. A full run is a movement action that consumes the character’s entire turn and costs 1 energy point. This movement must be done in a relatively straight line and is subject to gamemaster discretion.
-
-The character, while running, moves at double their normal movement speed.
-
-
 #### Speaking During Combat
 
 Speaking to another character during combat may be done as an action during the character's turn. This action costs no points but what is said, including the target's reply, must fit within the definitions of a turn's time duration.
@@ -609,17 +606,6 @@ Grabbing a target removes the character's threat, meaning that they may not act 
 A grab is an attack skill that costs 1 energy point.
 
 Characters that are grabbed may not move from away from their oppressor until they win an opposed strength check. In addition, the game master may add additional restrictions to the character when using a weapon or item held in the hand of a grabbed arm.
-
-
-#### Grapple
-
-Any character that has been grabbed may be grappled. Grappling a target character requires an opposed strength check between the attacker and the target. If the attacker wins this check, the target is considered grappled.
-
-To escape a grapple a target must make an opposed strength check against the character they are grappled by **at a modifier of -2**. If successful, the target regains their turn and is considered free. The target is released in the same map cell and is considered squeezing with the character that was grappling them.
-
-A grapple is an attack skill that costs 1 energy point.
-
-Characters that are grappled may not move at all. They may only attempt skills that do require movement or they may attempt to break from the grapple.
 
 
 #### Charging
@@ -652,7 +638,11 @@ Note, falling may have additional consequences regardless of whether or not the 
 
 #### Two-Meter Step
 
-A character may make a special movement action that costs 1 energy point called a two-meter step. As the name implies, a character may take a two meter step or a step equal to one map cell without incuring opportunistic actions. After a character takes a two-meter step they may not take any further action and their turn ends.
+A character may make a special movement action that costs 1 energy point called a two-meter step. As the name implies, a character may take a two meter step or a step equal to one map cell without incuring opportunistic actions.
+
+**Optional Rule**
+
+After a character takes a two-meter step they may not take any further action and their turn ends.
 
 
 #### Standing Vertical Jump
@@ -711,7 +701,6 @@ A character in stealth may ignore enemy opportunistic actions in the case where 
 Once in stealth, a character may maintain their stealth if they make no action that reveals them. Maintaining stealth costs a character no action but requires the character to re-roll their stealth check.
 
 Unless otherwise stated by the aspect, only attacks and defenses will reveal a character in stealth.
-
 
 
 ### Character Health and Status
@@ -837,10 +826,10 @@ Throughout the game a character may be subject to a number of effects. The most 
 
 The character is laying on the ground. While in this position, the following effects apply to the character:
 
-* Movement is limited to one hex per turn.
-* Ranged attacks receive a +1 modifier.
-* Melee attacks receive a -1 modifier.
-* Defense rolls receive a -1 modifier.
+* Movement is limited to one map cell per move action.
+* Ranged attacks receive a +2 modifier.
+* Melee attacks receive a -2 modifier.
+* Defense rolls receive a -2 modifier.
 
 
 #### Stunned
@@ -883,6 +872,8 @@ When a character is forced to occupy fifty percent or less of a map cell, they a
 
 #### Staggered
 
-A character that has a health point value of less than one fourth their health point total is considered staggered. A staggered character that receives further damage is subject to a percent check (2d10 or d100).
+A character that has a health point value of less than one fourth their health point total is considered staggered. A staggered character that receives further damage is subject to a fate roll.
 
-If the target character rolls less than 50, they must lose an energy point or forfeit their turn. This condition’s may be mitigated by equipment, items and abilities.
+If the target character rolls **[ ]** or **[+]** then they may continue their turn normally. However, if the target character rolls **[-]**, they must lose an energy point or forfeit their turn.
+
+This condition’s effects may be mitigated by equipment, items and abilities.

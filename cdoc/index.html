@@ -1,0 +1,50 @@
+<html>
+<head>
+    <meta charset="utf-8"/>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/showdown/1.6.3/showdown.min.js"></script>
+
+    <script type="text/javascript">
+        function generateAspect() {
+            var mdConverter = new showdown.Converter();
+            var textAreaData = $('#input').val();
+
+            $.ajax({
+                url: '/format',
+                type: 'POST',
+                data: textAreaData,
+
+                contentType: 'application/xml; charset=utf-8',
+
+                success: function (reply) {
+                    var outputHTML = mdConverter.makeHtml(reply);
+                    $('#output').html(outputHTML);
+                },
+
+                error: function (reply) {
+                    var outputHTML = mdConverter.makeHtml(reply);
+                    $('#output').html(outputHTML);
+                }
+            });
+        }
+
+        function onReady() {
+            $("#input").on('input selectionchange propertychange', generateAspect);
+        }
+
+        $(document).ready(onReady);
+    </script>
+</head>
+
+<body>
+<div style="margin-top: 45px; float: left;">
+    <textarea id="input" rows="16" cols="80"></textarea>
+</div>
+
+<div style="margin-left: 25px; float: left;">
+    <div id="output">
+    </div>
+</div>
+</body>
+</html>

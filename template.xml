@@ -173,7 +173,8 @@
             <text>
                 The number of hands required to utilize the aspect or item.
 
-                Weapons that use more than one hand grant the character's strength modifier as a flat damage Positive Modifier. For
+                Weapons that use more than one hand grant the character's strength modifier as a flat damage Positive
+                Modifier. For
                 example, a character with a strength modifier of +2 receives +2 damage in addition to the result of
                 their damage roll.
             </text>
@@ -524,6 +525,26 @@
             <option name="1 Day"/>
         </rule>
 
+        <rule name="Grapple" category="character">
+            <formula ref="Hard Progression">
+            </formula>
+
+            <option name="Grapple"/>
+
+            <text>
+                Grappling a target character requires an opposed strength check between the attacker and the target. If
+                the attacker wins this check, the target is considered grappled.
+
+                To escape a grapple a target must make an opposed strength check against the character they are grappled
+                by **at a modifier of -2**. If successful, the target regains their turn and is considered free. The
+                target is released in the same map cell and is considered squeezing with the character that was
+                grappling them.
+
+                Characters that are grappled may not move at all. They may only attempt skills that do require movement
+                or they may attempt to break from the grapple.
+            </text>
+        </rule>
+
         <rule name="Melee Reach" category="all">
             <formula ref="Normal Progression">
             </formula>
@@ -614,20 +635,14 @@
             <formula ref="Hard Progression">
             </formula>
 
-            <option name="+1 Size Modifier"/>
-            <option name="+2 Size Modifier"/>
-            <option name="+3 Size Modifier"/>
-            <option name="+4 Size Modifier"/>
+            <option name="+{rn} Size Modifier" range="1,5"/>
         </rule>
 
         <rule name="Actor Size Negative Modifier" category="all">
             <formula ref="Hard Progression">
             </formula>
 
-            <option name="-1 Size Modifier"/>
-            <option name="-2 Size Modifier"/>
-            <option name="-3 Size Modifier"/>
-            <option name="-4 Size Modifier"/>
+            <option name="-{rn} Size Modifier   " range="1,5"/>
         </rule>
     </rules>
 
@@ -656,12 +671,18 @@
             </text>
         </aspect>
 
+        <aspect name="Grapple" template="Attack">
+            <rule ref="Grapple"/>
+            <rule ref="Skill" value="Attack">
+                <detail type="inherits_from" value="Strength"/>
+            </rule>
+            <rule ref="Failure Chance" value="12"/>
+            <rule ref="Energy Point Cost" value="+1"/>
 
-        <aspect name="Affluent">
-            <rule ref="Starting Wealth Modifier" value="1200 $$"/>
+            <requires name="Fit"/>
 
             <text>
-                You're richer. For now.
+                Any character that has been grabbed may be grappled.
             </text>
         </aspect>
 
@@ -680,7 +701,7 @@
             </text>
         </aspect>
 
-        <aspect name="Duck and Dodge">
+        <aspect name="Duck and Dodge" template="Defense">
             <rule ref="Skill" value="Defense">
                 <detail type="inherits_from" value="Mobility"/>
             </rule>
@@ -773,7 +794,8 @@
 
             <text>
                 Allows a character to make a more acrobatic dodge. This defense roll requires the character to not be
-                slowed. The defense roll receives the character's mobility modifier as a defense Positive Modifier in addition to a
+                slowed. The defense roll receives the character's mobility modifier as a defense Positive Modifier in
+                addition to a
                 +2 modifier from the aspect itself.
             </text>
         </aspect>
@@ -1640,7 +1662,8 @@
 
             <text>
                 Upon casting, a bolt of lightning arcs from either of the character's hands toward the target enemy with
-                a thundering crack. The attack roll recieves the character's intelligence modifier as an attack Positive Modifier.
+                a thundering crack. The attack roll recieves the character's intelligence modifier as an attack Positive
+                Modifier.
             </text>
         </aspect>
 

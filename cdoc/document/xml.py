@@ -1,9 +1,22 @@
+import xml.etree.ElementTree as etree
+
 DOCUMENT_TAG = 'document'
 FORMULAS_TAG = 'formulas'
 RULES_TAG = 'rules'
 TEMPLATES_TAG = 'templates'
 ASPECTS_TAG = 'aspects'
 RULE_OPTION_TAG = 'option'
+
+
+def load(fd):
+    return load_as(fd, DocumentNode)
+
+
+def load_as(fd, cls):
+    core_tree = etree.parse(fd)
+    root = core_tree.getroot()
+
+    return cls(root)
 
 
 def sanitize_text(text):
@@ -89,83 +102,83 @@ def find_node(nodes, name, attribute='name'):
     return None
 
 
-class Document(XMLBacked):
+class DocumentNode(XMLBacked):
     def formula(self, name):
         return find_node(self.formulas(), name)
 
     def formulas(self):
-        return self._wrap_set('formulas', 'formula', Formula)
+        return self._wrap_set('formulas', 'formula', FormulaNode)
 
     def rule(self, name):
         return find_node(self.rules(), name)
 
     def rules(self):
-        return self._wrap_set('rules', 'rule', Rule)
+        return self._wrap_set('rules', 'rule', RuleNode)
 
     def template(self, name):
         return find_node(self.templates(), name)
 
     def templates(self):
-        return self._wrap_set('templates', 'template', Template)
+        return self._wrap_set('templates', 'template', TemplateNode)
 
     def aspect(self, name):
         return find_node(self.aspects(), name)
 
     def aspects(self):
-        return self._wrap_set('aspects', 'aspect', Aspect)
+        return self._wrap_set('aspects', 'aspect', AspectNode)
 
 
-class Formula(XMLBacked):
+class FormulaNode(XMLBacked):
     pass
 
 
-class Rule(XMLBacked):
+class RuleNode(XMLBacked):
     @property
     def formula(self):
-        return self._wrap('formula', RuleFormula)
+        return self._wrap('formula', RuleFormulaNode)
 
     @property
     def options(self):
-        return self._wrap_each('option', RuleOption)
+        return self._wrap_each('option', RuleOptionNode)
 
 
-class RuleFormula(XMLBacked):
+class RuleFormulaNode(XMLBacked):
     @property
     def arguments(self):
-        return self._wrap_each('argument', RuleFormulaArgument)
+        return self._wrap_each('argument', RuleFormulaArgumentNode)
 
 
-class RuleFormulaArgument(XMLBacked):
+class RuleFormulaArgumentNode(XMLBacked):
     pass
 
 
-class RuleOption(XMLBacked):
+class RuleOptionNode(XMLBacked):
     pass
 
 
-class Template(XMLBacked):
+class TemplateNode(XMLBacked):
     @property
     def requirements(self):
-        return self._wrap_each('requires', TemplateRequirement)
+        return self._wrap_each('requires', TemplateRequirementNode)
 
 
-class TemplateRequirement(XMLBacked):
+class TemplateRequirementNode(XMLBacked):
     pass
 
 
-class Aspect(XMLBacked):
+class AspectNode(XMLBacked):
     @property
     def rules(self):
-        return self._wrap_each('rule', AspectRule)
+        return self._wrap_each('rule', AspectRuleNode)
 
     @property
     def requirements(self):
-        return self._wrap_each('requires', AspectRequirement)
+        return self._wrap_each('requires', AspectRequirementNode)
 
 
-class AspectRule(XMLBacked):
+class AspectRuleNode(XMLBacked):
     pass
 
 
-class AspectRequirement(XMLBacked):
+class AspectRequirementNode(XMLBacked):
     pass

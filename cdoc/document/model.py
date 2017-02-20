@@ -98,17 +98,17 @@ class Model(object):
         self._generate(document)
 
     def check(self):
-        for rule in self.rules:
+        for rule in self.rules():
             if rule.category is None:
                 raise Exception('Rule "{}" is lacking a category.'.format(rule.name))
 
-        for aspect in self.aspects:
+        for aspect in self.aspects():
             # Templates are not required for all aspects yet
             if aspect.template is not None:
                 template = self._templates[aspect.template]
                 template.validate_aspect(aspect)
 
-            cost_breakdown = self.aspect_cost_breakdown(aspect.name)
+            cost_breakdown = self.lookup_ap_cost_breakdown(aspect.name)
             if cost_breakdown.total <= 0:
                 raise Exception('Aspect {} has an invalid AP cost of: {}'.format(
                     aspect.name, cost_breakdown.total))
@@ -128,9 +128,12 @@ class Model(object):
             aspect = Aspect.from_xml(aspect_xml)
             self._aspects[aspect.name] = aspect
 
-    def aspect_cost_breakdown(self, name):
+    def lookup_ap_cost_breakdown(self, name):
+        return self.ap_cost_breakdown(self._aspects[name])
+
+    def ap_cost_breakdown(self, aspect):
         cost_bd = AspectCostBreakdown()
-        for rule_ref in self._aspects[name].rule_references:
+        for rule_ref in aspect.rule_references:
             rule = self._rules[rule_ref.rule_name]
 
             # Since many rules only have one option of the same name, I made this a bit easier
@@ -142,13 +145,21 @@ class Model(object):
 
         return cost_bd
 
-    @property
     def aspects(self):
-        return self._aspects.values()
+        return [self._aspects[k] for k in sorted(self._aspects.keys())]
 
-    @property
-    def rules(self):
-        return self._rules.values()
+    def rules(self, cat_filter=None):
+        rules = list()
+
+        for key in sorted(self._rules):
+            rule = self._rules[key]
+
+            if cat_filter is not None and rule.category != cat_filter:
+                continue
+
+            rules.append(rule)
+
+        return rules
 
 
 class Rule(object):
