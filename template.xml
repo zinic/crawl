@@ -6,10 +6,13 @@
         <formula name="Failure Chance" type="custom" equation="i - 5">
         </formula>
 
-        <formula name="Basic Progression" type="custom" equation="i">
+        <formula name="Linear Progression" type="custom" equation="i">
         </formula>
 
-        <formula name="Easy Progression" type="custom" equation="i * 2">
+        <formula name="Basic Progression" type="custom" equation="i * 2">
+        </formula>
+
+        <formula name="Easy Progression" type="custom" equation="fib(i)">
         </formula>
 
         <formula name="Normal Progression" type="custom" equation="fib(i + 1)">
@@ -129,7 +132,7 @@
         </rule>
 
         <rule name="Effect Trigger" category="all">
-            <formula ref="Easy Flat">
+            <formula ref="Normal Flat">
                 <argument name="Returns AP"/>
             </formula>
 
@@ -137,20 +140,7 @@
             <option name="When Defending"/>
             <option name="When HP Damage is Delt"/>
         </rule>
-
-        <rule name="Heal Affliction" category="all">
-            <formula ref="Hard Flat"/>
-
-            <option name="Staggered"/>
-            <option name="Sickened"/>
-            <option name="Diseased"/>
-            <option name="Poisoned"/>
-
-            <text>
-                Grants immunity to a certain affliction and all of its effects.
-            </text>
-        </rule>
-
+        
         <rule name="Affliction Immunity" category="all">
             <formula ref="Heroic Flat"/>
 
@@ -400,7 +390,7 @@
         </rule>
 
         <rule name="Environment Mitigation" category="all">
-            <formula ref="Normal Progression">
+            <formula ref="Hard Progression">
             </formula>
 
             <option name="Low Light Vision"/>
@@ -409,14 +399,14 @@
         </rule>
 
         <rule name="Energy Point Refresh Positive Modifier" category="all">
-            <formula ref="Heroic Progression">
+            <formula ref="Hard Progression">
             </formula>
 
             <option name="+{rn} Energy Point Refresh" range="1,2"/>
         </rule>
 
         <rule name="Energy Point Refresh Negative Modifier" category="all">
-            <formula ref="Heroic Progression">
+            <formula ref="Hard Progression">
                 <argument name="Returns AP"/>
             </formula>
 
@@ -424,14 +414,14 @@
         </rule>
 
         <rule name="Energy Point Pool Positive Modifier" category="all">
-            <formula ref="Heroic Progression">
+            <formula ref="Hard Progression">
             </formula>
 
             <option name="+{rn} Energy Point Pool" range="1,2"/>
         </rule>
 
         <rule name="Energy Point Pool Negative Modifier" category="all">
-            <formula ref="Heroic Progression">
+            <formula ref="Hard Progression">
                 <argument name="Returns AP"/>
             </formula>
 
@@ -439,7 +429,7 @@
         </rule>
 
         <rule name="Energy Point Pool Mality" category="all">
-            <formula ref="Heroic Progression">
+            <formula ref="Hard Progression">
             </formula>
 
             <option name="-{rn} Energy Point Pool" range="1,2"/>
@@ -461,6 +451,9 @@
 
             <text>
                 Denotes the duration or preparation time required before an aspect becomes effective.
+
+                Part of me thinks that this rule should return AP since it delays when an effect happens but it could also
+                delay when damage happens like a bomb that takes more skill to place, etc.
             </text>
         </rule>
 
@@ -610,7 +603,7 @@
         </rule>
 
         <rule name="Concentration Positive Modifier" category="all">
-            <formula ref="Normal Progression">
+            <formula ref="Easy Progression">
             </formula>
 
             <option name="+{rn} Concentration" range="1,5"/>
@@ -621,7 +614,7 @@
         </rule>
 
         <rule name="Concentration Negative Modifier" category="all">
-            <formula ref="Normal Progression">
+            <formula ref="Easy Progression">
             </formula>
 
             <option name="-{rn} Concentration" range="1,5"/>
@@ -632,17 +625,17 @@
         </rule>
 
         <rule name="Actor Size Positive Modifier" category="all">
-            <formula ref="Hard Progression">
+            <formula ref="Normal Progression">
             </formula>
 
             <option name="+{rn} Size Modifier" range="1,5"/>
         </rule>
 
         <rule name="Actor Size Negative Modifier" category="all">
-            <formula ref="Hard Progression">
+            <formula ref="Normal Progression">
             </formula>
 
-            <option name="-{rn} Size Modifier   " range="1,5"/>
+            <option name="-{rn} Size Modifier" range="1,5"/>
         </rule>
     </rules>
 
@@ -1503,7 +1496,7 @@
             </rule>
             <rule ref="Energy Point Cost" value="+1"/>
             <rule ref="Failure Chance" value="8"/>
-            <rule ref="Heal Affliction" value="Sickened"/>
+            <rule ref="Heals Affliction" value="Sickened"/>
             <rule ref="Magic" value="Magic">
                 <detail type="energy_type" value="Meta"/>
             </rule>
@@ -1520,7 +1513,7 @@
             </rule>
             <rule ref="Energy Point Cost" value="+1"/>
             <rule ref="Failure Chance" value="8"/>
-            <rule ref="Heal Affliction" value="Poisoned"/>
+            <rule ref="Heals Affliction" value="Poisoned"/>
 
             <rule ref="Magic" value="Magic">
                 <detail type="energy_type" value="Meta"/>
@@ -1539,7 +1532,7 @@
             </rule>
             <rule ref="Energy Point Cost" value="+1"/>
             <rule ref="Failure Chance" value="8"/>
-            <rule ref="Heal Affliction" value="Diseased"/>
+            <rule ref="Heals Affliction" value="Diseased"/>
 
             <rule ref="Magic" value="Magic">
                 <detail type="energy_type" value="Meta"/>

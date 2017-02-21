@@ -42,37 +42,37 @@ enemy defense rolls as a negative modifier.
 
 #### Rule: Actor Size Negative Modifier
 
-* **-1 Size Modifier   **
+* **-1 Size Modifier**
+	* Aspect Point Cost: 2
+
+* **-2 Size Modifier**
+	* Aspect Point Cost: 3
+
+* **-3 Size Modifier**
 	* Aspect Point Cost: 5
 
-* **-2 Size Modifier   **
+* **-4 Size Modifier**
 	* Aspect Point Cost: 8
 
-* **-3 Size Modifier   **
+* **-5 Size Modifier**
 	* Aspect Point Cost: 13
-
-* **-4 Size Modifier   **
-	* Aspect Point Cost: 21
-
-* **-5 Size Modifier   **
-	* Aspect Point Cost: 34
 
 #### Rule: Actor Size Positive Modifier
 
 * **+1 Size Modifier**
-	* Aspect Point Cost: 5
+	* Aspect Point Cost: 2
 
 * **+2 Size Modifier**
-	* Aspect Point Cost: 8
+	* Aspect Point Cost: 3
 
 * **+3 Size Modifier**
-	* Aspect Point Cost: 13
+	* Aspect Point Cost: 5
 
 * **+4 Size Modifier**
-	* Aspect Point Cost: 21
+	* Aspect Point Cost: 8
 
 * **+5 Size Modifier**
-	* Aspect Point Cost: 34
+	* Aspect Point Cost: 13
 
 #### Rule: Affliction Immunity
 Grants immunity to a certain affliction and all of its effects.
@@ -111,37 +111,37 @@ Grants immunity to a certain affliction and all of its effects.
 **Note:** this component may not be used for attack rolls.
 
 * **-1 Concentration**
-	* Aspect Point Cost: 2
+	* Aspect Point Cost: 1
 
 * **-2 Concentration**
-	* Aspect Point Cost: 3
+	* Aspect Point Cost: 2
 
 * **-3 Concentration**
-	* Aspect Point Cost: 5
+	* Aspect Point Cost: 3
 
 * **-4 Concentration**
-	* Aspect Point Cost: 8
+	* Aspect Point Cost: 5
 
 * **-5 Concentration**
-	* Aspect Point Cost: 13
+	* Aspect Point Cost: 8
 
 #### Rule: Concentration Positive Modifier
 **Note:** this component may not be used for attack rolls.
 
 * **+1 Concentration**
-	* Aspect Point Cost: 2
+	* Aspect Point Cost: 1
 
 * **+2 Concentration**
-	* Aspect Point Cost: 3
+	* Aspect Point Cost: 2
 
 * **+3 Concentration**
-	* Aspect Point Cost: 5
+	* Aspect Point Cost: 3
 
 * **+4 Concentration**
-	* Aspect Point Cost: 8
+	* Aspect Point Cost: 5
 
 * **+5 Concentration**
-	* Aspect Point Cost: 13
+	* Aspect Point Cost: 8
 
 #### Rule: Core Aspect Negative Modifier
 
@@ -440,6 +440,9 @@ enemy defense rolls as a negative modifier.
 #### Rule: Delayed Effect Duration
 Denotes the duration or preparation time required before an aspect becomes effective.
 
+Part of me thinks that this rule should return AP since it delays when an effect happens but it could also
+delay when damage happens like a bomb that takes more skill to place, etc.
+
 * **1 Turn**
 	* Aspect Point Cost: 2
 
@@ -499,13 +502,13 @@ Denotes the duration or preparation time required before an aspect becomes effec
 #### Rule: Effect Trigger
 
 * **When Attacking**
-	* Aspect Point Cost: 3
+	* Aspect Point Cost: 5
 
 * **When Defending**
-	* Aspect Point Cost: 3
+	* Aspect Point Cost: 5
 
 * **When HP Damage is Delt**
-	* Aspect Point Cost: 3
+	* Aspect Point Cost: 5
 
 #### Rule: Energy Point Cost
 
@@ -527,53 +530,53 @@ Denotes the duration or preparation time required before an aspect becomes effec
 #### Rule: Energy Point Pool Mality
 
 * **-1 Energy Point Pool**
-	* Aspect Point Cost: 13
+	* Aspect Point Cost: 5
 
 * **-2 Energy Point Pool**
-	* Aspect Point Cost: 21
+	* Aspect Point Cost: 8
 
 #### Rule: Energy Point Pool Negative Modifier
 
 * **-1 Energy Point Pool**
-	* Aspect Point Cost: 13
+	* Aspect Point Cost: 5
 
 * **-2 Energy Point Pool**
-	* Aspect Point Cost: 21
+	* Aspect Point Cost: 8
 
 #### Rule: Energy Point Pool Positive Modifier
 
 * **+1 Energy Point Pool**
-	* Aspect Point Cost: 13
+	* Aspect Point Cost: 5
 
 * **+2 Energy Point Pool**
-	* Aspect Point Cost: 21
+	* Aspect Point Cost: 8
 
 #### Rule: Energy Point Refresh Negative Modifier
 
 * **-1 Energy Point Refresh**
-	* Aspect Point Cost: 13
+	* Aspect Point Cost: 5
 
 * **-2 Energy Point Refresh**
-	* Aspect Point Cost: 21
+	* Aspect Point Cost: 8
 
 #### Rule: Energy Point Refresh Positive Modifier
 
 * **+1 Energy Point Refresh**
-	* Aspect Point Cost: 13
+	* Aspect Point Cost: 5
 
 * **+2 Energy Point Refresh**
-	* Aspect Point Cost: 21
+	* Aspect Point Cost: 8
 
 #### Rule: Environment Mitigation
 
 * **Low Light Vision**
-	* Aspect Point Cost: 2
+	* Aspect Point Cost: 5
 
 * **Infrared Sight**
-	* Aspect Point Cost: 3
+	* Aspect Point Cost: 8
 
 * **Echo Sight**
-	* Aspect Point Cost: 5
+	* Aspect Point Cost: 13
 
 #### Rule: Extra Attack
 
@@ -731,21 +734,6 @@ the future only by lowering it.
 * **+10**
 	* Aspect Point Cost: 10
 
-#### Rule: Heal Affliction
-Grants immunity to a certain affliction and all of its effects.
-
-* **Staggered**
-	* Aspect Point Cost: 8
-
-* **Sickened**
-	* Aspect Point Cost: 8
-
-* **Diseased**
-	* Aspect Point Cost: 8
-
-* **Poisoned**
-	* Aspect Point Cost: 8
-
 #### Rule: Heals Affliction
 
 * **Sickened**
@@ -875,76 +863,76 @@ skills come with an action point cost.
 #### Rule: Starting Wealth Modifier
 
 * **100 $$**
-	* Aspect Point Cost: 1
-
-* **200 $$**
 	* Aspect Point Cost: 2
 
-* **300 $$**
-	* Aspect Point Cost: 3
-
-* **400 $$**
+* **200 $$**
 	* Aspect Point Cost: 4
 
-* **500 $$**
-	* Aspect Point Cost: 5
-
-* **600 $$**
+* **300 $$**
 	* Aspect Point Cost: 6
 
-* **700 $$**
-	* Aspect Point Cost: 7
-
-* **800 $$**
+* **400 $$**
 	* Aspect Point Cost: 8
 
-* **900 $$**
-	* Aspect Point Cost: 9
-
-* **1000 $$**
+* **500 $$**
 	* Aspect Point Cost: 10
 
-* **1100 $$**
-	* Aspect Point Cost: 11
-
-* **1200 $$**
+* **600 $$**
 	* Aspect Point Cost: 12
 
-* **1300 $$**
-	* Aspect Point Cost: 13
-
-* **1400 $$**
+* **700 $$**
 	* Aspect Point Cost: 14
 
-* **1500 $$**
-	* Aspect Point Cost: 15
-
-* **1600 $$**
+* **800 $$**
 	* Aspect Point Cost: 16
 
-* **1700 $$**
-	* Aspect Point Cost: 17
-
-* **1800 $$**
+* **900 $$**
 	* Aspect Point Cost: 18
 
-* **1900 $$**
-	* Aspect Point Cost: 19
-
-* **2000 $$**
+* **1000 $$**
 	* Aspect Point Cost: 20
 
-* **2100 $$**
-	* Aspect Point Cost: 21
-
-* **2200 $$**
+* **1100 $$**
 	* Aspect Point Cost: 22
 
+* **1200 $$**
+	* Aspect Point Cost: 24
+
+* **1300 $$**
+	* Aspect Point Cost: 26
+
+* **1400 $$**
+	* Aspect Point Cost: 28
+
+* **1500 $$**
+	* Aspect Point Cost: 30
+
+* **1600 $$**
+	* Aspect Point Cost: 32
+
+* **1700 $$**
+	* Aspect Point Cost: 34
+
+* **1800 $$**
+	* Aspect Point Cost: 36
+
+* **1900 $$**
+	* Aspect Point Cost: 38
+
+* **2000 $$**
+	* Aspect Point Cost: 40
+
+* **2100 $$**
+	* Aspect Point Cost: 42
+
+* **2200 $$**
+	* Aspect Point Cost: 44
+
 * **2300 $$**
-	* Aspect Point Cost: 23
+	* Aspect Point Cost: 46
 
 * **2400 $$**
-	* Aspect Point Cost: 24
+	* Aspect Point Cost: 48
 
 #### Rule: Target Restriction
 
@@ -992,19 +980,19 @@ be used with the weapon.
 Useful for items that have consumable uses.
 
 * **5 Use(s)**
-	* Aspect Point Cost: 1
-
-* **4 Use(s)**
 	* Aspect Point Cost: 2
 
-* **3 Use(s)**
-	* Aspect Point Cost: 3
-
-* **2 Use(s)**
+* **4 Use(s)**
 	* Aspect Point Cost: 4
 
+* **3 Use(s)**
+	* Aspect Point Cost: 6
+
+* **2 Use(s)**
+	* Aspect Point Cost: 8
+
 * **1 Use(s)**
-	* Aspect Point Cost: 5
+	* Aspect Point Cost: 10
 
 ### Charcater Rules
 Rules that apply to characters only.
@@ -1034,10 +1022,10 @@ Requires: **[Intense Resistance Training](#)**
 Requires: **[Intense Endurance Training](#)**
 
 
-Aspect Point Cost: 26
+Aspect Point Cost: 10
 #### Details
-* Energy Point Pool Positive Modifier (**13 AP**): +1 Energy Point Pool
-* Energy Point Refresh Positive Modifier (**13 AP**): +1 Energy Point Refresh
+* Energy Point Pool Positive Modifier (**5 AP**): +1 Energy Point Pool
+* Energy Point Refresh Positive Modifier (**5 AP**): +1 Energy Point Refresh
 
 ### Adrenaline Cascade
 No matter how haggered, this character's body surges with adrenaline so long as their heart pumps. This
@@ -1054,9 +1042,9 @@ Aspect Point Cost: 13
 You're richer. For now.
 
 
-Aspect Point Cost: 12
+Aspect Point Cost: 24
 #### Details
-* Starting Wealth Modifier (**12 AP**): 1200 $$
+* Starting Wealth Modifier (**24 AP**): 1200 $$
 
 ### Arcane Sight
 Allows the caster to augment their vision with magic. This darkens ther vision slightly but does not
@@ -1110,7 +1098,7 @@ Aspect Point Cost: 14
 ### Blood Soaked Life
 
 
-Aspect Point Cost: 27
+Aspect Point Cost: 29
 #### Details
 * Skill (**2 AP**): Concentration
 * Energy Point Cost (**2 AP**): +1
@@ -1118,7 +1106,7 @@ Aspect Point Cost: 27
 * Damage Healed (**8 AP**): 1d8
 * Magic (**2 AP**): Magic
 * Range (**2 AP**): Personal
-* Effect Trigger (**3 AP**): When HP Damage is Delt
+* Effect Trigger (**5 AP**): When HP Damage is Delt
 
 ### Bludgeon
 Grants a character a melee attack that's proficient with blugeoning weapons. This attack may be used
@@ -1137,12 +1125,12 @@ Allows a caster to magically heal a diseased character. The caster must roll the
 the difficulty of the disease.
 
 
-Aspect Point Cost: 25
+Aspect Point Cost: 20
 #### Details
 * Skill (**2 AP**): Concentration
 * Energy Point Cost (**2 AP**): +1
 * Failure Chance (**8 AP**): 8
-* Heal Affliction (**8 AP**): Diseased
+* Heals Affliction (**3 AP**): Diseased
 * Magic (**2 AP**): Magic
 * Range (**3 AP**): Melee
 
@@ -1232,14 +1220,14 @@ inflicted of this type, this field provides **2 DR**. In addition, any effect wi
 a check that the target must make is subject to a **+2 modifier**.
 
 
-Aspect Point Cost: 40
+Aspect Point Cost: 39
 #### Details
 * Skill (**2 AP**): Concentration
 * Energy Point Cost (**2 AP**): +1
 * Failure Chance (**8 AP**): 8
 * Effect Duration (**13 AP**): 4 Turns
 * Damage Resistance (**2 AP**): +2 DR
-* Concentration Positive Modifier (**3 AP**): +2 Concentration
+* Concentration Positive Modifier (**2 AP**): +2 Concentration
 * Magic (**2 AP**): Magic
 * Range (**8 AP**): Medium
 
@@ -1420,11 +1408,11 @@ Requires: **[Fit](#)**
 Requires: **[Slash](#)**
 
 
-Aspect Point Cost: 18
+Aspect Point Cost: 17
 #### Details
 * Skill (**2 AP**): Concentration
 * Failure Chance (**8 AP**): 8
-* Concentration Negative Modifier (**3 AP**): -2 Concentration
+* Concentration Negative Modifier (**2 AP**): -2 Concentration
 * Extra Target (**2 AP**): +1
 * Energy Point Cost (**3 AP**): +2
 
@@ -1483,9 +1471,9 @@ This character has gone through regimented exercises to increase their overall e
 Requires: **[Fit](#)**
 
 
-Aspect Point Cost: 14
+Aspect Point Cost: 6
 #### Details
-* Energy Point Pool Positive Modifier (**13 AP**): +1 Energy Point Pool
+* Energy Point Pool Positive Modifier (**5 AP**): +1 Energy Point Pool
 * HP Pool Positive Modifier (**1 AP**): +1
 
 ### Intense Resistance Training
@@ -1609,11 +1597,11 @@ type. The roll for this attack is treated as the character's Jump check as well.
 Requires: **[Fit](#)**
 
 
-Aspect Point Cost: 14
+Aspect Point Cost: 13
 #### Details
 * Skill (**2 AP**): Concentration
 * Failure Chance (**8 AP**): 8
-* Concentration Positive Modifier (**2 AP**): +1 Concentration
+* Concentration Positive Modifier (**1 AP**): +1 Concentration
 * Energy Point Cost (**2 AP**): +1
 
 ### Lockpicking
@@ -1646,9 +1634,9 @@ Increases a character's natural talent in magic for a given energy type. This as
 multiple times for multiple energy types.
 
 
-Aspect Point Cost: 4
+Aspect Point Cost: 3
 #### Details
-* Concentration Positive Modifier (**2 AP**): +1 Concentration
+* Concentration Positive Modifier (**1 AP**): +1 Concentration
 * Accuracy Positive Modifier (**2 AP**): +1 Attack Accuracy
 
 ### Martial Artist
@@ -1699,9 +1687,9 @@ Years of conditioning has left this character with a hardened mind. Stress rolls
 their ability to tax their mind is far greater than normal.
 
 
-Aspect Point Cost: 13
+Aspect Point Cost: 5
 #### Details
-* Energy Point Pool Positive Modifier (**13 AP**): +1 Energy Point Pool
+* Energy Point Pool Positive Modifier (**5 AP**): +1 Energy Point Pool
 
 ### Mentat
 Further training of the mind has left this character permanatly smarter.
@@ -1777,11 +1765,11 @@ Requires: **[Duck and Dodge](#)**
 Requires: **[Fit](#)**
 
 
-Aspect Point Cost: 16
+Aspect Point Cost: 15
 #### Details
 * Skill (**2 AP**): Concentration
 * Failure Chance (**8 AP**): 8
-* Concentration Positive Modifier (**3 AP**): +2 Concentration
+* Concentration Positive Modifier (**2 AP**): +2 Concentration
 * Energy Point Cost (**3 AP**): +2
 
 ### Purify
@@ -1789,12 +1777,12 @@ Allows a caster to magically heal a poisoned character. The caster must roll the
 the difficulty of the poison.
 
 
-Aspect Point Cost: 25
+Aspect Point Cost: 22
 #### Details
 * Skill (**2 AP**): Concentration
 * Energy Point Cost (**2 AP**): +1
 * Failure Chance (**8 AP**): 8
-* Heal Affliction (**8 AP**): Poisoned
+* Heals Affliction (**5 AP**): Poisoned
 * Magic (**2 AP**): Magic
 * Range (**3 AP**): Melee
 
@@ -1821,9 +1809,9 @@ neglect the body, giving the character a -1 Strength modifier.
 Requires: **[Mental Endurance](#)**
 
 
-Aspect Point Cost: 18
+Aspect Point Cost: 10
 #### Details
-* Energy Point Refresh Positive Modifier (**13 AP**): +1 Energy Point Refresh
+* Energy Point Refresh Positive Modifier (**5 AP**): +1 Energy Point Refresh
 * Core Aspect Negative Modifier (**5 AP**): -1
 
 ### Quiet Steps
@@ -1907,9 +1895,9 @@ need to have line of sight on the target enemy.
 Requires: **[Perception](#)**
 
 
-Aspect Point Cost: 8
+Aspect Point Cost: 7
 #### Details
-* Concentration Positive Modifier (**2 AP**): +1 Concentration
+* Concentration Positive Modifier (**1 AP**): +1 Concentration
 * Failure Chance (**4 AP**): 12
 * Energy Point Cost (**2 AP**): +1
 
@@ -1927,12 +1915,12 @@ Aspect Point Cost: 12
 Allows a caster to magically heal a sickened character.
 
 
-Aspect Point Cost: 25
+Aspect Point Cost: 19
 #### Details
 * Skill (**2 AP**): Concentration
 * Energy Point Cost (**2 AP**): +1
 * Failure Chance (**8 AP**): 8
-* Heal Affliction (**8 AP**): Sickened
+* Heals Affliction (**2 AP**): Sickened
 * Magic (**2 AP**): Magic
 * Range (**3 AP**): Melee
 
@@ -2009,9 +1997,9 @@ Requires: **[Perception](#)**
 Requires: **[Quiet Steps](#)**
 
 
-Aspect Point Cost: 3
+Aspect Point Cost: 2
 #### Details
-* Concentration Positive Modifier (**3 AP**): +2 Concentration
+* Concentration Positive Modifier (**2 AP**): +2 Concentration
 
 ### Treat Illness
 Allows a character to attempt to cure a disease. The disease should annotate information about what
@@ -2033,9 +2021,9 @@ Aspect Point Cost: 10
 TODO
 
 
-Aspect Point Cost: 13
+Aspect Point Cost: 5
 #### Details
-* Energy Point Refresh Positive Modifier (**13 AP**): +1 Energy Point Refresh
+* Energy Point Refresh Positive Modifier (**5 AP**): +1 Energy Point Refresh
 
 ### Volta
 Upon casting, a bolt of lightning arcs from either of the character's hands toward the target enemy with
@@ -2058,7 +2046,7 @@ character a +1 modifier on all attack rolls made with their weapon of choice. Th
 for every weapon type the character wishes to use.
 
 
-Aspect Point Cost: 2
+Aspect Point Cost: 1
 #### Details
-* Concentration Positive Modifier (**2 AP**): +1 Concentration
+* Concentration Positive Modifier (**1 AP**): +1 Concentration
 

@@ -145,6 +145,9 @@ class Model(object):
 
         return cost_bd
 
+    def aspect(self, name):
+        return self._aspects[name]
+
     def aspects(self):
         return [self._aspects[k] for k in sorted(self._aspects.keys())]
 

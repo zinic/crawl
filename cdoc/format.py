@@ -1,5 +1,29 @@
+import io
+
+
 def write_line(line, output):
     output.write('{}\n'.format(line))
+
+
+def format_character(char, model, output):
+    write_line('## Character Sheet', output)
+    write_line('### Details', output)
+    write_line('**Name:** {}'.format(char.name), output)
+
+    ap_total = 0
+    aspect_list = io.StringIO()
+    for aspect_ref in char.aspects:
+        aspect = model.aspect(aspect_ref)
+        aspect_cost = model.ap_cost_breakdown(aspect)
+
+        ap_total += aspect_cost.total
+
+        write_line('##### {}'.format(aspect.name), aspect_list)
+        write_line('* Aspect Point Cost: **{} AP**'.format(aspect_cost.total), aspect_list)
+
+    write_line('### Aspects', output)
+    write_line('#### AP Required: {}'.format(ap_total), output)
+    write_line(aspect_list.getvalue(), output)
 
 
 def format_rules(model, output):
