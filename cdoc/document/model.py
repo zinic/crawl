@@ -263,3 +263,33 @@ class AspectCostReference(object):
         self.rule_name = rule_name
         self.option_name = option_name
         self.cost = cost
+
+
+class CharacterCheckException(Exception):
+    def __init__(self, msg):
+        self.msg = msg
+
+    def __str__(self):
+        return self.msg
+
+
+class Character(object):
+    def __init__(self, name, aspect_points):
+        self.name = name
+        self.aspect_points = aspect_points
+        self.aspects = dict()
+
+    def check(self, model):
+        ap_total = 0
+        for aspect in self.aspects.values():
+            ap_total += model.ap_cost_breakdown(aspect).total
+
+            for requirement_ref in aspect.requirements:
+                if requirement_ref not in self.aspects:
+                    raise CharacterCheckException(
+                        'Character aspect {} is missing requirement {}.'.format(aspect.name, requirement_ref))
+
+        if ap_total > self.aspect_points:
+            raise CharacterCheckException(
+                'Character build requires {} aspect points but only has {} AP allotted.'.format(
+                    ap_total, self.aspect_points))

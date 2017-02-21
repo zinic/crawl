@@ -1,5 +1,6 @@
 from .model import Model
 from .xml import load
+from .yaml import load_character
 
 
 def load_document(path):

@@ -1,14 +1,12 @@
 import sys
-import yaml
 
+from cdoc.document import load_document, load_character
 from cdoc.format import *
-from cdoc.document import load_document
-from cdoc.util import DictBacked
 
 
-def load_character(path):
+def read_character(path, model):
     with open(path, 'r') as fin:
-        return DictBacked(yaml.load(fin)['character'])
+        return load_character(fin, model)
 
 
 def main():
@@ -25,10 +23,10 @@ def main():
         format_markdown(document)
 
     elif target == 'character':
-        char = load_character(sys.argv[2])
+        char = read_character(sys.argv[2], document)
+
         with open('character.md', 'w') as fout:
             format_character(char, document, fout)
-
 
 
 if __name__ == '__main__':

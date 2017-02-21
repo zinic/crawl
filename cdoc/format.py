@@ -6,23 +6,19 @@ def write_line(line, output):
 
 
 def format_character(char, model, output):
-    write_line('## Character Sheet', output)
-    write_line('### Details', output)
-    write_line('**Name:** {}'.format(char.name), output)
-
     ap_total = 0
     aspect_list = io.StringIO()
-    for aspect_ref in char.aspects:
-        aspect = model.aspect(aspect_ref)
-        aspect_cost = model.ap_cost_breakdown(aspect)
+    for aspect in char.aspects.values():
+        ap_total += model.ap_cost_breakdown(aspect).total
+        format_aspect(aspect, model, aspect_list)
 
-        ap_total += aspect_cost.total
+    write_line('# {}'.format(char.name), output)
+    write_line('## Details', output)
+    write_line('* AP Total: {}'.format(char.aspect_points), output)
+    write_line('* AP Spent: {}'.format(ap_total), output)
+    write_line('* AP Available: {}'.format(char.aspect_points - ap_total), output)
 
-        write_line('##### {}'.format(aspect.name), aspect_list)
-        write_line('* Aspect Point Cost: **{} AP**'.format(aspect_cost.total), aspect_list)
-
-    write_line('### Aspects', output)
-    write_line('#### AP Required: {}'.format(ap_total), output)
+    write_line('## Aspect List', output)
     write_line(aspect_list.getvalue(), output)
 
 
@@ -59,6 +55,10 @@ def format_rule(rule, output):
         write_line('* **{}**\n\t* Aspect Point Cost: {}\n'.format(option.name, option.cost), output)
 
 
+def format_aspect_name(name):
+    return name.replace(' ', '_')
+
+
 def format_aspect(aspect, model, output):
     write_line('### {}'.format(aspect.name), output)
 
@@ -66,7 +66,7 @@ def format_aspect(aspect, model, output):
         write_line(aspect.text, output)
 
     for requirement in aspect.requirements:
-        write_line('Requires: **[{}](#)**\n'.format(requirement), output)
+        write_line('Requires: **[{}]({})**\n'.format(requirement), output)
 
     write_line('', output)
 

@@ -1,7 +1,8 @@
 ---
 
 character:
-  name: Some Jackass
+  name: Test Character
+  aspect_points: 200
   aspects:
     - Archery
     - Fit
