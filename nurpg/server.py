@@ -7,7 +7,7 @@ import waitress
 from nurpg.document import load_document
 from nurpg.document.model import Aspect
 from nurpg.document.xml_backend import load_as, AspectNode
-from nurpg.document.yaml import load_character
+from nurpg.document.yaml_backend import load_character
 from nurpg.format import format_aspect, format_character
 
 

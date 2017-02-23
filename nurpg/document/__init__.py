@@ -1,6 +1,6 @@
 from .model import Model
 from .xml_backend import load
-from .yaml import load_character
+from .yaml_backend import load_character
 
 
 def load_document(path):
