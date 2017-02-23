@@ -1,5 +1,5 @@
 from .model import Model
-from .xml import load
+from .xml_backend import load
 from .yaml import load_character
 
 
