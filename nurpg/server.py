@@ -4,10 +4,11 @@ import falcon
 import io
 import waitress
 
-from cdoc.document import load_document
-from cdoc.document.model import Aspect
-from cdoc.document.xml import load_as, AspectNode
-from cdoc.format import format_aspect
+from nurpg.document import load_document
+from nurpg.document.model import Aspect
+from nurpg.document.xml import load_as, AspectNode
+from nurpg.document.yaml import load_character
+from nurpg.format import format_aspect, format_character
 
 
 def _rel_load(target):
@@ -22,10 +23,10 @@ class UIResource(object):
 
     def on_get(self, req, resp):
         resp.set_header('Content-Type', 'text/html')
-        resp.body = UIResource.HTML
+        resp.body = _rel_load('index.html')
 
 
-class FormatResource(object):
+class AspectFormatResource(object):
     def __init__(self, doc):
         self._doc = doc
 
@@ -44,12 +45,31 @@ class FormatResource(object):
             resp.body = '### General Error\n\n{}'.format(ex)
 
 
+class CharacterFormatResource(object):
+    def __init__(self, doc):
+        self._doc = doc
+
+    def on_post(self, req, resp):
+        resp.set_header('Content-Type', 'text/markdown')
+
+        try:
+            character = load_character(req.stream, self._doc)
+
+            buffer = io.StringIO()
+            format_character(character, self._doc, buffer)
+            resp.body = buffer.getvalue()
+            buffer.close()
+        except Exception as ex:
+            resp.body = '### General Error\n\n{}'.format(ex)
+
+
 def main():
     document = load_document('template.xml')
 
     api = falcon.API()
     api.add_route('/ui', UIResource())
-    api.add_route('/format', FormatResource(document))
+    api.add_route('/format/aspect', AspectFormatResource(document))
+    api.add_route('/format/character', CharacterFormatResource(document))
 
     waitress.serve(api, host='0.0.0.0', port=8080)
 

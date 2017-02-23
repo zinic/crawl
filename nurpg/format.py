@@ -66,7 +66,7 @@ def format_aspect(aspect, model, output):
         write_line(aspect.text, output)
 
     for requirement in aspect.requirements:
-        write_line('Requires: **[{}]({})**\n'.format(requirement), output)
+        write_line('Requires: **[{}](#)**\n'.format(requirement), output)
 
     write_line('', output)
 

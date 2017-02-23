@@ -1,7 +1,7 @@
 import yaml
 
-from cdoc.util import DictBacked
-from cdoc.document.model import Character
+from nurpg.util import DictBacked
+from nurpg.document.model import Character
 
 
 def load_character(input, model):

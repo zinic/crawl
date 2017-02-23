@@ -2,7 +2,7 @@ import re
 import math
 import collections
 
-import cdoc.formulas as formulas
+import nurpg.formulas as formulas
 
 DICE_REGEX = re.compile('[\d]+d[\d]+')
 

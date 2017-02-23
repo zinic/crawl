@@ -1,7 +1,7 @@
 import sys
 
-from cdoc.document import load_document, load_character
-from cdoc.format import *
+from nurpg.document import load_document, load_character
+from nurpg.format import *
 
 
 def read_character(path, model):
