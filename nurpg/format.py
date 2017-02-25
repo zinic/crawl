@@ -7,18 +7,32 @@ def write_line(line, output):
 
 def format_character(char, model, output):
     ap_total = 0
+    core_aspects = io.StringIO()
     aspect_list = io.StringIO()
     for aspect in char.aspects.values():
-        ap_total += model.ap_cost_breakdown(aspect).total
-        format_aspect(aspect, model, aspect_list)
+        if aspect.template != 'core':
+            ap_total += model.ap_cost_breakdown(aspect).total
+            format_aspect(aspect, model, aspect_list)
+        else:
+            format_aspect(aspect, model, core_aspects)
 
     write_line('# {}'.format(char.name), output)
+    write_line('## Stats', output)
+
+    for stat_name, value in char.stats(model).items():
+        write_line('* **{}**: {}'.format(stat_name, value), output)
+
     write_line('## Details', output)
     write_line('* AP Total: {}'.format(char.aspect_points), output)
     write_line('* AP Spent: {}'.format(ap_total), output)
     write_line('* AP Available: {}'.format(char.aspect_points - ap_total), output)
 
     write_line('## Aspect List', output)
+
+    # write_line('### Core Aspects', output)
+    # write_line(core_aspects.getvalue(), output)
+
+    write_line('### Aspects', output)
     write_line(aspect_list.getvalue(), output)
 
 

@@ -2,28 +2,24 @@
 ## Rules
 ### Universal Rules
 Universal rules may apply to anything in a game universe.
-#### Rule: Accuracy Negative Modifier
+#### Rule: Accuracy Modifier
 This is used to modify a defense roll instead of a skill check modifier. This modifier may be applied to
-enemy defense rolls as a negative modifier.
-
-* **-1 Attack Accuracy**
-	* Aspect Point Cost: 2
-
-* **-2 Attack Accuracy**
-	* Aspect Point Cost: 3
-
-* **-3 Attack Accuracy**
-	* Aspect Point Cost: 5
-
-* **-4 Attack Accuracy**
-	* Aspect Point Cost: 8
+enemy defense rolls as a Modifier.
 
 * **-5 Attack Accuracy**
-	* Aspect Point Cost: 13
+	* Aspect Point Cost: -13
 
-#### Rule: Accuracy Positive Modifier
-This is used to modify a defense roll instead of a skill check modifier. This modifier may be applied to
-enemy defense rolls as a negative modifier.
+* **-4 Attack Accuracy**
+	* Aspect Point Cost: -8
+
+* **-3 Attack Accuracy**
+	* Aspect Point Cost: -5
+
+* **-2 Attack Accuracy**
+	* Aspect Point Cost: -3
+
+* **-1 Attack Accuracy**
+	* Aspect Point Cost: -2
 
 * **+1 Attack Accuracy**
 	* Aspect Point Cost: 2
@@ -40,24 +36,25 @@ enemy defense rolls as a negative modifier.
 * **+5 Attack Accuracy**
 	* Aspect Point Cost: 13
 
-#### Rule: Actor Size Negative Modifier
-
-* **-1 Size Modifier**
-	* Aspect Point Cost: 2
-
-* **-2 Size Modifier**
-	* Aspect Point Cost: 3
-
-* **-3 Size Modifier**
-	* Aspect Point Cost: 5
-
-* **-4 Size Modifier**
-	* Aspect Point Cost: 8
+#### Rule: Actor Size Modifier
 
 * **-5 Size Modifier**
-	* Aspect Point Cost: 13
+	* Aspect Point Cost: -13
 
-#### Rule: Actor Size Positive Modifier
+* **-4 Size Modifier**
+	* Aspect Point Cost: -8
+
+* **-3 Size Modifier**
+	* Aspect Point Cost: -5
+
+* **-2 Size Modifier**
+	* Aspect Point Cost: -3
+
+* **-1 Size Modifier**
+	* Aspect Point Cost: -2
+
+* **Default (0) Size Modifier**
+	* Aspect Point Cost: 21
 
 * **+1 Size Modifier**
 	* Aspect Point Cost: 2
@@ -107,26 +104,23 @@ Grants immunity to a certain affliction and all of its effects.
 * **Can't be Flanked**
 	* Aspect Point Cost: 8
 
-#### Rule: Concentration Negative Modifier
+#### Rule: Concentration Modifier
 **Note:** this component may not be used for attack rolls.
-
-* **-1 Concentration**
-	* Aspect Point Cost: 1
-
-* **-2 Concentration**
-	* Aspect Point Cost: 2
-
-* **-3 Concentration**
-	* Aspect Point Cost: 3
-
-* **-4 Concentration**
-	* Aspect Point Cost: 5
 
 * **-5 Concentration**
-	* Aspect Point Cost: 8
+	* Aspect Point Cost: -8
 
-#### Rule: Concentration Positive Modifier
-**Note:** this component may not be used for attack rolls.
+* **-4 Concentration**
+	* Aspect Point Cost: -5
+
+* **-3 Concentration**
+	* Aspect Point Cost: -3
+
+* **-2 Concentration**
+	* Aspect Point Cost: -2
+
+* **-1 Concentration**
+	* Aspect Point Cost: -1
 
 * **+1 Concentration**
 	* Aspect Point Cost: 1
@@ -143,18 +137,56 @@ Grants immunity to a certain affliction and all of its effects.
 * **+5 Concentration**
 	* Aspect Point Cost: 8
 
-#### Rule: Core Aspect Negative Modifier
-
-* **-1**
-	* Aspect Point Cost: 5
-
-* **-2**
-	* Aspect Point Cost: 8
+#### Rule: Core Intelligence Modifier
 
 * **-3**
+	* Aspect Point Cost: -13
+
+* **-2**
+	* Aspect Point Cost: -8
+
+* **-1**
+	* Aspect Point Cost: -5
+
+* **+1**
+	* Aspect Point Cost: 5
+
+* **+2**
+	* Aspect Point Cost: 8
+
+* **+3**
 	* Aspect Point Cost: 13
 
-#### Rule: Core Aspect Positive Modifier
+#### Rule: Core Mobility Modifier
+
+* **-3**
+	* Aspect Point Cost: -13
+
+* **-2**
+	* Aspect Point Cost: -8
+
+* **-1**
+	* Aspect Point Cost: -5
+
+* **+1**
+	* Aspect Point Cost: 5
+
+* **+2**
+	* Aspect Point Cost: 8
+
+* **+3**
+	* Aspect Point Cost: 13
+
+#### Rule: Core Strength Modifier
+
+* **-3**
+	* Aspect Point Cost: -13
+
+* **-2**
+	* Aspect Point Cost: -8
+
+* **-1**
+	* Aspect Point Cost: -5
 
 * **+1**
 	* Aspect Point Cost: 5
@@ -399,28 +431,24 @@ attempt to make the weapon more effective against well defended enemeies.
 * **Meta**
 	* Aspect Point Cost: 2
 
-#### Rule: Defense Negative Modifier
+#### Rule: Defense Modifier
 This is used to modify a defense roll instead of a skill check modifier. This modifier may be applied to
-enemy defense rolls as a negative modifier.
-
-* **-1 Defense Effectiveness**
-	* Aspect Point Cost: 2
-
-* **-2 Defense Effectiveness**
-	* Aspect Point Cost: 3
-
-* **-3 Defense Effectiveness**
-	* Aspect Point Cost: 5
-
-* **-4 Defense Effectiveness**
-	* Aspect Point Cost: 8
+enemy defense rolls as a Modifier.
 
 * **-5 Defense Effectiveness**
-	* Aspect Point Cost: 13
+	* Aspect Point Cost: -13
 
-#### Rule: Defense Positive Modifier
-This is used to modify a defense roll instead of a skill check modifier. This modifier may be applied to
-enemy defense rolls as a negative modifier.
+* **-4 Defense Effectiveness**
+	* Aspect Point Cost: -8
+
+* **-3 Defense Effectiveness**
+	* Aspect Point Cost: -5
+
+* **-2 Defense Effectiveness**
+	* Aspect Point Cost: -3
+
+* **-1 Defense Effectiveness**
+	* Aspect Point Cost: -2
 
 * **+1 Defense Effectiveness**
 	* Aspect Point Cost: 2
@@ -440,7 +468,8 @@ enemy defense rolls as a negative modifier.
 #### Rule: Delayed Effect Duration
 Denotes the duration or preparation time required before an aspect becomes effective.
 
-Part of me thinks that this rule should return AP since it delays when an effect happens but it could also
+Part of me thinks that this rule should return AP since it delays when an effect happens but it could
+also
 delay when damage happens like a bomb that takes more skill to place, etc.
 
 * **1 Turn**
@@ -529,42 +558,38 @@ delay when damage happens like a bomb that takes more skill to place, etc.
 
 #### Rule: Energy Point Pool Mality
 
-* **-1 Energy Point Pool**
+* **-2**
+	* Aspect Point Cost: -8
+
+* **-1**
+	* Aspect Point Cost: -5
+
+#### Rule: Energy Point Pool Modifier
+
+* **-2**
+	* Aspect Point Cost: -8
+
+* **-1**
+	* Aspect Point Cost: -5
+
+* **+1**
 	* Aspect Point Cost: 5
 
-* **-2 Energy Point Pool**
+* **+2**
 	* Aspect Point Cost: 8
 
-#### Rule: Energy Point Pool Negative Modifier
+#### Rule: Energy Point Refresh Modifier
 
-* **-1 Energy Point Pool**
+* **-2**
+	* Aspect Point Cost: -8
+
+* **-1**
+	* Aspect Point Cost: -5
+
+* **+1**
 	* Aspect Point Cost: 5
 
-* **-2 Energy Point Pool**
-	* Aspect Point Cost: 8
-
-#### Rule: Energy Point Pool Positive Modifier
-
-* **+1 Energy Point Pool**
-	* Aspect Point Cost: 5
-
-* **+2 Energy Point Pool**
-	* Aspect Point Cost: 8
-
-#### Rule: Energy Point Refresh Negative Modifier
-
-* **-1 Energy Point Refresh**
-	* Aspect Point Cost: 5
-
-* **-2 Energy Point Refresh**
-	* Aspect Point Cost: 8
-
-#### Rule: Energy Point Refresh Positive Modifier
-
-* **+1 Energy Point Refresh**
-	* Aspect Point Cost: 5
-
-* **+2 Energy Point Refresh**
+* **+2**
 	* Aspect Point Cost: 8
 
 #### Rule: Environment Mitigation
@@ -610,99 +635,97 @@ delay when damage happens like a bomb that takes more skill to place, etc.
 All skill checks should specifiy a base difficulty. The player may choose to augment the difficulty in
 the future only by lowering it.
 
-* **Critical Success Only**
+* **Critical Failure Only**
 	* Aspect Point Cost: -4
 
-* **19**
+* **Difficulty 2**
 	* Aspect Point Cost: -3
 
-* **18**
+* **Difficulty 3**
 	* Aspect Point Cost: -2
 
-* **17**
+* **Difficulty 4**
 	* Aspect Point Cost: -1
 
-* **16**
+* **Difficulty 5**
 	* Aspect Point Cost: 0
 
-* **15**
+* **Difficulty 6**
 	* Aspect Point Cost: 1
 
-* **14**
+* **Difficulty 7**
 	* Aspect Point Cost: 2
 
-* **13**
+* **Difficulty 8**
 	* Aspect Point Cost: 3
 
-* **12**
+* **Difficulty 9**
 	* Aspect Point Cost: 4
 
-* **11**
+* **Difficulty 10**
 	* Aspect Point Cost: 5
 
-* **10**
+* **Difficulty 11**
 	* Aspect Point Cost: 6
 
-* **9**
+* **Difficulty 12**
 	* Aspect Point Cost: 7
 
-* **8**
+* **Difficulty 13**
 	* Aspect Point Cost: 8
 
-* **7**
+* **Difficulty 14**
 	* Aspect Point Cost: 9
 
-* **6**
+* **Difficulty 15**
 	* Aspect Point Cost: 10
 
-* **5**
+* **Difficulty 16**
 	* Aspect Point Cost: 11
 
-* **4**
+* **Difficulty 17**
 	* Aspect Point Cost: 12
 
-* **3**
+* **Difficulty 18**
 	* Aspect Point Cost: 13
 
-* **2**
+* **Difficulty 19**
 	* Aspect Point Cost: 14
 
-* **Critical Failure Only**
+* **Critical Success Only**
 	* Aspect Point Cost: 15
 
-#### Rule: HP Pool Negative Modifier
-
-* **-1**
-	* Aspect Point Cost: 1
-
-* **-2**
-	* Aspect Point Cost: 2
-
-* **-3**
-	* Aspect Point Cost: 3
-
-* **-4**
-	* Aspect Point Cost: 4
-
-* **-5**
-	* Aspect Point Cost: 5
-
-* **-6**
-	* Aspect Point Cost: 6
-
-* **-7**
-	* Aspect Point Cost: 7
-
-* **-8**
-	* Aspect Point Cost: 8
-
-* **-9**
-	* Aspect Point Cost: 9
+#### Rule: HP Pool Modifier
 
 * **-10**
-	* Aspect Point Cost: 10
+	* Aspect Point Cost: -10
 
-#### Rule: HP Pool Positive Modifier
+* **-9**
+	* Aspect Point Cost: -9
+
+* **-8**
+	* Aspect Point Cost: -8
+
+* **-7**
+	* Aspect Point Cost: -7
+
+* **-6**
+	* Aspect Point Cost: -6
+
+* **-5**
+	* Aspect Point Cost: -5
+
+* **-4**
+	* Aspect Point Cost: -4
+
+* **-3**
+	* Aspect Point Cost: -3
+
+* **-2**
+	* Aspect Point Cost: -2
+
+* **-1**
+	* Aspect Point Cost: -1
 
 * **+1**
 	* Aspect Point Cost: 1
@@ -862,76 +885,76 @@ skills come with an action point cost.
 
 #### Rule: Starting Wealth Modifier
 
-* **100 $$**
+* **$$ 100**
 	* Aspect Point Cost: 2
 
-* **200 $$**
+* **$$ 200**
 	* Aspect Point Cost: 4
 
-* **300 $$**
+* **$$ 300**
 	* Aspect Point Cost: 6
 
-* **400 $$**
+* **$$ 400**
 	* Aspect Point Cost: 8
 
-* **500 $$**
+* **$$ 500**
 	* Aspect Point Cost: 10
 
-* **600 $$**
+* **$$ 600**
 	* Aspect Point Cost: 12
 
-* **700 $$**
+* **$$ 700**
 	* Aspect Point Cost: 14
 
-* **800 $$**
+* **$$ 800**
 	* Aspect Point Cost: 16
 
-* **900 $$**
+* **$$ 900**
 	* Aspect Point Cost: 18
 
-* **1000 $$**
+* **$$ 1000**
 	* Aspect Point Cost: 20
 
-* **1100 $$**
+* **$$ 1100**
 	* Aspect Point Cost: 22
 
-* **1200 $$**
+* **$$ 1200**
 	* Aspect Point Cost: 24
 
-* **1300 $$**
+* **$$ 1300**
 	* Aspect Point Cost: 26
 
-* **1400 $$**
+* **$$ 1400**
 	* Aspect Point Cost: 28
 
-* **1500 $$**
+* **$$ 1500**
 	* Aspect Point Cost: 30
 
-* **1600 $$**
+* **$$ 1600**
 	* Aspect Point Cost: 32
 
-* **1700 $$**
+* **$$ 1700**
 	* Aspect Point Cost: 34
 
-* **1800 $$**
+* **$$ 1800**
 	* Aspect Point Cost: 36
 
-* **1900 $$**
+* **$$ 1900**
 	* Aspect Point Cost: 38
 
-* **2000 $$**
+* **$$ 2000**
 	* Aspect Point Cost: 40
 
-* **2100 $$**
+* **$$ 2100**
 	* Aspect Point Cost: 42
 
-* **2200 $$**
+* **$$ 2200**
 	* Aspect Point Cost: 44
 
-* **2300 $$**
+* **$$ 2300**
 	* Aspect Point Cost: 46
 
-* **2400 $$**
+* **$$ 2400**
 	* Aspect Point Cost: 48
 
 #### Rule: Target Restriction
@@ -979,21 +1002,6 @@ be used with the weapon.
 #### Rule: Number of Uses
 Useful for items that have consumable uses.
 
-* **5 Use(s)**
-	* Aspect Point Cost: 2
-
-* **4 Use(s)**
-	* Aspect Point Cost: 4
-
-* **3 Use(s)**
-	* Aspect Point Cost: 6
-
-* **2 Use(s)**
-	* Aspect Point Cost: 8
-
-* **1 Use(s)**
-	* Aspect Point Cost: 10
-
 ### Charcater Rules
 Rules that apply to characters only.
 #### Rule: Grapple
@@ -1024,8 +1032,8 @@ Requires: **[Intense Endurance Training](#)**
 
 Aspect Point Cost: 10
 #### Details
-* Energy Point Pool Positive Modifier (**5 AP**): +1 Energy Point Pool
-* Energy Point Refresh Positive Modifier (**5 AP**): +1 Energy Point Refresh
+* Energy Point Pool Modifier (**5 AP**): +1
+* Energy Point Refresh Modifier (**5 AP**): +1
 
 ### Adrenaline Cascade
 No matter how haggered, this character's body surges with adrenaline so long as their heart pumps. This
@@ -1044,7 +1052,7 @@ You're richer. For now.
 
 Aspect Point Cost: 24
 #### Details
-* Starting Wealth Modifier (**24 AP**): 1200 $$
+* Starting Wealth Modifier (**24 AP**): $$ 1200
 
 ### Arcane Sight
 Allows the caster to augment their vision with magic. This darkens ther vision slightly but does not
@@ -1053,11 +1061,11 @@ their sight. At game master discretion, some magic items, even hidden or obscure
 these obstacles.
 
 
-Aspect Point Cost: 36
+Aspect Point Cost: 39
 #### Details
 * Skill (**2 AP**): Concentration
 * Energy Point Cost (**2 AP**): +1
-* Failure Chance (**4 AP**): 12
+* Failure Chance (**7 AP**): Difficulty 12
 * Magic (**2 AP**): Magic
 * Range (**5 AP**): Short
 * Effect Duration (**21 AP**): 8 Turns
@@ -1067,10 +1075,10 @@ Allows a character to use a bow, cross bow or other similar drawn force weapon. 
 higher of either the character's mobility modifier or the character's strength modifier.
 
 
-Aspect Point Cost: 12
+Aspect Point Cost: 7
 #### Details
 * Skill (**2 AP**): Attack
-* Failure Chance (**8 AP**): 8
+* Failure Chance (**3 AP**): Difficulty 8
 * Energy Point Cost (**2 AP**): +1
 
 ### Blend into Crowds
@@ -1078,31 +1086,31 @@ Allows a street-wise character to blend into a crowd and use this action as a se
 must be sufficiently thick such that the game master considers blending in acceptable for stealth.
 
 
-Aspect Point Cost: 10
+Aspect Point Cost: 5
 #### Details
 * Skill (**2 AP**): Non-Combat
-* Failure Chance (**8 AP**): 8
+* Failure Chance (**3 AP**): Difficulty 8
 
 ### Block
 Allows a character to steady their body against a shield and attempt to absorb an incoming attack
 completely. This ability requires the character to have a working shield equipped.
 
 
-Aspect Point Cost: 14
+Aspect Point Cost: 9
 #### Details
 * Skill (**2 AP**): Defense
-* Defense Positive Modifier (**2 AP**): +1 Defense Effectiveness
-* Failure Chance (**8 AP**): 8
+* Defense Modifier (**2 AP**): +1 Defense Effectiveness
+* Failure Chance (**3 AP**): Difficulty 8
 * Energy Point Cost (**2 AP**): +1
 
 ### Blood Soaked Life
 
 
-Aspect Point Cost: 29
+Aspect Point Cost: 24
 #### Details
 * Skill (**2 AP**): Concentration
 * Energy Point Cost (**2 AP**): +1
-* Failure Chance (**8 AP**): 8
+* Failure Chance (**3 AP**): Difficulty 8
 * Damage Healed (**8 AP**): 1d8
 * Magic (**2 AP**): Magic
 * Range (**2 AP**): Personal
@@ -1114,10 +1122,10 @@ with heavy, blunt melee weapons, including staves and other similar weapon types
 slashing weapons which require different techniques.
 
 
-Aspect Point Cost: 12
+Aspect Point Cost: 7
 #### Details
 * Skill (**2 AP**): Attack
-* Failure Chance (**8 AP**): 8
+* Failure Chance (**3 AP**): Difficulty 8
 * Energy Point Cost (**2 AP**): +1
 
 ### Cleanse
@@ -1125,11 +1133,11 @@ Allows a caster to magically heal a diseased character. The caster must roll the
 the difficulty of the disease.
 
 
-Aspect Point Cost: 20
+Aspect Point Cost: 15
 #### Details
 * Skill (**2 AP**): Concentration
 * Energy Point Cost (**2 AP**): +1
-* Failure Chance (**8 AP**): 8
+* Failure Chance (**3 AP**): Difficulty 8
 * Heals Affliction (**3 AP**): Diseased
 * Magic (**2 AP**): Magic
 * Range (**3 AP**): Melee
@@ -1163,11 +1171,11 @@ able to target magical effects as a reaction.
 Requires: **[Dismiss](#)**
 
 
-Aspect Point Cost: 44
+Aspect Point Cost: 39
 #### Details
 * Skill (**2 AP**): Attack
 * Energy Point Cost (**3 AP**): +2
-* Failure Chance (**8 AP**): 8
+* Failure Chance (**3 AP**): Difficulty 8
 * Magic (**2 AP**): Magic
 * Opportunistic Action (**21 AP**): Reactionary
 * Range (**8 AP**): Medium
@@ -1189,10 +1197,10 @@ device check against this difficulty to successfully disable the device.
 Requires: **[Lockpicking](#)**
 
 
-Aspect Point Cost: 10
+Aspect Point Cost: 5
 #### Details
 * Skill (**2 AP**): Non-Combat
-* Failure Chance (**8 AP**): 8
+* Failure Chance (**3 AP**): Difficulty 8
 
 ### Dismiss
 Target a magical effect with an invisible beam directed by the caster. The target must be within
@@ -1205,11 +1213,11 @@ check roll. If the spell is not known, additional negatives apply to this check.
 opposed check, the target spell is dismissed and all of its effects immedieatly stop.
 
 
-Aspect Point Cost: 22
+Aspect Point Cost: 17
 #### Details
 * Skill (**2 AP**): Attack
 * Energy Point Cost (**2 AP**): +1
-* Failure Chance (**8 AP**): 8
+* Failure Chance (**3 AP**): Difficulty 8
 * Magic (**2 AP**): Magic
 * Range (**8 AP**): Medium
 
@@ -1220,14 +1228,14 @@ inflicted of this type, this field provides **2 DR**. In addition, any effect wi
 a check that the target must make is subject to a **+2 modifier**.
 
 
-Aspect Point Cost: 39
+Aspect Point Cost: 34
 #### Details
 * Skill (**2 AP**): Concentration
 * Energy Point Cost (**2 AP**): +1
-* Failure Chance (**8 AP**): 8
+* Failure Chance (**3 AP**): Difficulty 8
 * Effect Duration (**13 AP**): 4 Turns
 * Damage Resistance (**2 AP**): +2 DR
-* Concentration Positive Modifier (**2 AP**): +2 Concentration
+* Concentration Modifier (**2 AP**): +2 Concentration
 * Magic (**2 AP**): Magic
 * Range (**8 AP**): Medium
 
@@ -1239,21 +1247,21 @@ standing forward jump apply to this check. Failing this check renders the charac
 Requires: **[Duck and Dodge](#)**
 
 
-Aspect Point Cost: 13
+Aspect Point Cost: 8
 #### Details
 * Skill (**2 AP**): Concentration
-* Failure Chance (**8 AP**): 8
+* Failure Chance (**3 AP**): Difficulty 8
 * Energy Point Cost (**3 AP**): +2
 
 ### Duck and Dodge
 Allows a character to make a simple dodge-based defense against an incoming attack. The defense roll
-recieves the character's **mobility modifier** as a defense Positive Modifier.
+recieves the character's **mobility modifier** as a defense Modifier.
 
 
-Aspect Point Cost: 12
+Aspect Point Cost: 7
 #### Details
 * Skill (**2 AP**): Defense
-* Failure Chance (**8 AP**): 8
+* Failure Chance (**3 AP**): Difficulty 8
 * Energy Point Cost (**2 AP**): +1
 
 ### Farsight
@@ -1266,11 +1274,11 @@ This spell may be used in place of any perception check.
 Requires: **[Magic Trick](#)**
 
 
-Aspect Point Cost: 17
+Aspect Point Cost: 24
 #### Details
 * Skill (**2 AP**): Concentration
 * Energy Point Cost (**3 AP**): +2
-* Failure Chance (**2 AP**): 14
+* Failure Chance (**9 AP**): Difficulty 14
 * Magic (**2 AP**): Magic
 * Range (**8 AP**): Medium
 
@@ -1284,12 +1292,12 @@ A successful Field Aid staunches bleeding and may heal 1d6 health points of dama
 Requires: **[Medicine](#)**
 
 
-Aspect Point Cost: 19
+Aspect Point Cost: 14
 #### Details
 * Skill (**2 AP**): Concentration
 * Damage Healed (**6 AP**): 1d6
 * Energy Point Cost (**3 AP**): +2
-* Failure Chance (**8 AP**): 8
+* Failure Chance (**3 AP**): Difficulty 8
 
 ### Filch
 Grants a careful character the ability to secretly pilfer small objects from their surroundings. The
@@ -1301,21 +1309,21 @@ character's filch check.
 Requires: **[High Manual Dexterity](#)**
 
 
-Aspect Point Cost: 10
+Aspect Point Cost: 5
 #### Details
 * Skill (**2 AP**): Non-Combat
-* Failure Chance (**8 AP**): 8
+* Failure Chance (**3 AP**): Difficulty 8
 
 ### Firebolt
 The character conjures a ball of fire in either hand which may then be thrown. The attack roll recieves
-the character's intelligence modifier as an attack Positive Modifier.
+the character's intelligence modifier as an attack Modifier.
 
 
-Aspect Point Cost: 26
+Aspect Point Cost: 21
 #### Details
 * Skill (**2 AP**): Attack
 * Energy Point Cost (**2 AP**): +1
-* Failure Chance (**8 AP**): 8
+* Failure Chance (**3 AP**): Difficulty 8
 * Magic (**2 AP**): Magic
 * Range (**8 AP**): Medium
 * Damage (**4 AP**): 1d4
@@ -1327,18 +1335,18 @@ Pool.
 
 Aspect Point Cost: 1
 #### Details
-* HP Pool Positive Modifier (**1 AP**): +1
+* HP Pool Modifier (**1 AP**): +1
 
 ### Foil
 The character conjures a kinetic shield that covers a target's body. This shield has a **DR of 4**. The
 shield lasts for 10 minutes or until an attack lands and the shield absorbs damage.
 
 
-Aspect Point Cost: 34
+Aspect Point Cost: 29
 #### Details
 * Skill (**2 AP**): Concentration
 * Energy Point Cost (**2 AP**): +1
-* Failure Chance (**8 AP**): 8
+* Failure Chance (**3 AP**): Difficulty 8
 * Effect Duration (**13 AP**): 4 Turns
 * Damage Resistance (**4 AP**): +4 DR
 * Magic (**2 AP**): Magic
@@ -1346,15 +1354,15 @@ Aspect Point Cost: 34
 
 ### Frantic Defense
 Allows a character to make a simple dodge-based defense against an incoming attack. The defense roll
-recieves the character's **mobility modifier** as a defense Positive Modifier.
+recieves the character's **mobility modifier** as a defense Modifier.
 
 Requires: **[Fit](#)**
 
 
-Aspect Point Cost: 8
+Aspect Point Cost: 11
 #### Details
 * Skill (**2 AP**): Defense
-* Failure Chance (**4 AP**): 12
+* Failure Chance (**7 AP**): Difficulty 12
 * Energy Point Cost (**2 AP**): +1
 
 ### Frigid Cone
@@ -1362,11 +1370,11 @@ The character summons a cold blast directed in a cone shaped area in-front of th
 an area attack for all affected map cells.
 
 
-Aspect Point Cost: 44
+Aspect Point Cost: 39
 #### Details
 * Skill (**2 AP**): Attack
 * Energy Point Cost (**2 AP**): +1
-* Failure Chance (**8 AP**): 8
+* Failure Chance (**3 AP**): Difficulty 8
 * Magic (**2 AP**): Magic
 * Area Effect (**21 AP**): Cone
 * Range (**5 AP**): Short
@@ -1379,10 +1387,10 @@ master based on the complexity of the ideas being communicated. Both characters 
 gesture checks - the target does not need to have this aspect in order to make the check.
 
 
-Aspect Point Cost: 12
+Aspect Point Cost: 7
 #### Details
 * Skill (**2 AP**): Concentration
-* Failure Chance (**8 AP**): 8
+* Failure Chance (**3 AP**): Difficulty 8
 * Energy Point Cost (**2 AP**): +1
 
 ### Grapple
@@ -1391,11 +1399,11 @@ Any character that has been grabbed may be grappled.
 Requires: **[Fit](#)**
 
 
-Aspect Point Cost: 13
+Aspect Point Cost: 16
 #### Details
 * Grapple (**5 AP**): Grapple
 * Skill (**2 AP**): Attack
-* Failure Chance (**4 AP**): 12
+* Failure Chance (**7 AP**): Difficulty 12
 * Energy Point Cost (**2 AP**): +1
 
 ### Great Slash
@@ -1408,11 +1416,11 @@ Requires: **[Fit](#)**
 Requires: **[Slash](#)**
 
 
-Aspect Point Cost: 17
+Aspect Point Cost: 8
 #### Details
 * Skill (**2 AP**): Concentration
-* Failure Chance (**8 AP**): 8
-* Concentration Negative Modifier (**2 AP**): -2 Concentration
+* Failure Chance (**3 AP**): Difficulty 8
+* Concentration Modifier (**-2 AP**): -2 Concentration
 * Extra Target (**2 AP**): +1
 * Energy Point Cost (**3 AP**): +2
 
@@ -1423,12 +1431,12 @@ after the delayed effect duration of 1 turn.
 Requires: **[Magic Trick](#)**
 
 
-Aspect Point Cost: 32
+Aspect Point Cost: 31
 #### Details
 * Skill (**2 AP**): Concentration
 * Delayed Effect Duration (**2 AP**): 1 Turn
 * Energy Point Cost (**2 AP**): +1
-* Failure Chance (**6 AP**): 10
+* Failure Chance (**5 AP**): Difficulty 10
 * Magic (**2 AP**): Magic
 * Range (**5 AP**): Short
 * Teleportation (**13 AP**): Simple Teleportation
@@ -1452,7 +1460,7 @@ Requires: **[Martial Artist](#)**
 Aspect Point Cost: 9
 #### Details
 * Combat Expertise (**8 AP**): Can't be Flanked
-* HP Pool Positive Modifier (**1 AP**): +1
+* HP Pool Modifier (**1 AP**): +1
 
 ### Intense Acrobatic Training
 This character has gone through regimented exercises to increase their overall mobility and fitness.
@@ -1462,8 +1470,8 @@ Requires: **[Fit](#)**
 
 Aspect Point Cost: 6
 #### Details
-* Core Aspect Positive Modifier (**5 AP**): +1
-* HP Pool Positive Modifier (**1 AP**): +1
+* Core Mobility Modifier (**5 AP**): +1
+* HP Pool Modifier (**1 AP**): +1
 
 ### Intense Endurance Training
 This character has gone through regimented exercises to increase their overall endurance.
@@ -1473,8 +1481,8 @@ Requires: **[Fit](#)**
 
 Aspect Point Cost: 6
 #### Details
-* Energy Point Pool Positive Modifier (**5 AP**): +1 Energy Point Pool
-* HP Pool Positive Modifier (**1 AP**): +1
+* Energy Point Pool Modifier (**5 AP**): +1
+* HP Pool Modifier (**1 AP**): +1
 
 ### Intense Resistance Training
 This character has gone through regimented exercises to increase their overall strength and fitness.
@@ -1484,8 +1492,8 @@ Requires: **[Fit](#)**
 
 Aspect Point Cost: 6
 #### Details
-* Core Aspect Positive Modifier (**5 AP**): +1
-* HP Pool Positive Modifier (**1 AP**): +1
+* Core Strength Modifier (**5 AP**): +1
+* HP Pool Modifier (**1 AP**): +1
 
 ### Keen Senses
 When a target character passes or appears within melee range of the character, as an opportunistic
@@ -1503,81 +1511,81 @@ Aspect Point Cost: 13
 Knowledge and understanding of the related domain.
 
 
-Aspect Point Cost: 12
+Aspect Point Cost: 7
 #### Details
 * Skill (**2 AP**): Concentration
 * Energy Point Cost (**2 AP**): +1
-* Failure Chance (**8 AP**): 8
+* Failure Chance (**3 AP**): Difficulty 8
 
 ### Knowledge - Arcane
 Knowledge and understanding of the related domain.
 
 
-Aspect Point Cost: 12
+Aspect Point Cost: 7
 #### Details
 * Skill (**2 AP**): Concentration
 * Energy Point Cost (**2 AP**): +1
-* Failure Chance (**8 AP**): 8
+* Failure Chance (**3 AP**): Difficulty 8
 
 ### Knowledge - Historical
 Knowledge and understanding of the related domain.
 
 
-Aspect Point Cost: 12
+Aspect Point Cost: 7
 #### Details
 * Skill (**2 AP**): Concentration
 * Energy Point Cost (**2 AP**): +1
-* Failure Chance (**8 AP**): 8
+* Failure Chance (**3 AP**): Difficulty 8
 
 ### Knowledge - Martial
 Knowledge and understanding of the related domain.
 
 
-Aspect Point Cost: 12
+Aspect Point Cost: 7
 #### Details
 * Skill (**2 AP**): Concentration
 * Energy Point Cost (**2 AP**): +1
-* Failure Chance (**8 AP**): 8
+* Failure Chance (**3 AP**): Difficulty 8
 
 ### Knowledge - Mechanical
 Knowledge and understanding of the related domain.
 
 
-Aspect Point Cost: 12
+Aspect Point Cost: 7
 #### Details
 * Skill (**2 AP**): Concentration
 * Energy Point Cost (**2 AP**): +1
-* Failure Chance (**8 AP**): 8
+* Failure Chance (**3 AP**): Difficulty 8
 
 ### Knowledge - Natural Sciences
 Knowledge and understanding of the related domain.
 
 
-Aspect Point Cost: 12
+Aspect Point Cost: 7
 #### Details
 * Skill (**2 AP**): Concentration
 * Energy Point Cost (**2 AP**): +1
-* Failure Chance (**8 AP**): 8
+* Failure Chance (**3 AP**): Difficulty 8
 
 ### Knowledge - Occult
 Knowledge and understanding of the related domain.
 
 
-Aspect Point Cost: 12
+Aspect Point Cost: 7
 #### Details
 * Skill (**2 AP**): Concentration
 * Energy Point Cost (**2 AP**): +1
-* Failure Chance (**8 AP**): 8
+* Failure Chance (**3 AP**): Difficulty 8
 
 ### Knowledge - Survival
 Knowledge and understanding of the related domain.
 
 
-Aspect Point Cost: 12
+Aspect Point Cost: 7
 #### Details
 * Skill (**2 AP**): Concentration
 * Energy Point Cost (**2 AP**): +1
-* Failure Chance (**8 AP**): 8
+* Failure Chance (**3 AP**): Difficulty 8
 
 ### Leadership
 Leadership allows a character to begin splitting aspect points between their self and another character.
@@ -1597,26 +1605,26 @@ type. The roll for this attack is treated as the character's Jump check as well.
 Requires: **[Fit](#)**
 
 
-Aspect Point Cost: 13
+Aspect Point Cost: 8
 #### Details
 * Skill (**2 AP**): Concentration
-* Failure Chance (**8 AP**): 8
-* Concentration Positive Modifier (**1 AP**): +1 Concentration
+* Failure Chance (**3 AP**): Difficulty 8
+* Concentration Modifier (**1 AP**): +1 Concentration
 * Energy Point Cost (**2 AP**): +1
 
 ### Lockpicking
 Grants a character the knowledge necessary to disable simple lock devices. Lock devices are granted a
 difficulty by the game master depending on their complexity and make. The character must make a
 lockpicking check against this difficulty to successfully disable the lock. This check recieves the
-character's **mobility modifier** as a Positive Modifier.
+character's **mobility modifier** as a Modifier.
 
 Requires: **[High Manual Dexterity](#)**
 
 
-Aspect Point Cost: 10
+Aspect Point Cost: 5
 #### Details
 * Skill (**2 AP**): Non-Combat
-* Failure Chance (**8 AP**): 8
+* Failure Chance (**3 AP**): Difficulty 8
 
 ### Magic Trick
 Perform a minor trick or illusion such as clean a handheld object to summoning a playing card from your
@@ -1636,8 +1644,8 @@ multiple times for multiple energy types.
 
 Aspect Point Cost: 3
 #### Details
-* Concentration Positive Modifier (**1 AP**): +1 Concentration
-* Accuracy Positive Modifier (**2 AP**): +1 Attack Accuracy
+* Concentration Modifier (**1 AP**): +1 Concentration
+* Accuracy Modifier (**2 AP**): +1 Attack Accuracy
 
 ### Martial Artist
 This aspect grants a character expert martial arts knowledge. Because of this intense training, the
@@ -1660,10 +1668,10 @@ suffering. If the medicine check passes, the character is enlightened as to the 
 complications.
 
 
-Aspect Point Cost: 16
+Aspect Point Cost: 11
 #### Details
 * Skill (**2 AP**): Non-Combat
-* Failure Chance (**8 AP**): 8
+* Failure Chance (**3 AP**): Difficulty 8
 * Damage Healed (**6 AP**): 1d6
 
 ### Melee Parry
@@ -1674,12 +1682,12 @@ Upon a successful parry, the incoming attack is deflected. The defender is grant
 perform an attack upon their opponent .
 
 
-Aspect Point Cost: 22
+Aspect Point Cost: 29
 #### Details
 * Skill (**2 AP**): Concentration
 * Range (**3 AP**): Melee
 * Extra Attack (**13 AP**): +1
-* Failure Chance (**2 AP**): 14
+* Failure Chance (**9 AP**): Difficulty 14
 * Energy Point Cost (**2 AP**): +1
 
 ### Mental Endurance
@@ -1689,7 +1697,7 @@ their ability to tax their mind is far greater than normal.
 
 Aspect Point Cost: 5
 #### Details
-* Energy Point Pool Positive Modifier (**5 AP**): +1 Energy Point Pool
+* Energy Point Pool Modifier (**5 AP**): +1
 
 ### Mentat
 Further training of the mind has left this character permanatly smarter.
@@ -1699,23 +1707,23 @@ Requires: **[Mental Endurance](#)**
 
 Aspect Point Cost: 5
 #### Details
-* Core Aspect Positive Modifier (**5 AP**): +1
+* Core Intelligence Modifier (**5 AP**): +1
 
 ### Obscura
 Creates a roaming darkness that condenses as a weightless mist. This mist is only effective on incoming
 ranged attacks, making it far more difficult for attackers to target anything inside it.
 
-The negative modifier to range attacks persists even inside the mist. Melee attacks however are
+The Modifier to range attacks persists even inside the mist. Melee attacks however are
 unaffacted.
 
 
-Aspect Point Cost: 71
+Aspect Point Cost: 62
 #### Details
 * Skill (**2 AP**): Concentration
 * Energy Point Cost (**2 AP**): +1
-* Failure Chance (**2 AP**): 14
+* Failure Chance (**9 AP**): Difficulty 14
 * Magic (**2 AP**): Magic
-* Accuracy Negative Modifier (**8 AP**): -4 Attack Accuracy
+* Accuracy Modifier (**-8 AP**): -4 Attack Accuracy
 * Range (**8 AP**): Medium
 * Area Effect (**34 AP**): Dome
 * Effect Duration (**13 AP**): 4 Turns
@@ -1728,11 +1736,11 @@ difficulty listed here - the game master is responsible for providing resonable 
 the surroundings in the setting and the target of observation.
 
 
-Aspect Point Cost: 12
+Aspect Point Cost: 7
 #### Details
 * Skill (**2 AP**): Concentration
 * Energy Point Cost (**2 AP**): +1
-* Failure Chance (**8 AP**): 8
+* Failure Chance (**3 AP**): Difficulty 8
 
 ### Pickpocket
 Grants a careful character the ability to pilfer objects from a target. The character must first make a
@@ -1748,15 +1756,15 @@ the target character's mobility check.
 Requires: **[Filch](#)**
 
 
-Aspect Point Cost: 12
+Aspect Point Cost: 7
 #### Details
 * Skill (**2 AP**): Concentration
-* Failure Chance (**8 AP**): 8
+* Failure Chance (**3 AP**): Difficulty 8
 * Energy Point Cost (**2 AP**): +1
 
 ### Pivot and Roll
 Allows a character to make a more acrobatic dodge. This defense roll requires the character to not be
-slowed. The defense roll receives the character's mobility modifier as a defense Positive Modifier in
+slowed. The defense roll receives the character's mobility modifier as a defense Modifier in
 addition to a
 +2 modifier from the aspect itself.
 
@@ -1765,11 +1773,11 @@ Requires: **[Duck and Dodge](#)**
 Requires: **[Fit](#)**
 
 
-Aspect Point Cost: 15
+Aspect Point Cost: 10
 #### Details
 * Skill (**2 AP**): Concentration
-* Failure Chance (**8 AP**): 8
-* Concentration Positive Modifier (**2 AP**): +2 Concentration
+* Failure Chance (**3 AP**): Difficulty 8
+* Concentration Modifier (**2 AP**): +2 Concentration
 * Energy Point Cost (**3 AP**): +2
 
 ### Purify
@@ -1777,11 +1785,11 @@ Allows a caster to magically heal a poisoned character. The caster must roll the
 the difficulty of the poison.
 
 
-Aspect Point Cost: 22
+Aspect Point Cost: 17
 #### Details
 * Skill (**2 AP**): Concentration
 * Energy Point Cost (**2 AP**): +1
-* Failure Chance (**8 AP**): 8
+* Failure Chance (**3 AP**): Difficulty 8
 * Heals Affliction (**5 AP**): Poisoned
 * Magic (**2 AP**): Magic
 * Range (**3 AP**): Melee
@@ -1793,11 +1801,11 @@ The character conjures a simple kinetic shield that covers their entire body. Th
 This spell may target *only the caster* and no one else.
 
 
-Aspect Point Cost: 18
+Aspect Point Cost: 13
 #### Details
 * Skill (**2 AP**): Concentration
 * Energy Point Cost (**2 AP**): +1
-* Failure Chance (**8 AP**): 8
+* Failure Chance (**3 AP**): Difficulty 8
 * Damage Resistance (**2 AP**): +2 DR
 * Magic (**2 AP**): Magic
 * Range (**2 AP**): Personal
@@ -1809,20 +1817,21 @@ neglect the body, giving the character a -1 Strength modifier.
 Requires: **[Mental Endurance](#)**
 
 
-Aspect Point Cost: 10
+Aspect Point Cost: 5
 #### Details
-* Energy Point Refresh Positive Modifier (**5 AP**): +1 Energy Point Refresh
-* Core Aspect Negative Modifier (**5 AP**): -1
+* Energy Point Refresh Modifier (**5 AP**): +1
+* Core Intelligence Modifier (**5 AP**): +1
+* Core Strength Modifier (**-5 AP**): -1
 
 ### Quiet Steps
 Allows a character to make a stealth check by walking carefully. In order to enter stealth, the
 character must not be visible by any enemies.
 
 
-Aspect Point Cost: 12
+Aspect Point Cost: 7
 #### Details
 * Skill (**2 AP**): Concentration
-* Failure Chance (**8 AP**): 8
+* Failure Chance (**3 AP**): Difficulty 8
 * Energy Point Cost (**2 AP**): +1
 
 ### Rage
@@ -1849,11 +1858,11 @@ the attacker to ignore the negative for attacking through occupied map cells.
 Requires: **[Slash](#)**
 
 
-Aspect Point Cost: 15
+Aspect Point Cost: 10
 #### Details
 * Skill (**2 AP**): Attack
 * Careful Blow (**3 AP**): Careful Blow
-* Failure Chance (**8 AP**): 8
+* Failure Chance (**3 AP**): Difficulty 8
 * Energy Point Cost (**2 AP**): +1
 
 ### Refresh
@@ -1862,11 +1871,11 @@ bleeding the character may be suffering from. This spell may be used as many tim
 target.
 
 
-Aspect Point Cost: 23
+Aspect Point Cost: 18
 #### Details
 * Skill (**2 AP**): Concentration
 * Energy Point Cost (**2 AP**): +1
-* Failure Chance (**8 AP**): 8
+* Failure Chance (**3 AP**): Difficulty 8
 * Damage Healed (**6 AP**): 1d6
 * Magic (**2 AP**): Magic
 * Range (**3 AP**): Melee
@@ -1879,11 +1888,11 @@ their own message. After this the conversation ends and send must be cast again 
 communication.
 
 
-Aspect Point Cost: 10
+Aspect Point Cost: 13
 #### Details
 * Skill (**2 AP**): Concentration
 * Energy Point Cost (**2 AP**): +1
-* Failure Chance (**4 AP**): 12
+* Failure Chance (**7 AP**): Difficulty 12
 * Magic (**2 AP**): Magic
 
 ### Shot Call
@@ -1895,31 +1904,31 @@ need to have line of sight on the target enemy.
 Requires: **[Perception](#)**
 
 
-Aspect Point Cost: 7
+Aspect Point Cost: 10
 #### Details
-* Concentration Positive Modifier (**1 AP**): +1 Concentration
-* Failure Chance (**4 AP**): 12
+* Concentration Modifier (**1 AP**): +1 Concentration
+* Failure Chance (**7 AP**): Difficulty 12
 * Energy Point Cost (**2 AP**): +1
 
 ### Slash
 Grants a character a melee slashing attack. This attack may be used with any slashing melee weapon.
 
 
-Aspect Point Cost: 12
+Aspect Point Cost: 7
 #### Details
 * Skill (**2 AP**): Attack
-* Failure Chance (**8 AP**): 8
+* Failure Chance (**3 AP**): Difficulty 8
 * Energy Point Cost (**2 AP**): +1
 
 ### Sooth
 Allows a caster to magically heal a sickened character.
 
 
-Aspect Point Cost: 19
+Aspect Point Cost: 14
 #### Details
 * Skill (**2 AP**): Concentration
 * Energy Point Cost (**2 AP**): +1
-* Failure Chance (**8 AP**): 8
+* Failure Chance (**3 AP**): Difficulty 8
 * Heals Affliction (**2 AP**): Sickened
 * Magic (**2 AP**): Magic
 * Range (**3 AP**): Melee
@@ -1931,11 +1940,11 @@ speed and trajectory. Upon impact it explodes with a loud crack and a flurry of 
 short-lived magical sparks.
 
 
-Aspect Point Cost: 25
+Aspect Point Cost: 20
 #### Details
 * Skill (**2 AP**): Attack
 * Energy Point Cost (**2 AP**): +1
-* Failure Chance (**8 AP**): 8
+* Failure Chance (**3 AP**): Difficulty 8
 * Magic (**2 AP**): Magic
 * Range (**5 AP**): Short
 * Damage (**6 AP**): 1d6
@@ -1944,10 +1953,10 @@ Aspect Point Cost: 25
 Grants a character a melee stabbing attack. This attack may be used with any thrusting melee weapon.
 
 
-Aspect Point Cost: 12
+Aspect Point Cost: 7
 #### Details
 * Skill (**2 AP**): Attack
-* Failure Chance (**8 AP**): 8
+* Failure Chance (**3 AP**): Difficulty 8
 * Energy Point Cost (**2 AP**): +1
 
 ### Summon Water or Food
@@ -1958,11 +1967,11 @@ The caster may instead pick up an empty serving dish and summon a simple meal of
 that tastes like dry oatmeal. This bread provides enough sustience for 1 person for 1 day.
 
 
-Aspect Point Cost: 14
+Aspect Point Cost: 9
 #### Details
 * Skill (**2 AP**): Concentration
 * Energy Point Cost (**2 AP**): +1
-* Failure Chance (**8 AP**): 8
+* Failure Chance (**3 AP**): Difficulty 8
 * Magic (**2 AP**): Magic
 
 ### Survival
@@ -1970,21 +1979,21 @@ Generic skill for scrounging for food, edibles, dungeoneering, etc. The game mas
 to the base difficulty depending on the situation. This is a useful skill for tracking.
 
 
-Aspect Point Cost: 10
+Aspect Point Cost: 5
 #### Details
 * Skill (**2 AP**): Non-Combat
-* Failure Chance (**8 AP**): 8
+* Failure Chance (**3 AP**): Difficulty 8
 
 ### Toss
 Allows a character to use their mind to toss an object of size modifier -3 or smaller with their mind.
 This object may be thrown hard enough to 1d4 damage and is accurate up to range medium.
 
 
-Aspect Point Cost: 26
+Aspect Point Cost: 21
 #### Details
 * Skill (**2 AP**): Attack
 * Energy Point Cost (**2 AP**): +1
-* Failure Chance (**8 AP**): 8
+* Failure Chance (**3 AP**): Difficulty 8
 * Magic (**2 AP**): Magic
 * Range (**8 AP**): Medium
 * Damage (**4 AP**): 1d4
@@ -1999,7 +2008,7 @@ Requires: **[Quiet Steps](#)**
 
 Aspect Point Cost: 2
 #### Details
-* Concentration Positive Modifier (**2 AP**): +2 Concentration
+* Concentration Modifier (**2 AP**): +2 Concentration
 
 ### Treat Illness
 Allows a character to attempt to cure a disease. The disease should annotate information about what
@@ -2012,10 +2021,10 @@ disease also has a difficulty set that must be beat by this check.
 Requires: **[Medicine](#)**
 
 
-Aspect Point Cost: 10
+Aspect Point Cost: 5
 #### Details
 * Skill (**2 AP**): Non-Combat
-* Failure Chance (**8 AP**): 8
+* Failure Chance (**3 AP**): Difficulty 8
 
 ### Vigor
 TODO
@@ -2023,7 +2032,7 @@ TODO
 
 Aspect Point Cost: 5
 #### Details
-* Energy Point Refresh Positive Modifier (**5 AP**): +1 Energy Point Refresh
+* Energy Point Refresh Modifier (**5 AP**): +1
 
 ### Volta
 Upon casting, a bolt of lightning arcs from either of the character's hands toward the target enemy with
@@ -2031,11 +2040,11 @@ a thundering crack. The attack roll recieves the character's intelligence modifi
 Modifier.
 
 
-Aspect Point Cost: 26
+Aspect Point Cost: 21
 #### Details
 * Skill (**2 AP**): Attack
 * Energy Point Cost (**2 AP**): +1
-* Failure Chance (**8 AP**): 8
+* Failure Chance (**3 AP**): Difficulty 8
 * Magic (**2 AP**): Magic
 * Range (**8 AP**): Medium
 * Damage (**4 AP**): 1d4
@@ -2048,5 +2057,5 @@ for every weapon type the character wishes to use.
 
 Aspect Point Cost: 1
 #### Details
-* Concentration Positive Modifier (**1 AP**): +1 Concentration
+* Concentration Modifier (**1 AP**): +1 Concentration
 

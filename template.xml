@@ -15,13 +15,13 @@
         <formula name="Easy Progression" type="custom" equation="fib(i)">
         </formula>
 
-        <formula name="Normal Progression" type="custom" equation="fib(i + 1)">
+        <formula name="Normal Progression" type="custom" equation="fib(i, starting_step=1)">
         </formula>
 
-        <formula name="Hard Progression" type="custom" equation="fib(i + 3)">
+        <formula name="Hard Progression" type="custom" equation="fib(i, starting_step=3)">
         </formula>
 
-        <formula name="Heroic Progression" type="custom" equation="fib(i + 5)">
+        <formula name="Heroic Progression" type="custom" equation="fib(i, starting_step=5)">
         </formula>
 
         <!-- Flat Cost Progressions -->
@@ -52,7 +52,7 @@
                 <argument name="Returns AP"/>
             </formula>
 
-            <option name="{rn} Use(s)" range="5,1"/>
+            <option name="{range_value} Use(s)" range="5,1"/>
 
             <text>
                 Useful for items that have consumable uses.
@@ -140,7 +140,7 @@
             <option name="When Defending"/>
             <option name="When HP Damage is Delt"/>
         </rule>
-        
+
         <rule name="Affliction Immunity" category="all">
             <formula ref="Heroic Flat"/>
 
@@ -224,7 +224,7 @@
             <formula ref="Normal Progression">
             </formula>
 
-            <option name="+{rn}" range="1,6"/>
+            <option name="+{range_value}" range="1,6"/>
 
             <text>
                 **Note:** this component may not be used for attack rolls.
@@ -235,14 +235,14 @@
             <formula ref="Damage Cost">
             </formula>
 
-            <option name="+{rn} DR" range="1,24"/>
+            <option name="+{range_value} DR" range="1,24"/>
         </rule>
 
         <rule name="Starting Wealth Modifier" category="all">
             <formula ref="Basic Progression">
             </formula>
 
-            <option name="{rn}00 $$" range="1,24"/>
+            <option name="$$ {range_value}00" range="1,24"/>
         </rule>
 
         <rule name="Extra Attack" category="all">
@@ -250,7 +250,7 @@
             </formula>
 
 
-            <option name="+{rn}" range="1,3"/>
+            <option name="+{range_value}" range="1,3"/>
         </rule>
 
         <rule name="Extra Target" category="all">
@@ -258,7 +258,7 @@
             </formula>
 
 
-            <option name="+{rn}" range="1,5"/>
+            <option name="+{range_value}" range="1,5"/>
         </rule>
 
         <rule name="Damage" category="all">
@@ -317,19 +317,11 @@
             <option name="4d12"/>
         </rule>
 
-        <rule name="HP Pool Positive Modifier" category="all">
+        <rule name="HP Pool Modifier" category="all">
             <formula ref="Damage Cost">
             </formula>
 
-            <option name="+{rn}" range="1,10"/>
-        </rule>
-
-        <rule name="HP Pool Negative Modifier" category="all">
-            <formula ref="Damage Cost">
-                <argument name="Returns AP"/>
-            </formula>
-
-            <option name="-{rn}" range="1,10"/>
+            <option name="{range_value}" range="-10,10"/>
         </rule>
 
         <rule name="Target Restriction" category="all">
@@ -340,26 +332,42 @@
             <option name="Enemies Only"/>
         </rule>
 
-        <rule name="Core Aspect Positive Modifier" category="all">
-            <formula ref="Hard Progression">
-            </formula>
-
-            <option name="+{rn}" range="1,3"/>
-        </rule>
-
-        <rule name="Core Aspect Negative Modifier" category="all">
+        <rule name="Core Strength Modifier" category="all">
             <formula ref="Hard Progression">
                 <argument name="Returns AP"/>
             </formula>
 
-            <option name="-{rn}" range="1,3"/>
+            <modifies ref="Strength"/>
+
+            <option name="{range_value}" range="-3,3"/>
+        </rule>
+
+
+        <rule name="Core Mobility Modifier" category="all">
+            <formula ref="Hard Progression">
+                <argument name="Returns AP"/>
+            </formula>
+
+            <modifies ref="Mobility"/>
+
+            <option name="{range_value}" range="-3,3"/>
+        </rule>
+
+        <rule name="Core Intelligence Modifier" category="all">
+            <formula ref="Hard Progression">
+                <argument name="Returns AP"/>
+            </formula>
+
+            <modifies ref="Intelligence"/>
+
+            <option name="{range_value}" range="-3,3"/>
         </rule>
 
         <rule name="Crit Success Modifier" category="all">
             <formula ref="Normal Progression">
             </formula>
 
-            <option name="+{rn}" range="1,5"/>
+            <option name="+{range_value}" range="1,5"/>
         </rule>
 
         <rule name="Energy Point Cost" category="all">
@@ -367,7 +375,7 @@
                 <argument name="Returns AP"/>
             </formula>
 
-            <option name="+{rn}" range="1,5"/>
+            <option name="+{range_value}" range="1,5"/>
         </rule>
 
         <rule name="Opportunistic Action" category="all">
@@ -398,41 +406,26 @@
             <option name="Echo Sight"/>
         </rule>
 
-        <rule name="Energy Point Refresh Positive Modifier" category="all">
-            <formula ref="Hard Progression">
-            </formula>
-
-            <option name="+{rn} Energy Point Refresh" range="1,2"/>
-        </rule>
-
-        <rule name="Energy Point Refresh Negative Modifier" category="all">
+        <rule name="Energy Point Refresh Modifier" category="all">
             <formula ref="Hard Progression">
                 <argument name="Returns AP"/>
             </formula>
 
-            <option name="-{rn} Energy Point Refresh" range="1,2"/>
+            <option name="{range_value}" range="-2,2"/>
         </rule>
 
-        <rule name="Energy Point Pool Positive Modifier" category="all">
+        <rule name="Energy Point Pool Modifier" category="all">
             <formula ref="Hard Progression">
             </formula>
 
-            <option name="+{rn} Energy Point Pool" range="1,2"/>
-        </rule>
-
-        <rule name="Energy Point Pool Negative Modifier" category="all">
-            <formula ref="Hard Progression">
-                <argument name="Returns AP"/>
-            </formula>
-
-            <option name="-{rn} Energy Point Pool" range="1,2"/>
+            <option name="{range_value}" range="-2,2"/>
         </rule>
 
         <rule name="Energy Point Pool Mality" category="all">
             <formula ref="Hard Progression">
             </formula>
 
-            <option name="-{rn} Energy Point Pool" range="1,2"/>
+            <option name="{range_value}" range="-2,-1"/>
         </rule>
 
         <rule name="Delayed Effect Duration" category="all">
@@ -452,7 +445,8 @@
             <text>
                 Denotes the duration or preparation time required before an aspect becomes effective.
 
-                Part of me thinks that this rule should return AP since it delays when an effect happens but it could also
+                Part of me thinks that this rule should return AP since it delays when an effect happens but it could
+                also
                 delay when damage happens like a bomb that takes more skill to place, etc.
             </text>
         </rule>
@@ -476,9 +470,9 @@
             <formula ref="Failure Chance">
             </formula>
 
-            <option name="Critical Success Only"/>
-            <option name="{rn}" range="19,2"/>
             <option name="Critical Failure Only"/>
+            <option name="Difficulty {range_value}" range="2,19"/>
+            <option name="Critical Success Only"/>
 
             <text>
                 All skill checks should specifiy a base difficulty. The player may choose to augment the difficulty in
@@ -542,7 +536,7 @@
             <formula ref="Normal Progression">
             </formula>
 
-            <option name="+{rn} Map Cell(s)" range="1,2"/>
+            <option name="+{range_value} Map Cell(s)" range="1,2"/>
         </rule>
 
         <rule name="Heals Affliction" category="all">
@@ -554,88 +548,48 @@
             <option name="Poisoned"/>
         </rule>
 
-        <rule name="Defense Positive Modifier" category="all">
+        <rule name="Defense Modifier" category="all">
             <formula ref="Normal Progression">
             </formula>
 
-            <option name="+{rn} Defense Effectiveness" range="1,5"/>
+            <option name="{range_value} Defense Effectiveness" range="-5,5"/>
 
             <text>
                 This is used to modify a defense roll instead of a skill check modifier. This modifier may be applied to
-                enemy defense rolls as a negative modifier.
+                enemy defense rolls as a Modifier.
             </text>
         </rule>
 
-        <rule name="Defense Negative Modifier" category="all">
+        <rule name="Accuracy Modifier" category="all">
             <formula ref="Normal Progression">
             </formula>
 
-            <option name="-{rn} Defense Effectiveness" range="1,5"/>
+            <option name="{range_value} Attack Accuracy" range="-5,5"/>
 
             <text>
                 This is used to modify a defense roll instead of a skill check modifier. This modifier may be applied to
-                enemy defense rolls as a negative modifier.
+                enemy defense rolls as a Modifier.
             </text>
         </rule>
 
-        <rule name="Accuracy Positive Modifier" category="all">
-            <formula ref="Normal Progression">
-            </formula>
-
-            <option name="+{rn} Attack Accuracy" range="1,5"/>
-
-            <text>
-                This is used to modify a defense roll instead of a skill check modifier. This modifier may be applied to
-                enemy defense rolls as a negative modifier.
-            </text>
-        </rule>
-
-        <rule name="Accuracy Negative Modifier" category="all">
-            <formula ref="Normal Progression">
-            </formula>
-
-            <option name="-{rn} Attack Accuracy" range="1,5"/>
-
-            <text>
-                This is used to modify a defense roll instead of a skill check modifier. This modifier may be applied to
-                enemy defense rolls as a negative modifier.
-            </text>
-        </rule>
-
-        <rule name="Concentration Positive Modifier" category="all">
+        <rule name="Concentration Modifier" category="all">
             <formula ref="Easy Progression">
             </formula>
 
-            <option name="+{rn} Concentration" range="1,5"/>
+            <option name="{range_value} Concentration" range="-5,5"/>
 
             <text>
                 **Note:** this component may not be used for attack rolls.
             </text>
         </rule>
 
-        <rule name="Concentration Negative Modifier" category="all">
-            <formula ref="Easy Progression">
-            </formula>
-
-            <option name="-{rn} Concentration" range="1,5"/>
-
-            <text>
-                **Note:** this component may not be used for attack rolls.
-            </text>
-        </rule>
-
-        <rule name="Actor Size Positive Modifier" category="all">
+        <rule name="Actor Size Modifier" category="all">
             <formula ref="Normal Progression">
             </formula>
 
-            <option name="+{rn} Size Modifier" range="1,5"/>
-        </rule>
-
-        <rule name="Actor Size Negative Modifier" category="all">
-            <formula ref="Normal Progression">
-            </formula>
-
-            <option name="-{rn} Size Modifier" range="1,5"/>
+            <option name="{range_value} Size Modifier" range="-5,-1"/>
+            <option name="Default (0) Size Modifier"/>
+            <option name="{range_value} Size Modifier" range="1,5"/>
         </rule>
     </rules>
 
@@ -657,7 +611,7 @@
 
     <aspects>
         <aspect name="Affluent" template="None">
-            <rule ref="Starting Wealth Modifier" value="1200 $$"/>
+            <rule ref="Starting Wealth Modifier" value="$$ 1200"/>
 
             <text>
                 You're richer. For now.
@@ -669,7 +623,7 @@
             <rule ref="Skill" value="Attack">
                 <detail type="inherits_from" value="Strength"/>
             </rule>
-            <rule ref="Failure Chance" value="12"/>
+            <rule ref="Failure Chance" value="Difficulty 12"/>
             <rule ref="Energy Point Cost" value="+1"/>
 
             <requires name="Fit"/>
@@ -683,14 +637,14 @@
             <rule ref="Skill" value="Defense">
                 <detail type="inherits_from" value="Mobility"/>
             </rule>
-            <rule ref="Failure Chance" value="12"/>
+            <rule ref="Failure Chance" value="Difficulty 12"/>
             <rule ref="Energy Point Cost" value="+1"/>
 
             <requires name="Fit"/>
 
             <text>
                 Allows a character to make a simple dodge-based defense against an incoming attack. The defense roll
-                recieves the character's **mobility modifier** as a defense Positive Modifier.
+                recieves the character's **mobility modifier** as a defense Modifier.
             </text>
         </aspect>
 
@@ -698,12 +652,12 @@
             <rule ref="Skill" value="Defense">
                 <detail type="inherits_from" value="Mobility"/>
             </rule>
-            <rule ref="Failure Chance" value="8"/>
+            <rule ref="Failure Chance" value="Difficulty 8"/>
             <rule ref="Energy Point Cost" value="+1"/>
 
             <text>
                 Allows a character to make a simple dodge-based defense against an incoming attack. The defense roll
-                recieves the character's **mobility modifier** as a defense Positive Modifier.
+                recieves the character's **mobility modifier** as a defense Modifier.
             </text>
         </aspect>
 
@@ -711,7 +665,7 @@
             <rule ref="Skill" value="Non-Combat">
                 <detail type="inherits_from" value="Intelligence"/>
             </rule>
-            <rule ref="Failure Chance" value="8"/>
+            <rule ref="Failure Chance" value="Difficulty 8"/>
 
             <text>
                 Generic skill for scrounging for food, edibles, dungeoneering, etc. The game master is encouraged to add
@@ -723,7 +677,7 @@
             <rule ref="Skill" value="Concentration">
                 <detail type="inherits_from" value="Standing Forward Jump"/>
             </rule>
-            <rule ref="Failure Chance" value="8"/>
+            <rule ref="Failure Chance" value="Difficulty 8"/>
             <rule ref="Energy Point Cost" value="+2"/>
 
             <requires name="Duck and Dodge"/>
@@ -776,8 +730,8 @@
                 <detail type="limit" value="Unusuable when Slowed"/>
                 <detail type="inherits_from" value="Mobility"/>
             </rule>
-            <rule ref="Failure Chance" value="8"/>
-            <rule ref="Concentration Positive Modifier" value="+2 Concentration">
+            <rule ref="Failure Chance" value="Difficulty 8"/>
+            <rule ref="Concentration Modifier" value="+2 Concentration">
                 <detail type="targets" value="Pivot and Roll"/>
             </rule>
 
@@ -787,7 +741,7 @@
 
             <text>
                 Allows a character to make a more acrobatic dodge. This defense roll requires the character to not be
-                slowed. The defense roll receives the character's mobility modifier as a defense Positive Modifier in
+                slowed. The defense roll receives the character's mobility modifier as a defense Modifier in
                 addition to a
                 +2 modifier from the aspect itself.
             </text>
@@ -798,7 +752,7 @@
                 <detail type="inherits_from" value="Intelligence"/>
             </rule>
             <rule ref="Energy Point Cost" value="+1"/>
-            <rule ref="Failure Chance" value="8"/>
+            <rule ref="Failure Chance" value="Difficulty 8"/>
             <rule ref="Damage Healed" value="1d8"/>
             <rule ref="Magic" value="Magic">
                 <detail type="energy_type" value="Meta"/>
@@ -811,7 +765,7 @@
         </aspect>
 
         <aspect name="Trap Finder">
-            <rule ref="Concentration Positive Modifier" value="+2 Concentration">
+            <rule ref="Concentration Modifier" value="+2 Concentration">
                 <detail type="limit" value="Trap Finding Only"/>
                 <detail type="targets" value="Perception"/>
             </rule>
@@ -825,7 +779,7 @@
         </aspect>
 
         <aspect name="Fit">
-            <rule ref="HP Pool Positive Modifier" value="+1"/>
+            <rule ref="HP Pool Modifier" value="+1"/>
 
             <text>
                 This aspect applies to any physically fit character. All fit characters also receive +1 HP to their HP
@@ -834,8 +788,8 @@
         </aspect>
 
         <aspect name="Adonic">
-            <rule ref="Energy Point Pool Positive Modifier" value="+1 Energy Point Pool"/>
-            <rule ref="Energy Point Refresh Positive Modifier" value="+1 Energy Point Refresh"/>
+            <rule ref="Energy Point Pool Modifier" value="+1"/>
+            <rule ref="Energy Point Refresh Modifier" value="+1"/>
 
             <requires name="Intense Acrobatic Training"/>
             <requires name="Intense Resistance Training"/>
@@ -847,7 +801,7 @@
         </aspect>
 
         <aspect name="Vigor">
-            <rule ref="Energy Point Refresh Positive Modifier" value="+1 Energy Point Refresh"/>
+            <rule ref="Energy Point Refresh Modifier" value="+1"/>
 
             <text>
                 TODO
@@ -855,10 +809,9 @@
         </aspect>
 
         <aspect name="Quiescence">
-            <rule ref="Energy Point Refresh Positive Modifier" value="+1 Energy Point Refresh"/>
-            <rule ref="Core Aspect Negative Modifier" value="-1">
-                <detail type="targets" value="Strength"/>
-            </rule>
+            <rule ref="Energy Point Refresh Modifier" value="+1"/>
+            <rule ref="Core Intelligence Modifier" value="+1"/>
+            <rule ref="Core Strength Modifier" value="-1"/>
 
             <requires name="Mental Endurance"/>
 
@@ -873,7 +826,7 @@
                 <detail type="inherits_from" value="Intelligence"/>
             </rule>
             <rule ref="Energy Point Cost" value="+1"/>
-            <rule ref="Failure Chance" value="8"/>
+            <rule ref="Failure Chance" value="Difficulty 8"/>
 
             <text>
                 Knowledge and understanding of the related domain.
@@ -885,7 +838,7 @@
                 <detail type="inherits_from" value="Intelligence"/>
             </rule>
             <rule ref="Energy Point Cost" value="+1"/>
-            <rule ref="Failure Chance" value="8"/>
+            <rule ref="Failure Chance" value="Difficulty 8"/>
 
             <text>
                 Knowledge and understanding of the related domain.
@@ -897,7 +850,7 @@
                 <detail type="inherits_from" value="Intelligence"/>
             </rule>
             <rule ref="Energy Point Cost" value="+1"/>
-            <rule ref="Failure Chance" value="8"/>
+            <rule ref="Failure Chance" value="Difficulty 8"/>
 
             <text>
                 Knowledge and understanding of the related domain.
@@ -909,7 +862,7 @@
                 <detail type="inherits_from" value="Intelligence"/>
             </rule>
             <rule ref="Energy Point Cost" value="+1"/>
-            <rule ref="Failure Chance" value="8"/>
+            <rule ref="Failure Chance" value="Difficulty 8"/>
 
             <text>
                 Knowledge and understanding of the related domain.
@@ -921,7 +874,7 @@
                 <detail type="inherits_from" value="Intelligence"/>
             </rule>
             <rule ref="Energy Point Cost" value="+1"/>
-            <rule ref="Failure Chance" value="8"/>
+            <rule ref="Failure Chance" value="Difficulty 8"/>
 
             <text>
                 Knowledge and understanding of the related domain.
@@ -933,7 +886,7 @@
                 <detail type="inherits_from" value="Intelligence"/>
             </rule>
             <rule ref="Energy Point Cost" value="+1"/>
-            <rule ref="Failure Chance" value="8"/>
+            <rule ref="Failure Chance" value="Difficulty 8"/>
 
             <text>
                 Knowledge and understanding of the related domain.
@@ -945,7 +898,7 @@
                 <detail type="inherits_from" value="Intelligence"/>
             </rule>
             <rule ref="Energy Point Cost" value="+1"/>
-            <rule ref="Failure Chance" value="8"/>
+            <rule ref="Failure Chance" value="Difficulty 8"/>
 
             <text>
                 Knowledge and understanding of the related domain.
@@ -957,7 +910,7 @@
                 <detail type="inherits_from" value="Intelligence"/>
             </rule>
             <rule ref="Energy Point Cost" value="+1"/>
-            <rule ref="Failure Chance" value="8"/>
+            <rule ref="Failure Chance" value="Difficulty 8"/>
 
             <text>
                 Knowledge and understanding of the related domain.
@@ -976,7 +929,7 @@
 
         <aspect name="Indomitable">
             <rule ref="Combat Expertise" value="Can't be Flanked"/>
-            <rule ref="HP Pool Positive Modifier" value="+1"/>
+            <rule ref="HP Pool Modifier" value="+1"/>
 
             <requires name="Martial Artist"/>
 
@@ -987,8 +940,8 @@
         </aspect>
 
         <aspect name="Intense Endurance Training">
-            <rule ref="Energy Point Pool Positive Modifier" value="+1 Energy Point Pool"/>
-            <rule ref="HP Pool Positive Modifier" value="+1"/>
+            <rule ref="Energy Point Pool Modifier" value="+1"/>
+            <rule ref="HP Pool Modifier" value="+1"/>
 
             <requires name="Fit"/>
 
@@ -998,10 +951,8 @@
         </aspect>
 
         <aspect name="Intense Acrobatic Training">
-            <rule ref="Core Aspect Positive Modifier" value="+1">
-                <detail type="targets" value="Mobility"/>
-            </rule>
-            <rule ref="HP Pool Positive Modifier" value="+1"/>
+            <rule ref="Core Mobility Modifier" value="+1"/>
+            <rule ref="HP Pool Modifier" value="+1"/>
 
             <requires name="Fit"/>
 
@@ -1011,10 +962,8 @@
         </aspect>
 
         <aspect name="Intense Resistance Training">
-            <rule ref="Core Aspect Positive Modifier" value="+1">
-                <detail type="targets" value="Strength"/>
-            </rule>
-            <rule ref="HP Pool Positive Modifier" value="+1"/>
+            <rule ref="Core Strength Modifier" value="+1"/>
+            <rule ref="HP Pool Modifier" value="+1"/>
 
             <requires name="Fit"/>
 
@@ -1049,7 +998,7 @@
             <rule ref="Skill" value="Concentration">
                 <detail type="inherits_from" value="Intelligence"/>
             </rule>
-            <rule ref="Failure Chance" value="8"/>
+            <rule ref="Failure Chance" value="Difficulty 8"/>
             <rule ref="Energy Point Cost" value="+1"/>
 
             <text>
@@ -1065,7 +1014,7 @@
                 <detail type="limit" value="No Character Targets"/>
                 <detail type="inherits_from" value="Mobility"/>
             </rule>
-            <rule ref="Failure Chance" value="8"/>
+            <rule ref="Failure Chance" value="Difficulty 8"/>
 
             <requires name="High Manual Dexterity"/>
 
@@ -1082,7 +1031,7 @@
             <rule ref="Skill" value="Concentration">
                 <detail type="inherits_from" value="Mobility"/>
             </rule>
-            <rule ref="Failure Chance" value="8"/>
+            <rule ref="Failure Chance" value="Difficulty 8"/>
             <rule ref="Energy Point Cost" value="+1"/>
 
             <requires name="Filch"/>
@@ -1104,7 +1053,7 @@
             <rule ref="Skill" value="Non-Combat">
                 <detail type="inherits_from" value="Mobility"/>
             </rule>
-            <rule ref="Failure Chance" value="8"/>
+            <rule ref="Failure Chance" value="Difficulty 8"/>
 
             <requires name="High Manual Dexterity"/>
 
@@ -1112,7 +1061,7 @@
                 Grants a character the knowledge necessary to disable simple lock devices. Lock devices are granted a
                 difficulty by the game master depending on their complexity and make. The character must make a
                 lockpicking check against this difficulty to successfully disable the lock. This check recieves the
-                character's **mobility modifier** as a Positive Modifier.
+                character's **mobility modifier** as a Modifier.
             </text>
         </aspect>
 
@@ -1122,7 +1071,7 @@
             </rule>
             <rule ref="Damage Healed" value="1d6"/>
             <rule ref="Energy Point Cost" value="+2"/>
-            <rule ref="Failure Chance" value="8"/>
+            <rule ref="Failure Chance" value="Difficulty 8"/>
 
             <requires name="Medicine"/>
 
@@ -1139,7 +1088,7 @@
             <rule ref="Skill" value="Non-Combat">
                 <detail type="inherits_from" value="Intelligence"/>
             </rule>
-            <rule ref="Failure Chance" value="8"/>
+            <rule ref="Failure Chance" value="Difficulty 8"/>
 
             <requires name="Medicine"/>
 
@@ -1157,7 +1106,7 @@
             <rule ref="Skill" value="Non-Combat">
                 <detail type="inherits_from" value="Intelligence"/>
             </rule>
-            <rule ref="Failure Chance" value="8"/>
+            <rule ref="Failure Chance" value="Difficulty 8"/>
             <rule ref="Damage Healed" value="1d6"/>
 
             <text>
@@ -1174,7 +1123,7 @@
         <aspect name="Perception">
             <rule ref="Skill" value="Concentration"/>
             <rule ref="Energy Point Cost" value="+1"/>
-            <rule ref="Failure Chance" value="8"/>
+            <rule ref="Failure Chance" value="Difficulty 8"/>
 
             <text>
                 Allows a character to make a perception check.
@@ -1200,7 +1149,7 @@
             <rule ref="Skill" value="Non-Combat">
                 <detail type="inherits_from" value="Lockpicking"/>
             </rule>
-            <rule ref="Failure Chance" value="8"/>
+            <rule ref="Failure Chance" value="Difficulty 8"/>
 
             <requires name="Lockpicking"/>
 
@@ -1216,7 +1165,7 @@
             <rule ref="Skill" value="Non-Combat">
                 <detail type="inherits_from" value="Mobility"/>
             </rule>
-            <rule ref="Failure Chance" value="8"/>
+            <rule ref="Failure Chance" value="Difficulty 8"/>
 
             <text>
                 Allows a street-wise character to blend into a crowd and use this action as a sealth attempt. The crowd
@@ -1228,7 +1177,7 @@
             <rule ref="Skill" value="Concentration">
                 <detail type="inherits_from" value="Mobility"/>
             </rule>
-            <rule ref="Failure Chance" value="8"/>
+            <rule ref="Failure Chance" value="Difficulty 8"/>
             <rule ref="Energy Point Cost" value="+1"/>
 
             <text>
@@ -1242,8 +1191,8 @@
                 <detail type="limit" value="Character Must Have a Shield"/>
                 <detail type="inherits_from" value="Strength"/>
             </rule>
-            <rule ref="Defense Positive Modifier" value="+1 Defense Effectiveness"/>
-            <rule ref="Failure Chance" value="8"/>
+            <rule ref="Defense Modifier" value="+1 Defense Effectiveness"/>
+            <rule ref="Failure Chance" value="Difficulty 8"/>
             <rule ref="Energy Point Cost" value="+1"/>
 
             <text>
@@ -1258,7 +1207,7 @@
             </rule>
             <rule ref="Range" value="Melee"/>
             <rule ref="Extra Attack" value="+1"/>
-            <rule ref="Failure Chance" value="14"/>
+            <rule ref="Failure Chance" value="Difficulty 14"/>
             <rule ref="Energy Point Cost" value="+1"/>
 
             <text>
@@ -1271,11 +1220,11 @@
         </aspect>
 
         <aspect name="Shot Call">
-            <rule ref="Concentration Positive Modifier" value="+1 Concentration">
+            <rule ref="Concentration Modifier" value="+1 Concentration">
                 <detail type="targets" value="Ally's Attack"/>
                 <detail type="limit" value="Ranged Attacks Only"/>
             </rule>
-            <rule ref="Failure Chance" value="12"/>
+            <rule ref="Failure Chance" value="Difficulty 12"/>
             <rule ref="Energy Point Cost" value="+1"/>
 
             <requires name="Perception"/>
@@ -1289,7 +1238,7 @@
         </aspect>
 
         <aspect name="Mental Endurance">
-            <rule ref="Energy Point Pool Positive Modifier" value="+1 Energy Point Pool"/>
+            <rule ref="Energy Point Pool Modifier" value="+1"/>
 
             <text>
                 Years of conditioning has left this character with a hardened mind. Stress rolls off their shoulders and
@@ -1298,9 +1247,7 @@
         </aspect>
 
         <aspect name="Mentat">
-            <rule ref="Core Aspect Positive Modifier" value="+1">
-                <detail type="targets" value="Intelligence"/>
-            </rule>
+            <rule ref="Core Intelligence Modifier" value="+1"/>
 
             <requires name="Mental Endurance"/>
 
@@ -1310,7 +1257,7 @@
         </aspect>
 
         <aspect name="Weapon Proficiency">
-            <rule ref="Concentration Positive Modifier" value="+1 Concentration">
+            <rule ref="Concentration Modifier" value="+1 Concentration">
                 <detail type="targets" value="Bound Weapon Type"/>
             </rule>
 
@@ -1326,7 +1273,7 @@
                 <detail type="limit" value="Thrusting Weapons"/>
                 <detail type="inherits_from" value="Strength"/>
             </rule>
-            <rule ref="Failure Chance" value="8"/>
+            <rule ref="Failure Chance" value="Difficulty 8"/>
             <rule ref="Energy Point Cost" value="+1"/>
 
             <text>
@@ -1339,7 +1286,7 @@
                 <detail type="limit" value="Bludgeoning Weapons"/>
                 <detail type="inherits_from" value="Strength"/>
             </rule>
-            <rule ref="Failure Chance" value="8"/>
+            <rule ref="Failure Chance" value="Difficulty 8"/>
             <rule ref="Energy Point Cost" value="+1"/>
 
             <text>
@@ -1354,7 +1301,7 @@
                 <detail type="inherits_from" value="Strength"/>
             </rule>
             <rule ref="Careful Blow" value="Careful Blow"/>
-            <rule ref="Failure Chance" value="8"/>
+            <rule ref="Failure Chance" value="Difficulty 8"/>
             <rule ref="Energy Point Cost" value="+1"/>
 
             <requires name="Slash"/>
@@ -1372,7 +1319,7 @@
                 <detail type="inherits_from" value="Mobility"/>
                 <detail type="inherits_from" value="Strength"/>
             </rule>
-            <rule ref="Failure Chance" value="8"/>
+            <rule ref="Failure Chance" value="Difficulty 8"/>
             <rule ref="Energy Point Cost" value="+1"/>
 
             <text>
@@ -1386,7 +1333,7 @@
                 <detail type="limit" value="Slashing Weapons"/>
                 <detail type="inherits_from" value="Mobility"/>
             </rule>
-            <rule ref="Failure Chance" value="8"/>
+            <rule ref="Failure Chance" value="Difficulty 8"/>
             <rule ref="Energy Point Cost" value="+1"/>
 
             <text>
@@ -1418,9 +1365,9 @@
 
         <aspect name="Leaping Strike">
             <rule ref="Skill" value="Concentration"/>
-            <rule ref="Failure Chance" value="8"/>
+            <rule ref="Failure Chance" value="Difficulty 8"/>
 
-            <rule ref="Concentration Positive Modifier" value="+1 Concentration">
+            <rule ref="Concentration Modifier" value="+1 Concentration">
                 <detail type="targets" value="Leaping Strike"/>
             </rule>
 
@@ -1437,9 +1384,9 @@
 
         <aspect name="Great Slash">
             <rule ref="Skill" value="Concentration"/>
-            <rule ref="Failure Chance" value="8"/>
+            <rule ref="Failure Chance" value="Difficulty 8"/>
 
-            <rule ref="Concentration Negative Modifier" value="-2 Concentration">
+            <rule ref="Concentration Modifier" value="-2 Concentration">
                 <detail type="targets" value="Great Slash"/>
                 <detail type="inherits_from" value="Mobility"/>
             </rule>
@@ -1458,10 +1405,10 @@
         </aspect>
 
         <aspect name="Magical Energy Affinity">
-            <rule ref="Concentration Positive Modifier" value="+1 Concentration">
+            <rule ref="Concentration Modifier" value="+1 Concentration">
                 <detail type="targets" value="All Magic of Chosen Energy Type"/>
             </rule>
-            <rule ref="Accuracy Positive Modifier" value="+1 Attack Accuracy">
+            <rule ref="Accuracy Modifier" value="+1 Attack Accuracy">
                 <detail type="targets" value="All Magic of Chosen Energy Type"/>
             </rule>
 
@@ -1476,7 +1423,7 @@
                 <detail type="inherits_from" value="Intelligence"/>
             </rule>
             <rule ref="Energy Point Cost" value="+1"/>
-            <rule ref="Failure Chance" value="8"/>
+            <rule ref="Failure Chance" value="Difficulty 8"/>
             <rule ref="Damage Healed" value="1d6"/>
             <rule ref="Magic" value="Magic">
                 <detail type="energy_type" value="Meta"/>
@@ -1495,7 +1442,7 @@
                 <detail type="inherits_from" value="Intelligence"/>
             </rule>
             <rule ref="Energy Point Cost" value="+1"/>
-            <rule ref="Failure Chance" value="8"/>
+            <rule ref="Failure Chance" value="Difficulty 8"/>
             <rule ref="Heals Affliction" value="Sickened"/>
             <rule ref="Magic" value="Magic">
                 <detail type="energy_type" value="Meta"/>
@@ -1512,7 +1459,7 @@
                 <detail type="inherits_from" value="Intelligence"/>
             </rule>
             <rule ref="Energy Point Cost" value="+1"/>
-            <rule ref="Failure Chance" value="8"/>
+            <rule ref="Failure Chance" value="Difficulty 8"/>
             <rule ref="Heals Affliction" value="Poisoned"/>
 
             <rule ref="Magic" value="Magic">
@@ -1531,7 +1478,7 @@
                 <detail type="inherits_from" value="Intelligence"/>
             </rule>
             <rule ref="Energy Point Cost" value="+1"/>
-            <rule ref="Failure Chance" value="8"/>
+            <rule ref="Failure Chance" value="Difficulty 8"/>
             <rule ref="Heals Affliction" value="Diseased"/>
 
             <rule ref="Magic" value="Magic">
@@ -1551,7 +1498,7 @@
                 <detail type="limit" value="Caster Only"/>
             </rule>
             <rule ref="Energy Point Cost" value="+1"/>
-            <rule ref="Failure Chance" value="8"/>
+            <rule ref="Failure Chance" value="Difficulty 8"/>
             <rule ref="Damage Resistance" value="+2 DR">
                 <detail type="targets" value="Kinetic"/>
             </rule>
@@ -1575,7 +1522,7 @@
                 <detail type="inherits_from" value="Intelligence"/>
             </rule>
             <rule ref="Energy Point Cost" value="+1"/>
-            <rule ref="Failure Chance" value="8"/>
+            <rule ref="Failure Chance" value="Difficulty 8"/>
             <rule ref="Effect Duration" value="4 Turns"/>
             <rule ref="Damage Resistance" value="+4 DR">
                 <detail type="targets" value="Kinetic"/>
@@ -1598,7 +1545,7 @@
                 <detail type="inherits_from" value="Perception"/>
             </rule>
             <rule ref="Energy Point Cost" value="+1"/>
-            <rule ref="Failure Chance" value="12"/>
+            <rule ref="Failure Chance" value="Difficulty 12"/>
 
             <rule ref="Magic" value="Magic">
                 <detail type="energy_type" value="Meta"/>
@@ -1619,13 +1566,13 @@
                 <detail type="inherits_from" value="Intelligence"/>
             </rule>
             <rule ref="Energy Point Cost" value="+1"/>
-            <rule ref="Failure Chance" value="8"/>
+            <rule ref="Failure Chance" value="Difficulty 8"/>
             <rule ref="Effect Duration" value="4 Turns"/>
 
             <rule ref="Damage Resistance" value="+2 DR">
                 <detail type="targets" value="Chosen upon Casting"/>
             </rule>
-            <rule ref="Concentration Positive Modifier" value="+2 Concentration">
+            <rule ref="Concentration Modifier" value="+2 Concentration">
                 <detail type="targets" value="Chosen upon Casting"/>
             </rule>
             <rule ref="Magic" value="Magic">
@@ -1646,7 +1593,7 @@
                 <detail type="inherits_from" value="Intelligence"/>
             </rule>
             <rule ref="Energy Point Cost" value="+1"/>
-            <rule ref="Failure Chance" value="8"/>
+            <rule ref="Failure Chance" value="Difficulty 8"/>
             <rule ref="Magic" value="Magic">
                 <detail type="energy_type" value="Electric"/>
             </rule>
@@ -1665,7 +1612,7 @@
                 <detail type="inherits_from" value="Intelligence"/>
             </rule>
             <rule ref="Energy Point Cost" value="+1"/>
-            <rule ref="Failure Chance" value="8"/>
+            <rule ref="Failure Chance" value="Difficulty 8"/>
 
             <rule ref="Magic" value="Magic">
                 <detail type="energy_type" value="Fire"/>
@@ -1676,7 +1623,7 @@
 
             <text>
                 The character conjures a ball of fire in either hand which may then be thrown. The attack roll recieves
-                the character's intelligence modifier as an attack Positive Modifier.
+                the character's intelligence modifier as an attack Modifier.
             </text>
         </aspect>
 
@@ -1685,7 +1632,7 @@
                 <detail type="inherits_from" value="Intelligence"/>
             </rule>
             <rule ref="Energy Point Cost" value="+1"/>
-            <rule ref="Failure Chance" value="8"/>
+            <rule ref="Failure Chance" value="Difficulty 8"/>
 
             <rule ref="Magic" value="Magic">
                 <detail type="energy_type" value="Cold"/>
@@ -1706,7 +1653,7 @@
                 <detail type="inherits_from" value="Intelligence"/>
             </rule>
             <rule ref="Energy Point Cost" value="+1"/>
-            <rule ref="Failure Chance" value="8"/>
+            <rule ref="Failure Chance" value="Difficulty 8"/>
             <rule ref="Magic" value="Magic">
                 <detail type="energy_type" value="Meta"/>
             </rule>
@@ -1729,7 +1676,7 @@
                 <detail type="inherits_from" value="Intelligence"/>
             </rule>
             <rule ref="Energy Point Cost" value="+1"/>
-            <rule ref="Failure Chance" value="8"/>
+            <rule ref="Failure Chance" value="Difficulty 8"/>
             <rule ref="Magic" value="Magic">
                 <detail type="energy_type" value="Meta"/>
             </rule>
@@ -1749,11 +1696,11 @@
                 <detail type="inherits_from" value="Intelligence"/>
             </rule>
             <rule ref="Energy Point Cost" value="+1"/>
-            <rule ref="Failure Chance" value="14"/>
+            <rule ref="Failure Chance" value="Difficulty 14"/>
             <rule ref="Magic" value="Magic">
                 <detail type="energy_type" value="Meta"/>
             </rule>
-            <rule ref="Accuracy Negative Modifier" value="-4 Attack Accuracy">
+            <rule ref="Accuracy Modifier" value="-4 Attack Accuracy">
                 <detail type="targets" value="Ranged Attacks"/>
             </rule>
             <rule ref="Range" value="Medium"/>
@@ -1766,7 +1713,7 @@
                 Creates a roaming darkness that condenses as a weightless mist. This mist is only effective on incoming
                 ranged attacks, making it far more difficult for attackers to target anything inside it.
 
-                The negative modifier to range attacks persists even inside the mist. Melee attacks however are
+                The Modifier to range attacks persists even inside the mist. Melee attacks however are
                 unaffacted.
             </text>
         </aspect>
@@ -1776,7 +1723,7 @@
                 <detail type="inherits_from" value="Intelligence"/>
             </rule>
             <rule ref="Energy Point Cost" value="+1"/>
-            <rule ref="Failure Chance" value="12"/>
+            <rule ref="Failure Chance" value="Difficulty 12"/>
 
             <rule ref="Magic" value="Magic">
                 <detail type="energy_type" value="Meta"/>
@@ -1796,7 +1743,7 @@
                 <detail type="inherits_from" value="Intelligence"/>
             </rule>
             <rule ref="Energy Point Cost" value="+1"/>
-            <rule ref="Failure Chance" value="8"/>
+            <rule ref="Failure Chance" value="Difficulty 8"/>
 
             <rule ref="Magic" value="Magic">
                 <detail type="energy_type" value="Meta"/>
@@ -1839,7 +1786,7 @@
                 <detail type="inherits_from" value="Perception"/>
             </rule>
             <rule ref="Energy Point Cost" value="+2"/>
-            <rule ref="Failure Chance" value="14"/>
+            <rule ref="Failure Chance" value="Difficulty 14"/>
             <rule ref="Magic" value="Magic">
                 <detail type="energy_type" value="Meta"/>
             </rule>
@@ -1862,7 +1809,7 @@
             </rule>
             <rule ref="Delayed Effect Duration" value="1 Turn"/>
             <rule ref="Energy Point Cost" value="+1"/>
-            <rule ref="Failure Chance" value="10"/>
+            <rule ref="Failure Chance" value="Difficulty 10"/>
             <rule ref="Magic" value="Magic">
                 <detail type="energy_type" value="Meta"/>
             </rule>
@@ -1882,7 +1829,7 @@
                 <detail type="inherits_from" value="Intelligence"/>
             </rule>
             <rule ref="Energy Point Cost" value="+2"/>
-            <rule ref="Failure Chance" value="8"/>
+            <rule ref="Failure Chance" value="Difficulty 8"/>
 
             <rule ref="Magic" value="Magic">
                 <detail type="energy_type" value="Meta"/>
@@ -1905,7 +1852,7 @@
                 <detail type="inherits_from" value="Intelligence"/>
             </rule>
             <rule ref="Energy Point Cost" value="+1"/>
-            <rule ref="Failure Chance" value="8"/>
+            <rule ref="Failure Chance" value="Difficulty 8"/>
 
             <rule ref="Magic" value="Magic">
                 <detail type="energy_type" value="Kinetic"/>

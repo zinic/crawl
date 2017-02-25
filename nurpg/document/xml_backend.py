@@ -138,8 +138,16 @@ class RuleNode(XMLBacked):
         return self._wrap('formula', RuleFormulaNode)
 
     @property
+    def modifiers(self):
+        return self._wrap_each('modifies', RuleModifierTarget)
+
+    @property
     def options(self):
         return self._wrap_each('option', RuleOptionNode)
+
+
+class RuleModifierTarget(XMLBacked):
+    pass
 
 
 class RuleFormulaNode(XMLBacked):
