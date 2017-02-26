@@ -3,7 +3,7 @@
         <!-- # Formula Progressions -->
 
         <!-- ## Costs -->
-        <formula name="Failure Chance" type="custom" equation="i - 5">
+        <formula name="Failure Chance" type="custom" equation="15 - i">
         </formula>
 
         <formula name="Linear Progression" type="custom" equation="i">
@@ -34,6 +34,9 @@
         <formula name="Normal Flat" type="custom" equation="5">
         </formula>
 
+        <formula name="Returns Normal Flat" type="custom" equation="5">
+        </formula>
+
         <formula name="Hard Flat" type="custom" equation="8">
         </formula>
 
@@ -49,10 +52,10 @@
         <!-- Item Rules -->
         <rule name="Number of Uses" category="item">
             <formula ref="Basic Progression">
-                <argument name="Returns AP"/>
             </formula>
 
-            <option name="{range_value} Use(s)" range="5,1"/>
+            <!-- TODO: This has to be rethought a bit -->
+            <option name="Has {range_value} Use(s)" range="-1,-5"/>
 
             <text>
                 Useful for items that have consumable uses.
@@ -132,9 +135,7 @@
         </rule>
 
         <rule name="Effect Trigger" category="all">
-            <formula ref="Normal Flat">
-                <argument name="Returns AP"/>
-            </formula>
+            <formula ref="Returns Normal Flat" />
 
             <option name="When Attacking"/>
             <option name="When Defending"/>
@@ -190,9 +191,12 @@
             <option name="Can't be Flanked"/>
         </rule>
 
+<!--
         <rule name="Skill" category="all">
             <formula ref="Basic Flat">
             </formula>
+
+            <provides />
 
             <option name="Non-Combat"/>
             <option name="Concentration"/>
@@ -219,7 +223,8 @@
                 skills come with an action point cost.
             </text>
         </rule>
-
+-->
+        
         <rule name="Presence Modifier" category="all">
             <formula ref="Normal Progression">
             </formula>
@@ -318,24 +323,20 @@
         </rule>
 
         <rule name="HP Pool Modifier" category="all">
-            <formula ref="Damage Cost">
-            </formula>
+            <formula ref="Damage Cost" />
 
             <option name="{range_value}" range="-10,10"/>
         </rule>
 
         <rule name="Target Restriction" category="all">
-            <formula ref="Heroic Flat">
-            </formula>
+            <formula ref="Heroic Flat" />
 
             <option name="Allies Only"/>
             <option name="Enemies Only"/>
         </rule>
 
         <rule name="Core Strength Modifier" category="all">
-            <formula ref="Hard Progression">
-                <argument name="Returns AP"/>
-            </formula>
+            <formula ref="Hard Progression" />
 
             <modifies ref="Strength"/>
 
@@ -344,9 +345,7 @@
 
 
         <rule name="Core Mobility Modifier" category="all">
-            <formula ref="Hard Progression">
-                <argument name="Returns AP"/>
-            </formula>
+            <formula ref="Hard Progression" />
 
             <modifies ref="Mobility"/>
 
@@ -354,9 +353,7 @@
         </rule>
 
         <rule name="Core Intelligence Modifier" category="all">
-            <formula ref="Hard Progression">
-                <argument name="Returns AP"/>
-            </formula>
+            <formula ref="Hard Progression" />
 
             <modifies ref="Intelligence"/>
 
@@ -364,18 +361,15 @@
         </rule>
 
         <rule name="Crit Success Modifier" category="all">
-            <formula ref="Normal Progression">
-            </formula>
+            <formula ref="Normal Progression" />
 
-            <option name="+{range_value}" range="1,5"/>
+            <option name="{range_value}" range="1,5"/>
         </rule>
 
         <rule name="Energy Point Cost" category="all">
-            <formula ref="Normal Progression">
-                <argument name="Returns AP"/>
-            </formula>
+            <formula ref="Normal Progression" />
 
-            <option name="+{range_value}" range="1,5"/>
+            <option name="+{range_value}" range="-5,-1"/>
         </rule>
 
         <rule name="Opportunistic Action" category="all">
@@ -407,9 +401,7 @@
         </rule>
 
         <rule name="Energy Point Refresh Modifier" category="all">
-            <formula ref="Hard Progression">
-                <argument name="Returns AP"/>
-            </formula>
+            <formula ref="Hard Progression" />
 
             <option name="{range_value}" range="-2,2"/>
         </rule>
@@ -497,7 +489,7 @@
         </rule>
 
         <rule name="Effect Duration" category="all">
-            <formula ref="Hard Progression">
+            <formula ref="Normal Progression">
             </formula>
 
             <!-- Order should be preserved so this looks okay to me -->
@@ -597,13 +589,11 @@
         <template name="None"/>
 
         <template name="Attack">
-            <requires rule="Skill"/>
             <requires rule="Failure Chance"/>
             <requires rule="Energy Point Cost"/>
         </template>
 
         <template name="Defense">
-            <requires rule="Skill"/>
             <requires rule="Failure Chance"/>
             <requires rule="Energy Point Cost"/>
         </template>
@@ -620,9 +610,9 @@
 
         <aspect name="Grapple" template="Attack">
             <rule ref="Grapple"/>
-            <rule ref="Skill" value="Attack">
+            <skill type="Attack">
                 <detail type="inherits_from" value="Strength"/>
-            </rule>
+            </skill>
             <rule ref="Failure Chance" value="Difficulty 12"/>
             <rule ref="Energy Point Cost" value="+1"/>
 
@@ -634,9 +624,9 @@
         </aspect>
 
         <aspect name="Frantic Defense" template="Defense">
-            <rule ref="Skill" value="Defense">
+            <skill type="Defense">
                 <detail type="inherits_from" value="Mobility"/>
-            </rule>
+            </skill>
             <rule ref="Failure Chance" value="Difficulty 12"/>
             <rule ref="Energy Point Cost" value="+1"/>
 
@@ -649,9 +639,9 @@
         </aspect>
 
         <aspect name="Duck and Dodge" template="Defense">
-            <rule ref="Skill" value="Defense">
+            <skill type="Defense">
                 <detail type="inherits_from" value="Mobility"/>
-            </rule>
+            </skill>
             <rule ref="Failure Chance" value="Difficulty 8"/>
             <rule ref="Energy Point Cost" value="+1"/>
 
@@ -662,9 +652,9 @@
         </aspect>
 
         <aspect name="Survival">
-            <rule ref="Skill" value="Non-Combat">
+            <skill type="Non-Combat">
                 <detail type="inherits_from" value="Intelligence"/>
-            </rule>
+            </skill>
             <rule ref="Failure Chance" value="Difficulty 8"/>
 
             <text>
@@ -674,11 +664,11 @@
         </aspect>
 
         <aspect name="Dive for Cover">
-            <rule ref="Skill" value="Concentration">
+            <skill type="Concentration">
                 <detail type="inherits_from" value="Standing Forward Jump"/>
-            </rule>
+            </skill>
             <rule ref="Failure Chance" value="Difficulty 8"/>
-            <rule ref="Energy Point Cost" value="+2"/>
+            <rule ref="Energy Point Cost" value="+1"/>
 
             <requires name="Duck and Dodge"/>
 
@@ -714,7 +704,7 @@
             <rule ref="Damage Resistance" value="+4 DR">
                 <detail type="targets" value="Electric"/>
             </rule>
-            <rule ref="Effect Duration" value="8 Turns"/>
+            <rule ref="Effect Duration" value="4 Turns"/>
 
             <requires name="Vigor"/>
 
@@ -726,10 +716,10 @@
         </aspect>
 
         <aspect name="Pivot and Roll">
-            <rule ref="Skill" value="Concentration">
+            <skill type="Concentration">
                 <detail type="limit" value="Unusuable when Slowed"/>
                 <detail type="inherits_from" value="Mobility"/>
-            </rule>
+            </skill>
             <rule ref="Failure Chance" value="Difficulty 8"/>
             <rule ref="Concentration Modifier" value="+2 Concentration">
                 <detail type="targets" value="Pivot and Roll"/>
@@ -748,9 +738,9 @@
         </aspect>
 
         <aspect name="Blood Soaked Life">
-            <rule ref="Skill" value="Concentration">
+            <skill type="Concentration">
                 <detail type="inherits_from" value="Intelligence"/>
-            </rule>
+            </skill>
             <rule ref="Energy Point Cost" value="+1"/>
             <rule ref="Failure Chance" value="Difficulty 8"/>
             <rule ref="Damage Healed" value="1d8"/>
@@ -822,9 +812,9 @@
         </aspect>
 
         <aspect name="Knowledge - Affluence">
-            <rule ref="Skill" value="Concentration">
+            <skill type="Concentration">
                 <detail type="inherits_from" value="Intelligence"/>
-            </rule>
+            </skill>
             <rule ref="Energy Point Cost" value="+1"/>
             <rule ref="Failure Chance" value="Difficulty 8"/>
 
@@ -834,9 +824,9 @@
         </aspect>
 
         <aspect name="Knowledge - Mechanical">
-            <rule ref="Skill" value="Concentration">
+            <skill type="Concentration">
                 <detail type="inherits_from" value="Intelligence"/>
-            </rule>
+            </skill>
             <rule ref="Energy Point Cost" value="+1"/>
             <rule ref="Failure Chance" value="Difficulty 8"/>
 
@@ -846,9 +836,9 @@
         </aspect>
 
         <aspect name="Knowledge - Arcane">
-            <rule ref="Skill" value="Concentration">
+            <skill type="Concentration">
                 <detail type="inherits_from" value="Intelligence"/>
-            </rule>
+            </skill>
             <rule ref="Energy Point Cost" value="+1"/>
             <rule ref="Failure Chance" value="Difficulty 8"/>
 
@@ -858,9 +848,9 @@
         </aspect>
 
         <aspect name="Knowledge - Occult">
-            <rule ref="Skill" value="Concentration">
+            <skill type="Concentration">
                 <detail type="inherits_from" value="Intelligence"/>
-            </rule>
+            </skill>
             <rule ref="Energy Point Cost" value="+1"/>
             <rule ref="Failure Chance" value="Difficulty 8"/>
 
@@ -870,9 +860,9 @@
         </aspect>
 
         <aspect name="Knowledge - Martial">
-            <rule ref="Skill" value="Concentration">
+            <skill type="Concentration">
                 <detail type="inherits_from" value="Intelligence"/>
-            </rule>
+            </skill>
             <rule ref="Energy Point Cost" value="+1"/>
             <rule ref="Failure Chance" value="Difficulty 8"/>
 
@@ -882,9 +872,9 @@
         </aspect>
 
         <aspect name="Knowledge - Historical">
-            <rule ref="Skill" value="Concentration">
+            <skill type="Concentration">
                 <detail type="inherits_from" value="Intelligence"/>
-            </rule>
+            </skill>
             <rule ref="Energy Point Cost" value="+1"/>
             <rule ref="Failure Chance" value="Difficulty 8"/>
 
@@ -894,9 +884,9 @@
         </aspect>
 
         <aspect name="Knowledge - Natural Sciences">
-            <rule ref="Skill" value="Concentration">
+            <skill type="Concentration">
                 <detail type="inherits_from" value="Intelligence"/>
-            </rule>
+            </skill>
             <rule ref="Energy Point Cost" value="+1"/>
             <rule ref="Failure Chance" value="Difficulty 8"/>
 
@@ -906,9 +896,9 @@
         </aspect>
 
         <aspect name="Knowledge - Survival">
-            <rule ref="Skill" value="Concentration">
+            <skill type="Concentration">
                 <detail type="inherits_from" value="Intelligence"/>
-            </rule>
+            </skill>
             <rule ref="Energy Point Cost" value="+1"/>
             <rule ref="Failure Chance" value="Difficulty 8"/>
 
@@ -995,9 +985,9 @@
         </aspect>
 
         <aspect name="Gesture">
-            <rule ref="Skill" value="Concentration">
+            <skill type="Concentration">
                 <detail type="inherits_from" value="Intelligence"/>
-            </rule>
+            </skill>
             <rule ref="Failure Chance" value="Difficulty 8"/>
             <rule ref="Energy Point Cost" value="+1"/>
 
@@ -1010,10 +1000,10 @@
         </aspect>
 
         <aspect name="Filch">
-            <rule ref="Skill" value="Non-Combat">
+            <skill type="Non-Combat">
                 <detail type="limit" value="No Character Targets"/>
                 <detail type="inherits_from" value="Mobility"/>
-            </rule>
+            </skill>
             <rule ref="Failure Chance" value="Difficulty 8"/>
 
             <requires name="High Manual Dexterity"/>
@@ -1028,9 +1018,9 @@
         </aspect>
 
         <aspect name="Pickpocket">
-            <rule ref="Skill" value="Concentration">
+            <skill type="Concentration">
                 <detail type="inherits_from" value="Mobility"/>
-            </rule>
+            </skill>
             <rule ref="Failure Chance" value="Difficulty 8"/>
             <rule ref="Energy Point Cost" value="+1"/>
 
@@ -1050,9 +1040,9 @@
         </aspect>
 
         <aspect name="Lockpicking">
-            <rule ref="Skill" value="Non-Combat">
+            <skill type="Non-Combat">
                 <detail type="inherits_from" value="Mobility"/>
-            </rule>
+            </skill>
             <rule ref="Failure Chance" value="Difficulty 8"/>
 
             <requires name="High Manual Dexterity"/>
@@ -1066,9 +1056,9 @@
         </aspect>
 
         <aspect name="Field Aid">
-            <rule ref="Skill" value="Concentration">
+            <skill type="Concentration">
                 <detail type="inherits_from" value="Intelligence"/>
-            </rule>
+            </skill>
             <rule ref="Damage Healed" value="1d6"/>
             <rule ref="Energy Point Cost" value="+2"/>
             <rule ref="Failure Chance" value="Difficulty 8"/>
@@ -1085,9 +1075,9 @@
         </aspect>
 
         <aspect name="Treat Illness">
-            <rule ref="Skill" value="Non-Combat">
+            <skill type="Non-Combat">
                 <detail type="inherits_from" value="Intelligence"/>
-            </rule>
+            </skill>
             <rule ref="Failure Chance" value="Difficulty 8"/>
 
             <requires name="Medicine"/>
@@ -1103,9 +1093,9 @@
         </aspect>
 
         <aspect name="Medicine">
-            <rule ref="Skill" value="Non-Combat">
+            <skill type="Non-Combat">
                 <detail type="inherits_from" value="Intelligence"/>
-            </rule>
+            </skill>
             <rule ref="Failure Chance" value="Difficulty 8"/>
             <rule ref="Damage Healed" value="1d6"/>
 
@@ -1121,7 +1111,7 @@
         </aspect>
 
         <aspect name="Perception">
-            <rule ref="Skill" value="Concentration"/>
+            <skill type="Concentration"/>
             <rule ref="Energy Point Cost" value="+1"/>
             <rule ref="Failure Chance" value="Difficulty 8"/>
 
@@ -1146,9 +1136,9 @@
         </aspect>
 
         <aspect name="Disable Device">
-            <rule ref="Skill" value="Non-Combat">
+            <skill type="Non-Combat">
                 <detail type="inherits_from" value="Lockpicking"/>
-            </rule>
+            </skill>
             <rule ref="Failure Chance" value="Difficulty 8"/>
 
             <requires name="Lockpicking"/>
@@ -1162,9 +1152,9 @@
         </aspect>
 
         <aspect name="Blend into Crowds">
-            <rule ref="Skill" value="Non-Combat">
+            <skill type="Non-Combat">
                 <detail type="inherits_from" value="Mobility"/>
-            </rule>
+            </skill>
             <rule ref="Failure Chance" value="Difficulty 8"/>
 
             <text>
@@ -1174,9 +1164,9 @@
         </aspect>
 
         <aspect name="Quiet Steps">
-            <rule ref="Skill" value="Concentration">
+            <skill type="Concentration">
                 <detail type="inherits_from" value="Mobility"/>
-            </rule>
+            </skill>
             <rule ref="Failure Chance" value="Difficulty 8"/>
             <rule ref="Energy Point Cost" value="+1"/>
 
@@ -1187,10 +1177,10 @@
         </aspect>
 
         <aspect name="Block">
-            <rule ref="Skill" value="Defense">
+            <skill type="Defense">
                 <detail type="limit" value="Character Must Have a Shield"/>
                 <detail type="inherits_from" value="Strength"/>
-            </rule>
+            </skill>
             <rule ref="Defense Modifier" value="+1 Defense Effectiveness"/>
             <rule ref="Failure Chance" value="Difficulty 8"/>
             <rule ref="Energy Point Cost" value="+1"/>
@@ -1202,9 +1192,9 @@
         </aspect>
 
         <aspect name="Melee Parry">
-            <rule ref="Skill" value="Concentration">
+            <skill type="Concentration">
                 <detail type="inherits_from" value="Mobility"/>
-            </rule>
+            </skill>
             <rule ref="Range" value="Melee"/>
             <rule ref="Extra Attack" value="+1"/>
             <rule ref="Failure Chance" value="Difficulty 14"/>
@@ -1269,10 +1259,10 @@
         </aspect>
 
         <aspect name="Stab">
-            <rule ref="Skill" value="Attack">
+            <skill type="Attack">
                 <detail type="limit" value="Thrusting Weapons"/>
                 <detail type="inherits_from" value="Strength"/>
-            </rule>
+            </skill>
             <rule ref="Failure Chance" value="Difficulty 8"/>
             <rule ref="Energy Point Cost" value="+1"/>
 
@@ -1282,10 +1272,10 @@
         </aspect>
 
         <aspect name="Bludgeon">
-            <rule ref="Skill" value="Attack">
+            <skill type="Attack">
                 <detail type="limit" value="Bludgeoning Weapons"/>
                 <detail type="inherits_from" value="Strength"/>
-            </rule>
+            </skill>
             <rule ref="Failure Chance" value="Difficulty 8"/>
             <rule ref="Energy Point Cost" value="+1"/>
 
@@ -1297,9 +1287,9 @@
         </aspect>
 
         <aspect name="Reaching Strike">
-            <rule ref="Skill" value="Attack">
+            <skill type="Attack">
                 <detail type="inherits_from" value="Strength"/>
-            </rule>
+            </skill>
             <rule ref="Careful Blow" value="Careful Blow"/>
             <rule ref="Failure Chance" value="Difficulty 8"/>
             <rule ref="Energy Point Cost" value="+1"/>
@@ -1313,12 +1303,12 @@
         </aspect>
 
         <aspect name="Archery">
-            <rule ref="Skill" value="Attack">
+            <skill type="Attack">
                 <detail type="limit" value="Drawn Force Weapons"/>
                 <detail type="limit" value="Only Inherits from the Highest Modifier (Strength or Mobility)"/>
                 <detail type="inherits_from" value="Mobility"/>
                 <detail type="inherits_from" value="Strength"/>
-            </rule>
+            </skill>
             <rule ref="Failure Chance" value="Difficulty 8"/>
             <rule ref="Energy Point Cost" value="+1"/>
 
@@ -1329,10 +1319,10 @@
         </aspect>
 
         <aspect name="Slash">
-            <rule ref="Skill" value="Attack">
-                <detail type="limit" value="Slashing Weapons"/>
-                <detail type="inherits_from" value="Mobility"/>
-            </rule>
+            <skill type="Attack">
+                <inherits from_ref="Mobility" />
+            </skill>
+
             <rule ref="Failure Chance" value="Difficulty 8"/>
             <rule ref="Energy Point Cost" value="+1"/>
 
@@ -1364,7 +1354,7 @@
         </aspect>
 
         <aspect name="Leaping Strike">
-            <rule ref="Skill" value="Concentration"/>
+            <skill type="Concentration"/>
             <rule ref="Failure Chance" value="Difficulty 8"/>
 
             <rule ref="Concentration Modifier" value="+1 Concentration">
@@ -1383,16 +1373,16 @@
         </aspect>
 
         <aspect name="Great Slash">
-            <rule ref="Skill" value="Concentration"/>
+            <skill type="Concentration"/>
             <rule ref="Failure Chance" value="Difficulty 8"/>
 
-            <rule ref="Concentration Modifier" value="-2 Concentration">
+            <rule ref="Concentration Modifier" value="-1 Concentration">
                 <detail type="targets" value="Great Slash"/>
                 <detail type="inherits_from" value="Mobility"/>
             </rule>
 
             <rule ref="Extra Target" value="+1"/>
-            <rule ref="Energy Point Cost" value="+2"/>
+            <rule ref="Energy Point Cost" value="+1"/>
 
             <requires name="Fit"/>
             <requires name="Slash"/>
@@ -1419,9 +1409,9 @@
         </aspect>
 
         <aspect name="Refresh">
-            <rule ref="Skill" value="Concentration">
+            <skill type="Concentration">
                 <detail type="inherits_from" value="Intelligence"/>
-            </rule>
+            </skill>
             <rule ref="Energy Point Cost" value="+1"/>
             <rule ref="Failure Chance" value="Difficulty 8"/>
             <rule ref="Damage Healed" value="1d6"/>
@@ -1438,9 +1428,9 @@
         </aspect>
 
         <aspect name="Sooth">
-            <rule ref="Skill" value="Concentration">
+            <skill type="Concentration">
                 <detail type="inherits_from" value="Intelligence"/>
-            </rule>
+            </skill>
             <rule ref="Energy Point Cost" value="+1"/>
             <rule ref="Failure Chance" value="Difficulty 8"/>
             <rule ref="Heals Affliction" value="Sickened"/>
@@ -1455,9 +1445,9 @@
         </aspect>
 
         <aspect name="Purify">
-            <rule ref="Skill" value="Concentration">
+            <skill type="Concentration">
                 <detail type="inherits_from" value="Intelligence"/>
-            </rule>
+            </skill>
             <rule ref="Energy Point Cost" value="+1"/>
             <rule ref="Failure Chance" value="Difficulty 8"/>
             <rule ref="Heals Affliction" value="Poisoned"/>
@@ -1474,9 +1464,9 @@
         </aspect>
 
         <aspect name="Cleanse">
-            <rule ref="Skill" value="Concentration">
+            <skill type="Concentration">
                 <detail type="inherits_from" value="Intelligence"/>
-            </rule>
+            </skill>
             <rule ref="Energy Point Cost" value="+1"/>
             <rule ref="Failure Chance" value="Difficulty 8"/>
             <rule ref="Heals Affliction" value="Diseased"/>
@@ -1493,10 +1483,10 @@
         </aspect>
 
         <aspect name="Quell">
-            <rule ref="Skill" value="Concentration">
+            <skill type="Concentration">
                 <detail type="inherits_from" value="Intelligence"/>
                 <detail type="limit" value="Caster Only"/>
-            </rule>
+            </skill>
             <rule ref="Energy Point Cost" value="+1"/>
             <rule ref="Failure Chance" value="Difficulty 8"/>
             <rule ref="Damage Resistance" value="+2 DR">
@@ -1518,9 +1508,9 @@
         </aspect>
 
         <aspect name="Foil">
-            <rule ref="Skill" value="Concentration">
+            <skill type="Concentration">
                 <detail type="inherits_from" value="Intelligence"/>
-            </rule>
+            </skill>
             <rule ref="Energy Point Cost" value="+1"/>
             <rule ref="Failure Chance" value="Difficulty 8"/>
             <rule ref="Effect Duration" value="4 Turns"/>
@@ -1541,9 +1531,9 @@
         </aspect>
 
         <aspect name="Arcane Sight">
-            <rule ref="Skill" value="Concentration">
+            <skill type="Concentration">
                 <detail type="inherits_from" value="Perception"/>
-            </rule>
+            </skill>
             <rule ref="Energy Point Cost" value="+1"/>
             <rule ref="Failure Chance" value="Difficulty 12"/>
 
@@ -1562,9 +1552,9 @@
         </aspect>
 
         <aspect name="Dissev">
-            <rule ref="Skill" value="Concentration">
+            <skill type="Concentration">
                 <detail type="inherits_from" value="Intelligence"/>
-            </rule>
+            </skill>
             <rule ref="Energy Point Cost" value="+1"/>
             <rule ref="Failure Chance" value="Difficulty 8"/>
             <rule ref="Effect Duration" value="4 Turns"/>
@@ -1589,9 +1579,9 @@
         </aspect>
 
         <aspect name="Volta">
-            <rule ref="Skill" value="Attack">
+            <skill type="Attack">
                 <detail type="inherits_from" value="Intelligence"/>
-            </rule>
+            </skill>
             <rule ref="Energy Point Cost" value="+1"/>
             <rule ref="Failure Chance" value="Difficulty 8"/>
             <rule ref="Magic" value="Magic">
@@ -1608,9 +1598,9 @@
         </aspect>
 
         <aspect name="Firebolt">
-            <rule ref="Skill" value="Attack">
+            <skill type="Attack">
                 <detail type="inherits_from" value="Intelligence"/>
-            </rule>
+            </skill>
             <rule ref="Energy Point Cost" value="+1"/>
             <rule ref="Failure Chance" value="Difficulty 8"/>
 
@@ -1628,9 +1618,9 @@
         </aspect>
 
         <aspect name="Frigid Cone">
-            <rule ref="Skill" value="Attack">
+            <skill type="Attack">
                 <detail type="inherits_from" value="Intelligence"/>
-            </rule>
+            </skill>
             <rule ref="Energy Point Cost" value="+1"/>
             <rule ref="Failure Chance" value="Difficulty 8"/>
 
@@ -1649,9 +1639,9 @@
         </aspect>
 
         <aspect name="Dismiss">
-            <rule ref="Skill" value="Attack">
+            <skill type="Attack">
                 <detail type="inherits_from" value="Intelligence"/>
-            </rule>
+            </skill>
             <rule ref="Energy Point Cost" value="+1"/>
             <rule ref="Failure Chance" value="Difficulty 8"/>
             <rule ref="Magic" value="Magic">
@@ -1672,9 +1662,9 @@
         </aspect>
 
         <aspect name="Spell Dart">
-            <rule ref="Skill" value="Attack">
+            <skill type="Attack">
                 <detail type="inherits_from" value="Intelligence"/>
-            </rule>
+            </skill>
             <rule ref="Energy Point Cost" value="+1"/>
             <rule ref="Failure Chance" value="Difficulty 8"/>
             <rule ref="Magic" value="Magic">
@@ -1692,9 +1682,9 @@
         </aspect>
 
         <aspect name="Obscura">
-            <rule ref="Skill" value="Concentration">
+            <skill type="Concentration">
                 <detail type="inherits_from" value="Intelligence"/>
-            </rule>
+            </skill>
             <rule ref="Energy Point Cost" value="+1"/>
             <rule ref="Failure Chance" value="Difficulty 14"/>
             <rule ref="Magic" value="Magic">
@@ -1719,9 +1709,9 @@
         </aspect>
 
         <aspect name="Send">
-            <rule ref="Skill" value="Concentration">
+            <skill type="Concentration">
                 <detail type="inherits_from" value="Intelligence"/>
-            </rule>
+            </skill>
             <rule ref="Energy Point Cost" value="+1"/>
             <rule ref="Failure Chance" value="Difficulty 12"/>
 
@@ -1739,9 +1729,9 @@
         </aspect>
 
         <aspect name="Summon Water or Food">
-            <rule ref="Skill" value="Concentration">
+            <skill type="Concentration">
                 <detail type="inherits_from" value="Intelligence"/>
-            </rule>
+            </skill>
             <rule ref="Energy Point Cost" value="+1"/>
             <rule ref="Failure Chance" value="Difficulty 8"/>
 
@@ -1782,9 +1772,9 @@
         </aspect>
 
         <aspect name="Farsight">
-            <rule ref="Skill" value="Concentration">
+            <skill type="Concentration">
                 <detail type="inherits_from" value="Perception"/>
-            </rule>
+            </skill>
             <rule ref="Energy Point Cost" value="+2"/>
             <rule ref="Failure Chance" value="Difficulty 14"/>
             <rule ref="Magic" value="Magic">
@@ -1804,9 +1794,9 @@
         </aspect>
 
         <aspect name="He Who Walks Behind">
-            <rule ref="Skill" value="Concentration">
+            <skill type="Concentration">
                 <detail type="inherits_from" value="Intelligence"/>
-            </rule>
+            </skill>
             <rule ref="Delayed Effect Duration" value="1 Turn"/>
             <rule ref="Energy Point Cost" value="+1"/>
             <rule ref="Failure Chance" value="Difficulty 10"/>
@@ -1825,9 +1815,9 @@
         </aspect>
 
         <aspect name="Countercast">
-            <rule ref="Skill" value="Attack">
+            <skill type="Attack">
                 <detail type="inherits_from" value="Intelligence"/>
-            </rule>
+            </skill>
             <rule ref="Energy Point Cost" value="+2"/>
             <rule ref="Failure Chance" value="Difficulty 8"/>
 
@@ -1847,10 +1837,10 @@
         </aspect>
 
         <aspect name="Toss">
-            <rule ref="Skill" value="Attack">
+            <skill type="Attack">
                 <detail type="limit" value="Size Modifier -3 and Smaller Objects Only"/>
                 <detail type="inherits_from" value="Intelligence"/>
-            </rule>
+            </skill>
             <rule ref="Energy Point Cost" value="+1"/>
             <rule ref="Failure Chance" value="Difficulty 8"/>
 

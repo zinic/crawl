@@ -138,16 +138,8 @@ class RuleNode(XMLBacked):
         return self._wrap('formula', RuleFormulaNode)
 
     @property
-    def modifiers(self):
-        return self._wrap_each('modifies', RuleModifierTarget)
-
-    @property
     def options(self):
         return self._wrap_each('option', RuleOptionNode)
-
-
-class RuleModifierTarget(XMLBacked):
-    pass
 
 
 class RuleFormulaNode(XMLBacked):
@@ -176,12 +168,28 @@ class TemplateRequirementNode(XMLBacked):
 
 class AspectNode(XMLBacked):
     @property
+    def skill(self):
+        if self._xml.has_node('skill'):
+            return self._wrap('skill', SkillDefinitionNode)
+        return None
+
+    @property
     def rules(self):
         return self._wrap_each('rule', AspectRuleNode)
 
     @property
     def requirements(self):
         return self._wrap_each('requires', AspectRequirementNode)
+
+
+class SkillDefinitionNode(XMLBacked):
+    @property
+    def inheritance(self):
+        return self._wrap_each('inherits', SkillInheritanceNode)
+
+
+class SkillInheritanceNode(XMLBacked):
+    pass
 
 
 class AspectRuleNode(XMLBacked):

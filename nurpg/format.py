@@ -17,10 +17,13 @@ def format_character(char, model, output):
             format_aspect(aspect, model, core_aspects)
 
     write_line('# {}'.format(char.name), output)
-    write_line('## Stats', output)
+    write_line('## Skill Stats', output)
 
-    for stat_name, value in char.stats(model).items():
-        write_line('* **{}**: {}'.format(stat_name, value), output)
+    for skill in sorted(char.skills(model), key=lambda s: s.name):
+        write_line('* **{}**\n\t{}\n\tModifier: {}'.format(
+            skill.name,
+            skill.difficulty,
+            skill.modifier), output)
 
     write_line('## Details', output)
     write_line('* AP Total: {}'.format(char.aspect_points), output)
@@ -32,7 +35,6 @@ def format_character(char, model, output):
     # write_line('### Core Aspects', output)
     # write_line(core_aspects.getvalue(), output)
 
-    write_line('### Aspects', output)
     write_line(aspect_list.getvalue(), output)
 
 

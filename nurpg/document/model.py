@@ -180,19 +180,12 @@ class Rule(object):
     def __init__(self, name, category, text):
         self.name = name
         self.category = category
-        self.modifiers = list()
         self.text = text
         self.options = collections.OrderedDict()
-
-    def add_modifier(self, modifier_target):
-        self.modifiers.append(modifier_target)
 
     @classmethod
     def from_xml(cls, option_generator, rule_xml, formula_xml):
         rule = cls(rule_xml.name, rule_xml.category, rule_xml.text)
-        for modifier_xml in rule_xml.modifiers:
-            rule.add_modifier(modifier_xml.ref)
-
         for option_info in iterate_options(rule_xml):
             calculated_option = option_generator.calculate_option(formula_xml, option_info)
             rule.options[calculated_option.name] = calculated_option
@@ -228,11 +221,29 @@ class Template(object):
         return template
 
 
+class Skill(object):
+    def __init__(self, name, skill_type):
+        self.name = name
+        self.type = skill_type
+        self.inheritance = list()
+
+    def inherits_from(self, ref):
+        self.inheritance.append(ref)
+
+    @classmethod
+    def from_xml(cls, name, skill_xml):
+        skill = cls(name, skill_xml.type)
+        for inherits_xml in skill_xml.inheritance:
+            skill.inherits_from(inherits_xml.from_ref)
+        return skill
+
+
 class Aspect(object):
     def __init__(self, name, template, text):
         self.name = name
         self.template = template
         self.text = text
+        self.skill = None
         self.requirements = list()
 
         self._rule_references = list()
@@ -240,6 +251,12 @@ class Aspect(object):
 
     def add_predefined_rule(self, rule):
         self._predefined_rules.append(rule)
+
+    def selected_rule(self, name, model):
+        for rule in self.selected_rules(model):
+            if rule.definition.name == name:
+                return rule
+        return None
 
     def selected_rules(self, model):
         rules = [rf.realize(model) for rf in self._rule_references]
@@ -257,6 +274,9 @@ class Aspect(object):
     def from_xml(cls, aspect_xml):
         aspect = cls(aspect_xml.name, aspect_xml.template, aspect_xml.text)
 
+        if aspect_xml.skill is not None:
+            aspect.skill = Skill.from_xml(aspect_xml.name, aspect_xml.skill)
+
         for aspect_requirement_xml in aspect_xml.requirements:
             aspect.requirements.append(aspect_requirement_xml.name)
 
@@ -272,8 +292,11 @@ class CoreAspect(Aspect):
         core_aspect = Aspect(name, categroy, text)
         core_aspect_rule = Rule(name, categroy, text)
         core_aspect_rule.options[name] = RuleOption(name, 0)
-        core_aspect_rule.add_modifier(name)
         core_aspect.add_predefined_rule(core_aspect_rule)
+
+        core_aspect_skill = CharacterSkill(name)
+        core_aspect_skill.type = 'core'
+        core_aspect.skill = core_aspect
 
         return core_aspect
 
@@ -356,13 +379,21 @@ class Character(object):
         self.health_pool = 6
         self.aspect_points = aspect_points
 
-    def stats(self, model):
-        stats = dict()
+    def skills(self, model):
+        skills = list()
         for aspect in self.aspects.values():
-            for rule in aspect.selected_rules(model):
-                for modifier in rule.definition.modifiers:
-                    stats[modifier] = 0
-        return stats
+            if aspect.skill is not None:
+                cs = CharacterSkill(aspect.skill.name)
+
+                failure_chance = aspect.selected_rule('Failure Chance', model)
+                if failure_chance is not None:
+                    cs.difficulty = failure_chance.option.name
+                else:
+                    cs.difficulty = 'Difficulty: GM Specified'
+
+                skills.append(cs)
+
+        return skills
 
     def check(self, model):
         ap_total = 0
@@ -378,3 +409,10 @@ class Character(object):
             raise CharacterCheckException(
                 'Character build requires {} aspect points but only has {} AP allotted.'.format(
                     ap_total, self.aspect_points))
+
+
+class CharacterSkill(object):
+    def __init__(self, name):
+        self.name = name
+        self.modifier = 0
+        self.difficulty = 0
