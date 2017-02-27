@@ -103,6 +103,9 @@ def find_node(nodes, name, attribute='name'):
 
 
 class DocumentNode(XMLBacked):
+    def resources(self):
+        return self._wrap_set('resources', 'resource', ResourceNode)
+
     def formula(self, name):
         return find_node(self.formulas(), name)
 
@@ -128,6 +131,10 @@ class DocumentNode(XMLBacked):
         return self._wrap_set('aspects', 'aspect', AspectNode)
 
 
+class ResourceNode(XMLBacked):
+    pass
+
+
 class FormulaNode(XMLBacked):
     pass
 
@@ -140,6 +147,14 @@ class RuleNode(XMLBacked):
     @property
     def options(self):
         return self._wrap_each('option', RuleOptionNode)
+
+    @property
+    def modifiers(self):
+        return self._wrap_each('modifier', RuleModifierNode)
+
+
+class RuleModifierNode(XMLBacked):
+    pass
 
 
 class RuleFormulaNode(XMLBacked):
@@ -189,11 +204,15 @@ class SkillDefinitionNode(XMLBacked):
 
 
 class SkillInheritanceNode(XMLBacked):
-    pass
+    @property
+    def from_ref(self):
+        return self._xml.attr('from')
 
 
 class AspectRuleNode(XMLBacked):
-    pass
+    @property
+    def modifiers(self):
+        return self._wrap_each('modifier', RuleModifierNode)
 
 
 class AspectRequirementNode(XMLBacked):

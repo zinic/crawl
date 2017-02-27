@@ -105,6 +105,7 @@ class Model(object):
     def __init__(self, document):
         self._document = document
 
+        self._resources = dict()
         self._rules = dict()
         self._templates = dict()
         self._aspects = dict()
@@ -134,6 +135,10 @@ class Model(object):
             rule = Rule.from_xml(option_generator, rule_xml, document.formula(rule_xml.formula.ref))
             self._rules[rule.name] = rule
 
+        for resource_xml in document.resources():
+            resource = Resource.from_xml(resource_xml)
+            self._resources[resource.name] = resource
+
         for template_xml in document.templates():
             template = Template.from_xml(template_xml)
             self._templates[template.name] = template
@@ -152,6 +157,9 @@ class Model(object):
             cost_bd.cost_elements.append(cost_ref)
 
         return cost_bd
+
+    def resources(self):
+        return [self._resources[k] for k in sorted(self._resources.keys())]
 
     def aspect(self, name):
         return self._aspects[name]
@@ -176,16 +184,31 @@ class Model(object):
         return rules
 
 
+class Resource(object):
+    def __init__(self, name, starting_value):
+        self.name = name
+        self.starting_value = starting_value
+
+    @classmethod
+    def from_xml(cls, resource_xml):
+        return Resource(resource_xml.name, int(resource_xml.starting_value))
+
+
 class Rule(object):
     def __init__(self, name, category, text):
         self.name = name
         self.category = category
         self.text = text
+        self.modifiers = list()
         self.options = collections.OrderedDict()
 
     @classmethod
     def from_xml(cls, option_generator, rule_xml, formula_xml):
         rule = cls(rule_xml.name, rule_xml.category, rule_xml.text)
+
+        for modifier_xml in rule_xml.modifiers:
+            rule.modifiers.append(modifier_xml.ref)
+
         for option_info in iterate_options(rule_xml):
             calculated_option = option_generator.calculate_option(formula_xml, option_info)
             rule.options[calculated_option.name] = calculated_option
@@ -249,6 +272,9 @@ class Aspect(object):
         self._rule_references = list()
         self._predefined_rules = list()
 
+    def has_skill(self):
+        return self.skill is not None
+
     def add_predefined_rule(self, rule):
         self._predefined_rules.append(rule)
 
@@ -261,7 +287,7 @@ class Aspect(object):
     def selected_rules(self, model):
         rules = [rf.realize(model) for rf in self._rule_references]
         for predefined in self._predefined_rules:
-            rules.append(RuleSelection(predefined, predefined.name))
+            rules.append(RuleSelection(predefined, list(), predefined.name))
         return rules
 
     def has_rule(self, rule_name):
@@ -281,7 +307,11 @@ class Aspect(object):
             aspect.requirements.append(aspect_requirement_xml.name)
 
         for rule_ref_xml in aspect_xml.rules:
-            aspect._rule_references.append(RuleReference(rule_ref_xml.ref, rule_ref_xml.value))
+            rref = RuleReference(rule_ref_xml.ref, rule_ref_xml.value)
+            for modifier_xml in rule_ref_xml.modifiers:
+                rref.add_modifier(modifier_xml.ref)
+
+            aspect._rule_references.append(rref)
 
         return aspect
 
@@ -294,9 +324,9 @@ class CoreAspect(Aspect):
         core_aspect_rule.options[name] = RuleOption(name, 0)
         core_aspect.add_predefined_rule(core_aspect_rule)
 
-        core_aspect_skill = CharacterSkill(name)
+        core_aspect_skill = Skill(name, 'Core Aspect')
         core_aspect_skill.type = 'core'
-        core_aspect.skill = core_aspect
+        core_aspect.skill = core_aspect_skill
 
         return core_aspect
 
@@ -330,14 +360,25 @@ class RuleReference(object):
     def __init__(self, rule_name, option):
         self.rule_name = rule_name
         self.option = option
+        self.modifiers = list()
+
+    def add_modifier(self, modifier):
+        self.modifiers.append(modifier)
 
     def realize(self, model):
-        return RuleSelection(model.rule(self.rule_name), self.option)
+        rule = model.rule(self.rule_name)
+
+        rule_modifiers = list()
+        rule_modifiers.extend(self.modifiers)
+        rule_modifiers.extend(rule.modifiers)
+
+        return RuleSelection(rule, rule_modifiers, self.option)
 
 
 class RuleSelection(object):
-    def __init__(self, definition, target_option):
+    def __init__(self, definition, modifiers, target_option):
         self.definition = definition
+        self.modifiers = modifiers
         self._target_option = target_option
 
     @property
@@ -367,6 +408,17 @@ class CharacterCheckException(Exception):
         return self.msg
 
 
+MODIFIER_EXTRACTION_RE = re.compile('([+-][\d]+).*')
+
+
+def extract_numeric_modifier(modifier):
+    match = MODIFIER_EXTRACTION_RE.match(modifier)
+    if match is not None:
+        return int(match.group(1))
+
+    raise Exception('Unable to extract a numeric modifier value from modifier: {}'.format(modifier))
+
+
 class Character(object):
     def __init__(self, name, aspect_points):
         self.aspects = {
@@ -376,24 +428,58 @@ class Character(object):
         }
 
         self.name = name
-        self.health_pool = 6
         self.aspect_points = aspect_points
+        self.resources = dict()
+        self.skills = dict()
 
-    def skills(self, model):
-        skills = list()
+    def load(self, model):
+        # Load resources first
+        for resource in model.resources():
+            self.resources[resource.name] = resource.starting_value
+
+        # Load aspect information
+        character_aspects = self.aspects.values()
+
+        # Construct all the skills first
+        for aspect in character_aspects:
+            if not aspect.has_skill():
+                continue
+
+            skill = CharacterSkill(aspect.skill.name)
+            self.skills[aspect.skill.name] = skill
+
+            failure_chance = aspect.selected_rule('Failure Chance', model)
+            if failure_chance is not None:
+                skill.difficulty = failure_chance.option.name
+            else:
+                skill.difficulty = 'Difficulty: GM Specified'
+
+        # Resolve all modifiers and apply them
         for aspect in self.aspects.values():
-            if aspect.skill is not None:
-                cs = CharacterSkill(aspect.skill.name)
+            for rule_selection in aspect.selected_rules(model):
+                for modifier in rule_selection.modifiers:
+                    modifier_value = extract_numeric_modifier(rule_selection.option.name)
 
-                failure_chance = aspect.selected_rule('Failure Chance', model)
-                if failure_chance is not None:
-                    cs.difficulty = failure_chance.option.name
-                else:
-                    cs.difficulty = 'Difficulty: GM Specified'
+                    # Check first if a resource matches the name
+                    resource = self.resources.get(modifier)
+                    if resource is not None:
+                        self.resources[modifier] = resource + modifier_value
+                        continue
 
-                skills.append(cs)
+                    # Check if a skill matches the name
+                    skill = self.skills[modifier]
+                    modifier_value = extract_numeric_modifier(rule_selection.option.name)
+                    skill.modifier += modifier_value
 
-        return skills
+        # Process skill inheritance
+        for aspect in self.aspects.values():
+            if not aspect.has_skill():
+                continue
+
+            character_skill = self.skills[aspect.skill.name]
+            for inherits_from in aspect.skill.inheritance:
+                donor_skill = self.skills[inherits_from]
+                character_skill.modifier += donor_skill.modifier
 
     def check(self, model):
         ap_total = 0

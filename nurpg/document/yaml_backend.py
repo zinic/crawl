@@ -18,5 +18,6 @@ def load_character(input, model):
         character.aspects[aspect_ref] = model.aspect(aspect_ref)
 
     # Check the character first then return it
+    character.load(model)
     character.check(model)
     return character

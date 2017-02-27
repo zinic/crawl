@@ -137,47 +137,7 @@ Grants immunity to a certain affliction and all of its effects.
 * **+5 Concentration**
 	* Aspect Point Cost: 8
 
-#### Rule: Core Intelligence Modifier
-
-* **-3**
-	* Aspect Point Cost: -13
-
-* **-2**
-	* Aspect Point Cost: -8
-
-* **-1**
-	* Aspect Point Cost: -5
-
-* **+1**
-	* Aspect Point Cost: 5
-
-* **+2**
-	* Aspect Point Cost: 8
-
-* **+3**
-	* Aspect Point Cost: 13
-
-#### Rule: Core Mobility Modifier
-
-* **-3**
-	* Aspect Point Cost: -13
-
-* **-2**
-	* Aspect Point Cost: -8
-
-* **-1**
-	* Aspect Point Cost: -5
-
-* **+1**
-	* Aspect Point Cost: 5
-
-* **+2**
-	* Aspect Point Cost: 8
-
-* **+3**
-	* Aspect Point Cost: 13
-
-#### Rule: Core Strength Modifier
+#### Rule: Core Aspect Modifier
 
 * **-3**
 	* Aspect Point Cost: -13
@@ -557,6 +517,7 @@ delay when damage happens like a bomb that takes more skill to place, etc.
 	* Aspect Point Cost: -2
 
 #### Rule: Energy Point Pool Mality
+This one is still a work in progress.
 
 * **-2**
 	* Aspect Point Cost: -8
@@ -766,6 +727,11 @@ the future only by lowering it.
 	* Aspect Point Cost: 3
 
 * **Poisoned**
+	* Aspect Point Cost: 5
+
+#### Rule: May Enter Stealth
+
+* **May Enter Stealth**
 	* Aspect Point Cost: 5
 
 #### Rule: Melee Reach
@@ -1415,7 +1381,7 @@ Requires: **[Fit](#)**
 
 Aspect Point Cost: 6
 #### Details
-* Core Mobility Modifier (**5 AP**): +1
+* Core Aspect Modifier (**5 AP**): +1
 * HP Pool Modifier (**1 AP**): +1
 
 ### Intense Endurance Training
@@ -1437,7 +1403,7 @@ Requires: **[Fit](#)**
 
 Aspect Point Cost: 6
 #### Details
-* Core Strength Modifier (**5 AP**): +1
+* Core Aspect Modifier (**5 AP**): +1
 * HP Pool Modifier (**1 AP**): +1
 
 ### Keen Senses
@@ -1640,7 +1606,7 @@ Requires: **[Mental Endurance](#)**
 
 Aspect Point Cost: 5
 #### Details
-* Core Intelligence Modifier (**5 AP**): +1
+* Core Aspect Modifier (**5 AP**): +1
 
 ### Obscura
 Creates a roaming darkness that condenses as a weightless mist. This mist is only effective on incoming
@@ -1747,16 +1713,17 @@ Requires: **[Mental Endurance](#)**
 Aspect Point Cost: 5
 #### Details
 * Energy Point Refresh Modifier (**5 AP**): +1
-* Core Intelligence Modifier (**5 AP**): +1
-* Core Strength Modifier (**-5 AP**): -1
+* Core Aspect Modifier (**5 AP**): +1
+* Core Aspect Modifier (**-5 AP**): -1
 
 ### Quiet Steps
 Allows a character to make a stealth check by walking carefully. In order to enter stealth, the
 character must not be visible by any enemies.
 
 
-Aspect Point Cost: 5
+Aspect Point Cost: 10
 #### Details
+* May Enter Stealth (**5 AP**): May Enter Stealth
 * Failure Chance (**7 AP**): Difficulty 8
 * Energy Point Cost (**-2 AP**): +1
 

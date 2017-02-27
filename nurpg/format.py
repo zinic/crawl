@@ -17,18 +17,25 @@ def format_character(char, model, output):
             format_aspect(aspect, model, core_aspects)
 
     write_line('# {}'.format(char.name), output)
-    write_line('## Skill Stats', output)
-
-    for skill in sorted(char.skills(model), key=lambda s: s.name):
-        write_line('* **{}**\n\t{}\n\tModifier: {}'.format(
-            skill.name,
-            skill.difficulty,
-            skill.modifier), output)
 
     write_line('## Details', output)
     write_line('* AP Total: {}'.format(char.aspect_points), output)
     write_line('* AP Spent: {}'.format(ap_total), output)
     write_line('* AP Available: {}'.format(char.aspect_points - ap_total), output)
+
+    write_line('## Resources', output)
+    for name in sorted(char.resources.keys()):
+        value = char.resources[name]
+        write_line('* **{}:** {}'.format(name, value), output)
+
+    write_line('## Skill Stats', output)
+
+    for name in sorted(char.skills.keys()):
+        skill = char.skills[name]
+        write_line('* **{}**\n\t* {}\n\t* Modifier: {}'.format(
+            skill.name,
+            skill.difficulty,
+            '+{}'.format(skill.modifier) if skill.modifier > 0 else skill.modifier), output)
 
     write_line('## Aspect List', output)
 

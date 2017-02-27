@@ -2,14 +2,20 @@
 
 character:
   name: Test Character
-  aspect_points: 200
+  aspect_points: 100
   aspects:
     - Archery
+    - Adonic
     - Fit
     - Medicine
     - Knowledge - Martial
     - Knowledge - Occult
+    - Block
+    - Intense Endurance Training
     - Intense Acrobatic Training
+    - Intense Resistance Training
+    - Mental Endurance
+    - Mentat
     - Slash
     - Quiet Steps
     - Great Slash
