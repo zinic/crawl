@@ -937,6 +937,18 @@ be used with the weapon.
 #### Rule: Number of Uses
 Useful for items that have consumable uses.
 
+* **Has 1 Use(s)**
+	* Aspect Point Cost: -3
+
+* **Has 2 Use(s)**
+	* Aspect Point Cost: -2
+
+* **Has 3 Use(s)**
+	* Aspect Point Cost: -1
+
+* **Has 4 Use(s)**
+	* Aspect Point Cost: 0
+
 ### Charcater Rules
 Rules that apply to characters only.
 #### Rule: Grapple
@@ -1939,4 +1951,21 @@ for every weapon type the character wishes to use.
 Aspect Point Cost: 1
 #### Details
 * Concentration Modifier (**1 AP**): +1 Concentration
+
+## Items
+### Ring of Fitness
+Wearing this small ring makes you feel healthier.
+
+Monetary Cost: $$200
+#### Details
+Worn on Item Slot: **lightweight**
+* Fit (**1 AP**)
+
+### Weak Health Potion
+Simple health potion.
+
+Monetary Cost: $$300
+#### Details
+* Damage Healed (**6 AP**)
+* Number of Uses (**-3 AP**)
 

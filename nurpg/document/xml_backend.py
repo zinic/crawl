@@ -69,6 +69,9 @@ class XMLNode(object):
     def has_attr(self, name):
         return name in self._xml.attrib
 
+    def __getattr__(self, name):
+        return self._xml.attrib.get(name, None)
+
 
 class XMLBacked(object):
     def __init__(self, xml):
@@ -103,117 +106,20 @@ def find_node(nodes, name, attribute='name'):
 
 
 class DocumentNode(XMLBacked):
-    def resources(self):
-        return self._wrap_set('resources', 'resource', ResourceNode)
+    def items(self):
+        return self._xml.node('items')
 
-    def formula(self, name):
-        return find_node(self.formulas(), name)
+    def resources(self):
+        return self._xml.node('resources')
 
     def formulas(self):
-        return self._wrap_set('formulas', 'formula', FormulaNode)
-
-    def rule(self, name):
-        return find_node(self.rules(), name)
+        return self._xml.node('formulas')
 
     def rules(self):
-        return self._wrap_set('rules', 'rule', RuleNode)
-
-    def template(self, name):
-        return find_node(self.templates(), name)
+        return self._xml.node('rules')
 
     def templates(self):
-        return self._wrap_set('templates', 'template', TemplateNode)
-
-    def aspect(self, name):
-        return find_node(self.aspects(), name)
+        return self._xml.node('templates')
 
     def aspects(self):
-        return self._wrap_set('aspects', 'aspect', AspectNode)
-
-
-class ResourceNode(XMLBacked):
-    pass
-
-
-class FormulaNode(XMLBacked):
-    pass
-
-
-class RuleNode(XMLBacked):
-    @property
-    def formula(self):
-        return self._wrap('formula', RuleFormulaNode)
-
-    @property
-    def options(self):
-        return self._wrap_each('option', RuleOptionNode)
-
-    @property
-    def modifiers(self):
-        return self._wrap_each('modifier', RuleModifierNode)
-
-
-class RuleModifierNode(XMLBacked):
-    pass
-
-
-class RuleFormulaNode(XMLBacked):
-    @property
-    def arguments(self):
-        return self._wrap_each('argument', RuleFormulaArgumentNode)
-
-
-class RuleFormulaArgumentNode(XMLBacked):
-    pass
-
-
-class RuleOptionNode(XMLBacked):
-    pass
-
-
-class TemplateNode(XMLBacked):
-    @property
-    def requirements(self):
-        return self._wrap_each('requires', TemplateRequirementNode)
-
-
-class TemplateRequirementNode(XMLBacked):
-    pass
-
-
-class AspectNode(XMLBacked):
-    @property
-    def skill(self):
-        if self._xml.has_node('skill'):
-            return self._wrap('skill', SkillDefinitionNode)
-        return None
-
-    @property
-    def rules(self):
-        return self._wrap_each('rule', AspectRuleNode)
-
-    @property
-    def requirements(self):
-        return self._wrap_each('requires', AspectRequirementNode)
-
-
-class SkillDefinitionNode(XMLBacked):
-    @property
-    def inheritance(self):
-        return self._wrap_each('inherits', SkillInheritanceNode)
-
-
-class SkillInheritanceNode(XMLBacked):
-    @property
-    def from_ref(self):
-        return self._xml.attr('from')
-
-
-class AspectRuleNode(XMLBacked):
-    @property
-    def modifiers(self):
-        return self._wrap_each('modifier', RuleModifierNode)
-
-
-class AspectRequirementNode(XMLBacked):
-    pass
+        return self._xml.node('aspects')

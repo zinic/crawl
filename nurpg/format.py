@@ -11,7 +11,7 @@ def format_character(char, model, output):
     aspect_list = io.StringIO()
     for aspect in char.aspects.values():
         if aspect.template != 'core':
-            ap_total += model.ap_cost_breakdown(aspect).total
+            ap_total += model.aspect_cost_breakdown(aspect.name).ap_total
             format_aspect(aspect, model, aspect_list)
         else:
             format_aspect(aspect, model, core_aspects)
@@ -95,9 +95,9 @@ def format_aspect(aspect, model, output):
 
     ap_cost = 0
     cost_breakdown = ''
-    for cost_element in model.ap_cost_breakdown(aspect).cost_elements:
+    for cost_element in model.aspect_cost_breakdown(aspect.name).cost_elements:
         cost_breakdown += '* {} (**{} AP**): {}\n'.format(
-            cost_element.rule_name, cost_element.cost, cost_element.option_name)
+            cost_element.name, cost_element.cost, cost_element.option.name)
         ap_cost += cost_element.cost
 
     write_line('Aspect Point Cost: {}'.format(ap_cost), output)
@@ -111,8 +111,44 @@ def format_aspects(model, output):
         format_aspect(aspect, model, output)
 
 
+def format_item(item, model, output):
+    write_line('### {}'.format(item.name), output)
+
+    if item.text is not None:
+        write_line(item.text, output)
+
+    total_cost = 0
+    grants_breakdown = ''
+    for grant in item.grants:
+        grant_cost = model.aspect_cost_breakdown(grant).ap_total
+        total_cost += grant_cost
+
+        grants_breakdown += '* {} (**{} AP**)'.format(grant, grant_cost)
+
+    cost_breakdown = ''
+    for cost_element in model.item_cost_breakdown(item.name).cost_elements:
+        cost_breakdown += '* {} (**{} AP**)\n'.format(
+            cost_element.name, cost_element.cost)
+        total_cost += cost_element.cost
+
+    write_line('Monetary Cost: $${}'.format(total_cost * 100), output)
+    write_line('#### Details'.format(), output)
+
+    if item.wearable is not None:
+        write_line('Worn on Item Slot: **{}**'.format(item.wearable.slot), output)
+
+    write_line(cost_breakdown, output)
+
+def format_items(model, output):
+    write_line('## Items', output)
+
+    for item in model.items():
+        format_item(item, model, output)
+
+
 def format_markdown(model):
     with open('output.md', 'w') as output:
         write_line('# Crawl Aspect Document', output)
         format_rules(model, output)
         format_aspects(model, output)
+        format_items(model, output)

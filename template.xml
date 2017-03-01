@@ -17,6 +17,9 @@
         <formula name="Failure Chance" type="custom" equation="15 - i">
         </formula>
 
+        <formula name="Item Usage Cost" type="custom" equation="i - 4">
+        </formula>
+
         <formula name="Linear Progression" type="custom" equation="i">
         </formula>
 
@@ -62,11 +65,10 @@
     <rules>
         <!-- Item Rules -->
         <rule name="Number of Uses" category="item">
-            <formula ref="Basic Progression">
+            <formula ref="Item Usage Cost">
             </formula>
 
-            <!-- TODO: This has to be rethought a bit -->
-            <option name="Has {range_value} Use(s)" range="-1,-5"/>
+            <option name="Has {range_value} Use(s)" range="1,4"/>
 
             <text>
                 Useful for items that have consumable uses.
@@ -571,6 +573,26 @@
             <requires rule="Energy Point Cost"/>
         </template>
     </templates>
+
+    <items>
+        <item name="Weak Health Potion" template="None">
+            <rule ref="Damage Healed" value="1d6"/>
+            <rule ref="Number of Uses" value="Has 1 Use(s)"/>
+
+            <text>
+                Simple health potion.
+            </text>
+        </item>
+
+        <item name="Ring of Fitness" template="None">
+            <wearable slot="lightweight" />
+            <grants ref="Fit" />
+
+            <text>
+                Wearing this small ring makes you feel healthier.
+            </text>
+        </item>
+    </items>
 
     <aspects>
         <aspect name="Affluent" template="None">

@@ -7,6 +7,18 @@ import nurpg.formulas as formulas
 DICE_REGEX = re.compile('[\d]+d[\d]+')
 
 
+class FormulaDefinition(object):
+    def __init__(self, name, backend_type, equation, provided_func_ref):
+        self.name = name
+        self.type = backend_type
+        self.equation = equation
+        self.provided_func_ref = provided_func_ref
+
+    @classmethod
+    def from_xml(cls, formula_xml):
+        return cls(formula_xml.name, formula_xml.type, formula_xml.equation, formula_xml.function)
+
+
 class OptionPositionInfo(object):
     def __init__(self, option, range_value, position):
         self.option = option
@@ -71,7 +83,7 @@ class OptionGenerator(object):
             # Return as a formula result
             return RuleOption(option_info.format_name(), int(cost))
 
-        if formula.function == 'damage_cost':
+        if formula.provided_func_ref == 'damage_cost':
             return self.calculate_damage_cost(option_info)
 
         raise Exception('Unknown formula => {}::{}'.format(formula.type, formula.function))
@@ -82,13 +94,13 @@ def iterate_options(rule_xml):
     i = 1
 
     # Iterate through the defined options
-    for option in rule_xml.options:
+    for option_xml in rule_xml.each_node('option'):
         # Values start with the position of the option
         values = [i]
 
         # Values may have a short-hand notation to generate additional options in a range
-        if option.range is not None:
-            start, end = [int(v) for v in option.range.split(',')]
+        if option_xml.range is not None:
+            start, end = [int(v) for v in option_xml.range.split(',')]
             values = range(start, end + 1)
 
         for r in values:
@@ -98,7 +110,7 @@ def iterate_options(rule_xml):
             if r == 0:
                 continue
 
-            yield OptionPositionInfo(option, r, i)
+            yield OptionPositionInfo(option_xml, r, i)
 
 
 class Model(object):
@@ -106,9 +118,11 @@ class Model(object):
         self._document = document
 
         self._resources = dict()
+        self._formulas = dict()
         self._rules = dict()
         self._templates = dict()
         self._aspects = dict()
+        self._items = dict()
 
         self._generate(document)
 
@@ -123,38 +137,60 @@ class Model(object):
                 template = self._templates[aspect.template]
                 template.validate_aspect(aspect)
 
-            cost_breakdown = self.lookup_ap_cost_breakdown(aspect.name)
-            if cost_breakdown.total <= 0:
+            cost_breakdown = self.aspect_cost_breakdown(aspect.name)
+            if cost_breakdown.ap_total <= 0:
                 raise Exception('Aspect {} has an invalid AP cost of: {}'.format(
-                    aspect.name, cost_breakdown.total))
+                    aspect.name, cost_breakdown.ap_total))
 
     def _generate(self, document):
         option_generator = OptionGenerator()
 
-        for rule_xml in document.rules():
-            rule = Rule.from_xml(option_generator, rule_xml, document.formula(rule_xml.formula.ref))
+        for formula_xml in document.formulas().each_node('formula'):
+            formula = FormulaDefinition.from_xml(formula_xml)
+            self._formulas[formula.name] = formula
+
+        for rule_xml in document.rules().each_node('rule'):
+            formula_ref = rule_xml.node('formula').ref
+            formula = self._formulas[formula_ref]
+
+            rule = Rule.from_xml(option_generator, rule_xml, formula)
             self._rules[rule.name] = rule
 
-        for resource_xml in document.resources():
+        for resource_xml in document.resources().each_node('resource'):
             resource = Resource.from_xml(resource_xml)
             self._resources[resource.name] = resource
 
-        for template_xml in document.templates():
+        for template_xml in document.templates().each_node('template'):
             template = Template.from_xml(template_xml)
             self._templates[template.name] = template
 
-        for aspect_xml in document.aspects():
+        for aspect_xml in document.aspects().each_node('aspect'):
             aspect = Aspect.from_xml(aspect_xml)
             self._aspects[aspect.name] = aspect
 
-    def lookup_ap_cost_breakdown(self, name):
-        return self.ap_cost_breakdown(self._aspects[name])
+        for item_xml in document.items().each_node('item'):
+            item = Item.from_xml(item_xml)
+            self._items[item.name] = item
 
-    def ap_cost_breakdown(self, aspect):
-        cost_bd = AspectCostBreakdown()
+    def item_cost_breakdown(self, name):
+        cost_bd = RuleCostBreakdown()
+        item = self._items[name]
+
+        for aspect_ref in item.grants:
+            aspect_cost_bd = self.aspect_cost_breakdown(aspect_ref)
+            cost_bd.cost_elements.append(AspectGrantCost(aspect_ref, aspect_cost_bd.ap_total))
+
+        for rule in item.rules.realize(self):
+            cost_bd.cost_elements.append(rule)
+
+        return cost_bd
+
+    def aspect_cost_breakdown(self, name):
+        cost_bd = RuleCostBreakdown()
+
+        aspect = self._aspects[name]
         for rule in aspect.selected_rules(self):
-            cost_ref = AspectCostReference(rule.definition.name, rule.option.name, rule.option.cost)
-            cost_bd.cost_elements.append(cost_ref)
+            cost_bd.cost_elements.append(rule)
 
         return cost_bd
 
@@ -166,6 +202,9 @@ class Model(object):
 
     def aspects(self):
         return [self._aspects[k] for k in sorted(self._aspects.keys())]
+
+    def items(self):
+        return [self._items[k] for k in sorted(self._items.keys())]
 
     def rule(self, name):
         return self._rules[name]
@@ -204,9 +243,12 @@ class Rule(object):
 
     @classmethod
     def from_xml(cls, option_generator, rule_xml, formula_xml):
-        rule = cls(rule_xml.name, rule_xml.category, rule_xml.text)
+        text_xml = rule_xml.node('text')
+        text = text_xml.text() if text_xml is not None else ''
 
-        for modifier_xml in rule_xml.modifiers:
+        rule = cls(rule_xml.name, rule_xml.category, text)
+
+        for modifier_xml in rule_xml.each_node('modifier'):
             rule.modifiers.append(modifier_xml.ref)
 
         for option_info in iterate_options(rule_xml):
@@ -238,8 +280,10 @@ class Template(object):
     def from_xml(cls, template_xml):
         template = cls(template_xml.name)
 
-        for template_requirement_xml in template_xml.requirements:
-            template.requirements.append(template_requirement_xml.rule)
+        requirements_xml = template_xml.node('requirements')
+        if requirements_xml is not None:
+            for template_requirement_xml in requirements_xml.each_node('requirement'):
+                template.requirements.append(template_requirement_xml.rule)
 
         return template
 
@@ -261,15 +305,63 @@ class Skill(object):
         return skill
 
 
+'''
+        <item name="Ring of Fitness" template="None">
+            <rule ref="Damage Healed" value="1d6"/>
+            <rule ref="Number of Uses" value="1"/>
+
+            <wearable slot="lightweight" />
+            <grants ref="Fit" />
+
+            <text>
+                Wearing this small ring makes you feel healthier.
+            </text>
+        </item>
+'''
+
+
+class Item(object):
+    def __init__(self, name, template, text=None):
+        self.name = name
+        self.template = template
+        self.text = text
+
+        self.grants = list()
+        self.wearable = None
+        self.rules = list()
+
+    @classmethod
+    def from_xml(cls, item_xml):
+        text_xml = item_xml.node('text')
+        text = text_xml.text() if text_xml is not None else ''
+
+        item = cls(item_xml.name, item_xml.template, text)
+        item.rules = RuleReferences.from_xml(item_xml)
+
+        for grants_xml in item_xml.each_node('grants'):
+            item.grants.append(grants_xml.ref)
+
+        item_slot_xml = item_xml.node('wearable')
+        if item_slot_xml is not None:
+            item.wearable = ItemSlotAssignment(item_slot_xml.slot)
+
+        return item
+
+
+class ItemSlotAssignment(object):
+    def __init__(self, slot):
+        self.slot = slot
+
+
 class Aspect(object):
     def __init__(self, name, template, text):
         self.name = name
         self.template = template
         self.text = text
         self.skill = None
+        self.rules = RuleReferences()
         self.requirements = list()
 
-        self._rule_references = list()
         self._predefined_rules = list()
 
     def has_skill(self):
@@ -285,33 +377,28 @@ class Aspect(object):
         return None
 
     def selected_rules(self, model):
-        rules = [rf.realize(model) for rf in self._rule_references]
+        rules = self.rules.realize(model)
         for predefined in self._predefined_rules:
             rules.append(RuleSelection(predefined, list(), predefined.name))
+
         return rules
 
     def has_rule(self, rule_name):
-        for rf in self._rule_references:
-            if rf.rule_name == rule_name:
-                return True
-        return False
+        return self.rules.has_ref_to(rule_name)
 
     @classmethod
     def from_xml(cls, aspect_xml):
-        aspect = cls(aspect_xml.name, aspect_xml.template, aspect_xml.text)
+        text_xml = aspect_xml.node('text')
+        text = text_xml.text() if text_xml is not None else ''
+
+        aspect = cls(aspect_xml.name, aspect_xml.template, text)
+        aspect.rules = RuleReferences.from_xml(aspect_xml)
 
         if aspect_xml.skill is not None:
             aspect.skill = Skill.from_xml(aspect_xml.name, aspect_xml.skill)
 
-        for aspect_requirement_xml in aspect_xml.requirements:
+        for aspect_requirement_xml in aspect_xml.each_node('requires'):
             aspect.requirements.append(aspect_requirement_xml.name)
-
-        for rule_ref_xml in aspect_xml.rules:
-            rref = RuleReference(rule_ref_xml.ref, rule_ref_xml.value)
-            for modifier_xml in rule_ref_xml.modifiers:
-                rref.add_modifier(modifier_xml.ref)
-
-            aspect._rule_references.append(rref)
 
         return aspect
 
@@ -343,17 +430,48 @@ class CoreAspect(Aspect):
         return cls.define('Intelligence', 'core', 'Intelligence Core')
 
 
-class AspectCostBreakdown(object):
+class RuleCostBreakdown(object):
     def __init__(self):
         self.cost_elements = list()
 
     @property
-    def total(self):
+    def ap_total(self):
         ap_cost = 0
         for cost_element in self.cost_elements:
             ap_cost += cost_element.cost
 
         return ap_cost
+
+    def __str__(self):
+        rep = ''
+        for cost_element in self.cost_elements:
+            rep += '* {} ({}AP)'.format(cost_element.option, cost_element.cost)
+        return rep
+
+
+class RuleReferences(object):
+    def __init__(self):
+        self._references = list()
+
+    def has_ref_to(self, rule_name):
+        for rf in self._references:
+            if rf.name == rule_name:
+                return True
+        return False
+
+    def add(self, rule_ref):
+        self._references.append(rule_ref)
+
+    def realize(self, model):
+        return [rr.realize(model) for rr in self._references]
+
+    @classmethod
+    def from_xml(cls, rref_parent_xml):
+        rrefs = cls()
+        for rref_xml in rref_parent_xml.each_node('rule'):
+            rrefs.add(RuleReference.from_xml(rref_xml))
+
+        return rrefs
 
 
 class RuleReference(object):
@@ -374,12 +492,27 @@ class RuleReference(object):
 
         return RuleSelection(rule, rule_modifiers, self.option)
 
+    @classmethod
+    def from_xml(cls, rule_ref_xml):
+        rref = cls(rule_ref_xml.ref, rule_ref_xml.value)
+        for rr_modifier_xml in rule_ref_xml.each_node('modifier'):
+            rref.add_modifier(rr_modifier_xml.ref)
+        return rref
+
 
 class RuleSelection(object):
     def __init__(self, definition, modifiers, target_option):
         self.definition = definition
         self.modifiers = modifiers
         self._target_option = target_option
+
+    @property
+    def name(self):
+        return self.definition.name
+
+    @property
+    def cost(self):
+        return self.option.cost
 
     @property
     def option(self):
@@ -393,10 +526,9 @@ class RuleSelection(object):
             raise
 
 
-class AspectCostReference(object):
-    def __init__(self, rule_name, option_name, cost):
-        self.rule_name = rule_name
-        self.option_name = option_name
+class AspectGrantCost(object):
+    def __init__(self, name, cost):
+        self.name = name
         self.cost = cost
 
 
@@ -484,7 +616,7 @@ class Character(object):
     def check(self, model):
         ap_total = 0
         for aspect in self.aspects.values():
-            ap_total += model.ap_cost_breakdown(aspect).total
+            ap_total += model.aspect_cost_breakdown(aspect.name).ap_total
 
             for requirement_ref in aspect.requirements:
                 if requirement_ref not in self.aspects:
