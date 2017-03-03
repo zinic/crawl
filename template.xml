@@ -8,6 +8,9 @@
 
         <resource name="Energy Point Refresh" starting_value="1">
         </resource>
+
+        <resource name="Monetary Funds" starting_value="0" unit="$$">
+        </resource>
     </resources>
 
     <formulas>
@@ -225,6 +228,8 @@
         <rule name="Starting Wealth Modifier" category="all">
             <formula ref="Basic Progression">
             </formula>
+
+            <modifier ref="Monetary Funds" />
 
             <option name="$$ {range_value}00" range="1,24"/>
         </rule>
@@ -568,6 +573,10 @@
             <requires rule="Energy Point Cost"/>
         </template>
 
+        <template name="Magic Item">
+            <requires rule="Magic"/>
+        </template>
+
         <template name="Defense">
             <requires rule="Failure Chance"/>
             <requires rule="Energy Point Cost"/>
@@ -580,13 +589,15 @@
             <rule ref="Number of Uses" value="Has 1 Use(s)"/>
 
             <text>
-                Simple health potion.
+                Simple, non-magical health potion.
             </text>
         </item>
 
-        <item name="Ring of Fitness" template="None">
-            <wearable slot="lightweight" />
-            <grants ref="Fit" />
+        <item name="Ring of Fitness" template="Magic Item">
+            <rule ref="Magic"/>
+
+            <wearable slot="lightweight"/>
+            <grants ref="Fit"/>
 
             <text>
                 Wearing this small ring makes you feel healthier.

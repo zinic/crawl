@@ -67,7 +67,7 @@ class OptionGenerator(object):
             # Cost is number of dice + damage value
             cost = num_dice - 1 + num_dice * sides
 
-        return RuleOption(formatted_name, int(cost))
+        return APCostElement(formatted_name, int(cost))
 
     def calculate_option(self, formula, option_info):
         if formula.type == 'custom':
@@ -81,7 +81,7 @@ class OptionGenerator(object):
             cost = eval(formula.equation, env_copy)
 
             # Return as a formula result
-            return RuleOption(option_info.format_name(), int(cost))
+            return APCostElement(option_info.format_name(), int(cost))
 
         if formula.provided_func_ref == 'damage_cost':
             return self.calculate_damage_cost(option_info)
@@ -139,7 +139,7 @@ class Model(object):
 
             cost_breakdown = self.aspect_cost_breakdown(aspect.name)
             if cost_breakdown.ap_total <= 0:
-                raise Exception('Aspect {} has an invalid AP cost of: {}'.format(
+                raise Exception('Aspect {} has an invalid AP ap_cost of: {}'.format(
                     aspect.name, cost_breakdown.ap_total))
 
     def _generate(self, document):
@@ -178,7 +178,7 @@ class Model(object):
 
         for aspect_ref in item.grants:
             aspect_cost_bd = self.aspect_cost_breakdown(aspect_ref)
-            cost_bd.cost_elements.append(AspectGrantCost(aspect_ref, aspect_cost_bd.ap_total))
+            cost_bd.cost_elements.append(APCostElement(aspect_ref, aspect_cost_bd.ap_total))
 
         for rule in item.rules.realize(self):
             cost_bd.cost_elements.append(rule)
@@ -187,8 +187,8 @@ class Model(object):
 
     def aspect_cost_breakdown(self, name):
         cost_bd = RuleCostBreakdown()
-
         aspect = self._aspects[name]
+
         for rule in aspect.selected_rules(self):
             cost_bd.cost_elements.append(rule)
 
@@ -202,6 +202,9 @@ class Model(object):
 
     def aspects(self):
         return [self._aspects[k] for k in sorted(self._aspects.keys())]
+
+    def item(self, name, default=None):
+        return self._items.get(name, default)
 
     def items(self):
         return [self._items[k] for k in sorted(self._items.keys())]
@@ -224,8 +227,9 @@ class Model(object):
 
 
 class Resource(object):
-    def __init__(self, name, starting_value):
+    def __init__(self, name, starting_value, unit=None):
         self.name = name
+        self.unit = unit
         self.starting_value = starting_value
 
     @classmethod
@@ -258,10 +262,14 @@ class Rule(object):
         return rule
 
 
-class RuleOption(object):
-    def __init__(self, name, cost):
+class APCostElement(object):
+    def __init__(self, name, ap_cost):
         self.name = name
-        self.cost = cost
+        self.ap_cost = ap_cost
+
+    @property
+    def monetary_cost(self):
+        return self.ap_cost * 100
 
 
 class Template(object):
@@ -300,42 +308,42 @@ class Skill(object):
     @classmethod
     def from_xml(cls, name, skill_xml):
         skill = cls(name, skill_xml.type)
-        for inherits_xml in skill_xml.inheritance:
+        for inherits_xml in skill_xml.each_node('inheritance'):
             skill.inherits_from(inherits_xml.from_ref)
         return skill
 
 
-'''
-        <item name="Ring of Fitness" template="None">
-            <rule ref="Damage Healed" value="1d6"/>
-            <rule ref="Number of Uses" value="1"/>
-
-            <wearable slot="lightweight" />
-            <grants ref="Fit" />
-
-            <text>
-                Wearing this small ring makes you feel healthier.
-            </text>
-        </item>
-'''
-
-
 class Item(object):
-    def __init__(self, name, template, text=None):
+    def __init__(self, name, text=None):
         self.name = name
-        self.template = template
         self.text = text
 
+        self.rules = None
         self.grants = list()
         self.wearable = None
-        self.rules = list()
+
+    @classmethod
+    def from_yaml(cls, name, item_yaml):
+        item = cls(name, item_yaml.text)
+
+        if item_yaml.rules is not None:
+            item.rules = RuleReferences.from_yaml(item_yaml.rules)
+
+        if item_yaml.grants is not None:
+            for aspect_ref in item_yaml.grants:
+                item.grants.append(aspect_ref)
+
+        if item_yaml.wearable is not None:
+            item.wearable = ItemSlotAssignment(item_yaml.wearable.slot)
+
+        return item
 
     @classmethod
     def from_xml(cls, item_xml):
         text_xml = item_xml.node('text')
         text = text_xml.text() if text_xml is not None else ''
 
-        item = cls(item_xml.name, item_xml.template, text)
+        item = cls(item_xml.name, text)
         item.rules = RuleReferences.from_xml(item_xml)
 
         for grants_xml in item_xml.each_node('grants'):
@@ -394,8 +402,9 @@ class Aspect(object):
         aspect = cls(aspect_xml.name, aspect_xml.template, text)
         aspect.rules = RuleReferences.from_xml(aspect_xml)
 
-        if aspect_xml.skill is not None:
-            aspect.skill = Skill.from_xml(aspect_xml.name, aspect_xml.skill)
+        aspect_skill_xml = aspect_xml.node('skill')
+        if aspect_skill_xml is not None:
+            aspect.skill = Skill.from_xml(aspect_xml.name, aspect_skill_xml)
 
         for aspect_requirement_xml in aspect_xml.each_node('requires'):
             aspect.requirements.append(aspect_requirement_xml.name)
@@ -407,8 +416,10 @@ class CoreAspect(Aspect):
     @classmethod
     def define(cls, name, categroy, text):
         core_aspect = Aspect(name, categroy, text)
+        core_aspect.template = 'core'
         core_aspect_rule = Rule(name, categroy, text)
-        core_aspect_rule.options[name] = RuleOption(name, 0)
+        core_aspect_rule.category = 'core'
+        core_aspect_rule.options[name] = APCostElement(name, 0)
         core_aspect.add_predefined_rule(core_aspect_rule)
 
         core_aspect_skill = Skill(name, 'Core Aspect')
@@ -435,17 +446,21 @@ class RuleCostBreakdown(object):
         self.cost_elements = list()
 
     @property
+    def monetary_total(self):
+        return self.ap_total * 100
+
+    @property
     def ap_total(self):
         ap_cost = 0
         for cost_element in self.cost_elements:
-            ap_cost += cost_element.cost
+            ap_cost += cost_element.ap_cost
 
         return ap_cost
 
     def __str__(self):
         rep = ''
         for cost_element in self.cost_elements:
-            rep += '* {} ({}AP)'.format(cost_element.option, cost_element.cost)
+            rep += '* {} ({}AP)'.format(cost_element.option, cost_element.ap_cost)
         return rep
 
 
@@ -464,6 +479,16 @@ class RuleReferences(object):
 
     def realize(self, model):
         return [rr.realize(model) for rr in self._references]
+
+    @classmethod
+    def from_yaml(cls, rref_parent_yaml):
+        print(rref_parent_yaml)
+
+        rrefs = cls()
+        for rref_yaml in rref_parent_yaml.rules:
+            rrefs.add(RuleReference.from_yaml(rref_yaml))
+
+        return rrefs
 
     @classmethod
     def from_xml(cls, rref_parent_xml):
@@ -493,6 +518,10 @@ class RuleReference(object):
         return RuleSelection(rule, rule_modifiers, self.option)
 
     @classmethod
+    def from_yaml(cls, rule_ref_yaml):
+        pass
+
+    @classmethod
     def from_xml(cls, rule_ref_xml):
         rref = cls(rule_ref_xml.ref, rule_ref_xml.value)
         for rr_modifier_xml in rule_ref_xml.each_node('modifier'):
@@ -511,8 +540,8 @@ class RuleSelection(object):
         return self.definition.name
 
     @property
-    def cost(self):
-        return self.option.cost
+    def ap_cost(self):
+        return self.option.ap_cost
 
     @property
     def option(self):
@@ -526,12 +555,6 @@ class RuleSelection(object):
             raise
 
 
-class AspectGrantCost(object):
-    def __init__(self, name, cost):
-        self.name = name
-        self.cost = cost
-
-
 class CharacterCheckException(Exception):
     def __init__(self, msg):
         self.msg = msg
@@ -540,7 +563,7 @@ class CharacterCheckException(Exception):
         return self.msg
 
 
-MODIFIER_EXTRACTION_RE = re.compile('([+-][\d]+).*')
+MODIFIER_EXTRACTION_RE = re.compile('(?:[$\s]+)?([+-]?[\d]+).*')
 
 
 def extract_numeric_modifier(modifier):
@@ -561,8 +584,11 @@ class Character(object):
 
         self.name = name
         self.aspect_points = aspect_points
+        self.aspect_points_spent = 0
+        self.monetary_funds_spent = 0
         self.resources = dict()
         self.skills = dict()
+        self.items = dict()
 
     def load(self, model):
         # Load resources first
@@ -570,24 +596,34 @@ class Character(object):
             self.resources[resource.name] = resource.starting_value
 
         # Load aspect information
-        character_aspects = self.aspects.values()
+        character_aspects = self.aspects.copy()
 
-        # Construct all the skills first
-        for aspect in character_aspects:
-            if not aspect.has_skill():
-                continue
+        # Find any grants from items and add them
+        for item in self.items.values():
+            if len(item.grants) > 0:
+                for granted_aspect in item.grants:
+                    if granted_aspect not in character_aspects:
+                        character_aspects[granted_aspect] = model.aspect(granted_aspect)
 
-            skill = CharacterSkill(aspect.skill.name)
-            self.skills[aspect.skill.name] = skill
+        # Process all the aspects first
+        for aspect in character_aspects.values():
+            # Record the costs of all non-core aspects
+            if aspect.template != 'core':
+                self.aspect_points_spent += model.aspect_cost_breakdown(aspect.name).ap_total
 
-            failure_chance = aspect.selected_rule('Failure Chance', model)
-            if failure_chance is not None:
-                skill.difficulty = failure_chance.option.name
-            else:
-                skill.difficulty = 'Difficulty: GM Specified'
+            # If the aspect describes a skill, process it
+            if aspect.has_skill():
+                skill = CharacterSkill(aspect.skill.name)
+                self.skills[aspect.skill.name] = skill
 
-        # Resolve all modifiers and apply them
-        for aspect in self.aspects.values():
+                failure_chance = aspect.selected_rule('Failure Chance', model)
+                if failure_chance is not None:
+                    skill.difficulty = failure_chance.option.name
+                else:
+                    skill.difficulty = 'Difficulty: GM Specified'
+
+        # Resolve all aspect assigned modifiers and apply them
+        for aspect in character_aspects.values():
             for rule_selection in aspect.selected_rules(model):
                 for modifier in rule_selection.modifiers:
                     modifier_value = extract_numeric_modifier(rule_selection.option.name)
@@ -603,8 +639,27 @@ class Character(object):
                     modifier_value = extract_numeric_modifier(rule_selection.option.name)
                     skill.modifier += modifier_value
 
+        # Resolve all item assigned modifiers and apply them
+        for item in self.items.values():
+            self.monetary_funds_spent += model.item_cost_breakdown(item.name).monetary_total
+
+            for rule_selection in item.rules.realize(model):
+                for modifier in rule_selection.modifiers:
+                    modifier_value = extract_numeric_modifier(rule_selection.option.name)
+
+                    # Check first if a resource matches the name
+                    resource = self.resources.get(modifier)
+                    if resource is not None:
+                        self.resources[modifier] = resource + modifier_value
+                        continue
+
+                    # Check if a skill matches the name
+                    skill = self.skills[modifier]
+                    modifier_value = extract_numeric_modifier(rule_selection.option.name)
+                    skill.modifier += modifier_value
+
         # Process skill inheritance
-        for aspect in self.aspects.values():
+        for aspect in character_aspects.values():
             if not aspect.has_skill():
                 continue
 
@@ -614,19 +669,25 @@ class Character(object):
                 character_skill.modifier += donor_skill.modifier
 
     def check(self, model):
-        ap_total = 0
         for aspect in self.aspects.values():
-            ap_total += model.aspect_cost_breakdown(aspect.name).ap_total
+            if aspect.template == 'core':
+                continue
 
             for requirement_ref in aspect.requirements:
                 if requirement_ref not in self.aspects:
                     raise CharacterCheckException(
                         'Character aspect {} is missing requirement {}.'.format(aspect.name, requirement_ref))
 
-        if ap_total > self.aspect_points:
+        if self.aspect_points_spent > self.aspect_points:
             raise CharacterCheckException(
                 'Character build requires {} aspect points but only has {} AP allotted.'.format(
-                    ap_total, self.aspect_points))
+                    self.aspect_points_spent, self.aspect_points))
+
+        # TODO: This might be dangerous later since the resources are defined by the model
+        if self.monetary_funds_spent > self.resources['Monetary Funds']:
+            raise CharacterCheckException(
+                'Character does not have enough money. $$ {} needed but only has $$ {}.'.format(
+                    self.monetary_funds_spent, self.resources['Monetary Funds']))
 
 
 class CharacterSkill(object):

@@ -2,10 +2,25 @@
 
 character:
   name: Test Character
-  aspect_points: 100
+  aspect_points: 150
+  items:
+    # Because I'm a lazy fuck you have to enter the same item
+    # multiple times. Might fix that later.
+    Weak Health Potion:
+    Weak Health Potion:
+    Weak Health Potion:
+    Weak Health Potion:
+    Weak Health Potion:
+    Ring of Fitness:
+      text: A ring that gives me a bigger ass.
+      grants:
+        - Fit
+      wearable:
+        slot: lightweight
+
   aspects:
     - Archery
-    - Adonic
+    - Affluent
     - Fit
     - Medicine
     - Knowledge - Martial

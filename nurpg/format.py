@@ -5,33 +5,32 @@ def write_line(line, output):
     output.write('{}\n'.format(line))
 
 
-def format_character(char, model, output):
-    ap_total = 0
+def format_character(character, model, output):
     core_aspects = io.StringIO()
     aspect_list = io.StringIO()
-    for aspect in char.aspects.values():
+    for aspect in character.aspects.values():
         if aspect.template != 'core':
-            ap_total += model.aspect_cost_breakdown(aspect.name).ap_total
             format_aspect(aspect, model, aspect_list)
         else:
             format_aspect(aspect, model, core_aspects)
 
-    write_line('# {}'.format(char.name), output)
+    # Write the character header
+    write_line('# {}'.format(character.name), output)
 
     write_line('## Details', output)
-    write_line('* AP Total: {}'.format(char.aspect_points), output)
-    write_line('* AP Spent: {}'.format(ap_total), output)
-    write_line('* AP Available: {}'.format(char.aspect_points - ap_total), output)
+    write_line('* AP Total: {}'.format(character.aspect_points), output)
+    write_line('* AP Spent: {}'.format(character.aspect_points_spent), output)
+    write_line('* AP Available: {}'.format(character.aspect_points - character.aspect_points_spent), output)
 
     write_line('## Resources', output)
-    for name in sorted(char.resources.keys()):
-        value = char.resources[name]
-        write_line('* **{}:** {}'.format(name, value), output)
+    for name in sorted(character.resources.keys()):
+        resource = character.resources[name]
+        write_line('* **{}:** {}'.format(name, resource), output)
 
     write_line('## Skill Stats', output)
 
-    for name in sorted(char.skills.keys()):
-        skill = char.skills[name]
+    for name in sorted(character.skills.keys()):
+        skill = character.skills[name]
         write_line('* **{}**\n\t* {}\n\t* Modifier: {}'.format(
             skill.name,
             skill.difficulty,
@@ -43,6 +42,10 @@ def format_character(char, model, output):
     # write_line(core_aspects.getvalue(), output)
 
     write_line(aspect_list.getvalue(), output)
+
+    write_line('## Character Inventory', output)
+    for item in character.items.values():
+        format_item(item, model, output)
 
 
 def format_rules(model, output):
@@ -75,7 +78,7 @@ def format_rule(rule, output):
 
     for option_name in rule.options:
         option = rule.options[option_name]
-        write_line('* **{}**\n\t* Aspect Point Cost: {}\n'.format(option.name, option.cost), output)
+        write_line('* **{}**\n\t* Aspect Point Cost: {}\n'.format(option.name, option.ap_cost), output)
 
 
 def format_aspect_name(name):
@@ -95,10 +98,12 @@ def format_aspect(aspect, model, output):
 
     ap_cost = 0
     cost_breakdown = ''
-    for cost_element in model.aspect_cost_breakdown(aspect.name).cost_elements:
-        cost_breakdown += '* {} (**{} AP**): {}\n'.format(
-            cost_element.name, cost_element.cost, cost_element.option.name)
-        ap_cost += cost_element.cost
+
+    if aspect.template != 'core':
+        for cost_element in model.aspect_cost_breakdown(aspect.name).cost_elements:
+            cost_breakdown += '* {} (**{} AP**): {}\n'.format(
+                cost_element.name, cost_element.ap_cost, cost_element.option.name)
+            ap_cost += cost_element.ap_cost
 
     write_line('Aspect Point Cost: {}'.format(ap_cost), output)
     write_line('#### Details\n{}'.format(cost_breakdown), output)
@@ -128,16 +133,17 @@ def format_item(item, model, output):
     cost_breakdown = ''
     for cost_element in model.item_cost_breakdown(item.name).cost_elements:
         cost_breakdown += '* {} (**{} AP**)\n'.format(
-            cost_element.name, cost_element.cost)
-        total_cost += cost_element.cost
+            cost_element.name, cost_element.ap_cost)
+        total_cost += cost_element.ap_cost
 
-    write_line('Monetary Cost: $${}'.format(total_cost * 100), output)
+    write_line('Monetary Cost: $${}'.format(total_cost), output)
     write_line('#### Details'.format(), output)
 
     if item.wearable is not None:
         write_line('Worn on Item Slot: **{}**'.format(item.wearable.slot), output)
 
     write_line(cost_breakdown, output)
+
 
 def format_items(model, output):
     write_line('## Items', output)
