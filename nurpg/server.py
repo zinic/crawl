@@ -6,7 +6,7 @@ import waitress
 
 from nurpg.document import load_document
 from nurpg.document.model import Aspect
-from nurpg.document.xml_backend import load_as, AspectNode
+from nurpg.document.xml_backend import load_as, XMLBacked
 from nurpg.document.yaml_backend import load_character
 from nurpg.format import format_aspect, format_character
 
@@ -34,7 +34,7 @@ class AspectFormatResource(object):
         resp.set_header('Content-Type', 'text/markdown')
 
         try:
-            aspect_xml = load_as(req.stream, AspectNode)
+            aspect_xml = load_as(req.stream, XMLBacked)
             aspect_model = Aspect.from_xml(aspect_xml)
 
             buffer = io.StringIO()
