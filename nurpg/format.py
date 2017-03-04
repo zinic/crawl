@@ -148,7 +148,6 @@ def format_item(item, model, output):
 
     cost_breakdown = ''
     for cost_element in model.item_cost_breakdown(item).cost_elements:
-        print(cost_element.name)
         cost_breakdown += '* {} (**$$ {}**)\n'.format(
             cost_element.name, cost_element.monetary_cost)
         total_cost += cost_element.monetary_cost
