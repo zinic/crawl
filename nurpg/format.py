@@ -35,7 +35,8 @@ def format_character(character, model, output):
     write_line('* AP Total: {}'.format(character.aspect_points), output)
     write_line('* AP Spent: {}'.format(character.aspect_points_spent), output)
     write_line('* AP Available: {}'.format(character.aspect_points - character.aspect_points_spent), output)
-    write_line('* Funds Available: {}'.format(character.monetary_funds - character.monetary_funds_spent), output)
+    write_line('* Starting Funds: $$ {}'.format(character.monetary_funds_start), output)
+    write_line('* Funds Available: $$ {}'.format(character.monetary_funds - character.monetary_funds_spent), output)
 
     write_line('## Resources', output)
     for name in sorted(character.resources.keys()):

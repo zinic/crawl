@@ -586,10 +586,11 @@ class CharacterAspect(object):
 
 
 class Character(object):
-    def __init__(self, name, aspect_points, model):
+    def __init__(self, name, aspect_points, starting_funds, model):
         self.name = name
         self.aspect_points = aspect_points
         self.aspect_points_spent = 0
+        self.monetary_funds_start = starting_funds if starting_funds is not None else 0
         self.monetary_funds_spent = 0
 
         self.resources = dict()
@@ -615,7 +616,7 @@ class Character(object):
 
     @property
     def monetary_funds(self):
-        return self.resources['Monetary Funds']
+        return self.resources['Monetary Funds'] + self.monetary_funds_start
 
     @property
     def aspects(self):

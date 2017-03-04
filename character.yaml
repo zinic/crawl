@@ -3,6 +3,7 @@
 character:
   name: Test Character
   aspect_points: 150
+  starting_funds: 1000
 
   # This is a list of items for the character. These cost monetary funds:
   items:

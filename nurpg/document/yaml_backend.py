@@ -12,6 +12,7 @@ def load_character(input, model):
     character = Character(
         name=char_content.name,
         aspect_points=char_content.aspect_points,
+        starting_funds=char_content.starting_funds,
         model=model)
 
     # Look up aspects
