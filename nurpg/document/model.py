@@ -172,9 +172,11 @@ class Model(object):
             item = Item.from_xml(item_xml)
             self._items[item.name] = item
 
-    def item_cost_breakdown(self, name):
+    def lookup_item_cost_breakdown(self, name):
+        return self.item_cost_breakdown(self._items[name])
+
+    def item_cost_breakdown(self, item):
         cost_bd = RuleCostBreakdown()
-        item = self._items[name]
 
         for aspect_ref in item.grants:
             aspect_cost_bd = self.aspect_cost_breakdown(aspect_ref)
@@ -318,7 +320,7 @@ class Item(object):
         self.name = name
         self.text = text
 
-        self.rules = None
+        self.rules = RuleReferences()
         self.grants = list()
         self.wearable = None
 
@@ -482,8 +484,6 @@ class RuleReferences(object):
 
     @classmethod
     def from_yaml(cls, rref_parent_yaml):
-        print(rref_parent_yaml)
-
         rrefs = cls()
         for rref_yaml in rref_parent_yaml.rules:
             rrefs.add(RuleReference.from_yaml(rref_yaml))
@@ -540,6 +540,10 @@ class RuleSelection(object):
         return self.definition.name
 
     @property
+    def monetary_cost(self):
+        return self.option.ap_cost * 100
+
+    @property
     def ap_cost(self):
         return self.option.ap_cost
 
@@ -574,56 +578,105 @@ def extract_numeric_modifier(modifier):
     raise Exception('Unable to extract a numeric modifier value from modifier: {}'.format(modifier))
 
 
-class Character(object):
-    def __init__(self, name, aspect_points):
-        self.aspects = {
-            'Strength': CoreAspect.Strength(),
-            'Intelligence': CoreAspect.Intelligence(),
-            'Mobility': CoreAspect.Mobility(),
-        }
+class CharacterAspect(object):
+    def __init__(self, aspect, origin):
+        self.definition = aspect
+        self.origin = origin
 
+
+class Character(object):
+    def __init__(self, name, aspect_points, model):
         self.name = name
         self.aspect_points = aspect_points
         self.aspect_points_spent = 0
         self.monetary_funds_spent = 0
+
         self.resources = dict()
         self.skills = dict()
         self.items = dict()
 
-    def load(self, model):
-        # Load resources first
-        for resource in model.resources():
+        self._model = model
+        self._aspects = list()
+
+        self._load()
+
+    def _load(self):
+        # Load core aspects
+        self._aspects.extend([
+            CharacterAspect(CoreAspect.Strength(), 'core'),
+            CharacterAspect(CoreAspect.Intelligence(), 'core'),
+            CharacterAspect(CoreAspect.Mobility(), 'core')
+        ])
+
+        # Load resources
+        for resource in self._model.resources():
             self.resources[resource.name] = resource.starting_value
 
-        # Load aspect information
-        character_aspects = self.aspects.copy()
+    @property
+    def monetary_funds(self):
+        return self.resources['Monetary Funds']
 
-        # Find any grants from items and add them
-        for item in self.items.values():
-            if len(item.grants) > 0:
-                for granted_aspect in item.grants:
-                    if granted_aspect not in character_aspects:
-                        character_aspects[granted_aspect] = model.aspect(granted_aspect)
+    @property
+    def aspects(self):
+        return sorted(self._aspects, key=lambda ca: ca.definition.name)
 
+    def has_aspect(self, ref):
+        for char_aspect in self._aspects:
+            if char_aspect.definition.name == ref:
+                return True
+        return False
+
+    def add_aspect(self, ref):
+        self._aspects.append(CharacterAspect(self._model.aspect(ref), 'character'))
+
+    def add_item_grant(self, ref):
+        self._aspects.append(CharacterAspect(self._model.aspect(ref), 'item'))
+
+    def define_skill(self, aspect):
+        skill = CharacterSkill(aspect.skill.name)
+
+        failure_chance = aspect.selected_rule('Failure Chance', self._model)
+        if failure_chance is not None:
+            skill.difficulty = failure_chance.option.name
+        else:
+            skill.difficulty = 'Difficulty: GM Specified'
+
+        for inherits_from in aspect.skill.inheritance:
+            donor_skill = self.skills[inherits_from]
+            skill.modifier += donor_skill.modifier
+
+        self.skills[aspect.skill.name] = skill
+
+    def add_item(self, ref, details):
+        # Try to load the item from our model first
+        item = self._model.item(ref)
+        if item is None:
+            # If the model doesn't have the item, maybe the player specified details inline
+            item = Item.from_yaml(ref, details)
+
+        # Assign the item to us
+        self.items[ref] = item
+
+        # Check if the item grants any aspects and add them
+        if len(item.grants) > 0:
+            for grant_ref in item.grants:
+                if grant_ref not in self.aspects:
+                    self.add_item_grant(grant_ref)
+
+    def load(self, model):
         # Process all the aspects first
-        for aspect in character_aspects.values():
-            # Record the costs of all non-core aspects
-            if aspect.template != 'core':
+        for char_aspect in self._aspects:
+            aspect = char_aspect.definition
+
+            # Record the costs of all non-core and non-item aspects
+            if char_aspect.origin != 'core' and char_aspect.origin != 'item':
                 self.aspect_points_spent += model.aspect_cost_breakdown(aspect.name).ap_total
 
             # If the aspect describes a skill, process it
             if aspect.has_skill():
-                skill = CharacterSkill(aspect.skill.name)
-                self.skills[aspect.skill.name] = skill
+                self.define_skill(aspect)
 
-                failure_chance = aspect.selected_rule('Failure Chance', model)
-                if failure_chance is not None:
-                    skill.difficulty = failure_chance.option.name
-                else:
-                    skill.difficulty = 'Difficulty: GM Specified'
-
-        # Resolve all aspect assigned modifiers and apply them
-        for aspect in character_aspects.values():
+            # Resolve all aspect assigned modifiers and apply them
             for rule_selection in aspect.selected_rules(model):
                 for modifier in rule_selection.modifiers:
                     modifier_value = extract_numeric_modifier(rule_selection.option.name)
@@ -641,7 +694,7 @@ class Character(object):
 
         # Resolve all item assigned modifiers and apply them
         for item in self.items.values():
-            self.monetary_funds_spent += model.item_cost_breakdown(item.name).monetary_total
+            self.monetary_funds_spent += model.item_cost_breakdown(item).monetary_total
 
             for rule_selection in item.rules.realize(model):
                 for modifier in rule_selection.modifiers:
@@ -658,21 +711,12 @@ class Character(object):
                     modifier_value = extract_numeric_modifier(rule_selection.option.name)
                     skill.modifier += modifier_value
 
-        # Process skill inheritance
-        for aspect in character_aspects.values():
-            if not aspect.has_skill():
-                continue
-
-            character_skill = self.skills[aspect.skill.name]
-            for inherits_from in aspect.skill.inheritance:
-                donor_skill = self.skills[inherits_from]
-                character_skill.modifier += donor_skill.modifier
-
     def check(self, model):
-        for aspect in self.aspects.values():
-            if aspect.template == 'core':
+        for char_aspect in self.aspects:
+            if char_aspect.origin == 'core':
                 continue
 
+            aspect = char_aspect.definition
             for requirement_ref in aspect.requirements:
                 if requirement_ref not in self.aspects:
                     raise CharacterCheckException(

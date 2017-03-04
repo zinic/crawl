@@ -11,26 +11,14 @@ character:
     Weak Health Potion:
     Weak Health Potion:
     Weak Health Potion:
-    Ring of Fitness:
+    Ring of Assballer:
       text: A ring that gives me a bigger ass.
       grants:
-        - Fit
+        - Slash
       wearable:
         slot: lightweight
 
   aspects:
     - Archery
     - Affluent
-    - Fit
-    - Medicine
-    - Knowledge - Martial
-    - Knowledge - Occult
-    - Block
-    - Intense Endurance Training
-    - Intense Acrobatic Training
-    - Intense Resistance Training
-    - Mental Endurance
-    - Mentat
-    - Slash
-    - Quiet Steps
-    - Great Slash
+#    - Fit

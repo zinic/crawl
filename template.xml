@@ -226,7 +226,7 @@
         </rule>
 
         <rule name="Starting Wealth Modifier" category="all">
-            <formula ref="Basic Progression">
+            <formula ref="Linear Progression">
             </formula>
 
             <modifier ref="Monetary Funds" />

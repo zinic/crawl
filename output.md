@@ -821,76 +821,76 @@ See the core rules section: **Range Definitions** for more details.
 #### Rule: Starting Wealth Modifier
 
 * **$$ 100**
-	* Aspect Point Cost: 2
+	* Aspect Point Cost: 1
 
 * **$$ 200**
-	* Aspect Point Cost: 4
+	* Aspect Point Cost: 2
 
 * **$$ 300**
-	* Aspect Point Cost: 6
+	* Aspect Point Cost: 3
 
 * **$$ 400**
-	* Aspect Point Cost: 8
+	* Aspect Point Cost: 4
 
 * **$$ 500**
-	* Aspect Point Cost: 10
+	* Aspect Point Cost: 5
 
 * **$$ 600**
-	* Aspect Point Cost: 12
+	* Aspect Point Cost: 6
 
 * **$$ 700**
-	* Aspect Point Cost: 14
+	* Aspect Point Cost: 7
 
 * **$$ 800**
-	* Aspect Point Cost: 16
+	* Aspect Point Cost: 8
 
 * **$$ 900**
-	* Aspect Point Cost: 18
+	* Aspect Point Cost: 9
 
 * **$$ 1000**
-	* Aspect Point Cost: 20
+	* Aspect Point Cost: 10
 
 * **$$ 1100**
-	* Aspect Point Cost: 22
+	* Aspect Point Cost: 11
 
 * **$$ 1200**
-	* Aspect Point Cost: 24
+	* Aspect Point Cost: 12
 
 * **$$ 1300**
-	* Aspect Point Cost: 26
+	* Aspect Point Cost: 13
 
 * **$$ 1400**
-	* Aspect Point Cost: 28
+	* Aspect Point Cost: 14
 
 * **$$ 1500**
-	* Aspect Point Cost: 30
+	* Aspect Point Cost: 15
 
 * **$$ 1600**
-	* Aspect Point Cost: 32
+	* Aspect Point Cost: 16
 
 * **$$ 1700**
-	* Aspect Point Cost: 34
+	* Aspect Point Cost: 17
 
 * **$$ 1800**
-	* Aspect Point Cost: 36
+	* Aspect Point Cost: 18
 
 * **$$ 1900**
-	* Aspect Point Cost: 38
+	* Aspect Point Cost: 19
 
 * **$$ 2000**
-	* Aspect Point Cost: 40
+	* Aspect Point Cost: 20
 
 * **$$ 2100**
-	* Aspect Point Cost: 42
+	* Aspect Point Cost: 21
 
 * **$$ 2200**
-	* Aspect Point Cost: 44
+	* Aspect Point Cost: 22
 
 * **$$ 2300**
-	* Aspect Point Cost: 46
+	* Aspect Point Cost: 23
 
 * **$$ 2400**
-	* Aspect Point Cost: 48
+	* Aspect Point Cost: 24
 
 #### Rule: Target Restriction
 
@@ -997,9 +997,9 @@ Aspect Point Cost: 13
 You're richer. For now.
 
 
-Aspect Point Cost: 24
+Aspect Point Cost: 12
 #### Details
-* Starting Wealth Modifier (**24 AP**): $$ 1200
+* Starting Wealth Modifier (**12 AP**): $$ 1200
 
 ### Arcane Sight
 Allows the caster to augment their vision with magic. This darkens ther vision slightly but does not

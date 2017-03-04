@@ -5,14 +5,28 @@ def write_line(line, output):
     output.write('{}\n'.format(line))
 
 
+def format_character_aspect(char_aspect, model, output):
+    if char_aspect.origin == 'character':
+        format_aspect(char_aspect.definition, model, output)
+        return
+
+    aspect = char_aspect.definition
+    write_line('### {}'.format(aspect.name), output)
+
+    if aspect.text is not None:
+        write_line(aspect.text, output)
+
+    write_line('', output)
+
+    write_line('Aspect Point Cost: Provided by Item', output)
+
+
 def format_character(character, model, output):
     core_aspects = io.StringIO()
     aspect_list = io.StringIO()
-    for aspect in character.aspects.values():
-        if aspect.template != 'core':
-            format_aspect(aspect, model, aspect_list)
-        else:
-            format_aspect(aspect, model, core_aspects)
+    for char_aspect in character.aspects:
+        buffer = aspect_list if char_aspect.origin != 'core' else core_aspects
+        format_character_aspect(char_aspect, model, buffer)
 
     # Write the character header
     write_line('# {}'.format(character.name), output)
@@ -21,6 +35,7 @@ def format_character(character, model, output):
     write_line('* AP Total: {}'.format(character.aspect_points), output)
     write_line('* AP Spent: {}'.format(character.aspect_points_spent), output)
     write_line('* AP Available: {}'.format(character.aspect_points - character.aspect_points_spent), output)
+    write_line('* Funds Available: {}'.format(character.monetary_funds - character.monetary_funds_spent), output)
 
     write_line('## Resources', output)
     for name in sorted(character.resources.keys()):
@@ -125,18 +140,18 @@ def format_item(item, model, output):
     total_cost = 0
     grants_breakdown = ''
     for grant in item.grants:
-        grant_cost = model.aspect_cost_breakdown(grant).ap_total
+        grant_cost = model.aspect_cost_breakdown(grant).monetary_total
         total_cost += grant_cost
 
         grants_breakdown += '* {} (**{} AP**)'.format(grant, grant_cost)
 
     cost_breakdown = ''
-    for cost_element in model.item_cost_breakdown(item.name).cost_elements:
-        cost_breakdown += '* {} (**{} AP**)\n'.format(
-            cost_element.name, cost_element.ap_cost)
-        total_cost += cost_element.ap_cost
+    for cost_element in model.item_cost_breakdown(item).cost_elements:
+        cost_breakdown += '* {} (**$$ {}**)\n'.format(
+            cost_element.name, cost_element.monetary_cost)
+        total_cost += cost_element.monetary_cost
 
-    write_line('Monetary Cost: $${}'.format(total_cost), output)
+    write_line('\nMonetary Cost: $${}'.format(total_cost), output)
     write_line('#### Details'.format(), output)
 
     if item.wearable is not None:
