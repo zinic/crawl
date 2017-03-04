@@ -518,11 +518,6 @@ class RuleReference(object):
         return RuleSelection(rule, rule_modifiers, self.option)
 
     @classmethod
-    def from_yaml(cls, rule_ref_yaml):
-        print(rule_ref_yaml)
-        pass
-
-    @classmethod
     def from_xml(cls, rule_ref_xml):
         rref = cls(rule_ref_xml.ref, rule_ref_xml.value)
         for rr_modifier_xml in rule_ref_xml.each_node('modifier'):
