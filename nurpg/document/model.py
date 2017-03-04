@@ -719,7 +719,7 @@ class Character(object):
 
             aspect = char_aspect.definition
             for requirement_ref in aspect.requirements:
-                if requirement_ref not in self.aspects:
+                if self.has_aspect(requirement_ref) is False:
                     raise CharacterCheckException(
                         'Character aspect {} is missing requirement {}.'.format(aspect.name, requirement_ref))
 

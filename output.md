@@ -1956,17 +1956,19 @@ Aspect Point Cost: 1
 ### Ring of Fitness
 Wearing this small ring makes you feel healthier.
 
-Monetary Cost: $$4
+
+Monetary Cost: $$400
 #### Details
 Worn on Item Slot: **lightweight**
-* Fit (**1 AP**)
-* Magic (**2 AP**)
+* Fit (**$$ 100**)
+* Magic (**$$ 200**)
 
 ### Weak Health Potion
 Simple, non-magical health potion.
 
-Monetary Cost: $$3
+
+Monetary Cost: $$300
 #### Details
-* Damage Healed (**6 AP**)
-* Number of Uses (**-3 AP**)
+* Damage Healed (**$$ 600**)
+* Number of Uses (**$$ -300**)
 
