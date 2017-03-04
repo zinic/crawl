@@ -16,11 +16,11 @@ def load_character(input, model):
 
     # Look up aspects
     for aspect_ref in char_content.aspects:
-        character.add_aspect(aspect_ref)
+        character.add_aspect(aspect_ref.name)
 
     # Look up items
-    for item_name in char_content.items:
-        character.add_item(item_name, char_content.items[item_name])
+    for item_ref in char_content.items:
+        character.add_item(item_ref.name, item_ref)
 
     # Finish building the character model
     character.load(model)

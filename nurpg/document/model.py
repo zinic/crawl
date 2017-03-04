@@ -329,7 +329,7 @@ class Item(object):
         item = cls(name, item_yaml.text)
 
         if item_yaml.rules is not None:
-            item.rules = RuleReferences.from_yaml(item_yaml.rules)
+            item.rules = RuleReferences.from_yaml(item_yaml)
 
         if item_yaml.grants is not None:
             for aspect_ref in item_yaml.grants:
@@ -485,8 +485,8 @@ class RuleReferences(object):
     @classmethod
     def from_yaml(cls, rref_parent_yaml):
         rrefs = cls()
-        for rref_yaml in rref_parent_yaml.rules:
-            rrefs.add(RuleReference.from_yaml(rref_yaml))
+        for name in rref_parent_yaml.rules:
+            rrefs.add(RuleReference(name, rref_parent_yaml.rules[name]))
 
         return rrefs
 
@@ -519,6 +519,7 @@ class RuleReference(object):
 
     @classmethod
     def from_yaml(cls, rule_ref_yaml):
+        print(rule_ref_yaml)
         pass
 
     @classmethod

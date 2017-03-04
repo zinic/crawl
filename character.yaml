@@ -3,22 +3,33 @@
 character:
   name: Test Character
   aspect_points: 150
+
+  # This is a list of items for the character. These cost monetary funds:
   items:
-    # Because I'm a lazy fuck you have to enter the same item
-    # multiple times. Might fix that later.
-    Weak Health Potion:
-    Weak Health Potion:
-    Weak Health Potion:
-    Weak Health Potion:
-    Weak Health Potion:
-    Ring of Assballer:
+    # Because I'm a lazy fuck I haven't implemented multiple items yet
+
+    # You can reference items directly like this
+    - name: Weak Health Potion
+
+    # Or you can build custom items. It starts with the name, like above:
+    - name: Ring of Assballer
+      # Text is rendered for you. This describes the item. Be brief :)
       text: A ring that gives me a bigger ass.
+
+      # This is a list of aspects that the item grants the character. This is optional:
       grants:
         - Slash
+
+      # This is a list of rules that the item has, independent of any aspects it grants. This is optional:
+      rules:
+        Damage Healed: 1d6
+
+      # This tells us where the item may be worn. It must be one of the item slots or lightweight:
       wearable:
         slot: lightweight
 
+  # This is a list of aspects for the character. These cost AP:
   aspects:
-    - Archery
-    - Affluent
-#    - Fit
+    - name: Archery
+    - name: Affluent
+    - name: Affluent

@@ -1,14 +1,14 @@
 # Test Character
 ## Details
 * AP Total: 150
-* AP Spent: 17
-* AP Available: 133
-* Funds Available: 400
+* AP Spent: 29
+* AP Available: 121
+* Funds Available: 1000
 ## Resources
 * **Energy Point Pool:** 1
 * **Energy Point Refresh:** 1
 * **Health Point Pool:** 6
-* **Monetary Funds:** 1200
+* **Monetary Funds:** 2400
 ## Skill Stats
 * **Archery**
 	* Difficulty 8
@@ -26,6 +26,14 @@
 	* Difficulty: GM Specified
 	* Modifier: 0
 ## Aspect List
+### Affluent
+You're richer. For now.
+
+
+Aspect Point Cost: 12
+#### Details
+* Starting Wealth Modifier (**12 AP**): $$ 1200
+
 ### Affluent
 You're richer. For now.
 
@@ -54,10 +62,11 @@ Aspect Point Cost: Provided by Item
 ### Ring of Assballer
 A ring that gives me a bigger ass.
 
-Monetary Cost: $$1000
+Monetary Cost: $$1600
 #### Details
 Worn on Item Slot: **lightweight**
 * Slash (**$$ 500**)
+* Damage Healed (**$$ 600**)
 
 ### Weak Health Potion
 Simple, non-magical health potion.
