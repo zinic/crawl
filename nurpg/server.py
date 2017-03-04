@@ -60,6 +60,7 @@ class CharacterFormatResource(object):
             resp.body = buffer.getvalue()
             buffer.close()
         except Exception as ex:
+            traceback.print_exc()
             resp.body = '### General Error\n\n{}'.format(ex)
 
 

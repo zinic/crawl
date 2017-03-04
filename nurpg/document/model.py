@@ -546,13 +546,7 @@ class RuleSelection(object):
     @property
     def option(self):
         target = self._target_option if self._target_option is not None else self.definition.name
-        try:
-            return self.definition.options[target]
-        except Exception:
-            print(target)
-            print(self.definition.name)
-            print(self.definition.options)
-            raise
+        return self.definition.options[target]
 
 
 class CharacterCheckException(Exception):
@@ -655,7 +649,7 @@ class Character(object):
         self.items[ref] = item
 
         # Check if the item grants any aspects and add them
-        if len(item.grants) > 0:
+        if item.grants is not None:
             for grant_ref in item.grants:
                 if grant_ref not in self.aspects:
                     self.add_item_grant(grant_ref)
