@@ -264,10 +264,16 @@ class Rule(object):
         return rule
 
 
+class APCostElementOption(object):
+    def __init__(self):
+        self.name = ''
+
+
 class APCostElement(object):
     def __init__(self, name, ap_cost):
         self.name = name
         self.ap_cost = ap_cost
+        self.option = APCostElementOption()
 
     @property
     def monetary_cost(self):

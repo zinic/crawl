@@ -1960,8 +1960,8 @@ Wearing this small ring makes you feel healthier.
 Monetary Cost: $$400
 #### Details
 Worn on Item Slot: **lightweight**
-* Fit (**$$ 100**)
-* Magic (**$$ 200**)
+* Fit:  (**$$ 100**)
+* Magic: Magic (**$$ 200**)
 
 ### Weak Health Potion
 Simple, non-magical health potion.
@@ -1969,6 +1969,6 @@ Simple, non-magical health potion.
 
 Monetary Cost: $$300
 #### Details
-* Damage Healed (**$$ 600**)
-* Number of Uses (**$$ -300**)
+* Damage Healed: 1d6 (**$$ 600**)
+* Number of Uses: Has 1 Use(s) (**$$ -300**)
 
