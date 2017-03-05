@@ -17,7 +17,7 @@ def load_character(input, model):
 
     # Look up aspects
     for aspect_ref in char_content.aspects:
-        character.add_aspect(aspect_ref.name)
+        character.add_aspect(aspect_ref.name, aspect_ref)
 
     # Look up items
     for item_ref in char_content.items:

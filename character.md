@@ -1,8 +1,8 @@
 # Test Character
 ## Details
 * AP Total: 150
-* AP Spent: 29
-* AP Available: 121
+* AP Spent: 35
+* AP Available: 115
 * Starting Funds: $$ 1000
 * Funds Available: $$ 2000
 ## Resources
@@ -18,6 +18,9 @@
 	* Difficulty: GM Specified
 	* Modifier: 0
 * **Mobility**
+	* Difficulty: GM Specified
+	* Modifier: 0
+* **New Aspect**
 	* Difficulty: GM Specified
 	* Modifier: 0
 * **Slash**
@@ -52,6 +55,13 @@ Aspect Point Cost: 5
 #### Details
 * Failure Chance (**7 AP**): Difficulty 8
 * Energy Point Cost (**-2 AP**): +1
+
+### New Aspect
+Example new aspect.
+
+Aspect Point Cost: 6
+#### Details
+* Damage (**6 AP**): 1d6
 
 ### Slash
 Grants a character a melee slashing attack. This attack may be used with any slashing melee weapon.

@@ -116,7 +116,7 @@ def format_aspect(aspect, model, output):
     cost_breakdown = ''
 
     if aspect.template != 'core':
-        for cost_element in model.aspect_cost_breakdown(aspect.name).cost_elements:
+        for cost_element in model.aspect_cost_breakdown(aspect).cost_elements:
             cost_breakdown += '* {} (**{} AP**): {}\n'.format(
                 cost_element.name, cost_element.ap_cost, cost_element.option.name)
             ap_cost += cost_element.ap_cost
@@ -141,7 +141,7 @@ def format_item(item, model, output):
     total_cost = 0
     grants_breakdown = ''
     for grant in item.grants:
-        grant_cost = model.aspect_cost_breakdown(grant).monetary_total
+        grant_cost = model.lookup_aspect_cost_breakdown(grant).monetary_total
         total_cost += grant_cost
 
         grants_breakdown += '* {} (**{} AP**)'.format(grant, grant_cost)

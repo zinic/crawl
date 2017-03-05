@@ -12,7 +12,7 @@ character:
     # You can reference items directly like this
     - name: Weak Health Potion
 
-    # Or you can build custom items. It starts with the name, like above:
+    # Or you can build custom items. It starts with the name, like below:
     - name: Ring of Assballer
       # Text is rendered for you. This describes the item. Be brief :)
       text: A ring that gives me a bigger ass.
@@ -31,6 +31,33 @@ character:
 
   # This is a list of aspects for the character. These cost AP:
   aspects:
+
+    # You can reference aspects directly like this
     - name: Archery
     - name: Affluent
     - name: Affluent
+
+    # Or you can build custom items. It starts with the name, like below:
+    - name: New Aspect
+      # Aspects may specify a template to provide additional checks while building
+      template: Attack
+      # Text is rendered for you. This describes the aspect. Be brief :)
+      text: Example new aspect.
+
+      # This is a list of aspects that this aspect requires the character to have before it itself may
+      # be selected
+      requires:
+        - Fit
+
+      # Many aspects describe a skill - this is optional but is described below.
+      skill:
+        # Skills must have a type out of the following: Defense, Attack, Concentration, Non-Combat
+        type: Attack
+
+        # Skills may inherit bonuses from any number of skills
+        inherits:
+          - Strength
+
+      # This is a list of rules that the aspect has.
+      rules:
+        Damage: 1d6

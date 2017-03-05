@@ -137,7 +137,7 @@ class Model(object):
                 template = self._templates[aspect.template]
                 template.validate_aspect(aspect)
 
-            cost_breakdown = self.aspect_cost_breakdown(aspect.name)
+            cost_breakdown = self.lookup_aspect_cost_breakdown(aspect.name)
             if cost_breakdown.ap_total <= 0:
                 raise Exception('Aspect {} has an invalid AP ap_cost of: {}'.format(
                     aspect.name, cost_breakdown.ap_total))
@@ -179,7 +179,7 @@ class Model(object):
         cost_bd = RuleCostBreakdown()
 
         for aspect_ref in item.grants:
-            aspect_cost_bd = self.aspect_cost_breakdown(aspect_ref)
+            aspect_cost_bd = self.lookup_aspect_cost_breakdown(aspect_ref)
             cost_bd.cost_elements.append(APCostElement(aspect_ref, aspect_cost_bd.ap_total))
 
         for rule in item.rules.realize(self):
@@ -187,20 +187,22 @@ class Model(object):
 
         return cost_bd
 
-    def aspect_cost_breakdown(self, name):
+    def aspect_cost_breakdown(self, aspect):
         cost_bd = RuleCostBreakdown()
-        aspect = self._aspects[name]
-
         for rule in aspect.selected_rules(self):
             cost_bd.cost_elements.append(rule)
 
         return cost_bd
 
+
+    def lookup_aspect_cost_breakdown(self, name):
+        return self.aspect_cost_breakdown(self._aspects[name])
+
     def resources(self):
         return [self._resources[k] for k in sorted(self._resources.keys())]
 
-    def aspect(self, name):
-        return self._aspects[name]
+    def aspect(self, name, default=None):
+        return self._aspects.get(name, default)
 
     def aspects(self):
         return [self._aspects[k] for k in sorted(self._aspects.keys())]
@@ -314,6 +316,14 @@ class Skill(object):
         self.inheritance.append(ref)
 
     @classmethod
+    def from_yaml(cls, name, skill_yaml):
+        skill = cls(name, skill_yaml.type)
+        if skill_yaml.inherits is not None:
+            for inheritance in skill_yaml.inherits:
+                skill.inherits_from(inheritance)
+        return skill
+
+    @classmethod
     def from_xml(cls, name, skill_xml):
         skill = cls(name, skill_xml.type)
         for inherits_xml in skill_xml.each_node('inheritance'):
@@ -335,7 +345,7 @@ class Item(object):
         item = cls(name, item_yaml.text)
 
         if item_yaml.rules is not None:
-            item.rules = RuleReferences.from_yaml(item_yaml)
+            item.rules = RuleReferences.from_yaml(item_yaml.rules)
 
         if item_yaml.grants is not None:
             for aspect_ref in item_yaml.grants:
@@ -401,6 +411,22 @@ class Aspect(object):
 
     def has_rule(self, rule_name):
         return self.rules.has_ref_to(rule_name)
+
+    @classmethod
+    def from_yaml(cls, name, aspect_yaml):
+        aspect = cls(name, aspect_yaml.template, aspect_yaml.text)
+
+        if aspect_yaml.rules is not None:
+            aspect.rules = RuleReferences.from_yaml(aspect_yaml.rules)
+
+        if aspect_yaml.skill is not None:
+            aspect.skill = Skill.from_yaml(name, aspect_yaml.skill)
+
+        if aspect_yaml.requirements is not None:
+            for requirement in aspect_yaml.requirements:
+                aspect.requirements.append(requirement)
+
+        return aspect
 
     @classmethod
     def from_xml(cls, aspect_xml):
@@ -489,10 +515,10 @@ class RuleReferences(object):
         return [rr.realize(model) for rr in self._references]
 
     @classmethod
-    def from_yaml(cls, rref_parent_yaml):
+    def from_yaml(cls, rrefs_yaml):
         rrefs = cls()
-        for name in rref_parent_yaml.rules:
-            rrefs.add(RuleReference(name, rref_parent_yaml.rules[name]))
+        for name in rrefs_yaml:
+            rrefs.add(RuleReference(name, rrefs_yaml[name]))
 
         return rrefs
 
@@ -623,8 +649,14 @@ class Character(object):
                 return True
         return False
 
-    def add_aspect(self, ref):
-        self._aspects.append(CharacterAspect(self._model.aspect(ref), 'character'))
+    def add_aspect(self, ref, details):
+        aspect = self._model.aspect(ref)
+        if aspect is None:
+            aspect = Aspect.from_yaml(ref, details)
+
+        # Wrap the aspect and add information as to where
+        # it was sourced from. Assign the aspect to us after
+        self._aspects.append(CharacterAspect(aspect, 'character'))
 
     def add_item_grant(self, ref):
         self._aspects.append(CharacterAspect(self._model.aspect(ref), 'item'))
@@ -667,7 +699,7 @@ class Character(object):
 
             # Record the costs of all non-core and non-item aspects
             if char_aspect.origin != 'core' and char_aspect.origin != 'item':
-                self.aspect_points_spent += model.aspect_cost_breakdown(aspect.name).ap_total
+                self.aspect_points_spent += model.aspect_cost_breakdown(aspect).ap_total
 
             # If the aspect describes a skill, process it
             if aspect.has_skill():
