@@ -2,6 +2,7 @@ import traceback
 import os
 import falcon
 import io
+import json
 import waitress
 
 from nurpg.document import load_document
@@ -50,18 +51,24 @@ class CharacterFormatResource(object):
         self._doc = doc
 
     def on_post(self, req, resp):
-        resp.set_header('Content-Type', 'text/markdown')
+        resp.set_header('Content-Type', 'application/json')
+
+        buffer = io.StringIO()
+        warnings = io.StringIO()
 
         try:
             character = load_character(req.stream, self._doc)
-
-            buffer = io.StringIO()
             format_character(character, self._doc, buffer)
-            resp.body = buffer.getvalue()
-            buffer.close()
+
+            character.check(self._doc)
         except Exception as ex:
             traceback.print_exc()
-            resp.body = '### General Error\n\n{}'.format(ex)
+            warnings.write('### General Error\n\n{}'.format(ex))
+
+        resp.body = json.dumps({
+            'character': buffer.getvalue(),
+            'warnings': warnings.getvalue()
+        })
 
 
 def main():

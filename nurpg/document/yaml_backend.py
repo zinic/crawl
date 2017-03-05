@@ -27,5 +27,4 @@ def load_character(input, model):
     character.load(model)
 
     # Check the character then return it
-    character.check(model)
     return character
