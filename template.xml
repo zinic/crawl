@@ -3,10 +3,10 @@
         <resource name="Health Point Pool" starting_value="6">
         </resource>
 
-        <resource name="Energy Point Pool" starting_value="1">
+        <resource name="Energy Point Pool" starting_value="1" unit="EPP">
         </resource>
 
-        <resource name="Energy Point Refresh" starting_value="1">
+        <resource name="Energy Point Refresh" starting_value="1" unit="EPR">
         </resource>
 
         <resource name="Monetary Funds" starting_value="0" unit="$$">
@@ -62,6 +62,9 @@
 
         <!-- Provided -->
         <formula name="Damage Cost" type="provided" function="damage_cost">
+        </formula>
+
+        <formula name="Area Effect" type="provided" function="area_effect">
         </formula>
     </formulas>
 
@@ -188,7 +191,7 @@
         </rule>
 
         <rule name="Area Effect" category="all">
-            <formula ref="Heroic Progression">
+            <formula ref="Hard Flat">
             </formula>
 
             <option name="Line"/>
@@ -231,7 +234,7 @@
 
             <modifier ref="Monetary Funds" />
 
-            <option name="$$ {range_value}00" range="1,24"/>
+            <option name="$$ {range_value}00" range="1,44"/>
         </rule>
 
         <rule name="Extra Attack" category="all">

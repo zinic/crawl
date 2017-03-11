@@ -86,7 +86,17 @@ class OptionGenerator(object):
         if formula.provided_func_ref == 'damage_cost':
             return self.calculate_damage_cost(option_info)
 
-        raise Exception('Unknown formula => {}::{}'.format(formula.type, formula.function))
+        if formula.provided_func_ref == 'area_effect':
+            if option_info.option.name == 'Line':
+                return APCostElement(option_info.format_name(), 1)
+
+            elif option_info.option.name == 'Dome':
+                return APCostElement(option_info.format_name(), 1)
+
+            elif option_info.option.name == 'Cone':
+                return APCostElement(option_info.format_name(), 1)
+
+        raise Exception('Unknown formula => {}::{}'.format(formula.type, formula.provided_func_ref))
 
 
 def iterate_options(rule_xml):
@@ -757,10 +767,11 @@ class Character(object):
                     self.aspect_points_spent, self.aspect_points))
 
         # TODO: This might be dangerous later since the resources are defined by the model
-        if self.monetary_funds_spent > self.resources['Monetary Funds']:
+        total_funds = self.resources['Monetary Funds'] + self.monetary_funds_start
+        if self.monetary_funds_spent > total_funds:
             raise CharacterCheckException(
                 'Character does not have enough money. $$ {} needed but only has $$ {}.'.format(
-                    self.monetary_funds_spent, self.resources['Monetary Funds']))
+                    self.monetary_funds_spent, total_funds))
 
 
 class CharacterSkill(object):
