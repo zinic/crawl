@@ -204,7 +204,6 @@ class Model(object):
 
         return cost_bd
 
-
     def lookup_aspect_cost_breakdown(self, name):
         return self.aspect_cost_breakdown(self._aspects[name])
 
@@ -336,7 +335,7 @@ class Skill(object):
     @classmethod
     def from_xml(cls, name, skill_xml):
         skill = cls(name, skill_xml.type)
-        for inherits_xml in skill_xml.each_node('inheritance'):
+        for inherits_xml in skill_xml.each_node('inherits'):
             skill.inherits_from(inherits_xml.from_ref)
         return skill
 
@@ -672,17 +671,15 @@ class Character(object):
         self._aspects.append(CharacterAspect(self._model.aspect(ref), 'item'))
 
     def define_skill(self, aspect):
-        skill = CharacterSkill(aspect.skill.name)
+        # print('Defining skill {}.'.format(aspect.skill.name))
+
+        skill = CharacterSkill(aspect.skill)
 
         failure_chance = aspect.selected_rule('Failure Chance', self._model)
         if failure_chance is not None:
             skill.difficulty = failure_chance.option.name
         else:
             skill.difficulty = 'Difficulty: GM Specified'
-
-        for inherits_from in aspect.skill.inheritance:
-            donor_skill = self.skills[inherits_from]
-            skill.modifier += donor_skill.modifier
 
         self.skills[aspect.skill.name] = skill
 
@@ -750,6 +747,41 @@ class Character(object):
                     modifier_value = extract_numeric_modifier(rule_selection.option.name)
                     skill.modifier += modifier_value
 
+        skills_remaining = list()
+        skills_remaining.extend(self.skills.keys())
+
+        skills_complete = list()
+        while len(skills_remaining) > 0:
+            delete_list = list()
+            for skill_name in skills_remaining:
+                skill = self.skills[skill_name]
+
+                # print('Processing skill modifiers for {}'.format(skill_name))
+
+                if len(skill.definition.inheritance) == 0:
+                    skills_complete.append(skill_name)
+                    delete_list.append(skill_name)
+                    continue
+
+                for inherits_from in skill.definition.inheritance:
+                    if inherits_from not in skills_complete:
+                        # print('Skill {} reqires skill {} to be complete still.'.format(skill_name, inherits_from))
+                        break
+
+                    donor_skill = self.skills[inherits_from]
+                    skill.modifier += donor_skill.modifier
+
+                    # print('Skill {} inherited {} from skill {}.'.format(skill_name, donor_skill.modifier, inherits_from))
+
+                    skills_complete.append(skill_name)
+                    delete_list.append(skill_name)
+
+            if len(delete_list) == 0:
+                raise Exception('Skill dependency tree broken')
+
+            for skill_name in delete_list:
+                skills_remaining.remove(skill_name)
+
     def check(self, model):
         for char_aspect in self.aspects:
             if char_aspect.origin == 'core':
@@ -775,7 +807,11 @@ class Character(object):
 
 
 class CharacterSkill(object):
-    def __init__(self, name):
-        self.name = name
+    def __init__(self, definition):
+        self.definition = definition
         self.modifier = 0
         self.difficulty = 0
+
+    @property
+    def name(self):
+        return self.definition.name
