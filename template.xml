@@ -769,6 +769,7 @@
                 <detail type="targets" value="Electric"/>
             </rule>
             <rule ref="Effect Duration" value="4 Turns"/>
+            <rule ref="Magic" />
 
             <requires name="Vigor"/>
 

@@ -1870,7 +1870,7 @@ turns.
 Requires: **[Vigor](#)**
 
 
-Aspect Point Cost: 19
+Aspect Point Cost: 21
 #### Details
 * Energy Point Cost (**-2 AP**): +1
 * Damage Resistance (**4 AP**): +4 DR
@@ -1878,6 +1878,7 @@ Aspect Point Cost: 19
 * Damage Resistance (**4 AP**): +4 DR
 * Damage Resistance (**4 AP**): +4 DR
 * Effect Duration (**5 AP**): 4 Turns
+* Magic (**2 AP**): Magic
 
 ### Reaching Strike
 Grants a character a specialized melee attack that's proficient with weapons of requirements but allows
