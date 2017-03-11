@@ -35,7 +35,6 @@ character:
     # You can reference aspects directly like this
     - name: Archery
     - name: Affluent
-    - name: Affluent
 
     # Or you can build custom items. It starts with the name, like below:
     - name: New Aspect

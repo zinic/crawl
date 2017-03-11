@@ -1,15 +1,15 @@
 # Test Character
 ## Details
 * AP Total: 150
-* AP Spent: 35
-* AP Available: 115
+* AP Spent: 23
+* AP Available: 127
 * Starting Funds: $$ 1000
-* Funds Available: $$ 2000
+* Funds Available: $$ 800
 ## Resources
 * **Energy Point Pool:** 1
 * **Energy Point Refresh:** 1
 * **Health Point Pool:** 6
-* **Monetary Funds:** 2400
+* **Monetary Funds:** 1200
 ## Skill Stats
 * **Archery**
 	* Difficulty 8
@@ -30,14 +30,6 @@
 	* Difficulty: GM Specified
 	* Modifier: 0
 ## Aspect List
-### Affluent
-You're richer. For now.
-
-
-Aspect Point Cost: 12
-#### Details
-* Starting Wealth Modifier (**12 AP**): $$ 1200
-
 ### Affluent
 You're richer. For now.
 

@@ -12,7 +12,7 @@ All characters come with three aspects by default. These are: strength, mobility
 
 #### Basic Move
 
-All characters come with a basic move of 4 map cells. This can be modified by aspects.
+All characters come with a basic move of 5 map cells. This can be modified by aspects.
 
 
 #### Health Point Pool

@@ -758,21 +758,21 @@ class Character(object):
 
                 # print('Processing skill modifiers for {}'.format(skill_name))
 
-                if len(skill.definition.inheritance) == 0:
-                    skills_complete.append(skill_name)
-                    delete_list.append(skill_name)
-                    continue
+                incomplete = False
+                if len(skill.definition.inheritance) > 0:
+                    for inherits_from in skill.definition.inheritance:
+                        if inherits_from not in skills_complete:
+                            # print('Skill {} reqires skill {} to be complete still.'.format(skill_name, inherits_from))
+                            incomplete = True
+                            break
 
-                for inherits_from in skill.definition.inheritance:
-                    if inherits_from not in skills_complete:
-                        # print('Skill {} reqires skill {} to be complete still.'.format(skill_name, inherits_from))
-                        break
+                        donor_skill = self.skills[inherits_from]
+                        skill.modifier += donor_skill.modifier
 
-                    donor_skill = self.skills[inherits_from]
-                    skill.modifier += donor_skill.modifier
+                        # print('Skill {} inherited {} from skill {}.'.format(skill_name, donor_skill.modifier, inherits_from))
 
-                    # print('Skill {} inherited {} from skill {}.'.format(skill_name, donor_skill.modifier, inherits_from))
-
+                if incomplete is False:
+                    # We're done with the skill here
                     skills_complete.append(skill_name)
                     delete_list.append(skill_name)
 
@@ -780,9 +780,12 @@ class Character(object):
                 raise Exception('Skill dependency tree broken')
 
             for skill_name in delete_list:
+                # print('Removing {}'.format(skill_name))
                 skills_remaining.remove(skill_name)
 
     def check(self, model):
+        failures = list()
+
         for char_aspect in self.aspects:
             if char_aspect.origin == 'core':
                 continue
@@ -790,20 +793,22 @@ class Character(object):
             aspect = char_aspect.definition
             for requirement_ref in aspect.requirements:
                 if self.has_aspect(requirement_ref) is False:
-                    raise CharacterCheckException(
-                        'Character aspect {} is missing requirement {}.'.format(aspect.name, requirement_ref))
+                    failures.append(CharacterCheckException(
+                        'Character aspect {} is missing requirement {}.'.format(aspect.name, requirement_ref)))
 
         if self.aspect_points_spent > self.aspect_points:
-            raise CharacterCheckException(
+            failures.append(CharacterCheckException(
                 'Character build requires {} aspect points but only has {} AP allotted.'.format(
-                    self.aspect_points_spent, self.aspect_points))
+                    self.aspect_points_spent, self.aspect_points)))
 
         # TODO: This might be dangerous later since the resources are defined by the model
         total_funds = self.resources['Monetary Funds'] + self.monetary_funds_start
         if self.monetary_funds_spent > total_funds:
-            raise CharacterCheckException(
+            failures.append(CharacterCheckException(
                 'Character does not have enough money. $$ {} needed but only has $$ {}.'.format(
-                    self.monetary_funds_spent, total_funds))
+                    self.monetary_funds_spent, total_funds)))
+
+        return failures
 
 
 class CharacterSkill(object):
