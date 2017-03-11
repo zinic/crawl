@@ -732,7 +732,7 @@ the future only by lowering it.
 #### Rule: Kinetic Potential
 
 * **Simple Feature**
-	* Aspect Point Cost: 5
+	* Aspect Point Cost: 2
 
 #### Rule: Length
 See the core rules section: **Range Definitions** for more details.

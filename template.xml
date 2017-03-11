@@ -142,7 +142,7 @@
         </rule>
 
         <rule name="Kinetic Potential" category="all">
-            <formula ref="Normal Flat">
+            <formula ref="Basic Flat">
             </formula>
 
             <option name="Simple Feature">
