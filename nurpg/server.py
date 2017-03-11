@@ -56,10 +56,14 @@ class CharacterFormatResource(object):
         buffer = io.StringIO()
         warnings = io.StringIO()
 
-        character = load_character(req.stream, self._doc)
-        format_character(character, self._doc, buffer)
+        errors = list()
+        try:
+            character = load_character(req.stream, self._doc)
+            format_character(character, self._doc, buffer)
 
-        errors = character.check(self._doc)
+            errors.extend(character.check(self._doc))
+        except Exception as ex:
+            errors.append(ex)
 
         if len(errors) > 0:
             warnings.write('### General Error\n')
