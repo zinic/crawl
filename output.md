@@ -86,13 +86,13 @@ Grants immunity to a certain affliction and all of its effects.
 #### Rule: Area Effect
 
 * **Line**
-	* Aspect Point Cost: 13
+	* Aspect Point Cost: 8
 
 * **Cone**
-	* Aspect Point Cost: 21
+	* Aspect Point Cost: 8
 
 * **Dome**
-	* Aspect Point Cost: 34
+	* Aspect Point Cost: 8
 
 #### Rule: Careful Blow
 
@@ -813,6 +813,28 @@ See the core rules section: **Range Definitions** for more details.
 * **Extreme**
 	* Aspect Point Cost: 21
 
+#### Rule: Reload EP Cost
+Reload EP cost codifies when a skill or item (such as a weapon) require addtional effort to make ready or operate before
+use. This includes examples such as: firearm reloading, readying a crossbow, charging a magical effect, etc...
+
+This cost may be paid to reload or make ready the target item or skill in question. Once done the target is considered ready
+for use. The target may specify that if the ready status isn't used in a certain duration that it must be reloaded once more.
+
+* **+5**
+	* Aspect Point Cost: -13
+
+* **+4**
+	* Aspect Point Cost: -8
+
+* **+3**
+	* Aspect Point Cost: -5
+
+* **+2**
+	* Aspect Point Cost: -3
+
+* **+1**
+	* Aspect Point Cost: -2
+
 #### Rule: Simple Feature
 
 * **Simple Feature**
@@ -891,6 +913,66 @@ See the core rules section: **Range Definitions** for more details.
 
 * **$$ 2400**
 	* Aspect Point Cost: 24
+
+* **$$ 2500**
+	* Aspect Point Cost: 25
+
+* **$$ 2600**
+	* Aspect Point Cost: 26
+
+* **$$ 2700**
+	* Aspect Point Cost: 27
+
+* **$$ 2800**
+	* Aspect Point Cost: 28
+
+* **$$ 2900**
+	* Aspect Point Cost: 29
+
+* **$$ 3000**
+	* Aspect Point Cost: 30
+
+* **$$ 3100**
+	* Aspect Point Cost: 31
+
+* **$$ 3200**
+	* Aspect Point Cost: 32
+
+* **$$ 3300**
+	* Aspect Point Cost: 33
+
+* **$$ 3400**
+	* Aspect Point Cost: 34
+
+* **$$ 3500**
+	* Aspect Point Cost: 35
+
+* **$$ 3600**
+	* Aspect Point Cost: 36
+
+* **$$ 3700**
+	* Aspect Point Cost: 37
+
+* **$$ 3800**
+	* Aspect Point Cost: 38
+
+* **$$ 3900**
+	* Aspect Point Cost: 39
+
+* **$$ 4000**
+	* Aspect Point Cost: 40
+
+* **$$ 4100**
+	* Aspect Point Cost: 41
+
+* **$$ 4200**
+	* Aspect Point Cost: 42
+
+* **$$ 4300**
+	* Aspect Point Cost: 43
+
+* **$$ 4400**
+	* Aspect Point Cost: 44
 
 #### Rule: Target Restriction
 
@@ -1298,12 +1380,12 @@ The character summons a cold blast directed in a cone shaped area in-front of th
 an area attack for all affected map cells.
 
 
-Aspect Point Cost: 37
+Aspect Point Cost: 24
 #### Details
 * Energy Point Cost (**-2 AP**): +1
 * Failure Chance (**7 AP**): Difficulty 8
 * Magic (**2 AP**): Magic
-* Area Effect (**21 AP**): Cone
+* Area Effect (**8 AP**): Cone
 * Range (**5 AP**): Short
 * Damage (**4 AP**): 1d4
 
@@ -1628,14 +1710,14 @@ The Modifier to range attacks persists even inside the mist. Melee attacks howev
 unaffacted.
 
 
-Aspect Point Cost: 40
+Aspect Point Cost: 14
 #### Details
 * Energy Point Cost (**-2 AP**): +1
 * Failure Chance (**1 AP**): Difficulty 14
 * Magic (**2 AP**): Magic
 * Accuracy Modifier (**-8 AP**): -4 Attack Accuracy
 * Range (**8 AP**): Medium
-* Area Effect (**34 AP**): Dome
+* Area Effect (**8 AP**): Dome
 * Effect Duration (**5 AP**): 4 Turns
 
 ### Perception

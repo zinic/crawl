@@ -336,6 +336,20 @@
             <option name="{range_value}" range="1,5"/>
         </rule>
 
+        <rule name="Reload EP Cost" category="all">
+            <formula ref="Normal Progression"/>
+
+            <option name="+{range_value}" range="-5,-1"/>
+
+            <text>
+                Reload EP cost codifies when a skill or item (such as a weapon) require addtional effort to make ready or operate before
+                use. This includes examples such as: firearm reloading, readying a crossbow, charging a magical effect, etc...
+
+                This cost may be paid to reload or make ready the target item or skill in question. Once done the target is considered ready
+                for use. The target may specify that if the ready status isn't used in a certain duration that it must be reloaded once more.
+            </text>
+        </rule>
+
         <rule name="Energy Point Cost" category="all">
             <formula ref="Normal Progression"/>
 
