@@ -729,6 +729,24 @@ the future only by lowering it.
 * **Poisoned**
 	* Aspect Point Cost: 5
 
+#### Rule: Length
+See the core rules section: **Range Definitions** for more details.
+
+* **Melee**
+	* Aspect Point Cost: 2
+
+* **Short**
+	* Aspect Point Cost: 3
+
+* **Medium**
+	* Aspect Point Cost: 5
+
+* **Long**
+	* Aspect Point Cost: 8
+
+* **Extreme**
+	* Aspect Point Cost: 13
+
 #### Rule: May Enter Stealth
 
 * **May Enter Stealth**
@@ -791,6 +809,24 @@ condition is met, an aspect that has the reactionary effect may be used immediat
 
 * **+6**
 	* Aspect Point Cost: 21
+
+#### Rule: Radius
+See the core rules section: **Range Definitions** for more details.
+
+* **Melee**
+	* Aspect Point Cost: 2
+
+* **Short**
+	* Aspect Point Cost: 3
+
+* **Medium**
+	* Aspect Point Cost: 5
+
+* **Long**
+	* Aspect Point Cost: 8
+
+* **Extreme**
+	* Aspect Point Cost: 13
 
 #### Rule: Range
 See the core rules section: **Range Definitions** for more details.

@@ -469,6 +469,36 @@
             </text>
         </rule>
 
+        <rule name="Length" category="all">
+            <formula ref="Normal Progression">
+            </formula>
+
+            <option name="Melee"/>
+            <option name="Short"/>
+            <option name="Medium"/>
+            <option name="Long"/>
+            <option name="Extreme"/>
+
+            <text>
+                See the core rules section: **Range Definitions** for more details.
+            </text>
+        </rule>
+
+        <rule name="Radius" category="all">
+            <formula ref="Normal Progression">
+            </formula>
+
+            <option name="Melee"/>
+            <option name="Short"/>
+            <option name="Medium"/>
+            <option name="Long"/>
+            <option name="Extreme"/>
+
+            <text>
+                See the core rules section: **Range Definitions** for more details.
+            </text>
+        </rule>
+
         <rule name="Range" category="all">
             <formula ref="Normal Progression">
             </formula>
