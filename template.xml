@@ -141,6 +141,17 @@
             </option>
         </rule>
 
+        <rule name="Kinetic Potential" category="all">
+            <formula ref="Normal Flat">
+            </formula>
+
+            <option name="Simple Feature">
+                <text>
+                    This grants a kinetic attack the ability to impart kinetic potential. See the core rule docs for more information.
+                </text>
+            </option>
+        </rule>
+
         <rule name="Teleportation" category="all">
             <formula ref="Heroic Progression">
             </formula>

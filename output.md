@@ -729,6 +729,11 @@ the future only by lowering it.
 * **Poisoned**
 	* Aspect Point Cost: 5
 
+#### Rule: Kinetic Potential
+
+* **Simple Feature**
+	* Aspect Point Cost: 5
+
 #### Rule: Length
 See the core rules section: **Range Definitions** for more details.
 
