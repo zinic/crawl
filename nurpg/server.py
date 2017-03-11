@@ -56,14 +56,16 @@ class CharacterFormatResource(object):
         buffer = io.StringIO()
         warnings = io.StringIO()
 
-        try:
-            character = load_character(req.stream, self._doc)
-            format_character(character, self._doc, buffer)
+        character = load_character(req.stream, self._doc)
+        format_character(character, self._doc, buffer)
 
-            character.check(self._doc)
-        except Exception as ex:
-            traceback.print_exc()
-            warnings.write('### General Error\n\n{}'.format(ex))
+        errors = character.check(self._doc)
+
+        if len(errors) > 0:
+            warnings.write('### General Error\n')
+
+            for error in errors:
+                warnings.write('* {}\n'.format(error))
 
         resp.body = json.dumps({
             'character': buffer.getvalue(),
