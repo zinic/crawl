@@ -564,6 +564,17 @@ This one is still a work in progress.
 * **Echo Sight**
 	* Aspect Point Cost: 13
 
+#### Rule: Experimental Technology
+* Skill rolls of 19 qualify as a crit.
+* When you roll a 20 crit you roll on crit table twice.
+* If you would not roll on the crit table (such as a heal), refund 1 Energy point.
+* Skill rolls of 2 qualify as a critical failure.
+* Skill rolls of 1 will always qualify as a critical failure even if you would succeed otherwise.
+* Can be identified as an effect, item or feature of technological origin and is able to be disrupted by effects that target technologies.
+
+* **Experimental Technology**
+	* Aspect Point Cost: 0
+
 #### Rule: Extra Attack
 
 * **+1**
@@ -1023,10 +1034,28 @@ for use. The target may specify that if the ready status isn't used in a certain
 * **Enemies Only**
 	* Aspect Point Cost: 13
 
+#### Rule: Technological
+* Allows you to put non-basic features on an aspect or item.
+* Can be identified as an effect, item or feature of technological origin and is able to be disrupted by effects that target technologies.
+
+* **Technological**
+	* Aspect Point Cost: 2
+
 #### Rule: Teleportation
 
 * **Simple Teleportation**
 	* Aspect Point Cost: 13
+
+#### Rule: Unstable Magic
+* Skill rolls of 19 qualify as a crit.
+* When you roll a 20 crit you roll on crit table twice.
+* If you would not roll on the crit table (such as a heal), refund 1 Energy point.
+* Skill rolls of 2 qualify as a critical failure.
+* Skill rolls of 1 will always qualify as a critical failure even if you would succeed otherwise.
+* Can be detected as magic and is able to be disrupted by things that target magic.
+
+* **Unstable Magic**
+	* Aspect Point Cost: 0
 
 ### Item Rules
 Rules that apply to items only.
