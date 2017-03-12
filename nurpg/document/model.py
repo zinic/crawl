@@ -86,6 +86,11 @@ class OptionGenerator(object):
         if formula.provided_func_ref == 'damage_cost':
             return self.calculate_damage_cost(option_info)
 
+        if formula.provided_func_ref == 'dr_cost':
+            cost_element = self.calculate_damage_cost(option_info)
+            cost_element.ap_cost *= 2
+            return cost_element
+
         if formula.provided_func_ref == 'area_effect':
             if option_info.option.name == 'Line':
                 return APCostElement(option_info.format_name(), 1)

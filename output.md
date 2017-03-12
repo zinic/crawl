@@ -301,76 +301,76 @@ Grants immunity to a certain affliction and all of its effects.
 #### Rule: Damage Resistance
 
 * **+1 DR**
-	* Aspect Point Cost: 1
-
-* **+2 DR**
 	* Aspect Point Cost: 2
 
-* **+3 DR**
-	* Aspect Point Cost: 3
-
-* **+4 DR**
+* **+2 DR**
 	* Aspect Point Cost: 4
 
-* **+5 DR**
-	* Aspect Point Cost: 5
-
-* **+6 DR**
+* **+3 DR**
 	* Aspect Point Cost: 6
 
-* **+7 DR**
-	* Aspect Point Cost: 7
-
-* **+8 DR**
+* **+4 DR**
 	* Aspect Point Cost: 8
 
-* **+9 DR**
-	* Aspect Point Cost: 9
-
-* **+10 DR**
+* **+5 DR**
 	* Aspect Point Cost: 10
 
-* **+11 DR**
-	* Aspect Point Cost: 11
-
-* **+12 DR**
+* **+6 DR**
 	* Aspect Point Cost: 12
 
-* **+13 DR**
-	* Aspect Point Cost: 13
-
-* **+14 DR**
+* **+7 DR**
 	* Aspect Point Cost: 14
 
-* **+15 DR**
-	* Aspect Point Cost: 15
-
-* **+16 DR**
+* **+8 DR**
 	* Aspect Point Cost: 16
 
-* **+17 DR**
-	* Aspect Point Cost: 17
-
-* **+18 DR**
+* **+9 DR**
 	* Aspect Point Cost: 18
 
-* **+19 DR**
-	* Aspect Point Cost: 19
-
-* **+20 DR**
+* **+10 DR**
 	* Aspect Point Cost: 20
 
-* **+21 DR**
-	* Aspect Point Cost: 21
-
-* **+22 DR**
+* **+11 DR**
 	* Aspect Point Cost: 22
 
+* **+12 DR**
+	* Aspect Point Cost: 24
+
+* **+13 DR**
+	* Aspect Point Cost: 26
+
+* **+14 DR**
+	* Aspect Point Cost: 28
+
+* **+15 DR**
+	* Aspect Point Cost: 30
+
+* **+16 DR**
+	* Aspect Point Cost: 32
+
+* **+17 DR**
+	* Aspect Point Cost: 34
+
+* **+18 DR**
+	* Aspect Point Cost: 36
+
+* **+19 DR**
+	* Aspect Point Cost: 38
+
+* **+20 DR**
+	* Aspect Point Cost: 40
+
+* **+21 DR**
+	* Aspect Point Cost: 42
+
+* **+22 DR**
+	* Aspect Point Cost: 44
+
 * **+23 DR**
-	* Aspect Point Cost: 23
+	* Aspect Point Cost: 46
 
 * **+24 DR**
-	* Aspect Point Cost: 24
+	* Aspect Point Cost: 48
 
 #### Rule: Damage Type
 Damage types may be added to aspects and items that cause damage. Additional types may be added in an
@@ -1323,12 +1323,12 @@ inflicted of this type, this field provides **2 DR**. In addition, any effect wi
 a check that the target must make is subject to a **+2 modifier**.
 
 
-Aspect Point Cost: 24
+Aspect Point Cost: 26
 #### Details
 * Energy Point Cost (**-2 AP**): +1
 * Failure Chance (**7 AP**): Difficulty 8
 * Effect Duration (**5 AP**): 4 Turns
-* Damage Resistance (**2 AP**): +2 DR
+* Damage Resistance (**4 AP**): +2 DR
 * Concentration Modifier (**2 AP**): +2 Concentration
 * Magic (**2 AP**): Magic
 * Range (**8 AP**): Medium
@@ -1430,12 +1430,12 @@ The character conjures a kinetic shield that covers a target's body. This shield
 shield lasts for 10 minutes or until an attack lands and the shield absorbs damage.
 
 
-Aspect Point Cost: 19
+Aspect Point Cost: 23
 #### Details
 * Energy Point Cost (**-2 AP**): +1
 * Failure Chance (**7 AP**): Difficulty 8
 * Effect Duration (**5 AP**): 4 Turns
-* Damage Resistance (**4 AP**): +4 DR
+* Damage Resistance (**8 AP**): +4 DR
 * Magic (**2 AP**): Magic
 * Range (**3 AP**): Melee
 
@@ -1865,11 +1865,11 @@ The character conjures a simple kinetic shield that covers their entire body. Th
 This spell may target *only the caster* and no one else.
 
 
-Aspect Point Cost: 11
+Aspect Point Cost: 13
 #### Details
 * Energy Point Cost (**-2 AP**): +1
 * Failure Chance (**7 AP**): Difficulty 8
-* Damage Resistance (**2 AP**): +2 DR
+* Damage Resistance (**4 AP**): +2 DR
 * Magic (**2 AP**): Magic
 * Range (**2 AP**): Personal
 
@@ -1905,13 +1905,13 @@ turns.
 Requires: **[Vigor](#)**
 
 
-Aspect Point Cost: 21
+Aspect Point Cost: 37
 #### Details
 * Energy Point Cost (**-2 AP**): +1
-* Damage Resistance (**4 AP**): +4 DR
-* Damage Resistance (**4 AP**): +4 DR
-* Damage Resistance (**4 AP**): +4 DR
-* Damage Resistance (**4 AP**): +4 DR
+* Damage Resistance (**8 AP**): +4 DR
+* Damage Resistance (**8 AP**): +4 DR
+* Damage Resistance (**8 AP**): +4 DR
+* Damage Resistance (**8 AP**): +4 DR
 * Effect Duration (**5 AP**): 4 Turns
 * Magic (**2 AP**): Magic
 

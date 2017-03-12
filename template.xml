@@ -67,6 +67,9 @@
         <formula name="Damage Cost" type="provided" function="damage_cost">
         </formula>
 
+        <formula name="DR Cost" type="provided" function="dr_cost">
+        </formula>
+
         <formula name="Area Effect" type="provided" function="area_effect">
         </formula>
     </formulas>
@@ -281,7 +284,7 @@
         </rule>
 
         <rule name="Damage Resistance" category="all">
-            <formula ref="Damage Cost">
+            <formula ref="DR Cost">
             </formula>
 
             <option name="+{range_value} DR" range="1,24"/>
