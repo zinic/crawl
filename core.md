@@ -873,7 +873,9 @@ A character that has lost more than eighty percent of their vision is rendered b
 
 #### Grappled
 
-A character that is grappled is unable to take any action or aspect that requires willful control of the character's body.
+A character that is grappled is unable to take any action or aspect that requires willful control of the character's body. In addition they are subject to the **-2 Modifier** from the Squeezing condition.
+
+The attacker is not subject to the squeezing negative modifier.
 
 The grappled character may spend an energy point to attempt escape. Escape is an opposed strength check between the character and their attacker. Upon escape, the character’s ability to move freely is regained. The character is released in the same map cell as their attacker and is considered squeezing with them.
 
