@@ -639,7 +639,7 @@
             <formula ref="Normal Progression">
             </formula>
 
-            <option name="-{range_value} Defense Effectiveness" range="1,5"/>
+            <option name="{range_value} Defense Effectiveness" range="5,-5"/>
 
             <text>
                 This is used to modify an enemy target's defense roll.
