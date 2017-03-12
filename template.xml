@@ -544,17 +544,13 @@
         </rule>
 
         <rule name="Radius" category="all">
-            <formula ref="Normal Progression">
+            <formula ref="Basic Progression">
             </formula>
 
-            <option name="Melee"/>
-            <option name="Short"/>
-            <option name="Medium"/>
-            <option name="Long"/>
-            <option name="Extreme"/>
+            <option name="+{range_value} Map Cells" range="1,7" />
 
             <text>
-                See the core rules section: **Range Definitions** for more details.
+                Radius of a dome area effect in map cells.
             </text>
         </rule>
 
