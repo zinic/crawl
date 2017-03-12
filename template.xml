@@ -544,7 +544,7 @@
         </rule>
 
         <rule name="Radius" category="all">
-            <formula ref="Basic Progression">
+            <formula ref="Linear Progression">
             </formula>
 
             <option name="+{range_value} Map Cells" range="1,7" />
