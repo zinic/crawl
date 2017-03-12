@@ -35,6 +35,9 @@
         <formula name="Easy Progression" type="custom" equation="fib(i)">
         </formula>
 
+        <formula name="Reverse Normal Progression" type="custom" equation="-1 * fib(i, starting_step=1)">
+        </formula>
+
         <formula name="Normal Progression" type="custom" equation="fib(i, starting_step=1)">
         </formula>
 
@@ -635,11 +638,11 @@
             </text>
         </rule>
 
-        <rule name="Defense Mality" category="all">
-            <formula ref="Normal Progression">
+        <rule name="Defense Malus" category="all">
+            <formula ref="Reverse Normal Progression">
             </formula>
 
-            <option name="{range_value} Defense Effectiveness" range="5,-5"/>
+            <option name="{range_value} Defense Effectiveness" range="-5,5"/>
 
             <text>
                 This is used to modify an enemy target's defense roll.

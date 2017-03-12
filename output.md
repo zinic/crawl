@@ -391,23 +391,38 @@ attempt to make the weapon more effective against well defended enemeies.
 * **Meta**
 	* Aspect Point Cost: 2
 
-#### Rule: Defense Mality
+#### Rule: Defense Malus
 This is used to modify an enemy target's defense roll.
 
-* **-1 Defense Effectiveness**
-	* Aspect Point Cost: 2
-
-* **-2 Defense Effectiveness**
-	* Aspect Point Cost: 3
-
-* **-3 Defense Effectiveness**
-	* Aspect Point Cost: 5
+* **-5 Defense Effectiveness**
+	* Aspect Point Cost: 13
 
 * **-4 Defense Effectiveness**
 	* Aspect Point Cost: 8
 
-* **-5 Defense Effectiveness**
-	* Aspect Point Cost: 13
+* **-3 Defense Effectiveness**
+	* Aspect Point Cost: 5
+
+* **-2 Defense Effectiveness**
+	* Aspect Point Cost: 3
+
+* **-1 Defense Effectiveness**
+	* Aspect Point Cost: 2
+
+* **+1 Defense Effectiveness**
+	* Aspect Point Cost: -2
+
+* **+2 Defense Effectiveness**
+	* Aspect Point Cost: -3
+
+* **+3 Defense Effectiveness**
+	* Aspect Point Cost: -5
+
+* **+4 Defense Effectiveness**
+	* Aspect Point Cost: -8
+
+* **+5 Defense Effectiveness**
+	* Aspect Point Cost: -13
 
 #### Rule: Defense Modifier
 This is used to modify a defense roll instead of a skill check modifier.
