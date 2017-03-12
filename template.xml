@@ -631,8 +631,18 @@
             <option name="{range_value} Defense Effectiveness" range="-5,5"/>
 
             <text>
-                This is used to modify a defense roll instead of a skill check modifier. This modifier may be applied to
-                enemy defense rolls as a Modifier.
+                This is used to modify a defense roll instead of a skill check modifier.
+            </text>
+        </rule>
+
+        <rule name="Defense Mality" category="all">
+            <formula ref="Normal Progression">
+            </formula>
+
+            <option name="-{range_value} Defense Effectiveness" range="1,5"/>
+
+            <text>
+                This is used to modify an enemy target's defense roll.
             </text>
         </rule>
 
