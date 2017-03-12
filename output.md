@@ -830,25 +830,25 @@ condition is met, an aspect that has the reactionary effect may be used immediat
 Radius of a dome area effect in map cells.
 
 * **+1 Map Cells**
-	* Aspect Point Cost: 2
+	* Aspect Point Cost: 1
 
 * **+2 Map Cells**
-	* Aspect Point Cost: 4
+	* Aspect Point Cost: 2
 
 * **+3 Map Cells**
-	* Aspect Point Cost: 6
+	* Aspect Point Cost: 3
 
 * **+4 Map Cells**
-	* Aspect Point Cost: 8
+	* Aspect Point Cost: 4
 
 * **+5 Map Cells**
-	* Aspect Point Cost: 10
+	* Aspect Point Cost: 5
 
 * **+6 Map Cells**
-	* Aspect Point Cost: 12
+	* Aspect Point Cost: 6
 
 * **+7 Map Cells**
-	* Aspect Point Cost: 14
+	* Aspect Point Cost: 7
 
 #### Rule: Range
 See the core rules section: **Range Definitions** for more details.
