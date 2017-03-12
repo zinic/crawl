@@ -99,7 +99,7 @@
         </rule>
 
         <rule name="Attack Method" category="item">
-            <formula ref="Basic Flat">
+            <formula ref="Null Flat">
             </formula>
 
             <option name="Drawn Force"/>

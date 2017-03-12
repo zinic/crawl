@@ -1070,22 +1070,22 @@ Describes the attack method of a weapon. The attack method of a weapon defines w
 be used with the weapon.
 
 * **Drawn Force**
-	* Aspect Point Cost: 2
+	* Aspect Point Cost: 0
 
 * **Slashing**
-	* Aspect Point Cost: 2
+	* Aspect Point Cost: 0
 
 * **Bludgeoning**
-	* Aspect Point Cost: 2
+	* Aspect Point Cost: 0
 
 * **Thrusting**
-	* Aspect Point Cost: 2
+	* Aspect Point Cost: 0
 
 * **Magic**
-	* Aspect Point Cost: 2
+	* Aspect Point Cost: 0
 
 * **Throwable**
-	* Aspect Point Cost: 2
+	* Aspect Point Cost: 0
 
 #### Rule: Magic
 
