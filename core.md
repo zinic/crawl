@@ -564,6 +564,8 @@ Kinetic potential is measured in progressions of 5: every 5 points of kinetic po
 
 Your typical punch to the face is equal to five points of kinetic potential and therefore worth 1d6 points of damage.
 
+This damage is separate from the attack that caused it, meaning armor will apply to it all on its own.
+
 
 #### Forced Movement
 
