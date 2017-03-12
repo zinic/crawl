@@ -789,11 +789,11 @@ Modifier. For
 example, a character with a strength modifier of +2 receives +2 damage in addition to the result of
 their damage roll.
 
-* **1**
-	* Aspect Point Cost: 3
+* **One-Handed**
+	* Aspect Point Cost: 0
 
-* **2**
-	* Aspect Point Cost: 3
+* **Two-Handed**
+	* Aspect Point Cost: 1
 
 #### Rule: Opportunistic Action
 This allows the associated aspect to be used as a reactionary action. That is to say that when a

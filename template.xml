@@ -23,6 +23,9 @@
         <formula name="Item Usage Cost" type="custom" equation="i - 4">
         </formula>
 
+        <formula name="Handedness" type="custom" equation="i - 1">
+        </formula>
+
         <formula name="Linear Progression" type="custom" equation="i">
         </formula>
 
@@ -191,11 +194,11 @@
         </rule>
 
         <rule name="Number of Hands Required" category="all">
-            <formula ref="Easy Flat">
+            <formula ref="Handedness">
             </formula>
 
-            <option name="1"/>
-            <option name="2"/>
+            <option name="One-Handed" />
+            <option name="Two-Handed" />
 
             <text>
                 The number of hands required to utilize the aspect or item.
