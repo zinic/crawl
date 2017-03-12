@@ -539,9 +539,9 @@
             </formula>
 
             <option name="+{range_value} Map Cells" range="1,7" />
-            
+
             <text>
-                See the core rules section: **Range Definitions** for more details.
+                Number of map cells a line area effect attack affects.
             </text>
         </rule>
 

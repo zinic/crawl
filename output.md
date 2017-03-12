@@ -746,7 +746,7 @@ the future only by lowering it.
 	* Aspect Point Cost: 2
 
 #### Rule: Length
-See the core rules section: **Range Definitions** for more details.
+Number of map cells a line area effect attack affects.
 
 * **+1 Map Cells**
 	* Aspect Point Cost: 2
