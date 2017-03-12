@@ -748,20 +748,26 @@ the future only by lowering it.
 #### Rule: Length
 See the core rules section: **Range Definitions** for more details.
 
-* **Melee**
+* **+1 Map Cells**
 	* Aspect Point Cost: 2
 
-* **Short**
+* **+2 Map Cells**
 	* Aspect Point Cost: 3
 
-* **Medium**
+* **+3 Map Cells**
 	* Aspect Point Cost: 5
 
-* **Long**
+* **+4 Map Cells**
 	* Aspect Point Cost: 8
 
-* **Extreme**
+* **+5 Map Cells**
 	* Aspect Point Cost: 13
+
+* **+6 Map Cells**
+	* Aspect Point Cost: 21
+
+* **+7 Map Cells**
+	* Aspect Point Cost: 34
 
 #### Rule: May Enter Stealth
 

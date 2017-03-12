@@ -538,12 +538,8 @@
             <formula ref="Normal Progression">
             </formula>
 
-            <option name="Melee"/>
-            <option name="Short"/>
-            <option name="Medium"/>
-            <option name="Long"/>
-            <option name="Extreme"/>
-
+            <option name="+{range_value} Map Cells" range="1,7" />
+            
             <text>
                 See the core rules section: **Range Definitions** for more details.
             </text>
@@ -561,10 +557,15 @@
         </rule>
 
         <rule name="Range" category="all">
-            <formula ref="Linear Progression">
+            <formula ref="Normal Progression">
             </formula>
 
-            <option name="+{range_value} Map Cells" range="1,7" />
+            <option name="Personal"/>
+            <option name="Melee"/>
+            <option name="Short"/>
+            <option name="Medium"/>
+            <option name="Long"/>
+            <option name="Extreme"/>
 
             <text>
                 See the core rules section: **Range Definitions** for more details.
