@@ -844,6 +844,14 @@ The character is laying on the ground. While in this position, the following eff
 * Defense rolls receive a -2 modifier.
 
 
+##### Rising from a Prone Position
+
+A character may rise from a prone position for one energy point. Aspects may modify or negate this cost.
+
+##### Falling Prone
+
+A character may fall to a prone position safely for one energy point. Aspects may modify or negate this cost.
+
 #### Stunned
 
 The character is incapacitated to a certain degree. While stunned, the following effects apply to the character:
