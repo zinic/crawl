@@ -62,15 +62,6 @@ Grants a character a melee slashing attack. This attack may be used with any sla
 Aspect Point Cost: Provided by Item
 
 ## Character Inventory
-### Ring of Assballer
-A ring that gives me a bigger ass.
-
-Monetary Cost: $$1600
-#### Details
-Worn on Item Slot: **lightweight**
-* Slash:  (**$$ 500**)
-* Damage Healed: 1d6 (**$$ 600**)
-
 ### Weak Health Potion
 Simple, non-magical health potion.
 
@@ -79,4 +70,13 @@ Monetary Cost: $$300
 #### Details
 * Damage Healed: 1d6 (**$$ 600**)
 * Number of Uses: Has 1 Use(s) (**$$ -300**)
+
+### Ring of Assballer
+A ring that gives me a bigger ass.
+
+Monetary Cost: $$1600
+#### Details
+Worn on Item Slot: **lightweight**
+* Slash:  (**$$ 500**)
+* Damage Healed: 1d6 (**$$ 600**)
 
