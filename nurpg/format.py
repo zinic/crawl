@@ -60,7 +60,7 @@ def format_character(character, model, output):
     write_line(aspect_list.getvalue(), output)
 
     write_line('## Character Inventory', output)
-    for item in character.items.values():
+    for item in character.items:
         format_item(item, model, output)
 
 

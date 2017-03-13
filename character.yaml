@@ -1,4 +1,5 @@
 ---
+version: 0.2
 
 character:
   name: Test Character
@@ -23,7 +24,13 @@ character:
 
       # This is a list of rules that the item has, independent of any aspects it grants. This is optional:
       rules:
-        Damage Healed: 1d6
+        - name: Damage Healed
+          option: 1d6
+
+        - name: Core Aspect Modifier
+          option: "+1"
+          modifies:
+            - Strength
 
       # This tells us where the item may be worn. It must be one of the item slots or lightweight:
       wearable:
@@ -34,6 +41,7 @@ character:
 
     # You can reference aspects directly like this
     - name: Archery
+    - name: Affluent
     - name: Affluent
 
     # Or you can build custom items. It starts with the name, like below:
@@ -59,4 +67,10 @@ character:
 
       # This is a list of rules that the aspect has.
       rules:
-        Damage: 1d6
+        - name: Damage
+          option: 1d6
+
+        - name: Core Aspect Modifier
+          option: "+1"
+          modifies:
+            - Strength

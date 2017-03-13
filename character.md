@@ -1,19 +1,19 @@
 # Test Character
 ## Details
 * AP Total: 150
-* AP Spent: 23
-* AP Available: 127
+* AP Spent: 40
+* AP Available: 110
 * Starting Funds: $$ 1000
-* Funds Available: $$ 800
+* Funds Available: $$ 1500
 ## Resources
 * **Energy Point Pool:** 1
 * **Energy Point Refresh:** 1
 * **Health Point Pool:** 6
-* **Monetary Funds:** 1200
+* **Monetary Funds:** 2400
 ## Skill Stats
 * **Archery**
 	* Difficulty 8
-	* Modifier: 0
+	* Modifier: +2
 * **Intelligence**
 	* Difficulty: GM Specified
 	* Modifier: 0
@@ -22,14 +22,19 @@
 	* Modifier: 0
 * **New Aspect**
 	* Difficulty: GM Specified
-	* Modifier: 0
-* **Slash**
-	* Difficulty 8
-	* Modifier: 0
+	* Modifier: +2
 * **Strength**
 	* Difficulty: GM Specified
-	* Modifier: 0
+	* Modifier: +2
 ## Aspect List
+### Affluent
+You're richer. For now.
+
+
+Aspect Point Cost: 12
+#### Details
+* Starting Wealth Modifier (**12 AP**): $$ 1200
+
 ### Affluent
 You're richer. For now.
 
@@ -51,9 +56,10 @@ Aspect Point Cost: 5
 ### New Aspect
 Example new aspect.
 
-Aspect Point Cost: 6
+Aspect Point Cost: 11
 #### Details
 * Damage (**6 AP**): 1d6
+* Core Aspect Modifier (**5 AP**): +1
 
 ### Slash
 Grants a character a melee slashing attack. This attack may be used with any slashing melee weapon.
@@ -65,11 +71,12 @@ Aspect Point Cost: Provided by Item
 ### Ring of Assballer
 A ring that gives me a bigger ass.
 
-Monetary Cost: $$1600
+Monetary Cost: $$2100
 #### Details
 Worn on Item Slot: **lightweight**
 * Slash:  (**$$ 500**)
 * Damage Healed: 1d6 (**$$ 600**)
+* Core Aspect Modifier: +1 (**$$ 500**)
 
 ### Weak Health Potion
 Simple, non-magical health potion.

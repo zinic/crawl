@@ -3,6 +3,7 @@ import math
 import collections
 
 import nurpg.formulas as formulas
+from mprequest.util import DictBacked, ListBacked
 
 DICE_REGEX = re.compile('[\d]+d[\d]+')
 
@@ -355,8 +356,8 @@ class Item(object):
         self.wearable = None
 
     @classmethod
-    def from_yaml(cls, name, item_yaml):
-        item = cls(name, item_yaml.text)
+    def from_yaml(cls, item_yaml):
+        item = cls(item_yaml.name, item_yaml.text)
 
         if item_yaml.rules is not None:
             item.rules = RuleReferences.from_yaml(item_yaml.rules)
@@ -427,14 +428,14 @@ class Aspect(object):
         return self.rules.has_ref_to(rule_name)
 
     @classmethod
-    def from_yaml(cls, name, aspect_yaml):
-        aspect = cls(name, aspect_yaml.template, aspect_yaml.text)
+    def from_yaml(cls, aspect_yaml):
+        aspect = cls(aspect_yaml.name, aspect_yaml.template, aspect_yaml.text)
 
         if aspect_yaml.rules is not None:
             aspect.rules = RuleReferences.from_yaml(aspect_yaml.rules)
 
         if aspect_yaml.skill is not None:
-            aspect.skill = Skill.from_yaml(name, aspect_yaml.skill)
+            aspect.skill = Skill.from_yaml(aspect_yaml.name, aspect_yaml.skill)
 
         if aspect_yaml.requirements is not None:
             for requirement in aspect_yaml.requirements:
@@ -531,9 +532,12 @@ class RuleReferences(object):
     @classmethod
     def from_yaml(cls, rrefs_yaml):
         rrefs = cls()
-        for name in rrefs_yaml:
-            rrefs.add(RuleReference(name, rrefs_yaml[name]))
-
+        if isinstance(rrefs_yaml, ListBacked):
+            for rref_yaml in rrefs_yaml:
+                rrefs.add(RuleReference.from_yaml(rref_yaml))
+        else:
+            for name in rrefs_yaml:
+                rrefs.add(RuleReference(name, rrefs_yaml[name]))
         return rrefs
 
     @classmethod
@@ -562,6 +566,15 @@ class RuleReference(object):
         rule_modifiers.extend(rule.modifiers)
 
         return RuleSelection(rule, rule_modifiers, self.option)
+
+    @classmethod
+    def from_yaml(cls, rule_ref_yaml):
+        rref = cls(rule_ref_yaml.name, rule_ref_yaml.option)
+
+        if rule_ref_yaml.modifies is not None:
+            for rref_modifier_target in rule_ref_yaml.modifies:
+                rref.add_modifier(rref_modifier_target)
+        return rref
 
     @classmethod
     def from_xml(cls, rule_ref_xml):
@@ -630,9 +643,9 @@ class Character(object):
 
         self.resources = dict()
         self.skills = dict()
-        self.items = dict()
 
         self._model = model
+        self._items = list()
         self._aspects = list()
 
         self._load()
@@ -654,8 +667,14 @@ class Character(object):
         return self.resources['Monetary Funds'] + self.monetary_funds_start
 
     @property
+    def items(self):
+        return sorted(self._items, key=lambda i: i.name)
+
+    @property
     def aspects(self):
-        return sorted(self._aspects, key=lambda ca: ca.definition.name)
+        aspects = self._aspects.copy()
+        aspects.extend(self._item_granted_aspects())
+        return sorted(aspects, key=lambda ca: ca.definition.name)
 
     def has_aspect(self, ref):
         for char_aspect in self._aspects:
@@ -663,17 +682,21 @@ class Character(object):
                 return True
         return False
 
-    def add_aspect(self, ref, details):
-        aspect = self._model.aspect(ref)
-        if aspect is None:
-            aspect = Aspect.from_yaml(ref, details)
-
+    def add_aspect(self, aspect):
         # Wrap the aspect and add information as to where
         # it was sourced from. Assign the aspect to us after
         self._aspects.append(CharacterAspect(aspect, 'character'))
 
-    def add_item_grant(self, ref):
-        self._aspects.append(CharacterAspect(self._model.aspect(ref), 'item'))
+    def _item_granted_aspects(self):
+        aspects = list()
+        for item in self._items:
+            # Check if the item grants any aspects and add them
+            if item.grants is not None:
+                for grant_ref in item.grants:
+                    if not self.has_aspect(grant_ref):
+                        ig_aspect = CharacterAspect(self._model.aspect(grant_ref), 'item')
+                        aspects.append(ig_aspect)
+        return aspects
 
     def define_skill(self, aspect):
         # print('Defining skill {}.'.format(aspect.skill.name))
@@ -688,21 +711,9 @@ class Character(object):
 
         self.skills[aspect.skill.name] = skill
 
-    def add_item(self, ref, details):
-        # Try to load the item from our model first
-        item = self._model.item(ref)
-        if item is None:
-            # If the model doesn't have the item, maybe the player specified details inline
-            item = Item.from_yaml(ref, details)
-
+    def add_item(self, item):
         # Assign the item to us
-        self.items[ref] = item
-
-        # Check if the item grants any aspects and add them
-        if item.grants is not None:
-            for grant_ref in item.grants:
-                if grant_ref not in self.aspects:
-                    self.add_item_grant(grant_ref)
+        self._items.append(item)
 
     def load(self, model):
         # Process all the aspects first
@@ -734,7 +745,7 @@ class Character(object):
                     skill.modifier += modifier_value
 
         # Resolve all item assigned modifiers and apply them
-        for item in self.items.values():
+        for item in self.items:
             self.monetary_funds_spent += model.item_cost_breakdown(item).monetary_total
 
             for rule_selection in item.rules.realize(model):
