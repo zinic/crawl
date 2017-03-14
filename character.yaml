@@ -36,6 +36,16 @@ character:
       wearable:
         slot: lightweight
 
+    - name: Simple Infused Focus Item
+      text: A basic focus item, but it also provides an attack. Type Differs per cabalist (kinetic/cold/fire/electric/meta)
+
+      grants:
+        - Firebolt
+
+      rules:
+        Accuracy Modifier: +1 Attack Accuracy
+        Magic: Magic
+
   # This is a list of aspects for the character. These cost AP:
   aspects:
 

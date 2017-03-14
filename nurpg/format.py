@@ -139,13 +139,6 @@ def format_item(item, model, output):
         write_line(item.text, output)
 
     total_cost = 0
-    grants_breakdown = ''
-    for grant in item.grants:
-        grant_cost = model.lookup_aspect_cost_breakdown(grant).monetary_total
-        total_cost += grant_cost
-
-        grants_breakdown += '* {} (**{} AP**)'.format(grant, grant_cost)
-
     cost_breakdown = ''
     for cost_element in model.item_cost_breakdown(item).cost_elements:
         cost_breakdown += '* {}: {} (**$$ {}**)\n'.format(

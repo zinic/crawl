@@ -4,7 +4,7 @@
 * AP Spent: 40
 * AP Available: 110
 * Starting Funds: $$ 1000
-* Funds Available: $$ 1500
+* Funds Available: $$ -800
 ## Resources
 * **Energy Point Pool:** 1
 * **Energy Point Refresh:** 1
@@ -53,6 +53,12 @@ Aspect Point Cost: 5
 * Failure Chance (**7 AP**): Difficulty 8
 * Energy Point Cost (**-2 AP**): +1
 
+### Firebolt
+The character conjures a ball of fire in either hand which may then be thrown. The attack roll recieves
+the character's intelligence modifier as an attack Modifier.
+
+
+Aspect Point Cost: Provided by Item
 ### New Aspect
 Example new aspect.
 
@@ -71,12 +77,21 @@ Aspect Point Cost: Provided by Item
 ### Ring of Assballer
 A ring that gives me a bigger ass.
 
-Monetary Cost: $$2100
+Monetary Cost: $$1600
 #### Details
 Worn on Item Slot: **lightweight**
 * Slash:  (**$$ 500**)
 * Damage Healed: 1d6 (**$$ 600**)
 * Core Aspect Modifier: +1 (**$$ 500**)
+
+### Simple Infused Focus Item
+A basic focus item, but it also provides an attack. Type Differs per cabalist (kinetic/cold/fire/electric/meta)
+
+Monetary Cost: $$2300
+#### Details
+* Firebolt:  (**$$ 1900**)
+* Accuracy Modifier: +1 Attack Accuracy (**$$ 200**)
+* Magic: Magic (**$$ 200**)
 
 ### Weak Health Potion
 Simple, non-magical health potion.
