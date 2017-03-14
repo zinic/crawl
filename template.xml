@@ -788,7 +788,8 @@
 
         <aspect name="Dive for Cover">
             <skill type="Concentration">
-                <inherits from_ref="Standing Forward Jump"/>
+                <!-- TODO - Codify Standing Forward Jump since the below should inherit from Standing Forward Jump-->
+                <inherits from_ref="Mobility"/>
             </skill>
             <rule ref="Failure Chance" value="Difficulty 8"/>
             <rule ref="Energy Point Cost" value="+1"/>
