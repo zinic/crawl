@@ -1243,7 +1243,10 @@
         </aspect>
 
         <aspect name="Perception">
-            <skill type="Concentration"/>
+            <skill type="Concentration">
+                <inherits from_ref="Intelligence"/>
+            </skill>
+
             <rule ref="Energy Point Cost" value="+1"/>
             <rule ref="Failure Chance" value="Difficulty 8"/>
 

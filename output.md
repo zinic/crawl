@@ -2154,7 +2154,7 @@ Aspect Point Cost: 1
 Wearing this small ring makes you feel healthier.
 
 
-Monetary Cost: $$400
+Monetary Cost: $$300
 #### Details
 Worn on Item Slot: **lightweight**
 * Fit:  (**$$ 100**)
