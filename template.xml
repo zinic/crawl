@@ -524,7 +524,7 @@
         <rule name="Kinetic Damage" category="all">
             <formula ref="Null Flat"/>
 
-            <option name="Kinetic">
+            <option name="Kinetic Damage">
                 <text>
                     Kinetic damage is the most basic type of damage the system affords. This damage type does not
                     have any additional effects. If you are looking for the ability to impart kinetic potential, this
