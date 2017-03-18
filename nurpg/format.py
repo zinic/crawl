@@ -94,8 +94,10 @@ def format_rule(rule, output):
 
     for option_name in rule.options:
         option = rule.options[option_name]
-        write_line('* **{}**\n\t* Aspect Point Cost: {}\n'.format(option.name, option.ap_cost), output)
 
+        write_line('* **{}**\n\t* Aspect Point Cost: {}\n'.format(option.name, option.ap_cost), output)
+        if option.text is not None:
+            write_line('\n{}\n'.format(option.text), output)
 
 def format_aspect_name(name):
     return name.replace(' ', '_')

@@ -60,13 +60,16 @@
         <formula name="Normal Flat" type="custom" equation="5">
         </formula>
 
-        <formula name="Returns Normal Flat" type="custom" equation="5">
+        <formula name="Returns Normal Flat" type="custom" equation="-5">
         </formula>
 
         <formula name="Hard Flat" type="custom" equation="8">
         </formula>
 
         <formula name="Heroic Flat" type="custom" equation="13">
+        </formula>
+
+        <formula name="Epic Flat" type="custom" equation="21">
         </formula>
 
         <!-- Provided -->
@@ -154,12 +157,16 @@
         </rule>
 
         <rule name="Kinetic Potential" category="all">
-            <formula ref="Basic Flat">
+            <formula ref="Heroic Flat">
             </formula>
 
-            <option name="Simple Feature">
+            <option name="Kinetic Potential">
                 <text>
-                    This grants a kinetic attack the ability to impart kinetic potential. See the core rule docs for more information.
+                    This grants a kinetic attack the ability to impart kinetic potential. The cost of this rule is based
+                    on the facts that average damage is 2d6 and that kinetic potential causes forced movement of target
+                    characters.
+
+                    See the core rule docs for more information.
                 </text>
             </option>
         </rule>
@@ -200,8 +207,8 @@
             <formula ref="Handedness">
             </formula>
 
-            <option name="One-Handed" />
-            <option name="Two-Handed" />
+            <option name="One-Handed"/>
+            <option name="Two-Handed"/>
 
             <text>
                 The number of hands required to utilize the aspect or item.
@@ -248,7 +255,7 @@
             <formula ref="Null Flat">
             </formula>
 
-            <option name="Unstable Magic" />
+            <option name="Unstable Magic"/>
 
             <text>
                 * Skill rolls of 19 qualify as a crit.
@@ -264,11 +271,12 @@
             <formula ref="Basic Flat">
             </formula>
 
-            <option name="Technological" />
+            <option name="Technological"/>
 
             <text>
                 * Allows you to put non-basic features on an aspect or item.
-                * Can be identified as an effect, item or feature of technological origin and is able to be disrupted by effects that target technologies.
+                * Can be identified as an effect, item or feature of technological origin and is able to be disrupted by
+                effects that target technologies.
             </text>
         </rule>
 
@@ -276,7 +284,7 @@
             <formula ref="Null Flat">
             </formula>
 
-            <option name="Experimental Technology" />
+            <option name="Experimental Technology"/>
 
             <text>
                 * Skill rolls of 19 qualify as a crit.
@@ -284,7 +292,8 @@
                 * If you would not roll on the crit table (such as a heal), refund 1 Energy point.
                 * Skill rolls of 2 qualify as a critical failure.
                 * Skill rolls of 1 will always qualify as a critical failure even if you would succeed otherwise.
-                * Can be identified as an effect, item or feature of technological origin and is able to be disrupted by effects that target technologies.
+                * Can be identified as an effect, item or feature of technological origin and is able to be disrupted by
+                effects that target technologies.
 
             </text>
         </rule>
@@ -300,7 +309,7 @@
             <formula ref="Linear Progression">
             </formula>
 
-            <modifier ref="Monetary Funds" />
+            <modifier ref="Monetary Funds"/>
 
             <option name="$$ {range_value}00" range="1,44"/>
         </rule>
@@ -410,11 +419,15 @@
             <option name="+{range_value}" range="-5,-1"/>
 
             <text>
-                Reload EP cost codifies when a skill or item (such as a weapon) require addtional effort to make ready or operate before
-                use. This includes examples such as: firearm reloading, readying a crossbow, charging a magical effect, etc...
+                Reload EP cost codifies when a skill or item (such as a weapon) require addtional effort to make ready
+                or operate before
+                use. This includes examples such as: firearm reloading, readying a crossbow, charging a magical effect,
+                etc...
 
-                This cost may be paid to reload or make ready the target item or skill in question. Once done the target is considered ready
-                for use. The target may specify that if the ready status isn't used in a certain duration that it must be reloaded once more.
+                This cost may be paid to reload or make ready the target item or skill in question. Once done the target
+                is considered ready
+                for use. The target may specify that if the ready status isn't used in a certain duration that it must
+                be reloaded once more.
             </text>
         </rule>
 
@@ -508,14 +521,102 @@
             </text>
         </rule>
 
-        <rule name="Damage Type" category="all">
-            <formula ref="Basic Flat"/>
+        <rule name="Kinetic Damage" category="all">
+            <formula ref="Null Flat"/>
 
-            <option name="Kinetic"/>
-            <option name="Cold"/>
-            <option name="Fire"/>
-            <option name="Electric"/>
-            <option name="Meta"/>
+            <option name="Kinetic">
+                <text>
+                    Kinetic damage is the most basic type of damage the system affords. This damage type does not
+                    have any additional effects. If you are looking for the ability to impart kinetic potential, this
+                    is listed in a different rule.
+                </text>
+            </option>
+        </rule>
+
+        <rule name="Exotic Damage" category="all">
+            <formula ref="Heroic Flat"/>
+
+            <option name="Cold">
+                <text>
+                    The cold damage type is described as the removal of energy via effect. This usually manifests as the
+                    target becoming cold to the point of inflicting damage.
+
+                    Cold damage types may slow down targets on successful hits. To determine whether or not a target is
+                    slowed
+                    the target must roll a strength check against a failure chance of 10. Upon failure the target is
+                    subject to
+                    the slowed status as described in the core rules.
+
+                    The target may make additional strength checks against a failure chance of 8 to overcome the intense
+                    cold and
+                    remove the slowed status.
+                </text>
+            </option>
+
+            <option name="Fire">
+                <text>
+                    The fire damage type is used to describe any chemical reaction that results in combustion. Heating
+                    up
+                    air to an extreme temperature to make the oxygen reactive and start a fire is an example of fire
+                    type
+                    damage.
+
+                    Fire damage types come with the opportunity to set their targets on fire. To determine whether or
+                    not a
+                    target catches fire the target must roll a mobility check against a failure chance of 11. Upon
+                    failure
+                    the target takes additional burning damage equal to the lowest fire damage die rolled by the
+                    attacker on
+                    the attacker's next turn. This status lasts 1d4 rounds.
+
+                    Additional burning damage may not stack.
+
+                    The target may make additional mobility checks against a failure chance of 8 to quell the fire on
+                    their turn.
+
+                    Burning damage does not directly imply that clothing or armor is being consumed by fire, but rather
+                    the flames are present long enough to cause persisting damage.
+                </text>
+            </option>
+
+            <option name="Energetic">
+                <text>
+                    Energetic damage may be caused by anything related to electricity or certain high power physics like
+                    a plasma. This damage type includes lightning, static, radio and most futuristic beam weapons. This
+                    damage type does describe some types of damage that may be considered part of the fire damage type;
+                    the
+                    distinction is whether or not the effect would cause something to burn.
+
+                    Energetic damage types are usually so strong that the burning caused by them is secondary or ignored
+                    in
+                    the face of the damage the attack does on its own. This is the difference between a match burning
+                    versus
+                    being vaporized by plasma.
+
+                    Certain magic effects may impart energetic damage as well instead of meta.
+
+                    Energetic damage types are very effective but also chaotic. Upon a successful hit the attacker may
+                    roll
+                    a fate die. Negative and neutral values have no additional effect.
+                </text>
+            </option>
+
+            <option name="Meta">
+                <text>
+                    The meta damage type describes any damage inflicted that attacks the physical structure
+                    of the target at a very basic level. This damage type is almost always caused by extreme
+                    energies, magic or disintegration.
+
+                    Meta damage imparts its attack with a negative damage resistance modifier that applies to the
+                    target. This
+                    modifier is qualified by rolling one of the lowest meta damage dice tagged to the attack.
+
+                    For example: an attack does 2d6 Kinetic and 2d6 Meta. On successful attack, the attacker would roll
+                    an additional 1d6. The result is then taken away from the target's damage resistance when
+                    calculating
+                    damage done.
+                </text>
+            </option>
 
             <text>
                 Damage types may be added to aspects and items that cause damage. Additional types may be added in an
@@ -541,7 +642,7 @@
             <formula ref="Normal Progression">
             </formula>
 
-            <option name="+{range_value} Map Cells" range="1,7" />
+            <option name="+{range_value} Map Cells" range="1,7"/>
 
             <text>
                 Number of map cells a line area effect attack affects.
@@ -552,7 +653,7 @@
             <formula ref="Linear Progression">
             </formula>
 
-            <option name="+{range_value} Map Cells" range="1,7" />
+            <option name="+{range_value} Map Cells" range="1,7"/>
 
             <text>
                 Radius of a dome area effect in map cells.
@@ -816,20 +917,9 @@
 
         <aspect name="Rage">
             <rule ref="Energy Point Cost" value="+1"/>
-            <rule ref="Damage Resistance" value="+4 DR">
-                <detail type="targets" value="Kinetic"/>
-            </rule>
-            <rule ref="Damage Resistance" value="+4 DR">
-                <detail type="targets" value="Cold"/>
-            </rule>
-            <rule ref="Damage Resistance" value="+4 DR">
-                <detail type="targets" value="Fire"/>
-            </rule>
-            <rule ref="Damage Resistance" value="+4 DR">
-                <detail type="targets" value="Electric"/>
-            </rule>
+            <rule ref="Damage Resistance" value="+6 DR"/>
             <rule ref="Effect Duration" value="4 Turns"/>
-            <rule ref="Magic" />
+            <rule ref="Magic"/>
 
             <requires name="Vigor"/>
 

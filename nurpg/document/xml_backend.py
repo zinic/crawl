@@ -42,7 +42,10 @@ class XMLNode(object):
         self._xml = xml
 
     def text(self):
-        return sanitize_text(self._xml.text)
+        text_xml = self.node('text')
+        if text_xml is not None:
+            return sanitize_text(text_xml._xml.text)
+        return ''
 
     def tag(self):
         return self._xml.tag
@@ -79,10 +82,7 @@ class XMLBacked(object):
 
     @property
     def text(self):
-        text_xml = self._xml.node('text')
-        if text_xml is not None:
-            return sanitize_text(text_xml.text())
-        return ''
+        return self._xml.text()
 
     def _wrap(self, tag, wrapper_cls):
         return wrapper_cls(self._xml.node(tag))

@@ -56,9 +56,9 @@ class OptionGenerator(object):
         }
 
     @classmethod
-    def calculate_damage_cost(cls, option_info):
-        cost = option_info.range_value
-        formatted_name = option_info.format_name()
+    def calculate_damage_cost(cls, info):
+        cost = info.range_value
+        formatted_name = info.format_name()
 
         # Check if the damage is defined as a dice roll
         if DICE_REGEX.match(formatted_name):
@@ -68,39 +68,40 @@ class OptionGenerator(object):
             # Cost is number of dice + damage value
             cost = num_dice - 1 + num_dice * sides
 
-        return APCostElement(formatted_name, int(cost))
+        return APCostElement(formatted_name, int(cost), info.option.text())
 
-    def calculate_option(self, formula, option_info):
+    def calculate_option(self, formula, info):
         if formula.type == 'custom':
             # Copy the environment every time
             env_copy = self._env.copy()
 
             # Set the definition iteration num
-            env_copy['i'] = option_info.range_value
+            env_copy['i'] = info.range_value
 
             # This is so nasty...
             cost = eval(formula.equation, env_copy)
 
             # Return as a formula result
-            return APCostElement(option_info.format_name(), int(cost))
+            return APCostElement(info.format_name(), int(cost), info.option.text())
 
         if formula.provided_func_ref == 'damage_cost':
-            return self.calculate_damage_cost(option_info)
+            return self.calculate_damage_cost(info)
 
         if formula.provided_func_ref == 'dr_cost':
-            cost_element = self.calculate_damage_cost(option_info)
+            cost_element = self.calculate_damage_cost(info)
             cost_element.ap_cost *= 2
             return cost_element
 
-        if formula.provided_func_ref == 'area_effect':
-            if option_info.option.name == 'Line':
-                return APCostElement(option_info.format_name(), 1)
-
-            elif option_info.option.name == 'Dome':
-                return APCostElement(option_info.format_name(), 1)
-
-            elif option_info.option.name == 'Cone':
-                return APCostElement(option_info.format_name(), 1)
+        # TODO
+        # if formula.provided_func_ref == 'area_effect':
+        #     if info.option.name == 'Line':
+        #         return APCostElement(info.format_name(), 1)
+        #
+        #     elif info.option.name == 'Dome':
+        #         return APCostElement(info.format_name(), 1)
+        #
+        #     elif info.option.name == 'Cone':
+        #         return APCostElement(info.format_name(), 1)
 
         raise Exception('Unknown formula => {}::{}'.format(formula.type, formula.provided_func_ref))
 
@@ -196,7 +197,8 @@ class Model(object):
 
         for aspect_ref in item.grants:
             aspect_cost_bd = self.lookup_aspect_cost_breakdown(aspect_ref)
-            cost_bd.cost_elements.append(APCostElement(aspect_ref, aspect_cost_bd.ap_total))
+            cost_bd.cost_elements.append(
+                APCostElement(aspect_ref, aspect_cost_bd.ap_total, 'Granted by item.'))
 
         for rule in item.rules.realize(self):
             cost_bd.cost_elements.append(rule)
@@ -287,9 +289,10 @@ class APCostElementOption(object):
 
 
 class APCostElement(object):
-    def __init__(self, name, ap_cost):
+    def __init__(self, name, ap_cost, text):
         self.name = name
         self.ap_cost = ap_cost
+        self.text = text
         self.option = APCostElementOption()
 
     @property
@@ -468,7 +471,7 @@ class CoreAspect(Aspect):
         core_aspect.template = 'core'
         core_aspect_rule = Rule(name, categroy, text)
         core_aspect_rule.category = 'core'
-        core_aspect_rule.options[name] = APCostElement(name, 0)
+        core_aspect_rule.options[name] = APCostElement(name, 0, 'Core Aspect Rule')
         core_aspect.add_predefined_rule(core_aspect_rule)
 
         core_aspect_skill = Skill(name, 'Core Aspect')
