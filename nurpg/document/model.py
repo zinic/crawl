@@ -719,17 +719,19 @@ class Character(object):
         self._items.append(item)
 
     def load(self, model):
-        # Process all the aspects first
-        for char_aspect in self._aspects:
+        # Process all the aspects for skills first
+        for char_aspect in self.aspects:
+            # If the aspect describes a skill, process it
+            if char_aspect.definition.has_skill():
+                self.define_skill(char_aspect.definition)
+
+        # Process costs and modifiers
+        for char_aspect in self.aspects:
             aspect = char_aspect.definition
 
             # Record the costs of all non-core and non-item aspects
             if char_aspect.origin != 'core' and char_aspect.origin != 'item':
                 self.aspect_points_spent += model.aspect_cost_breakdown(aspect).ap_total
-
-            # If the aspect describes a skill, process it
-            if aspect.has_skill():
-                self.define_skill(aspect)
 
             # Resolve all aspect assigned modifiers and apply them
             for rule_selection in aspect.selected_rules(model):

@@ -1,70 +1,50 @@
-# Meta Name
+# Test Character
 ## Details
-* AP Total: 200
-* AP Spent: 106
-* AP Available: 94
-* Starting Funds: $$ 0
-* Funds Available: $$ 0
+* AP Total: 150
+* AP Spent: 40
+* AP Available: 110
+* Starting Funds: $$ 1000
+* Funds Available: $$ 1500
 ## Resources
-* **Energy Point Pool:** 3
-* **Energy Point Refresh:** 3
-* **Health Point Pool:** 10
-* **Monetary Funds:** 0
+* **Energy Point Pool:** 1
+* **Energy Point Refresh:** 1
+* **Health Point Pool:** 6
+* **Monetary Funds:** 2400
 ## Skill Stats
-* **Dive for Cover**
+* **Archery**
 	* Difficulty 8
-	* Modifier: +1
-* **Duck and Dodge**
-	* Difficulty 8
-	* Modifier: +1
-* **Grapple**
-	* Difficulty 12
-	* Modifier: +1
+	* Modifier: +2
 * **Intelligence**
 	* Difficulty: GM Specified
 	* Modifier: 0
-* **Leaping Strike**
-	* Difficulty 8
-	* Modifier: +1
 * **Mobility**
 	* Difficulty: GM Specified
-	* Modifier: +1
-* **Perception**
-	* Difficulty 8
+	* Modifier: 0
+* **New Aspect**
+	* Difficulty: GM Specified
 	* Modifier: +2
-* **Pivot and Roll**
-	* Difficulty 8
-	* Modifier: +3
-* **Quiet Steps**
-	* Difficulty 8
-	* Modifier: +1
 * **Slash**
 	* Difficulty 8
-	* Modifier: +1
+	* Modifier: 0
 * **Strength**
 	* Difficulty: GM Specified
-	* Modifier: +1
-* **Survival**
-	* Difficulty 8
-	* Modifier: 0
+	* Modifier: +2
 ## Aspect List
-### Adonic
-
-Requires: **[Intense Acrobatic Training](#)**
-
-Requires: **[Intense Resistance Training](#)**
-
-Requires: **[Intense Endurance Training](#)**
+### Affluent
 
 
-Aspect Point Cost: 10
+Aspect Point Cost: 12
 #### Details
-* Energy Point Pool Modifier (**5 AP**): +1
-* Energy Point Refresh Modifier (**5 AP**): +1
+* Starting Wealth Modifier (**12 AP**): $$ 1200
 
-### Dive for Cover
+### Affluent
 
-Requires: **[Duck and Dodge](#)**
+
+Aspect Point Cost: 12
+#### Details
+* Starting Wealth Modifier (**12 AP**): $$ 1200
+
+### Archery
 
 
 Aspect Point Cost: 5
@@ -72,158 +52,35 @@ Aspect Point Cost: 5
 * Failure Chance (**7 AP**): Difficulty 8
 * Energy Point Cost (**-2 AP**): +1
 
-### Duck and Dodge
+### New Aspect
+Example new aspect.
 
-
-Aspect Point Cost: 5
+Aspect Point Cost: 11
 #### Details
-* Failure Chance (**7 AP**): Difficulty 8
-* Energy Point Cost (**-2 AP**): +1
-
-### Fit
-
-
-Aspect Point Cost: 1
-#### Details
-* HP Pool Modifier (**1 AP**): +1
-
-### Grapple
-
-Requires: **[Fit](#)**
-
-
-Aspect Point Cost: 6
-#### Details
-* Grapple (**5 AP**): Grapple
-* Failure Chance (**3 AP**): Difficulty 12
-* Energy Point Cost (**-2 AP**): +1
-
-### Intense Acrobatic Training
-
-Requires: **[Fit](#)**
-
-
-Aspect Point Cost: 6
-#### Details
+* Damage (**6 AP**): 1d6
 * Core Aspect Modifier (**5 AP**): +1
-* HP Pool Modifier (**1 AP**): +1
-
-### Intense Endurance Training
-
-Requires: **[Fit](#)**
-
-
-Aspect Point Cost: 6
-#### Details
-* Energy Point Pool Modifier (**5 AP**): +1
-* HP Pool Modifier (**1 AP**): +1
-
-### Intense Resistance Training
-
-Requires: **[Fit](#)**
-
-
-Aspect Point Cost: 6
-#### Details
-* Core Aspect Modifier (**5 AP**): +1
-* HP Pool Modifier (**1 AP**): +1
-
-### Keen Senses
-
-Requires: **[Perception](#)**
-
-
-Aspect Point Cost: 13
-#### Details
-* Opportunistic Action (**13 AP**): Opportunistic
-
-### Leaping Strike
-
-Requires: **[Fit](#)**
-
-
-Aspect Point Cost: 6
-#### Details
-* Failure Chance (**7 AP**): Difficulty 8
-* Concentration Modifier (**1 AP**): +1 Concentration
-* Energy Point Cost (**-2 AP**): +1
-
-### Martial Artist
-
-Requires: **[Fit](#)**
-
-
-Aspect Point Cost: 2
-#### Details
-* Crit Success Modifier (**2 AP**): +1
-
-### Perception
-
-
-Aspect Point Cost: 5
-#### Details
-* Energy Point Cost (**-2 AP**): +1
-* Failure Chance (**7 AP**): Difficulty 8
-
-### Pivot and Roll
-
-Requires: **[Duck and Dodge](#)**
-
-Requires: **[Fit](#)**
-
-
-Aspect Point Cost: 6
-#### Details
-* Failure Chance (**7 AP**): Difficulty 8
-* Concentration Modifier (**2 AP**): +2 Concentration
-* Energy Point Cost (**-3 AP**): +2
-
-### Quiet Steps
-
-
-Aspect Point Cost: 10
-#### Details
-* May Enter Stealth (**5 AP**): May Enter Stealth
-* Failure Chance (**7 AP**): Difficulty 8
-* Energy Point Cost (**-2 AP**): +1
 
 ### Slash
 
 
-Aspect Point Cost: 5
-#### Details
-* Failure Chance (**7 AP**): Difficulty 8
-* Energy Point Cost (**-2 AP**): +1
-
-### Survival
-
-
-Aspect Point Cost: 7
-#### Details
-* Failure Chance (**7 AP**): Difficulty 8
-
-### Trap Finder
-
-Requires: **[Perception](#)**
-
-Requires: **[Quiet Steps](#)**
-
-
-Aspect Point Cost: 2
-#### Details
-* Concentration Modifier (**2 AP**): +2 Concentration
-
-### Vigor
-
-
-Aspect Point Cost: 5
-#### Details
-* Energy Point Refresh Modifier (**5 AP**): +1
-
+Aspect Point Cost: Provided by Item
 
 ## Character Inventory
-### Let me build a character
+### Ring of Assballer
+A ring that gives me a bigger ass.
 
-Monetary Cost: $$0
+Monetary Cost: $$1600
 #### Details
+Worn on Item Slot: **lightweight**
+* Slash:  (**$$ 500**)
+* Damage Healed: 1d6 (**$$ 600**)
+* Core Aspect Modifier: +1 (**$$ 500**)
+
+### Weak Health Potion
+
+
+Monetary Cost: $$300
+#### Details
+* Damage Healed: 1d6 (**$$ 600**)
+* Number of Uses: Has 1 Use(s) (**$$ -300**)
 
