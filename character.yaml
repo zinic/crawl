@@ -41,13 +41,14 @@ character:
 
     # You can reference aspects directly like this
     - name: Archery
-    - name: Affluent
+    - name: Fit
     - name: Affluent
 
     # Or you can build custom items. It starts with the name, like below:
     - name: New Aspect
       # Aspects may specify a template to provide additional checks while building
       template: Attack
+
       # Text is rendered for you. This describes the aspect. Be brief :)
       text: Example new aspect.
 
@@ -67,6 +68,12 @@ character:
 
       # This is a list of rules that the aspect has.
       rules:
+        - name: Energy Point Cost
+          option: "+1"
+
+        - name: Failure Chance
+          option: Difficulty 12
+
         - name: Damage
           option: 1d6
 

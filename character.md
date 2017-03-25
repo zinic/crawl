@@ -1,15 +1,15 @@
 # Test Character
 ## Details
 * AP Total: 150
-* AP Spent: 40
-* AP Available: 110
+* AP Spent: 30
+* AP Available: 120
 * Starting Funds: $$ 1000
-* Funds Available: $$ 1500
+* Funds Available: $$ 300
 ## Resources
 * **Energy Point Pool:** 1
 * **Energy Point Refresh:** 1
-* **Health Point Pool:** 6
-* **Monetary Funds:** 2400
+* **Health Point Pool:** 7
+* **Monetary Funds:** 1200
 ## Skill Stats
 * **Archery**
 	* Difficulty 8
@@ -21,7 +21,7 @@
 	* Difficulty: GM Specified
 	* Modifier: 0
 * **New Aspect**
-	* Difficulty: GM Specified
+	* Difficulty 12
 	* Modifier: +2
 * **Slash**
 	* Difficulty 8
@@ -37,13 +37,6 @@ Aspect Point Cost: 12
 #### Details
 * Starting Wealth Modifier (**12 AP**): $$ 1200 (Monetary Funds)
 
-### Affluent
-
-
-Aspect Point Cost: 12
-#### Details
-* Starting Wealth Modifier (**12 AP**): $$ 1200 (Monetary Funds)
-
 ### Archery
 
 
@@ -52,11 +45,22 @@ Aspect Point Cost: 5
 * Failure Chance (**7 AP**): Difficulty 8
 * Energy Point Cost (**-2 AP**): +1
 
+### Fit
+
+
+Aspect Point Cost: 1
+#### Details
+* HP Pool Modifier (**1 AP**): +1 (Health Point Pool)
+
 ### New Aspect
 Example new aspect.
+Requires: **[Fit](#fit)**
 
-Aspect Point Cost: 11
+
+Aspect Point Cost: 12
 #### Details
+* Energy Point Cost (**-2 AP**): +1
+* Failure Chance (**3 AP**): Difficulty 12
 * Damage (**6 AP**): 1d6
 * Core Aspect Modifier (**5 AP**): +1 (Strength)
 

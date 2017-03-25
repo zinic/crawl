@@ -25,6 +25,9 @@ def main():
     elif target == 'character':
         char = read_character(sys.argv[2], document)
 
+        for failure in char.check(document):
+            print(failure)
+
         with open('character.md', 'w') as fout:
             format_character(char, document, fout)
 

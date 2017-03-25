@@ -436,12 +436,12 @@ class Aspect(object):
     def has_rule(self, rule_name):
         return self.rules.has_ref_to(rule_name)
 
-    def check(self):
+    def check(self, model):
         failures = list()
         requirements = Aspect.SKILL_REQUIREMENTS.copy()
 
         if self.skill is not None:
-            for rule in self.rules:
+            for rule in self.selected_rules(model):
                 if rule.name in requirements:
                     requirements.remove(rule.name)
 
@@ -449,8 +449,10 @@ class Aspect(object):
                 failures.append(
                     CharacterCheckException('Aspect {} grants a skill but is missing the required rules: {}'.format(
                         self.name,
-                        requirements
+                        ', '.join(requirements)
                     )))
+
+        return failures
 
     @classmethod
     def from_yaml(cls, aspect_yaml):
@@ -462,8 +464,8 @@ class Aspect(object):
         if aspect_yaml.skill is not None:
             aspect.skill = Skill.from_yaml(aspect_yaml.name, aspect_yaml.skill)
 
-        if aspect_yaml.requirements is not None:
-            for requirement in aspect_yaml.requirements:
+        if aspect_yaml.requires is not None:
+            for requirement in aspect_yaml.requires:
                 aspect.requirements.append(requirement)
 
         return aspect
@@ -839,7 +841,7 @@ class Character(object):
             aspect = char_aspect.definition
 
             # Run the aspect's own check first
-            failures.extend(aspect.check())
+            failures.extend(aspect.check(model))
 
             # Figure out if we satisfy all required aspects
             for requirement_ref in aspect.requirements:
