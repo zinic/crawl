@@ -1095,14 +1095,11 @@ The cold damage type is described as the removal of energy via effect. This usua
 target becoming cold to the point of inflicting damage.
 
 Cold damage types may slow down targets on successful hits. To determine whether or not a target is
-slowed
-the target must roll a strength check against a failure chance of 10. Upon failure the target is
-subject to
-the slowed status as described in the core rules.
+slowed the target must roll a strength check against a failure chance of 10. Upon failure the target
+is subject to the slowed status as described in the core rules.
 
 The target may make additional strength checks against a failure chance of 8 to overcome the intense
-cold and
-remove the slowed status.
+cold and remove the slowed status.
 
 
 * **Fire**
@@ -1110,18 +1107,13 @@ remove the slowed status.
 
 
 The fire damage type is used to describe any chemical reaction that results in combustion. Heating
-up
-air to an extreme temperature to make the oxygen reactive and start a fire is an example of fire
-type
-damage.
+up air to an extreme temperature to make the oxygen reactive and start a fire is an example of fire
+type damage.
 
 Fire damage types come with the opportunity to set their targets on fire. To determine whether or
-not a
-target catches fire the target must roll a mobility check against a failure chance of 11. Upon
-failure
-the target takes additional burning damage equal to the lowest fire damage die rolled by the
-attacker on
-the attacker's next turn. This status lasts 1d4 rounds.
+not a target catches fire the target must roll a mobility check against a failure chance of 11. Upon
+failure the target takes additional burning damage equal to the lowest fire damage die rolled by the
+attacker on the attacker's next turn. This status lasts 1d4 rounds.
 
 Additional burning damage may not stack.
 
@@ -1139,20 +1131,19 @@ the flames are present long enough to cause persisting damage.
 Energetic damage may be caused by anything related to electricity or certain high power physics like
 a plasma. This damage type includes lightning, static, radio and most futuristic beam weapons. This
 damage type does describe some types of damage that may be considered part of the fire damage type;
-the
-distinction is whether or not the effect would cause something to burn.
+the distinction is whether or not the effect would cause something to burn.
 
 Energetic damage types are usually so strong that the burning caused by them is secondary or ignored
-in
-the face of the damage the attack does on its own. This is the difference between a match burning
-versus
-being vaporized by plasma.
+in the face of the damage the attack does on its own. This is the difference between a match burning
+versus being vaporized by plasma.
 
 Certain magic effects may impart energetic damage as well instead of meta.
 
 Energetic damage types are very effective but also chaotic. Upon a successful hit the attacker may
-roll
-a fate die. Negative and neutral values have no additional effect.
+roll a fate die. Negative and neutral values have no additional effect.
+
+A positvie fate die roll grants the attacker **two** of their smallest damage dice in additional
+damage.
 
 
 * **Meta**
@@ -1164,13 +1155,12 @@ of the target at a very basic level. This damage type is almost always caused by
 energies, magic or disintegration.
 
 Meta damage imparts its attack with a negative damage resistance modifier that applies to the
-target. This
-modifier is qualified by rolling one of the lowest meta damage dice tagged to the attack.
+target. This modifier is qualified by rolling one of the lowest meta damage dice tagged to the
+attack.
 
 For example: an attack does 2d6 Kinetic and 2d6 Meta. On successful attack, the attacker would roll
 an additional 1d6. The result is then taken away from the target's damage resistance when
-calculating
-damage done.
+calculating damage done.
 
 
 #### Rule: Experimental Technology
