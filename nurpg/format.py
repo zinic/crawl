@@ -119,8 +119,12 @@ def format_aspect(aspect, model, output):
 
     if aspect.template != 'core':
         for cost_element in model.aspect_cost_breakdown(aspect).cost_elements:
-            cost_breakdown += '* {} (**{} AP**): {}\n'.format(
-                cost_element.name, cost_element.ap_cost, cost_element.option.name)
+            modifier_output = ''
+            if cost_element.modifiers is not None and len(cost_element.modifiers) > 0:
+                modifier_output = ' ({})'.format(', '.join(cost_element.modifiers))
+
+            cost_breakdown += '* {} (**{} AP**): {}{}\n'.format(
+                cost_element.name, cost_element.ap_cost, cost_element.option.name, modifier_output)
             ap_cost += cost_element.ap_cost
 
     write_line('Aspect Point Cost: {}'.format(ap_cost), output)

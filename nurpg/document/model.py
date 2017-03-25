@@ -92,26 +92,24 @@ class OptionGenerator(object):
             cost_element.ap_cost *= 2
             return cost_element
 
-        # TODO
-        # if formula.provided_func_ref == 'area_effect':
-        #     if info.option.name == 'Line':
-        #         return APCostElement(info.format_name(), 1)
-        #
-        #     elif info.option.name == 'Dome':
-        #         return APCostElement(info.format_name(), 1)
-        #
-        #     elif info.option.name == 'Cone':
-        #         return APCostElement(info.format_name(), 1)
-
         raise Exception('Unknown formula => {}::{}'.format(formula.type, formula.provided_func_ref))
 
 
-def iterate_options(rule_xml):
+def generate_options(rule_xml):
+    options = list()
+
     # Positions start at 1
     i = 1
 
     # Iterate through the defined options
-    for option_xml in rule_xml.each_node('option'):
+    option_nodes = rule_xml.each_node('option')
+
+    if len(option_nodes) == 0:
+        # If there are no options specified then return only one option with the same
+        # name as the rule itself
+        return [OptionPositionInfo(rule_xml, 0, 1)]
+
+    for option_xml in option_nodes:
         # Values start with the position of the option
         values = [i]
 
@@ -127,7 +125,9 @@ def iterate_options(rule_xml):
             if r == 0:
                 continue
 
-            yield OptionPositionInfo(option_xml, r, i)
+            options.append(OptionPositionInfo(option_xml, r, i))
+
+    return options
 
 
 class Model(object):
@@ -276,7 +276,7 @@ class Rule(object):
         for modifier_xml in rule_xml.each_node('modifier'):
             rule.modifiers.append(modifier_xml.ref)
 
-        for option_info in iterate_options(rule_xml):
+        for option_info in generate_options(rule_xml):
             calculated_option = option_generator.calculate_option(formula_xml, option_info)
             rule.options[calculated_option.name] = calculated_option
 
@@ -294,6 +294,7 @@ class APCostElement(object):
         self.ap_cost = ap_cost
         self.text = text
         self.option = APCostElementOption()
+        self.modifeirs = None
 
     @property
     def monetary_cost(self):
@@ -398,6 +399,11 @@ class ItemSlotAssignment(object):
 
 
 class Aspect(object):
+    SKILL_REQUIREMENTS = [
+        'Energy Point Cost',
+        'Failure Chance'
+    ]
+
     def __init__(self, name, template, text):
         self.name = name
         self.template = template
@@ -429,6 +435,22 @@ class Aspect(object):
 
     def has_rule(self, rule_name):
         return self.rules.has_ref_to(rule_name)
+
+    def check(self):
+        failures = list()
+        requirements = Aspect.SKILL_REQUIREMENTS.copy()
+
+        if self.skill is not None:
+            for rule in self.rules:
+                if rule.name in requirements:
+                    requirements.remove(rule.name)
+
+            if len(requirements) > 0:
+                failures.append(
+                    CharacterCheckException('Aspect {} grants a skill but is missing the required rules: {}'.format(
+                        self.name,
+                        requirements
+                    )))
 
     @classmethod
     def from_yaml(cls, aspect_yaml):
@@ -539,8 +561,10 @@ class RuleReferences(object):
             for rref_yaml in rrefs_yaml:
                 rrefs.add(RuleReference.from_yaml(rref_yaml))
         else:
+            # This is for version 0.1 of the chracter YAML
             for name in rrefs_yaml:
                 rrefs.add(RuleReference(name, rrefs_yaml[name]))
+
         return rrefs
 
     @classmethod
@@ -607,6 +631,7 @@ class RuleSelection(object):
 
     @property
     def option(self):
+        # If there is no option specified then assume that the name of the rule def will suffice
         target = self._target_option if self._target_option is not None else self.definition.name
         return self.definition.options[target]
 
@@ -812,6 +837,11 @@ class Character(object):
                 continue
 
             aspect = char_aspect.definition
+
+            # Run the aspect's own check first
+            failures.extend(aspect.check())
+
+            # Figure out if we satisfy all required aspects
             for requirement_ref in aspect.requirements:
                 if self.has_aspect(requirement_ref) is False:
                     failures.append(CharacterCheckException(

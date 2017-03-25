@@ -1179,6 +1179,13 @@ damage done.
 	* Aspect Point Cost: 0
 
 
+* Skill rolls of 19 qualify as a crit.
+* When you roll a 20 crit you roll on crit table twice.
+* If you would not roll on the crit table (such as a heal), refund 1 Energy point.
+* Skill rolls of 2 qualify as a critical failure.
+* Skill rolls of 1 will always qualify as a critical failure even if you would succeed otherwise.
+* Can be identified as an effect, item or feature of technological origin and is able to be disrupted by
+effects that target technologies.
 
 
 #### Rule: Extra Attack
@@ -1499,7 +1506,7 @@ damage done.
 
 #### Rule: Kinetic Damage
 
-* **Kinetic**
+* **Kinetic Damage**
 	* Aspect Point Cost: 0
 
 
@@ -1781,7 +1788,7 @@ See the core rule docs for more information.
 	* Aspect Point Cost: 2
 
 
-Allows melee attacks to ignore the penalty for attacking through an occupied map cell.
+TODO
 
 
 #### Rule: Starting Wealth Modifier
@@ -2070,16 +2077,27 @@ Allows melee attacks to ignore the penalty for attacking through an occupied map
 	* Aspect Point Cost: 2
 
 
+* Allows you to put non-basic features on an aspect or item.
+* Can be identified as an effect, item or feature of technological origin and is able to be disrupted by
+effects that target technologies.
 
 
 #### Rule: Teleportation
 
-* **Simple Teleportation**
-	* Aspect Point Cost: 13
+* **Teleportation**
+	* Aspect Point Cost: 8
 
 
 Allows the aspect this descriptor is tagged to, to impart a teleportation effect. To add more
 targets to teleport consider Extra Target.
+
+
+#### Rule: Testing Wildcard *
+
+* **Only Option**
+	* Aspect Point Cost: 13
+
+
 
 
 #### Rule: Unstable Magic
@@ -2088,6 +2106,12 @@ targets to teleport consider Extra Target.
 	* Aspect Point Cost: 0
 
 
+* Skill rolls of 19 qualify as a crit.
+* When you roll a 20 crit you roll on crit table twice.
+* If you would not roll on the crit table (such as a heal), refund 1 Energy point.
+* Skill rolls of 2 qualify as a critical failure.
+* Skill rolls of 1 will always qualify as a critical failure even if you would succeed otherwise.
+* Can be detected as magic and is able to be disrupted by things that target magic.
 
 
 ### Item Rules
@@ -2173,9 +2197,28 @@ Rules that apply to characters only.
 #### Rule: Grapple
 
 * **Grapple**
-	* Aspect Point Cost: 5
+	* Aspect Point Cost: 3
 
 
+Grappling a target character requires an opposed strength check between the attacker and the target. If
+the attacker wins this check, the target is considered grappled.
+
+To escape a grapple a target must make an opposed strength check against the character they are grappled
+by **at a modifier of -2**. If successful, the target regains their turn and is considered free. The
+target is released in the same map cell and is considered squeezing with the character that was
+grappling them.
+
+Characters that are grappled may not move at all. They may only attempt skills that do require movement
+or they may attempt to break from the grapple.
+
+
+#### Rule: Persistent Effect
+
+* **Persistent Effect**
+	* Aspect Point Cost: 13
+
+
+testing
 
 
 ## Aspects
@@ -2190,8 +2233,8 @@ Requires: **[Intense Endurance Training](#)**
 
 Aspect Point Cost: 10
 #### Details
-* Energy Point Pool Modifier (**5 AP**): +1
-* Energy Point Refresh Modifier (**5 AP**): +1
+* Energy Point Pool Modifier (**5 AP**): +1 (Energy Point Pool)
+* Energy Point Refresh Modifier (**5 AP**): +1 (Energy Point Refresh)
 
 ### Adrenaline Cascade
 
@@ -2207,7 +2250,7 @@ Aspect Point Cost: 13
 
 Aspect Point Cost: 12
 #### Details
-* Starting Wealth Modifier (**12 AP**): $$ 1200
+* Starting Wealth Modifier (**12 AP**): $$ 1200 (Monetary Funds)
 
 ### Arcane Sight
 
@@ -2413,7 +2456,7 @@ Aspect Point Cost: 19
 
 Aspect Point Cost: 1
 #### Details
-* HP Pool Modifier (**1 AP**): +1
+* HP Pool Modifier (**1 AP**): +1 (Health Point Pool)
 
 ### Foil
 
@@ -2462,9 +2505,9 @@ Aspect Point Cost: 5
 Requires: **[Fit](#)**
 
 
-Aspect Point Cost: 6
+Aspect Point Cost: 4
 #### Details
-* Grapple (**5 AP**): Grapple
+* Grapple (**3 AP**): Grapple
 * Failure Chance (**3 AP**): Difficulty 12
 * Energy Point Cost (**-2 AP**): +1
 
@@ -2478,7 +2521,7 @@ Requires: **[Slash](#)**
 Aspect Point Cost: 6
 #### Details
 * Failure Chance (**7 AP**): Difficulty 8
-* Concentration Modifier (**-1 AP**): -1 Concentration
+* Concentration Modifier (**-1 AP**): -1 Concentration (Great Slash)
 * Extra Target (**2 AP**): +1
 * Energy Point Cost (**-2 AP**): +1
 
@@ -2487,14 +2530,14 @@ Aspect Point Cost: 6
 Requires: **[Magic Trick](#)**
 
 
-Aspect Point Cost: 25
+Aspect Point Cost: 20
 #### Details
 * Delayed Effect Duration (**2 AP**): 1 Turn
 * Energy Point Cost (**-2 AP**): +1
 * Failure Chance (**5 AP**): Difficulty 10
 * Magic (**2 AP**): Magic
 * Range (**5 AP**): Short
-* Teleportation (**13 AP**): Simple Teleportation
+* Teleportation (**8 AP**): Teleportation
 
 ### High Manual Dexterity
 
@@ -2511,7 +2554,7 @@ Requires: **[Martial Artist](#)**
 Aspect Point Cost: 9
 #### Details
 * Combat Expertise (**8 AP**): Can't be Flanked
-* HP Pool Modifier (**1 AP**): +1
+* HP Pool Modifier (**1 AP**): +1 (Health Point Pool)
 
 ### Intense Acrobatic Training
 
@@ -2520,8 +2563,8 @@ Requires: **[Fit](#)**
 
 Aspect Point Cost: 6
 #### Details
-* Core Aspect Modifier (**5 AP**): +1
-* HP Pool Modifier (**1 AP**): +1
+* Core Aspect Modifier (**5 AP**): +1 (Mobility)
+* HP Pool Modifier (**1 AP**): +1 (Health Point Pool)
 
 ### Intense Endurance Training
 
@@ -2530,8 +2573,8 @@ Requires: **[Fit](#)**
 
 Aspect Point Cost: 6
 #### Details
-* Energy Point Pool Modifier (**5 AP**): +1
-* HP Pool Modifier (**1 AP**): +1
+* Energy Point Pool Modifier (**5 AP**): +1 (Energy Point Pool)
+* HP Pool Modifier (**1 AP**): +1 (Health Point Pool)
 
 ### Intense Resistance Training
 
@@ -2540,8 +2583,8 @@ Requires: **[Fit](#)**
 
 Aspect Point Cost: 6
 #### Details
-* Core Aspect Modifier (**5 AP**): +1
-* HP Pool Modifier (**1 AP**): +1
+* Core Aspect Modifier (**5 AP**): +1 (Strength)
+* HP Pool Modifier (**1 AP**): +1 (Health Point Pool)
 
 ### Keen Senses
 
@@ -2631,7 +2674,7 @@ Requires: **[Fit](#)**
 Aspect Point Cost: 6
 #### Details
 * Failure Chance (**7 AP**): Difficulty 8
-* Concentration Modifier (**1 AP**): +1 Concentration
+* Concentration Modifier (**1 AP**): +1 Concentration (Leaping Strike)
 * Energy Point Cost (**-2 AP**): +1
 
 ### Lockpicking
@@ -2690,7 +2733,7 @@ Aspect Point Cost: 15
 
 Aspect Point Cost: 5
 #### Details
-* Energy Point Pool Modifier (**5 AP**): +1
+* Energy Point Pool Modifier (**5 AP**): +1 (Energy Point Pool)
 
 ### Mentat
 
@@ -2699,7 +2742,7 @@ Requires: **[Mental Endurance](#)**
 
 Aspect Point Cost: 5
 #### Details
-* Core Aspect Modifier (**5 AP**): +1
+* Core Aspect Modifier (**5 AP**): +1 (Intelligence)
 
 ### Obscura
 
@@ -2742,7 +2785,7 @@ Requires: **[Fit](#)**
 Aspect Point Cost: 6
 #### Details
 * Failure Chance (**7 AP**): Difficulty 8
-* Concentration Modifier (**2 AP**): +2 Concentration
+* Concentration Modifier (**2 AP**): +2 Concentration (Pivot and Roll)
 * Energy Point Cost (**-3 AP**): +2
 
 ### Purify
@@ -2774,9 +2817,9 @@ Requires: **[Mental Endurance](#)**
 
 Aspect Point Cost: 5
 #### Details
-* Energy Point Refresh Modifier (**5 AP**): +1
-* Core Aspect Modifier (**5 AP**): +1
-* Core Aspect Modifier (**-5 AP**): -1
+* Energy Point Refresh Modifier (**5 AP**): +1 (Energy Point Refresh)
+* Core Aspect Modifier (**5 AP**): +1 (Intelligence)
+* Core Aspect Modifier (**-5 AP**): -1 (Strength)
 
 ### Quiet Steps
 
@@ -2915,7 +2958,7 @@ Requires: **[Quiet Steps](#)**
 
 Aspect Point Cost: 2
 #### Details
-* Concentration Modifier (**2 AP**): +2 Concentration
+* Concentration Modifier (**2 AP**): +2 Concentration (Perception)
 
 ### Treat Illness
 
@@ -2931,7 +2974,7 @@ Aspect Point Cost: 7
 
 Aspect Point Cost: 5
 #### Details
-* Energy Point Refresh Modifier (**5 AP**): +1
+* Energy Point Refresh Modifier (**5 AP**): +1 (Energy Point Refresh)
 
 ### Volta
 

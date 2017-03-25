@@ -138,49 +138,41 @@
             <formula ref="Easy Flat">
             </formula>
 
-            <option name="Careful Blow">
-                <text>
-                    Allows melee attacks to ignore the penalty for attacking through an occupied map cell.
-                </text>
-            </option>
+            <text>
+                Allows melee attacks to ignore the penalty for attacking through an occupied map cell.
+            </text>
         </rule>
 
         <rule name="Simple Feature" category="all">
             <formula ref="Basic Flat">
             </formula>
 
-            <option name="Simple Feature">
-                <text>
-                    Allows melee attacks to ignore the penalty for attacking through an occupied map cell.
-                </text>
-            </option>
+            <text>
+                TODO
+            </text>
         </rule>
 
         <rule name="Kinetic Potential" category="all">
             <formula ref="Heroic Flat">
             </formula>
 
-            <option name="Kinetic Potential">
-                <text>
-                    This grants a kinetic attack the ability to impart kinetic potential. The cost of this rule is based
-                    on the facts that average damage is 2d6 and that kinetic potential causes forced movement of target
-                    characters.
+            <text>
+                This grants a kinetic attack the ability to impart kinetic potential. The cost of this rule is based
+                on the facts that average damage is 2d6 and that kinetic potential causes forced movement of target
+                characters.
 
-                    See the core rule docs for more information.
-                </text>
-            </option>
+                See the core rule docs for more information.
+            </text>
         </rule>
 
         <rule name="Teleportation" category="all">
             <formula ref="Heroic Progression">
             </formula>
 
-            <option name="Simple Teleportation">
-                <text>
-                    Allows the aspect this descriptor is tagged to, to impart a teleportation effect. To add more
-                    targets to teleport consider Extra Target.
-                </text>
-            </option>
+            <text>
+                Allows the aspect this descriptor is tagged to, to impart a teleportation effect. To add more
+                targets to teleport consider Extra Target.
+            </text>
         </rule>
 
         <rule name="Effect Trigger" category="all">
@@ -255,8 +247,6 @@
             <formula ref="Null Flat">
             </formula>
 
-            <option name="Unstable Magic"/>
-
             <text>
                 * Skill rolls of 19 qualify as a crit.
                 * When you roll a 20 crit you roll on crit table twice.
@@ -271,8 +261,6 @@
             <formula ref="Basic Flat">
             </formula>
 
-            <option name="Technological"/>
-
             <text>
                 * Allows you to put non-basic features on an aspect or item.
                 * Can be identified as an effect, item or feature of technological origin and is able to be disrupted by
@@ -284,8 +272,6 @@
             <formula ref="Null Flat">
             </formula>
 
-            <option name="Experimental Technology"/>
-
             <text>
                 * Skill rolls of 19 qualify as a crit.
                 * When you roll a 20 crit you roll on crit table twice.
@@ -294,7 +280,6 @@
                 * Skill rolls of 1 will always qualify as a critical failure even if you would succeed otherwise.
                 * Can be identified as an effect, item or feature of technological origin and is able to be disrupted by
                 effects that target technologies.
-
             </text>
         </rule>
 
@@ -318,14 +303,12 @@
             <formula ref="Heroic Progression">
             </formula>
 
-
             <option name="+{range_value}" range="1,3"/>
         </rule>
 
         <rule name="Extra Target" category="all">
             <formula ref="Normal Progression">
             </formula>
-
 
             <option name="+{range_value}" range="1,5"/>
         </rule>
@@ -437,6 +420,17 @@
             <option name="+{range_value}" range="-5,-1"/>
         </rule>
 
+        <rule name="Testing Wildcard *" category="all">
+            <formula ref="Heroic Progression">
+            </formula>
+
+            <option name="Only Option"/>
+
+            <text>
+                This is just a test.
+            </text>
+        </rule>
+
         <rule name="Opportunistic Action" category="all">
             <formula ref="Heroic Progression">
             </formula>
@@ -452,8 +446,6 @@
 
         <rule name="NPC Cohort" category="all">
             <formula ref="Normal Flat"/>
-
-            <option name="NPC Cohort"/>
         </rule>
 
         <rule name="Environment Mitigation" category="all">
@@ -483,8 +475,6 @@
 
         <rule name="May Enter Stealth" category="all">
             <formula ref="Normal Flat"/>
-
-            <option name="May Enter Stealth"/>
         </rule>
 
         <rule name="Energy Point Pool Mality" category="all">
@@ -524,13 +514,11 @@
         <rule name="Kinetic Damage" category="all">
             <formula ref="Null Flat"/>
 
-            <option name="Kinetic Damage">
-                <text>
-                    Kinetic damage is the most basic type of damage the system affords. This damage type does not
-                    have any additional effects. If you are looking for the ability to impart kinetic potential, this
-                    is listed in a different rule.
-                </text>
-            </option>
+            <text>
+                Kinetic damage is the most basic type of damage the system affords. This damage type does not
+                have any additional effects. If you are looking for the ability to impart kinetic potential, this
+                is listed in a different rule.
+            </text>
         </rule>
 
         <rule name="Exotic Damage" category="all">
@@ -624,6 +612,14 @@
             </text>
         </rule>
 
+        <rule name="Persistent Effect" category="character">
+            <formula ref="Heroic Flat"/>
+
+            <text>
+                testing
+            </text>
+        </rule>
+
         <rule name="Failure Chance" category="all">
             <formula ref="Failure Chance">
             </formula>
@@ -695,8 +691,6 @@
         <rule name="Grapple" category="character">
             <formula ref="Hard Progression">
             </formula>
-
-            <option name="Grapple"/>
 
             <text>
                 Grappling a target character requires an opposed strength check between the attacker and the target. If
@@ -2032,7 +2026,7 @@
                 <detail type="energy_type" value="Meta"/>
             </rule>
             <rule ref="Range" value="Short"/>
-            <rule ref="Teleportation" value="Simple Teleportation"/>
+            <rule ref="Teleportation"/>
 
             <requires name="Magic Trick"/>
 
