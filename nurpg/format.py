@@ -99,8 +99,10 @@ def format_rule(rule, output):
         if option.text is not None:
             write_line('\n{}\n'.format(option.text), output)
 
-def format_aspect_name(name):
-    return name.replace(' ', '_')
+
+def name_to_anchor(name):
+    return '#{}'.format(
+        name.lower().replace(' ', '-'))
 
 
 def format_aspect(aspect, model, output):
@@ -110,7 +112,7 @@ def format_aspect(aspect, model, output):
         write_line(aspect.text, output)
 
     for requirement in aspect.requirements:
-        write_line('Requires: **[{}](#)**\n'.format(requirement), output)
+        write_line('Requires: **[{}]({})**\n'.format(requirement, name_to_anchor(requirement)), output)
 
     write_line('', output)
 

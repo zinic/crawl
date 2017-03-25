@@ -961,7 +961,7 @@ Allows melee attacks to ignore the penalty for attacking through an occupied map
 
 
 
-* **When HP Damage is Delt**
+* **When HP Damage is Dealt**
 	* Aspect Point Cost: -5
 
 
@@ -2224,11 +2224,11 @@ testing
 ## Aspects
 ### Adonic
 
-Requires: **[Intense Acrobatic Training](#)**
+Requires: **[Intense Acrobatic Training](#intense-acrobatic-training)**
 
-Requires: **[Intense Resistance Training](#)**
+Requires: **[Intense Resistance Training](#intense-resistance-training)**
 
-Requires: **[Intense Endurance Training](#)**
+Requires: **[Intense Endurance Training](#intense-endurance-training)**
 
 
 Aspect Point Cost: 10
@@ -2238,7 +2238,7 @@ Aspect Point Cost: 10
 
 ### Adrenaline Cascade
 
-Requires: **[Vigor](#)**
+Requires: **[Vigor](#vigor)**
 
 
 Aspect Point Cost: 13
@@ -2297,7 +2297,7 @@ Aspect Point Cost: 12
 * Damage Healed (**8 AP**): 1d8
 * Magic (**2 AP**): Magic
 * Range (**2 AP**): Personal
-* Effect Trigger (**-5 AP**): When HP Damage is Delt
+* Effect Trigger (**-5 AP**): When HP Damage is Dealt
 
 ### Bludgeon
 
@@ -2320,7 +2320,7 @@ Aspect Point Cost: 13
 
 ### Counter Slash
 
-Requires: **[Slash](#)**
+Requires: **[Slash](#slash)**
 
 
 Aspect Point Cost: 11
@@ -2330,7 +2330,7 @@ Aspect Point Cost: 11
 
 ### Counter Stab
 
-Requires: **[Stab](#)**
+Requires: **[Stab](#stab)**
 
 
 Aspect Point Cost: 11
@@ -2340,7 +2340,7 @@ Aspect Point Cost: 11
 
 ### Countercast
 
-Requires: **[Dismiss](#)**
+Requires: **[Dismiss](#dismiss)**
 
 
 Aspect Point Cost: 35
@@ -2360,7 +2360,7 @@ Aspect Point Cost: 2
 
 ### Disable Device
 
-Requires: **[Lockpicking](#)**
+Requires: **[Lockpicking](#lockpicking)**
 
 
 Aspect Point Cost: 7
@@ -2392,7 +2392,7 @@ Aspect Point Cost: 26
 
 ### Dive for Cover
 
-Requires: **[Duck and Dodge](#)**
+Requires: **[Duck and Dodge](#duck-and-dodge)**
 
 
 Aspect Point Cost: 5
@@ -2410,7 +2410,7 @@ Aspect Point Cost: 5
 
 ### Farsight
 
-Requires: **[Magic Trick](#)**
+Requires: **[Magic Trick](#magic-trick)**
 
 
 Aspect Point Cost: 8
@@ -2422,7 +2422,7 @@ Aspect Point Cost: 8
 
 ### Field Aid
 
-Requires: **[Medicine](#)**
+Requires: **[Medicine](#medicine)**
 
 
 Aspect Point Cost: 10
@@ -2433,7 +2433,7 @@ Aspect Point Cost: 10
 
 ### Filch
 
-Requires: **[High Manual Dexterity](#)**
+Requires: **[High Manual Dexterity](#high-manual-dexterity)**
 
 
 Aspect Point Cost: 7
@@ -2472,7 +2472,7 @@ Aspect Point Cost: 23
 
 ### Frantic Defense
 
-Requires: **[Fit](#)**
+Requires: **[Fit](#fit)**
 
 
 Aspect Point Cost: 1
@@ -2502,7 +2502,7 @@ Aspect Point Cost: 5
 
 ### Grapple
 
-Requires: **[Fit](#)**
+Requires: **[Fit](#fit)**
 
 
 Aspect Point Cost: 4
@@ -2513,9 +2513,9 @@ Aspect Point Cost: 4
 
 ### Great Slash
 
-Requires: **[Fit](#)**
+Requires: **[Fit](#fit)**
 
-Requires: **[Slash](#)**
+Requires: **[Slash](#slash)**
 
 
 Aspect Point Cost: 6
@@ -2527,7 +2527,7 @@ Aspect Point Cost: 6
 
 ### He Who Walks Behind
 
-Requires: **[Magic Trick](#)**
+Requires: **[Magic Trick](#magic-trick)**
 
 
 Aspect Point Cost: 20
@@ -2548,7 +2548,7 @@ Aspect Point Cost: 2
 
 ### Indomitable
 
-Requires: **[Martial Artist](#)**
+Requires: **[Martial Artist](#martial-artist)**
 
 
 Aspect Point Cost: 9
@@ -2558,7 +2558,7 @@ Aspect Point Cost: 9
 
 ### Intense Acrobatic Training
 
-Requires: **[Fit](#)**
+Requires: **[Fit](#fit)**
 
 
 Aspect Point Cost: 6
@@ -2568,7 +2568,7 @@ Aspect Point Cost: 6
 
 ### Intense Endurance Training
 
-Requires: **[Fit](#)**
+Requires: **[Fit](#fit)**
 
 
 Aspect Point Cost: 6
@@ -2578,7 +2578,7 @@ Aspect Point Cost: 6
 
 ### Intense Resistance Training
 
-Requires: **[Fit](#)**
+Requires: **[Fit](#fit)**
 
 
 Aspect Point Cost: 6
@@ -2588,7 +2588,7 @@ Aspect Point Cost: 6
 
 ### Keen Senses
 
-Requires: **[Perception](#)**
+Requires: **[Perception](#perception)**
 
 
 Aspect Point Cost: 13
@@ -2668,7 +2668,7 @@ Aspect Point Cost: 5
 
 ### Leaping Strike
 
-Requires: **[Fit](#)**
+Requires: **[Fit](#fit)**
 
 
 Aspect Point Cost: 6
@@ -2679,7 +2679,7 @@ Aspect Point Cost: 6
 
 ### Lockpicking
 
-Requires: **[High Manual Dexterity](#)**
+Requires: **[High Manual Dexterity](#high-manual-dexterity)**
 
 
 Aspect Point Cost: 7
@@ -2703,7 +2703,7 @@ Aspect Point Cost: 3
 
 ### Martial Artist
 
-Requires: **[Fit](#)**
+Requires: **[Fit](#fit)**
 
 
 Aspect Point Cost: 2
@@ -2737,7 +2737,7 @@ Aspect Point Cost: 5
 
 ### Mentat
 
-Requires: **[Mental Endurance](#)**
+Requires: **[Mental Endurance](#mental-endurance)**
 
 
 Aspect Point Cost: 5
@@ -2767,7 +2767,7 @@ Aspect Point Cost: 5
 
 ### Pickpocket
 
-Requires: **[Filch](#)**
+Requires: **[Filch](#filch)**
 
 
 Aspect Point Cost: 5
@@ -2777,9 +2777,9 @@ Aspect Point Cost: 5
 
 ### Pivot and Roll
 
-Requires: **[Duck and Dodge](#)**
+Requires: **[Duck and Dodge](#duck-and-dodge)**
 
-Requires: **[Fit](#)**
+Requires: **[Fit](#fit)**
 
 
 Aspect Point Cost: 6
@@ -2812,7 +2812,7 @@ Aspect Point Cost: 13
 
 ### Quiescence
 
-Requires: **[Mental Endurance](#)**
+Requires: **[Mental Endurance](#mental-endurance)**
 
 
 Aspect Point Cost: 5
@@ -2832,7 +2832,7 @@ Aspect Point Cost: 10
 
 ### Rage
 
-Requires: **[Vigor](#)**
+Requires: **[Vigor](#vigor)**
 
 
 Aspect Point Cost: 17
@@ -2844,7 +2844,7 @@ Aspect Point Cost: 17
 
 ### Reaching Strike
 
-Requires: **[Slash](#)**
+Requires: **[Slash](#slash)**
 
 
 Aspect Point Cost: 8
@@ -2875,7 +2875,7 @@ Aspect Point Cost: 3
 
 ### Shot Call
 
-Requires: **[Perception](#)**
+Requires: **[Perception](#perception)**
 
 
 Aspect Point Cost: 2
@@ -2951,9 +2951,9 @@ Aspect Point Cost: 19
 
 ### Trap Finder
 
-Requires: **[Perception](#)**
+Requires: **[Perception](#perception)**
 
-Requires: **[Quiet Steps](#)**
+Requires: **[Quiet Steps](#quiet-steps)**
 
 
 Aspect Point Cost: 2
@@ -2962,7 +2962,7 @@ Aspect Point Cost: 2
 
 ### Treat Illness
 
-Requires: **[Medicine](#)**
+Requires: **[Medicine](#medicine)**
 
 
 Aspect Point Cost: 7

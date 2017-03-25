@@ -180,7 +180,7 @@
 
             <option name="When Attacking"/>
             <option name="When Defending"/>
-            <option name="When HP Damage is Delt"/>
+            <option name="When HP Damage is Dealt"/>
         </rule>
 
         <rule name="Affliction Immunity" category="all">
@@ -957,7 +957,7 @@
                 <detail type="energy_type" value="Meta"/>
             </rule>
             <rule ref="Range" value="Personal"/>
-            <rule ref="Effect Trigger" value="When HP Damage is Delt"/>
+            <rule ref="Effect Trigger" value="When HP Damage is Dealt"/>
 
             <text>
             </text>

@@ -1,16 +1,19 @@
 # Test Character
 ## Details
 * AP Total: 150
-* AP Spent: 11
-* AP Available: 139
+* AP Spent: 40
+* AP Available: 110
 * Starting Funds: $$ 1000
-* Funds Available: $$ 1000
+* Funds Available: $$ 1500
 ## Resources
 * **Energy Point Pool:** 1
 * **Energy Point Refresh:** 1
 * **Health Point Pool:** 6
-* **Monetary Funds:** 0
+* **Monetary Funds:** 2400
 ## Skill Stats
+* **Archery**
+	* Difficulty 8
+	* Modifier: +2
 * **Intelligence**
 	* Difficulty: GM Specified
 	* Modifier: 0
@@ -19,19 +22,65 @@
 	* Modifier: 0
 * **New Aspect**
 	* Difficulty: GM Specified
-	* Modifier: +1
+	* Modifier: +2
+* **Slash**
+	* Difficulty 8
+	* Modifier: 0
 * **Strength**
 	* Difficulty: GM Specified
-	* Modifier: +1
+	* Modifier: +2
 ## Aspect List
+### Affluent
+
+
+Aspect Point Cost: 12
+#### Details
+* Starting Wealth Modifier (**12 AP**): $$ 1200 (Monetary Funds)
+
+### Affluent
+
+
+Aspect Point Cost: 12
+#### Details
+* Starting Wealth Modifier (**12 AP**): $$ 1200 (Monetary Funds)
+
+### Archery
+
+
+Aspect Point Cost: 5
+#### Details
+* Failure Chance (**7 AP**): Difficulty 8
+* Energy Point Cost (**-2 AP**): +1
+
 ### New Aspect
 Example new aspect.
 
 Aspect Point Cost: 11
 #### Details
 * Damage (**6 AP**): 1d6
-* Kinetic Damage (**0 AP**): Kinetic Damage
 * Core Aspect Modifier (**5 AP**): +1 (Strength)
 
+### Slash
+
+
+Aspect Point Cost: Provided by Item
 
 ## Character Inventory
+### Ring of Assballer
+A ring that gives me a bigger ass.
+
+Monetary Cost: $$1600
+#### Details
+Worn on Item Slot: **lightweight**
+* Slash:  (**$$ 500**)
+* Damage Healed: 1d6 (**$$ 600**)
+* Core Aspect Modifier: +1 (**$$ 500**)
+
+### Weak Health Potion
+
+
+Monetary Cost: $$300
+#### Details
+* Damage Healed: 1d6 (**$$ 600**)
+* Number of Uses: Has 1 Use(s) (**$$ -300**)
+
