@@ -65,6 +65,7 @@
     * [Damage](#damage)
     * [Armor](#armor)
        * [Encumberance](#encumberance)
+       * [Armor Penetration](#armor-penetration)
     * [Attacking from Behind](#attacking-from-behind)
     * [Surprise Attack](#surprise-attack)
     * [Targeted Attacks](#targeted-attacks)
@@ -577,13 +578,7 @@ The range for critical success on any check including attack rolls, may be modif
 
 #### Damage
 
-Characters may take damage over time during the game. Damage types are listed below.
-
-* Fire
-* Kinetic
-* Electric
-* Cold
-* Meta
+Characters may take damage over time during the game. Damage types are listed as part of the aspect document.
 
 
 #### Armor
@@ -593,6 +588,12 @@ Characters may take damage over time during the game. Damage types are listed be
 Some armors may restrict movement and therefore come with a negative mobility check modifier. Some heavier armors may also require a certain strength check modifier from the character.
 
 Lastly, some armors may include an energy point cost representing the amount of effort required to equip or unequip it.
+
+##### Armor Penetration
+
+Some attacks may grant `Armor Penetration` instead of damage. Armor penetration acts just like normal damage save for
+one minor exception: armor penetration may only reduce the target's effective armor values - armor penetration **may
+not** cause **direct damage**.
 
 
 #### Attacking from Behind
