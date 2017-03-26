@@ -1,7 +1,21 @@
+import collections
+
 from ruamel import yaml
 from mprequest.util import DictBacked
 
 from nurpg.document.model import Character, Item, Aspect, Model
+
+
+class UnsortableList(list):
+    def sort(self, *args, **kwargs):
+        pass
+
+
+def represent_ordered_dicts(dumper, data):
+    items_list = data.items()
+    data.items = lambda: UnsortableList(items_list)
+
+    return dumper.represent_dict(data)
 
 
 def represent_strings(dumper, data):
@@ -28,13 +42,15 @@ def wrap_scalar_style(dumper_cls):
 
 def configure_dumper():
     yaml.SafeDumper.add_representer(str, represent_strings)
+    yaml.SafeDumper.add_representer(collections.OrderedDict, represent_ordered_dicts)
+
     wrap_scalar_style(yaml.SafeDumper)
 
 
 def write_yaml(output, model):
     configure_dumper()
 
-    stream = yaml.dump(model.to_dict(), Dumper=yaml.SafeDumper, default_flow_style=False)
+    stream = yaml.dump(model.to_dict(), Dumper=yaml.SafeDumper, default_flow_style=False, indent=2)
     output.write(stream.replace('\n- ', '\n\n- '))
 
 

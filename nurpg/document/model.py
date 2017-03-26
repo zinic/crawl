@@ -17,7 +17,7 @@ class FormulaDefinition(object):
         self.provided_func_ref = provided_func_ref
 
     def to_dict(self):
-        root = dict()
+        root = collections.OrderedDict()
         root['name'] = self.name
         root['type'] = self.type
         root['equation'] = self.equation
@@ -260,7 +260,7 @@ class Model(object):
                     aspect.name, cost_breakdown.ap_total))
 
     def to_dict(self):
-        root = dict()
+        root = collections.OrderedDict()
 
         formulas = list()
         for formula in self._formulas.values():
@@ -417,7 +417,7 @@ class Resource(object):
         self.starting_value = starting_value
 
     def to_dict(self):
-        root = dict()
+        root = collections.OrderedDict()
         root['name'] = self.name
 
         if self.unit is not None and self.unit != '':
@@ -439,7 +439,7 @@ class RuleOption(object):
         self.text = text
 
     def to_dict(self):
-        root = dict()
+        root = collections.OrderedDict()
         root['name'] = self.name
 
         if self.text is not None and self.text != '':
@@ -456,7 +456,7 @@ class RuleFormulaReference(object):
         self.ref = ref
 
     def to_dict(self):
-        root = dict()
+        root = collections.OrderedDict()
         root['ref'] = self.ref
         return root
 
@@ -473,7 +473,7 @@ class Rule(object):
         self.options = collections.OrderedDict()
 
     def to_dict(self):
-        root = dict()
+        root = collections.OrderedDict()
 
         root['name'] = self.name
         root['formula'] = self.formula_ref.to_dict()
@@ -583,7 +583,7 @@ class Template(object):
                         aspect.name, self.name, required_rule))
 
     def to_dict(self):
-        root = dict()
+        root = collections.OrderedDict()
         root['name'] = self.name
 
         if len(self.requirements) > 0:
@@ -621,7 +621,7 @@ class Skill(object):
         self.inheritance.append(ref)
 
     def to_dict(self):
-        root = dict()
+        root = collections.OrderedDict()
         root['name'] = self.name
         root['type'] = self.type
 
@@ -656,7 +656,7 @@ class Item(object):
         self.wearable = None
 
     def to_dict(self):
-        root = dict()
+        root = collections.OrderedDict()
         root['name'] = self.name
 
         if self.text is not None and self.text != '':
@@ -770,7 +770,7 @@ class Aspect(object):
         return failures
 
     def to_dict(self):
-        root = dict()
+        root = collections.OrderedDict()
         root['name'] = self.name
 
         if self.template is not None and self.template != '':
@@ -940,7 +940,7 @@ class RuleReference(object):
         return RuleSelection(rule, rule_modifiers, self.option)
 
     def to_dict(self):
-        root = dict()
+        root = collections.OrderedDict()
         root['name'] = self.rule_name
 
         if self.option is not None and self.option != self.rule_name:
