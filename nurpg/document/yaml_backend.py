@@ -1,12 +1,33 @@
-import yaml
-
+from ruamel import yaml
 from mprequest.util import DictBacked
-from nurpg.document.model import Character, Item, RuleReferences, Aspect
+
+from nurpg.document.model import Character, Item, Aspect, Model
+
+
+def represent_strings(dumper, data):
+    scalar = yaml.SafeRepresenter.represent_str(dumper, data)
+    scalar.style = '|' if len(data) > 80 else '"'
+    return scalar
+
+
+def write_yaml(output, model):
+    yaml.add_representer(str, represent_strings)
+
+    stream = yaml.dump(model.to_dict(), default_flow_style=False)
+    output.write(stream.replace('\n- ', '\n\n- '))
+
+
+def load_yaml_model(yaml_path):
+    root_yaml = None
+    with open(yaml_path, 'r') as fin:
+        root_yaml = yaml.load(fin, Loader=yaml.Loader)
+
+    return Model.from_yaml(DictBacked(root_yaml))
 
 
 def load_character(input, model):
     value = yaml.load(input)
-    version = value.get('version', '0.1')
+    # version = value.get('version', '0.1')
 
     char_content = DictBacked(value['character'], strict=False)
 

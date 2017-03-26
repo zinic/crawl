@@ -1,0 +1,2065 @@
+"aspects":
+
+- "name": "Farsight"
+  "requires":
+  - "Magic Trick"
+  "rules":
+  - "name": "Energy Point Cost"
+    "option": "+2"
+  - "name": "Failure Chance"
+    "option": "Difficulty 14"
+  - "name": "Magic"
+  - "name": "Range"
+    "option": "Medium"
+  "skill":
+    "inherits_from":
+    - "Perception"
+    "name": "Farsight"
+    "type": "Concentration"
+  "text": |
+    Upon successful cast, Farsight grants the caster a glimpse of the area desired. This area is restricted
+    to medium range. The casting skill check also represents the perception skill check of the caster as
+    they gaze upon their target.
+
+    This spell may be used in place of any perception check.
+
+- "name": "Sooth"
+  "rules":
+  - "name": "Energy Point Cost"
+    "option": "+1"
+  - "name": "Failure Chance"
+    "option": "Difficulty 8"
+  - "name": "Heals Affliction"
+    "option": "Sickened"
+  - "name": "Magic"
+  - "name": "Range"
+    "option": "Melee"
+  "skill":
+    "inherits_from":
+    - "Intelligence"
+    "name": "Sooth"
+    "type": "Concentration"
+  "text": "Allows a caster to magically heal a sickened character.\n"
+
+- "name": "Indomitable"
+  "requires":
+  - "Martial Artist"
+  "rules":
+  - "name": "Combat Expertise"
+    "option": "Can't be Flanked"
+  - "name": "HP Pool Modifier"
+    "option": "+1"
+  "text": |
+    You're big. You're hard to get around and there's no way an enemy gets the slip on you. This character
+    can not be flanked.
+
+- "name": "Grapple"
+  "requires":
+  - "Fit"
+  "rules":
+  - "name": "Grapple"
+  - "name": "Failure Chance"
+    "option": "Difficulty 12"
+  - "name": "Energy Point Cost"
+    "option": "+1"
+  "skill":
+    "inherits_from":
+    - "Strength"
+    "name": "Grapple"
+    "type": "Attack"
+  "template": "Attack"
+  "text": "Any character that has been grabbed may be grappled.\n"
+
+- "name": "Vigor"
+  "rules":
+  - "name": "Energy Point Refresh Modifier"
+    "option": "+1"
+  "text": "TODO\n"
+
+- "name": "Dissev"
+  "rules":
+  - "name": "Energy Point Cost"
+    "option": "+1"
+  - "name": "Failure Chance"
+    "option": "Difficulty 8"
+  - "name": "Effect Duration"
+    "option": "4 Turns"
+  - "name": "Damage Resistance"
+    "option": "+2 DR"
+  - "name": "Concentration Modifier"
+    "option": "+2 Concentration"
+  - "name": "Magic"
+  - "name": "Range"
+    "option": "Medium"
+  "skill":
+    "inherits_from":
+    - "Intelligence"
+    "name": "Dissev"
+    "type": "Concentration"
+  "text": |
+    Projects a thin, barely-visible green field around the target. This field moves with the target and has
+    range personal. The field, at time of cast, may be tuned to a single energy type. For any damage
+    inflicted of this type, this field provides **2 DR**. In addition, any effect with this energy type with
+    a check that the target must make is subject to a **+2 modifier**.
+
+- "name": "Trap Finder"
+  "requires":
+  - "Perception"
+  - "Quiet Steps"
+  "rules":
+  - "modifies":
+    - "Perception"
+    "name": "Concentration Modifier"
+    "option": "+2 Concentration"
+  "text": |
+    Grants a character a +2 modifier to any perception check made when searching for potential traps.
+
+- "name": "Intense Acrobatic Training"
+  "requires":
+  - "Fit"
+  "rules":
+  - "modifies":
+    - "Mobility"
+    "name": "Core Aspect Modifier"
+    "option": "+1"
+  - "name": "HP Pool Modifier"
+    "option": "+1"
+  "text": |
+    This character has gone through regimented exercises to increase their overall mobility and fitness.
+
+- "name": "Arcane Sight"
+  "rules":
+  - "name": "Energy Point Cost"
+    "option": "+1"
+  - "name": "Failure Chance"
+    "option": "Difficulty 12"
+  - "name": "Magic"
+  - "name": "Range"
+    "option": "Short"
+  - "name": "Effect Duration"
+    "option": "8 Turns"
+  "skill":
+    "inherits_from":
+    - "Perception"
+    "name": "Arcane Sight"
+    "type": "Concentration"
+  "text": |
+    Allows the caster to augment their vision with magic. This darkens ther vision slightly but does not
+    damage their perception. Other magical effects within the range of the caster will shine brightly in
+    their sight. At game master discretion, some magic items, even hidden or obscured, may shine through
+    these obstacles.
+
+- "name": "Mental Endurance"
+  "rules":
+  - "name": "Energy Point Pool Modifier"
+    "option": "+1"
+  "text": |
+    Years of conditioning has left this character with a hardened mind. Stress rolls off their shoulders and
+    their ability to tax their mind is far greater than normal.
+
+- "name": "Knowledge - Occult"
+  "rules":
+  - "name": "Energy Point Cost"
+    "option": "+1"
+  - "name": "Failure Chance"
+    "option": "Difficulty 8"
+  "skill":
+    "inherits_from":
+    - "Intelligence"
+    "name": "Knowledge - Occult"
+    "type": "Concentration"
+  "text": "Knowledge and understanding of the related domain.\n"
+
+- "name": "Melee Parry"
+  "rules":
+  - "name": "Range"
+    "option": "Melee"
+  - "name": "Extra Attack"
+    "option": "+1"
+  - "name": "Failure Chance"
+    "option": "Difficulty 14"
+  - "name": "Energy Point Cost"
+    "option": "+1"
+  "skill":
+    "inherits_from":
+    - "Mobility"
+    "name": "Melee Parry"
+    "type": "Concentration"
+  "text": |
+    Allows a character to parry an attack with their currently equipped weapon. This parry is only useful
+    for melee weapons and may only be used against melee attacks.
+
+    Upon a successful parry, the incoming attack is deflected. The defender is granted the ability to
+    perform an attack upon their opponent .
+
+- "name": "Quell"
+  "rules":
+  - "name": "Energy Point Cost"
+    "option": "+1"
+  - "name": "Failure Chance"
+    "option": "Difficulty 8"
+  - "name": "Damage Resistance"
+    "option": "+2 DR"
+  - "name": "Magic"
+  - "name": "Range"
+    "option": "Personal"
+  "skill":
+    "inherits_from":
+    - "Intelligence"
+    "name": "Quell"
+    "type": "Concentration"
+  "text": |
+    The character conjures a simple kinetic shield that covers their entire body. This shield has a **DR of
+    2**. The shield lasts for 10 minutes or until an attack lands and the shield absorbs damage.
+
+    This spell may target *only the caster* and no one else.
+
+- "name": "Gesture"
+  "rules":
+  - "name": "Failure Chance"
+    "option": "Difficulty 8"
+  - "name": "Energy Point Cost"
+    "option": "+1"
+  "skill":
+    "inherits_from":
+    - "Intelligence"
+    "name": "Gesture"
+    "type": "Concentration"
+  "text": |
+    Grants a dextrous character the ability to attempt to communicate with another character via gesturing.
+    This action is not limited to just the character's hands. The action has a difficulty set by the game
+    master based on the complexity of the ideas being communicated. Both characters are required to make
+    gesture checks - the target does not need to have this aspect in order to make the check.
+
+- "name": "Adonic"
+  "requires":
+  - "Intense Acrobatic Training"
+  - "Intense Resistance Training"
+  - "Intense Endurance Training"
+  "rules":
+  - "name": "Energy Point Pool Modifier"
+    "option": "+1"
+  - "name": "Energy Point Refresh Modifier"
+    "option": "+1"
+  "text": "Super Strong, yo.\n"
+
+- "name": "Lockpicking"
+  "requires":
+  - "High Manual Dexterity"
+  "rules":
+  - "name": "Failure Chance"
+    "option": "Difficulty 8"
+  "skill":
+    "inherits_from":
+    - "Mobility"
+    "name": "Lockpicking"
+    "type": "Non-Combat"
+  "text": |
+    Grants a character the knowledge necessary to disable simple lock devices. Lock devices are granted a
+    difficulty by the game master depending on their complexity and make. The character must make a
+    lockpicking check against this difficulty to successfully disable the lock. This check recieves the
+    character's **mobility modifier** as a Modifier.
+
+- "name": "Summon Water or Food"
+  "rules":
+  - "name": "Energy Point Cost"
+    "option": "+1"
+  - "name": "Failure Chance"
+    "option": "Difficulty 8"
+  - "name": "Magic"
+  "skill":
+    "inherits_from":
+    - "Intelligence"
+    "name": "Summon Water or Food"
+    "type": "Concentration"
+  "text": |
+    This spell takes shape in two different ways. The caster may lift up an empty vessel and summon a small
+    quantity of water to it. This quantity is enough water to quench the thirst of 1 person for 1 day.
+
+    The caster may instead pick up an empty serving dish and summon a simple meal of a heavy, dense bread
+    that tastes like dry oatmeal. This bread provides enough sustience for 1 person for 1 day.
+
+- "name": "Adrenaline Cascade"
+  "requires":
+  - "Vigor"
+  "rules":
+  - "name": "Affliction Immunity"
+    "option": "Staggered"
+  "text": |
+    No matter how haggered, this character's body surges with adrenaline so long as their heart pumps. This
+    makes them immune to the condition: Staggered.
+
+- "name": "Intense Resistance Training"
+  "requires":
+  - "Fit"
+  "rules":
+  - "modifies":
+    - "Strength"
+    "name": "Core Aspect Modifier"
+    "option": "+1"
+  - "name": "HP Pool Modifier"
+    "option": "+1"
+  "text": |
+    This character has gone through regimented exercises to increase their overall strength and fitness.
+
+- "name": "Martial Artist"
+  "requires":
+  - "Fit"
+  "rules":
+  - "name": "Crit Success Modifier"
+    "option": "+1"
+  "text": |
+    This aspect grants a character expert martial arts knowledge. Because of this intense training, the
+    character has acquired a unique understanding of how to strike at an opponent's weak points.
+
+- "name": "Intense Endurance Training"
+  "requires":
+  - "Fit"
+  "rules":
+  - "name": "Energy Point Pool Modifier"
+    "option": "+1"
+  - "name": "HP Pool Modifier"
+    "option": "+1"
+  "text": |
+    This character has gone through regimented exercises to increase their overall endurance.
+
+- "name": "Counter Stab"
+  "requires":
+  - "Stab"
+  "rules":
+  - "name": "Energy Point Cost"
+    "option": "+1"
+  - "name": "Opportunistic Action"
+    "option": "Opportunistic"
+  "text": "Allows a to make a stabbing attack as an opportunistic action.\n"
+
+- "name": "Rage"
+  "requires":
+  - "Vigor"
+  "rules":
+  - "name": "Energy Point Cost"
+    "option": "+1"
+  - "name": "Damage Resistance"
+    "option": "+6 DR"
+  - "name": "Effect Duration"
+    "option": "4 Turns"
+  - "name": "Magic"
+  "text": |
+    The character enters into a rage in which their body floods itself with chemicals that dull the senses
+    and swell the muscles. Upon activation, the character gains intense damage resistance buffs for 8 combat
+    turns.
+
+- "name": "Frigid Cone"
+  "rules":
+  - "name": "Energy Point Cost"
+    "option": "+1"
+  - "name": "Failure Chance"
+    "option": "Difficulty 8"
+  - "name": "Magic"
+  - "name": "Area Effect"
+    "option": "Cone"
+  - "name": "Range"
+    "option": "Short"
+  - "name": "Damage"
+    "option": "1d4"
+  "skill":
+    "inherits_from":
+    - "Intelligence"
+    "name": "Frigid Cone"
+    "type": "Attack"
+  "text": |
+    The character summons a cold blast directed in a cone shaped area in-front of them. This is considered
+    an area attack for all affected map cells.
+
+- "name": "Knowledge - Arcane"
+  "rules":
+  - "name": "Energy Point Cost"
+    "option": "+1"
+  - "name": "Failure Chance"
+    "option": "Difficulty 8"
+  "skill":
+    "inherits_from":
+    - "Intelligence"
+    "name": "Knowledge - Arcane"
+    "type": "Concentration"
+  "text": "Knowledge and understanding of the related domain.\n"
+
+- "name": "Treat Illness"
+  "requires":
+  - "Medicine"
+  "rules":
+  - "name": "Failure Chance"
+    "option": "Difficulty 8"
+  "skill":
+    "inherits_from":
+    - "Intelligence"
+    "name": "Treat Illness"
+    "type": "Non-Combat"
+  "text": |
+    Allows a character to attempt to cure a disease. The disease should annotate information about what
+    happens after it is cured. Often there is a recovery period afterward.
+
+    To cure a disease the character must have all required materials at hand according to the game master -
+    this may be things the character has on them or some special requirement in complex circumstances. Each
+    disease also has a difficulty set that must be beat by this check.
+
+- "name": "Pivot and Roll"
+  "requires":
+  - "Duck and Dodge"
+  - "Fit"
+  "rules":
+  - "name": "Failure Chance"
+    "option": "Difficulty 8"
+  - "modifies":
+    - "Pivot and Roll"
+    "name": "Concentration Modifier"
+    "option": "+2 Concentration"
+  - "name": "Energy Point Cost"
+    "option": "+2"
+  "skill":
+    "inherits_from":
+    - "Mobility"
+    "name": "Pivot and Roll"
+    "type": "Concentration"
+  "text": |
+    Allows a character to make a more acrobatic dodge. This defense roll requires the character to not be
+    slowed. The defense roll receives the character's mobility modifier as a defense Modifier in
+    addition to a
+    +2 modifier from the aspect itself.
+
+- "name": "Leaping Strike"
+  "requires":
+  - "Fit"
+  "rules":
+  - "name": "Failure Chance"
+    "option": "Difficulty 8"
+  - "modifies":
+    - "Leaping Strike"
+    "name": "Concentration Modifier"
+    "option": "+1 Concentration"
+  - "name": "Energy Point Cost"
+    "option": "+1"
+  "skill":
+    "name": "Leaping Strike"
+    "type": "Concentration"
+  "text": |
+    Allows a character to perform a jump action and an attack in one turn with a specified melee weapon
+    type. The roll for this attack is treated as the character's Jump check as well. This attack grants a
+    **+1 modifier** to the attack roll.
+
+- "name": "Filch"
+  "requires":
+  - "High Manual Dexterity"
+  "rules":
+  - "name": "Failure Chance"
+    "option": "Difficulty 8"
+  "skill":
+    "inherits_from":
+    - "Mobility"
+    "name": "Filch"
+    "type": "Non-Combat"
+  "text": |
+    Grants a careful character the ability to secretly pilfer small objects from their surroundings. The
+    object must fit in their hand easily. The character must make a filch check greater than the difficulty
+    of the task set by the game master. If the character is being watched, all other characters with the
+    **Keen Senses** aspect are granted a perception check. This perception check is opposed against the
+    character's filch check.
+
+- "name": "Block"
+  "rules":
+  - "name": "Defense Modifier"
+    "option": "+1 Defense Effectiveness"
+  - "name": "Failure Chance"
+    "option": "Difficulty 8"
+  - "name": "Energy Point Cost"
+    "option": "+1"
+  "skill":
+    "inherits_from":
+    - "Strength"
+    "name": "Block"
+    "type": "Defense"
+  "text": |
+    Allows a character to steady their body against a shield and attempt to absorb an incoming attack
+    completely. This ability requires the character to have a working shield equipped.
+
+- "name": "He Who Walks Behind"
+  "requires":
+  - "Magic Trick"
+  "rules":
+  - "name": "Delayed Effect Duration"
+    "option": "1 Turn"
+  - "name": "Energy Point Cost"
+    "option": "+1"
+  - "name": "Failure Chance"
+    "option": "Difficulty 10"
+  - "name": "Magic"
+  - "name": "Range"
+    "option": "Short"
+  - "name": "Teleportation"
+  "skill":
+    "inherits_from":
+    - "Intelligence"
+    "name": "He Who Walks Behind"
+    "type": "Concentration"
+  "text": |
+    Allows a character to teleport. They vanish upon success and appear at their intended target location
+    after the delayed effect duration of 1 turn.
+
+- "name": "Slash"
+  "rules":
+  - "name": "Failure Chance"
+    "option": "Difficulty 8"
+  - "name": "Energy Point Cost"
+    "option": "+1"
+  "skill":
+    "inherits_from":
+    - "Mobility"
+    "name": "Slash"
+    "type": "Attack"
+  "text": |
+    Grants a character a melee slashing attack. This attack may be used with any slashing melee weapon.
+
+- "name": "Frantic Defense"
+  "requires":
+  - "Fit"
+  "rules":
+  - "name": "Failure Chance"
+    "option": "Difficulty 12"
+  - "name": "Energy Point Cost"
+    "option": "+1"
+  "skill":
+    "inherits_from":
+    - "Mobility"
+    "name": "Frantic Defense"
+    "type": "Defense"
+  "template": "Defense"
+  "text": |
+    Allows a character to make a simple dodge-based defense against an incoming attack. The defense roll
+    recieves the character's **mobility modifier** as a defense Modifier.
+
+- "name": "Purify"
+  "rules":
+  - "name": "Energy Point Cost"
+    "option": "+1"
+  - "name": "Failure Chance"
+    "option": "Difficulty 8"
+  - "name": "Heals Affliction"
+    "option": "Poisoned"
+  - "name": "Magic"
+  - "name": "Range"
+    "option": "Melee"
+  "skill":
+    "inherits_from":
+    - "Intelligence"
+    "name": "Purify"
+    "type": "Concentration"
+  "text": |
+    Allows a caster to magically heal a poisoned character. The caster must roll their skill check versus
+    the difficulty of the poison.
+
+- "name": "Mentat"
+  "requires":
+  - "Mental Endurance"
+  "rules":
+  - "modifies":
+    - "Intelligence"
+    "name": "Core Aspect Modifier"
+    "option": "+1"
+  "text": "Further training of the mind has left this character permanatly smarter.\n"
+
+- "name": "Dismiss"
+  "rules":
+  - "name": "Energy Point Cost"
+    "option": "+1"
+  - "name": "Failure Chance"
+    "option": "Difficulty 8"
+  - "name": "Magic"
+  - "name": "Range"
+    "option": "Medium"
+  "skill":
+    "inherits_from":
+    - "Intelligence"
+    "name": "Dismiss"
+    "type": "Attack"
+  "text": |
+    Target a magical effect with an invisible beam directed by the caster. The target must be within
+    **medium range** and the magical effect must be understood by the caster. The caster may be required by
+    the game master to make an appropriate check for identifying the target spell's effects. Attacking a
+    spell without understanding its effects incurs a **-4 modifier** to the dismiss check.
+
+    The spell requires the caster of the target spell to make an intelligence check vs. the dismiss caster's
+    check roll. If the spell is not known, additional negatives apply to this check. Upon winning this
+    opposed check, the target spell is dismissed and all of its effects immedieatly stop.
+
+- "name": "Great Slash"
+  "requires":
+  - "Fit"
+  - "Slash"
+  "rules":
+  - "name": "Failure Chance"
+    "option": "Difficulty 8"
+  - "modifies":
+    - "Great Slash"
+    "name": "Concentration Modifier"
+    "option": "-1 Concentration"
+  - "name": "Extra Target"
+    "option": "+1"
+  - "name": "Energy Point Cost"
+    "option": "+1"
+  "skill":
+    "name": "Great Slash"
+    "type": "Concentration"
+  "text": |
+    Allows a character to attack 2 enemies standing side-by-side. The enemies must be in adjacent map cells.
+    The attacker makes a single attack roll that both targets may then roll against. This attack incurs a
+    **-2 modifier** to the attack roll.
+
+- "name": "Cleanse"
+  "rules":
+  - "name": "Energy Point Cost"
+    "option": "+1"
+  - "name": "Failure Chance"
+    "option": "Difficulty 8"
+  - "name": "Heals Affliction"
+    "option": "Diseased"
+  - "name": "Magic"
+  - "name": "Range"
+    "option": "Melee"
+  "skill":
+    "inherits_from":
+    - "Intelligence"
+    "name": "Cleanse"
+    "type": "Concentration"
+  "text": |
+    Allows a caster to magically heal a diseased character. The caster must roll their skill check versus
+    the difficulty of the disease.
+
+- "name": "Knowledge - Mechanical"
+  "rules":
+  - "name": "Energy Point Cost"
+    "option": "+1"
+  - "name": "Failure Chance"
+    "option": "Difficulty 8"
+  "skill":
+    "inherits_from":
+    - "Intelligence"
+    "name": "Knowledge - Mechanical"
+    "type": "Concentration"
+  "text": "Knowledge and understanding of the related domain.\n"
+
+- "name": "Perception"
+  "rules":
+  - "name": "Energy Point Cost"
+    "option": "+1"
+  - "name": "Failure Chance"
+    "option": "Difficulty 8"
+  "skill":
+    "inherits_from":
+    - "Intelligence"
+    "name": "Perception"
+    "type": "Concentration"
+  "text": |
+    Allows a character to make a perception check.
+
+    Take a look at your surroundings to attempt to find out interesting information. There is no base
+    difficulty listed here - the game master is responsible for providing resonable difficulties based on
+    the surroundings in the setting and the target of observation.
+
+- "name": "Leadership"
+  "rules":
+  - "name": "NPC Cohort"
+  "text": |
+    Leadership allows a character to begin splitting aspect points between their self and another character.
+    The player may split apsect points between the two characters as they see fit with the exception that
+    the cohort may not have more than half of the available aspect points.
+
+- "name": "Affluent"
+  "rules":
+  - "name": "Starting Wealth Modifier"
+    "option": "$$ 1200"
+  "template": "None"
+  "text": "You're richer. For now.\n"
+
+- "name": "Counter Slash"
+  "requires":
+  - "Slash"
+  "rules":
+  - "name": "Energy Point Cost"
+    "option": "+1"
+  - "name": "Opportunistic Action"
+    "option": "Opportunistic"
+  "text": "Allows a to make a slashing attack as an opportunistic action.\n"
+
+- "name": "Reaching Strike"
+  "requires":
+  - "Slash"
+  "rules":
+  - "name": "Careful Blow"
+  - "name": "Failure Chance"
+    "option": "Difficulty 8"
+  - "name": "Energy Point Cost"
+    "option": "+1"
+  "skill":
+    "inherits_from":
+    - "Strength"
+    "name": "Reaching Strike"
+    "type": "Attack"
+  "text": |
+    Grants a character a specialized melee attack that's proficient with weapons of requirements but allows
+    the attacker to ignore the negative for attacking through occupied map cells.
+
+- "name": "Weapon Proficiency"
+  "rules":
+  - "name": "Concentration Modifier"
+    "option": "+1 Concentration"
+  "text": |
+    Allows a character to attack more effectively with their weapon of choice. This aspect grants the
+    character a +1 modifier on all attack rolls made with their weapon of choice. This aspect must be taken
+    for every weapon type the character wishes to use.
+
+- "name": "Countercast"
+  "requires":
+  - "Dismiss"
+  "rules":
+  - "name": "Energy Point Cost"
+    "option": "+2"
+  - "name": "Failure Chance"
+    "option": "Difficulty 8"
+  - "name": "Magic"
+  - "name": "Opportunistic Action"
+    "option": "Reactionary"
+  - "name": "Range"
+    "option": "Medium"
+  "skill":
+    "inherits_from":
+    - "Intelligence"
+    "name": "Countercast"
+    "type": "Attack"
+  "text": |
+    This enhanced version of Dismiss has all of the same rules as Dismiss but with the added effect of being
+    able to target magical effects as a reaction.
+
+- "name": "Quiet Steps"
+  "rules":
+  - "name": "May Enter Stealth"
+  - "name": "Failure Chance"
+    "option": "Difficulty 8"
+  - "name": "Energy Point Cost"
+    "option": "+1"
+  "skill":
+    "inherits_from":
+    - "Mobility"
+    "name": "Quiet Steps"
+    "type": "Concentration"
+  "text": |
+    Allows a character to make a stealth check by walking carefully. In order to enter stealth, the
+    character must not be visible by any enemies.
+
+- "name": "Shot Call"
+  "requires":
+  - "Perception"
+  "rules":
+  - "name": "Concentration Modifier"
+    "option": "+1 Concentration"
+  - "name": "Failure Chance"
+    "option": "Difficulty 12"
+  - "name": "Energy Point Cost"
+    "option": "+1"
+  "text": |
+    Allows a character to make a perception check. This check, if successful, grants a target ally a +1
+    modifier to their next ranged attack. The target ally must be within the character's line of sight as
+    must be the target enemy however for the target ally to recieve the +1 modifier the target ally does not
+    need to have line of sight on the target enemy.
+
+- "name": "Refresh"
+  "rules":
+  - "name": "Energy Point Cost"
+    "option": "+1"
+  - "name": "Failure Chance"
+    "option": "Difficulty 8"
+  - "name": "Damage Healed"
+    "option": "1d6"
+  - "name": "Magic"
+  - "name": "Range"
+    "option": "Melee"
+  "skill":
+    "inherits_from":
+    - "Intelligence"
+    "name": "Refresh"
+    "type": "Concentration"
+  "text": |
+    The caster heals a target for 1d6 health points. This healing takes effect instantly and staunches any
+    bleeding the character may be suffering from. This spell may be used as many times as needed on the same
+    target.
+
+- "name": "Keen Senses"
+  "requires":
+  - "Perception"
+  "rules":
+  - "name": "Opportunistic Action"
+    "option": "Opportunistic"
+  "text": |
+    When a target character passes or appears within melee range of the character, as an opportunistic
+    action, the character may make a perception check to oppose the target's stealth. If the target has no
+    active stealth then the perception check has a failure chance of 8.
+
+- "name": "Volta"
+  "rules":
+  - "name": "Energy Point Cost"
+    "option": "+1"
+  - "name": "Failure Chance"
+    "option": "Difficulty 8"
+  - "name": "Magic"
+  - "name": "Range"
+    "option": "Medium"
+  - "name": "Damage"
+    "option": "1d4"
+  "skill":
+    "inherits_from":
+    - "Intelligence"
+    "name": "Volta"
+    "type": "Attack"
+  "text": |
+    Upon casting, a bolt of lightning arcs from either of the character's hands toward the target enemy with
+    a thundering crack. The attack roll recieves the character's intelligence modifier as an attack Positive
+    Modifier.
+
+- "name": "Blood Soaked Life"
+  "rules":
+  - "name": "Energy Point Cost"
+    "option": "+1"
+  - "name": "Failure Chance"
+    "option": "Difficulty 8"
+  - "name": "Damage Healed"
+    "option": "1d8"
+  - "name": "Magic"
+  - "name": "Range"
+    "option": "Personal"
+  - "name": "Effect Trigger"
+    "option": "When HP Damage is Dealt"
+  "skill":
+    "inherits_from":
+    - "Intelligence"
+    "name": "Blood Soaked Life"
+    "type": "Concentration"
+
+- "name": "Archery"
+  "rules":
+  - "name": "Failure Chance"
+    "option": "Difficulty 8"
+  - "name": "Energy Point Cost"
+    "option": "+1"
+  "skill":
+    "inherits_from":
+    - "Mobility"
+    - "Strength"
+    "name": "Archery"
+    "type": "Attack"
+  "text": |
+    Allows a character to use a bow, cross bow or other similar drawn force weapon. The skill check uses the
+    higher of either the character's mobility modifier or the character's strength modifier.
+
+- "name": "Fit"
+  "rules":
+  - "name": "HP Pool Modifier"
+    "option": "+1"
+  "text": |
+    This aspect applies to any physically fit character. All fit characters also receive +1 HP to their HP
+    Pool.
+
+- "name": "Disable Device"
+  "requires":
+  - "Lockpicking"
+  "rules":
+  - "name": "Failure Chance"
+    "option": "Difficulty 8"
+  "skill":
+    "inherits_from":
+    - "Lockpicking"
+    "name": "Disable Device"
+    "type": "Non-Combat"
+  "text": |
+    Grants a character with an understanding of small mechanical devices the ability to attempt to disable
+    them. This covers any manner of device designed as a trap or a lock. All devices are granted a
+    difficulty by the game master depending on their complexity and make. The character must make a disable
+    device check against this difficulty to successfully disable the device.
+
+- "name": "Spell Dart"
+  "rules":
+  - "name": "Energy Point Cost"
+    "option": "+1"
+  - "name": "Failure Chance"
+    "option": "Difficulty 8"
+  - "name": "Magic"
+  - "name": "Range"
+    "option": "Short"
+  - "name": "Damage"
+    "option": "1d6"
+  "skill":
+    "inherits_from":
+    - "Intelligence"
+    "name": "Spell Dart"
+    "type": "Attack"
+  "text": |
+    Spell Dart is a meta magic spell that allows a character to aim a single finger (of their choice) at a
+    target and fire a crackling spark of pure magical energy at them. This spark flies like an arrow in
+    speed and trajectory. Upon impact it explodes with a loud crack and a flurry of much smaller,
+    short-lived magical sparks.
+
+- "name": "Survival"
+  "rules":
+  - "name": "Failure Chance"
+    "option": "Difficulty 8"
+  "skill":
+    "inherits_from":
+    - "Intelligence"
+    "name": "Survival"
+    "type": "Non-Combat"
+  "text": |
+    Generic skill for scrounging for food, edibles, dungeoneering, etc. The game master is encouraged to add
+    to the base difficulty depending on the situation. This is a useful skill for tracking.
+
+- "name": "Bludgeon"
+  "rules":
+  - "name": "Failure Chance"
+    "option": "Difficulty 8"
+  - "name": "Energy Point Cost"
+    "option": "+1"
+  "skill":
+    "inherits_from":
+    - "Strength"
+    "name": "Bludgeon"
+    "type": "Attack"
+  "text": |
+    Grants a character a melee attack that's proficient with blugeoning weapons. This attack may be used
+    with heavy, blunt melee weapons, including staves and other similar weapon types. This does not apply to
+    slashing weapons which require different techniques.
+
+- "name": "Medicine"
+  "rules":
+  - "name": "Failure Chance"
+    "option": "Difficulty 8"
+  - "name": "Damage Healed"
+    "option": "1d6"
+  "skill":
+    "inherits_from":
+    - "Intelligence"
+    "name": "Medicine"
+    "type": "Non-Combat"
+  "text": |
+    Allows a character to make a medicine check. This check has use in diagnosing and healing others. A
+    successful medicine check may heal 1d6 health points. This takes the character 10 minutes. Any character
+    healed by this aspect may not be healed by it again for 12 hours.
+
+    When diagnosing, the game master chooses a suitable difficulty for the complications the target is
+    suffering. If the medicine check passes, the character is enlightened as to the cause of the
+    complications.
+
+- "name": "Knowledge - Martial"
+  "rules":
+  - "name": "Energy Point Cost"
+    "option": "+1"
+  - "name": "Failure Chance"
+    "option": "Difficulty 8"
+  "skill":
+    "inherits_from":
+    - "Intelligence"
+    "name": "Knowledge - Martial"
+    "type": "Concentration"
+  "text": "Knowledge and understanding of the related domain.\n"
+
+- "name": "Dive for Cover"
+  "requires":
+  - "Duck and Dodge"
+  "rules":
+  - "name": "Failure Chance"
+    "option": "Difficulty 8"
+  - "name": "Energy Point Cost"
+    "option": "+1"
+  "skill":
+    "inherits_from":
+    - "Mobility"
+    "name": "Dive for Cover"
+    "type": "Concentration"
+  "text": |
+    Allows a character to make a dive for nearby cover - once behind cover, all rules for cover now apply.
+    The cover must be within the character's **Standing Forward Jump** range. All normal rules for making a
+    standing forward jump apply to this check. Failing this check renders the character **prone**.
+
+- "name": "Firebolt"
+  "rules":
+  - "name": "Energy Point Cost"
+    "option": "+1"
+  - "name": "Failure Chance"
+    "option": "Difficulty 8"
+  - "name": "Magic"
+  - "name": "Range"
+    "option": "Medium"
+  - "name": "Damage"
+    "option": "1d4"
+  "skill":
+    "inherits_from":
+    - "Intelligence"
+    "name": "Firebolt"
+    "type": "Attack"
+  "text": |
+    The character conjures a ball of fire in either hand which may then be thrown. The attack roll recieves
+    the character's intelligence modifier as an attack Modifier.
+
+- "name": "Foil"
+  "rules":
+  - "name": "Energy Point Cost"
+    "option": "+1"
+  - "name": "Failure Chance"
+    "option": "Difficulty 8"
+  - "name": "Effect Duration"
+    "option": "4 Turns"
+  - "name": "Damage Resistance"
+    "option": "+4 DR"
+  - "name": "Magic"
+  - "name": "Range"
+    "option": "Melee"
+  "skill":
+    "inherits_from":
+    - "Intelligence"
+    "name": "Foil"
+    "type": "Concentration"
+  "text": |
+    The character conjures a kinetic shield that covers a target's body. This shield has a **DR of 4**. The
+    shield lasts for 10 minutes or until an attack lands and the shield absorbs damage.
+
+- "name": "Send"
+  "rules":
+  - "name": "Energy Point Cost"
+    "option": "+1"
+  - "name": "Failure Chance"
+    "option": "Difficulty 12"
+  - "name": "Magic"
+  "skill":
+    "inherits_from":
+    - "Intelligence"
+    "name": "Send"
+    "type": "Concentration"
+  "text": |
+    Instantly send a message to the mind of a willing target, regardless of distance. The target must be
+    known to the caster in that they must have met in-person at least once. This effect may be dismissed
+    before the message is sent. Once the message is sent the target is granted the opportunity to reply with
+    their own message. After this the conversation ends and send must be cast again to further
+    communication.
+
+- "name": "Obscura"
+  "rules":
+  - "name": "Energy Point Cost"
+    "option": "+1"
+  - "name": "Failure Chance"
+    "option": "Difficulty 14"
+  - "name": "Magic"
+  - "name": "Accuracy Modifier"
+    "option": "-4 Attack Accuracy"
+  - "name": "Range"
+    "option": "Medium"
+  - "name": "Area Effect"
+    "option": "Dome"
+  - "name": "Effect Duration"
+    "option": "4 Turns"
+  "skill":
+    "inherits_from":
+    - "Intelligence"
+    "name": "Obscura"
+    "type": "Concentration"
+  "text": |
+    Creates a roaming darkness that condenses as a weightless mist. This mist is only effective on incoming
+    ranged attacks, making it far more difficult for attackers to target anything inside it.
+
+    The Modifier to range attacks persists even inside the mist. Melee attacks however are
+    unaffacted.
+
+- "name": "Field Aid"
+  "requires":
+  - "Medicine"
+  "rules":
+  - "name": "Damage Healed"
+    "option": "1d6"
+  - "name": "Energy Point Cost"
+    "option": "+2"
+  - "name": "Failure Chance"
+    "option": "Difficulty 8"
+  "skill":
+    "inherits_from":
+    - "Intelligence"
+    "name": "Field Aid"
+    "type": "Concentration"
+  "text": |
+    Allows a character to perform healing on the battlefield via simple medical procedures. Any visible
+    damage to the target may be healed by this check. Internal damage requires a different check. Any
+    character healed by this aspect may not be healed by it again for 12 hours.
+
+    A successful Field Aid staunches bleeding and may heal 1d6 health points of damage.
+
+- "name": "Duck and Dodge"
+  "rules":
+  - "name": "Failure Chance"
+    "option": "Difficulty 8"
+  - "name": "Energy Point Cost"
+    "option": "+1"
+  "skill":
+    "inherits_from":
+    - "Mobility"
+    "name": "Duck and Dodge"
+    "type": "Defense"
+  "template": "Defense"
+  "text": |
+    Allows a character to make a simple dodge-based defense against an incoming attack. The defense roll
+    recieves the character's **mobility modifier** as a defense Modifier.
+
+- "name": "Magic Trick"
+  "rules":
+  - "name": "Magic"
+  "text": |
+    Perform a minor trick or illusion such as clean a handheld object to summoning a playing card from your
+    coat pocket or hiding a rabbit within a top hat until you reach in to pull it out.
+
+    This aspect is useless in combat.
+
+- "name": "Knowledge - Natural Sciences"
+  "rules":
+  - "name": "Energy Point Cost"
+    "option": "+1"
+  - "name": "Failure Chance"
+    "option": "Difficulty 8"
+  "skill":
+    "inherits_from":
+    - "Intelligence"
+    "name": "Knowledge - Natural Sciences"
+    "type": "Concentration"
+  "text": "Knowledge and understanding of the related domain.\n"
+
+- "name": "Deathrattle"
+  "rules":
+  - "name": "Magic"
+  "text": |
+    Similar to magic trick. This ability produces a signature that may be enhanced later.
+
+- "name": "Knowledge - Survival"
+  "rules":
+  - "name": "Energy Point Cost"
+    "option": "+1"
+  - "name": "Failure Chance"
+    "option": "Difficulty 8"
+  "skill":
+    "inherits_from":
+    - "Intelligence"
+    "name": "Knowledge - Survival"
+    "type": "Concentration"
+  "text": "Knowledge and understanding of the related domain.\n"
+
+- "name": "Pickpocket"
+  "requires":
+  - "Filch"
+  "rules":
+  - "name": "Failure Chance"
+    "option": "Difficulty 8"
+  - "name": "Energy Point Cost"
+    "option": "+1"
+  "skill":
+    "inherits_from":
+    - "Mobility"
+    "name": "Pickpocket"
+    "type": "Concentration"
+  "text": |
+    Grants a careful character the ability to pilfer objects from a target. The character must first make a
+    pickpocket check. If the target is unaware of the attempt then the game master is required to select an
+    appropriate difficulty. Upon failure, the target character becomes aware of the actions taken against
+    them. Upon success, the target object is lifted from the target character.
+
+    If the target character is already aware of the attempt then this character is granted a **mobility
+    check** that opposes the character's pickpocket check. Note that this does not remove the check's
+    difficulty - the character must still beat the difficulty of the filch check in addition to defeating
+    the target character's mobility check.
+
+- "name": "Knowledge - Historical"
+  "rules":
+  - "name": "Energy Point Cost"
+    "option": "+1"
+  - "name": "Failure Chance"
+    "option": "Difficulty 8"
+  "skill":
+    "inherits_from":
+    - "Intelligence"
+    "name": "Knowledge - Historical"
+    "type": "Concentration"
+  "text": "Knowledge and understanding of the related domain.\n"
+
+- "name": "Stab"
+  "rules":
+  - "name": "Failure Chance"
+    "option": "Difficulty 8"
+  - "name": "Energy Point Cost"
+    "option": "+1"
+  "skill":
+    "inherits_from":
+    - "Strength"
+    "name": "Stab"
+    "type": "Attack"
+  "text": |
+    Grants a character a melee stabbing attack. This attack may be used with any thrusting melee weapon.
+
+- "name": "Quiescence"
+  "requires":
+  - "Mental Endurance"
+  "rules":
+  - "name": "Energy Point Refresh Modifier"
+    "option": "+1"
+  - "modifies":
+    - "Intelligence"
+    "name": "Core Aspect Modifier"
+    "option": "+1"
+  - "modifies":
+    - "Strength"
+    "name": "Core Aspect Modifier"
+    "option": "-1"
+  "text": |
+    Intense mental training has awarded you an additional action point. However, this focus leads one to
+    neglect the body, giving the character a -1 Strength modifier.
+
+- "name": "High Manual Dexterity"
+  "rules":
+  - "name": "Simple Feature"
+  "text": |
+    This aspect is often taken by characters that are considered good with their hands. This aspect alone
+    grants no additional checks or modifiers.
+
+- "name": "Magical Energy Affinity"
+  "rules":
+  - "name": "Concentration Modifier"
+    "option": "+1 Concentration"
+  - "name": "Accuracy Modifier"
+    "option": "+1 Attack Accuracy"
+  "text": |
+    Increases a character's natural talent in magic for a given energy type. This aspect must be taken
+    multiple times for multiple energy types.
+
+- "name": "Knowledge - Affluence"
+  "rules":
+  - "name": "Energy Point Cost"
+    "option": "+1"
+  - "name": "Failure Chance"
+    "option": "Difficulty 8"
+  "skill":
+    "inherits_from":
+    - "Intelligence"
+    "name": "Knowledge - Affluence"
+    "type": "Concentration"
+  "text": "Knowledge and understanding of the related domain.\n"
+
+- "name": "Blend into Crowds"
+  "rules":
+  - "name": "Failure Chance"
+    "option": "Difficulty 8"
+  "skill":
+    "inherits_from":
+    - "Mobility"
+    "name": "Blend into Crowds"
+    "type": "Non-Combat"
+  "text": |
+    Allows a street-wise character to blend into a crowd and use this action as a sealth attempt. The crowd
+    must be sufficiently thick such that the game master considers blending in acceptable for stealth.
+
+- "name": "Toss"
+  "rules":
+  - "name": "Energy Point Cost"
+    "option": "+1"
+  - "name": "Failure Chance"
+    "option": "Difficulty 8"
+  - "name": "Magic"
+  - "name": "Range"
+    "option": "Medium"
+  - "name": "Damage"
+    "option": "1d4"
+  "skill":
+    "inherits_from":
+    - "Intelligence"
+    "name": "Toss"
+    "type": "Attack"
+  "text": |
+    Allows a character to use their mind to toss an object of size modifier -3 or smaller with their mind.
+    This object may be thrown hard enough to 1d4 damage and is accurate up to range medium.
+"formulas":
+
+- "equation": "8"
+  "name": "Hard Flat"
+  "type": "custom"
+
+- "equation": "fib(i, starting_step=5)"
+  "name": "Heroic Progression"
+  "type": "custom"
+
+- "equation": "15 - i"
+  "name": "Failure Chance"
+  "type": "custom"
+
+- "equation": "2"
+  "name": "Basic Flat"
+  "type": "custom"
+
+- "equation": "5"
+  "name": "Normal Flat"
+  "type": "custom"
+
+- "equation": "13"
+  "name": "Heroic Flat"
+  "type": "custom"
+
+- "equation": "-1 * fib(i, starting_step=1)"
+  "name": "Reverse Normal Progression"
+  "type": "custom"
+
+- "equation": null
+  "name": "Damage Cost"
+  "provided_function": "damage_cost"
+  "type": "provided"
+
+- "equation": "fib(i)"
+  "name": "Easy Progression"
+  "type": "custom"
+
+- "equation": "3"
+  "name": "Easy Flat"
+  "type": "custom"
+
+- "equation": "i * 2"
+  "name": "Basic Progression"
+  "type": "custom"
+
+- "equation": "i - 4"
+  "name": "Item Usage Cost"
+  "type": "custom"
+
+- "equation": "fib(i, starting_step=3)"
+  "name": "Hard Progression"
+  "type": "custom"
+
+- "equation": null
+  "name": "DR Cost"
+  "provided_function": "dr_cost"
+  "type": "provided"
+
+- "equation": "-5"
+  "name": "Returns Normal Flat"
+  "type": "custom"
+
+- "equation": "fib(i, starting_step=1)"
+  "name": "Normal Progression"
+  "type": "custom"
+
+- "equation": null
+  "name": "Area Effect"
+  "provided_function": "area_effect"
+  "type": "provided"
+
+- "equation": "i - 1"
+  "name": "Handedness"
+  "type": "custom"
+
+- "equation": "21"
+  "name": "Epic Flat"
+  "type": "custom"
+
+- "equation": "i"
+  "name": "Linear Progression"
+  "type": "custom"
+
+- "equation": "0"
+  "name": "Null Flat"
+  "type": "custom"
+"items":
+
+- "name": "Weak Health Potion"
+  "rules":
+  - "name": "Damage Healed"
+    "option": "1d6"
+  - "name": "Number of Uses"
+    "option": "Has 1 Use(s)"
+  "text": "Simple, non-magical health potion.\n"
+
+- "grants":
+  - "Fit"
+  "name": "Ring of Fitness"
+  "rules":
+  - "name": "Magic"
+  "text": "Wearing this small ring makes you feel healthier.\n"
+  "wearable":
+    "slot": "lightweight"
+"resources":
+
+- "name": "Energy Point Refresh"
+  "starting_value": 1
+
+- "name": "Monetary Funds"
+  "starting_value": 0
+
+- "name": "Energy Point Pool"
+  "starting_value": 1
+
+- "name": "Health Point Pool"
+  "starting_value": 6
+"rules":
+
+- "category": "all"
+  "formula":
+    "ref": "Normal Progression"
+  "name": "Presence Modifier"
+  "options":
+  - "name": "+{range_value}"
+    "range": "1,6"
+  "text": "**Note:** this component may not be used for attack rolls.\n"
+
+- "category": "all"
+  "formula":
+    "ref": "Hard Progression"
+  "modifies":
+  - "Energy Point Pool"
+  "name": "Energy Point Pool Modifier"
+  "options":
+  - "name": "{range_value}"
+    "range": "-2,2"
+
+- "category": "all"
+  "formula":
+    "ref": "Hard Progression"
+  "name": "Environment Mitigation"
+  "options":
+  - "name": "Low Light Vision"
+  - "name": "Infrared Sight"
+  - "name": "Echo Sight"
+
+- "category": "all"
+  "formula":
+    "ref": "Normal Progression"
+  "name": "Range"
+  "options":
+  - "name": "Personal"
+  - "name": "Melee"
+  - "name": "Short"
+  - "name": "Medium"
+  - "name": "Long"
+  - "name": "Extreme"
+  "text": "See the core rules section: **Range Definitions** for more details.\n"
+
+- "category": "all"
+  "formula":
+    "ref": "Normal Progression"
+  "name": "Reload EP Cost"
+  "options":
+  - "name": "+{range_value}"
+    "range": "-5,-1"
+  "text": |
+    Reload EP cost codifies when a skill or item (such as a weapon) require addtional effort to make ready
+    or operate before use. This includes examples such as: firearm reloading, readying a crossbow,
+    charging a magical effect, etc...
+
+    This cost may be paid to reload or make ready the target item or skill in question. Once done the target
+    is considered ready for use. The target may specify that if the ready status isn't used in a certain
+    duration that it must be reloaded once more.
+
+- "category": "all"
+  "formula":
+    "ref": "Hard Progression"
+  "name": "Energy Point Pool Mality"
+  "options":
+  - "name": "{range_value}"
+    "range": "-2,-1"
+  "text": "This one is still a work in progress.\n"
+
+- "category": "all"
+  "formula":
+    "ref": "Basic Flat"
+  "name": "Simple Feature"
+  "options":
+  - "name": "Simple Feature"
+  "text": "TODO\n"
+
+- "category": "all"
+  "formula":
+    "ref": "Damage Cost"
+  "name": "Damage Healed"
+  "options":
+  - "name": "1d4"
+  - "name": "1d6"
+  - "name": "1d8"
+  - "name": "1d10"
+  - "name": "1d12"
+  - "name": "2d4"
+  - "name": "2d6"
+  - "name": "2d8"
+  - "name": "2d10"
+  - "name": "2d12"
+  - "name": "3d4"
+  - "name": "3d6"
+  - "name": "3d8"
+  - "name": "3d10"
+  - "name": "3d12"
+  - "name": "4d4"
+  - "name": "4d6"
+  - "name": "4d8"
+  - "name": "4d10"
+  - "name": "4d12"
+
+- "category": "all"
+  "formula":
+    "ref": "Heroic Progression"
+  "name": "Testing Wildcard *"
+  "options":
+  - "name": "Only Option"
+  "text": "This is just a test.\n"
+
+- "category": "all"
+  "formula":
+    "ref": "Hard Flat"
+  "name": "Combat Expertise"
+  "options":
+  - "name": "Can't be Flanked"
+
+- "category": "all"
+  "formula":
+    "ref": "Normal Progression"
+  "name": "Accuracy Modifier"
+  "options":
+  - "name": "{range_value} Attack Accuracy"
+    "range": "-5,5"
+  "text": |
+    This is used to modify a defense roll instead of a skill check modifier. This modifier may be applied to
+    enemy defense rolls as a Modifier.
+
+- "category": "all"
+  "formula":
+    "ref": "Heroic Progression"
+  "name": "Opportunistic Action"
+  "options":
+  - "name": "Opportunistic"
+  - "name": "Reactionary"
+  "text": |
+    This allows the associated aspect to be used as a reactionary action. That is to say that when a
+    condition is met, an aspect that has the reactionary effect may be used immediately.
+
+- "category": "all"
+  "formula":
+    "ref": "Normal Progression"
+  "name": "Extra Target"
+  "options":
+  - "name": "+{range_value}"
+    "range": "1,5"
+
+- "category": "all"
+  "formula":
+    "ref": "Hard Progression"
+  "name": "Core Aspect Modifier"
+  "options":
+  - "name": "{range_value}"
+    "range": "-3,3"
+
+- "category": "all"
+  "formula":
+    "ref": "Linear Progression"
+  "name": "Radius"
+  "options":
+  - "name": "+{range_value} Map Cells"
+    "range": "1,7"
+  "text": "Radius of a dome area effect in map cells.\n"
+
+- "category": "all"
+  "formula":
+    "ref": "DR Cost"
+  "name": "Damage Resistance"
+  "options":
+  - "name": "+{range_value} DR"
+    "range": "1,24"
+
+- "category": "all"
+  "formula":
+    "ref": "Normal Progression"
+  "name": "Effect Duration"
+  "options":
+  - "name": "1 Turn"
+  - "name": "2 Turns"
+  - "name": "4 Turns"
+  - "name": "8 Turns"
+  - "name": "10 Minutes"
+  - "name": "30 Minutes"
+  - "name": "1 Hour"
+  - "name": "12 Hours"
+  - "name": "1 Day"
+
+- "category": "all"
+  "formula":
+    "ref": "Hard Flat"
+  "name": "Area Effect"
+  "options":
+  - "name": "Line"
+  - "name": "Cone"
+  - "name": "Dome"
+
+- "category": "all"
+  "formula":
+    "ref": "Null Flat"
+  "name": "Kinetic Damage"
+  "options":
+  - "name": "Kinetic Damage"
+  "text": |
+    Kinetic damage is the most basic type of damage the system affords. This damage type does not
+    have any additional effects. If you are looking for the ability to impart kinetic potential, this
+    is listed in a different rule.
+
+- "category": "all"
+  "formula":
+    "ref": "Normal Progression"
+  "name": "Heals Affliction"
+  "options":
+  - "name": "Sickened"
+  - "name": "Diseased"
+  - "name": "Poisoned"
+
+- "category": "all"
+  "formula":
+    "ref": "Normal Progression"
+  "name": "Defense Modifier"
+  "options":
+  - "name": "{range_value} Defense Effectiveness"
+    "range": "-5,5"
+  "text": "This is used to modify a defense roll instead of a skill check modifier.\n"
+
+- "category": "all"
+  "formula":
+    "ref": "Null Flat"
+  "name": "Unstable Magic"
+  "options":
+  - "name": "Unstable Magic"
+  "text": |
+    * Skill rolls of 19 qualify as a crit.
+    * When you roll a 20 crit you roll on crit table twice.
+    * If you would not roll on the crit table (such as a heal), refund 1 Energy point.
+    * Skill rolls of 2 qualify as a critical failure.
+    * Skill rolls of 1 will always qualify as a critical failure even if you would succeed otherwise.
+    * Can be detected as magic and is able to be disrupted by things that target magic.
+
+- "category": "item"
+  "formula":
+    "ref": "Null Flat"
+  "name": "Attack Method"
+  "options":
+  - "name": "Drawn Force"
+  - "name": "Slashing"
+  - "name": "Bludgeoning"
+  - "name": "Thrusting"
+  - "name": "Magic"
+  - "name": "Throwable"
+    "text": |
+      Marks an object as throwable. The attack of this weapon may be considered a ranged attack with a
+      range of medium. This range may be increased with a strength check of an appropriate difficulty
+      before the attack with the approval of the game master.
+  "text": |
+    Describes the attack method of a weapon. The attack method of a weapon defines which attack aspects may
+    be used with the weapon.
+
+- "category": "all"
+  "formula":
+    "ref": "Heroic Progression"
+  "name": "Extra Attack"
+  "options":
+  - "name": "+{range_value}"
+    "range": "1,3"
+
+- "category": "all"
+  "formula":
+    "ref": "Normal Progression"
+  "name": "Melee Reach"
+  "options":
+  - "name": "+{range_value} Map Cell(s)"
+    "range": "1,2"
+
+- "category": "all"
+  "formula":
+    "ref": "Heroic Flat"
+  "name": "Kinetic Potential"
+  "options":
+  - "name": "Kinetic Potential"
+  "text": |
+    This grants a kinetic attack the ability to impart kinetic potential. The cost of this rule is based
+    on the facts that average damage is 2d6 and that kinetic potential causes forced movement of target
+    characters.
+
+    See the core rule docs for more information.
+
+- "category": "character"
+  "formula":
+    "ref": "Heroic Flat"
+  "name": "Persistent Effect"
+  "options":
+  - "name": "Persistent Effect"
+  "text": "testing\n"
+
+- "category": "all"
+  "formula":
+    "ref": "Handedness"
+  "name": "Number of Hands Required"
+  "options":
+  - "name": "One-Handed"
+  - "name": "Two-Handed"
+  "text": |
+    The number of hands required to utilize the aspect or item.
+
+    Weapons that use more than one hand grant the character's strength modifier as a flat damage Positive
+    Modifier. For
+    example, a character with a strength modifier of +2 receives +2 damage in addition to the result of
+    their damage roll.
+
+- "category": "all"
+  "formula":
+    "ref": "Failure Chance"
+  "name": "Failure Chance"
+  "options":
+  - "name": "Critical Failure Only"
+  - "name": "Difficulty {range_value}"
+    "range": "2,19"
+  - "name": "Critical Success Only"
+  "text": |
+    All skill checks should specifiy a base difficulty. The player may choose to augment the difficulty in
+    the future only by lowering it.
+
+- "category": "all"
+  "formula":
+    "ref": "Easy Progression"
+  "name": "Concentration Modifier"
+  "options":
+  - "name": "{range_value} Concentration"
+    "range": "-5,5"
+  "text": "**Note:** this component may not be used for attack rolls.\n"
+
+- "category": "all"
+  "formula":
+    "ref": "Heroic Flat"
+  "name": "Exotic Damage"
+  "options":
+  - "name": "Cold"
+    "text": |
+      The cold damage type is described as the removal of energy via effect. This usually manifests as the
+      target becoming cold to the point of inflicting damage.
+
+      Cold damage types may slow down targets on successful hits. To determine whether or not a target is
+      slowed the target must roll a strength check against a failure chance of 10. Upon failure the target
+      is subject to the slowed status as described in the core rules.
+
+      The target may make additional strength checks against a failure chance of 8 to overcome the intense
+      cold and remove the slowed status.
+  - "name": "Fire"
+    "text": |
+      The fire damage type is used to describe any chemical reaction that results in combustion. Heating
+      up air to an extreme temperature to make the oxygen reactive and start a fire is an example of fire
+      type damage.
+
+      Fire damage types come with the opportunity to set their targets on fire. To determine whether or
+      not a target catches fire the target must roll a mobility check against a failure chance of 11. Upon
+      failure the target takes additional burning damage equal to the lowest fire damage die rolled by the
+      attacker on the attacker's next turn. This status lasts 1d4 rounds.
+
+      Additional burning damage may not stack.
+
+      The target may make additional mobility checks against a failure chance of 8 to quell the fire on
+      their turn.
+
+      Burning damage does not directly imply that clothing or armor is being consumed by fire, but rather
+      the flames are present long enough to cause persisting damage.
+  - "name": "Energetic"
+    "text": |
+      Energetic damage may be caused by anything related to electricity or certain high power physics like
+      a plasma. This damage type includes lightning, static, radio and most futuristic beam weapons. This
+      damage type does describe some types of damage that may be considered part of the fire damage type;
+      the distinction is whether or not the effect would cause something to burn.
+
+      Energetic damage types are usually so strong that the burning caused by them is secondary or ignored
+      in the face of the damage the attack does on its own. This is the difference between a match burning
+      versus being vaporized by plasma.
+
+      Certain magic effects may impart energetic damage as well instead of meta.
+
+      Energetic damage types are very effective but also chaotic. Upon a successful hit the attacker may
+      roll a fate die. Negative and neutral values have no additional effect.
+
+      A positvie fate die roll grants the attacker **two** of their smallest damage dice in additional
+      damage.
+  - "name": "Meta"
+    "text": |
+      The meta damage type describes any damage inflicted that attacks the physical structure
+      of the target at a very basic level. This damage type is almost always caused by extreme
+      energies, magic or disintegration.
+
+      Meta damage imparts its attack with a negative damage resistance modifier that applies to the
+      target. This modifier is qualified by rolling one of the lowest meta damage dice tagged to the
+      attack.
+
+      For example: an attack does 2d6 Kinetic and 2d6 Meta. On successful attack, the attacker would roll
+      an additional 1d6. The result is then taken away from the target's damage resistance when
+      calculating damage done.
+  "text": |
+    Damage types may be added to aspects and items that cause damage. Additional types may be added in an
+    attempt to make the weapon more effective against well defended enemeies.
+
+- "category": "item"
+  "formula":
+    "ref": "Basic Flat"
+  "name": "Magic"
+  "options":
+  - "name": "Magic"
+    "text": "This aspect or item is magic imbued and will show up on arcane sight.\n"
+
+- "category": "all"
+  "formula":
+    "ref": "Damage Cost"
+  "modifies":
+  - "Health Point Pool"
+  "name": "HP Pool Modifier"
+  "options":
+  - "name": "{range_value}"
+    "range": "-10,10"
+
+- "category": "all"
+  "formula":
+    "ref": "Normal Progression"
+  "name": "Actor Size Modifier"
+  "options":
+  - "name": "{range_value} Size Modifier"
+    "range": "-5,-1"
+  - "name": "Default (0) Size Modifier"
+  - "name": "{range_value} Size Modifier"
+    "range": "1,5"
+
+- "category": "character"
+  "formula":
+    "ref": "Hard Progression"
+  "name": "Grapple"
+  "options":
+  - "name": "Grapple"
+  "text": |
+    Grappling a target character requires an opposed strength check between the attacker and the target. If
+    the attacker wins this check, the target is considered grappled.
+
+    To escape a grapple a target must make an opposed strength check against the character they are grappled
+    by **at a modifier of -2**. If successful, the target regains their turn and is considered free. The
+    target is released in the same map cell and is considered squeezing with the character that was
+    grappling them.
+
+    Characters that are grappled may not move at all. They may only attempt skills that do require movement
+    or they may attempt to break from the grapple.
+
+- "category": "all"
+  "formula":
+    "ref": "Heroic Progression"
+  "name": "Teleportation"
+  "options":
+  - "name": "Teleportation"
+  "text": |
+    Allows the aspect this descriptor is tagged to, to impart a teleportation effect. To add more
+    targets to teleport consider Extra Target.
+
+- "category": "all"
+  "formula":
+    "ref": "Damage Cost"
+  "name": "Damage"
+  "options":
+  - "name": "1d4"
+  - "name": "1d6"
+  - "name": "1d8"
+  - "name": "1d10"
+  - "name": "1d12"
+  - "name": "2d4"
+  - "name": "2d6"
+  - "name": "2d8"
+  - "name": "2d10"
+  - "name": "2d12"
+  - "name": "3d4"
+  - "name": "3d6"
+  - "name": "3d8"
+  - "name": "3d10"
+  - "name": "3d12"
+  - "name": "4d4"
+  - "name": "4d6"
+  - "name": "4d8"
+  - "name": "4d10"
+  - "name": "4d12"
+
+- "category": "all"
+  "formula":
+    "ref": "Heroic Flat"
+  "name": "Affliction Immunity"
+  "options":
+  - "name": "Staggered"
+  - "name": "Sickened"
+  - "name": "Diseased"
+  "text": "Grants immunity to a certain affliction and all of its effects.\n"
+
+- "category": "all"
+  "formula":
+    "ref": "Linear Progression"
+  "modifies":
+  - "Monetary Funds"
+  "name": "Starting Wealth Modifier"
+  "options":
+  - "name": "$$ {range_value}00"
+    "range": "1,44"
+
+- "category": "all"
+  "formula":
+    "ref": "Normal Flat"
+  "name": "May Enter Stealth"
+  "options":
+  - "name": "May Enter Stealth"
+
+- "category": "all"
+  "formula":
+    "ref": "Null Flat"
+  "name": "Experimental Technology"
+  "options":
+  - "name": "Experimental Technology"
+  "text": |
+    * Skill rolls of 19 qualify as a crit.
+    * When you roll a 20 crit you roll on crit table twice.
+    * If you would not roll on the crit table (such as a heal), refund 1 Energy point.
+    * Skill rolls of 2 qualify as a critical failure.
+    * Skill rolls of 1 will always qualify as a critical failure even if you would succeed otherwise.
+    * Can be identified as an effect, item or feature of technological origin and is able to be disrupted by
+    effects that target technologies.
+
+- "category": "all"
+  "formula":
+    "ref": "Hard Progression"
+  "modifies":
+  - "Energy Point Refresh"
+  "name": "Energy Point Refresh Modifier"
+  "options":
+  - "name": "{range_value}"
+    "range": "-2,2"
+
+- "category": "all"
+  "formula":
+    "ref": "Normal Progression"
+  "name": "Energy Point Cost"
+  "options":
+  - "name": "+{range_value}"
+    "range": "-5,-1"
+
+- "category": "all"
+  "formula":
+    "ref": "Easy Flat"
+  "name": "Careful Blow"
+  "options":
+  - "name": "Careful Blow"
+  "text": |
+    Allows melee attacks to ignore the penalty for attacking through an occupied map cell.
+
+- "category": "all"
+  "formula":
+    "ref": "Normal Progression"
+  "name": "Crit Success Modifier"
+  "options":
+  - "name": "{range_value}"
+    "range": "1,5"
+
+- "category": "all"
+  "formula":
+    "ref": "Basic Flat"
+  "name": "Technological"
+  "options":
+  - "name": "Technological"
+  "text": |
+    * Allows you to put non-basic features on an aspect or item.
+    * Can be identified as an effect, item or feature of technological origin and is able to be disrupted by
+    effects that target technologies.
+
+- "category": "all"
+  "formula":
+    "ref": "Reverse Normal Progression"
+  "name": "Defense Malus"
+  "options":
+  - "name": "{range_value} Defense Effectiveness"
+    "range": "-5,5"
+  "text": "This is used to modify an enemy target's defense roll.\n"
+
+- "category": "all"
+  "formula":
+    "ref": "Normal Progression"
+  "name": "Delayed Effect Duration"
+  "options":
+  - "name": "1 Turn"
+  - "name": "2 Turns"
+  - "name": "4 Turns"
+  - "name": "8 Turns"
+  - "name": "10 Minutes"
+  - "name": "30 Minutes"
+  - "name": "1 Hour"
+  - "name": "12 Hours"
+  - "name": "1 Day"
+  "text": |
+    Denotes the duration or preparation time required before an aspect becomes effective.
+
+    Part of me thinks that this rule should return AP since it delays when an effect happens but it could
+    also
+    delay when damage happens like a bomb that takes more skill to place, etc.
+
+- "category": "item"
+  "formula":
+    "ref": "Item Usage Cost"
+  "name": "Number of Uses"
+  "options":
+  - "name": "Has {range_value} Use(s)"
+    "range": "1,4"
+  "text": "Useful for items that have consumable uses.\n"
+
+- "category": "all"
+  "formula":
+    "ref": "Heroic Flat"
+  "name": "Target Restriction"
+  "options":
+  - "name": "Allies Only"
+  - "name": "Enemies Only"
+
+- "category": "all"
+  "formula":
+    "ref": "Normal Progression"
+  "name": "Length"
+  "options":
+  - "name": "+{range_value} Map Cells"
+    "range": "1,7"
+  "text": "Number of map cells a line area effect attack affects.\n"
+
+- "category": "all"
+  "formula":
+    "ref": "Normal Flat"
+  "name": "NPC Cohort"
+  "options":
+  - "name": "NPC Cohort"
+
+- "category": "all"
+  "formula":
+    "ref": "Returns Normal Flat"
+  "name": "Effect Trigger"
+  "options":
+  - "name": "When Attacking"
+  - "name": "When Defending"
+  - "name": "When HP Damage is Dealt"
+"templates":
+
+- "name": "Attack"
+  "requirements":
+  - "Failure Chance"
+  - "Energy Point Cost"
+
+- "name": "None"
+
+- "name": "Defense"
+  "requirements":
+  - "Failure Chance"
+  - "Energy Point Cost"
+
+- "name": "Magic Item"
+  "requirements":
+  - "Magic"

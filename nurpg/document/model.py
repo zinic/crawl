@@ -1,9 +1,10 @@
-import re
 import math
+
 import collections
+import re
+from mprequest.util import ListBacked
 
 import nurpg.formulas as formulas
-from mprequest.util import DictBacked, ListBacked
 
 DICE_REGEX = re.compile('[\d]+d[\d]+')
 
@@ -14,6 +15,21 @@ class FormulaDefinition(object):
         self.type = backend_type
         self.equation = equation
         self.provided_func_ref = provided_func_ref
+
+    def to_dict(self):
+        root = dict()
+        root['name'] = self.name
+        root['type'] = self.type
+        root['equation'] = self.equation
+
+        if self.provided_func_ref is not None:
+            root['provided_function'] = self.provided_func_ref
+
+        return root
+
+    @classmethod
+    def from_yaml(cls, formula_yaml):
+        return cls(formula_yaml.name, formula_yaml.type, formula_yaml.equation, formula_yaml.provided_function)
 
     @classmethod
     def from_xml(cls, formula_xml):
@@ -130,6 +146,89 @@ def generate_options(rule_xml):
     return options
 
 
+class OptionGeneratorYAML(object):
+    def __init__(self):
+        self._env = {
+            'abs': math.fabs,
+            'pow': math.pow,
+            'fib': formulas.generate_fibonacci(1000),
+        }
+
+    @classmethod
+    def calculate_damage_cost(cls, info):
+        cost = info.range_value
+        formatted_name = info.format_name()
+
+        # Check if the damage is defined as a dice roll
+        if DICE_REGEX.match(formatted_name):
+            # Figure out the number of dice and number of sides
+            num_dice, sides = [int(v) for v in formatted_name.split('d')]
+
+            # Cost is number of dice + damage value
+            cost = num_dice - 1 + num_dice * sides
+
+        return APCostElement(formatted_name, int(cost), info.option.text)
+
+    def calculate_option(self, formula, info):
+        if formula.type == 'custom':
+            # Copy the environment every time
+            env_copy = self._env.copy()
+
+            # Set the definition iteration num
+            env_copy['i'] = info.range_value
+
+            # This is so nasty...
+            cost = eval(formula.equation, env_copy)
+
+            # Return as a formula result
+            return APCostElement(info.format_name(), int(cost), info.option.text)
+
+        if formula.provided_func_ref == 'damage_cost':
+            return self.calculate_damage_cost(info)
+
+        if formula.provided_func_ref == 'dr_cost':
+            cost_element = self.calculate_damage_cost(info)
+            cost_element.ap_cost *= 2
+            return cost_element
+
+        raise Exception('Unknown formula => {}::{}'.format(formula.type, formula.provided_func_ref))
+
+
+def generate_options_yaml(rule_yaml):
+    options = list()
+
+    # Positions start at 1
+    i = 1
+
+    # Iterate through the defined options
+    option_nodes = rule_yaml.options
+
+    if option_nodes is None or len(option_nodes) == 0:
+        # If there are no options specified then return only one option with the same
+        # name as the rule itself
+        return [OptionPositionInfo(rule_yaml, 0, 1)]
+
+    for option_yaml in option_nodes:
+        # Values start with the position of the option
+        values = [i]
+
+        # Values may have a short-hand notation to generate additional options in a range
+        if option_yaml.range is not None:
+            start, end = [int(v) for v in option_yaml.range.split(',')]
+            values = range(start, end + 1)
+
+        for r in values:
+            i += 1
+
+            # By default we always skip and value that resolves its range to 0
+            if r == 0:
+                continue
+
+            options.append(OptionPositionInfo(option_yaml, r, i))
+
+    return options
+
+
 class Model(object):
     def __init__(self, document):
         self._document = document
@@ -141,7 +240,8 @@ class Model(object):
         self._aspects = dict()
         self._items = dict()
 
-        self._generate(document)
+        if document is not None:
+            self._generate(document)
 
     def check(self):
         for rule in self.rules():
@@ -158,6 +258,69 @@ class Model(object):
             if cost_breakdown.ap_total <= 0:
                 raise Exception('Aspect {} has an invalid AP ap_cost of: {}'.format(
                     aspect.name, cost_breakdown.ap_total))
+
+    def to_dict(self):
+        root = dict()
+
+        formulas = list()
+        for formula in self._formulas.values():
+            formulas.append(formula.to_dict())
+        root['formulas'] = formulas
+
+        templates = list()
+        for template in self._templates.values():
+            templates.append(template.to_dict())
+        root['templates'] = templates
+
+        rules = list()
+        for rule in self._rules.values():
+            rules.append(rule.to_dict())
+        root['rules'] = rules
+
+        resources = list()
+        for resource in self._resources.values():
+            resources.append(resource.to_dict())
+        root['resources'] = resources
+
+        aspects = list()
+        for aspect in self._aspects.values():
+            aspects.append(aspect.to_dict())
+        root['aspects'] = aspects
+
+        items = list()
+        for item in self._items.values():
+            items.append(item.to_dict())
+        root['items'] = items
+
+        return root
+
+    @classmethod
+    def from_yaml(cls, root):
+        model = cls(None)
+        option_generator = OptionGeneratorYAML()
+
+        if root.formulas is not None:
+            for formula_def_yaml in root.formulas:
+                model._formulas[formula_def_yaml.name] = FormulaDefinition.from_yaml(formula_def_yaml)
+
+        if root.rules is not None:
+            for rule_def_yaml in root.rules:
+                formula = model._formulas[rule_def_yaml.formula.ref]
+                model._rules[rule_def_yaml.name] = Rule.from_yaml(option_generator, rule_def_yaml, formula)
+
+        if root.templates is not None:
+            for template_def_yaml in root.templates:
+                model._templates[template_def_yaml.name] = Template.from_yaml(template_def_yaml)
+
+        if root.aspects is not None:
+            for aspect_def_yaml in root.aspects:
+                model._aspects[aspect_def_yaml.name] = Aspect.from_yaml(aspect_def_yaml)
+
+        if root.items is not None:
+            for item_def_yaml in root.items:
+                model._items[item_def_yaml.name] = Item.from_yaml(item_def_yaml)
+
+        return model
 
     def _generate(self, document):
         option_generator = OptionGenerator()
@@ -253,9 +416,49 @@ class Resource(object):
         self.unit = unit
         self.starting_value = starting_value
 
+    def to_dict(self):
+        root = dict()
+        root['name'] = self.name
+
+        if self.unit is not None and self.unit != '':
+            root['unit'] = self.unit
+
+        root['starting_value'] = self.starting_value
+
+        return root
+
     @classmethod
     def from_xml(cls, resource_xml):
         return Resource(resource_xml.name, int(resource_xml.starting_value))
+
+
+class RuleOption(object):
+    def __init__(self, name, range=None, text=None):
+        self.name = name
+        self.range = range
+        self.text = text
+
+    def to_dict(self):
+        root = dict()
+        root['name'] = self.name
+
+        if self.text is not None and self.text != '':
+            root['text'] = self.text
+
+        if self.range is not None and self.range != '':
+            root['range'] = self.range
+
+        return root
+
+
+class RuleFormulaReference(object):
+    def __init__(self, ref):
+        self.ref = ref
+
+    def to_dict(self):
+        root = dict()
+        root['ref'] = self.ref
+        return root
 
 
 class Rule(object):
@@ -263,18 +466,84 @@ class Rule(object):
         self.name = name
         self.category = category
         self.text = text
+
+        self.formula_ref = None
         self.modifiers = list()
+        self.option_definitions = list()
         self.options = collections.OrderedDict()
+
+    def to_dict(self):
+        root = dict()
+
+        root['name'] = self.name
+        root['formula'] = self.formula_ref.to_dict()
+
+        if self.category is not None:
+            root['category'] = self.category
+
+        if self.text is not None and self.text != '':
+            root['text'] = self.text
+
+        if len(self.modifiers) > 0:
+            root['modifies'] = self.modifiers
+
+        options = list()
+        for option_def in self.option_definitions:
+            options.append(option_def.to_dict())
+
+        if len(options) > 0:
+            root['options'] = options
+
+        return root
+
+    @classmethod
+    def from_yaml(cls, option_generator, rule_def_yaml, related_formula):
+        rule = cls(rule_def_yaml.name, rule_def_yaml.category, rule_def_yaml.text)
+
+        """
+        rules:
+          - name: Testing Rule
+            modifies:
+              - Target
+        """
+
+        if rule_def_yaml.modifies is not None and len(rule_def_yaml.modifies) > 0:
+            for modifier_target in rule_def_yaml.modifies:
+                rule.modifiers.append(modifier_target)
+
+        if len(rule_def_yaml.options) > 0:
+            for option_yaml in rule_def_yaml.options:
+                rule.option_definitions.append(
+                    RuleOption(option_yaml.name, option_yaml.range))
+
+        rule.formula_ref = RuleFormulaReference(rule_def_yaml.formula.ref)
+
+        for option_info in generate_options_yaml(rule_def_yaml):
+            calculated_option = option_generator.calculate_option(related_formula, option_info)
+            rule.options[calculated_option.name] = calculated_option
+
+        return rule
 
     @classmethod
     def from_xml(cls, option_generator, rule_xml, formula_xml):
-        text_xml = rule_xml.node('text')
-        text = text_xml.text() if text_xml is not None else ''
-
-        rule = cls(rule_xml.name, rule_xml.category, text)
+        rule = cls(rule_xml.name, rule_xml.category, rule_xml.text())
 
         for modifier_xml in rule_xml.each_node('modifier'):
             rule.modifiers.append(modifier_xml.ref)
+
+        option_nodes = rule_xml.each_node('option')
+        if len(option_nodes) == 0:
+            # If there are no options specified then return only one option with the same
+            # name as the rule itself
+            rule.option_definitions.append(
+                RuleOption(rule_xml.name))
+        else:
+            for option_xml in option_nodes:
+                rule.option_definitions.append(
+                    RuleOption(option_xml.name, option_xml.range, option_xml.text()))
+
+        formula_ref_xml = rule_xml.node('formula')
+        rule.formula_ref = RuleFormulaReference(formula_ref_xml.ref)
 
         for option_info in generate_options(rule_xml):
             calculated_option = option_generator.calculate_option(formula_xml, option_info)
@@ -313,14 +582,31 @@ class Template(object):
                     'Aspect {} does not conform to template {}.\nAspect is missing: {}'.format(
                         aspect.name, self.name, required_rule))
 
+    def to_dict(self):
+        root = dict()
+        root['name'] = self.name
+
+        if len(self.requirements) > 0:
+            root['requirements'] = self.requirements
+
+        return root
+
+    @classmethod
+    def from_yaml(cls, template_yaml):
+        template = cls(template_yaml.name)
+
+        if template_yaml.requirements is not None and len(template_yaml.requirements) > 0:
+            for template_requirement in template_yaml.requirements:
+                template.requirements.append(template_requirement)
+
+        return template
+
     @classmethod
     def from_xml(cls, template_xml):
         template = cls(template_xml.name)
 
-        requirements_xml = template_xml.node('requirements')
-        if requirements_xml is not None:
-            for template_requirement_xml in requirements_xml.each_node('requirement'):
-                template.requirements.append(template_requirement_xml.rule)
+        for template_requirement_xml in template_xml.each_node('requires'):
+            template.requirements.append(template_requirement_xml.rule)
 
         return template
 
@@ -333,6 +619,16 @@ class Skill(object):
 
     def inherits_from(self, ref):
         self.inheritance.append(ref)
+
+    def to_dict(self):
+        root = dict()
+        root['name'] = self.name
+        root['type'] = self.type
+
+        if len(self.inheritance) > 0:
+            root['inherits_from'] = self.inheritance
+
+        return root
 
     @classmethod
     def from_yaml(cls, name, skill_yaml):
@@ -359,6 +655,24 @@ class Item(object):
         self.grants = list()
         self.wearable = None
 
+    def to_dict(self):
+        root = dict()
+        root['name'] = self.name
+
+        if self.text is not None and self.text != '':
+            root['text'] = self.text
+
+        if len(self.rules) > 0:
+            root['rules'] = self.rules.to_dict()
+
+        if len(self.grants) > 0:
+            root['grants'] = self.grants
+
+        if self.wearable is not None:
+            root['wearable'] = self.wearable.to_dict()
+
+        return root
+
     @classmethod
     def from_yaml(cls, item_yaml):
         item = cls(item_yaml.name, item_yaml.text)
@@ -377,10 +691,7 @@ class Item(object):
 
     @classmethod
     def from_xml(cls, item_xml):
-        text_xml = item_xml.node('text')
-        text = text_xml.text() if text_xml is not None else ''
-
-        item = cls(item_xml.name, text)
+        item = cls(item_xml.name, item_xml.text())
         item.rules = RuleReferences.from_xml(item_xml)
 
         for grants_xml in item_xml.each_node('grants'):
@@ -396,6 +707,11 @@ class Item(object):
 class ItemSlotAssignment(object):
     def __init__(self, slot):
         self.slot = slot
+
+    def to_dict(self):
+        return {
+            'slot': self.slot
+        }
 
 
 class Aspect(object):
@@ -449,10 +765,30 @@ class Aspect(object):
                 failures.append(
                     CharacterCheckException('Aspect {} grants a skill but is missing the required rules: {}'.format(
                         self.name,
-                        ', '.join(requirements)
-                    )))
+                        ', '.join(requirements))))
 
         return failures
+
+    def to_dict(self):
+        root = dict()
+        root['name'] = self.name
+
+        if self.template is not None and self.template != '':
+            root['template'] = self.template
+
+        if self.text is not None and self.text != '':
+            root['text'] = self.text
+
+        if len(self.rules) > 0:
+            root['rules'] = self.rules.to_dict()
+
+        if self.skill is not None:
+            root['skill'] = self.skill.to_dict()
+
+        if len(self.requirements) > 0:
+            root['requires'] = self.requirements
+
+        return root
 
     @classmethod
     def from_yaml(cls, aspect_yaml):
@@ -472,10 +808,7 @@ class Aspect(object):
 
     @classmethod
     def from_xml(cls, aspect_xml):
-        text_xml = aspect_xml.node('text')
-        text = text_xml.text() if text_xml is not None else ''
-
-        aspect = cls(aspect_xml.name, aspect_xml.template, text)
+        aspect = cls(aspect_xml.name, aspect_xml.template, aspect_xml.text())
         aspect.rules = RuleReferences.from_xml(aspect_xml)
 
         aspect_skill_xml = aspect_xml.node('skill')
@@ -544,9 +877,12 @@ class RuleReferences(object):
     def __init__(self):
         self._references = list()
 
+    def __len__(self):
+        return len(self._references)
+
     def has_ref_to(self, rule_name):
         for rf in self._references:
-            if rf.name == rule_name:
+            if rf.rule_name == rule_name:
                 return True
         return False
 
@@ -555,6 +891,13 @@ class RuleReferences(object):
 
     def realize(self, model):
         return [rr.realize(model) for rr in self._references]
+
+    def to_dict(self):
+        root = list()
+        for rref in self._references:
+            root.append(rref.to_dict())
+
+        return root
 
     @classmethod
     def from_yaml(cls, rrefs_yaml):
@@ -595,6 +938,18 @@ class RuleReference(object):
         rule_modifiers.extend(rule.modifiers)
 
         return RuleSelection(rule, rule_modifiers, self.option)
+
+    def to_dict(self):
+        root = dict()
+        root['name'] = self.rule_name
+
+        if self.option is not None and self.option != self.rule_name:
+            root['option'] = self.option
+
+        if len(self.modifiers) > 0:
+            root['modifies'] = self.modifiers
+
+        return root
 
     @classmethod
     def from_yaml(cls, rule_ref_yaml):
