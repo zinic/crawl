@@ -5,28 +5,49 @@ from nurpg.document.model import Character, Item, Aspect, Model
 
 
 def represent_strings(dumper, data):
-    scalar = yaml.SafeRepresenter.represent_str(dumper, data)
-    scalar.style = '|' if len(data) > 80 else '"'
+    scalar = dumper.represent_str(data)
+
+    if dumper.simple_key_context is not True:
+        scalar.style = '|' if len(data) > 80 else '"'
+
     return scalar
 
 
-def write_yaml(output, model):
-    yaml.add_representer(str, represent_strings)
+def wrap_scalar_style(dumper_cls):
+    original_func = dumper_cls.choose_scalar_style
 
-    stream = yaml.dump(model.to_dict(), default_flow_style=False)
+    def _wrapped(self):
+        # Keys are never styled
+        if self.simple_key_context:
+            return None
+
+        return original_func(self)
+
+    dumper_cls.choose_scalar_style = _wrapped
+
+
+def configure_dumper():
+    yaml.SafeDumper.add_representer(str, represent_strings)
+    wrap_scalar_style(yaml.SafeDumper)
+
+
+def write_yaml(output, model):
+    configure_dumper()
+
+    stream = yaml.dump(model.to_dict(), Dumper=yaml.SafeDumper, default_flow_style=False)
     output.write(stream.replace('\n- ', '\n\n- '))
 
 
 def load_yaml_model(yaml_path):
     root_yaml = None
     with open(yaml_path, 'r') as fin:
-        root_yaml = yaml.load(fin, Loader=yaml.Loader)
+        root_yaml = yaml.load(fin, Loader=yaml.SafeLoader)
 
     return Model.from_yaml(DictBacked(root_yaml))
 
 
 def load_character(input, model):
-    value = yaml.load(input)
+    value = yaml.load(input, Loader=yaml.SafeLoader)
     # version = value.get('version', '0.1')
 
     char_content = DictBacked(value['character'], strict=False)
