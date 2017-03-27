@@ -82,7 +82,7 @@ Aspect Point Cost: Provided by Item
 ### Ring of Assballer
 A ring that gives me a bigger ass.
 
-Monetary Cost: $$1600
+Monetary Value: $$1600 
 #### Details
 Worn on Item Slot: **lightweight**
 * Slash:  (**$$ 500**)
@@ -93,7 +93,7 @@ Worn on Item Slot: **lightweight**
 Simple, non-magical health potion.
 
 
-Monetary Cost: $$300
+Monetary Value: $$300 (Item is Free)
 #### Details
 * Damage Healed: 1d6 (**$$ 600**)
 * Number of Uses: Has 1 Use(s) (**$$ -300**)

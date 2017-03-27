@@ -161,7 +161,8 @@ def format_item(item, model, output):
             cost_element.name, cost_element.option.name, cost_element.monetary_cost)
         total_cost += cost_element.monetary_cost
 
-    write_line('\nMonetary Value: $${}'.format(total_cost), output)
+    write_line('\nMonetary Value: $${} {}'.format(total_cost,
+                                                  '(Item is Free)' if item.free else ''), output)
     write_line('#### Details'.format(), output)
 
     if item.wearable is not None:
