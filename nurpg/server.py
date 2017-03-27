@@ -5,7 +5,7 @@ import io
 import json
 import waitress
 
-from nurpg.document import load_document
+from nurpg.document import load_document_yaml
 from nurpg.document.model import Aspect
 from nurpg.document.xml_backend import load_as, XMLBacked
 from nurpg.document.yaml_backend import load_character
@@ -43,6 +43,7 @@ class AspectFormatResource(object):
             resp.body = buffer.getvalue()
             buffer.close()
         except Exception as ex:
+            traceback.print_exc()
             resp.body = '### General Error\n\n{}'.format(ex)
 
 
@@ -63,6 +64,7 @@ class CharacterFormatResource(object):
 
             errors.extend(character.check(self._doc))
         except Exception as ex:
+            traceback.print_exc()
             errors.append(ex)
 
         if len(errors) > 0:
@@ -78,7 +80,7 @@ class CharacterFormatResource(object):
 
 
 def main():
-    document = load_document('template.xml')
+    document = load_document_yaml('core_module.yaml')
 
     api = falcon.API()
     api.add_route('/ui', UIResource())

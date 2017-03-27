@@ -3,7 +3,7 @@ import collections
 from ruamel import yaml
 from mprequest.util import DictBacked
 
-from nurpg.document.model import Character, Item, Aspect, Model
+from nurpg.document.model import Character, Item, Aspect, Model, CharacterCheckException
 
 
 class UnsortableList(list):
@@ -64,36 +64,70 @@ def load_yaml_model(yaml_path):
 
 def load_character(input, model):
     value = yaml.load(input, Loader=yaml.SafeLoader)
-    # version = value.get('version', '0.1')
+    version = float(value.get('version', '0.1'))
 
-    char_content = DictBacked(value['character'], strict=False)
+    char_yaml = DictBacked(value['character'], strict=False)
 
     # Copy contents over
     character = Character(
-        name=char_content.name,
-        aspect_points=char_content.aspect_points,
-        starting_funds=char_content.starting_funds,
+        name=char_yaml.name,
+        aspect_points=char_yaml.aspect_points,
+        starting_funds=char_yaml.starting_funds,
         model=model)
 
-    # Look up aspects
-    if char_content.aspects is not None:
-        for aspect_yaml in char_content.aspects:
-            aspect = model.aspect(aspect_yaml.name)
-            if aspect is None:
-                aspect = Aspect.from_yaml(aspect_yaml)
+    # Manage the character's wallet
+    if char_yaml.wallet is not None:
+        if char_yaml.wallet.spent is not None:
+            # Calc spent first
+            for amount in char_yaml.wallet.spent:
+                character.spend_monetary_funds(amount)
 
-            character.add_aspect(aspect)
+        if char_yaml.wallet.recieved is not None:
+            # Calc recieved next
+            for amount in char_yaml.wallet.recieved:
+                character.add_monetary_funds(amount)
+
+    # Look up aspects
+    if char_yaml.aspects is not None:
+        if version > 0.2:
+            for aspect_yaml in char_yaml.aspects:
+                aspect = None
+                if aspect_yaml.reference is not None:
+                    aspect = model.aspect(aspect_yaml.reference)
+                elif aspect_yaml.name is not None:
+                    aspect = Aspect.from_yaml(aspect_yaml)
+                else:
+                    raise CharacterCheckException('Aspect must have a non-empty reference or name.')
+
+                character.add_aspect(aspect)
+        else:
+            for aspect_yaml in char_yaml.aspects:
+                if model.has_aspect(aspect_yaml.name):
+                    character.add_aspect(model.aspect(aspect_yaml.name))
+                else:
+                    character.add_aspect(Aspect.from_yaml(aspect_yaml))
 
     # Look up items
-    if char_content.items is not None:
-        for item_ref in char_content.items:
-            # Try to load the item from the model first
-            item = model.item(item_ref.name)
-            if item is None:
-                # If the model doesn't have the item, maybe the player specified details inline
-                item = Item.from_yaml(item_ref)
+    if char_yaml.items is not None:
+        if version > 0.2:
+            for item_yaml in char_yaml.items:
+                item = None
+                if item_yaml.reference is not None:
+                    # Try to load the item from the model if it's a ref
+                    item = model.item(item_yaml.reference)
+                elif item_yaml.name is not None:
+                    # If the model doesn't have the item, maybe the player specified details inline
+                    item = Item.from_yaml(item_yaml)
+                else:
+                    raise CharacterCheckException('Item must have a non-empty reference or name.')
 
-            character.add_item(item)
+                character.add_item(item)
+        else:
+            for item_yaml in char_yaml.items:
+                if model.has_item(item_yaml.name):
+                    character.add_item(model.item(item_yaml.name))
+                else:
+                    character.add_item(Item.from_yaml(item_yaml))
 
     # Finish building the character model
     character.load(model)

@@ -32,14 +32,22 @@ def format_character(character, model, output):
     write_line('# {}'.format(character.name), output)
 
     write_line('## Details', output)
+    write_line('### Aspect Points', output)
     write_line('* AP Total: {}'.format(character.aspect_points), output)
     write_line('* AP Spent: {}'.format(character.aspect_points_spent), output)
     write_line('* AP Available: {}'.format(character.aspect_points - character.aspect_points_spent), output)
+
+    write_line('### Monetary Funds', output)
     write_line('* Starting Funds: $$ {}'.format(character.monetary_funds_start), output)
+    write_line('* <span style="color: green;">Funds Gained: $$ {}</span>'.format(character.monetary_funds), output)
+    write_line('* <span style="color: red;">Funds Spent: $$ {}</span>'.format(character.monetary_funds_spent), output)
     write_line('* Funds Available: $$ {}'.format(character.monetary_funds - character.monetary_funds_spent), output)
 
     write_line('## Resources', output)
     for name in sorted(character.resources.keys()):
+        if name == 'Monetary Funds':
+            continue
+
         resource = character.resources[name]
         write_line('* **{}:** {}'.format(name, resource), output)
 

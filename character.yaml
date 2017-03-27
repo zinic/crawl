@@ -1,17 +1,43 @@
 ---
-version: 0.2
+version: 0.3
 
 character:
   name: Test Character
+
+  # The number of aspect points the character has
   aspect_points: 150
+
+  # A character usually starts with some amount of monetary wealth
   starting_funds: 1000
+
+  # The character's wallet; used for tracking monetary wealth
+  wallet:
+    spent:
+      # You may specify spent amounts
+      - 1000
+      # Many
+      - 500
+      # Times
+      - 600
+      # And the editor will sum them all for you
+      - 9999
+
+    recieved:
+      # You may specify spent amounts
+      - 1000
+      # Many
+      - 500
+      # Times
+      - 600
+      # And the editor will sum them all for you
+      - 9999
 
   # This is a list of items for the character. These cost monetary funds:
   items:
     # Because I'm a lazy fuck I haven't implemented multiple items yet
 
     # You can reference items directly like this
-    - name: Weak Health Potion
+    - reference: Weak Health Potion
 
     # Or you can build custom items. It starts with the name, like below:
     - name: Ring of Assballer
@@ -40,9 +66,9 @@ character:
   aspects:
 
     # You can reference aspects directly like this
-    - name: Archery
-    - name: Fit
-    - name: Affluent
+    - reference: Archery
+    - reference: Fit
+    - reference: Affluent
 
     # Or you can build custom items. It starts with the name, like below:
     - name: New Aspect

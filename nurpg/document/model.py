@@ -268,19 +268,40 @@ class Model(object):
     def resources(self):
         return [self._resources[k] for k in sorted(self._resources.keys())]
 
-    def aspect(self, name, default=None):
-        return self._aspects.get(name, default)
+    def has_aspect(self, name):
+        return name in self._aspects
+
+    def aspect(self, name):
+        if name not in self._aspects:
+            raise CharacterCheckException(
+                'Suggestions: {}'.format(generate_suggestions(name, self._aspects.keys())))
+
+        return self._aspects.get(name)
 
     def aspects(self):
         return [self._aspects[k] for k in sorted(self._aspects.keys())]
 
-    def item(self, name, default=None):
-        return self._items.get(name, default)
+    def has_item(self, name):
+        return name in self._items
+
+    def item(self, name):
+        if name not in self._items:
+            raise CharacterCheckException(
+                'Suggestions: {}'.format(generate_suggestions(name, self._items.keys())))
+
+        return self._items.get(name)
 
     def items(self):
         return [self._items[k] for k in sorted(self._items.keys())]
 
     def rule(self, name):
+        if name is None:
+            raise CharacterCheckException('Rule reference must not be empty.')
+
+        if name not in self._rules:
+            raise CharacterCheckException(
+                'Suggestions: {}'.format(generate_suggestions(name, self._rules.keys())))
+
         return self._rules[name]
 
     def rules(self, cat_filter=None):
@@ -295,6 +316,22 @@ class Model(object):
             rules.append(rule)
 
         return rules
+
+
+def generate_suggestions(given, targets):
+    normalized = given.lower()
+    suggestions = list()
+
+    for target, normalized_target in [(t, t.lower()) for t in targets]:
+        # TODO: Maybe for some other time
+        # if normalized in normalized_target:
+        #     suggestions.append(target)
+        #     continue
+
+        if normalized_target.startswith(normalized):
+            suggestions.append(target)
+
+    return suggestions
 
 
 class Resource(object):
@@ -851,6 +888,12 @@ class Character(object):
         # Load resources
         for resource in self._model.resources():
             self.resources[resource.name] = resource.starting_value
+
+    def spend_monetary_funds(self, amount):
+        self.monetary_funds_spent += amount
+
+    def add_monetary_funds(self, amount):
+        self.resources['Monetary Funds'] += amount
 
     @property
     def monetary_funds(self):

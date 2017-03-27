@@ -1,15 +1,18 @@
 # Test Character
 ## Details
+### Aspect Points
 * AP Total: 150
 * AP Spent: 30
 * AP Available: 120
+### Monetary Funds
 * Starting Funds: $$ 1000
+* <span style="color: green;">Funds Gained: $$ 14299</span>
+* <span style="color: red;">Funds Spent: $$ 13999</span>
 * Funds Available: $$ 300
 ## Resources
 * **Energy Point Pool:** 1
 * **Energy Point Refresh:** 1
 * **Health Point Pool:** 7
-* **Monetary Funds:** 1200
 ## Skill Stats
 * **Archery**
 	* Difficulty 8
