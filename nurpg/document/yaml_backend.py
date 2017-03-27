@@ -111,10 +111,16 @@ def load_character(input, model):
     if char_yaml.items is not None:
         if version > 0.2:
             for item_yaml in char_yaml.items:
+                if item_yaml.free is None:
+                    raise CharacterCheckException(
+                        'Item {} must specify whether or not it is free.'.format(item_yaml.name))
+
                 item = None
                 if item_yaml.reference is not None:
                     # Try to load the item from the model if it's a ref
                     item = model.item(item_yaml.reference)
+                    item.free = item_yaml.free.lower() == 'yes'
+
                 elif item_yaml.name is not None:
                     # If the model doesn't have the item, maybe the player specified details inline
                     item = Item.from_yaml(item_yaml)

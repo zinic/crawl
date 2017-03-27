@@ -535,7 +535,7 @@ class Item(object):
     def __init__(self, name, text=None):
         self.name = name
         self.text = text
-
+        self.free = False
         self.rules = RuleReferences()
         self.grants = list()
         self.wearable = None
@@ -561,6 +561,7 @@ class Item(object):
     @classmethod
     def from_yaml(cls, item_yaml):
         item = cls(item_yaml.name, item_yaml.text)
+        item.free = item_yaml.free.lower() == 'yes' if item_yaml.free is not None else False
 
         if item_yaml.rules is not None:
             item.rules = RuleReferences.from_yaml(item_yaml.rules)

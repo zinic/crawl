@@ -10,7 +10,7 @@ character:
   # A character usually starts with some amount of monetary wealth
   starting_funds: 1000
 
-  # The character's wallet; used for tracking monetary wealth
+  # The character's wallet; used for tracking monetary wealth.
   wallet:
     spent:
       # You may specify spent amounts
@@ -38,9 +38,14 @@ character:
 
     # You can reference items directly like this
     - reference: Weak Health Potion
+      # This item was granted, gifted, found or stolen by the character
+      free: yes
 
     # Or you can build custom items. It starts with the name, like below:
     - name: Ring of Assballer
+      # This item was bought by the character and therefore its cost is taken from the character's wallet
+      free: no
+
       # Text is rendered for you. This describes the item. Be brief :)
       text: A ring that gives me a bigger ass.
 
