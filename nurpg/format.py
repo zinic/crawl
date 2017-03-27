@@ -169,9 +169,8 @@ def format_items(model, output):
         format_item(item, model, output)
 
 
-def format_markdown(model):
-    with open('output.md', 'w') as output:
-        write_line('# Crawl Aspect Document', output)
-        format_rules(model, output)
-        format_aspects(model, output)
-        format_items(model, output)
+def format_markdown(model, output):
+    write_line('# Crawl Aspect Document', output)
+    format_rules(model, output)
+    format_aspects(model, output)
+    format_items(model, output)

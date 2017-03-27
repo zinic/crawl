@@ -31,6 +31,10 @@ class FormulaDefinition(object):
     def from_yaml(cls, formula_yaml):
         return cls(formula_yaml.name, formula_yaml.type, formula_yaml.equation, formula_yaml.provided_function)
 
+    @classmethod
+    def from_xml(cls, formula_xml):
+        return cls(formula_xml.name, formula_xml.type, formula_xml.equation, formula_xml.function)
+
 
 class OptionPositionInfo(object):
     def __init__(self, option, range_value, position):
@@ -60,6 +64,89 @@ class OptionPositionInfo(object):
 
 
 class OptionGenerator(object):
+    def __init__(self):
+        self._env = {
+            'abs': math.fabs,
+            'pow': math.pow,
+            'fib': formulas.generate_fibonacci(1000),
+        }
+
+    @classmethod
+    def calculate_damage_cost(cls, info):
+        cost = info.range_value
+        formatted_name = info.format_name()
+
+        # Check if the damage is defined as a dice roll
+        if DICE_REGEX.match(formatted_name):
+            # Figure out the number of dice and number of sides
+            num_dice, sides = [int(v) for v in formatted_name.split('d')]
+
+            # Cost is number of dice + damage value
+            cost = num_dice - 1 + num_dice * sides
+
+        return APCostElement(formatted_name, int(cost), info.option.text())
+
+    def calculate_option(self, formula, info):
+        if formula.type == 'custom':
+            # Copy the environment every time
+            env_copy = self._env.copy()
+
+            # Set the definition iteration num
+            env_copy['i'] = info.range_value
+
+            # This is so nasty...
+            cost = eval(formula.equation, env_copy)
+
+            # Return as a formula result
+            return APCostElement(info.format_name(), int(cost), info.option.text())
+
+        if formula.provided_func_ref == 'damage_cost':
+            return self.calculate_damage_cost(info)
+
+        if formula.provided_func_ref == 'dr_cost':
+            cost_element = self.calculate_damage_cost(info)
+            cost_element.ap_cost *= 2
+            return cost_element
+
+        raise Exception('Unknown formula => {}::{}'.format(formula.type, formula.provided_func_ref))
+
+
+def generate_options(rule_xml):
+    options = list()
+
+    # Positions start at 1
+    i = 1
+
+    # Iterate through the defined options
+    option_nodes = rule_xml.each_node('option')
+
+    if len(option_nodes) == 0:
+        # If there are no options specified then return only one option with the same
+        # name as the rule itself
+        return [OptionPositionInfo(rule_xml, 0, 1)]
+
+    for option_xml in option_nodes:
+        # Values start with the position of the option
+        values = [i]
+
+        # Values may have a short-hand notation to generate additional options in a range
+        if option_xml.range is not None:
+            start, end = [int(v) for v in option_xml.range.split(',')]
+            values = range(start, end + 1)
+
+        for r in values:
+            i += 1
+
+            # By default we always skip and value that resolves its range to 0
+            if r == 0:
+                continue
+
+            options.append(OptionPositionInfo(option_xml, r, i))
+
+    return options
+
+
+class OptionGeneratorYAML(object):
     def __init__(self):
         self._env = {
             'abs': math.fabs,
@@ -210,7 +297,7 @@ class Model(object):
     @classmethod
     def from_yaml(cls, root):
         model = cls(None)
-        option_generator = OptionGenerator()
+        option_generator = OptionGeneratorYAML()
 
         if root.formulas is not None:
             for formula_def_yaml in root.formulas:
@@ -238,6 +325,36 @@ class Model(object):
                 model._items[item_def_yaml.name] = Item.from_yaml(item_def_yaml)
 
         return model
+
+    def _generate(self, document):
+        option_generator = OptionGenerator()
+
+        for formula_xml in document.formulas().each_node('formula'):
+            formula = FormulaDefinition.from_xml(formula_xml)
+            self._formulas[formula.name] = formula
+
+        for rule_xml in document.rules().each_node('rule'):
+            formula_ref = rule_xml.node('formula').ref
+            formula = self._formulas[formula_ref]
+
+            rule = Rule.from_xml(option_generator, rule_xml, formula)
+            self._rules[rule.name] = rule
+
+        for resource_xml in document.resources().each_node('resource'):
+            resource = Resource.from_xml(resource_xml)
+            self._resources[resource.name] = resource
+
+        for template_xml in document.templates().each_node('template'):
+            template = Template.from_xml(template_xml)
+            self._templates[template.name] = template
+
+        for aspect_xml in document.aspects().each_node('aspect'):
+            aspect = Aspect.from_xml(aspect_xml)
+            self._aspects[aspect.name] = aspect
+
+        for item_xml in document.items().each_node('item'):
+            item = Item.from_xml(item_xml)
+            self._items[item.name] = item
 
     def lookup_item_cost_breakdown(self, name):
         return self.item_cost_breakdown(self._items[name])
@@ -317,6 +434,10 @@ class Resource(object):
     @classmethod
     def from_yaml(cls, resource_yaml):
         return cls(resource_yaml.name, int(resource_yaml.starting_value))
+
+    @classmethod
+    def from_xml(cls, resource_xml):
+        return Resource(resource_xml.name, int(resource_xml.starting_value))
 
 
 class RuleOption(object):
@@ -402,15 +523,38 @@ class Rule(object):
             for option_yaml in rule_def_yaml.options:
                 rule.option_definitions.append(
                     RuleOption(option_yaml.name, option_yaml.range))
-        else:
+
+        rule.formula_ref = RuleFormulaReference(rule_def_yaml.formula.ref)
+
+        for option_info in generate_options_yaml(rule_def_yaml):
+            calculated_option = option_generator.calculate_option(related_formula, option_info)
+            rule.options[calculated_option.name] = calculated_option
+
+        return rule
+
+    @classmethod
+    def from_xml(cls, option_generator, rule_xml, formula_xml):
+        rule = cls(rule_xml.name, rule_xml.category, rule_xml.text())
+
+        for modifier_xml in rule_xml.each_node('modifier'):
+            rule.modifiers.append(modifier_xml.ref)
+
+        option_nodes = rule_xml.each_node('option')
+        if len(option_nodes) == 0:
             # If there are no options specified then return only one option with the same
             # name as the rule itself
             rule.option_definitions.append(
-                RuleOption(rule_def_yaml.name))
+                RuleOption(rule_xml.name))
+        else:
+            for option_xml in option_nodes:
+                rule.option_definitions.append(
+                    RuleOption(option_xml.name, option_xml.range, option_xml.text()))
 
-        rule.formula_ref = RuleFormulaReference(rule_def_yaml.formula.ref)
-        for option_info in generate_options_yaml(rule_def_yaml):
-            calculated_option = option_generator.calculate_option(related_formula, option_info)
+        formula_ref_xml = rule_xml.node('formula')
+        rule.formula_ref = RuleFormulaReference(formula_ref_xml.ref)
+
+        for option_info in generate_options(rule_xml):
+            calculated_option = option_generator.calculate_option(formula_xml, option_info)
             rule.options[calculated_option.name] = calculated_option
 
         return rule
@@ -465,6 +609,15 @@ class Template(object):
 
         return template
 
+    @classmethod
+    def from_xml(cls, template_xml):
+        template = cls(template_xml.name)
+
+        for template_requirement_xml in template_xml.each_node('requires'):
+            template.requirements.append(template_requirement_xml.rule)
+
+        return template
+
 
 class Skill(object):
     def __init__(self, name, skill_type):
@@ -491,6 +644,13 @@ class Skill(object):
         if skill_yaml.inherits is not None:
             for inheritance in skill_yaml.inherits:
                 skill.inherits_from(inheritance)
+        return skill
+
+    @classmethod
+    def from_xml(cls, name, skill_xml):
+        skill = cls(name, skill_xml.type)
+        for inherits_xml in skill_xml.each_node('inherits'):
+            skill.inherits_from(inherits_xml.from_ref)
         return skill
 
 
@@ -534,6 +694,20 @@ class Item(object):
 
         if item_yaml.wearable is not None:
             item.wearable = ItemSlotAssignment(item_yaml.wearable.slot)
+
+        return item
+
+    @classmethod
+    def from_xml(cls, item_xml):
+        item = cls(item_xml.name, item_xml.text())
+        item.rules = RuleReferences.from_xml(item_xml)
+
+        for grants_xml in item_xml.each_node('grants'):
+            item.grants.append(grants_xml.ref)
+
+        item_slot_xml = item_xml.node('wearable')
+        if item_slot_xml is not None:
+            item.wearable = ItemSlotAssignment(item_slot_xml.slot)
 
         return item
 
@@ -640,6 +814,20 @@ class Aspect(object):
 
         return aspect
 
+    @classmethod
+    def from_xml(cls, aspect_xml):
+        aspect = cls(aspect_xml.name, aspect_xml.template, aspect_xml.text())
+        aspect.rules = RuleReferences.from_xml(aspect_xml)
+
+        aspect_skill_xml = aspect_xml.node('skill')
+        if aspect_skill_xml is not None:
+            aspect.skill = Skill.from_xml(aspect_xml.name, aspect_skill_xml)
+
+        for aspect_requirement_xml in aspect_xml.each_node('requires'):
+            aspect.requirements.append(aspect_requirement_xml.name)
+
+        return aspect
+
 
 class CoreAspect(Aspect):
     @classmethod
@@ -732,6 +920,14 @@ class RuleReferences(object):
 
         return rrefs
 
+    @classmethod
+    def from_xml(cls, rref_parent_xml):
+        rrefs = cls()
+        for rref_xml in rref_parent_xml.each_node('rule'):
+            rrefs.add(RuleReference.from_xml(rref_xml))
+
+        return rrefs
+
 
 class RuleReference(object):
     def __init__(self, rule_name, option):
@@ -770,6 +966,13 @@ class RuleReference(object):
         if rule_ref_yaml.modifies is not None:
             for rref_modifier_target in rule_ref_yaml.modifies:
                 rref.add_modifier(rref_modifier_target)
+        return rref
+
+    @classmethod
+    def from_xml(cls, rule_ref_xml):
+        rref = cls(rule_ref_xml.ref, rule_ref_xml.value)
+        for rr_modifier_xml in rule_ref_xml.each_node('modifier'):
+            rref.add_modifier(rr_modifier_xml.ref)
         return rref
 
 

@@ -12,7 +12,7 @@ aspects:
   - name: "Range"
     option: "Medium"
   skill:
-    inherits_from:
+    inherits:
     - "Perception"
     name: "Farsight"
     type: "Concentration"
@@ -30,7 +30,7 @@ aspects:
   - name: "Failure Chance"
     option: "Difficulty 8"
   skill:
-    inherits_from:
+    inherits:
     - "Intelligence"
     name: "Knowledge - Survival"
     type: "Concentration"
@@ -50,7 +50,7 @@ aspects:
   - name: "Damage"
     option: "1d4"
   skill:
-    inherits_from:
+    inherits:
     - "Intelligence"
     name: "Frigid Cone"
     type: "Attack"
@@ -75,7 +75,7 @@ aspects:
   - name: "Energy Point Cost"
     option: "+1"
   skill:
-    inherits_from:
+    inherits:
     - "Intelligence"
     name: "Gesture"
     type: "Concentration"
@@ -92,7 +92,7 @@ aspects:
   - name: "Energy Point Cost"
     option: "+1"
   skill:
-    inherits_from:
+    inherits:
     - "Mobility"
     - "Strength"
     name: "Archery"
@@ -118,7 +118,7 @@ aspects:
   - name: "Failure Chance"
     option: "Difficulty 8"
   skill:
-    inherits_from:
+    inherits:
     - "Intelligence"
     name: "Field Aid"
     type: "Concentration"
@@ -149,7 +149,7 @@ aspects:
   - name: "Failure Chance"
     option: "Difficulty 8"
   skill:
-    inherits_from:
+    inherits:
     - "Intelligence"
     name: "Knowledge - Occult"
     type: "Concentration"
@@ -178,7 +178,7 @@ aspects:
   - name: "Failure Chance"
     option: "Difficulty 8"
   skill:
-    inherits_from:
+    inherits:
     - "Intelligence"
     name: "Knowledge - Affluence"
     type: "Concentration"
@@ -192,7 +192,7 @@ aspects:
     option: "Difficulty 12"
   - name: "Magic"
   skill:
-    inherits_from:
+    inherits:
     - "Intelligence"
     name: "Send"
     type: "Concentration"
@@ -211,7 +211,7 @@ aspects:
     option: "Difficulty 8"
   - name: "Magic"
   skill:
-    inherits_from:
+    inherits:
     - "Intelligence"
     name: "Summon Water or Food"
     type: "Concentration"
@@ -229,7 +229,7 @@ aspects:
   - name: "Failure Chance"
     option: "Difficulty 8"
   skill:
-    inherits_from:
+    inherits:
     - "Intelligence"
     name: "Perception"
     type: "Concentration"
@@ -255,7 +255,7 @@ aspects:
   - name: "Failure Chance"
     option: "Difficulty 8"
   skill:
-    inherits_from:
+    inherits:
     - "Lockpicking"
     name: "Disable Device"
     type: "Non-Combat"
@@ -272,7 +272,7 @@ aspects:
   - name: "Failure Chance"
     option: "Difficulty 8"
   skill:
-    inherits_from:
+    inherits:
     - "Mobility"
     name: "Filch"
     type: "Non-Combat"
@@ -307,7 +307,7 @@ aspects:
   - name: "Range"
     option: "Melee"
   skill:
-    inherits_from:
+    inherits:
     - "Intelligence"
     name: "Cleanse"
     type: "Concentration"
@@ -327,7 +327,7 @@ aspects:
   - name: "Damage"
     option: "1d6"
   skill:
-    inherits_from:
+    inherits:
     - "Intelligence"
     name: "Spell Dart"
     type: "Attack"
@@ -349,7 +349,7 @@ aspects:
   - name: "Range"
     option: "Personal"
   skill:
-    inherits_from:
+    inherits:
     - "Intelligence"
     name: "Quell"
     type: "Concentration"
@@ -379,7 +379,7 @@ aspects:
   - name: "Failure Chance"
     option: "Difficulty 8"
   skill:
-    inherits_from:
+    inherits:
     - "Intelligence"
     name: "Knowledge - Arcane"
     type: "Concentration"
@@ -402,7 +402,7 @@ aspects:
   - name: "Energy Point Cost"
     option: "+1"
   skill:
-    inherits_from:
+    inherits:
     - "Strength"
     name: "Bludgeon"
     type: "Attack"
@@ -421,7 +421,7 @@ aspects:
   - name: "Energy Point Cost"
     option: "+1"
   skill:
-    inherits_from:
+    inherits:
     - "Strength"
     name: "Grapple"
     type: "Attack"
@@ -440,7 +440,7 @@ aspects:
   - name: "Damage"
     option: "1d4"
   skill:
-    inherits_from:
+    inherits:
     - "Intelligence"
     name: "Firebolt"
     type: "Attack"
@@ -453,7 +453,7 @@ aspects:
   - name: "Failure Chance"
     option: "Difficulty 8"
   skill:
-    inherits_from:
+    inherits:
     - "Mobility"
     name: "Blend into Crowds"
     type: "Non-Combat"
@@ -470,7 +470,7 @@ aspects:
   - name: "Energy Point Cost"
     option: "+1"
   skill:
-    inherits_from:
+    inherits:
     - "Mobility"
     name: "Pickpocket"
     type: "Concentration"
@@ -499,7 +499,7 @@ aspects:
   - name: "Effect Trigger"
     option: "When HP Damage is Dealt"
   skill:
-    inherits_from:
+    inherits:
     - "Intelligence"
     name: "Blood Soaked Life"
     type: "Concentration"
@@ -516,7 +516,7 @@ aspects:
   - name: "Range"
     option: "Melee"
   skill:
-    inherits_from:
+    inherits:
     - "Intelligence"
     name: "Purify"
     type: "Concentration"
@@ -545,7 +545,7 @@ aspects:
   - name: "Damage"
     option: "1d4"
   skill:
-    inherits_from:
+    inherits:
     - "Intelligence"
     name: "Toss"
     type: "Attack"
@@ -578,7 +578,7 @@ aspects:
   - name: "Failure Chance"
     option: "Difficulty 8"
   skill:
-    inherits_from:
+    inherits:
     - "Intelligence"
     name: "Knowledge - Mechanical"
     type: "Concentration"
@@ -592,7 +592,7 @@ aspects:
   - name: "Energy Point Cost"
     option: "+1"
   skill:
-    inherits_from:
+    inherits:
     - "Mobility"
     name: "Quiet Steps"
     type: "Concentration"
@@ -607,7 +607,7 @@ aspects:
   - name: "Failure Chance"
     option: "Difficulty 8"
   skill:
-    inherits_from:
+    inherits:
     - "Intelligence"
     name: "Treat Illness"
     type: "Non-Combat"
@@ -633,7 +633,7 @@ aspects:
   - name: "Energy Point Cost"
     option: "+2"
   skill:
-    inherits_from:
+    inherits:
     - "Mobility"
     name: "Pivot and Roll"
     type: "Concentration"
@@ -655,7 +655,7 @@ aspects:
   - name: "Effect Duration"
     option: "8 Turns"
   skill:
-    inherits_from:
+    inherits:
     - "Perception"
     name: "Arcane Sight"
     type: "Concentration"
@@ -676,7 +676,7 @@ aspects:
   - name: "Energy Point Cost"
     option: "+1"
   skill:
-    inherits_from:
+    inherits:
     - "Mobility"
     name: "Melee Parry"
     type: "Concentration"
@@ -712,7 +712,7 @@ aspects:
     option: "Short"
   - name: "Teleportation"
   skill:
-    inherits_from:
+    inherits:
     - "Intelligence"
     name: "He Who Walks Behind"
     type: "Concentration"
@@ -727,7 +727,7 @@ aspects:
   - name: "Damage Healed"
     option: "1d6"
   skill:
-    inherits_from:
+    inherits:
     - "Intelligence"
     name: "Medicine"
     type: "Non-Combat"
@@ -747,7 +747,7 @@ aspects:
   - name: "Failure Chance"
     option: "Difficulty 8"
   skill:
-    inherits_from:
+    inherits:
     - "Intelligence"
     name: "Knowledge - Historical"
     type: "Concentration"
@@ -766,7 +766,7 @@ aspects:
   - name: "Failure Chance"
     option: "Difficulty 8"
   skill:
-    inherits_from:
+    inherits:
     - "Mobility"
     name: "Lockpicking"
     type: "Non-Combat"
@@ -781,7 +781,7 @@ aspects:
   - name: "Failure Chance"
     option: "Difficulty 8"
   skill:
-    inherits_from:
+    inherits:
     - "Intelligence"
     name: "Survival"
     type: "Non-Combat"
@@ -873,7 +873,7 @@ aspects:
   - name: "Energy Point Cost"
     option: "+1"
   skill:
-    inherits_from:
+    inherits:
     - "Strength"
     name: "Reaching Strike"
     type: "Attack"
@@ -888,7 +888,7 @@ aspects:
   - name: "Failure Chance"
     option: "Difficulty 8"
   skill:
-    inherits_from:
+    inherits:
     - "Intelligence"
     name: "Knowledge - Martial"
     type: "Concentration"
@@ -901,7 +901,7 @@ aspects:
   - name: "Energy Point Cost"
     option: "+1"
   skill:
-    inherits_from:
+    inherits:
     - "Strength"
     name: "Stab"
     type: "Attack"
@@ -922,7 +922,7 @@ aspects:
   - name: "Range"
     option: "Medium"
   skill:
-    inherits_from:
+    inherits:
     - "Intelligence"
     name: "Countercast"
     type: "Attack"
@@ -963,7 +963,7 @@ aspects:
   - name: "Range"
     option: "Melee"
   skill:
-    inherits_from:
+    inherits:
     - "Intelligence"
     name: "Refresh"
     type: "Concentration"
@@ -984,7 +984,7 @@ aspects:
   - name: "Damage"
     option: "1d4"
   skill:
-    inherits_from:
+    inherits:
     - "Intelligence"
     name: "Volta"
     type: "Attack"
@@ -1002,7 +1002,7 @@ aspects:
   - name: "Energy Point Cost"
     option: "+1"
   skill:
-    inherits_from:
+    inherits:
     - "Mobility"
     name: "Frantic Defense"
     type: "Defense"
@@ -1027,7 +1027,7 @@ aspects:
   - name: "Range"
     option: "Medium"
   skill:
-    inherits_from:
+    inherits:
     - "Intelligence"
     name: "Dissev"
     type: "Concentration"
@@ -1075,7 +1075,7 @@ aspects:
   - name: "Energy Point Cost"
     option: "+1"
   skill:
-    inherits_from:
+    inherits:
     - "Mobility"
     name: "Slash"
     type: "Attack"
@@ -1106,7 +1106,7 @@ aspects:
   - name: "Energy Point Cost"
     option: "+1"
   skill:
-    inherits_from:
+    inherits:
     - "Mobility"
     name: "Dive for Cover"
     type: "Concentration"
@@ -1129,7 +1129,7 @@ aspects:
   - name: "Range"
     option: "Melee"
   skill:
-    inherits_from:
+    inherits:
     - "Intelligence"
     name: "Foil"
     type: "Concentration"
@@ -1159,7 +1159,7 @@ aspects:
   - name: "Range"
     option: "Melee"
   skill:
-    inherits_from:
+    inherits:
     - "Intelligence"
     name: "Sooth"
     type: "Concentration"
@@ -1175,7 +1175,7 @@ aspects:
   - name: "Range"
     option: "Medium"
   skill:
-    inherits_from:
+    inherits:
     - "Intelligence"
     name: "Dismiss"
     type: "Attack"
@@ -1196,7 +1196,7 @@ aspects:
   - name: "Failure Chance"
     option: "Difficulty 8"
   skill:
-    inherits_from:
+    inherits:
     - "Intelligence"
     name: "Knowledge - Natural Sciences"
     type: "Concentration"
@@ -1211,7 +1211,7 @@ aspects:
   - name: "Energy Point Cost"
     option: "+1"
   skill:
-    inherits_from:
+    inherits:
     - "Strength"
     name: "Block"
     type: "Defense"
@@ -1258,7 +1258,7 @@ aspects:
   - name: "Effect Duration"
     option: "4 Turns"
   skill:
-    inherits_from:
+    inherits:
     - "Intelligence"
     name: "Obscura"
     type: "Concentration"
@@ -1276,7 +1276,7 @@ aspects:
   - name: "Energy Point Cost"
     option: "+1"
   skill:
-    inherits_from:
+    inherits:
     - "Mobility"
     name: "Duck and Dodge"
     type: "Defense"
