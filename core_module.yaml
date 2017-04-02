@@ -1968,7 +1968,7 @@ rules:
       Energetic damage types are very effective but also chaotic. Upon a successful hit the attacker may
       roll a fate die. Negative and neutral values have no additional effect.
 
-      A positvie fate die roll grants the attacker **two** of their smallest damage dice in additional
+      A positvie fate die roll grants the attacker **one** of their smallest damage dice in additional
       damage.
   - name: "Meta"
     text: |

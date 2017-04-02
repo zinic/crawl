@@ -623,7 +623,7 @@ Certain magic effects may impart energetic damage as well instead of meta.
 Energetic damage types are very effective but also chaotic. Upon a successful hit the attacker may
 roll a fate die. Negative and neutral values have no additional effect.
 
-A positvie fate die roll grants the attacker **two** of their smallest damage dice in additional
+A positvie fate die roll grants the attacker **one** of their smallest damage dice in additional
 damage.
 
 
@@ -2230,7 +2230,7 @@ Aspect Point Cost: 1
 Wearing this small ring makes you feel healthier.
 
 
-Monetary Cost: $$300
+Monetary Value: $$300 
 #### Details
 Worn on Item Slot: **lightweight**
 * Fit:  (**$$ 100**)
@@ -2240,7 +2240,7 @@ Worn on Item Slot: **lightweight**
 Simple, non-magical health potion.
 
 
-Monetary Cost: $$300
+Monetary Value: $$300 
 #### Details
 * Damage Healed: 1d6 (**$$ 600**)
 * Number of Uses: Has 1 Use(s) (**$$ -300**)
