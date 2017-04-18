@@ -2,8 +2,8 @@
 ## Details
 ### Aspect Points
 * AP Total: 150
-* AP Spent: 30
-* AP Available: 120
+* AP Spent: 36
+* AP Available: 114
 ### Monetary Funds
 * Starting Funds: $$ 1000
 * <span style="color: green;">Funds Gained: $$ 14299</span>
@@ -22,16 +22,16 @@
 	* Modifier: 0
 * **Mobility**
 	* Difficulty: GM Specified
-	* Modifier: 0
+	* Modifier: -1
 * **New Aspect**
 	* Difficulty 12
-	* Modifier: +2
+	* Modifier: +3
 * **Slash**
 	* Difficulty 8
-	* Modifier: 0
+	* Modifier: -1
 * **Strength**
 	* Difficulty: GM Specified
-	* Modifier: +2
+	* Modifier: +3
 ## Aspect List
 ### Affluent
 You're richer. For now.
@@ -51,6 +51,14 @@ Aspect Point Cost: 5
 * Failure Chance (**7 AP**): Difficulty 8
 * Energy Point Cost (**-2 AP**): +1
 
+### Aspect 100
+Testing aspect
+
+Aspect Point Cost: 11
+#### Details
+* Damage Healed (**6 AP**): 1d6
+* Core Aspect Modifier (**5 AP**): +1 (Strength)
+
 ### Fit
 This aspect applies to any physically fit character. All fit characters also receive +1 HP to their HP
 Pool.
@@ -65,8 +73,9 @@ Example new aspect.
 Requires: **[Fit](#fit)**
 
 
-Aspect Point Cost: 12
+Aspect Point Cost: 7
 #### Details
+* Core Aspect Malady (**-5 AP**): -1 (Mobility)
 * Energy Point Cost (**-2 AP**): +1
 * Failure Chance (**3 AP**): Difficulty 12
 * Damage (**6 AP**): 1d6

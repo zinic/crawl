@@ -142,9 +142,10 @@ def generate_options_yaml(rule_yaml):
     return options
 
 
-class Model(object):
-    def __init__(self, document):
-        self._document = document
+class GameModel(object):
+    def __init__(self, name, description):
+        self.name = name
+        self.description = description
 
         self._resources = dict()
         self._formulas = dict()
@@ -153,8 +154,10 @@ class Model(object):
         self._aspects = dict()
         self._items = dict()
 
-        if document is not None:
-            self._generate(document)
+        self._supplement_modules = list()
+
+    def overlay(self, supplement_module):
+        self._supplement_modules.append(supplement_module)
 
     def check(self):
         for rule in self.rules():
@@ -207,40 +210,45 @@ class Model(object):
 
         return root
 
-    @classmethod
-    def from_yaml(cls, root):
-        model = cls(None)
+    def include_yaml(self, module_yaml, version):
         option_generator = OptionGenerator()
 
-        if root.formulas is not None:
-            for formula_def_yaml in root.formulas:
-                model._formulas[formula_def_yaml.name] = FormulaDefinition.from_yaml(formula_def_yaml)
+        if module_yaml.formulas is not None:
+            for formula_def_yaml in module_yaml.formulas:
+                self._formulas[formula_def_yaml.name] = FormulaDefinition.from_yaml(formula_def_yaml)
 
-        if root.rules is not None:
-            for rule_def_yaml in root.rules:
-                formula = model._formulas[rule_def_yaml.formula.ref]
-                model._rules[rule_def_yaml.name] = Rule.from_yaml(option_generator, rule_def_yaml, formula)
+        if module_yaml.rules is not None:
+            for rule_def_yaml in module_yaml.rules:
+                formula = self.formula(rule_def_yaml.formula.ref)
+                self._rules[rule_def_yaml.name] = Rule.from_yaml(option_generator, rule_def_yaml, formula)
 
-        if root.resources is not None:
-            for resource_def_yaml in root.resources:
-                model._resources[resource_def_yaml.name] = Resource.from_yaml(resource_def_yaml)
+        if module_yaml.resources is not None:
+            for resource_def_yaml in module_yaml.resources:
+                self._resources[resource_def_yaml.name] = Resource.from_yaml(resource_def_yaml)
 
-        if root.templates is not None:
-            for template_def_yaml in root.templates:
-                model._templates[template_def_yaml.name] = Template.from_yaml(template_def_yaml)
+        if module_yaml.templates is not None:
+            for template_def_yaml in module_yaml.templates:
+                self._templates[template_def_yaml.name] = Template.from_yaml(template_def_yaml)
 
-        if root.aspects is not None:
-            for aspect_def_yaml in root.aspects:
-                model._aspects[aspect_def_yaml.name] = Aspect.from_yaml(aspect_def_yaml)
+        if module_yaml.aspects is not None:
+            for aspect_def_yaml in module_yaml.aspects:
+                self._aspects[aspect_def_yaml.name] = Aspect.from_yaml(aspect_def_yaml)
 
-        if root.items is not None:
-            for item_def_yaml in root.items:
-                model._items[item_def_yaml.name] = Item.from_yaml(item_def_yaml)
+        if module_yaml.items is not None:
+            for item_def_yaml in module_yaml.items:
+                self._items[item_def_yaml.name] = Item.from_yaml(item_def_yaml)
 
+        return self
+
+    @classmethod
+    def from_yaml(cls, module_yaml, version):
+        model = cls(module_yaml.name, module_yaml.description)
+        model.include_yaml(module_yaml, version)
         return model
 
     def lookup_item_cost_breakdown(self, name):
-        return self.item_cost_breakdown(self._items[name])
+        item = self.item(name)
+        return self.item_cost_breakdown(item)
 
     def item_cost_breakdown(self, item):
         cost_bd = RuleCostBreakdown()
@@ -263,59 +271,128 @@ class Model(object):
         return cost_bd
 
     def lookup_aspect_cost_breakdown(self, name):
-        return self.aspect_cost_breakdown(self._aspects[name])
+        aspect = self.aspect(name)
+        return self.aspect_cost_breakdown(aspect)
+
+    def formula(self, name):
+        if name is None:
+            raise CharacterCheckException('Formula reference must not be empty.')
+
+        formulas = self.formulas()
+        formula =next((f for f in formulas if f.name == name), default=None)
+
+        if formula is None:
+            suggestions = generate_suggestions(name, [f.name for f in formulas])
+            raise CharacterCheckException(
+                'Suggestions: {}'.format(suggestions))
+
+        return formula
+
+    def formulas(self):
+        formulas = list()
+        formulas.extend(self._formulas.values())
+
+        for supplement_module in self._supplement_modules:
+            formulas.extend(supplement_module.formulas())
+
+        return sorted(
+            formulas,
+            key=lambda f: f.name)
 
     def resources(self):
-        return [self._resources[k] for k in sorted(self._resources.keys())]
+        resources = list()
+        resources.extend(self._resources.values())
+
+        for supplement_module in self._supplement_modules:
+            resources.extend(supplement_module.resources())
+
+        return sorted(
+            resources,
+            key=lambda r: r.name)
 
     def has_aspect(self, name):
-        return name in self._aspects
+        return name in (a.name for a in self.aspects())
 
     def aspect(self, name):
-        if name not in self._aspects:
-            raise CharacterCheckException(
-                'Suggestions: {}'.format(generate_suggestions(name, self._aspects.keys())))
+        if name is None:
+            raise CharacterCheckException('Aspect reference must not be empty.')
 
-        return self._aspects.get(name)
+        aspects = self.aspects()
+        aspect =next((a for a in aspects if a.name == name), default=None)
+
+        if aspect is None:
+            suggestions = generate_suggestions(name, [a.name for a in aspects])
+            raise CharacterCheckException(
+                'Suggestions: {}'.format(suggestions))
+
+        return aspect
 
     def aspects(self):
-        return [self._aspects[k] for k in sorted(self._aspects.keys())]
+        aspects = list()
+        aspects.extend(self._aspects.values())
+
+        for supplement_module in self._supplement_modules:
+            aspects.extend(supplement_module.aspects())
+
+        return sorted(
+            aspects,
+            key=lambda a: a.name)
 
     def has_item(self, name):
-        return name in self._items
+        return name in (i.name for i in self.items())
 
     def item(self, name):
-        if name not in self._items:
-            raise CharacterCheckException(
-                'Suggestions: {}'.format(generate_suggestions(name, self._items.keys())))
+        if name is None:
+            raise CharacterCheckException('Item reference must not be empty.')
 
-        return self._items.get(name)
+        items = self.items()
+        item =next((i for i in items if i.name == name), default=None)
+
+        if item is None:
+            suggestions = generate_suggestions(name, [i.name for i in items])
+            raise CharacterCheckException(
+                'Suggestions: {}'.format(suggestions))
+
+        return item
 
     def items(self):
-        return [self._items[k] for k in sorted(self._items.keys())]
+        items = list()
+        items.extend(self._items.values())
+
+        for supplement_module in self._supplement_modules:
+            items.extend(supplement_module.items())
+
+        return sorted(
+            items,
+            key=lambda i: i.name)
 
     def rule(self, name):
         if name is None:
             raise CharacterCheckException('Rule reference must not be empty.')
 
-        if name not in self._rules:
-            raise CharacterCheckException(
-                'Suggestions: {}'.format(generate_suggestions(name, self._rules.keys())))
+        rules = self.rules()
+        rule = next((r for r in rules if r.name == name), default=None)
 
-        return self._rules[name]
+        if rule is None:
+            suggestions = generate_suggestions(name, [r.name for r in rules])
+            raise CharacterCheckException(
+                'Suggestions: {}'.format(suggestions))
+
+        return rule
+
+    def supplements(self):
+        return [s for s in self._supplement_modules]
 
     def rules(self, cat_filter=None):
         rules = list()
+        rules.extend(self._rules.values())
 
-        for key in sorted(self._rules):
-            rule = self._rules[key]
+        for supplement_module in self.supplements():
+            rules.extend(supplement_module.rules())
 
-            if cat_filter is not None and rule.category != cat_filter:
-                continue
-
-            rules.append(rule)
-
-        return rules
+        return sorted(
+            filter(lambda r: cat_filter is None or r.category == cat_filter, rules),
+            key=lambda r: r.name)
 
 
 def generate_suggestions(given, targets):

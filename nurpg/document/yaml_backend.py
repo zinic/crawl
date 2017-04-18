@@ -3,7 +3,7 @@ import collections
 from ruamel import yaml
 from mprequest.util import DictBacked
 
-from nurpg.document.model import Character, Item, Aspect, Model, CharacterCheckException
+from nurpg.document.model import Character, Item, Aspect, GameModel, CharacterCheckException
 
 
 class UnsortableList(list):
@@ -54,19 +54,28 @@ def write_yaml(output, model):
     output.write(stream.replace('\n- ', '\n\n- '))
 
 
-def load_yaml_model(yaml_path):
-    root_yaml = None
-    with open(yaml_path, 'r') as fin:
-        root_yaml = yaml.load(fin, Loader=yaml.SafeLoader)
+def _yaml_load(input):
+    document_yaml = DictBacked(yaml.load(input, Loader=yaml.SafeLoader))
+    version_str = getattr(document_yaml, 'version', '0.1')
 
-    return Model.from_yaml(DictBacked(root_yaml))
+    return document_yaml, float(version_str)
+
+
+def load_game_module(yaml_path):
+    document_yaml, version = None, None
+    with open(yaml_path, 'r') as fin:
+        document_yaml, version = _yaml_load(fin)
+
+    return GameModel.from_yaml(document_yaml.module, version)
 
 
 def load_character(input, model):
-    value = yaml.load(input, Loader=yaml.SafeLoader)
-    version = float(value.get('version', '0.1'))
+    document_yaml, version = _yaml_load(input)
 
-    char_yaml = DictBacked(value['character'], strict=False)
+    if document_yaml.module is not None:
+        model.include_yaml(document_yaml.module, version)
+
+    char_yaml = document_yaml.character
 
     # Copy contents over
     character = Character(

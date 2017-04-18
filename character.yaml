@@ -1,5 +1,32 @@
 ---
-version: 0.3
+version: 0.4
+
+module:
+  name: Test Module
+  description: |
+    Testing module for giving an example on custom module
+
+  rules:
+    - name: Core Aspect Malady
+      formula:
+        ref: Hard Progression
+      category: all
+      options:
+      - name: "{range_value}"
+        range: -3,3
+
+  aspects:
+    - name: Aspect 100
+      text: Testing aspect
+
+      rules:
+        - name: Damage Healed
+          option: 1d6
+
+        - name: Core Aspect Modifier
+          option: "+1"
+          modifies:
+            - Strength
 
 character:
   name: Test Character
@@ -74,6 +101,7 @@ character:
     - reference: Archery
     - reference: Fit
     - reference: Affluent
+    - reference: Aspect 100
 
     # Or you can build custom items. It starts with the name, like below:
     - name: New Aspect
@@ -99,6 +127,11 @@ character:
 
       # This is a list of rules that the aspect has.
       rules:
+        - name: Core Aspect Malady
+          option: "-1"
+          modifies:
+            - Mobility
+
         - name: Energy Point Cost
           option: "+1"
 
