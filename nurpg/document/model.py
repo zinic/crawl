@@ -279,7 +279,7 @@ class GameModel(object):
             raise CharacterCheckException('Formula reference must not be empty.')
 
         formulas = self.formulas()
-        formula =next((f for f in formulas if f.name == name), default=None)
+        formula =next((f for f in formulas if f.name == name), None)
 
         if formula is None:
             suggestions = generate_suggestions(name, [f.name for f in formulas])
@@ -318,7 +318,7 @@ class GameModel(object):
             raise CharacterCheckException('Aspect reference must not be empty.')
 
         aspects = self.aspects()
-        aspect =next((a for a in aspects if a.name == name), default=None)
+        aspect =next((a for a in aspects if a.name == name), None)
 
         if aspect is None:
             suggestions = generate_suggestions(name, [a.name for a in aspects])
@@ -346,7 +346,7 @@ class GameModel(object):
             raise CharacterCheckException('Item reference must not be empty.')
 
         items = self.items()
-        item =next((i for i in items if i.name == name), default=None)
+        item =next((i for i in items if i.name == name), None)
 
         if item is None:
             suggestions = generate_suggestions(name, [i.name for i in items])
@@ -371,7 +371,7 @@ class GameModel(object):
             raise CharacterCheckException('Rule reference must not be empty.')
 
         rules = self.rules()
-        rule = next((r for r in rules if r.name == name), default=None)
+        rule = next((r for r in rules if r.name == name), None)
 
         if rule is None:
             suggestions = generate_suggestions(name, [r.name for r in rules])
