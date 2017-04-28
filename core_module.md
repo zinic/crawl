@@ -594,9 +594,10 @@ type damage.
 Fire damage types come with the opportunity to set their targets on fire. To determine whether or
 not a target catches fire the target must roll a mobility check against a failure chance of 11. Upon
 failure the target takes additional burning damage equal to the lowest fire damage die rolled by the
-attacker on the attacker's next turn. This status lasts 1d4 rounds.
+attacker on the attacker's next turn. This damage applies only to the lowest DR value provided by their
+armor.
 
-Additional burning damage may not stack.
+This status lasts 1d4 rounds. Additional burning damage may not stack.
 
 The target may make additional mobility checks against a failure chance of 8 to quell the fire on
 their turn.
