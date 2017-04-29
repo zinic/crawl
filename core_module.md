@@ -597,6 +597,10 @@ failure the target takes additional burning damage equal to the lowest fire dama
 attacker on the attacker's next turn. This damage applies only to the lowest DR value provided by their
 armor.
 
+For example: if a character rolls 3d6 damage with the Exotic Damage: Fire aspect, their resulting fire damage
+if applicible would be 1d6 per round the target suffers from the condition. Additionally, if a character's
+Fire attack does 3d6 and 2d8, ehtire resulting fire damage is still a 1d6.
+
 This status lasts 1d4 rounds. Additional burning damage may not stack.
 
 The target may make additional mobility checks against a failure chance of 8 to quell the fire on
